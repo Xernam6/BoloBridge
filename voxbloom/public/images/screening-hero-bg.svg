@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D3142"/>
+      <stop offset="40%" stop-color="#22223B"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+    <radialGradient id="sh-aura1" cx="25%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#5F9EA0" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#5F9EA0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sh-aura2" cx="75%" cy="60%" r="45%">
+      <stop offset="0%" stop-color="#8B7EC8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#8B7EC8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sh-aura3" cx="50%" cy="30%" r="30%">
+      <stop offset="0%" stop-color="#C2956B" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#C2956B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh-blur1"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="sh-blur2"><feGaussianBlur stdDeviation="1"/></filter>
+    <filter id="sh-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="600" fill="url(#sh-bg)"/>
+  <rect width="1920" height="600" fill="url(#sh-aura1)"/>
+  <rect width="1920" height="600" fill="url(#sh-aura2)"/>
+  <rect width="1920" height="600" fill="url(#sh-aura3)"/>
+
+  <!-- Geometric accent circles — top left cluster -->
+  <circle cx="200" cy="120" r="80" fill="none" stroke="#5F9EA0" stroke-width="0.6" opacity="0.15"/>
+  <circle cx="200" cy="120" r="140" fill="none" stroke="#5F9EA0" stroke-width="0.4" opacity="0.08"/>
+  <circle cx="200" cy="120" r="200" fill="none" stroke="#5F9EA0" stroke-width="0.3" opacity="0.04"/>
+  <circle cx="160" cy="160" r="50" fill="none" stroke="#8B7EC8" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Geometric accent circles — bottom right cluster -->
+  <circle cx="1700" cy="480" r="90" fill="none" stroke="#8B7EC8" stroke-width="0.6" opacity="0.12"/>
+  <circle cx="1700" cy="480" r="150" fill="none" stroke="#8B7EC8" stroke-width="0.4" opacity="0.06"/>
+  <circle cx="1700" cy="480" r="210" fill="none" stroke="#8B7EC8" stroke-width="0.3" opacity="0.03"/>
+  <circle cx="1740" cy="440" r="60" fill="none" stroke="#C2956B" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Center diamond constellation -->
+  <line x1="960" y1="200" x2="1060" y2="300" stroke="#5F9EA0" stroke-width="0.4" opacity="0.12"/>
+  <line x1="1060" y1="300" x2="960" y2="400" stroke="#8B7EC8" stroke-width="0.4" opacity="0.1"/>
+  <line x1="960" y1="400" x2="860" y2="300" stroke="#C2956B" stroke-width="0.4" opacity="0.1"/>
+  <line x1="860" y1="300" x2="960" y2="200" stroke="#5F9EA0" stroke-width="0.4" opacity="0.1"/>
+  <circle cx="960" cy="200" r="3" fill="#5F9EA0" opacity="0.2"/>
+  <circle cx="1060" cy="300" r="3" fill="#8B7EC8" opacity="0.18"/>
+  <circle cx="960" cy="400" r="3" fill="#C2956B" opacity="0.15"/>
+  <circle cx="860" cy="300" r="3" fill="#5F9EA0" opacity="0.15"/>
+  <circle cx="960" cy="300" r="2" fill="#FAF8F5" opacity="0.1"/>
+
+  <!-- Floating horizontal sound lines — left side -->
+  <line x1="100" y1="280" x2="400" y2="280" stroke="#5F9EA0" stroke-width="0.5" opacity="0.08" filter="url(#sh-blur2)"/>
+  <line x1="120" y1="300" x2="380" y2="300" stroke="#5F9EA0" stroke-width="0.3" opacity="0.06"/>
+  <line x1="80" y1="320" x2="350" y2="320" stroke="#5F9EA0" stroke-width="0.4" opacity="0.05"/>
+
+  <!-- Floating horizontal sound lines — right side -->
+  <line x1="1520" y1="280" x2="1820" y2="280" stroke="#8B7EC8" stroke-width="0.5" opacity="0.08" filter="url(#sh-blur2)"/>
+  <line x1="1540" y1="300" x2="1800" y2="300" stroke="#8B7EC8" stroke-width="0.3" opacity="0.06"/>
+  <line x1="1560" y1="320" x2="1840" y2="320" stroke="#8B7EC8" stroke-width="0.4" opacity="0.05"/>
+
+  <!-- Star particles -->
+  <circle cx="400" cy="100" r="1.5" fill="#5F9EA0" opacity="0.25"/>
+  <circle cx="600" cy="450" r="1" fill="#8B7EC8" opacity="0.2"/>
+  <circle cx="800" cy="150" r="1.8" fill="#C2956B" opacity="0.15"/>
+  <circle cx="1100" cy="500" r="1.2" fill="#5F9EA0" opacity="0.18"/>
+  <circle cx="1300" cy="120" r="1.5" fill="#8B7EC8" opacity="0.15"/>
+  <circle cx="1500" cy="400" r="1" fill="#C2956B" opacity="0.12"/>
+  <circle cx="300" cy="500" r="1.2" fill="#5F9EA0" opacity="0.12"/>
+  <circle cx="500" cy="200" r="0.8" fill="#8B7EC8" opacity="0.1"/>
+  <circle cx="700" cy="350" r="1" fill="#C2956B" opacity="0.08"/>
+  <circle cx="1200" cy="250" r="1.5" fill="#5F9EA0" opacity="0.1"/>
+  <circle cx="1400" cy="550" r="0.8" fill="#8B7EC8" opacity="0.08"/>
+  <circle cx="1600" cy="150" r="1.2" fill="#C2956B" opacity="0.1"/>
+  <circle cx="1800" cy="200" r="1" fill="#5F9EA0" opacity="0.12"/>
+  <circle cx="100" cy="400" r="0.8" fill="#8B7EC8" opacity="0.08"/>
+
+  <!-- Film grain overlay -->
+  <rect width="1920" height="600" filter="url(#sh-grain)" opacity="0.025"/>
+</svg>

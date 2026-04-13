@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#39475e",
+              "surface-variant": "#303445",
+              "on-tertiary-fixed-variant": "#454747",
+              "on-primary-fixed-variant": "#474745",
+              "on-secondary-fixed-variant": "#39475e",
+              "error-container": "#93000a",
+              "on-secondary-fixed": "#0d1c31",
+              "on-error": "#690005",
+              "inverse-on-surface": "#2c3041",
+              "tertiary-fixed-dim": "#c6c7c7",
+              "on-primary": "#30312f",
+              "on-surface-variant": "#c7c6cd",
+              "secondary-fixed": "#d5e3ff",
+              "surface": "#0e1322",
+              "tertiary-container": "#303232",
+              "surface-bright": "#34384a",
+              "on-primary-fixed": "#1b1c1a",
+              "on-primary-container": "#9a9a97",
+              "error": "#ffb4ab",
+              "surface-container-low": "#171b2b",
+              "secondary-fixed-dim": "#b9c7e3",
+              "surface-container-highest": "#303445",
+              "on-secondary-container": "#a7b6d1",
+              "secondary": "#b9c7e3",
+              "on-secondary": "#233147",
+              "surface-container-lowest": "#090d1d",
+              "on-surface": "#dee1f8",
+              "tertiary-fixed": "#e2e2e2",
+              "background": "#0e1322",
+              "surface-tint": "#c8c6c4",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#c8c6c4",
+              "primary-fixed": "#e4e2df",
+              "on-tertiary-fixed": "#1a1c1c",
+              "primary-container": "#313230",
+              "outline-variant": "#46464c",
+              "surface-container-high": "#25293a",
+              "surface-container": "#1b1f2f",
+              "on-background": "#dee1f8",
+              "inverse-primary": "#5e5e5c",
+              "on-tertiary-container": "#989a9a",
+              "tertiary": "#c6c7c7",
+              "on-tertiary": "#2e3131",
+              "primary": "#c8c6c4",
+              "outline": "#909097",
+              "inverse-surface": "#dee1f8",
+              "surface-dim": "#0e1322"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary/30 min-h-screen">
+<div class="film-grain"></div>
+<!-- TopNavBar -->
+<header class="bg-[#2D3142] dark:bg-[#0e1322] fixed top-0 w-full z-40">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+<div class="text-2xl font-['Newsreader'] italic text-[#FBF9F6]">BoloBridge</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#FBF9F6] font-bold border-b border-[#FBF9F6]/20 transition-colors duration-300" href="#">Stories</a>
+<a class="text-[#FBF9F6]/60 font-medium hover:text-[#FBF9F6] transition-colors duration-300" href="#">Progress</a>
+<a class="text-[#FBF9F6]/60 font-medium hover:text-[#FBF9F6] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#FBF9F6]/60 font-medium hover:text-[#FBF9F6] transition-colors duration-300" href="#">Guidance</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#FBF9F6]/60 hover:text-[#FBF9F6]">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Profile" data-alt="User profile avatar icon small circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9zr5rMgV9djGfO8O1GDxly06h5HKJb6kogqloKHpDK1Bv5vn5iUSmNg6lOD_PIg50ZF1tNH-QgizVN0ic3kI3yxHlTo9rtm_UHyx0A7ELTkjU5LQ9OHXHXkydyGQCbJ_58b384bcjp3QnJYiC65Nzb9Ri4h0HVGpDhNRD7FjrHr_-dXPc9t7SWfYu3cOMKnRHYMvCRMlPLHLjB0hyNFiMLN1FkgvqCmApC-u79JbD1pPavvxdK2EAZawqjmz8lhUkpvo5WoteAGvy"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-8 max-w-[1440px] mx-auto">
+<!-- Hero Section -->
+<section class="mb-16">
+<h1 class="text-6xl md:text-7xl font-headline italic text-[#FBF9F6] tracking-tight leading-tight mb-4">Speech Games</h1>
+<p class="text-xl text-[#FBF9F6]/50 font-body">6 ways to practice through play</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+<!-- ROW 1: Story Studio (2/3 width) -->
+<div class="md:col-span-2 row-span-1 bg-surface-variant rounded-lg p-10 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute inset-0 opacity-40 mix-blend-soft-light group-hover:scale-105 transition-transform duration-700 pointer-events-none">
+<img alt="Watercolor illustrations" class="w-full h-full object-cover" data-alt="Dreamy watercolor storybook landscape with soft warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIq4BRCbWtdO0PDKNt6Vpm_NH2730RV4hUJ0FGWbedRr3j_8kKMpt-rMTUUhve7pi5Rj1a4sjG1zmz3RgKRUL8nzSHxadX2nGNaZTYJm7UcBjmjFUKBnELar_gYfyC93knZfNACpTlTWpvQDND351rzclM9tTCoB1HdoQkf8hD_zuHPyQpo27gJSQFZ7V0mbio4JNOAjPb8JdeJGDqKCuWoVbUdwxKiIHBjE47WMCWnm9866W8td_FpH1rtEqskr0PbxmGkyLjkUlF"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-variant via-surface-variant/40 to-transparent"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="px-4 py-1.5 rounded-full bg-[#4A7C77]/20 text-[#8BCBC4] text-xs font-label tracking-widest uppercase">Read • Record • Improve</span>
+</div>
+<h2 class="text-5xl font-headline italic text-[#FBF9F6] mb-4">Story Studio</h2>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<button class="flex items-center gap-2 bg-[#FBF9F6] text-surface px-6 py-3 rounded-full font-bold hover:scale-95 transition-all">
+<span>Begin Journey</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- ROW 1: Daily Challenge (1/3 width) -->
+<div class="bg-surface-variant rounded-lg p-8 flex flex-col justify-between relative overflow-hidden border-t-4 border-[#FFB74D]">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-[#FFB74D]/10 blur-3xl rounded-full"></div>
+<div>
+<span class="material-symbols-outlined text-[#FFB74D] text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">star</span>
+<h2 class="text-2xl font-headline italic text-[#FBF9F6]">Daily Challenge</h2>
+<p class="text-[#FBF9F6]/60 mt-2">Earn 50 gems for completing today's articulation quest.</p>
+</div>
+<div class="bg-surface-container-high/50 p-4 rounded-lg flex items-center justify-between">
+<div class="text-sm font-label text-[#FBF9F6]/40 uppercase tracking-wider">Progress</div>
+<div class="text-lg font-bold text-[#FFB74D]">0/1</div>
+</div>
+</div>
+<!-- ROW 2: Sound Safari -->
+<div class="bg-surface-variant rounded-lg p-8 flex flex-col justify-between border-t-4 border-[#C19A6B] hover:bg-surface-container-high transition-colors">
+<div>
+<span class="material-symbols-outlined text-[#C19A6B] text-3xl mb-4">travel_explore</span>
+<h3 class="text-2xl font-headline italic text-[#FBF9F6]">Sound Safari</h3>
+<p class="text-[#FBF9F6]/50 mt-2 text-sm">Hunt for hidden phonemes in the wild archive.</p>
+</div>
+<div class="mt-4 flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface-variant flex items-center justify-center text-[10px] text-on-surface-variant">🦁</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface-variant flex items-center justify-center text-[10px] text-on-surface-variant">🦒</div>
+</div>
+</div>
+<!-- ROW 2: Word Garden -->
+<div class="bg-surface-variant rounded-lg p-8 flex flex-col justify-between border-t-4 border-[#81C784] hover:bg-surface-container-high transition-colors">
+<div>
+<span class="material-symbols-outlined text-[#81C784] text-3xl mb-4">potted_plant</span>
+<h3 class="text-2xl font-headline italic text-[#FBF9F6]">Word Garden</h3>
+<p class="text-[#FBF9F6]/50 mt-2 text-sm">Grow your vocabulary through melodic root exercises.</p>
+</div>
+<div class="h-1 w-full bg-[#81C784]/20 rounded-full overflow-hidden">
+<div class="h-full bg-[#81C784] w-2/3"></div>
+</div>
+</div>
+<!-- ROW 2: Rhyme Time -->
+<div class="bg-surface-variant rounded-lg p-8 flex flex-col justify-between border-t-4 border-[#B39DDB] hover:bg-surface-container-high transition-colors">
+<div>
+<span class="material-symbols-outlined text-[#B39DDB] text-3xl mb-4">music_note</span>
+<h3 class="text-2xl font-headline italic text-[#FBF9F6]">Rhyme Time</h3>
+<p class="text-[#FBF9F6]/50 mt-2 text-sm">Match rhythmic patterns to unlock vault secrets.</p>
+</div>
+<div class="flex gap-2">
+<div class="w-6 h-6 rounded bg-[#B39DDB]/20"></div>
+<div class="w-6 h-6 rounded bg-[#B39DDB]/20"></div>
+<div class="w-6 h-6 rounded bg-[#B39DDB]/40"></div>
+</div>
+</div>
+<!-- ROW 3: Tongue Gym (Full width) -->
+<div class="md:col-span-3 bg-surface-variant rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border-t-4 border-[#FF8A80]">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+<img alt="Abstract shapes" class="w-full h-full object-cover" data-alt="Abstract colorful sound wave patterns and geometric shapes on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaNHuH-NuHmn-TO76hzDlqS5WRQvBFUhLm2Wju7rmWbhqucoIjARalp8uGYZLsPdiTU4rdb9IKyICLq7OfMG7WNeHnCn2OmaAGEjsiztd1EoBGdezayNUNTwPvG_4ZT5R5LXlEdku19_CCUdrp3aqa0TVr-Sv6pUsXPAdt0FIf3CvgXacyU7rsz33SIAWdVGwbUsA1tQh_fa9BTxJ8GA6wbioyFf0TxdpcjKEvEBEhyWrjd93NT47XplJs7NUgEbwdGwff6UWDNATf"/>
+</div>
+<div class="relative z-10 max-w-xl">
+<h2 class="text-4xl font-headline italic text-[#FBF9F6] mb-4">Tongue Gym</h2>
+<p class="text-[#FBF9F6]/60 text-lg">High-intensity interval training for clarity and diction. Strengthen your oral muscles with whimsical challenges.</p>
+</div>
+<div class="relative z-10 flex flex-wrap gap-4">
+<div class="flex flex-col items-center gap-2 p-4 bg-surface-container-highest/40 rounded-lg backdrop-blur-sm min-w-[100px]">
+<span class="material-symbols-outlined text-[#FF8A80]">fitness_center</span>
+<span class="text-xs font-label uppercase tracking-widest text-[#FBF9F6]/40">Agility</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 bg-surface-container-highest/40 rounded-lg backdrop-blur-sm min-w-[100px]">
+<span class="material-symbols-outlined text-[#FF8A80]">timer</span>
+<span class="text-xs font-label uppercase tracking-widest text-[#FBF9F6]/40">10 Mins</span>
+</div>
+<button class="bg-[#FF8A80] text-[#0e1322] px-8 py-4 rounded-full font-bold self-center hover:scale-95 transition-all">Start Workout</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e1322] border-t border-[#FBF9F6]/5 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto">
+<div class="font-body text-sm tracking-wide text-[#FBF9F6]/40 mb-6 md:mb-0">
+                © 2024 BoloBridge Archive. All rights reserved.
+            </div>
+<div class="flex gap-10">
+<a class="font-body text-sm tracking-wide text-[#FBF9F6]/40 hover:text-[#FBF9F6] underline decoration-[#FBF9F6]/20 opacity-80 transition-all" href="#">Privacy</a>
+<a class="font-body text-sm tracking-wide text-[#FBF9F6]/40 hover:text-[#FBF9F6] underline decoration-[#FBF9F6]/20 opacity-80 transition-all" href="#">Terms</a>
+<a class="font-body text-sm tracking-wide text-[#FBF9F6]/40 hover:text-[#FBF9F6] underline decoration-[#FBF9F6]/20 opacity-80 transition-all" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge Play - Editorial Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#ffdad4",
+              "on-secondary-fixed-variant": "#9a3e2f",
+              "on-surface": "#313330",
+              "on-secondary": "#fff7f6",
+              "secondary-fixed": "#ffdad4",
+              "on-primary-container": "#643c14",
+              "surface-container-high": "#e9e8e4",
+              "on-primary": "#fff7f4",
+              "on-primary-fixed-variant": "#6f451d",
+              "error-dim": "#821a01",
+              "background": "#fbf9f6",
+              "tertiary": "#3d6853",
+              "primary-dim": "#744921",
+              "surface-container": "#efeeea",
+              "secondary": "#9e4233",
+              "on-tertiary-container": "#396450",
+              "outline": "#7a7b78",
+              "surface": "#fbf9f6",
+              "primary-fixed": "#ffc38f",
+              "primary": "#82552b",
+              "secondary-dim": "#8f3628",
+              "tertiary-dim": "#305b47",
+              "error": "#aa371c",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#27523e",
+              "outline-variant": "#b2b2ae",
+              "error-container": "#fa7150",
+              "surface-variant": "#e3e3de",
+              "inverse-primary": "#ffc38f",
+              "surface-container-low": "#f5f3f0",
+              "on-secondary-fixed": "#742317",
+              "on-background": "#313330",
+              "surface-dim": "#dadad6",
+              "primary-container": "#ffc38f",
+              "tertiary-container": "#cfffe3",
+              "inverse-on-surface": "#9e9d9a",
+              "on-error": "#fff7f6",
+              "on-tertiary": "#e6ffef",
+              "primary-fixed-dim": "#f0b583",
+              "on-secondary-container": "#8d3527",
+              "tertiary-fixed": "#cfffe3",
+              "on-tertiary-fixed-variant": "#446f5a",
+              "surface-container-highest": "#e3e3de",
+              "on-surface-variant": "#5e5f5c",
+              "surface-bright": "#fbf9f6",
+              "inverse-surface": "#0e0e0d",
+              "on-error-container": "#671200",
+              "on-primary-fixed": "#4d2a03",
+              "tertiary-fixed-dim": "#c1f0d5",
+              "surface-tint": "#82552b",
+              "secondary-fixed-dim": "#ffc7be"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #fbf9f6;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAb1-mXaHn5YWpTAgGE1IlxjT-8jTVcDGFGcctzLbdNtffYGJ9_YZpGPZQOswtu261sbHwwYj0unGQnoJPj1Xly7esJxpAO68u3Ag-QG1mEFXtshU7VsGx_doSlctYViPS3Ow5aj2VOr63OBZIcj669xUN_toYQ3jkOqEQ2om6AK93rMrk1HT3dbJFYc9LAnpYmFZcoALttIID8bKVlOO58IGWYEVxQZUPfum0yf3cjbnPdT664E85IfLLYCJ6UOjKDZ7Zk1KZ4oTDO);
+    color: #313330
+    }
+.watercolor-blob {
+    filter: blur(40px);
+    opacity: 0.15;
+    z-index: 0
+    }
+.asymmetric-shadow:hover {
+    box-shadow: 0 20px 40px rgba(49, 51, 48, 0.08);
+    transform: translatey(-4px)
+    }</style>
+</head>
+<body class="font-body selection:bg-secondary-container">
+<!-- TopNavBar from Shared Components JSON -->
+<nav class="bg-[#fbf9f6] dark:bg-[#1a1c1e] docked full-width top-0 no-border space-y-4 flat no shadows flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
+<div class="text-2xl italic font-serif text-[#82552b] dark:text-[#d1c0a8] font-headline">BoloBridge</div>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<a class="font-serif italic Newsreader text-lg tracking-tight text-[#313330]/70 dark:text-[#fbf9f6]/70 hover:text-[#9e4233] transition-colors duration-300" href="#">Library</a>
+<a class="font-serif italic Newsreader text-lg tracking-tight text-[#9e4233] dark:text-[#e49182] font-semibold italic border-b-2 border-[#9e4233]/30 hover:text-[#9e4233] transition-colors duration-300" href="#">Journey</a>
+<a class="font-serif italic Newsreader text-lg tracking-tight text-[#313330]/70 dark:text-[#fbf9f6]/70 hover:text-[#9e4233] transition-colors duration-300" href="#">Awards</a>
+<a class="font-serif italic Newsreader text-lg tracking-tight text-[#313330]/70 dark:text-[#fbf9f6]/70 hover:text-[#9e4233] transition-colors duration-300" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#82552b] text-2xl scale-95 duration-200 transition-transform cursor-pointer">account_circle</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1440px] mx-auto px-8 py-12">
+<!-- Editorial Header Section -->
+<header class="mb-16 space-y-2">
+<p class="text-secondary font-headline italic text-xl">The Living Scrapbook</p>
+<h1 class="text-on-surface font-headline italic text-6xl md:text-7xl tracking-tight max-w-2xl leading-[1.1]">
+                Today's Speech Adventures.
+            </h1>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Row 1: Story Studio & Daily Challenge -->
+<section class="md:col-span-2 relative group cursor-pointer transition-all duration-500 rounded-xl bg-surface-container-low overflow-hidden asymmetric-shadow min-h-[400px]">
+<div class="absolute inset-0 watercolor-blob bg-tertiary top-[-20%] right-[-10%] rounded-full w-96 h-96"></div>
+<div class="relative z-10 p-12 h-full flex flex-col justify-between">
+<div class="max-w-md space-y-6">
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full text-xs font-label uppercase tracking-widest">Mastery Path</span>
+<h2 class="text-on-surface font-headline italic text-5xl leading-tight">Story Studio</h2>
+<p class="text-on-surface/70 text-lg leading-relaxed font-body">Step into an open storybook where words float and magic happens. Narrate your own journey and find your voice.</p>
+<div class="flex items-center gap-4 group-hover:gap-6 transition-all">
+<div class="bg-primary p-4 rounded-full text-on-primary">
+<span class="material-symbols-outlined block" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="font-label text-sm font-bold text-primary">Begin the tale</span>
+</div>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-90">
+<img alt="Watercolor illustration of an open book" class="w-full h-full object-contain object-right-bottom mix-blend-multiply" data-alt="Watercolor of an open storybook with floating golden particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9oNSbQ1MKhdaCcI0irVVQQ9tV5pGUFMjlejlk8theiW1wzlSR64NRy3EFJKToaYgZm1Ygb8sg-1_AY_HFMK2f75mkm1ZupMDK_jiaDE_MbmEucPv01_NQRbcku3pmnzC_dChsfYy3PUcuLuUMqtMkleb0lfw_79MBzWBnhuqzEn_RLYx6Qnm1yFytRdTM9xTAbHkmTIohpbimNwqWog3GpmfL0PaDHBFYv5VqAbOTe7t0CjBg4FDRswWUNyk2Q3piXelLkT2xJZ1R"/>
+</div>
+</section>
+<section class="relative group cursor-pointer transition-all duration-500 rounded-xl bg-surface-container-lowest overflow-hidden asymmetric-shadow border border-outline-variant/10">
+<div class="p-8 h-full flex flex-col items-center justify-center text-center space-y-6">
+<div class="relative">
+<div class="absolute inset-0 watercolor-blob bg-primary-fixed scale-150 rounded-full"></div>
+<span class="material-symbols-outlined text-primary text-6xl relative z-10" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="space-y-2">
+<span class="font-label text-xs font-bold text-secondary uppercase tracking-widest">Today's Goal</span>
+<h3 class="text-on-surface font-headline italic text-3xl">The Golden Tongue</h3>
+<p class="text-on-surface/60 text-sm">Practice the 'S' sound 10 times to unlock the Sandcastle Badge.</p>
+</div>
+<button class="w-full bg-surface-container-highest py-4 rounded-full font-label text-sm hover:bg-secondary-container transition-colors">Accept Challenge</button>
+</div>
+</section>
+<!-- Row 2: Safari, Garden, Rhyme -->
+<section class="group cursor-pointer transition-all duration-500 rounded-xl bg-surface-container-low overflow-hidden asymmetric-shadow min-h-[320px] p-8 flex flex-col justify-between">
+<div class="w-16 h-16 rounded-xl bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">cruelty_free</span>
+</div>
+<div class="space-y-2">
+<h4 class="text-on-surface font-headline italic text-2xl">Sound Safari</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed">Mimic the calls of the wild as you explore animal habitats.</p>
+</div>
+<div class="pt-6">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</section>
+<section class="group cursor-pointer transition-all duration-500 rounded-xl bg-surface-container-low overflow-hidden asymmetric-shadow min-h-[320px] p-8 flex flex-col justify-between">
+<div class="w-16 h-16 rounded-xl bg-tertiary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl">psychology_alt</span>
+</div>
+<div class="space-y-2">
+<h4 class="text-on-surface font-headline italic text-2xl">Word Garden</h4>
+<h5 class="sr-only">Vocabulary Building</h5>
+<p class="text-on-surface/70 text-sm leading-relaxed">Plant new syllables and watch your vocabulary bloom into flowers.</p>
+</div>
+<div class="pt-6">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</section>
+<section class="group cursor-pointer transition-all duration-500 rounded-xl bg-surface-container-low overflow-hidden asymmetric-shadow min-h-[320px] p-8 flex flex-col justify-between">
+<div class="w-16 h-16 rounded-xl bg-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary-container text-3xl">music_note</span>
+</div>
+<div class="space-y-2">
+<h4 class="text-on-surface font-headline italic text-2xl">Rhyme Time</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed">Find the perfect rhythm as you match sounds that sing together.</p>
+</div>
+<div class="pt-6">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</section>
+<!-- Row 3: Tongue Gym Banner -->
+<section class="md:col-span-3 relative group cursor-pointer transition-all duration-500 rounded-xl bg-gradient-to-r from-secondary-container to-surface-container overflow-hidden asymmetric-shadow p-1">
+<div class="bg-surface rounded-[2.8rem] w-full h-full p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
+<div class="absolute inset-0 watercolor-blob bg-secondary left-[-5%] bottom-[-20%] rounded-full w-80 h-80"></div>
+<div class="relative z-10 flex-1 space-y-6">
+<div class="inline-flex items-center gap-2 bg-on-secondary-fixed-variant/5 px-4 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[10px] uppercase font-label tracking-tighter text-on-secondary-fixed-variant">New Exercise Series</span>
+</div>
+<h2 class="text-on-surface font-headline italic text-4xl md:text-5xl">Tongue Gym</h2>
+<p class="text-on-surface/70 text-lg max-w-xl font-body">Strengthen your speech muscles with playful morning stretches and wiggle workouts designed for tiny voices.</p>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label text-sm transition-all hover:scale-105 inline-flex items-center gap-3">
+                            Start Stretching
+                            <span class="material-symbols-outlined text-sm">fitness_center</span>
+</button>
+</div>
+<div class="relative z-10 w-full md:w-1/3 aspect-video md:aspect-auto">
+<div class="w-full h-48 md:h-64 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-secondary-dim/20" style="font-variation-settings: 'FILL' 1;">face_6</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer from Shared Components JSON -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#fbf9f6] dark:bg-[#1a1c1e] font-sans text-sm tracking-wide border-t border-[#82552b]/10 full-width bottom-0 flat no shadows">
+<div class="text-lg font-bold text-[#313330] font-headline italic">BoloBridge</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:text-[#82552b] dark:hover:text-white transition-all opacity-80 hover:opacity-100 underline decoration-[#9e4233]/40" href="#">Privacy Policy</a>
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:text-[#82552b] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:text-[#82552b] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Contact Us</a>
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:text-[#82552b] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Speech Guidelines</a>
+</div>
+<div class="text-[#82552b] dark:text-[#d1c0a8] opacity-60">
+            © 2024 BoloBridge Editorial. Crafted for growth.
+        </div>
+</footer>
+</body></html>

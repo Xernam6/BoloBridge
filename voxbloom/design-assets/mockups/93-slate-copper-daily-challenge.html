@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f6f9ff",
+                        "surface-container-highest": "#d9e4f0",
+                        "surface-container-low": "#ecf5ff",
+                        "primary-fixed": "#cee5ff",
+                        "on-primary-container": "#d1e6ff",
+                        "on-secondary-fixed-variant": "#713701",
+                        "primary-container": "#506880",
+                        "inverse-primary": "#b0c9e4",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#301400",
+                        "tertiary-container": "#406f58",
+                        "on-primary-fixed-variant": "#314960",
+                        "on-tertiary-fixed": "#002114",
+                        "surface": "#f6f9ff",
+                        "tertiary": "#275641",
+                        "surface-container-high": "#dee9f5",
+                        "outline": "#73777d",
+                        "surface-tint": "#496178",
+                        "surface-variant": "#d9e4f0",
+                        "on-primary-fixed": "#011d32",
+                        "on-primary": "#ffffff",
+                        "primary": "#385067",
+                        "inverse-on-surface": "#e7f2fe",
+                        "outline-variant": "#c3c7cd",
+                        "primary-fixed-dim": "#b0c9e4",
+                        "surface-container": "#e4effb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#783d07",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#baeed2",
+                        "tertiary-fixed-dim": "#9fd2b6",
+                        "secondary-fixed-dim": "#ffb784",
+                        "secondary": "#8e4e19",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f6f9ff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#121d25",
+                        "surface-dim": "#d0dbe7",
+                        "on-tertiary-fixed-variant": "#1f4f3b",
+                        "secondary-fixed": "#ffdcc6",
+                        "inverse-surface": "#27323b",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#121d25",
+                        "on-tertiary-container": "#bcf0d3",
+                        "secondary-container": "#ffab6e",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#43474c"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDDlXLb1jMXbkp2Z-8Ha4_ddj0VSVF9HBVZsA4x2IO36ZIw_5aZCIehe95xf_lgttOAdWRyukJG4OWFRo05RbzB8q5YRymYGo_oDLeIs2Z0D7Sy3igJuCNtHxRpibjF-58XR1Sz1OXBhepc9AJhX8wC62KejPlcXe8EBj6dBrHAQdo2017gXYK8obYm3z91brHCkWO9YqgVKsAtYBo4FLGsa0ozUOTVdirIbPoesrVvXJO7qvNVFmLVd8VPa_TDJ7LXL_rKgencCUAn)
+    }
+.pressed-in {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)
+    }</style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen grain-texture selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-[#f6f9ff] dark:bg-[#121d25] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-['Inter'] font-black uppercase tracking-tighter text-[#385067] dark:text-[#d0dbe7]">
+                BoloBridge
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#385067] dark:text-[#ffffff] border-b-2 border-[#8e4e19] font-label font-bold text-xs uppercase tracking-widest py-1" href="#">Journey</a>
+<a class="text-[#506880] dark:text-[#c3c7cd] hover:text-[#8e4e19] transition-colors duration-200 font-label font-bold text-xs uppercase tracking-widest py-1" href="#">Library</a>
+<a class="text-[#506880] dark:text-[#c3c7cd] hover:text-[#8e4e19] transition-colors duration-200 font-label font-bold text-xs uppercase tracking-widest py-1" href="#">Progress</a>
+</div>
+<div class="flex items-center gap-4 text-[#385067] dark:text-[#d0dbe7]">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="account_circle">account_circle</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="settings">settings</span>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#ecf5ff] to-transparent h-4"></div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-6 md:px-16 py-8 pb-32">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<h1 class="font-headline italic text-5xl md:text-6xl text-on-surface tracking-tight">Today's <span class="text-primary">Challenge</span></h1>
+<p class="font-label uppercase text-[10px] tracking-[0.2em] text-outline mt-2 font-bold">Session ID: BB-99234-STUDIO</p>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed px-5 py-2 rounded-xl flex items-center gap-2 shadow-sm">
+<span class="font-label font-black text-sm uppercase tracking-wider">Day 5 of 7</span>
+<span class="material-symbols-outlined text-lg" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Current Challenge Card (Large, Column 1-8) -->
+<section class="lg:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 md:p-12 shadow-[0px_20px_40px_rgba(18,29,37,0.04)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full opacity-40"></div>
+<div class="relative z-10">
+<h2 class="font-headline italic text-3xl text-secondary mb-8">Tongue Twisters: /s/ Edition</h2>
+<div class="space-y-4 mb-12">
+<div class="bg-surface-container-low border-l-4 border-primary-container p-6 rounded-xl transition-all hover:translate-x-1 group">
+<p class="text-lg text-primary font-medium tracking-tight">"She sells seashells by the seashore."</p>
+<div class="mt-2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label text-[10px] text-outline font-bold uppercase tracking-widest">Mastery Required</span>
+</div>
+</div>
+<div class="bg-surface-container-low border-l-4 border-primary-container p-6 rounded-xl transition-all hover:translate-x-1 group">
+<p class="text-lg text-primary font-medium tracking-tight">"Six slippery snails slid slowly seaward."</p>
+</div>
+<div class="bg-surface-container-low border-l-4 border-primary-container p-6 rounded-xl transition-all hover:translate-x-1 group">
+<p class="text-lg text-primary font-medium tracking-tight">"Swan swam over the sea, swim swan swim!"</p>
+</div>
+</div>
+<!-- Recording Module -->
+<div class="flex flex-col items-center justify-center py-8">
+<div class="relative p-1 rounded-full bg-gradient-to-br from-secondary to-on-secondary-container shadow-xl active:scale-95 transition-transform cursor-pointer">
+<div class="bg-surface-container-lowest rounded-full p-6">
+<span class="material-symbols-outlined text-5xl text-secondary" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+</div>
+<div class="mt-6 text-center">
+<span class="font-label text-xl font-bold text-primary-container tabular-nums tracking-widest">0:00 / 2:00</span>
+<p class="text-outline text-xs uppercase font-black tracking-tighter mt-1">Tap to start recording</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/30 flex justify-between items-center">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label text-xs font-black uppercase tracking-widest">Intermediate Difficulty</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Row (Under Main Card) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-6 rounded-2xl flex items-center gap-4 border border-outline-variant/10">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline font-black uppercase tracking-[0.15em]">Current Streak</p>
+<p class="text-2xl font-bold text-on-surface">5 <span class="text-xs text-outline font-normal">Days</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex items-center gap-4 border border-outline-variant/10">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline font-black uppercase tracking-[0.15em]">Best Score</p>
+<p class="text-2xl font-bold text-on-surface">94%</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex items-center gap-4 border border-outline-variant/10">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-outline font-black uppercase tracking-[0.15em]">Total Challenges</p>
+<p class="text-2xl font-bold text-on-surface">23</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Week View Section (Sidebar, Column 9-12) -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-[2rem] p-8 h-full flex flex-col border border-outline-variant/10">
+<h3 class="font-headline italic text-2xl text-on-surface mb-2">Weekly <span class="text-primary">Engagement</span></h3>
+<p class="font-label text-[10px] text-outline font-black uppercase tracking-[0.2em] mb-12">Mon 12 — Sun 18</p>
+<!-- Bar Chart -->
+<div class="flex-grow flex items-end justify-between gap-2 h-64 mb-8">
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 60%"></div>
+<span class="font-label text-[10px] text-outline font-bold">M</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 85%"></div>
+<span class="font-label text-[10px] text-outline font-bold">T</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 45%"></div>
+<span class="font-label text-[10px] text-outline font-bold">W</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 70%"></div>
+<span class="font-label text-[10px] text-outline font-bold">T</span>
+</div>
+<!-- Highlighted Today (Friday) -->
+<div class="flex flex-col items-center gap-2 flex-1 relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-secondary-fixed/50 blur-xl rounded-full"></div>
+<div class="w-full bg-secondary rounded-t-lg shadow-[0_-4px_12px_rgba(142,78,25,0.3)]" style="height: 95%"></div>
+<span class="font-label text-[10px] text-secondary font-black">F</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg" style="height: 10%"></div>
+<span class="font-label text-[10px] text-outline font-bold">S</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-lg" style="height: 10%"></div>
+<span class="font-label text-[10px] text-outline font-bold">S</span>
+</div>
+</div>
+<div class="bg-surface-container-highest/50 rounded-2xl p-6 text-center">
+<p class="font-headline italic text-xl text-on-surface">"This Week's Average: <span class="text-tertiary">82%</span>"</p>
+<p class="font-label text-[10px] text-outline font-bold uppercase tracking-widest mt-2">Top 15% of peers</p>
+</div>
+<div class="mt-auto pt-8">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 rounded-xl font-label font-black text-xs uppercase tracking-[0.2em] shadow-lg active:scale-95 transition-all">
+                            View Full History
+                        </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only Logic) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff]/85 dark:bg-[#121d25]/85 backdrop-blur-md z-50 rounded-t-[2rem] shadow-[0px_-10px_40px_rgba(18,29,37,0.04)] border-t border-[#c3c7cd]/15">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#385067] to-[#506880] text-white rounded-xl px-5 py-2 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Inter'] text-[10px] uppercase font-bold tracking-widest mt-1">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#506880] dark:text-[#c3c7cd] px-5 py-2 hover:bg-[#ecf5ff] dark:hover:bg-[#385067]/20 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-['Inter'] text-[10px] uppercase font-bold tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#506880] dark:text-[#c3c7cd] px-5 py-2 hover:bg-[#ecf5ff] dark:hover:bg-[#385067]/20 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Inter'] text-[10px] uppercase font-bold tracking-widest mt-1">Progress</span>
+</a>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 w-[40vw] h-[40vw] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-[30vw] h-[30vw] bg-secondary-fixed/10 rounded-full blur-[100px] pointer-events-none"></div>
+</body></html>

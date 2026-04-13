@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#171b2b",
+              "secondary": "#aad0ad",
+              "primary-container": "#c2956b",
+              "on-tertiary-fixed": "#002021",
+              "inverse-primary": "#7c5732",
+              "surface-tint": "#eebd90",
+              "inverse-on-surface": "#2c3041",
+              "surface-container-lowest": "#090d1d",
+              "on-primary-container": "#4d2e0d",
+              "on-surface": "#dee1f8",
+              "surface-container-high": "#25293a",
+              "on-primary-fixed-variant": "#613f1d",
+              "on-primary-fixed": "#2d1600",
+              "on-tertiary-container": "#003c3d",
+              "surface-dim": "#0e1322",
+              "secondary-fixed": "#c6ecc8",
+              "on-tertiary": "#003738",
+              "on-background": "#dee1f8",
+              "on-surface-variant": "#d4c4b7",
+              "surface-container-highest": "#303445",
+              "outline-variant": "#50453c",
+              "on-tertiary-fixed-variant": "#004f51",
+              "on-secondary-fixed": "#00210b",
+              "tertiary": "#92d2d3",
+              "primary": "#eebd90",
+              "on-primary": "#472a08",
+              "error": "#ffb4ab",
+              "on-secondary": "#16371f",
+              "primary-fixed-dim": "#eebd90",
+              "surface-variant": "#303445",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#2d4e33",
+              "secondary-fixed-dim": "#aad0ad",
+              "on-error": "#690005",
+              "surface-bright": "#34384a",
+              "surface": "#0e1322",
+              "secondary-container": "#2d4e33",
+              "surface-container": "#1b1f2f",
+              "background": "#0e1322",
+              "on-secondary-container": "#99be9d",
+              "inverse-surface": "#dee1f8",
+              "tertiary-fixed-dim": "#92d2d3",
+              "tertiary-fixed": "#aeeef0",
+              "primary-fixed": "#ffdcbf",
+              "outline": "#9c8e83",
+              "error-container": "#93000a",
+              "tertiary-container": "#69a8aa"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #0e1322;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDzD7VhG-tE1zELOX-uL3_rWNIhiHhe0N8Lk-vSTuXAwyA-MeeVXXyKBoOU-je_nmaML3rZSlL2O96r6F5Ls5NkdkPemc-dVxnUCl1Ni0U5Ym0e-NjP6TQUrR_gIQlE8-o9OibLhyLGmZcqaaC5VfsKLXzpnPa8qDqwnxjlUIKVcqGFN-w9bEMIqmUmnFv0mKGbSFbjUMyimybZ79ciI-_Wcz60WfgPcUXKSaNyzufYQwYjiUBDW7nX7IwLJq2s93Us-qmhhrJMDyFw);
+    background-repeat: repeat
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB1tM2dn0e_JZPIOyi9Lkng6CSBT_if0vWa-TPSQtpKpr-pF8rufEo2_eh4lJIAR2S7-WmgObe56JAKnmeKf2WSq8TAwtz9k9M_-zRekzOp72nAxPS9uZubEVt-baskosqRH7F3tT1M0hwmktZS8Us5HcFYMY8l3LWwhw6ljPikCyGgViwVS7HvtfhWYbNOl3ikuS_6J1diveENHFxI9ePafO1pGXKRcgjn6qGcWOATqaT0W2U5A7wwUDzLqKqj3Eddaf9t7HIogNtg)
+    }
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0
+    }</style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
+<nav class="bg-[#0e1322] dark:bg-slate-950/60 backdrop-blur-xl flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto docked full-width top-0 sticky z-50 shadow-[0_20px_40px_rgba(14,19,34,0.4)]">
+<div class="text-2xl font-['Newsreader'] italic text-[#eebd90] tracking-tighter">Midnight Library</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-[#dee1f8]/70 font-light hover:text-[#eebd90] transition-colors duration-300" href="#">Stories</a>
+<a class="text-[#dee1f8]/70 font-light hover:text-[#eebd90] transition-colors duration-300" href="#">Progress</a>
+<a class="text-[#dee1f8]/70 font-light hover:text-[#eebd90] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#eebd90] font-semibold border-b-2 border-[#eebd90] pb-1" href="#">Guidance</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-medium hover:scale-95 duration-200 ease-in-out">Begin Session</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Guardian Profile portrait photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7G2YOJdhHB-H1u_-OsD2svDvnlt8dDGUkrDId_xQMbSxrOSsfiLdf_JUEh_1Ojl3LMFaVxcBqe0mdkInn1uWIPmPzLyYTIpz9K1qmS_yMeO5-WATqATrm9XZyTmwjX8I-Lub4NVwcJQ9LFrRKH_fQODT4CsCdzlO_rwB3Sy8-SqBd1IenoqLvLY63P9yEdP1bGfQwK03icD-SURyokXxbmZSnxb9Q9ffYGRwVu-eUHsUyZxh_NE25yoxw3_4ly0SmrpAK5c_XpOLu"/>
+</div>
+</div>
+</nav>
+<main class="relative overflow-hidden">
+<!-- Glow Orbs -->
+<div class="glow-orb w-[600px] h-[600px] bg-secondary/10 -top-40 -left-40"></div>
+<div class="glow-orb w-[500px] h-[500px] bg-primary/5 top-1/2 -right-40"></div>
+<!-- Hero Section -->
+<section class="relative z-10 pt-24 pb-16 px-12 max-w-screen-xl mx-auto text-center">
+<div class="inline-flex items-center justify-center w-20 h-20 bg-surface-container-high rounded-full mb-8 shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h1 class="text-7xl md:text-8xl font-headline italic text-primary tracking-tight mb-6">You're Not Alone</h1>
+<p class="text-on-surface-variant text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                Navigating the journey of speech and language development can feel overwhelming. We are here to whisper guidance into the quiet moments, connecting you with the right care.
+            </p>
+</section>
+<!-- Search Card -->
+<section class="relative z-10 px-12 mb-32">
+<div class="max-w-4xl mx-auto bg-surface-container-low p-10 md:p-14 rounded-xl shadow-2xl backdrop-blur-sm border border-outline-variant/5">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+<div class="flex flex-col gap-3">
+<label class="text-xs font-label uppercase tracking-widest text-primary/60 ml-2">Location</label>
+<div class="relative">
+<input class="w-full bg-surface-container-highest border-none rounded-full py-4 px-6 text-primary placeholder:text-primary/30 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="City or Postal Code" type="text"/>
+<span class="material-symbols-outlined absolute right-5 top-4 text-primary/40">location_on</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="text-xs font-label uppercase tracking-widest text-primary/60 ml-2">Age Group</label>
+<select class="w-full bg-surface-container-highest border-none rounded-full py-4 px-6 text-primary focus:ring-2 focus:ring-primary/20 appearance-none transition-all">
+<option>Early Years (0-3)</option>
+<option>Preschool (3-5)</option>
+<option>School Age (6-12)</option>
+<option>Adolescent (13+)</option>
+</select>
+</div>
+<div class="flex flex-col gap-3">
+<label class="text-xs font-label uppercase tracking-widest text-primary/60 ml-2">Primary Concern</label>
+<select class="w-full bg-surface-container-highest border-none rounded-full py-4 px-6 text-primary focus:ring-2 focus:ring-primary/20 appearance-none transition-all">
+<option>Speech Clarity</option>
+<option>Language Delay</option>
+<option>Social Communication</option>
+<option>Stuttering</option>
+</select>
+</div>
+</div>
+<div class="flex justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-12 py-5 rounded-full font-semibold text-lg hover:scale-105 transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined">search</span>
+                        Find Resources
+                    </button>
+</div>
+</div>
+</section>
+<!-- Quick Help Grid -->
+<section class="relative z-10 px-12 mb-32 max-w-screen-xl mx-auto">
+<div class="flex items-baseline justify-between mb-12">
+<h2 class="text-4xl font-headline italic text-on-surface">Tailored Support</h2>
+<div class="h-px flex-grow mx-8 bg-gradient-to-r from-outline-variant/20 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-low group p-10 rounded-xl hover:bg-surface-container-high transition-all duration-500 cursor-pointer">
+<div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl">child_care</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-4">Under 3</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Early intervention resources for our youngest learners, focusing on foundational communication milestones.</p>
+<div class="flex items-center text-secondary font-medium group-hover:translate-x-2 transition-transform">
+                        Explore Early Steps <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low group p-10 rounded-xl hover:bg-surface-container-high transition-all duration-500 cursor-pointer">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-4">Ages 3-12</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Support for school-aged children, bridging the gap between classroom success and social expression.</p>
+<div class="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
+                        School Readiness <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low group p-10 rounded-xl hover:bg-surface-container-high transition-all duration-500 cursor-pointer">
+<div class="w-14 h-14 bg-tertiary/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-3xl">devices</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-4">Prefer Online</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Expert tele-therapy options that bring world-class guidance into the comfort of your living room.</p>
+<div class="flex items-center text-tertiary font-medium group-hover:translate-x-2 transition-transform">
+                        View Digital Clinics <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low group p-10 rounded-xl hover:bg-surface-container-high transition-all duration-500 cursor-pointer">
+<div class="w-14 h-14 bg-secondary-fixed-dim/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-secondary-fixed-dim/20 transition-colors">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">payments</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary mb-4">Cost Concerns</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">Information on grants, insurance coverage, and community-funded speech pathology programs.</p>
+<div class="flex items-center text-secondary-fixed-dim font-medium group-hover:translate-x-2 transition-transform">
+                        Financial Guidance <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="relative z-10 px-12 pb-32 max-w-screen-xl mx-auto">
+<div class="flex flex-col items-center text-center mb-16">
+<h2 class="text-5xl font-headline italic text-on-surface mb-4">Global Authorities</h2>
+<p class="text-on-surface-variant max-w-xl">We partner with and recommend resources from the world's leading speech and language associations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- ASHA -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-lg mb-6 flex items-center justify-center">
+<span class="text-primary font-bold text-xl">ASHA</span>
+</div>
+<h4 class="text-xl font-headline italic text-on-surface mb-3">American Speech-Language-Hearing Association</h4>
+<p class="text-sm text-on-surface-variant mb-8 line-clamp-3">The premier professional association for 223,000 members and affiliates in the United States and beyond.</p>
+<a class="mt-auto px-6 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors" href="#">Visit Website</a>
+</div>
+<!-- RCSLT -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-lg mb-6 flex items-center justify-center">
+<span class="text-primary font-bold text-xl">RCSLT</span>
+</div>
+<h4 class="text-xl font-headline italic text-on-surface mb-3">Royal College of Speech &amp; Language Therapists</h4>
+<p class="text-sm text-on-surface-variant mb-8 line-clamp-3">The professional body for speech and language therapists in the United Kingdom, setting gold standards for care.</p>
+<a class="mt-auto px-6 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors" href="#">Visit Website</a>
+</div>
+<!-- Speech Pathology Australia -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-lg mb-6 flex items-center justify-center">
+<span class="text-primary font-bold text-xl">SPA</span>
+</div>
+<h4 class="text-xl font-headline italic text-on-surface mb-3">Speech Pathology Australia</h4>
+<p class="text-sm text-on-surface-variant mb-8 line-clamp-3">The national peak body for the speech pathology profession in Australia, ensuring quality and equity.</p>
+<a class="mt-auto px-6 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors" href="#">Visit Website</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#171b2b] dark:bg-slate-900 w-full mt-auto py-16 px-12 border-t border-[#50453c]/15">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="text-[#dee1f8] font-['Newsreader'] italic text-2xl">The Midnight Library</div>
+<p class="text-[#dee1f8]/50 text-sm tracking-relaxed uppercase font-['Inter']">© 2024 The Midnight Library. Whisper-quiet care for every story.</p>
+</div>
+<div class="flex gap-10">
+<a class="text-[#dee1f8]/50 font-['Inter'] text-sm tracking-relaxed uppercase hover:text-[#eebd90] underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity" href="#">Crisis Support</a>
+<a class="text-[#dee1f8]/50 font-['Inter'] text-sm tracking-relaxed uppercase hover:text-[#eebd90] underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity" href="#">Find a Specialist</a>
+<a class="text-[#dee1f8]/50 font-['Inter'] text-sm tracking-relaxed uppercase hover:text-[#eebd90] underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Ledger</a>
+<a class="text-[#dee1f8]/50 font-['Inter'] text-sm tracking-relaxed uppercase hover:text-[#eebd90] underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity" href="#">The Archive</a>
+</div>
+</div>
+</footer>
+</body></html>

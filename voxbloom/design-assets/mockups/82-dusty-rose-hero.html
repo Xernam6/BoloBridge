@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Bridging Every Voice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-error": "#ffffff",
+                "on-surface": "#211a18",
+                "outline-variant": "#d6c2c0",
+                "tertiary": "#755470",
+                "primary-fixed-dim": "#f5b8b0",
+                "surface-container": "#faebe7",
+                "on-primary-fixed": "#32110e",
+                "on-secondary-container": "#7c496e",
+                "tertiary-container": "#b993b2",
+                "on-primary": "#ffffff",
+                "on-tertiary-container": "#492c46",
+                "primary-fixed": "#ffdad5",
+                "inverse-on-surface": "#fdeeea",
+                "inverse-primary": "#f5b8b0",
+                "secondary": "#814d73",
+                "surface-dim": "#e5d7d3",
+                "primary-container": "#c9918a",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#f3b3de",
+                "primary": "#81524c",
+                "surface-container-high": "#f4e5e1",
+                "tertiary-fixed-dim": "#e3badb",
+                "tertiary-fixed": "#ffd7f6",
+                "outline": "#847371",
+                "surface-variant": "#eedfdc",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#eedfdc",
+                "secondary-container": "#ffbee9",
+                "on-surface-variant": "#514442",
+                "on-primary-fixed-variant": "#663b36",
+                "on-tertiary-fixed": "#2c122a",
+                "secondary-fixed": "#ffd7ef",
+                "surface-container-low": "#fff1ed",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#372f2c",
+                "on-primary-container": "#522b26",
+                "on-background": "#211a18",
+                "background": "#fff8f6",
+                "error": "#ba1a1a",
+                "surface-tint": "#81524c",
+                "surface": "#fff8f6",
+                "surface-bright": "#fff8f6",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed-variant": "#67365a",
+                "on-secondary-fixed": "#340a2c",
+                "on-tertiary-fixed-variant": "#5b3d57"
+              },
+              fontFamily: {
+                "headline": ["Newsreader", "serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+      </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCSgBMLCdT_kr15g5tSjONGd-zPGrJysuqVs9lrfqKnnkLe0rJRKZ0AUuDWgZll05G4v09oqJlMLAYJNEkKf5RUJhvQImHUeufrAObOZe1RM-akJA99U5BNlYZ3_vvKsZk2L7IYdPWmmO9-qX0lCE3MnNuV-OKeK3PvGbfJ15kcC2NI5bjEFYTnscSmlGw3Dox2IVnkjMNlncUaxEQluHLRX-P_Fm6OzgEv57j7TQc9outKqSEZrCBh1elRN4SxHGvjwUEkfcS4B_3i)
+    }
+.watercolor-blob {
+    filter: blur(40px);
+    mix-blend-mode: multiply
+    }
+.hero-headline {
+    line-height: 0.95
+    }</style>
+</head>
+<body class="bg-[#FFF0EC] text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="film-grain"></div>
+<!-- Top Navigation Bar -->
+<header class="bg-[#fff8f6] dark:bg-[#2E1A2B] docked full-width top-0 z-50">
+<nav class="flex justify-between items-center px-12 py-8 max-w-screen-2xl mx-auto">
+<div class="font-serif italic text-3xl text-[#6b3a5e] dark:text-[#ffdad5]">BoloBridge</div>
+<div class="hidden md:flex items-center space-gap-10 gap-10">
+<a class="text-[#6b3a5e] dark:text-[#ffdad5] border-b-2 border-[#c9918a] pb-1 hover:text-[#81524c] transition-colors duration-300" href="#">The Archive</a>
+<a class="text-[#c9918a] dark:text-[#d6c2c0] font-sans uppercase tracking-widest text-xs hover:text-[#81524c] transition-colors duration-300" href="#">Curated Collections</a>
+<a class="text-[#c9918a] dark:text-[#d6c2c0] font-sans uppercase tracking-widest text-xs hover:text-[#81524c] transition-colors duration-300" href="#">Floral Theory</a>
+<a class="text-[#c9918a] dark:text-[#d6c2c0] font-sans uppercase tracking-widest text-xs hover:text-[#81524c] transition-colors duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-[#c9918a] dark:text-[#eedfdc]">menu</span>
+</div>
+</nav>
+<div class="bg-[#faebe7] h-[1px] w-3/5 mx-auto opacity-50"></div>
+</header>
+<main class="relative min-h-screen overflow-hidden">
+<!-- Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-12 pt-20 pb-32 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+<!-- Left Side: Content -->
+<div class="relative z-10 flex flex-col items-start gap-8">
+<!-- Pill -->
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20">
+<span class="text-secondary font-medium text-sm tracking-wide flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                        Speech Wellness for Every Child
+                    </span>
+</div>
+<!-- Headline -->
+<h1 class="hero-headline font-headline italic font-bold text-7xl md:text-8xl text-inverse-surface tracking-tight">
+                    Bridging Every Voice to <span class="text-primary-container">Confidence</span>
+</h1>
+<!-- Subtitle -->
+<p class="text-xl md:text-2xl text-on-surface-variant/70 max-w-xl leading-relaxed">
+                    A personalized, archival approach to pediatric speech development. Rooted in research, nurtured by intentional design.
+                </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-6 mt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white rounded-lg font-medium shadow-sm hover:opacity-90 transition-all">
+                        Get Started
+                    </button>
+<button class="px-8 py-4 border-2 border-secondary text-secondary rounded-lg font-medium hover:bg-secondary/5 transition-all">
+                        Learn More
+                    </button>
+</div>
+<!-- Trust Badges -->
+<div class="flex flex-wrap items-center gap-8 mt-12">
+<div class="flex items-center gap-2 text-secondary/60">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="uppercase tracking-widest text-[10px] font-bold">Research-Based</span>
+</div>
+<div class="flex items-center gap-2 text-secondary/60">
+<span class="material-symbols-outlined text-sm">language</span>
+<span class="uppercase tracking-widest text-[10px] font-bold">6 Languages</span>
+</div>
+<div class="flex items-center gap-2 text-secondary/60">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span class="uppercase tracking-widest text-[10px] font-bold">Built with Care</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Whimsical Illustration Area -->
+<div class="relative w-full aspect-square max-w-2xl mx-auto lg:ml-auto">
+<!-- Decorative Watercolor Elements -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
+<!-- Soft Blobs -->
+<div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-[#c9918a] watercolor-blob opacity-40"></div>
+<div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-[#814d73] watercolor-blob opacity-30"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[#f3b3de] watercolor-blob opacity-20"></div>
+<!-- Illustrated Speech Bubbles (Abstract SVG placeholder) -->
+<svg aria-hidden="true" class="relative z-20 w-full h-full drop-shadow-2xl opacity-90" viewbox="0 0 500 500">
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#c9918a;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#81524c;stop-opacity:1"></stop>
+</lineargradient>
+<lineargradient id="grad2" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#814d73;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#755470;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<!-- Stylized speech bubble watercolor strokes -->
+<path d="M150,150 Q250,50 350,150 T450,250 T350,350 T150,350 T50,250 T150,150" fill="url(#grad1)" opacity="0.6"></path>
+<path d="M300,300 Q380,250 420,320 T350,450 T200,400 T300,300" fill="url(#grad2)" opacity="0.7"></path>
+<circle cx="120" cy="400" fill="#f3b3de" opacity="0.5" r="40"></circle>
+<circle cx="420" cy="120" fill="#eedfdc" opacity="0.8" r="30"></circle>
+<!-- Archival Line Details -->
+<path d="M180,180 C220,160 280,160 320,180" fill="none" opacity="0.3" stroke="#2E1A2B" stroke-width="0.5"></path>
+<path d="M330,330 C370,310 400,340 420,380" fill="none" opacity="0.3" stroke="#2E1A2B" stroke-width="0.5"></path>
+</svg>
+</div>
+<!-- Center Focus Card -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-3/4 p-8 bg-[#FFF5F3]/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest font-bold text-secondary">Session Progress</p>
+<p class="font-headline italic text-lg text-on-surface">Weekly Milestones</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full w-3/4 bg-primary rounded-full"></div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">85% Phonation Clarity achieved this week.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Layout: Archival Pull-Quote -->
+<section class="max-w-screen-xl mx-auto px-12 py-24">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<div class="pl-8 border-l-4 border-primary-fixed">
+<blockquote class="text-4xl md:text-5xl font-headline italic text-secondary leading-tight">
+                            "Language is the soil where identity grows. We provide the water and the light."
+                        </blockquote>
+<cite class="block mt-6 font-sans uppercase tracking-[0.2em] text-xs text-on-surface-variant">— BoloBridge Philosophy</cite>
+</div>
+</div>
+<div class="w-full md:w-1/2 grid grid-cols-2 gap-6">
+<div class="bg-[#FFF5F3] p-8 rounded-xl shadow-sm space-y-4">
+<span class="material-symbols-outlined text-primary-container text-3xl">auto_stories</span>
+<h4 class="font-headline italic text-xl">Tactile Methods</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Engaging sensory-rich materials that move beyond the screen.</p>
+</div>
+<div class="bg-[#FFF5F3] p-8 rounded-xl shadow-sm space-y-4 translate-y-8">
+<span class="material-symbols-outlined text-primary-container text-3xl">psychology</span>
+<h4 class="font-headline italic text-xl">Expert Paths</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Clinically-backed curriculums adapted for unique developmental speeds.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fff8f6] dark:bg-[#2e1a2b] w-full border-t border-[#d6c2c0]/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto font-sans text-sm tracking-loose leading-relaxed">
+<div class="flex flex-col gap-6">
+<div class="font-serif italic text-2xl text-[#6b3a5e] dark:text-[#ffdad5]">BoloBridge</div>
+<p class="text-[#81524c] dark:text-[#d6c2c0] max-w-xs">
+                    Curating a world where every voice finds its rhythm and every child finds their confidence.
+                </p>
+<p class="text-[#6b3a5e] dark:text-[#eedfdc] opacity-80 hover:opacity-100 transition-opacity">
+                    © 2024 BoloBridge Editorial. All Rights Reserved.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#6b3a5e] dark:text-[#eedfdc] font-bold uppercase tracking-widest text-[10px]">Resources</h5>
+<ul class="space-y-3">
+<li><a class="text-[#81524c] dark:text-[#d6c2c0] underline decoration-[#c9918a] hover:text-[#6b3a5e] dark:hover:text-white transition-opacity" href="#">Sustainability</a></li>
+<li><a class="text-[#81524c] dark:text-[#d6c2c0] hover:text-[#6b3a5e] dark:hover:text-white transition-opacity" href="#">Floral Theory</a></li>
+<li><a class="text-[#81524c] dark:text-[#d6c2c0] hover:text-[#6b3a5e] dark:hover:text-white transition-opacity" href="#">The Journal</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#6b3a5e] dark:text-[#eedfdc] font-bold uppercase tracking-widest text-[10px]">Support</h5>
+<ul class="space-y-3">
+<li><a class="text-[#81524c] dark:text-[#d6c2c0] hover:text-[#6b3a5e] dark:hover:text-white transition-opacity" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-[#81524c] dark:text-[#d6c2c0] hover:text-[#6b3a5e] dark:hover:text-white transition-opacity" href="#">Contact Us</a></li>
+<li><a class="text-[#81524c] dark:text-[#d6c2c0] hover:text-[#6b3a5e] dark:hover:text-white transition-opacity" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-[#6b3a5e] dark:text-[#eedfdc] font-bold uppercase tracking-widest text-[10px]">Newsletter</h5>
+<p class="text-xs text-[#81524c]">Receive archival notes on speech and wellness.</p>
+<div class="relative mt-2">
+<input class="w-full bg-transparent border-b border-[#d6c2c0] py-2 text-on-surface focus:outline-none focus:border-secondary transition-all" placeholder="Email address" type="email"/>
+<button class="absolute right-0 bottom-2 text-secondary">
+<span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

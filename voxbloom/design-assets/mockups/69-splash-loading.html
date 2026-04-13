@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Welcome</title>
+<!-- Google Fonts: Newsreader for Display/Serif and Inter for UI/Body -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e2df",
+              "tertiary": "#362300",
+              "on-tertiary-fixed-variant": "#5e410e",
+              "background": "#fbf9f6",
+              "tertiary-fixed": "#ffdeae",
+              "on-primary-fixed-variant": "#384762",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#466969",
+              "surface-container-high": "#eae8e5",
+              "surface-bright": "#fbf9f6",
+              "inverse-surface": "#30312f",
+              "on-tertiary-container": "#c7a165",
+              "surface-container": "#efeeeb",
+              "secondary": "#426464",
+              "on-surface-variant": "#43474c",
+              "tertiary-fixed-dim": "#eac081",
+              "primary-fixed": "#d6e3ff",
+              "primary": "#172740",
+              "surface": "#fbf9f6",
+              "on-primary-fixed": "#0a1c34",
+              "outline": "#74777d",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#a9cdcd",
+              "surface-tint": "#4f5f7b",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "outline-variant": "#c4c6cd",
+              "on-secondary-fixed-variant": "#2a4c4d",
+              "on-tertiary-fixed": "#281800",
+              "secondary-container": "#c2e7e6",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dbdad7",
+              "on-surface": "#1b1c1a",
+              "on-background": "#1b1c1a",
+              "inverse-primary": "#b7c7e7",
+              "surface-container-low": "#f5f3f0",
+              "on-secondary-fixed": "#002020",
+              "surface-variant": "#e4e2df",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#c5eae9",
+              "primary-container": "#2d3d57",
+              "primary-fixed-dim": "#b7c7e7",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-primary-container": "#98a8c6",
+              "inverse-on-surface": "#f2f0ed",
+              "tertiary-container": "#523704"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle Grain Overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Atmosphere Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        /* Smooth slide animation for the camel dot */
+        @keyframes slide {
+            0% { left: 0%; }
+            50% { left: 100%; }
+            100% { left: 0%; }
+        }
+        .animate-slide {
+            animation: slide 3s ease-in-out infinite;
+        }
+
+        /* Soft drifting for orbs */
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+            100% { transform: translate(0, 0); }
+        }
+        .animate-float {
+            animation: float 20s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body overflow-hidden selection:bg-secondary/20">
+<!-- Grain Overlay for Analog Feel -->
+<div class="grain-overlay"></div>
+<!-- Atmospheric Background Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<!-- Main Radial Gradient Base -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_100%)] from-[#FDFCFB] to-transparent"></div>
+<!-- Drifting Orbs -->
+<div class="orb w-[400px] h-[400px] bg-secondary/15 -top-20 -left-20 animate-float"></div>
+<div class="orb w-[350px] h-[350px] bg-tertiary-fixed-dim/10 bottom-20 -right-20 animate-float" style="animation-delay: -5s;"></div>
+</div>
+<!-- Main Content Wrapper -->
+<main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+<!-- Center Content Branding Cluster -->
+<div class="space-y-12">
+<!-- 1. Logotype -->
+<div class="flex items-baseline justify-center gap-1">
+<h1 class="font-headline italic text-6xl md:text-7xl text-primary tracking-tight">Bolo</h1>
+<h1 class="font-headline italic text-6xl md:text-7xl text-secondary tracking-tight">Bridge</h1>
+</div>
+<!-- 2. Abstract Watercolor Illustration -->
+<div class="relative flex justify-center py-4">
+<div class="relative w-48 h-32 flex items-center justify-center">
+<!-- Speech Bubble Left (Watercolor Style) -->
+<div class="absolute left-4 top-4 w-16 h-12 bg-secondary/20 rounded-full blur-[2px] transform -rotate-12"></div>
+<!-- Speech Bubble Right (Watercolor Style) -->
+<div class="absolute right-4 bottom-4 w-18 h-14 bg-tertiary-fixed-dim/30 rounded-full blur-[2px] transform rotate-6"></div>
+<!-- The Bridge Arc -->
+<svg class="absolute w-32 h-auto text-secondary/60 fill-none overflow-visible" viewbox="0 0 100 40">
+<path d="M10,30 Q50,0 90,30" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- Tiny Whimsical Flowers on Bridge -->
+<circle class="opacity-60" cx="35" cy="12" fill="#5e410e" r="1.5"></circle>
+<circle class="opacity-60" cx="50" cy="8" fill="#466969" r="2"></circle>
+<circle class="opacity-60" cx="65" cy="14" fill="#c7a165" r="1.5"></circle>
+<!-- Little soft lavender dots -->
+<circle class="opacity-40" cx="42" cy="10" fill="#7d7499" r="1"></circle>
+<circle class="opacity-40" cx="58" cy="10" fill="#7d7499" r="1"></circle>
+</svg>
+</div>
+<!-- Image Alt Data Description -->
+<div class="hidden" data-alt="Abstract watercolor speech bubbles connected by bridge"></div>
+</div>
+<!-- 3. Loading Indicator Cluster -->
+<div class="flex flex-col items-center space-y-6">
+<div class="relative w-[100px] h-[2px] bg-secondary/10 rounded-full overflow-visible">
+<!-- Smooth sliding camel dot -->
+<div class="animate-slide absolute top-1/2 -translate-y-1/2 -ml-1.5 w-3 h-3 bg-tertiary-fixed-dim rounded-full shadow-sm ring-4 ring-surface"></div>
+</div>
+<!-- 4. Contextual Loading Text -->
+<p class="font-body text-xs italic text-on-surface/40 tracking-widest uppercase">
+                    Loading your journey...
+                </p>
+</div>
+</div>
+<!-- Footer Branding Information -->
+<footer class="absolute bottom-12 w-full text-center">
+<p class="font-label text-[10px] text-on-surface/30 tracking-tight">
+                v1.0 • Made with ❤️ for every child's voice
+            </p>
+</footer>
+</main>
+<!-- Suppressing Shared Navbars for Splash Screen Experience as requested -->
+</body></html>

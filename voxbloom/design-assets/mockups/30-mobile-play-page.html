@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Play</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#fdd7a7",
+              "on-secondary-fixed-variant": "#4b6a63",
+              "error": "#aa371c",
+              "surface-dim": "#dadad6",
+              "on-secondary-container": "#416059",
+              "surface-tint": "#765a34",
+              "on-primary-fixed-variant": "#6e532e",
+              "primary-container": "#fdd7a7",
+              "error-dim": "#821a01",
+              "on-tertiary-container": "#584d67",
+              "inverse-surface": "#0e0e0d",
+              "surface-container-highest": "#e3e3de",
+              "surface-container-high": "#e9e8e4",
+              "on-error-container": "#671200",
+              "on-background": "#313330",
+              "outline-variant": "#b2b2ae",
+              "secondary": "#46655e",
+              "secondary-fixed-dim": "#c7eae1",
+              "tertiary-dim": "#5a4e69",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#313330",
+              "on-error": "#fff7f6",
+              "secondary-container": "#d5f8ef",
+              "inverse-on-surface": "#9e9d9a",
+              "on-primary-fixed": "#4f3715",
+              "primary-dim": "#694e2a",
+              "surface-variant": "#e3e3de",
+              "primary-fixed": "#fdd7a7",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#d5f8ef",
+              "on-tertiary-fixed-variant": "#625671",
+              "tertiary-fixed": "#ecdcfd",
+              "background": "#fbf9f6",
+              "surface-container-low": "#f5f3f0",
+              "on-surface-variant": "#5e5f5c",
+              "on-primary-container": "#634a25",
+              "on-tertiary": "#fef6ff",
+              "surface": "#fbf9f6",
+              "primary-fixed-dim": "#eec99a",
+              "tertiary": "#665a75",
+              "primary": "#765a34",
+              "on-tertiary-fixed": "#453b54",
+              "surface-container": "#efeeea",
+              "outline": "#7a7b78",
+              "on-secondary-fixed": "#2f4e47",
+              "on-secondary": "#e3fff7",
+              "on-primary": "#fff7f3",
+              "tertiary-fixed-dim": "#deceee",
+              "tertiary-container": "#ecdcfd",
+              "secondary-dim": "#3a5952",
+              "error-container": "#fa7150"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen max-w-[375px] mx-auto overflow-x-hidden relative">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="bg-[#fbf9f6] dark:bg-stone-900 w-full top-0 sticky z-[60]">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<span class="font-serif italic text-2xl text-[#765a34] dark:text-[#fdd7a7] tracking-tight">BoloBridge</span>
+<button class="text-[#765a34] dark:text-[#fdd7a7] hover:bg-stone-200/50 dark:hover:bg-stone-800 transition-colors p-2 rounded-full active:transition-transform duration-200 scale-95">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="px-6 pt-6 pb-32">
+<!-- Header Section -->
+<section class="mb-10">
+<h1 class="font-headline italic text-[2.5rem] leading-tight text-secondary mb-1">Speech Games</h1>
+<p class="font-body text-on-surface-variant text-base">6 fun ways to practice</p>
+</section>
+<!-- Game Cards Stack -->
+<div class="flex flex-col gap-5">
+<!-- Card 1: Story Studio -->
+<div class="bg-surface-container-lowest rounded-[20px] p-4 flex items-center gap-5 group active:scale-[0.98] transition-all">
+<div class="w-24 h-24 rounded-2xl bg-secondary-container flex items-center justify-center overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Abstract minimalist illustration of an open book with organic shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoI7KlT6jAcgmaOhrXIvQh89DjZJAL765aSHsuj-3GkhS5SoAEyhg7r7bs7vya1HdurLBSyOYm8aAljFBWRXjE2FqHRUJBzkuOCY2hDbUNC8Fvubh0_UJmWjbLlSWSCL1FdKt-6Q7UlLReITTh44kD-EBkMnJyVBn3FjyptUTB7Rq8i4skQhYuKXXlVYWGBuK0amHFWfRcXeWQd4goyb3cv4Z4lL_2xemxRdSA5j0u_7asqMn8V5PvyDpAhBDCv_wZ1F0k1TmPffTp"/>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline italic text-xl text-secondary mb-1">Story Studio</h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-3">Read stories and practice target sounds</p>
+<a class="font-label text-xs font-semibold tracking-wider text-secondary uppercase flex items-center gap-1" href="#">
+                        Play <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Sound Safari -->
+<div class="bg-surface-container-lowest rounded-[20px] p-4 flex items-center gap-5 active:scale-[0.98] transition-all">
+<div class="w-24 h-24 rounded-2xl bg-primary-container flex items-center justify-center overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Abstract safari shapes and animal footprints in warm camel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMEjOWe-6rNAqVSrVV91lCCeDkC1GFBTzlSNzKxkRruA0XtXKOUAf91pSCHAecCpAwVeZG7rjMlMHxIkCgj44h7rv2_hVUWQlO16HJQfNwZS2L8YpckbIDNvl-5UAfovhDgm2SUFN6PmuPBRUo8pUAdSWhzVEPkrtB1fdULrKe2LD0vnEuv96OV6oWz6K8ele0zw_KOoiYJCffZGw3V9NLji4BcqXSpxcsqeQF-WQEmSMgTcEDBE8PiOOfnVDhMvc1hbH097YZs6DZ"/>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline italic text-xl text-primary mb-1">Sound Safari</h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-3">Find animals and say their sounds</p>
+<a class="font-label text-xs font-semibold tracking-wider text-primary uppercase flex items-center gap-1" href="#">
+                        Play <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Word Garden -->
+<div class="bg-surface-container-lowest rounded-[20px] p-4 flex items-center gap-5 active:scale-[0.98] transition-all">
+<div class="w-24 h-24 rounded-2xl bg-secondary-container flex items-center justify-center overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Stylized abstract flowers and leaves in sage green tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-_k35uOPutgvuI_J4NGVEfXwwfMZPPvSlBELjh-fZ8Mo7oDpv2arVu5BSENhdauVM-1SJ3tVaVt3fOV1XWcHxtPDZwlb8B8ZVXqkWGAMynJN1iBWq6Zub61ki815nMEq0I9IRCWTxoj09qmToW0CvRKddTvflbyy8CwvWmWfTUev9_5bPyGjxj_q2VqP-7Z5swWRzdCjExY85WIODvM7_ss3tAiHD7nnac9SbEGv9NOQTouBwfaGejRgD_L8DVr4nRtAUKDu0oAW3"/>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline italic text-xl text-secondary mb-1">Word Garden</h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-3">Grow words by speaking them</p>
+<a class="font-label text-xs font-semibold tracking-wider text-secondary uppercase flex items-center gap-1" href="#">
+                        Play <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Rhyme Time -->
+<div class="bg-surface-container-lowest rounded-[20px] p-4 flex items-center gap-5 active:scale-[0.98] transition-all">
+<div class="w-24 h-24 rounded-2xl bg-tertiary-container flex items-center justify-center overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Floating abstract musical notes and flowing lines in lavender" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoI3FCNskjtMZPrbQbDzF-QLo9fJjX5YZPwnAQocGLeOSt90yfjwmYzJtytvmtZpow3Bq3qQmq657u0nYZP0N2mUh04l5FG3_KzrHQBIHa1v0HFGovc1CrqkGFO6AxRwq7P03nOBF_UHl6gBBx15YsGARjGGaMSUs_KTjLN8RjKcQzLGAIHDBcxKTV0D4BR-nikdeEzjo6drmZuSWyb7aYcLd-dtNyHDtBvvaP9DwdtzfoGsRd-l4UA6bhGQ2hTTIKvS3gZohqKw4U"/>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline italic text-xl text-tertiary mb-1">Rhyme Time</h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-3">Match words that rhyme</p>
+<a class="font-label text-xs font-semibold tracking-wider text-tertiary uppercase flex items-center gap-1" href="#">
+                        Play <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 5: Tongue Gym -->
+<div class="bg-surface-container-lowest rounded-[20px] p-4 flex items-center gap-5 active:scale-[0.98] transition-all">
+<div class="w-24 h-24 rounded-2xl bg-error-container/20 flex items-center justify-center overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Abstract vibrating sound waves and bubbles in warm coral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZYF8jEiP3JkQS-lU37P7cC6Y5kr5mXJZVVr0RkXO61x2H9-OzUYhInaZN8JClScpCKnZr89qYFzWQHqTj3-W3bZLQc3SAiTw7t4HNj6ijlZktpSeJ2OhIOzp-vtNCO1sxa1v6X4L4fkb4q457pJe_ju3HwRdVqMU5EUvT4mhkR6Vj2isiqqgDq558jPezpsQo3d_I6gjTaS0udoBpYAl0ZGnAclIECtgWK5USuWDespkhg-rKBApcP5lgcalfcj4qAS1iL9ceky4s"/>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline italic text-xl text-error mb-1">Tongue Gym</h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-3">Exercise your speech muscles</p>
+<a class="font-label text-xs font-semibold tracking-wider text-error uppercase flex items-center gap-1" href="#">
+                        Play <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 6: Daily Challenge -->
+<div class="bg-surface-container-lowest rounded-[20px] p-4 flex items-center gap-5 active:scale-[0.98] transition-all">
+<div class="w-24 h-24 rounded-2xl bg-primary-fixed flex items-center justify-center overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Abstract trophy shape with sunbeams in golden and camel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr1Xsnzpc9xQe4FGU8PRlDp_xYSKI0yDfvMSDb83I52YfECDV2eLEs0qk-jRvb1EeRjTjN6IizlQlXKTWRKKE7zgEv2LdFt35kZogMBdavD3nSKBkc5kXoaS-mVV4EpbJatX5Tm-2VLWBJFk_8od1-iAseSGa__GuH9kcoasHLuQLOnfEHGNGspCAichr5J9tfMSKr_2z_Mjxs8xvEAXphgI5AWef1hlBHenUbDDkOQ2qHIW6X7PAteyPnT0dmHQdJla8V1bMjoMOe"/>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="font-headline italic text-xl text-on-primary-fixed mb-1">Daily Challenge</h3>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed mb-3">Today's special exercise</p>
+<a class="font-label text-xs font-semibold tracking-wider text-on-primary-fixed uppercase flex items-center gap-1" href="#">
+                        Play <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#fbf9f6]/80 dark:bg-stone-900/80 backdrop-blur-md rounded-t-[2rem] shadow-[0_-4px_40px_rgba(49,51,48,0.05)]">
+<div class="flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#765a34] dark:hover:text-[#fdd7a7] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-sans text-[11px] font-semibold tracking-wide Inter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#765a34] dark:hover:text-[#fdd7a7] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+<span class="font-sans text-[11px] font-semibold tracking-wide Inter">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#e3e3de] dark:bg-stone-800 text-[#765a34] dark:text-[#fdd7a7] rounded-full px-5 py-2 Active: scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="videogame_asset" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="font-sans text-[11px] font-semibold tracking-wide Inter">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#765a34] dark:hover:text-[#fdd7a7] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="leaderboard">leaderboard</span>
+<span class="font-sans text-[11px] font-semibold tracking-wide Inter">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 p-2 hover:text-[#765a34] dark:hover:text-[#fdd7a7] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-sans text-[11px] font-semibold tracking-wide Inter">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

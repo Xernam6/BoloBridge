@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Accessibility Settings</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#5b6146",
+              "on-tertiary-container": "#32381f",
+              "surface": "#fbf9f6",
+              "inverse-primary": "#accec5",
+              "on-surface-variant": "#414846",
+              "tertiary-container": "#9ba182",
+              "on-tertiary-fixed": "#191e08",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#2d4c46",
+              "on-tertiary-fixed-variant": "#444930",
+              "tertiary-fixed-dim": "#c4caa8",
+              "surface-container-high": "#eae8e5",
+              "surface-container": "#efeeeb",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e4e2df",
+              "error-container": "#ffdad6",
+              "surface-tint": "#45645e",
+              "on-secondary-fixed": "#301216",
+              "outline-variant": "#c1c8c5",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#fdc7cb",
+              "on-secondary-container": "#795154",
+              "inverse-surface": "#30312f",
+              "surface-container-low": "#f5f3f0",
+              "surface-bright": "#fbf9f6",
+              "primary-fixed-dim": "#accec5",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "primary-fixed": "#c7eae1",
+              "on-surface": "#1b1c1a",
+              "secondary": "#7c5357",
+              "surface-dim": "#dbdad7",
+              "on-background": "#1b1c1a",
+              "outline": "#717976",
+              "on-primary-fixed": "#00201b",
+              "on-primary-container": "#1b3b35",
+              "background": "#fbf9f6",
+              "inverse-on-surface": "#f2f0ed",
+              "primary-container": "#84a59d",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#eeb9bd",
+              "secondary-fixed": "#ffdadc",
+              "tertiary-fixed": "#e0e6c3",
+              "on-secondary-fixed-variant": "#623c40",
+              "primary": "#45645e"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .custom-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            background: #e4e2df;
+            border-radius: 2px;
+            outline: none;
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #45645e;
+            cursor: pointer;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(65, 72, 70, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen relative overflow-x-hidden">
+<div class="fixed inset-0 grain-overlay z-0"></div>
+<!-- Top Navigation Anchor -->
+<nav class="sticky top-0 z-40 bg-[#fbf9f6] dark:bg-stone-900 flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#45645e] dark:text-[#84a59d]" data-icon="arrow_back">arrow_back</span>
+<span class="text-2xl italic font-semibold text-[#45645e] dark:text-[#84a59d] font-['Newsreader'] italic tracking-tight">BoloBridge</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="text-[#414846] dark:text-stone-400 font-medium hover:bg-[#f5f3f0] transition-colors px-2 py-1" href="#">Home</a>
+<a class="text-[#414846] dark:text-stone-400 font-medium hover:bg-[#f5f3f0] transition-colors px-2 py-1" href="#">Activity</a>
+<a class="text-[#45645e] dark:text-[#84a59d] font-bold border-b-2 border-[#45645e] px-2 py-1" href="#">Settings</a>
+</div>
+<span class="material-symbols-outlined text-[#414846] dark:text-stone-400 cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative z-10 max-w-[700px] mx-auto px-6 pt-12 pb-32">
+<!-- Header Section -->
+<header class="mb-12 text-center">
+<h1 class="text-5xl md:text-6xl font-headline italic text-on-surface mb-3 tracking-tight">Accessibility</h1>
+<p class="text-on-surface-variant text-lg font-body opacity-80">BoloBridge adapts to every child's needs.</p>
+</header>
+<div class="space-y-6">
+<!-- Visual Settings Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_32px_-4px_rgba(65,72,70,0.06)] border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<h2 class="text-2xl font-headline italic font-semibold">Visual</h2>
+</div>
+<div class="space-y-8">
+<!-- High Contrast -->
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">High Contrast Mode</p>
+<p class="text-sm text-on-surface-variant">Increases visibility of elements</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Text Size Slider -->
+<div>
+<div class="flex justify-between items-end mb-4">
+<p class="font-semibold text-on-surface">Text Size</p>
+<span class="text-sm text-primary font-medium px-3 py-1 bg-primary/5 rounded-full">Medium</span>
+</div>
+<input class="w-full custom-slider mb-3" max="4" min="1" type="range" value="2"/>
+<div class="flex justify-between text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+<span>Small</span>
+<span>Medium</span>
+<span>Large</span>
+<span>X-Large</span>
+</div>
+<div class="mt-4 p-4 bg-surface-container-low rounded-lg text-center italic text-on-surface-variant border border-outline-variant/5">
+                            This is a preview of how text will appear.
+                        </div>
+</div>
+<!-- Reduced Motion -->
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">Reduced Motion</p>
+<p class="text-sm text-on-surface-variant">Simplifies animations for comfort</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Color Blind Mode -->
+<div class="flex justify-between items-center">
+<p class="font-semibold text-on-surface">Color Blind Mode</p>
+<select class="bg-surface-container-low border-none rounded-lg text-sm px-4 py-2 focus:ring-1 focus:ring-primary/20 text-on-surface-variant">
+<option>None</option>
+<option>Deuteranopia</option>
+<option>Protanopia</option>
+<option>Tritanopia</option>
+</select>
+</div>
+<!-- Dark Mode -->
+<div class="flex justify-between items-center">
+<p class="font-semibold text-on-surface">Dark Mode</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Audio Settings Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_32px_-4px_rgba(65,72,70,0.06)] border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="volume_up">volume_up</span>
+</div>
+<h2 class="text-2xl font-headline italic font-semibold">Audio</h2>
+</div>
+<div class="space-y-8">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">Text-to-Speech</p>
+<p class="text-sm text-on-surface-variant">Read instructions aloud</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div>
+<p class="font-semibold text-on-surface mb-4">Speech Rate</p>
+<input class="w-full custom-slider mb-3" max="3" min="1" type="range" value="2"/>
+<div class="flex justify-between text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+<span>Slow</span>
+<span>Normal</span>
+<span>Fast</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="volume_down">volume_down</span>
+<div class="flex-1">
+<input class="w-full custom-slider" max="100" min="0" type="range" value="80"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="volume_up">volume_up</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-semibold text-on-surface">Audio Descriptions</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Interaction Settings Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_32px_-4px_rgba(65,72,70,0.06)] border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-on-secondary-container/10 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="touch_app">touch_app</span>
+</div>
+<h2 class="text-2xl font-headline italic font-semibold">Interaction</h2>
+</div>
+<div class="space-y-8">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">Extended Timers</p>
+<p class="text-sm text-on-surface-variant">Extra time for recording</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">Simplified Controls</p>
+<p class="text-sm text-on-surface-variant">Larger buttons, fewer options</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">Touch Feedback</p>
+<p class="text-sm text-on-surface-variant">Haptic vibration on actions</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-semibold text-on-surface">Auto-Advance</p>
+<p class="text-sm text-on-surface-variant">Move to next exercise automatically</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Language Settings Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_32px_-4px_rgba(65,72,70,0.06)] border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</div>
+<h2 class="text-2xl font-headline italic font-semibold">Language</h2>
+</div>
+<div class="space-y-8">
+<div class="flex justify-between items-center">
+<p class="font-semibold text-on-surface">Interface Language</p>
+<div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-4 py-2">
+<span class="text-lg">🇺🇸</span>
+<select class="bg-transparent border-none text-sm focus:ring-0 text-on-surface-variant">
+<option>English (US)</option>
+<option>Spanish</option>
+<option>French</option>
+</select>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-semibold text-on-surface">Practice Language</p>
+<select class="bg-surface-container-low border-none rounded-lg text-sm px-4 py-2 focus:ring-0 text-on-surface-variant">
+<option>English</option>
+<option>Hindi</option>
+<option>Bengali</option>
+</select>
+</div>
+<div class="flex justify-between items-center">
+<p class="font-semibold text-on-surface">Show Translations</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Action Button -->
+<div class="mt-12 flex justify-center">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 px-12 rounded-lg font-bold text-sm tracking-widest uppercase shadow-lg hover:opacity-90 transition-all active:scale-[0.98]">
+                Save Changes
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-[#fbf9f6]/85 backdrop-blur-xl border-t border-[#c1c8c5]/15 shadow-[0_-12px_32px_-4px_rgba(65,72,70,0.08)]">
+<div class="flex flex-col items-center justify-center text-[#414846] py-2">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#414846] py-2">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#45645e] py-2">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Settings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#414846] py-2">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

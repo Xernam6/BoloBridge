@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,700;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#65000b",
+              "on-background": "#313330",
+              "outline-variant": "#b2b2ae",
+              "secondary": "#8a5037",
+              "inverse-surface": "#0e0e0d",
+              "surface-container-highest": "#e3e3de",
+              "surface-container-high": "#e9e8e4",
+              "on-error": "#fff7f6",
+              "secondary-container": "#ffdbcd",
+              "inverse-on-surface": "#9e9d9a",
+              "on-primary-fixed": "#304437",
+              "secondary-fixed-dim": "#ffc8b3",
+              "tertiary-dim": "#982e0d",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#313330",
+              "on-secondary-fixed-variant": "#854d34",
+              "error": "#ac3434",
+              "inverse-primary": "#e2fae8",
+              "primary-container": "#d1e8d7",
+              "error-dim": "#70030f",
+              "on-tertiary-container": "#6b1800",
+              "surface-dim": "#dadad6",
+              "on-outline-variant": "#b2b2ae",
+              "surface-tint": "#4f6456",
+              "on-primary-fixed-variant": "#4b6053",
+              "primary": "#4f6456",
+              "on-tertiary-fixed": "#440c00",
+              "surface-container": "#efeeea",
+              "outline": "#7a7b78",
+              "on-secondary-fixed": "#63321b",
+              "on-secondary": "#fff7f5",
+              "on-primary": "#e7ffed",
+              "on-primary-container": "#425649",
+              "on-tertiary": "#fff7f5",
+              "surface": "#fbf9f6",
+              "primary-fixed-dim": "#c3dac9",
+              "tertiary": "#a83a19",
+              "tertiary-container": "#ffa086",
+              "secondary-dim": "#7b452d",
+              "error-container": "#f56965",
+              "tertiary-fixed-dim": "#ff8b6a",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#ffdbcd",
+              "primary-dim": "#43584b",
+              "surface-variant": "#e3e3de",
+              "primary-fixed": "#d1e8d7",
+              "surface-container-low": "#f5f3f0",
+              "on-surface-variant": "#5e5f5c",
+              "on-tertiary-fixed-variant": "#7a1d00",
+              "tertiary-fixed": "#ffa086",
+              "background": "#fbf9f6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px;
+            opacity: 0.98;
+        }
+        .watercolor-blob {
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation Shell: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6]/80 dark:bg-[#313330]/80 backdrop-blur-xl">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic text-[#313330] dark:text-[#fbf9f6]">The BoloBridge Library</div>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<nav class="flex gap-x-6">
+<a class="text-[#4f6456] dark:text-[#d1e8d7] font-semibold font-serif italic tracking-tight hover:text-[#a83a19] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#768C7D] dark:text-[#b2b2ae] font-serif italic tracking-tight hover:text-[#a83a19] transition-colors duration-300" href="#">Saved</a>
+</nav>
+<div class="flex items-center gap-x-4">
+<span class="material-symbols-outlined text-[#768C7D] cursor-pointer hover:text-[#a83a19] transition-all duration-200">bookmark</span>
+<span class="material-symbols-outlined text-[#768C7D] cursor-pointer hover:text-[#a83a19] transition-all duration-200">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto relative">
+<!-- Decorative Background Elements -->
+<div class="absolute top-20 right-0 w-96 h-96 bg-primary-container watercolor-blob rounded-full"></div>
+<div class="absolute bottom-40 left-0 w-80 h-80 bg-tertiary-container watercolor-blob rounded-full"></div>
+<!-- Hero Section -->
+<section class="mb-20">
+<h1 class="text-6xl md:text-8xl font-headline italic tracking-tighter text-on-background mb-4 leading-[0.9]">
+                The BoloBridge Library
+            </h1>
+<p class="text-xl md:text-2xl font-body text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                Curated guides for parents and caregivers, designed to bridge the gap in speech development with warmth and expertise.
+            </p>
+</section>
+<!-- Filter Bar & SideNav Logic -->
+<div class="flex flex-col lg:flex-row gap-12 items-start mb-16">
+<!-- Sidebar (Desktop) -->
+<aside class="hidden lg:flex flex-col w-64 sticky top-32">
+<div class="mb-8">
+<h3 class="font-headline italic text-2xl text-primary mb-1">Categories</h3>
+<p class="font-label uppercase tracking-widest text-[10px] text-outline">Curated Guides</p>
+</div>
+<nav class="flex flex-col gap-y-4">
+<a class="text-[#768C7D] hover:bg-[#f5f3f0] transition-all duration-200 pl-4 py-1 text-xs font-label uppercase tracking-widest" href="#">All</a>
+<a class="text-[#4f6456] font-bold border-l-2 border-[#4f6456] pl-4 py-1 text-xs font-label uppercase tracking-widest" href="#">Speech Development</a>
+<a class="text-[#768C7D] hover:bg-[#f5f3f0] transition-all duration-200 pl-4 py-1 text-xs font-label uppercase tracking-widest" href="#">Activities</a>
+<a class="text-[#768C7D] hover:bg-[#f5f3f0] transition-all duration-200 pl-4 py-1 text-xs font-label uppercase tracking-widest" href="#">Research</a>
+<a class="text-[#768C7D] hover:bg-[#f5f3f0] transition-all duration-200 pl-4 py-1 text-xs font-label uppercase tracking-widest" href="#">FAQs</a>
+</nav>
+</aside>
+<!-- Content Area -->
+<div class="flex-1">
+<!-- Mobile Category Pills -->
+<div class="flex lg:hidden overflow-x-auto pb-6 gap-3 no-scrollbar">
+<span class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm whitespace-nowrap">All</span>
+<span class="px-5 py-2 rounded-full bg-primary text-on-primary text-sm whitespace-nowrap">Speech Development</span>
+<span class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm whitespace-nowrap">Activities</span>
+</div>
+<!-- Article Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-12 md:gap-y-16">
+<!-- Featured Article -->
+<article class="md:col-span-2 group">
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+<div class="lg:col-span-3 overflow-hidden rounded-xl bg-primary-container/20">
+<img alt="Parent and child reading together" class="w-full h-[450px] object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Watercolor style illustration of parent reading to child" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYkD-NuXhqfv3nhFUnhYVMhVu51wRTsYhtqWHa8gaUQOugoxCAOw-5zFok8PWb3q5EigbJB4zfykQYwiF7rq0FomvURwAwaRCPHPKDun4XKNE71B8e3pLN1L9F8UyQgVMTnpkXKxI0LkO5aaLk-C9eP8UIEbDvNsGu5P2G-CBdQIYLgfuP6BqCUYtCF5yYdK1xLzzbItgkQODCvY-pKDH6xv8vj7x77036AV9jSj2EvVHnEzpJO0qbTyaAgrhKMucuL9Uzf8RVV_5Y"/>
+</div>
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center gap-3">
+<span class="font-label uppercase tracking-widest text-[10px] bg-primary-container text-on-primary-container px-3 py-1 rounded-sm">Speech Development</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">8 min read</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-headline italic leading-[1.1] text-on-background group-hover:text-primary transition-colors duration-300">
+                                    When Should I Be Concerned About My Child's Speech?
+                                </h2>
+<p class="text-lg font-body text-on-surface-variant leading-relaxed font-light">
+                                    Recognizing early milestones is key. We break down the developmental markers from 12 months to 4 years to help you understand your child's progress.
+                                </p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant/15">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Author portrait" class="w-full h-full object-cover" data-alt="Professional portrait of Dr Sarah L" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZNBWfKTZ8Geg_UMlbEO6mbSwZCr_Dv1YYoIJUEHcUemiAY6mlx7HdWPVsdMjaJ8cJxz7FKmdXiY-H0Oz7hrypvlkAiNLwwXy8SAYI_nUANCOv08-Og4YuiGG29qEt75diAj19hIueawQjJ0P36gLFbUS_rRxrIQI4fLP7CPJbx6DtJOLeY7Z3SBfk5SakYDhDo_CJrNKGTfasKdskNjrOsdFApTOnI-omnTK-03V5jrPg_xH3jYIyMZnKiTI1LqX3C56SjBheb4TE"/>
+</div>
+<div>
+<p class="text-sm font-semibold">Dr. Sarah L., CCC-SLP</p>
+<p class="text-xs text-outline font-label uppercase tracking-tighter">May 2026</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Row 1, Card 1 -->
+<article class="space-y-6 group cursor-pointer">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#E9DCC9]/40 p-12 flex items-center justify-center">
+<img alt="Alphabet blocks" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:rotate-2" data-alt="Warm camel toned speech therapy tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDppsLuMmk0a7B9u23hcac8CIbN6w_iKFCv4MlFWgn4iolngBrvbfhOhWUpv08O0kwL1viC043Gv2hvdAHXKQuBSwqW_c_MlJ1lBk3uy2ub1abiqFVcFz-HKJ7vY3A68-HsknQKM9i1g8yQHWRQ0AOp3taqkqHDJMdwDY53bF9WeLSsl9T8LhV2zXu61P8uocO3DT2YVAktky8DOwG0swo2Yk97Hw2AQNZZAoC4h2uZudc7u1Mr3COQsdeADETlNduSjIJ9kH_R-RUX"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label uppercase tracking-widest text-[10px] text-secondary">Activities</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">4 min</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-headline italic text-on-background leading-tight">5 Fun Activities to Practice /r/ Sounds at Home</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">Engage your child with these simple play-based exercises designed by leading therapists.</p>
+</div>
+</article>
+<!-- Row 1, Card 2 -->
+<article class="space-y-6 group cursor-pointer mt-12 md:mt-0">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#E6E6FA]/40 p-12 flex items-center justify-center">
+<img alt="Magnifying glass on document" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:-rotate-2" data-alt="Soft lavender tones with medical chart" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbIkkCY5Tx8ScIdqG5scF8ZqX5-1-nzgg-f8bf3f11BxqN7Q0w7ZB6F9DW0tRczX9_xzFK3ZvVEYI8_YWxj5Gcm2fuz7ZAFEbom8Ws7Br7WqJcpeSb7vkE1EbUDbIw4AvwWCJ44-Ur25nfH9F6Brq8EzD-O81dcDM6JLCx9Ci5nLUO3clKTGA1oLFju2JZDOih2iG2TftyOaXjxMIx4NDqfV8OZRU1rr2AKJeIFymcpB-NVkepvEDOlJ65lu3M9NlPCdTsdZbS1zex"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label uppercase tracking-widest text-[10px] text-[#6A5ACD]">Guides</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">6 min</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-headline italic text-on-background leading-tight">Understanding Your Screening Results</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">A step-by-step guide to interpreting the technical terminology in your child's assessment.</p>
+</div>
+</article>
+<!-- Row 2, Card 1 -->
+<article class="space-y-6 group cursor-pointer">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-primary-container/30 p-12 flex items-center justify-center">
+<img alt="Stack of books" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" data-alt="Sage green watercolor book illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVz_d-XdmD-dBH9xN-vBukJwy4_v51mPCIB8PL6qSbW7xLuuf8_MPFBHGc0jFYmrLv4DUH4dWxxP2GnPqLOgHT9tViS8GJhoQM4GxcYbWf45Wm9buFZcXftTirAyR3w4GyawWV7RzZE9THghRviTRyBjn_r7VrJvhih4jcbIbG7GD7MwXuPhFHa8Q73ATDR3-_om5yabYiecaLzTlvpvXhbwnyG20IVA7UEtY-cTXH7xDasvOCbueKy6ieHBVzXprrvmgIbNMmi0kS"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label uppercase tracking-widest text-[10px] text-primary">Research</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">7 min</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-headline italic text-on-background leading-tight">The Science of Speech: How Children Learn to Talk</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">Diving into the neuroplasticity and cognitive processes behind language acquisition.</p>
+</div>
+</article>
+<!-- Row 2, Card 2 -->
+<article class="space-y-6 group cursor-pointer mt-12 md:mt-0">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-tertiary-container/30 p-12 flex items-center justify-center">
+<img alt="Globe and wooden figures" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:translate-y-[-4px]" data-alt="Soft coral abstract global illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKQkIsJz-xeSHqkP4iV_MjzQCpunnsffqpy7aYXL7hDWazrBvbUiFTT3dYcJ0mAsQkmA_9thC4DvO2hgPwETY3EoepAESrQ4X8A56WCoEQR_H_Fp73Bu4BbW_XvEXcU-wH7FZXg9sfVEKWVBXWe0Mqexmg3pyNqxXbTuCrsMlo2wJiIBhr5HtiyU9d2lFiyKSDXPppibgcR9Xv1iC2Z6fK-dds3FKgiBu9JXc9pZuz2bK_mIiQ2fh1t4-yB3I-IHrpilUtGseZFSkA"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label uppercase tracking-widest text-[10px] text-tertiary">Development</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">5 min</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-headline italic text-on-background leading-tight">Bilingual Children and Speech Development</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">Debunking common myths and providing strategies for dual-language households.</p>
+</div>
+</article>
+</div>
+<!-- Load More Button -->
+<div class="mt-24 text-center">
+<button class="font-headline italic text-2xl text-secondary hover:text-tertiary transition-colors duration-300 flex items-center gap-2 mx-auto">
+                        Load More Articles
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Shell: BottomNavBar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe h-16 bg-[#fbf9f6] dark:bg-[#313330] z-50 border-t border-[#b2b2ae]/15 shadow-[0_-10px_30px_rgba(49,51,48,0.03)]">
+<a class="flex flex-col items-center justify-center text-[#4f6456] dark:text-[#d1e8d7] scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_library</span>
+<span class="font-sans text-[10px] uppercase font-medium">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b2b2ae] scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">bookmarks</span>
+<span class="font-sans text-[10px] uppercase font-medium">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b2b2ae] scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-sans text-[10px] uppercase font-medium">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b2b2ae] scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-sans text-[10px] uppercase font-medium">Profile</span>
+</a>
+</nav>
+<!-- Footer Decoration -->
+<footer class="bg-surface-container-low py-16 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="space-y-2">
+<span class="font-serif italic text-3xl text-on-background">BoloBridge</span>
+<p class="text-sm text-on-surface-variant max-w-xs">Building bridges for every voice to be heard. Based on clinically proven methodologies.</p>
+</div>
+<div class="flex gap-x-12">
+<div class="flex flex-col gap-2">
+<span class="font-label uppercase tracking-widest text-[10px] text-outline">Journal</span>
+<a class="text-sm hover:text-primary" href="#">Latest Issues</a>
+<a class="text-sm hover:text-primary" href="#">Archive</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label uppercase tracking-widest text-[10px] text-outline">Community</span>
+<a class="text-sm hover:text-primary" href="#">Caregiver Circle</a>
+<a class="text-sm hover:text-primary" href="#">Expert Q&amp;A</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

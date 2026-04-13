@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — Page Not Found</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#FAF8F5',
+          'sage-teal': '#5F9EA0',
+          'sage-teal-dark': '#4E8A8C',
+          'warm-camel': '#C2956B',
+          'warm-camel-dark': '#A67D58',
+          'muted-lavender': '#8B7EC8',
+          'deep-navy': '#2D3142',
+          'card-bg': '#F5F1EB',
+        },
+        fontFamily: {
+          headline: ['Lora', 'serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        borderRadius: {
+          card: '24px',
+          btn: '12px',
+        },
+      },
+    },
+  }
+</script>
+<style>
+  /* Film grain overlay */
+  .film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fade-in-delay-1 { animation-delay: 0.15s; }
+  .fade-in-delay-2 { animation-delay: 0.3s; }
+  .fade-in-delay-3 { animation-delay: 0.45s; }
+  .fade-in-delay-4 { animation-delay: 0.6s; }
+  .fade-in-delay-5 { animation-delay: 0.75s; }
+
+  /* Gentle breathing animation for the lost character */
+  @keyframes breathe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .breathe {
+    animation: breathe 3.5s ease-in-out infinite;
+  }
+
+  /* Subtle look-around for the eyes */
+  @keyframes lookAround {
+    0%, 40%, 100% { transform: translateX(0); }
+    10% { transform: translateX(3px); }
+    25% { transform: translateX(-4px); }
+  }
+
+  .look-around {
+    animation: lookAround 5s ease-in-out infinite;
+  }
+
+  /* Button transitions */
+  .btn-primary {
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+  .btn-primary:hover {
+    background-color: #4E8A8C;
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-secondary {
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+  .btn-secondary:hover {
+    background-color: rgba(194, 149, 107, 0.08);
+    transform: translateY(-1px);
+  }
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  .suggestion-link {
+    transition: color 0.2s ease, transform 0.15s ease;
+  }
+  .suggestion-link:hover {
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body class="bg-cream min-h-screen flex flex-col items-center justify-center font-body text-deep-navy relative overflow-hidden">
+
+  <!-- Film grain overlay -->
+  <div class="film-grain"></div>
+
+  <!-- Main content -->
+  <main class="flex flex-col items-center justify-center px-6 py-12 max-w-lg mx-auto text-center relative z-10">
+
+    <!-- Abstract watercolor character illustration -->
+    <div class="fade-in mb-8 breathe" aria-hidden="true">
+      <svg width="220" height="200" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Soft shadow/ground -->
+        <ellipse cx="110" cy="185" rx="60" ry="8" fill="#2D3142" opacity="0.06"/>
+
+        <!-- Body — large organic blob shape -->
+        <ellipse cx="110" cy="120" rx="48" ry="55" fill="#5F9EA0" opacity="0.25"/>
+        <ellipse cx="110" cy="122" rx="40" ry="48" fill="#5F9EA0" opacity="0.35"/>
+        <ellipse cx="110" cy="125" rx="32" ry="40" fill="#5F9EA0" opacity="0.18"/>
+
+        <!-- Left arm reaching out -->
+        <ellipse cx="62" cy="118" rx="18" ry="10" fill="#5F9EA0" opacity="0.3" transform="rotate(-20 62 118)"/>
+        <ellipse cx="50" cy="112" rx="8" ry="6" fill="#C2956B" opacity="0.35" transform="rotate(-10 50 112)"/>
+
+        <!-- Right arm up (looking around gesture) -->
+        <ellipse cx="158" cy="105" rx="18" ry="10" fill="#5F9EA0" opacity="0.3" transform="rotate(15 158 105)"/>
+        <ellipse cx="170" cy="98" rx="8" ry="6" fill="#C2956B" opacity="0.35" transform="rotate(10 170 98)"/>
+
+        <!-- Head -->
+        <circle cx="110" cy="62" r="34" fill="#C2956B" opacity="0.3"/>
+        <circle cx="110" cy="62" r="28" fill="#C2956B" opacity="0.25"/>
+        <circle cx="110" cy="62" r="22" fill="#FAF8F5" opacity="0.3"/>
+
+        <!-- Eyes (looking around) -->
+        <g class="look-around">
+          <circle cx="100" cy="58" r="4.5" fill="#2D3142" opacity="0.6"/>
+          <circle cx="120" cy="58" r="4.5" fill="#2D3142" opacity="0.6"/>
+          <!-- Eye shine -->
+          <circle cx="101.5" cy="56.5" r="1.5" fill="#FAF8F5" opacity="0.7"/>
+          <circle cx="121.5" cy="56.5" r="1.5" fill="#FAF8F5" opacity="0.7"/>
+        </g>
+
+        <!-- Gentle mouth — small open "o" -->
+        <ellipse cx="110" cy="72" rx="4" ry="3.5" fill="#2D3142" opacity="0.2"/>
+
+        <!-- Cheek blushes -->
+        <circle cx="90" cy="66" r="6" fill="#C2956B" opacity="0.15"/>
+        <circle cx="130" cy="66" r="6" fill="#C2956B" opacity="0.15"/>
+
+        <!-- Question mark floating above -->
+        <text x="140" y="30" font-family="Lora, serif" font-size="22" font-style="italic" fill="#8B7EC8" opacity="0.5" font-weight="600">?</text>
+
+        <!-- Scattered decorative dots (watercolor splatters) -->
+        <circle cx="45" cy="75" r="4" fill="#5F9EA0" opacity="0.12"/>
+        <circle cx="175" cy="80" r="5" fill="#C2956B" opacity="0.12"/>
+        <circle cx="55" cy="150" r="3" fill="#8B7EC8" opacity="0.1"/>
+        <circle cx="165" cy="145" r="3.5" fill="#5F9EA0" opacity="0.1"/>
+        <circle cx="80" cy="170" r="2.5" fill="#C2956B" opacity="0.1"/>
+        <circle cx="140" cy="168" r="2" fill="#8B7EC8" opacity="0.08"/>
+
+        <!-- Feet -->
+        <ellipse cx="96" cy="172" rx="12" ry="6" fill="#5F9EA0" opacity="0.22"/>
+        <ellipse cx="124" cy="172" rx="12" ry="6" fill="#5F9EA0" opacity="0.22"/>
+      </svg>
+    </div>
+
+    <!-- 404 number -->
+    <p class="fade-in fade-in-delay-1 text-8xl font-headline font-semibold text-muted-lavender opacity-40 leading-none tracking-tight select-none mb-2" aria-hidden="true">
+      404
+    </p>
+
+    <!-- Headline -->
+    <h1 class="fade-in fade-in-delay-2 font-headline italic text-2xl sm:text-3xl text-deep-navy leading-snug mb-4">
+      Oops! This page wandered&nbsp;off...
+    </h1>
+
+    <!-- Body text -->
+    <p class="fade-in fade-in-delay-2 text-base text-deep-navy/70 leading-relaxed max-w-sm mb-10">
+      Don't worry — even the best explorers take a wrong turn sometimes. Let's get you back on track.
+    </p>
+
+    <!-- Buttons -->
+    <div class="fade-in fade-in-delay-3 flex flex-col sm:flex-row gap-3 mb-12 w-full sm:w-auto">
+      <a href="/" class="btn-primary inline-flex items-center justify-center gap-2 bg-sage-teal text-white font-medium text-sm px-7 py-3 rounded-btn shadow-none">
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0, 'wght' 400;">home</span>
+        Go Home
+      </a>
+      <a href="/search" class="btn-secondary inline-flex items-center justify-center gap-2 border-2 border-warm-camel text-warm-camel font-medium text-sm px-7 py-3 rounded-btn bg-transparent">
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0, 'wght' 400;">search</span>
+        Search BoloBridge
+      </a>
+    </div>
+
+    <!-- Suggestion links -->
+    <div class="fade-in fade-in-delay-4 flex items-center gap-8 text-sm text-deep-navy/50 mb-16">
+      <a href="/play" class="suggestion-link flex items-center gap-1.5 hover:text-sage-teal">
+        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">sports_esports</span>
+        Play Games
+      </a>
+      <a href="/learn" class="suggestion-link flex items-center gap-1.5 hover:text-sage-teal">
+        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">menu_book</span>
+        Learn
+      </a>
+      <a href="/help" class="suggestion-link flex items-center gap-1.5 hover:text-sage-teal">
+        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">support_agent</span>
+        Get Help
+      </a>
+    </div>
+
+    <!-- BoloBridge logo -->
+    <div class="fade-in fade-in-delay-5 flex items-center gap-2 opacity-40">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" fill="#5F9EA0" opacity="0.4"/>
+        <circle cx="12" cy="12" r="6" fill="#C2956B" opacity="0.5"/>
+        <circle cx="12" cy="12" r="3" fill="#5F9EA0" opacity="0.6"/>
+      </svg>
+      <span class="font-headline italic text-sm text-deep-navy tracking-wide">BoloBridge</span>
+    </div>
+
+  </main>
+
+</body>
+</html>

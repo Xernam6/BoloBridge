@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — Achievement Unlocked</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e2df",
+              "on-primary-fixed": "#002021",
+              "surface-container-high": "#eae8e5",
+              "inverse-primary": "#92d2d3",
+              "surface-tint": "#25686a",
+              "primary": "#25686a",
+              "outline": "#6f7979",
+              "on-error-container": "#93000a",
+              "background": "#fbf9f6",
+              "surface-bright": "#fbf9f6",
+              "on-surface-variant": "#3f4849",
+              "surface-container-low": "#f5f3f0",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#2e2165",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-container": "#efeeeb",
+              "on-background": "#1b1c1a",
+              "surface-variant": "#e4e2df",
+              "outline-variant": "#bfc8c8",
+              "surface": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#004f51",
+              "primary-container": "#5f9ea0",
+              "on-surface": "#1b1c1a",
+              "secondary-container": "#fdcb9d",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#eebd90",
+              "on-secondary-fixed": "#2d1600",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#cabeff",
+              "tertiary-container": "#978ad5",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#7c5732",
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-primary-container": "#003234",
+              "inverse-surface": "#30312f",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#92d2d3",
+              "on-secondary-container": "#79542f",
+              "tertiary-fixed": "#e6deff",
+              "tertiary": "#61549b",
+              "inverse-on-surface": "#f2f0ed",
+              "primary-fixed": "#aeeef0"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCQwZXb4JYEX-b2I8kWAyi0lFBmYlGKebMdqWGJpPrb15TcEIQ-7RV8_Uv2fZ_sd7EEkUiAtrcX9NeptGebJX7YgD95G07tbw6tBQPanVOZdJqV8wG_9RAoZDC2ddb3hU7oH_N9138mnYJ6hYS9F6tpukHleXFw8G0wJ8zMRfL6GaRj5ezIAVFQhiQmVdUhq3000CGmgQ_DWfTOJ6U0efoUotHh66En_qVVOe2aUQwbE-Ys2GU3_cm3xCYdKeJcputZBwHlYvPfQhUI);
+    opacity: 0.4
+    }
+.asymmetric-float {
+    transform: rotate(-2deg) translatey(-8px)
+    }
+.stamp-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed">
+<!-- Parent Dashboard Mock (Background) -->
+<main aria-hidden="true" class="min-h-screen p-8 blur-[8px] pointer-events-none overflow-hidden">
+<header class="flex justify-between items-center mb-12">
+<div>
+<h1 class="font-headline italic text-4xl text-primary">BoloBridge</h1>
+<p class="text-on-surface-variant">Leo's Learning Path</p>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full"></div>
+</header>
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-8 space-y-6">
+<div class="h-64 bg-surface-container-low rounded-xl"></div>
+<div class="grid grid-cols-2 gap-6">
+<div class="h-40 bg-surface-container-low rounded-xl"></div>
+<div class="h-40 bg-surface-container-low rounded-xl"></div>
+</div>
+</div>
+<div class="col-span-4 space-y-6">
+<div class="h-[calc(100vh-250px)] bg-surface-container-low rounded-xl"></div>
+</div>
+</div>
+</main>
+<!-- Celebration Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-on-background/10 backdrop-blur-sm">
+<!-- The Modal Canvas -->
+<div class="relative w-full max-w-[520px] bg-surface-container-lowest rounded-xl shadow-[0_20px_60px_rgba(45,49,66,0.12)] overflow-hidden border border-outline-variant/10">
+<!-- Grain Texture Overlay -->
+<div class="absolute inset-0 grain pointer-events-none"></div>
+<!-- Content Container -->
+<div class="relative z-10 p-10 md:p-12 text-center flex flex-col items-center">
+<!-- Confetti/Stars Decor -->
+<div class="absolute top-0 inset-x-0 h-48 pointer-events-none opacity-60">
+<span class="material-symbols-outlined absolute top-10 left-12 text-secondary-fixed-dim text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined absolute top-20 right-16 text-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="material-symbols-outlined absolute top-32 left-24 text-tertiary-container/40 text-lg" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span class="material-symbols-outlined absolute top-12 right-1/4 text-secondary/30 text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Abstract Editorial Trophy Icon -->
+<div class="mb-8 relative flex items-center justify-center">
+<div class="absolute w-40 h-40 bg-secondary-fixed/30 rounded-full blur-3xl"></div>
+<div class="relative asymmetric-float">
+<span class="material-symbols-outlined text-[100px] text-secondary leading-none" style="font-variation-settings: 'FILL' 0; font-weight: 200;">emoji_events</span>
+<div class="absolute -top-4 -right-2 transform rotate-12">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-5xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</div>
+<!-- Typography Stack -->
+<div class="space-y-4 mb-10">
+<h2 class="font-headline italic text-3xl text-secondary">🏆 Badge Unlocked!</h2>
+<h3 class="font-headline font-bold text-4xl text-on-surface tracking-tight">Sound Specialist</h3>
+<p class="font-body text-on-surface-variant max-w-[280px] mx-auto text-sm leading-relaxed">
+                        Completed 50 speech exercises with 80%+ accuracy
+                    </p>
+</div>
+<!-- Collectible Stamp Visual -->
+<div class="mb-10 p-6 bg-surface-container-low rounded-lg rotate-1 flex flex-col items-center gap-4 border border-outline-variant/20 shadow-sm">
+<div class="relative w-28 h-28 border-[3px] border-primary/40 rounded-full flex items-center justify-center border-dashed p-1">
+<div class="w-full h-full bg-surface-container-lowest rounded-full flex items-center justify-center border border-primary/20 shadow-inner">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+</div>
+<!-- Circular Text Path Alternative (CSS) -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="stamp-text font-label font-bold text-primary/60 mt-20 bg-surface-container-lowest px-2">50 Exercises</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline italic text-2xl text-secondary">+100 XP</span>
+</div>
+</div>
+<!-- Action Stack -->
+<div class="w-full space-y-6">
+<button class="w-full py-4 px-8 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline italic text-xl rounded-full shadow-lg shadow-primary/20 hover:scale-[0.98] transition-all duration-300">
+                        Share Achievement →
+                    </button>
+<a class="block font-headline italic text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30 underline-offset-8" href="#">
+                        Continue Journey
+                    </a>
+</div>
+</div>
+<!-- Bottom Aesthetic Detail -->
+<div class="h-2 w-full bg-gradient-to-r from-secondary-fixed via-tertiary-container to-primary-container opacity-40"></div>
+</div>
+</div>
+<!-- UI Component: TopAppBar (from JSON) -->
+<nav class="fixed top-0 w-full z-40 bg-[#fbf9f6]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full">
+<span class="font-serif italic text-2xl text-[#25686a] dark:text-[#5f9ea0]">BoloBridge</span>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2d3142]/60 dark:text-[#e4e2df]/60 hover:opacity-80 transition-opacity duration-300">account_circle</span>
+</div>
+</nav>
+<!-- UI Component: BottomNavBar (from JSON) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pb-8 pt-4 px-4 bg-[#fbf9f6]/80 backdrop-blur-xl z-50 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(45,49,66,0.06)]">
+<div class="flex flex-col items-center justify-center text-[#2d3142]/70 dark:text-[#e4e2df]/70 px-4 py-2 hover:text-[#25686a] transition-colors">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-sans text-[11px] uppercase tracking-wider font-semibold">Journal</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2d3142]/70 dark:text-[#e4e2df]/70 px-4 py-2 hover:text-[#25686a] transition-colors">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+<span class="font-sans text-[11px] uppercase tracking-wider font-semibold">Practice</span>
+</div>
+<!-- Active State for Achievement context (Milestones) -->
+<div class="flex flex-col items-center justify-center bg-[#25686a] text-white rounded-full px-6 py-2 scale-95 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-sans text-[11px] uppercase tracking-wider font-semibold">Milestones</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2d3142]/70 dark:text-[#e4e2df]/70 px-4 py-2 hover:text-[#25686a] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-sans text-[11px] uppercase tracking-wider font-semibold">Settings</span>
+</div>
+</nav>
+<!-- Background Dashboard Elements for context -->
+<div class="fixed top-24 left-8 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10"></div>
+<div class="fixed bottom-24 right-8 w-96 h-96 bg-tertiary-container/10 rounded-full blur-3xl -z-10"></div>
+</body></html>

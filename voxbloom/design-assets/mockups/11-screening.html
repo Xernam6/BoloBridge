@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — Speech Sound Check</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#efeeeb",
+              "secondary": "#7c5732",
+              "on-surface-variant": "#3f4849",
+              "surface-bright": "#fbf9f6",
+              "on-tertiary-container": "#2e2165",
+              "inverse-surface": "#30312f",
+              "tertiary-fixed": "#e6deff",
+              "on-primary-fixed-variant": "#004f51",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#eae8e5",
+              "on-secondary-container": "#79542f",
+              "surface-container-highest": "#e4e2df",
+              "tertiary": "#61549b",
+              "on-tertiary-fixed-variant": "#493c81",
+              "background": "#fbf9f6",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#eebd90",
+              "surface-tint": "#25686a",
+              "surface": "#fbf9f6",
+              "outline": "#6f7979",
+              "on-primary-fixed": "#002021",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#cabeff",
+              "primary-fixed": "#aeeef0",
+              "primary": "#25686a",
+              "surface-variant": "#e4e2df",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dbdad7",
+              "on-surface": "#1b1c1a",
+              "on-background": "#1b1c1a",
+              "surface-container-low": "#f5f3f0",
+              "on-secondary-fixed": "#2d1600",
+              "inverse-primary": "#92d2d3",
+              "on-tertiary-fixed": "#1c0b54",
+              "secondary-container": "#fdcb9d",
+              "outline-variant": "#bfc8c8",
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-error": "#ffffff",
+              "on-primary-container": "#003234",
+              "inverse-on-surface": "#f2f0ed",
+              "tertiary-container": "#978ad5",
+              "primary-fixed-dim": "#92d2d3",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#5f9ea0",
+              "secondary-fixed": "#ffdcbf"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grainy-overlay {
+    position: relative
+    }
+.grainy-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCtL8KfmeYOWmBGYEfMEYdsogAIrI8dA4H00A5OV_acYqbiDV0pVMaUecYWMQRgznIZK6gDlMNc9ZGhjy-3VDy1n39AxxPL_H8kmd4YAW_jYw0wZExcbrpCpJrz8F9B7UkwVkwHT_9KZyrabz859wrXEpVSEXHXjWiD-roj8i6-ZV_1Aav7lmho-4u88fypZnY5NrGASCwRNZsAxJrbFp9-BEd9IfvjcbmVq9A7oah2sGR7PUoD463WVKhYIKMfdCz7Wli2CpAlomTA)
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container/30">
+<!-- Top Navigation Bar (Shared Component Logic) -->
+<nav class="w-full top-0 sticky z-50 bg-[#FAF8F5] dark:bg-stone-900 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="font-serif italic text-2xl text-teal-900 dark:text-teal-100">BoloBridge</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-500 dark:text-stone-400 font-sans text-[10px] uppercase tracking-widest font-medium hover:opacity-80 transition-opacity" href="#">Library</a>
+<a class="text-teal-900 dark:text-teal-100 font-bold font-sans text-[10px] uppercase tracking-widest hover:opacity-80 transition-opacity" href="#">Practice</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans text-[10px] uppercase tracking-widest font-medium hover:opacity-80 transition-opacity" href="#">Progress</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans text-[10px] uppercase tracking-widest font-medium hover:opacity-80 transition-opacity" href="#">Journal</a>
+</div>
+<div class="flex items-center gap-4 text-teal-800 dark:text-teal-200">
+<button class="material-symbols-outlined hover:opacity-80 transition-opacity">account_circle</button>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto pb-32">
+<!-- SECTION 1: SCREENING INTRO -->
+<section class="px-6 md:px-20 pt-8 pb-16">
+<div class="rounded-xl overflow-hidden grainy-overlay bg-gradient-to-br from-primary to-on-primary-container p-10 md:p-16 flex flex-col items-center text-center shadow-lg">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium tracking-wide mb-6">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+                    AI-Powered Screening
+                </div>
+<div class="text-5xl mb-4">🩺</div>
+<h1 class="font-headline italic text-5xl md:text-7xl text-white tracking-tight leading-tight mb-4">
+                    Speech Sound Check
+                </h1>
+<p class="font-body text-white/70 text-lg md:text-xl max-w-2xl mb-12">
+                    A gentle, age-appropriate assessment of your child's speech sounds
+                </p>
+<!-- 4 Info Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl text-left">
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors duration-300">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-2xl">🤖</span>
+<h3 class="font-headline italic text-xl text-white">AI-Powered</h3>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Smart analysis adapts to each sound as your child speaks.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors duration-300">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-2xl">🎂</span>
+<h3 class="font-headline italic text-xl text-white">Age-Appropriate</h3>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Calibrated to developmental norms for every age group.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors duration-300">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-2xl">📚</span>
+<h3 class="font-headline italic text-xl text-white">Research-Based</h3>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Grounded in ASHA and McLeod &amp; Crowe clinical data.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-colors duration-300">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-2xl">ℹ️</span>
+<h3 class="font-headline italic text-xl text-white">Not a Diagnosis</h3>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">A helpful guide, not a substitute for clinical assessment.</p>
+</div>
+</div>
+<!-- Disclaimer Bar -->
+<div class="mt-12 max-w-3xl w-full bg-secondary-fixed/10 border-l-4 border-secondary-fixed-dim p-4 flex items-start gap-4 text-left">
+<span class="material-symbols-outlined text-secondary-fixed-dim">info</span>
+<p class="text-white/80 text-xs md:text-sm font-body leading-relaxed">
+                        Note: This screening provides helpful guidance but does not replace a professional evaluation by a Speech-Language Pathologist.
+                    </p>
+</div>
+<button class="mt-12 bg-primary-container hover:bg-primary text-white px-10 py-4 rounded-full font-headline text-xl italic tracking-wide transition-all hover:scale-105 active:scale-95 shadow-xl">
+                    Begin Screening
+                </button>
+</div>
+</section>
+<!-- SECTION 2: PHONEME ASSESSMENT CARD -->
+<section class="px-6 md:px-20 pb-20">
+<div class="bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden">
+<!-- Background Decorative Pattern (Abstract Pattern Description) -->
+<div class="absolute top-0 right-0 w-64 h-64 opacity-10 pointer-events-none" data-alt="Subtle teal dot pattern for texture" style="background-image: radial-gradient(circle, var(--tw-colors-primary) 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="font-label text-tertiary uppercase tracking-widest text-xs font-semibold mb-2 block">Level 1 — Fundamentals</span>
+<h2 class="font-headline italic text-4xl text-on-surface leading-tight">Early Sounds</h2>
+<p class="text-on-surface-variant max-w-md mt-2">These foundational sounds are typically mastered by age 3. Let's practice with some animal friends.</p>
+</div>
+<div class="w-full md:w-72">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Sound 3 of 8</span>
+<span class="font-headline italic text-lg text-primary">37%</span>
+</div>
+<!-- Progress Bloom -->
+<div class="h-3 w-full bg-secondary-fixed-dim/30 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 37%"></div>
+</div>
+</div>
+</div>
+<!-- Central Phoneme Card -->
+<div class="max-w-xl mx-auto bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(45,49,66,0.06)] p-12 flex flex-col items-center text-center transform hover:rotate-1 transition-transform duration-500">
+<!-- Feedback Success Indicator (Asymmetric placement) -->
+<div class="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="text-[120px] leading-none mb-4" data-alt="A friendly brown bear cartoon face">🐻</div>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="font-headline font-bold text-5xl text-on-surface">Bear</h3>
+<span class="bg-tertiary-fixed text-tertiary px-3 py-1 rounded-full font-body font-bold text-sm">/b/</span>
+</div>
+<p class="font-headline italic text-2xl text-on-surface-variant mb-12">"The bear likes honey"</p>
+<!-- Interaction Area -->
+<div class="relative group">
+<!-- Pulse Rings -->
+<div class="absolute inset-0 bg-primary/20 rounded-full animate-ping scale-150"></div>
+<div class="absolute inset-0 bg-primary/10 rounded-full animate-ping scale-125 delay-75"></div>
+<button class="relative z-10 w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-on-primary-fixed-variant transition-colors group-active:scale-90 duration-300">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+<p class="mt-8 font-label text-on-surface-variant uppercase tracking-[0.2em] text-[10px] font-bold">Tap the mic to begin</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Shared Component - Mobile Only View) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#FAF8F5]/80 dark:bg-stone-900/80 backdrop-blur-xl rounded-t-[3rem] border-t border-stone-200/20 shadow-[0_-10px_40px_rgba(45,49,66,0.04)]">
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#EBD9B4] dark:bg-teal-900/30 text-teal-900 dark:text-teal-100 rounded-full px-5 py-2">
+<span class="material-symbols-outlined">mic_none</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2">
+<span class="material-symbols-outlined">moving</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Progress</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-sans text-[10px] uppercase tracking-widest font-medium mt-1">Journal</span>
+</div>
+</div>
+</body></html>

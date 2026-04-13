@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#ffb59b",
+              "secondary-fixed": "#ffdbcf",
+              "tertiary-fixed-dim": "#ebc06d",
+              "on-tertiary-container": "#fffeff",
+              "on-error": "#ffffff",
+              "secondary": "#974728",
+              "on-primary-fixed-variant": "#2b4d44",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "secondary-container": "#ff9973",
+              "tertiary": "#78580c",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "primary-container": "#5a7d73",
+              "on-primary-container": "#ffffff",
+              "surface": "#fbf9f6",
+              "primary-fixed-dim": "#a9cec3",
+              "inverse-primary": "#a9cec3",
+              "outline": "#717976",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f2f0ed",
+              "background": "#fbf9f6",
+              "surface-container-high": "#eae8e5",
+              "on-surface": "#1b1c1a",
+              "tertiary-container": "#937026",
+              "surface-variant": "#e4e2df",
+              "on-surface-variant": "#414846",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeeeb",
+              "primary-fixed": "#c5ebde",
+              "on-primary-fixed": "#00201a",
+              "surface-tint": "#43655c",
+              "outline-variant": "#c1c8c4",
+              "surface-container-low": "#f5f3f0",
+              "on-secondary-fixed": "#380d00",
+              "surface-dim": "#dbdad7",
+              "tertiary-fixed": "#ffdea4",
+              "on-tertiary-fixed": "#261900",
+              "inverse-surface": "#30312f",
+              "on-secondary-container": "#772f12",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e4e2df",
+              "primary": "#42645b",
+              "on-secondary-fixed-variant": "#793013",
+              "on-tertiary-fixed-variant": "#5d4200",
+              "on-background": "#1b1c1a",
+              "surface-bright": "#fbf9f6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-green { background: radial-gradient(circle, rgba(66,100,91,0.08) 0%, rgba(251,249,246,0) 70%); }
+        .watercolor-ochre { background: radial-gradient(circle, rgba(120,88,12,0.06) 0%, rgba(251,249,246,0) 70%); }
+        .watercolor-teal { background: radial-gradient(circle, rgba(90,125,115,0.08) 0%, rgba(251,249,246,0) 70%); }
+        .dashed-path {
+            stroke-dasharray: 8 12;
+            stroke-linecap: round;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed">
+<div class="film-grain"></div>
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f6] dark:bg-stone-900 flex justify-between items-center w-full px-8 py-6">
+<div class="text-2xl italic font-serif text-[#1b1c1a] dark:text-[#f5f3f0]">BoloBridge</div>
+<nav class="hidden md:flex items-center space-gap-8 gap-8">
+<a class="text-[#42645b] dark:text-[#5a7d73] font-bold hover:opacity-80 transition-opacity" href="#">Journey</a>
+<a class="text-[#1b1c1a]/60 dark:text-[#f5f3f0]/60 hover:opacity-80 transition-opacity" href="#">Library</a>
+<a class="text-[#1b1c1a]/60 dark:text-[#f5f3f0]/60 hover:opacity-80 transition-opacity" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#1b1c1a]/60 hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</button>
+</div>
+</header>
+<!-- Side Navigation Anchor (Responsive Toggle Hidden for Map Focus) -->
+<aside class="fixed right-0 top-0 w-80 z-40 flex flex-col p-6 h-[calc(100vh-2rem)] m-4 bg-[#f5f3f0]/80 dark:bg-stone-900/80 backdrop-blur-xl rounded-full shadow-xl shadow-[#1b1c1a]/5 hidden xl:flex mt-24">
+<div class="flex flex-col items-center text-center mt-8 px-6">
+<div class="w-20 h-20 rounded-full bg-surface-container-highest overflow-hidden mb-4 border-2 border-primary/10">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling young person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9I9iUxAmjjiM1uvbGw0E-1DEiWGpJi825u-MkCS2xwQznp1cqV1momosGj5ihNvfq5nSBCwFcfpP3ezNERe_hpqQkkpy8nZRHi2qKcN06FhTlukmjt9oXO0za-nQwFuzFaccxqEofR16kBF05eqCHYXZ5SmTSKB2O3xNBaWxCiwD88EeGcmWQOFPEZe9JG2XwBuGRs-43ssinDQaECoWilQ1aVxUvYggYBJhwKcisj15XM7rbUuiweHT6qk0ulYCMBC7r5Ag4A4at"/>
+</div>
+<h2 class="font-headline italic text-xl text-on-surface">My Speech Journey</h2>
+<p class="text-on-surface/60 text-sm mt-1">Level 12 Pathmaker</p>
+</div>
+<nav class="mt-12 flex flex-col gap-6 px-10">
+<a class="flex items-center gap-4 text-[#42645b] dark:text-[#5a7d73] font-bold scale-110 group" href="#">
+<span class="material-symbols-outlined group-hover:text-[#5a7d73]" data-icon="map">map</span>
+<span class="font-label uppercase tracking-widest text-xs">Map</span>
+</a>
+<a class="flex items-center gap-4 text-[#1b1c1a]/40 dark:text-[#f5f3f0]/40 group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-[#5a7d73]" data-icon="auto_stories">auto_stories</span>
+<span class="font-label uppercase tracking-widest text-xs">Quests</span>
+</a>
+<a class="flex items-center gap-4 text-[#1b1c1a]/40 dark:text-[#f5f3f0]/40 group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-[#5a7d73]" data-icon="edit_note">edit_note</span>
+<span class="font-label uppercase tracking-widest text-xs">Journal</span>
+</a>
+<a class="flex items-center gap-4 text-[#1b1c1a]/40 dark:text-[#f5f3f0]/40 group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-[#5a7d73]" data-icon="settings">settings</span>
+<span class="font-label uppercase tracking-widest text-xs">Settings</span>
+</a>
+</nav>
+<div class="mt-auto mb-10 px-6">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-label text-xs uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:scale-95 transition-all">
+                Current Quest
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="min-h-screen pt-24 pb-32 px-4 md:px-12 max-w-[1440px] mx-auto relative overflow-hidden">
+<!-- Header Section -->
+<header class="mb-12 relative z-10 text-center md:text-left">
+<h1 class="font-headline italic text-5xl md:text-7xl text-on-surface leading-tight tracking-tight">My Speech Journey</h1>
+<p class="text-on-surface/50 font-body text-lg max-w-xl mt-4">Tracing your path through the echoes of the forest and the whispers of the river.</p>
+</header>
+<!-- The Map Container -->
+<div class="relative w-full aspect-[16/9] bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10 shadow-inner">
+<!-- Biome Backgrounds (Watercolor Layers) -->
+<div class="absolute inset-0 watercolor-green -translate-x-1/4 -translate-y-1/4 opacity-60"></div>
+<div class="absolute inset-0 watercolor-ochre translate-x-1/4 -translate-y-1/4 opacity-60"></div>
+<div class="absolute inset-0 watercolor-teal translate-x-0 translate-y-1/3 opacity-80"></div>
+<!-- SVG Path Layer -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" fill="none" viewbox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg">
+<!-- Winding Path -->
+<path class="dashed-path" d="M100 650 C 300 600, 200 400, 450 350 C 700 300, 750 150, 1000 200 C 1250 250, 1200 500, 1350 550" stroke="#42645b" stroke-opacity="0.2" stroke-width="3"></path>
+</svg>
+<!-- Map Interactive Layer -->
+<div class="absolute inset-0 p-12">
+<!-- Forest Biome Nodes -->
+<div class="absolute left-[10%] bottom-[20%] text-center">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-lg shadow-primary/20 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="local_florist" style="font-variation-settings: 'FILL' 1">local_florist</span>
+</div>
+<span class="block mt-2 font-label text-[10px] uppercase tracking-widest text-primary/70">Early Sounds</span>
+</div>
+<div class="absolute left-[25%] bottom-[35%] text-center opacity-80">
+<div class="w-10 h-10 bg-primary/20 rounded-full border-2 border-primary flex items-center justify-center text-primary cursor-pointer hover:bg-primary/30 transition-all">
+<span class="material-symbols-outlined" data-icon="local_florist" style="font-variation-settings: 'FILL' 1">local_florist</span>
+</div>
+</div>
+<!-- Mountain Biome Nodes -->
+<div class="absolute left-[50%] top-[25%] text-center">
+<div class="relative">
+<div class="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-30"></div>
+<div class="relative w-16 h-16 bg-primary-container rounded-full flex items-center justify-center text-on-primary shadow-xl shadow-primary-container/30 cursor-pointer hover:scale-110 transition-transform ring-4 ring-primary-fixed-dim/30">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+<span class="block mt-4 font-label text-[10px] uppercase tracking-widest text-on-surface font-bold">The /r/ Mountain</span>
+<span class="block text-[8px] uppercase tracking-widest text-on-surface/40 mt-1">Current Focus</span>
+</div>
+<div class="absolute left-[65%] top-[15%] text-center opacity-40 grayscale group">
+<div class="w-12 h-12 bg-surface-variant rounded-full flex items-center justify-center text-on-surface-variant border-2 border-dashed border-outline-variant group-hover:border-solid transition-all cursor-not-allowed">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<span class="block mt-2 font-label text-[10px] uppercase tracking-widest text-on-surface/40">Peaks of S</span>
+</div>
+<!-- River Biome Nodes -->
+<div class="absolute right-[15%] bottom-[35%] text-center opacity-40 grayscale">
+<div class="w-14 h-14 bg-surface-variant rounded-full flex items-center justify-center text-on-surface-variant border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+</div>
+<span class="block mt-2 font-label text-[10px] uppercase tracking-widest text-on-surface/40">River of Breathing</span>
+</div>
+<!-- Floating Sidebar (Quest Card) -->
+<div class="absolute top-12 right-12 w-80 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-8 shadow-2xl shadow-on-surface/5 border border-outline-variant/10 z-20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline italic text-2xl text-on-surface">Active Quest</h3>
+</div>
+<div class="mb-8">
+<div class="flex justify-between items-end mb-2">
+<h4 class="font-label text-xs uppercase tracking-widest text-on-surface/60">Mountain Path</h4>
+<span class="font-headline italic text-lg text-primary">64%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<p class="text-sm text-on-surface/70 leading-relaxed italic">"The peaks of /r/ require steady grounding and precise tongue lifting. You're halfway to the summit."</p>
+</div>
+<button class="w-full py-4 bg-secondary text-on-secondary rounded-full font-label text-xs uppercase tracking-[0.2em] shadow-lg shadow-secondary/20 hover:scale-[0.98] transition-all">
+                        Next Lesson
+                    </button>
+</div>
+</div>
+<!-- Ambient Decorative Elements (Sketches) -->
+<div class="absolute bottom-8 left-12 flex gap-4 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-6xl" data-icon="nature">nature</span>
+<span class="material-symbols-outlined text-4xl mt-4" data-icon="park">park</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#fbf9f6]/90 dark:bg-stone-900/90 backdrop-blur-md border-t border-[#c1c8c4]/15 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+<a class="flex flex-col items-center justify-center bg-[#42645b] text-white rounded-full p-3 scale-90 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-[10px] font-medium Inter uppercase tracking-widest mt-1">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1c1a]/50 dark:text-[#f5f3f0]/50 p-3 scale-90 active:scale-100 transition-transform hover:bg-[#f5f3f0]" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-[10px] font-medium Inter uppercase tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1c1a]/50 dark:text-[#f5f3f0]/50 p-3 scale-90 active:scale-100 transition-transform hover:bg-[#f5f3f0]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium Inter uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Global Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center text-on-surface/30 font-label text-[10px] uppercase tracking-[0.3em]">
+<div class="flex gap-12 mb-6 md:mb-0">
+<a class="hover:text-primary transition-colors" href="#">Privacy Guide</a>
+<a class="hover:text-primary transition-colors" href="#">Oral Anatomy</a>
+<a class="hover:text-primary transition-colors" href="#">Methods</a>
+</div>
+<div class="flex items-center gap-2">
+<span>BoloBridge Digital Heirloom © 2024</span>
+<span class="w-1 h-1 rounded-full bg-on-surface/20"></span>
+<span>Crafted in the Valley of Speech</span>
+</div>
+</footer>
+</body></html>

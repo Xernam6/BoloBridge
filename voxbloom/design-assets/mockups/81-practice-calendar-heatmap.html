@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Archivist | Practice Calendar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#e7fff0",
+              "surface-container-high": "#e9e8e4",
+              "error": "#aa371c",
+              "tertiary-container": "#ecdcfd",
+              "on-secondary": "#fff7f4",
+              "on-surface": "#313330",
+              "surface-container-highest": "#e3e3de",
+              "surface-container-low": "#f5f3f0",
+              "primary-fixed-dim": "#c3dacc",
+              "on-primary-fixed-variant": "#4b6055",
+              "inverse-surface": "#0e0e0d",
+              "surface-tint": "#4f6459",
+              "surface-bright": "#fbf9f6",
+              "on-background": "#313330",
+              "surface-variant": "#e3e3de",
+              "secondary-fixed-dim": "#fecaa5",
+              "tertiary": "#665a75",
+              "on-surface-variant": "#5e5f5c",
+              "primary": "#4f6459",
+              "secondary-fixed": "#ffdcc4",
+              "secondary-container": "#ffdcc4",
+              "secondary": "#7d5739",
+              "on-tertiary": "#fef6ff",
+              "on-secondary-container": "#6e4a2d",
+              "error-container": "#fa7150",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#d1e8da",
+              "on-error-container": "#671200",
+              "inverse-primary": "#e7fff1",
+              "on-tertiary-container": "#584d67",
+              "background": "#fbf9f6",
+              "surface-container": "#efeeea",
+              "surface": "#fbf9f6",
+              "primary-fixed": "#d1e8da",
+              "tertiary-dim": "#5a4e69",
+              "tertiary-fixed": "#ecdcfd",
+              "primary-dim": "#43584d",
+              "on-primary-fixed": "#2f443a",
+              "on-primary-container": "#42564c",
+              "on-secondary-fixed-variant": "#795336",
+              "error-dim": "#821a01",
+              "on-error": "#fff7f6",
+              "tertiary-fixed-dim": "#deceee",
+              "outline-variant": "#b2b2ae",
+              "on-tertiary-fixed-variant": "#625671",
+              "on-secondary-fixed": "#59381d",
+              "secondary-dim": "#704b2e",
+              "surface-dim": "#dadad6",
+              "outline": "#7a7b78",
+              "inverse-on-surface": "#9e9d9a",
+              "on-tertiary-fixed": "#453b54"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grainy-overlay {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .calendar-cell {
+            aspect-ratio: 1/1;
+            width: 48px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<div class="grainy-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6]/80 dark:bg-[#313330]/80 backdrop-blur-xl shadow-[0_12px_32px_rgba(49,51,48,0.05)] flex justify-between items-center px-8 py-4">
+<div class="font-serif italic text-2xl tracking-tight text-[#4f6459] dark:text-[#fbf9f6]">The Archivist</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#4f6459] border-b-2 border-[#4f6459] pb-1 font-sans text-sm font-medium" href="#">Calendar</a>
+<a class="text-[#665a75] hover:text-[#4f6459] transition-colors duration-300 font-sans text-sm font-medium" href="#">Insights</a>
+<a class="text-[#665a75] hover:text-[#4f6459] transition-colors duration-300 font-sans text-sm font-medium" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4f6459] cursor-pointer hover:bg-[#f5f3f0] p-2 rounded-full transition-colors">calendar_month</span>
+<span class="material-symbols-outlined text-[#4f6459] cursor-pointer hover:bg-[#f5f3f0] p-2 rounded-full transition-colors">search</span>
+<img alt="Profile" class="w-8 h-8 rounded-full border border-outline-variant/20" data-alt="User profile avatar close up portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB59nIBiwTXkrHdIbma2tdzSeGgr5OM4oZlHeZhzRcr_EmADNVaaag9VK-RMmilq1ydD9nHy0QFvJrneqlAYT5r9xLLz6XM0Wu_9gniby8QiA_qJsPdMfnaEb_FsI35fRfYLXNOgCsec73C5g8PFHEVjbSSq51_rPkc7b95bYM4g2DPuCAebnPKPW0lkzc4vGlkn69kU5fV1VXvhBE345R3GCp_hhwCen7nOi_SHEuIXN02lA828f5HH0VhAJ8qG_fIaV3c_b-0wL8Z"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-[#f5f3f0] dark:border-[#3c3e3b] bg-[#fbf9f6] dark:bg-[#313330] flex flex-col pt-24 pb-8 z-40 hidden md:flex">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3">
+<img alt="Julian" class="w-10 h-10 rounded-full object-cover" data-alt="Julian user profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfwkScIeTc9CHo4PvnC1sHrzx4yOp4pOouBAN1dmwD5eNrPWZ0pMnO6Sa8hAdXzPSRKJ8SGEi3GV5YlvleUFU_Tl_EQR5q_E2qEmo84WkCCEr6dBJ1ScmVOJ1iDiRwnw2esrlE3lrhY2JLk4jT3qm4zdMGAjNFvoTT57_XkoLWkaq8oemaY8r3TcwwsUOEivQBgv2lDOAwEM65_tQd1vlJqd0H3iuNyFqA-GzjmNV2uiRvnq06PkOMXFY8k8c5V4oLRU27eqPYTXtf"/>
+<div>
+<div class="font-serif italic text-lg text-[#4f6459]">Julian</div>
+<div class="text-[10px] uppercase tracking-widest font-semibold text-[#665a75]">Analog Student</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 bg-[#f5f3f0] dark:bg-[#3c3e3b] text-[#4f6459] dark:text-[#fbf9f6] rounded-r-full py-3 px-6 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">edit_calendar</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Practice</span>
+</a>
+<a class="flex items-center gap-3 text-[#665a75] dark:text-[#7d5739] py-3 px-6 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Progress</span>
+</a>
+<a class="flex items-center gap-3 text-[#665a75] dark:text-[#7d5739] py-3 px-6 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Goals</span>
+</a>
+<a class="flex items-center gap-3 text-[#665a75] dark:text-[#7d5739] py-3 px-6 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Journal</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 text-[#665a75] py-2 px-6 hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">settings</span>
+<span class="text-[10px] uppercase tracking-widest font-semibold">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-[#665a75] py-2 px-6 hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">help_outline</span>
+<span class="text-[10px] uppercase tracking-widest font-semibold">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 pt-28 pb-20 px-8 min-h-screen max-w-[1440px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-12 items-start">
+<!-- Calendar Section -->
+<div class="flex-1 w-full">
+<header class="mb-10 text-center lg:text-left">
+<h1 class="font-headline italic text-5xl text-primary tracking-tight mb-2">Practice Calendar</h1>
+<div class="flex items-center justify-center lg:justify-start gap-6 text-secondary">
+<button class="hover:scale-110 transition-transform"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-headline italic text-2xl">March 2026</span>
+<button class="hover:scale-110 transition-transform"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="bg-surface-container-low rounded-xl p-8 shadow-sm">
+<div class="grid grid-cols-7 gap-4 mb-4">
+<!-- Days Header -->
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Sun</div>
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Mon</div>
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Tue</div>
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Wed</div>
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Thu</div>
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Fri</div>
+<div class="text-center font-label text-[10px] uppercase tracking-widest font-bold text-outline">Sat</div>
+<!-- Row 1 (Starting from Sunday March 1) -->
+<div class="calendar-cell bg-primary-container/40 rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container relative group cursor-pointer">1<div class="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100"></div></div>
+<div class="calendar-cell bg-surface-container-lowest border border-surface-container-highest rounded-lg flex items-center justify-center text-[10px] text-outline/30">•</div>
+<div class="calendar-cell bg-primary rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary relative group cursor-pointer">3<div class="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100"></div></div>
+<div class="calendar-cell bg-primary-dim rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary relative group cursor-pointer">4</div>
+<div class="calendar-cell bg-surface-container-lowest border border-surface-container-highest rounded-lg flex items-center justify-center text-[10px] text-outline/30">•</div>
+<div class="calendar-cell bg-primary-container/40 rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">6</div>
+<div class="calendar-cell bg-primary-container rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">7</div>
+<!-- Row 2 -->
+<div class="calendar-cell bg-primary-dim rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary">8</div>
+<div class="calendar-cell bg-primary rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary">9</div>
+<div class="calendar-cell bg-surface-container-lowest border border-surface-container-highest rounded-lg flex items-center justify-center text-[10px] text-outline/30">•</div>
+<div class="calendar-cell bg-surface-container-lowest border border-surface-container-highest rounded-lg flex items-center justify-center text-[10px] text-outline/30">•</div>
+<div class="calendar-cell bg-primary-container/40 rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">12</div>
+<div class="calendar-cell bg-primary-container rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">13</div>
+<div class="calendar-cell bg-surface-container-lowest border border-surface-container-highest rounded-lg flex items-center justify-center text-[10px] text-outline/30">•</div>
+<!-- Row 3 -->
+<div class="calendar-cell bg-primary-container rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">15</div>
+<div class="calendar-cell bg-primary-dim rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary">16</div>
+<div class="calendar-cell bg-primary-container/40 rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">17</div>
+<!-- ACTIVE SELECTION DAY -->
+<div class="calendar-cell bg-primary rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary ring-2 ring-secondary ring-offset-2 ring-offset-surface-container-low">18</div>
+<div class="calendar-cell bg-primary-container rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary-container">19</div>
+<div class="calendar-cell bg-primary-dim rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary">20</div>
+<!-- TODAY -->
+<div class="calendar-cell bg-primary rounded-lg flex items-center justify-center text-[10px] font-bold text-on-primary ring-4 ring-secondary/20 animate-pulse">21</div>
+<!-- Row 4 (Future Days Dimmed) -->
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">22</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">23</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">24</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">25</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">26</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">27</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">28</div>
+<!-- Row 5 -->
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">29</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">30</div>
+<div class="calendar-cell bg-surface-container-lowest/50 border border-surface-container-highest/50 rounded-lg flex items-center justify-center text-[10px] text-outline/20">31</div>
+<div class="calendar-cell"></div><div class="calendar-cell"></div><div class="calendar-cell"></div><div class="calendar-cell"></div>
+</div>
+<!-- Legend -->
+<div class="flex items-center justify-end gap-3 mt-6">
+<span class="text-[10px] uppercase tracking-widest text-outline">Less</span>
+<div class="w-3 h-3 bg-surface-container-lowest border border-surface-container-highest rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-container/40 rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-container rounded-sm"></div>
+<div class="w-3 h-3 bg-primary rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-dim rounded-sm"></div>
+<span class="text-[10px] uppercase tracking-widest text-outline">More</span>
+</div>
+</div>
+<!-- Stats Section -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-end mb-2">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Days Active</span>
+<span class="font-headline italic text-xl text-primary">15/21</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[71%] rounded-full"></div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl flex items-center justify-between">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline block mb-1">Total Practice</span>
+<span class="font-headline italic text-3xl text-primary">87</span>
+<span class="font-headline italic text-sm text-secondary ml-1">minutes</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline block mb-1">Most Active</span>
+<span class="font-headline italic text-lg text-secondary">Tuesday</span>
+<span class="text-[10px] font-body text-outline block">Avg 8 min</span>
+</div>
+</div>
+<div class="p-6 bg-secondary-container rounded-xl flex items-center justify-between">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-secondary-container block mb-1">Current Streak</span>
+<span class="font-headline italic text-3xl text-on-secondary-container">5 🔥</span>
+</div>
+<div class="text-right">
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-secondary-container block mb-1">Best Streak</span>
+<span class="font-headline italic text-lg text-on-secondary-container">12 🔥</span>
+</div>
+</div>
+<div class="p-6 bg-tertiary-container rounded-xl flex items-center justify-center text-center">
+<p class="font-headline italic text-lg text-on-tertiary-container leading-tight">
+                            "True archival progress is found in the rhythm of small daily steps."
+                        </p>
+</div>
+</div>
+</div>
+<!-- Detail Sidebar -->
+<aside class="w-full lg:w-80 sticky top-28">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(49,51,48,0.05)] border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary">history_edu</span>
+<h2 class="font-headline italic text-2xl text-primary">March 18 Details</h2>
+</div>
+<div class="space-y-6">
+<div class="group">
+<div class="flex justify-between items-start mb-1">
+<span class="font-medium text-on-surface">Sound Safari</span>
+<span class="text-xs font-bold text-primary">92%</span>
+</div>
+<div class="text-sm text-outline-variant italic font-serif">6 min duration</div>
+<div class="mt-2 h-0.5 w-full bg-surface-container-low overflow-hidden">
+<div class="bg-primary/40 h-full w-[92%]"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-start mb-1">
+<span class="font-medium text-on-surface">Tongue Gym</span>
+<span class="text-xs font-bold text-secondary">Done</span>
+</div>
+<div class="text-sm text-outline-variant italic font-serif">4 min duration</div>
+</div>
+<div class="pt-6 border-t border-surface-container-low mt-8">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-widest font-bold text-outline">Total Time</span>
+<span class="font-headline italic text-2xl text-primary">10 mins</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-primary text-on-primary rounded-full font-sans text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-opacity active:scale-95">
+                        Open Journal Entry
+                    </button>
+</div>
+<div class="mt-6 p-6 bg-surface-container-low rounded-xl">
+<h3 class="text-[10px] uppercase tracking-widest font-bold text-outline mb-4">Upcoming Goals</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<span class="text-xs text-on-surface">Complete 7-day streak</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<span class="text-xs text-on-surface text-outline/60">Unlock 'Master of Phonetics'</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe md:hidden bg-[#fbf9f6]/90 dark:bg-[#313330]/90 backdrop-blur-lg border-t border-[#f5f3f0]">
+<a class="flex flex-col items-center justify-center text-[#7d5739] py-1 px-4" href="#">
+<span class="material-symbols-outlined text-xl">today</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-tighter mt-0.5">Today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f6459] bg-[#d1e8da] dark:bg-[#4f6459]/20 rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-tighter mt-0.5">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] py-1 px-4" href="#">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-tighter mt-0.5">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] py-1 px-4" href="#">
+<span class="material-symbols-outlined text-xl">person</span>
+<span class="font-sans text-[10px] font-bold uppercase tracking-tighter mt-0.5">Account</span>
+</a>
+</nav>
+</body></html>

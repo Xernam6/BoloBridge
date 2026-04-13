@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#7b5804",
+              "outline-variant": "#dac1b8",
+              "on-primary-fixed": "#360f00",
+              "tertiary": "#7c3f24",
+              "background": "#fff8f0",
+              "surface-container": "#f4ede4",
+              "tertiary-container": "#99563a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb598",
+              "outline": "#87736b",
+              "on-secondary-fixed": "#271900",
+              "on-tertiary-fixed": "#370e00",
+              "secondary-fixed": "#ffdea6",
+              "inverse-surface": "#33302a",
+              "inverse-primary": "#ffb596",
+              "surface-dim": "#e0d9d0",
+              "surface-tint": "#944925",
+              "primary-fixed-dim": "#ffb596",
+              "primary-container": "#a0522d",
+              "secondary-container": "#fdcd74",
+              "on-tertiary-fixed-variant": "#71361d",
+              "surface-variant": "#e8e2d9",
+              "secondary-fixed-dim": "#eec068",
+              "primary-fixed": "#ffdbcd",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1e1b16",
+              "on-surface-variant": "#54433c",
+              "surface": "#fff8f0",
+              "on-tertiary-container": "#ffe1d7",
+              "on-background": "#1e1b16",
+              "surface-container-high": "#eee7de",
+              "surface-bright": "#fff8f0",
+              "primary": "#823b18",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#5d4200",
+              "on-secondary-container": "#785601",
+              "on-primary-container": "#ffe1d6",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#76320f",
+              "inverse-on-surface": "#f7f0e7",
+              "tertiary-fixed": "#ffdbce",
+              "surface-container-highest": "#e8e2d9",
+              "surface-container-low": "#faf3ea",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff8f0;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar Shell -->
+<header class="bg-[#fff8f0]/80 dark:bg-[#1e1b16]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 atmospheric-shadow shadow-2xl shadow-orange-900/5">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-orange-900 dark:text-orange-100">BoloBridge</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-orange-800/70 dark:text-orange-300/70 font-medium hover:text-orange-900 dark:hover:text-orange-50 transition-colors duration-300" href="#">Stories</a>
+<a class="text-orange-800/70 dark:text-orange-300/70 font-medium hover:text-orange-900 dark:hover:text-orange-50 transition-colors duration-300" href="#">Progress</a>
+<a class="text-orange-900 dark:text-orange-100 font-bold border-b-2 border-orange-800 dark:border-orange-200 pb-1 hover:text-orange-900 transition-colors duration-300" href="#">Library</a>
+<a class="text-orange-800/70 dark:text-orange-300/70 font-medium hover:text-orange-900 dark:hover:text-orange-50 transition-colors duration-300" href="#">Guidance</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors scale-95 active:duration-150 text-orange-900">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-primary/10">
+<img class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYIJCnjaDitpPFNpMu3hGzBRwPeiobA1gRBNaeYZNyJTOCJNEa8MNMVNG-xu0IBu7qMqId9xXXaWaX4FrQSWMMfjHQnQd3myntaokvV0xlSceXkQI0cbDtnxSIudZ2rzqurSntqRJlY_MSyxUTNa7aZG_vDPR8JigpriURnbDB9Zw-rKiKfJPZt5cvHvWb9oEaPQL7tOyR2Ex-_BrbQiQChnsdWrKxE-N67yzraks_A64CCt9He6RUQHBncHMma39vWw_pH4BOP9XR"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-8 pt-12 pb-24">
+<!-- Editorial Header Section -->
+<div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="font-headline italic text-[3.5rem] leading-none text-[#5B2333] mb-4">Speech Games</h1>
+<p class="text-on-surface-variant text-lg max-w-lg leading-relaxed tracking-wide">
+                    Where every syllable finds its rhythm. Immerse yourself in a curated landscape of phonetic discovery and editorial play.
+                </p>
+</div>
+<div class="flex items-center gap-2 px-6 py-3 bg-secondary-container text-on-secondary-container rounded-full self-start">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label text-sm font-bold tracking-wider">DAILY STREAK: 12 DAYS</span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-8 h-auto lg:h-[800px]">
+<!-- 1. Story Studio (Large) -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-lowest rounded-lg p-10 flex flex-col relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="inline-block px-3 py-1 bg-primary text-on-primary rounded-full text-xs font-bold tracking-[0.1em] mb-6">STORY STUDIO</div>
+<h2 class="font-headline italic text-4xl text-on-surface max-w-sm mb-4">Crafting the Golden Narrative</h2>
+<p class="text-on-surface-variant max-w-xs leading-relaxed">Articulate complex storylines through guided voice narration and sunset-toned imagery.</p>
+</div>
+<button class="mt-8 self-start px-8 py-3 bg-primary text-on-primary rounded-lg font-bold hover:brightness-110 transition-all active:scale-95">Open Studio</button>
+</div>
+<div class="absolute right-0 bottom-0 w-2/3 h-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-l from-surface-container-lowest to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract watercolor illustration of a magical storybook opening during sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEVaRqdxj0fGA5zvmvTt8x0fTpys-e0DKJsA03tmGeq8ULXyMTch-WT_Kz2wH2CNZ3opFg6r2HzlY4Isgw9g3a2Gghf-nEaITJGMKHXY_77GlwSU3OM6-r7s822vjw0XADDNbupQ-bOPl46W2JxRwRYgCUCQV1mAYe2sojBnDUVjfYo77rATuNAzEnQjK4AvwKH-JyOuZrz9E3N-MgN2-vxYulchHVo0v7WscLX1qvZrmYKpDCtmPAegK9A_T11I_VGWdJciPFvxBD"/>
+</div>
+</div>
+<!-- 2. Daily Challenge (Smaller) -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col justify-between border-b-4 border-secondary-container">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="hotel_class" style="font-variation-settings: 'FILL' 1;">hotel_class</span>
+<h3 class="font-headline italic text-2xl text-on-surface mb-2">Daily Challenge</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">The Phonetic Peak: Master 5 intricate sibilant transitions.</p>
+</div>
+<div class="mt-6">
+<div class="flex justify-between text-xs font-bold mb-2">
+<span>PROGRESS</span>
+<span class="text-secondary">0 / 1</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-0 h-full bg-secondary-container"></div>
+</div>
+</div>
+</div>
+<!-- 3. Sound Safari -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline italic text-2xl text-on-surface">Sound Safari</h3>
+<div class="w-10 h-10 rounded-full bg-[#C67B5C]/10 flex items-center justify-center text-[#C67B5C]">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</div>
+</div>
+<div class="flex-grow flex items-center justify-center relative min-h-[140px]">
+<img class="w-full h-32 object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-opacity" data-alt="Minimal silhouettes of desert safari animals against a setting sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAktm8XMVsKDghM9DF1k2mnXCtdm6LvVNUCeL-H8CVseUlvySBovVLJbhwFlJTt8dtpwzrj012_t0D6SPwQ4giyk4o4NoHOtitmiwtjhamQ0EEES7NuMdw7a5If-wmbcz6Bvcripwmc2ymBx1wAZ0BsNymEkXQ-KLzweppLFXYVDnBeMHpZn6qLtAj2Ve23ldflhb2toVK3IyJ0f46lRDCJ_7Ch9xpKt_HlGniSLA4knta4dkC0ZhEJq9FB7dDfMEz9OJTYKjN_zbiT"/>
+<div class="absolute bottom-2 right-2 text-[10px] font-bold tracking-widest text-[#C67B5C]">TERRACOTTA PEAK</div>
+</div>
+<p class="mt-4 text-sm text-on-surface-variant">Navigate the vocal wild with animal-inspired articulations.</p>
+</div>
+<!-- 4. Word Garden -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col group">
+<div class="w-12 h-12 bg-[#6B7B3A]/10 rounded-xl flex items-center justify-center text-[#6B7B3A] mb-4">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+</div>
+<h3 class="font-headline italic text-2xl text-on-surface mb-2">Word Garden</h3>
+<p class="text-sm text-on-surface-variant mb-6">Nurture syllables in our autumnal sanctuary.</p>
+<div class="relative h-24 rounded-lg overflow-hidden mt-auto">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Autumnal garden illustration with falling leaves and blossoming syllables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzq25DdOIzn46kLQX5Q_bG_2yAQCikIJk0C9DzlNyXyZsoPvQc1h_8hNlenT9Txe7mJ7Q7ttVOtlj4g_erUY1YA_4e7NMeUT2jWepX4Ft01kRo_qhY0hpw0cOcAN4MzjSor9A1tkGHwGlmKunq645Sh-Lp8w1h5ezbin34IETmLN28cFil16Ptg8QhIHXAFGEfWy_XCI410mldg_16bc2iBnoeiIUvaNgwIT3hOjIHJRu7nmv6qpQlbcecGZxV7YkLzbqXLUNilKi"/>
+<div class="absolute inset-0 bg-[#6B7B3A]/20"></div>
+</div>
+</div>
+<!-- 5. Rhyme Time -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col justify-between border-t-4 border-secondary-container">
+<div>
+<h3 class="font-headline italic text-2xl text-on-surface mb-2">Rhyme Time</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Whimsical cadences to smooth out phonetic edges.</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold">LIMERICKS</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold">SONNETS</span>
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full text-[10px] font-bold">COUPLETS</span>
+</div>
+<div class="mt-6 flex justify-center text-[#D4A853]">
+<span class="material-symbols-outlined text-5xl" data-icon="music_note" style="font-variation-settings: 'FILL' 1;">music_note</span>
+<span class="material-symbols-outlined text-3xl -ml-2 mt-4" data-icon="music_note">music_note</span>
+</div>
+</div>
+</div>
+<!-- 6. Tongue Gym (Horizontal Banner) -->
+<div class="mt-8 bg-surface-container-low rounded-lg p-1 w-full">
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col lg:flex-row items-center justify-between gap-8 border-l-8 border-[#C67B5C]">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 bg-[#C67B5C] rounded-2xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="fitness_center">fitness_center</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-headline italic text-3xl text-on-surface">Tongue Gym</h3>
+<span class="bg-[#C67B5C]/10 text-[#C67B5C] text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-tighter">Daily Challenge</span>
+</div>
+<p class="text-on-surface-variant tracking-wide">High-intensity interval training for vocal agility. Stretch your phonetic reach.</p>
+</div>
+</div>
+<div class="flex items-center gap-8 w-full lg:w-auto">
+<div class="hidden xl:flex items-center gap-4 h-12">
+<!-- Abstract Sound Waves Simulation -->
+<div class="flex items-end gap-1 h-8">
+<div class="w-1 bg-[#C67B5C]/20 h-4 rounded-full"></div>
+<div class="w-1 bg-[#C67B5C]/40 h-6 rounded-full"></div>
+<div class="w-1 bg-[#C67B5C] h-8 rounded-full"></div>
+<div class="w-1 bg-[#C67B5C]/60 h-5 rounded-full"></div>
+<div class="w-1 bg-[#C67B5C]/30 h-7 rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">VIBRANCE: 88%</span>
+</div>
+<button class="w-full lg:w-auto px-10 py-4 bg-on-surface text-surface rounded-lg font-bold hover:bg-on-surface-variant transition-colors active:scale-95">Start Workout</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#eee7de] dark:bg-[#1e1b16] w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-orange-900/10">
+<div class="font-serif text-lg italic text-orange-900">BoloBridge Editorial</div>
+<div class="flex gap-8">
+<a class="text-orange-900/60 dark:text-orange-200/60 font-serif italic text-sm hover:text-orange-800 dark:hover:text-orange-100 hover:underline transition-opacity" href="#">Terms</a>
+<a class="text-orange-900/60 dark:text-orange-200/60 font-serif italic text-sm hover:text-orange-800 dark:hover:text-orange-100 hover:underline transition-opacity" href="#">Privacy</a>
+<a class="text-orange-900/60 dark:text-orange-200/60 font-serif italic text-sm hover:text-orange-800 dark:hover:text-orange-100 hover:underline transition-opacity" href="#">Support</a>
+<a class="text-orange-900/60 dark:text-orange-200/60 font-serif italic text-sm underline decoration-orange-800 hover:text-orange-800 dark:hover:text-orange-100 transition-opacity" href="#">Journal</a>
+</div>
+<div class="text-orange-950 dark:text-orange-100 font-serif italic text-sm opacity-80">
+            © 2024 BoloBridge Editorial. All rights reserved.
+        </div>
+</footer>
+</body></html>

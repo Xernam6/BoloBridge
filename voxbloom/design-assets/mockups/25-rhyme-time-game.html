@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,700;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d5f8ef",
+              "primary-fixed": "#fdd7a7",
+              "primary-dim": "#694e2a",
+              "primary-fixed-dim": "#eec99a",
+              "on-secondary": "#e3fff7",
+              "on-secondary-container": "#416059",
+              "error-dim": "#821a01",
+              "surface-dim": "#dadad6",
+              "tertiary": "#665a75",
+              "on-error-container": "#671200",
+              "error-container": "#fa7150",
+              "outline-variant": "#b2b2ae",
+              "surface-container": "#efeeea",
+              "on-tertiary": "#fef6ff",
+              "on-surface-variant": "#5e5f5c",
+              "on-primary-fixed-variant": "#6e532e",
+              "background": "#fbf9f6",
+              "error": "#aa371c",
+              "secondary-dim": "#3a5952",
+              "secondary-container": "#d5f8ef",
+              "on-tertiary-fixed": "#453b54",
+              "primary-container": "#fdd7a7",
+              "on-secondary-fixed-variant": "#4b6a63",
+              "on-surface": "#313330",
+              "secondary": "#46655e",
+              "surface-bright": "#fbf9f6",
+              "on-primary-fixed": "#4f3715",
+              "on-primary": "#fff7f3",
+              "inverse-surface": "#0e0e0d",
+              "on-error": "#fff7f6",
+              "on-background": "#313330",
+              "tertiary-fixed-dim": "#deceee",
+              "on-primary-container": "#634a25",
+              "surface-container-low": "#f5f3f0",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#fdd7a7",
+              "tertiary-container": "#ecdcfd",
+              "surface-container-highest": "#e3e3de",
+              "primary": "#765a34",
+              "inverse-on-surface": "#9e9d9a",
+              "surface-variant": "#e3e3de",
+              "on-tertiary-container": "#584d67",
+              "on-secondary-fixed": "#2f4e47",
+              "surface-container-high": "#e9e8e4",
+              "surface-tint": "#765a34",
+              "outline": "#7a7b78",
+              "tertiary-dim": "#5a4e69",
+              "surface": "#fbf9f6",
+              "on-tertiary-fixed-variant": "#625671",
+              "tertiary-fixed": "#ecdcfd",
+              "secondary-fixed-dim": "#c7eae1"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC4QBZpMCUwAwb4kU7nU-LaPHZE42-zbTzClKTO8D0bCcQrnSP-O_Z0hxMjzR9sTnxy_VmQv8E1YF0FkhppwlkE33Dgqx_DAkKdUnRomV53-nx6LVNmVTZ93gUokG6IxuI341f380Dy-4BrmgZ0emUMRSMX926aUjvlzFumYhq0QuzC3iwPG3QAa2xIKIPFsNV8apq9Alc_JoDVimDX-rE5IaT0onvrUUx3SYYKnAkv1R6EujPP88jpLYhtUQfQgU0udfoE7mgH8d5x);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.camel-gradient {
+    background: linear-gradient(135deg, #765a34 0%, #fdd7a7 100%)
+    }
+.sage-glow:hover {
+    box-shadow: 0 0 20px rgba(70, 101, 94, 0.15)
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen relative flex flex-col overflow-x-hidden">
+<!-- Film Grain Overlay -->
+<div class="fixed inset-0 grain-overlay z-[60]"></div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fbf9f6] transition-colors duration-300 shadow-[0_4px_40px_rgba(49,51,48,0.04)]">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#e3e3de]/50 transition-all active:scale-95 text-[#765a34]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="text-2xl italic font-headline font-bold text-[#765a34]">Rhyme Time</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium text-sm">
+                Round 3/5
+            </div>
+<div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container font-bold text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>15 XP</span>
+</div>
+</div>
+</nav>
+<!-- Main Game Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-8 pt-24 pb-12 max-w-[1440px] mx-auto w-full">
+<!-- Rhyme Prompt Card -->
+<div class="w-full max-w-4xl bg-surface-container-lowest rounded-[48px] p-16 flex flex-col items-center text-center shadow-[0_20px_60px_-15px_rgba(49,51,48,0.08)] relative mb-16 border-b-4 border-surface-container">
+<div class="absolute -top-8 bg-secondary-container p-4 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="music_note" style="font-variation-settings: 'FILL' 1;">music_note</span>
+</div>
+<p class="font-body font-medium text-on-surface-variant tracking-wide mb-4">What rhymes with...</p>
+<div class="relative inline-block">
+<h1 class="font-headline italic font-extrabold text-9xl text-on-secondary-fixed leading-none">CAT</h1>
+<div class="h-3 w-full camel-gradient rounded-full mt-4 opacity-80"></div>
+</div>
+</div>
+<!-- Option Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mb-12">
+<!-- Option 1: BAT -->
+<button class="group bg-surface-container-lowest p-10 rounded-[2rem] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-6 active:scale-95 sage-glow">
+<div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="sports_baseball">sports_baseball</span>
+</div>
+<span class="font-headline italic font-bold text-4xl text-on-surface">BAT</span>
+</button>
+<!-- Option 2: DOG (Incorrect) -->
+<button class="group bg-surface-container-lowest p-10 rounded-[2rem] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-6 active:scale-95 opacity-80 grayscale-[0.5]">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-5xl" data-icon="pets">pets</span>
+</div>
+<span class="font-headline italic font-bold text-4xl text-on-surface-variant">DOG</span>
+</button>
+<!-- Option 3: HAT -->
+<button class="group bg-surface-container-lowest p-10 rounded-[2rem] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center gap-6 active:scale-95 sage-glow">
+<div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="potted_plant">potted_plant</span>
+</div>
+<span class="font-headline italic font-bold text-4xl text-on-surface">HAT</span>
+</button>
+</div>
+<!-- Feedback & Status Area -->
+<div class="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl gap-8">
+<!-- Scoring Stars -->
+<div class="flex items-center gap-3 bg-surface-container-low px-8 py-4 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="star">star</span>
+</div>
+<!-- Streak Counter -->
+<div class="flex items-center gap-3 px-8 py-4 rounded-full camel-gradient text-on-primary font-bold shadow-lg">
+<span class="material-symbols-outlined" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="tracking-tight">3 in a row!</span>
+</div>
+<!-- Circular Timer -->
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="absolute inset-0 transform -rotate-90">
+<circle class="text-tertiary-container" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-tertiary rounded-full transition-all duration-1000" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor" stroke-dasharray="213" stroke-dashoffset="60" stroke-width="6"></circle>
+</svg>
+<div class="flex flex-col items-center">
+<span class="text-tertiary font-bold text-xl leading-none">15s</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 mt-auto flex flex-col items-center gap-4 px-8 border-t border-[#b2b2ae]/15 bg-[#fbf9f6]">
+<div class="flex gap-8">
+<a class="text-[12px] font-sans font-medium tracking-wide uppercase text-[#b2b2ae] hover:text-[#765a34] transition-opacity duration-300" href="#">Support</a>
+<a class="text-[12px] font-sans font-medium tracking-wide uppercase text-[#b2b2ae] hover:text-[#765a34] transition-opacity duration-300" href="#">Privacy</a>
+<a class="text-[12px] font-sans font-medium tracking-wide uppercase text-[#b2b2ae] hover:text-[#765a34] transition-opacity duration-300" href="#">Terms</a>
+</div>
+<p class="text-[10px] text-[#b2b2ae] uppercase tracking-widest">© 2024 BoloBridge Atelier</p>
+</footer>
+<!-- Decorative Illustration elements (Blooms) -->
+<div class="fixed -bottom-20 -left-20 w-80 h-80 bg-secondary-container/20 rounded-full blur-[100px] -z-10"></div>
+<div class="fixed top-40 -right-20 w-64 h-64 bg-primary-container/20 rounded-full blur-[80px] -z-10"></div>
+</body></html>

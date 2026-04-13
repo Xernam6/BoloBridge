@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#2D3142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Axes -->
+  <path d="M28 104 L28 24" />
+  <path d="M28 104 L108 104" />
+  <!-- Bars with BoloBridge colors -->
+  <rect x="38" y="78" width="14" height="26" rx="3" fill="#5F9EA0" opacity="0.7" stroke="none"/>
+  <rect x="58" y="58" width="14" height="46" rx="3" fill="#8B7EC8" opacity="0.7" stroke="none"/>
+  <rect x="78" y="38" width="14" height="66" rx="3" fill="#C2956B" opacity="0.7" stroke="none"/>
+  <!-- Trend line -->
+  <path d="M45 74 L65 52 L85 32" stroke="#6B8F71" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Arrow tip -->
+  <path d="M82 28 L90 28 L86 36" stroke="#6B8F71" stroke-width="1.5" fill="none"/>
+</svg>

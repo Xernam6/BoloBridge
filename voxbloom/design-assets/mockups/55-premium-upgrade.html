@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-secondary-fixed": "#2d1600",
+              "on-primary-fixed-variant": "#004f51",
+              "outline": "#727971",
+              "on-secondary-container": "#79542f",
+              "surface-bright": "#fbf9f6",
+              "inverse-primary": "#92d2d3",
+              "surface-container-high": "#eae8e5",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#f5f3f0",
+              "primary-fixed-dim": "#92d2d3",
+              "secondary-fixed-dim": "#eebd90",
+              "primary-fixed": "#aeeef0",
+              "primary": "#25686a",
+              "on-error-container": "#93000a",
+              "outline-variant": "#c2c8bf",
+              "primary-container": "#61a0a2",
+              "surface-container": "#efeeeb",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#988bd6",
+              "on-tertiary-container": "#2f2166",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#002021",
+              "on-surface-variant": "#424842",
+              "background": "#fbf9f6",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-highest": "#e4e2df",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#003435",
+              "secondary-container": "#fdcb9d",
+              "inverse-on-surface": "#f2f0ed",
+              "tertiary-fixed": "#e6deff",
+              "tertiary": "#61549b",
+              "secondary-fixed": "#ffdcbf",
+              "surface-variant": "#e4e2df",
+              "on-surface": "#1b1c1a",
+              "on-background": "#1b1c1a",
+              "secondary": "#7c5732",
+              "inverse-surface": "#30312f",
+              "surface-tint": "#25686a",
+              "surface": "#fbf9f6",
+              "on-error": "#ffffff",
+              "surface-dim": "#dbdad7",
+              "error-container": "#ffdad6",
+              "sage-green": "#7A9E7E"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-cta {
+            background: linear-gradient(45deg, #25686a 0%, #61a0a2 100%);
+        }
+        .glow-camel {
+            box-shadow: 0 0 20px rgba(238, 189, 144, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(66, 72, 66, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<div class="film-grain"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-stone-900/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="font-serif italic text-2xl text-[#25686a] dark:text-[#61a0a2]">BoloBridge Plus</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#25686a] transition-opacity duration-300" href="#">Our Story</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#25686a] transition-opacity duration-300" href="#">Benefits</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#25686a] transition-opacity duration-300" href="#">Support</a>
+<button class="watercolor-cta text-on-primary px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity">Try Plus Free</button>
+</div>
+<button class="md:hidden text-[#25686a]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center justify-center overflow-hidden bg-[#2D3142] py-20">
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary-container blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-container blur-[120px] rounded-full"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto px-8 text-center">
+<h1 class="font-headline italic text-5xl md:text-8xl text-surface-container-lowest leading-tight mb-8">
+                    Unlock Their Full Potential
+                </h1>
+<p class="text-surface-bright/80 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed mb-12">
+                    BoloBridge Plus gives you advanced speech analytics, direct SLP consultation, and unlimited games.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-secondary-fixed-dim text-on-secondary-fixed px-10 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all scale-98 active:scale-95">
+                        Start 14-Day Free Trial
+                    </button>
+<button class="border border-surface-bright/20 text-surface-bright px-10 py-4 rounded-full font-semibold text-lg hover:bg-surface-bright/10 transition-all">
+                        View Sample Report
+                    </button>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="max-w-7xl mx-auto px-8 -mt-24 relative z-20 pb-20">
+<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Free Card -->
+<div class="bg-surface-container-low rounded-xl p-10 flex flex-col ambient-shadow">
+<div class="mb-8">
+<h3 class="font-headline italic text-3xl text-on-surface-variant mb-2">Free Basic</h3>
+<p class="text-on-surface-variant opacity-70">Essential tools for early starters.</p>
+</div>
+<div class="text-4xl font-headline italic mb-8">$0<span class="text-lg font-body not-italic opacity-60">/mo</span></div>
+<ul class="space-y-6 mb-12 flex-grow">
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-outline">check_circle</span>
+<span>Daily Speech Exercises</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-outline">check_circle</span>
+<span>Basic Progress Tracking</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-outline">check_circle</span>
+<span>Community Support Access</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold cursor-not-allowed" disabled="">
+                        Current Plan
+                    </button>
+</div>
+<!-- Plus Card -->
+<div class="bg-surface-container-lowest rounded-xl p-10 flex flex-col ambient-shadow border-2 border-secondary-fixed-dim glow-camel relative overflow-hidden">
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold tracking-wider">RECOMMENDED</div>
+<div class="mb-8">
+<h3 class="font-headline italic text-3xl text-primary mb-2">BoloBridge Plus</h3>
+<p class="text-on-surface-variant">Comprehensive care for your child's voice.</p>
+</div>
+<div class="text-4xl font-headline italic mb-8">$9<span class="text-lg font-body not-italic opacity-60">/mo</span></div>
+<ul class="space-y-6 mb-12 flex-grow">
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">AI Voice Analysis &amp; Insights</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Printable Practice Workbooks</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Direct SLP Video Consultation</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Unlimited Therapeutic Games</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Multi-Child Profile Support</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Advanced Milestone Reporting</span>
+</li>
+</ul>
+<button class="watercolor-cta w-full py-4 rounded-full text-on-primary font-semibold text-lg hover:opacity-95 transition-all shadow-lg shadow-primary/20 scale-98 active:scale-95">
+                        Upgrade for $9/mo
+                    </button>
+</div>
+</div>
+<!-- Trust Bar -->
+<div class="mt-12 text-center">
+<p class="text-on-surface-variant font-medium tracking-tight flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sage-green scale-75">verified_user</span>
+                    Cancel anytime. 14-day free trial.
+                </p>
+</div>
+</section>
+<!-- Illustration Section -->
+<section class="max-w-7xl mx-auto px-8 mb-20">
+<div class="rounded-xl overflow-hidden relative aspect-[21/9] bg-surface-container-low group">
+<img alt="Child and parent reading" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Watercolor painting of a child and parent looking at a glowing book together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJeiBrWz4jaN-HlLDr6v-hguo3sFnRRnQHOVOK1cqC7S76Av-MYeFYmS6ggR-D5JuF2UToJb4OeqMjmG654PdwsCXcwuCqilV0naeW77avWbSuHs3qZDZckBDpnFfZHzsyLI50ilgS1qNEJEzMHvCMtF9HJmxn9NIUxOFqsPncDFrxAoT-1TfbIxtzuePI0xcUJSD9c_RYfm5MvqY-zXnjL543_0sluQQfrKoo9Q7PK-uSHH3NQRk_0e6z3KJPIQVw8ofiBbU35f5r"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center text-center p-8">
+<div class="max-w-2xl">
+<h2 class="font-headline italic text-4xl text-primary mb-4">Every word is a new beginning.</h2>
+<p class="text-on-surface-variant text-lg">Invest in a future where every child's voice is heard with clarity and confidence.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 py-20 bg-surface-container-low rounded-lg">
+<div class="text-center mb-16">
+<h2 class="font-headline italic text-4xl text-primary">Why Families Love Plus</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow md:col-span-2">
+<div class="flex items-start gap-6">
+<div class="bg-secondary-container/30 p-4 rounded-full">
+<span class="material-symbols-outlined text-secondary text-3xl">analytics</span>
+</div>
+<div>
+<h4 class="font-headline italic text-2xl text-on-surface mb-3">Deep Speech Analytics</h4>
+<p class="text-on-surface-variant leading-relaxed">Our AI doesn't just track time; it listens for phoneme accuracy and sentence structure improvements, giving you a scientific view of progress.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow">
+<div class="bg-primary-container/20 w-14 h-14 flex items-center justify-center rounded-full mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<h4 class="font-headline italic text-2xl text-on-surface mb-3">SLP Insights</h4>
+<p class="text-on-surface-variant leading-relaxed">Weekly summaries reviewed by certified pathologists.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow">
+<div class="bg-tertiary-container/20 w-14 h-14 flex items-center justify-center rounded-full mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl">print</span>
+</div>
+<h4 class="font-headline italic text-2xl text-on-surface mb-3">Offline Fun</h4>
+<p class="text-on-surface-variant leading-relaxed">Downloadable sheets for learning beyond the screen.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow md:col-span-2">
+<div class="flex items-center gap-8">
+<div class="flex-grow">
+<h4 class="font-headline italic text-2xl text-on-surface mb-3">Unlimited Adventures</h4>
+<p class="text-on-surface-variant leading-relaxed">Unlock our entire library of over 200 speech-focused games and stories designed by early childhood educators.</p>
+</div>
+<div class="hidden sm:block w-32 h-32 rounded-xl bg-[#f5f3f0] border-4 border-white rotate-3 overflow-hidden">
+<img alt="Game icon" data-alt="Abstract colorful educational game icons in soft watercolor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWkWO8jXpomYSULJOarIVe9MvA4OVNdorw6oHTN0tySGlYYJnXObfdeSTcN48KVU3tZZGoyjdR5jper5PwJHfmt4Sr1rTiVZ4CUN6I5RT2ywEx6sFJkLmdAAhZIDnheB-7P2moAxiWyMj5YA7AxzeyRb4akZx-GjINRfJMeZ-tRAa4f80E_U1Jrm-uW4rXdu4eEFyQ4wVzCosBIgzevqYRbNxkOgXI0V-XTshyEqUlqn8iFXBdDkoxENzbGv4U3KO2C9baxHzrzrzO"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-0 mt-20 bg-[#f5f3f0] dark:bg-stone-900">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-serif italic text-xl text-[#25686a]">BoloBridge</div>
+<p class="font-sans text-sm tracking-tight text-stone-600 dark:text-stone-400">© 2024 BoloBridge. Nurturing every word with intention.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-stone-500 hover:text-[#25686a] transition-colors font-sans text-sm tracking-tight" href="#">Privacy Policy</a>
+<a class="text-stone-500 hover:text-[#25686a] transition-colors font-sans text-sm tracking-tight" href="#">Terms of Service</a>
+<a class="text-stone-500 hover:text-[#25686a] transition-colors font-sans text-sm tracking-tight" href="#">Research &amp; Efficacy</a>
+<a class="text-stone-500 hover:text-[#25686a] transition-colors font-sans text-sm tracking-tight" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — Learning Modules</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#988bd6",
+              "secondary-container": "#fdcb9d",
+              "surface-bright": "#fbf9f6",
+              "on-background": "#1b1c1a",
+              "secondary-fixed": "#ffdcbf",
+              "primary-fixed": "#aeeef0",
+              "primary-fixed-dim": "#92d2d3",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#79542f",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "on-error": "#ffffff",
+              "tertiary": "#61549b",
+              "on-surface-variant": "#424842",
+              "on-secondary-fixed": "#2d1600",
+              "background": "#fbf9f6",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e4e2df",
+              "tertiary-fixed": "#e6deff",
+              "inverse-surface": "#30312f",
+              "primary-container": "#61a0a2",
+              "on-tertiary-container": "#2f2166",
+              "surface-container-high": "#eae8e5",
+              "error-container": "#ffdad6",
+              "surface-container": "#efeeeb",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#493c81",
+              "secondary": "#7c5732",
+              "on-primary-fixed": "#002021",
+              "inverse-on-surface": "#f2f0ed",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface": "#fbf9f6",
+              "on-primary-container": "#003435",
+              "surface-tint": "#25686a",
+              "secondary-fixed-dim": "#eebd90",
+              "outline": "#727971",
+              "surface-container-low": "#f5f3f0",
+              "primary": "#25686a",
+              "outline-variant": "#c2c8bf",
+              "inverse-primary": "#92d2d3",
+              "on-surface": "#1b1c1a",
+              "surface-dim": "#dbdad7",
+              "on-primary-fixed-variant": "#004f51"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .film-grain {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      .watercolor-gradient {
+        background: linear-gradient(45deg, #25686a, #61a0a2);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="bg-[#fbf9f6] dark:bg-[#1a1c1a] fixed top-0 w-full z-40">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl italic font-headline text-[#25686a] dark:text-[#61a0a2]">BoloBridge</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#25686a] dark:text-[#61a0a2] font-bold transition-all duration-300 active:scale-[0.98]" href="#">Lessons</a>
+<a class="text-[#424842] dark:text-[#c2c9c2] hover:bg-[#f5f3f0]/50 dark:hover:bg-[#222422]/50 transition-colors" href="#">Practice</a>
+<a class="text-[#424842] dark:text-[#c2c9c2] hover:bg-[#f5f3f0]/50 dark:hover:bg-[#222422]/50 transition-colors" href="#">Progress</a>
+<a class="text-[#424842] dark:text-[#c2c9c2] hover:bg-[#f5f3f0]/50 dark:hover:bg-[#222422]/50 transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="text-5xl md:text-6xl font-headline italic text-primary leading-tight">Your Learning Journey</h1>
+<p class="text-lg text-on-surface-variant mt-4 max-w-2xl leading-relaxed">Continue exploring the world of sound and connection through our tactile-inspired modules.</p>
+</header>
+<!-- 2x2 Grid of Illustration Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- CARD 5 — Everyone Has Tricky Sounds! -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(66,72,66,0.06)] transition-all hover:-translate-y-1">
+<div class="h-[400px] w-full relative bg-[#f5f3f0] overflow-hidden flex items-center justify-center">
+<!-- Abstract Illustration Logic -->
+<div class="absolute inset-0 opacity-40 mix-blend-multiply" style="background: radial-gradient(circle at 20% 30%, #7A9E7E 0%, transparent 40%), radial-gradient(circle at 80% 70%, #eebd90 0%, transparent 40%);"></div>
+<!-- Decorative Elements -->
+<div class="relative z-10 w-full h-full flex items-center justify-center p-12">
+<div class="relative w-full h-full border-2 border-dashed border-outline-variant/30 rounded-lg flex items-center justify-center">
+<!-- Abstract Puzzle Pieces -->
+<div class="absolute top-10 left-10 w-24 h-24 bg-[#7A9E7E] rounded-2xl rotate-12 opacity-80"></div>
+<div class="absolute bottom-16 right-12 w-32 h-20 bg-[#eebd90] rounded-full -rotate-6 opacity-80"></div>
+<!-- Speech Bubbles -->
+<div class="absolute top-1/4 right-1/4 bg-white px-4 py-2 rounded-full shadow-sm text-xs font-medium text-secondary italic">wabbit → rabbit</div>
+<!-- Mirror/Silhouette -->
+<div class="w-48 h-48 rounded-full border-4 border-white bg-surface-container flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary scale-[3] opacity-50">face</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="extension">extension</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-outline">Module 05</span>
+</div>
+<h3 class="text-3xl font-headline italic text-primary mb-4">Everyone Has Tricky Sounds!</h3>
+<div class="flex items-center justify-between">
+<span class="text-sm text-on-surface-variant italic">Let's practice together in the mirror.</span>
+<button class="watercolor-gradient text-white px-6 py-2 rounded-full font-medium transition-transform active:scale-95">Start</button>
+</div>
+</div>
+</div>
+<!-- CARD 6 — Breath Is Your Superpower -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(66,72,66,0.06)] transition-all hover:-translate-y-1">
+<div class="h-[400px] w-full relative bg-[#edf4f5] overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 opacity-30 mix-blend-multiply" style="background: radial-gradient(circle at 50% 50%, #61a0a2 0%, transparent 70%);"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center p-12">
+<!-- Abstract Lungs -->
+<div class="relative flex gap-4">
+<div class="w-32 h-48 bg-primary-container/40 rounded-t-full rounded-b-2xl blur-sm"></div>
+<div class="w-32 h-48 bg-primary-container/40 rounded-t-full rounded-b-2xl blur-sm"></div>
+</div>
+<!-- Flowing air lines -->
+<svg class="absolute inset-0 w-full h-full" viewbox="0 0 400 300">
+<path d="M50,150 Q150,100 350,150" fill="none" opacity="0.4" stroke="#61a0a2" stroke-dasharray="8,8" stroke-width="2"></path>
+<path d="M50,170 Q150,120 350,170" fill="none" opacity="0.4" stroke="#61a0a2" stroke-dasharray="8,8" stroke-width="2"></path>
+</svg>
+<!-- Bubbles/Cotton Balls -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-8">
+<div class="w-12 h-12 rounded-full border-2 border-white/60 bg-white/20"></div>
+<div class="w-16 h-16 rounded-full border-2 border-white/60 bg-white/20"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white/60 bg-white/20"></div>
+</div>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="air">air</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-outline">Module 06</span>
+</div>
+<h3 class="text-3xl font-headline italic text-primary mb-4">Breath Is Your Superpower</h3>
+<div class="flex items-center justify-between">
+<span class="text-sm text-on-surface-variant italic">Control the wind with gentle bubbles.</span>
+<button class="watercolor-gradient text-white px-6 py-2 rounded-full font-medium transition-transform active:scale-95">Start</button>
+</div>
+</div>
+</div>
+<!-- CARD 7 — Becoming a Sound Detective -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(66,72,66,0.06)] transition-all hover:-translate-y-1">
+<div class="h-[400px] w-full relative bg-[#f1f0f5] overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 opacity-20 mix-blend-multiply" style="background: radial-gradient(circle at 30% 70%, #61549b 0%, transparent 50%);"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center p-12">
+<!-- Ear profile & sound waves -->
+<div class="relative">
+<div class="w-40 h-56 bg-tertiary/20 rounded-full border-l-8 border-tertiary/30"></div>
+<div class="absolute -right-12 top-1/2 -translate-y-1/2 space-y-4">
+<div class="w-24 h-1 bg-tertiary/40 rounded-full"></div>
+<div class="w-32 h-1 bg-tertiary/40 rounded-full"></div>
+<div class="w-20 h-1 bg-tertiary/40 rounded-full"></div>
+</div>
+</div>
+<!-- Magnifying glass over note -->
+<div class="absolute bottom-16 left-20 bg-white p-4 rounded-3xl shadow-lg rotate-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="search">search</span>
+<span class="material-symbols-outlined text-tertiary absolute -top-2 -right-2 text-xl" data-icon="music_note">music_note</span>
+</div>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="hearing">hearing</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-outline">Module 07</span>
+</div>
+<h3 class="text-3xl font-headline italic text-primary mb-4">Becoming a Sound Detective</h3>
+<div class="flex items-center justify-between">
+<span class="text-sm text-on-surface-variant italic">Listen closely for hidden patterns.</span>
+<button class="watercolor-gradient text-white px-6 py-2 rounded-full font-medium transition-transform active:scale-95">Start</button>
+</div>
+</div>
+</div>
+<!-- CARD 8 — The Art of Conversation -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(66,72,66,0.06)] transition-all hover:-translate-y-1">
+<div class="h-[400px] w-full relative bg-[#f9f5f0] overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 opacity-20 mix-blend-multiply" style="background: linear-gradient(to right, #eebd90, #7A9E7E);"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-around p-8">
+<!-- Two Silhouettes -->
+<div class="w-24 h-40 bg-secondary-fixed-dim/60 rounded-t-full"></div>
+<!-- River of speech -->
+<div class="flex-1 px-4 space-y-4">
+<div class="flex justify-start">
+<div class="bg-white px-4 py-2 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div class="w-12 h-2 bg-secondary-container rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-end">
+<div class="bg-white px-4 py-2 rounded-2xl rounded-br-none shadow-sm flex items-center gap-2">
+<div class="w-12 h-2 bg-primary-container/40 rounded-full"></div>
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+</div>
+</div>
+</div>
+<div class="w-24 h-40 bg-[#7A9E7E]/40 rounded-t-full"></div>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-secondary" data-icon="forum">forum</span>
+<span class="text-xs font-label font-bold uppercase tracking-wider text-outline">Module 08</span>
+</div>
+<h3 class="text-3xl font-headline italic text-primary mb-4">The Art of Conversation</h3>
+<div class="flex items-center justify-between">
+<span class="text-sm text-on-surface-variant italic">Connecting through the river of words.</span>
+<button class="watercolor-gradient text-white px-6 py-2 rounded-full font-medium transition-transform active:scale-95">Start</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#fbf9f6]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-xl md:hidden shadow-[0_-20px_40px_rgba(66,72,66,0.06)] rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center bg-[#7A9E7E] text-white rounded-full px-5 py-2 transition-transform duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-xs font-medium font-label">Lessons</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424842] dark:text-[#c2c9c2] px-5 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2]" href="#">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+<span class="text-xs font-medium font-label">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424842] dark:text-[#c2c9c2] px-5 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2]" href="#">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+<span class="text-xs font-medium font-label">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#424842] dark:text-[#c2c9c2] px-5 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-xs font-medium font-label">Settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e2df",
+              "secondary": "#7a573b",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f2f0ed",
+              "tertiary-fixed": "#ffdad2",
+              "on-primary-fixed-variant": "#224d4f",
+              "outline-variant": "#c0c8c8",
+              "surface": "#fbf9f6",
+              "surface-bright": "#fbf9f6",
+              "inverse-surface": "#30312f",
+              "primary-container": "#4f797b",
+              "on-error": "#ffffff",
+              "surface-dim": "#dbdad7",
+              "tertiary-container": "#af5a46",
+              "surface-tint": "#3b6567",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#3d0600",
+              "on-secondary-fixed-variant": "#604025",
+              "background": "#fbf9f6",
+              "secondary-fixed": "#ffdcc3",
+              "primary-fixed": "#beebed",
+              "on-secondary-container": "#79563a",
+              "inverse-primary": "#a3ced0",
+              "on-surface": "#1b1c1a",
+              "secondary-fixed-dim": "#ebbd9b",
+              "surface-container-low": "#f5f3f0",
+              "tertiary-fixed-dim": "#ffb4a3",
+              "on-tertiary-fixed-variant": "#78301f",
+              "on-background": "#1b1c1a",
+              "error": "#ba1a1a",
+              "outline": "#717979",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#002021",
+              "tertiary": "#914230",
+              "on-tertiary-container": "#fff7f5",
+              "primary-fixed-dim": "#a3ced0",
+              "secondary-container": "#fdceaa",
+              "on-surface-variant": "#404848",
+              "primary": "#366062",
+              "surface-container-high": "#eae8e5",
+              "surface-variant": "#e4e2df",
+              "on-primary-container": "#e0feff",
+              "surface-container": "#efeeeb",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#2d1602"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #FAF8F5;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .text-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        .watercolor-blend {
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(121, 86, 58, 0.08);
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="grain-overlay"></div>
+<!-- Navigation Shell Suppressed for Error Page per Filter Rules -->
+<main class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-12 pb-32 max-w-[1440px] mx-auto overflow-hidden">
+<!-- Top Section: Illustration -->
+<div class="relative w-full max-w-md mb-8 flex justify-center">
+<div class="absolute -top-10 -right-4 bg-tertiary-fixed w-12 h-12 rounded-full flex items-center justify-center editorial-shadow">
+<span class="font-headline italic text-3xl text-tertiary">?</span>
+</div>
+<img alt="Whimsical watercolor confused baby owl sitting on a mossy branch" class="w-80 h-auto rounded-xl grayscale-[0.2] sepia-[0.1]" data-alt="Whimsical watercolor confused baby owl sitting on a mossy branch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtwfyNIqomdXMAtohZEOjzpuwiEgm__gspwJJD8ygsVKHOL6ztI-k2R1xgBTVs7dmd-W-TQH5kg-G5N8DsCbPw2yB_3VHkkY7TYQZj-FK9hhMz81GaSI9TCFfi9Vzb2Ijoo1gT-xvDBFQNHkfnhNOn7S6ZuJz6fnI0TC_0E8rDlNvlnsK_yKCAokP91gLZccurQ0BrZczSSKYA8_N38SnigQ4lf16LUCzCQFIRNp3IjA-LULHlMPvwZrPKKnTsF07pj-9MfAR_EdXQ"/>
+</div>
+<!-- Main Heading -->
+<div class="text-center mb-6">
+<h1 class="font-headline italic text-[220px] leading-none text-primary opacity-90 tracking-tighter text-grain">
+                404
+            </h1>
+<h2 class="font-headline italic text-4xl md:text-5xl text-on-surface mt-[-20px] relative z-10">
+                This page got lost in the Sound Forest
+            </h2>
+<p class="font-body text-on-surface-variant mt-4 text-lg max-w-lg mx-auto">
+                Don't worry — we'll help you find your way back!
+            </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-6 mt-8 mb-16 items-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-medium text-lg hover:opacity-90 active:scale-95 transition-all editorial-shadow">
+                Go Home
+            </button>
+<button class="border-2 border-secondary-container text-secondary font-medium px-10 py-4 rounded-lg text-lg hover:bg-secondary-container/20 transition-all active:scale-95">
+                Explore Games
+            </button>
+</div>
+<!-- Search Section -->
+<div class="w-full max-w-md text-center">
+<label class="font-label uppercase tracking-widest text-xs text-on-surface-variant mb-4 block">
+                Or search for something:
+            </label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-b border-outline-variant/20 focus:border-secondary focus:ring-0 px-4 py-4 text-lg italic transition-all outline-none rounded-t-lg" placeholder="Find an archive..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary">search</span>
+</div>
+</div>
+<!-- Background Decorations -->
+<div class="absolute bottom-0 left-0 w-full h-64 pointer-events-none z-[-1] opacity-40 overflow-hidden">
+<!-- Watercolor Tree Left -->
+<div class="absolute -bottom-10 -left-20 w-[400px] h-[400px] grayscale-[0.3]">
+<img alt="Subtle watercolor tree silhouettes on the forest edge" class="w-full h-full object-contain watercolor-blend" data-alt="Subtle watercolor tree silhouettes on the forest edge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvAg83Vsvjmh8a_NpAlmWxbknPXXEk38-Xo0-tNiGyoL8W_E3EM_YXmKgMIPVK-oleuD_vSylOtGf28qfCGafbL44pLF7OyQyrFjsv-rp9ux3fXm_3y3l7CvMN1fDJjYXRc4Tk7I0vIatiK87YQ2Dg3SbmrKV7QNGGRB53V1wRUNwX6askiQODteI_-mu6_Cb2q9dJ0LZYNTt1gi04oY2L1ShRoONlXa71iQB4s1OsKFZ-fjnQc5rlj_J8ydSGMBDEm5Xqe9cjGG9H"/>
+</div>
+<!-- Watercolor Tree Right -->
+<div class="absolute -bottom-10 -right-20 w-[450px] h-[450px] grayscale-[0.3]">
+<img alt="Faint watercolor forest path merging into cream background" class="w-full h-full object-contain watercolor-blend" data-alt="Faint watercolor forest path merging into cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA58hMnjChnR9bxuf94slbpFlSXEs07DUBjqrCe_8RoJ2zL2A_D0nDNPSsSjuH6qfXQZ7UuAkkeXOAT9KMiUshQ0r1bO6nBcpqTZCOsfk213buo6LQAetdN9qXSO83ZELKyyoFE8pvPX2PU06Ls0F2Whw8W79RO1s0nL65DBkkratzoM70kEyjgT16nlgFZIPVhaYYwzD77sM8xULKtPdcpVxFm5LSG3WdADbgIJ8ICGjnwAjsie3qmm_JaxoV6aGIgxIVgbakLHCsA"/>
+</div>
+</div>
+<!-- Mossy Floor Texture -->
+<div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+</main>
+<!-- Footer - Shell Component from JSON -->
+<footer class="bg-[#efeeeb] dark:bg-[#121312] w-full py-12 flex flex-col md:flex-row justify-between items-center px-12 mt-auto">
+<div class="font-headline italic text-lg text-[#366062] mb-4 md:mb-0">BoloBridge</div>
+<div class="flex gap-8 mb-4 md:mb-0">
+<a class="text-xs tracking-widest uppercase font-body text-[#1b1c1a]/40 dark:text-[#fbf9f6]/40 hover:text-[#914230] transition-opacity" href="#">Privacy</a>
+<a class="text-xs tracking-widest uppercase font-body text-[#1b1c1a]/40 dark:text-[#fbf9f6]/40 hover:text-[#914230] transition-opacity" href="#">Terms</a>
+<a class="text-xs tracking-widest uppercase font-body text-[#1b1c1a]/40 dark:text-[#fbf9f6]/40 hover:text-[#914230] transition-opacity" href="#">Contact</a>
+<a class="text-xs tracking-widest uppercase font-body text-[#1b1c1a]/40 dark:text-[#fbf9f6]/40 hover:text-[#914230] transition-opacity" href="#">Support</a>
+</div>
+<div class="text-xs tracking-widest uppercase font-body text-[#366062] dark:text-[#4F797B]">
+            © 2024 BoloBridge Analog Archive
+        </div>
+</footer>
+</body></html>

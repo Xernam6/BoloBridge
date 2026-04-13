@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#022979",
+              "on-surface-variant": "#d2c5b1",
+              "primary-container": "#d4a843",
+              "outline": "#9a8f7d",
+              "secondary-fixed": "#f6e29f",
+              "on-surface": "#e2dfff",
+              "inverse-on-surface": "#2d2d4f",
+              "on-primary": "#402d00",
+              "outline-variant": "#4e4636",
+              "tertiary-fixed-dim": "#b5c4ff",
+              "surface-dim": "#0f0f30",
+              "secondary-fixed-dim": "#d9c686",
+              "on-secondary-fixed": "#221b00",
+              "on-primary-fixed-variant": "#5b4300",
+              "primary-fixed-dim": "#eec058",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e2dfff",
+              "tertiary": "#b9c8ff",
+              "on-primary-fixed": "#261a00",
+              "surface-bright": "#363658",
+              "on-tertiary-fixed": "#00174d",
+              "secondary": "#d9c686",
+              "on-secondary-container": "#cab879",
+              "secondary-container": "#554815",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#534613",
+              "surface-tint": "#eec058",
+              "background": "#0f0f30",
+              "surface-container-highest": "#313154",
+              "tertiary-fixed": "#dbe1ff",
+              "tertiary-container": "#92abff",
+              "surface-variant": "#313154",
+              "error": "#ffb4ab",
+              "on-primary-container": "#553e00",
+              "on-tertiary-container": "#1f3c8b",
+              "surface-container-high": "#262648",
+              "surface-container-lowest": "#0a092b",
+              "on-secondary": "#3b2f00",
+              "surface": "#0f0f30",
+              "error-container": "#93000a",
+              "primary-fixed": "#ffdf9f",
+              "surface-container-low": "#181839",
+              "on-tertiary-fixed-variant": "#254190",
+              "inverse-primary": "#795900",
+              "primary": "#f2c35b",
+              "surface-container": "#1c1c3d",
+              "inverse-surface": "#e2dfff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #0f0f30;
+        background-image: 
+          radial-gradient(circle at 50% 50%, rgba(54, 81, 160, 0.15) 0%, transparent 80%),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        background-blend-mode: overlay;
+      }
+      .constellation-lines {
+        background-image: url("data:image/svg+xml,%3Csvg width='1000' height='1000' viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 200 L300 150 L450 300 L600 250 L850 400' stroke='%233651A0' stroke-width='0.5' fill='none' stroke-opacity='0.2'/%3E%3Cpath d='M200 800 L400 700 L550 850 L750 780 L900 950' stroke='%233651A0' stroke-width='0.5' fill='none' stroke-opacity='0.2'/%3E%3Ccircle cx='100' cy='200' r='1.5' fill='%23f2c35b' fill-opacity='0.3'/%3E%3Ccircle cx='300' cy='150' r='1' fill='%23f2c35b' fill-opacity='0.3'/%3E%3Ccircle cx='450' cy='300' r='2' fill='%23f2c35b' fill-opacity='0.3'/%3E%3C/svg%3E");
+        background-size: cover;
+      }
+      .text-grain {
+        position: relative;
+        background: linear-gradient(to bottom, #f2c35b, #d4a843);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .text-grain::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        -webkit-text-fill-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+        -webkit-background-clip: text;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#0a0c1b]/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif text-[#d4a843] tracking-tighter italic">BoloBridge</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-serif italic tracking-tight text-[#f6f0e2]/70 hover:text-[#f6f0e2] transition-colors" href="#">Chronicles</a>
+<a class="font-serif italic tracking-tight text-[#f6f0e2]/70 hover:text-[#f6f0e2] transition-colors" href="#">Archives</a>
+<a class="font-serif italic tracking-tight text-[#f6f0e2]/70 hover:text-[#f6f0e2] transition-colors" href="#">Library</a>
+<a class="font-serif italic tracking-tight text-[#f6f0e2]/70 hover:text-[#f6f0e2] transition-colors" href="#">Compass</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#d4a843] scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-[#d4a843]/20 to-transparent"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative flex-grow flex items-center justify-center pt-24 pb-12 constellation-lines">
+<div class="container max-w-5xl mx-auto px-6 text-center z-10">
+<!-- Asymmetric Illustration Wrapper -->
+<div class="relative mb-8 flex justify-center">
+<div class="absolute inset-0 bg-primary/10 blur-[100px] rounded-full scale-75 -z-10"></div>
+<div class="relative">
+<img alt="A whimsical golden watercolor owl with a tiny hat on a compass" class="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_30px_rgba(242,195,91,0.2)]" data-alt="Whimsical watercolor owl wearing tiny explorer hat sitting on golden compass looking confused" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbY_24lXN1EezGnX894zvPIhwKo6m9qeJ7gRPvIrCVhKbjbMywKsnaG2oQfptHBie9_st42eTVZtqNogdaiBzHec0NPF3s_Ifn9NU1aUmsWMkL6SMYfbKpSHZkG8dZRJ0UFAEqZP71TDEKu-IXMyyn0uacN8Bqwdufm1QFUDN7QAvCx1dxtbsQuMxfZHnes9fvPaBS7eyyPHo4xQaqaurHsnsSVc-W0x9EDl9gx1j1Rlkne0SYtqhvCTryjjGv1McJt_trnQXsif5A"/>
+</div>
+</div>
+<!-- Hero Typography -->
+<div class="relative space-y-4">
+<h1 class="font-headline italic text-[120px] md:text-[180px] leading-none text-grain tracking-tighter" data-text="404">
+                    404
+                </h1>
+<p class="font-headline italic text-2xl md:text-4xl text-[#F6F0E2] tracking-tight">
+                    Lost among the stars
+                </p>
+<p class="font-body text-[#F6F0E2]/70 max-w-md mx-auto text-lg leading-relaxed mt-6">
+                    This page wandered into the night sky. <br/>
+                    Let's guide you home.
+                </p>
+</div>
+<!-- Action Cluster -->
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+<a class="group relative px-10 py-4 bg-gradient-to-br from-primary to-primary-container rounded-full text-on-primary font-semibold tracking-wide flex items-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20" href="/">
+<span class="material-symbols-outlined">home</span>
+                    Return Home
+                </a>
+<a class="group px-10 py-4 border border-[#d4a843]/40 rounded-full text-[#d4a843] font-semibold tracking-wide flex items-center gap-2 transition-all hover:bg-[#d4a843]/5 hover:border-[#d4a843] active:scale-95" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                    Explore the Library
+                </a>
+</div>
+</div>
+<!-- Atmospheric Star Particles (Visual Flourish) -->
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<div class="absolute top-1/4 left-1/4 w-1 h-1 bg-primary rounded-full blur-sm"></div>
+<div class="absolute top-1/3 right-1/4 w-0.5 h-0.5 bg-white rounded-full"></div>
+<div class="absolute bottom-1/4 right-1/3 w-1.5 h-1.5 bg-primary/50 rounded-full blur-md"></div>
+<div class="absolute top-2/3 left-1/5 w-0.5 h-0.5 bg-secondary rounded-full"></div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full bg-[#0a0c1b] border-t border-[#d4a843]/15 relative">
+<!-- 2% Film Grain Overlay via style injection -->
+<div 0="" 200="" 200\"="" basefrequency='\"0.65\"/%3E%3C/filter%3E%3Crect' class="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=\" filter="\&quot;url(%23f)\&quot;/%3E%3C/svg%3E')]&quot;" height='\"100%25\"' id='\"f\"%3E%3CfeTurbulence' type='\"fractalNoise\"' width='\"100%25\"' xmlns='\"http://www.w3.org/2000/svg\"%3E%3Cfilter'></div>
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full gap-6 max-w-screen-2xl mx-auto relative z-10">
+<div class="text-xl font-serif text-[#d4a843]">BoloBridge</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-serif text-[#f6f0e2]/50 hover:text-[#f2c35b] transition-colors" href="#">The Map</a>
+<a class="font-serif text-[#f6f0e2]/50 hover:text-[#f2c35b] transition-colors" href="#">Terms of Service</a>
+<a class="font-serif text-[#f6f0e2]/50 hover:text-[#f2c35b] transition-colors" href="#">Privacy Ledger</a>
+<a class="font-serif text-[#f6f0e2]/50 hover:text-[#f2c35b] transition-colors" href="#">Contact the Scribe</a>
+</div>
+<p class="font-serif text-[#f6f0e2]/60 text-sm opacity-80">
+                © 1892 BoloBridge Archivists. All celestial rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

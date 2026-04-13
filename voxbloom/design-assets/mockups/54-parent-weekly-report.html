@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Tactile Keepsake | Weekly Bloom Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffddb7",
+              "surface-tint": "#25686a",
+              "outline-variant": "#bfc8c8",
+              "surface-dim": "#dbdad7",
+              "secondary": "#78582f",
+              "on-primary-container": "#003234",
+              "inverse-surface": "#30312f",
+              "tertiary-container": "#e6724f",
+              "surface": "#fbf9f6",
+              "surface-container-low": "#f5f3f0",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#795930",
+              "tertiary": "#a13f20",
+              "on-secondary-fixed": "#2a1700",
+              "on-tertiary-fixed": "#3b0a00",
+              "surface-container-high": "#eae8e5",
+              "on-primary-fixed-variant": "#004f51",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#92d2d3",
+              "on-surface-variant": "#3f4849",
+              "outline": "#6f7979",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e4e2df",
+              "primary": "#25686a",
+              "on-primary-fixed": "#002021",
+              "surface-container": "#efeeeb",
+              "tertiary-fixed-dim": "#ffb59f",
+              "on-surface": "#1b1c1a",
+              "tertiary-fixed": "#ffdbd1",
+              "on-secondary-fixed-variant": "#5e411a",
+              "background": "#fbf9f6",
+              "secondary-container": "#fed39f",
+              "secondary-fixed-dim": "#eabf8d",
+              "on-error-container": "#93000a",
+              "on-background": "#1b1c1a",
+              "inverse-on-surface": "#f2f0ed",
+              "surface-bright": "#fbf9f6",
+              "primary-container": "#5f9ea0",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#92d2d3",
+              "primary-fixed": "#aeeef0",
+              "on-tertiary-container": "#581300",
+              "surface-variant": "#e4e2df",
+              "on-tertiary-fixed-variant": "#81280a",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD_PjD277FINww5Zqa6GjmXA3aquI1zuA3ud06XKFl3un4AFZCcndtoMLYXBVYlpY_KX40TN3FV69Wc4sZC27YjgLI60QDW1QT-YPcjwUXGgyA_evT_tRYjONqWq6zoroB107RPSlAzHMz_Idl-ufAROJnbnYcpL3SH6lWE99HAIMH6dY-Aic6goHELjFytWJswUPZ3Z1XsvGUlpRZ2UKDh56KESb5F2xFylv-tPXFpu3xVy57zELK4u7D8E8iksVOYabet3ws0s_sJ)
+    }
+body {
+    background-color: #1b1c1a;
+    /* Deep Navy to simulate email viewer */
+    }
+.report-canvas {
+    background: linear-gradient(to bottom, #fdfcfb, #f5f3f0)
+    }
+.asymmetric-padding {
+    padding-left: 4rem;
+    padding-right: 2.5rem
+    }</style>
+</head>
+<body class="font-body text-on-surface min-h-screen flex items-center justify-center py-12 px-4">
+<div class="film-grain"></div>
+<main class="report-canvas w-full max-w-[800px] shadow-2xl relative overflow-hidden rounded-xl">
+<!-- Shared Component: TopAppBar (Mapping style_shell_layout and style_bg_color) -->
+<header class="bg-[#fdfcfb] dark:bg-[#1b1c1a] w-full pt-8 pb-4 flex flex-col items-center px-6 max-w-4xl mx-auto">
+<div class="flex items-center justify-between w-full">
+<span class="text-3xl font-headline italic text-[#25686a] dark:text-[#5fb0b3]">The Tactile Keepsake</span>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#25686a] dark:text-[#5fb0b3] cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Newsletter Content -->
+<section class="flex flex-col items-center pt-8 pb-12 text-center px-8">
+<span class="text-[11px] font-label font-medium tracking-[0.2em] uppercase text-secondary mb-4">March 14-21, 2026</span>
+<h1 class="text-5xl md:text-6xl font-headline italic text-primary leading-tight mb-8">Leo's Weekly Bloom Report</h1>
+<!-- Hero Illustration -->
+<div class="w-full h-[320px] rounded-xl overflow-hidden relative mb-12">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 via-tertiary-container/10 to-secondary-container/30"></div>
+<img alt="Abstract organic growth shapes" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Soft abstract organic shapes representing plant growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_r12XzgZjjUZoLmmDiRkINcUWZmcEv0we4Eh0iNqrZXtSfrV7E3tbi4QZjHsIepAhPnGKM9yqQSmrLdxVOuLqpigsngUUSwf_rY8oXhBgCh2LWKXF8dcrZ0FUM5Hr5o_4KqNPg81BW8K0ADCr9Q7jMC3KYVF-v7WrGQrhSCE2cfPcE1hZHVVnSFYDc6TizJOSr0ulGrO-65JzaDeD_uJwM-xY4nuis9E3lr1GAtKdoIVBT16GM9alRKR0ghp5yZVvNAMlKw7kQ2VB"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-surface/80 backdrop-blur-xl p-8 rounded-full shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</div>
+<!-- Highlights Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-12">
+<div class="bg-surface-container-low p-10 rounded-full flex flex-col items-center justify-center transition-all hover:scale-[0.98] duration-300">
+<span class="text-[12px] font-label uppercase tracking-widest text-secondary mb-2">Total Practice</span>
+<span class="text-4xl font-headline italic font-bold text-primary">45 minutes</span>
+</div>
+<div class="bg-surface-container-low p-10 rounded-full flex flex-col items-center justify-center transition-all hover:scale-[0.98] duration-300">
+<span class="text-[12px] font-label uppercase tracking-widest text-secondary mb-2">Sounds Mastered</span>
+<span class="text-4xl font-headline italic font-bold text-[#61549B]">/s/ and /z/</span>
+</div>
+</div>
+<!-- Editorial Insight Section -->
+<div class="asymmetric-padding text-left mb-16 relative">
+<div class="absolute -left-2 top-0 text-6xl text-primary-container opacity-20 font-headline italic">“</div>
+<p class="text-2xl md:text-3xl font-headline italic text-on-surface leading-relaxed relative z-10">
+                    Leo showed incredible focus this week, especially in the Rhyme Time games. His ability to distinguish between sibilant sounds is progressing beautifully, showing a 15% increase in accuracy during his morning sessions.
+                </p>
+<div class="mt-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim"></div>
+<div>
+<p class="text-sm font-label font-bold text-on-surface">Dr. Elena Vance</p>
+<p class="text-xs font-label text-outline">Lead Speech Pathologist</p>
+</div>
+</div>
+</div>
+<!-- Recommendation Card -->
+<div class="w-full bg-secondary-fixed rounded-xl p-10 mb-12 text-left flex items-start gap-6 shadow-sm">
+<div class="bg-surface rounded-full p-4 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h3 class="text-xl font-headline italic text-on-secondary-fixed mb-2">Focus for Next Week</h3>
+<p class="text-on-secondary-fixed opacity-90 leading-relaxed font-body">
+                        We recommend 10 minutes a day on the Tongue Gym to strengthen articulators. Consistent micro-sessions lead to the most durable progress.
+                    </p>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="bg-[#1b1c1a] text-white px-12 py-5 rounded-full font-label font-medium tracking-wide hover:opacity-90 transition-all active:scale-95 shadow-lg group">
+<span class="flex items-center gap-2">
+                    View Full Dashboard
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</button>
+</section>
+<!-- Shared Component: BottomNavBar (Active: Report) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-4 bg-[#fdfcfb]/80 dark:bg-[#1b1c1a]/80 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] md:static md:mt-12 md:pb-12">
+<!-- Report Active -->
+<div class="flex flex-col items-center justify-center bg-[#25686a] text-white rounded-full w-12 h-12 transition-all scale-90 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#78582f] dark:text-[#a68b6d] opacity-60 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-[11px] font-medium tracking-wide font-body">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#78582f] dark:text-[#a68b6d] opacity-60 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="mic_none">mic_none</span>
+<span class="text-[11px] font-medium tracking-wide font-body">Practice</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#78582f] dark:text-[#a68b6d] opacity-60 hover:opacity-100 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium tracking-wide font-body">Profile</span>
+</div>
+</nav>
+<footer class="pt-16 pb-24 text-center border-t border-outline-variant/10 mx-10">
+<p class="text-xs font-label text-outline tracking-widest uppercase mb-4">The Tactile Keepsake © 2026</p>
+<div class="flex justify-center gap-6 opacity-40">
+<span class="material-symbols-outlined text-xl" data-icon="nature">nature</span>
+<span class="material-symbols-outlined text-xl" data-icon="heart_plus">heart_plus</span>
+<span class="material-symbols-outlined text-xl" data-icon="eco">eco</span>
+</div>
+</footer>
+</main>
+</body></html>

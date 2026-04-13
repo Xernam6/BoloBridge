@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Parent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "error-container": "#f56965",
+                "on-error": "#fff7f6",
+                "on-secondary-container": "#7a432b",
+                "secondary-fixed": "#ffdbcd",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#440c00",
+                "tertiary-fixed": "#ffa086",
+                "on-secondary": "#fff7f5",
+                "surface-container-highest": "#e3e3de",
+                "secondary": "#8a5037",
+                "surface-bright": "#fbf9f6",
+                "surface": "#fbf9f6",
+                "on-primary-fixed-variant": "#4b6053",
+                "primary-fixed-dim": "#c3dac9",
+                "error-dim": "#70030f",
+                "on-secondary-fixed": "#63321b",
+                "surface-container": "#efeeea",
+                "on-primary": "#e7ffed",
+                "on-primary-container": "#425649",
+                "surface-variant": "#e3e3de",
+                "surface-container-high": "#e9e8e4",
+                "on-surface-variant": "#5e5f5c",
+                "on-primary-fixed": "#304437",
+                "on-background": "#313330",
+                "tertiary-container": "#ffa086",
+                "surface-tint": "#4f6456",
+                "surface-dim": "#dadad6",
+                "primary-container": "#d1e8d7",
+                "on-surface": "#313330",
+                "inverse-primary": "#e2fae8",
+                "primary-fixed": "#d1e8d7",
+                "primary-dim": "#43584b",
+                "on-secondary-fixed-variant": "#854d34",
+                "background": "#fbf9f6",
+                "inverse-on-surface": "#9e9d9a",
+                "inverse-surface": "#0e0e0d",
+                "outline-variant": "#b2b2ae",
+                "secondary-container": "#ffdbcd",
+                "on-tertiary-container": "#6b1800",
+                "primary": "#4f6456",
+                "secondary-dim": "#7b452d",
+                "tertiary-fixed-dim": "#ff8b6a",
+                "on-tertiary-fixed-variant": "#7a1d00",
+                "surface-container-low": "#f5f3f0",
+                "secondary-fixed-dim": "#ffc8b3",
+                "tertiary": "#a83a19",
+                "tertiary-dim": "#982e0d",
+                "on-error-container": "#65000b",
+                "on-tertiary": "#fff7f5",
+                "outline": "#7a7b78",
+                "error": "#ac3434"
+              },
+              fontFamily: {
+                "headline": ["Newsreader"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>body {
+    background-color: #fbf9f6;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAlbGL9-TZyF3fsKFMWdz-G44HXiPizEYMvMtU-k6qaZLZyOnn_otdIylp03m0V8PifU3ZmgmrUDtU7bs8Gj7wKn1G661r5BM7BM1mbhY3Dk1G0m4E4T6m30CdzJaVH_nvXWV0JcbP39AQPiaiimMjOJM-_2AJHoZ1er-_FIEJAxpXF8ClGlBHEEOElHHEYGDEH7vlIN9-x5hMusbY02Z_zRbVtd22aj4Egmpr17lssDGGCOrrxk3WdAXUdpjuhSa1CuyOEpnk9xQ9a);
+    font-family: "Inter", sans-serif
+    }
+.editorial-header {
+    font-family: "Newsreader", serif;
+    font-style: italic
+    }
+.no-scrollbar::-webkit-scrollbar {
+    display: none
+    }
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+    }
+.watercolor-gradient {
+    background: linear-gradient(135deg, #4f6456 0%, #d1e8d7 100%)
+    }
+.progress-gradient {
+    background: linear-gradient(90deg, #4f6456 0%, #a83a19 100%)
+    }</style>
+</head>
+<body class="text-on-background selection:bg-primary-container min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-stone-950/80 backdrop-blur-md border-b border-[#b2b2ae]/15 flex justify-between items-center px-8 h-20 w-full max-w-none">
+<div class="flex items-center gap-6">
+<span class="text-2xl font-serif italic tracking-tight text-[#4f6456] dark:text-[#d1e8d7]">BoloBridge</span>
+<div class="h-4 w-[1px] bg-outline-variant opacity-30 hidden md:block"></div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#4f6456] dark:text-[#d1e8d7] border-b-2 border-[#4f6456] pb-1 font-body text-sm font-medium" href="#">Parent Dashboard</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#efeeea] dark:hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-[#4f6456] dark:text-[#d1e8d7]">lock</span>
+</button>
+</div>
+</nav>
+<main class="max-w-[1024px] mx-auto px-8 pt-32 space-y-12">
+<!-- Header Section -->
+<header class="flex flex-col gap-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase w-fit">Activity Report</span>
+<h1 class="editorial-header text-6xl text-primary leading-tight">Leo's Progress</h1>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm transition-all hover:translate-y-[-2px]">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold mb-2">Exercises</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline italic text-primary">47</span>
+<span class="material-symbols-outlined text-primary text-sm">auto_graph</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm transition-all hover:translate-y-[-2px]">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold mb-2">Streak</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline italic text-secondary">5</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm transition-all hover:translate-y-[-2px]">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold mb-2">Mastered</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline italic text-primary-dim">12</span>
+<span class="text-xs font-body text-on-surface-variant">sounds</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 shadow-sm transition-all hover:translate-y-[-2px]">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold mb-2">Level 3</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline italic text-tertiary">580</span>
+<span class="text-xs font-body text-on-surface-variant">XP</span>
+</div>
+</div>
+</section>
+<!-- Analysis Section -->
+<section class="grid grid-cols-12 gap-8">
+<!-- Weekly Practice Scores -->
+<div class="col-span-7 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-end mb-8">
+<h3 class="editorial-header text-2xl text-on-surface">Weekly practice scores</h3>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest">Last 7 Days</span>
+</div>
+<div class="relative h-48 w-full flex items-end justify-between gap-4">
+<!-- Faux Line Chart Graphic -->
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 100">
+<path class="text-primary" d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary-container/20 rounded-t-sm h-[40%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Mon</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary-container/40 rounded-t-sm h-[65%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Tue</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary-container/20 rounded-t-sm h-[35%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Wed</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary rounded-t-sm h-[90%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Thu</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary-container/60 rounded-t-sm h-[55%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Fri</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary-container/30 rounded-t-sm h-[45%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Sat</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full bg-primary-container/10 rounded-t-sm h-[20%]"></div>
+<span class="text-[9px] uppercase font-bold text-on-surface-variant">Sun</span>
+</div>
+</div>
+</div>
+<!-- Phoneme Radar -->
+<div class="col-span-5 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex flex-col items-center justify-center text-center">
+<h3 class="editorial-header text-2xl text-on-surface mb-6 self-start text-left">Phoneme Mastery</h3>
+<div class="relative w-48 h-48 mb-4">
+<!-- Faux Radar Chart -->
+<div class="absolute inset-0 border-[0.5px] border-outline-variant/20 rounded-full scale-100"></div>
+<div class="absolute inset-0 border-[0.5px] border-outline-variant/20 rounded-full scale-75"></div>
+<div class="absolute inset-0 border-[0.5px] border-outline-variant/20 rounded-full scale-50"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-32 h-32 rotate-45 opacity-60" style="background: radial-gradient(circle, #ffa086 0%, transparent 70%); clip-path: polygon(50% 0%, 100% 38%, 81% 100%, 19% 100%, 0% 38%);"></div>
+</div>
+<span class="absolute -top-4 left-1/2 -translate-x-1/2 text-[10px] font-bold text-on-surface-variant">/S/</span>
+<span class="absolute top-1/4 -right-6 text-[10px] font-bold text-on-surface-variant">/R/</span>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 text-[10px] font-bold text-on-surface-variant">/TH/</span>
+<span class="absolute top-1/4 -left-6 text-[10px] font-bold text-on-surface-variant">/L/</span>
+</div>
+<p class="text-xs text-on-surface-variant italic font-headline px-4">Strong focus on sibilant sounds this week.</p>
+</div>
+</section>
+<!-- XP Progress Bar -->
+<section class="bg-surface-container-low p-10 rounded-2xl">
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="editorial-header text-xl text-primary">Next Milestone</h4>
+<span class="font-body text-sm font-medium text-on-surface-variant">72% to Level 4</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full progress-gradient w-[72%] rounded-full shadow-inner"></div>
+</div>
+<div class="flex justify-between mt-3">
+<span class="text-[10px] font-bold text-outline uppercase tracking-tighter">Level 3</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-tighter">Level 4</span>
+</div>
+</section>
+<!-- Achievements -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="editorial-header text-3xl text-on-surface">Achievements</h3>
+<a class="text-xs uppercase tracking-widest font-bold text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-6 no-scrollbar -mx-4 px-4">
+<!-- Unlocked -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-24 h-24 rounded-full bg-primary-container flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Early Bird</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-24 h-24 rounded-full bg-secondary-container flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Clear Speaker</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-24 h-24 rounded-full bg-tertiary-container/30 flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Deep Listener</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-3">
+<div class="w-24 h-24 rounded-full bg-[#e2fae8] flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-4xl text-[#4f6456]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">5 Day Streak</span>
+</div>
+<!-- Locked -->
+<div class="flex-shrink-0 flex flex-col items-center gap-3 opacity-40 grayscale">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center border-4 border-white shadow-sm border-dashed">
+<span class="material-symbols-outlined text-4xl text-outline">lock</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Word Smith</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-3 opacity-40 grayscale">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center border-4 border-white shadow-sm border-dashed">
+<span class="material-symbols-outlined text-4xl text-outline">lock</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Sound Master</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-3 opacity-40 grayscale">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center border-4 border-white shadow-sm border-dashed">
+<span class="material-symbols-outlined text-4xl text-outline">lock</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Story Teller</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-3 opacity-40 grayscale">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center border-4 border-white shadow-sm border-dashed">
+<span class="material-symbols-outlined text-4xl text-outline">lock</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Daily Hero</span>
+</div>
+</div>
+</section>
+<!-- Recent Activity Stack -->
+<section class="space-y-6">
+<h3 class="editorial-header text-3xl text-on-surface">Recent Activity</h3>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center justify-between border-l-4 border-primary shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">record_voice_over</span>
+</div>
+<div>
+<h5 class="font-body font-semibold text-on-surface">Vowel Matching Exercise</h5>
+<p class="text-xs text-on-surface-variant">Completed 2 hours ago • <span class="text-primary font-bold">92% score</span></p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center justify-between border-l-4 border-secondary shadow-sm translate-x-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">menu_book</span>
+</div>
+<div>
+<h5 class="font-body font-semibold text-on-surface">Story Time: The Brave Bunny</h5>
+<p class="text-xs text-on-surface-variant">Read yesterday • <span class="text-secondary font-bold">15 min session</span></p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center justify-between border-l-4 border-tertiary shadow-sm translate-x-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">sports_esports</span>
+</div>
+<div>
+<h5 class="font-body font-semibold text-on-surface">Bubble Pop Phonemes</h5>
+<p class="text-xs text-on-surface-variant">Played yesterday • <span class="text-tertiary font-bold">New High Score</span></p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-12 pb-safe bg-[#fbf9f6] dark:bg-stone-950 z-50 h-24 border-t border-[#b2b2ae]/15 shadow-[0_-10px_30px_rgba(49,51,48,0.03)]">
+<div class="flex flex-col items-center justify-center text-[#313330]/50 dark:text-[#fbf9f6]/40 px-6 py-2 hover:text-[#4f6456] dark:hover:text-[#d1e8d7] transition-all cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-medium mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#313330]/50 dark:text-[#fbf9f6]/40 px-6 py-2 hover:text-[#4f6456] dark:hover:text-[#d1e8d7] transition-all cursor-pointer">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-medium mt-1">Learn</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#313330]/50 dark:text-[#fbf9f6]/40 px-6 py-2 hover:text-[#4f6456] dark:hover:text-[#d1e8d7] transition-all cursor-pointer">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-medium mt-1">Play</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4f6456] dark:text-[#d1e8d7] bg-[#d1e8d7]/30 rounded-xl px-6 py-2 transition-all scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-medium mt-1">Progress</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#313330]/50 dark:text-[#fbf9f6]/40 px-6 py-2 hover:text-[#4f6456] dark:hover:text-[#d1e8d7] transition-all cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-sans uppercase tracking-widest text-[10px] font-medium mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

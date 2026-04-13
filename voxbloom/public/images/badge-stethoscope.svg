@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#2D3142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Stethoscope tubing -->
+  <path d="M48 24 L48 60 C48 76, 56 84, 64 84 C72 84, 80 76, 80 60 L80 24"/>
+  <!-- Ear tips -->
+  <circle cx="48" cy="20" r="4" fill="#5F9EA0" stroke="#2D3142"/>
+  <circle cx="80" cy="20" r="4" fill="#5F9EA0" stroke="#2D3142"/>
+  <!-- Chest piece stem -->
+  <path d="M64 84 L64 100"/>
+  <!-- Chest piece — diaphragm -->
+  <circle cx="64" cy="106" r="10" stroke-width="2.5"/>
+  <circle cx="64" cy="106" r="4" fill="#C2956B" stroke="none"/>
+</svg>

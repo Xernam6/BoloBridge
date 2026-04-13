@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e4e2df",
+            "outline": "#727971",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#2d1600",
+            "secondary-container": "#fdcb9d",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#613f1d",
+            "background": "#fbf9f6",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#eebd90",
+            "on-secondary-container": "#79542f",
+            "secondary": "#7c5732",
+            "primary-container": "#61a0a2",
+            "surface-container-high": "#eae8e5",
+            "error": "#ba1a1a",
+            "surface": "#fbf9f6",
+            "inverse-surface": "#30312f",
+            "surface-tint": "#25686a",
+            "primary": "#25686a",
+            "on-surface-variant": "#424842",
+            "surface-container": "#efeeeb",
+            "on-tertiary-fixed": "#1c0b54",
+            "inverse-primary": "#92d2d3",
+            "on-tertiary-fixed-variant": "#493c81",
+            "tertiary-fixed-dim": "#cabeff",
+            "tertiary": "#61549b",
+            "secondary-fixed": "#ffdcbf",
+            "on-background": "#1b1c1a",
+            "on-primary-container": "#003435",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#dbdad7",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#e6deff",
+            "surface-bright": "#fbf9f6",
+            "primary-fixed": "#aeeef0",
+            "primary-fixed-dim": "#92d2d3",
+            "on-primary-fixed": "#002021",
+            "surface-variant": "#e4e2df",
+            "on-surface": "#1b1c1a",
+            "surface-container-low": "#f5f3f0",
+            "tertiary-container": "#988bd6",
+            "on-primary-fixed-variant": "#004f51",
+            "on-tertiary-container": "#2f2166",
+            "outline-variant": "#c2c8bf",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#f2f0ed"
+          },
+          fontFamily: {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Inter", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>body {
+    font-family: "Inter", sans-serif;
+    background-color: #fbf9f6
+    }
+.headline-serif {
+    font-family: "Newsreader", serif;
+    font-style: italic
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDRI6N6Yfb-9ykdHVP_DsZpTvA72XItAS_MjCNUnqzz5QqfEQwHnDLPX-D_i6m8JRiaikBi_WMhjNcSRAGQNGYsQtna4zf9_RC90IvekrEDuezU4l1Jt37nhBKLKfeWWLCE5q3nszZ_6vzbU22N5JCP530_3wFOS1o2DQgLZAVBHMtSbnJ2Sv3y7ZEowI6laSkC_rDQcp8u4Pb6pbkW_oA8F_7lzb5t9qR8_oqO0VUwvYXzynXvTnsTWortThi9l_zJacpZLT0f2MU9);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.watercolor-primary {
+    background: linear-gradient(45deg, #25686a, #61a0a2)
+    }
+.watercolor-secondary {
+    background: linear-gradient(45deg, #7c5732, #eebd90)
+    }
+.modal-shadow {
+    box-shadow: 0 20px 40px rgba(66, 72, 66, 0.06)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex items-center justify-center p-0 m-0 overflow-hidden">
+<!-- Global Grain Texture -->
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Background "Home Screen" Simulation (Blurred) -->
+<div class="fixed inset-0 z-0 flex flex-col items-center justify-start p-6 blur-md opacity-40 scale-105">
+<div class="w-full max-w-[375px] space-y-8">
+<div class="flex justify-between items-center py-4">
+<div class="h-10 w-32 bg-surface-container rounded-full"></div>
+<div class="h-10 w-10 bg-surface-container rounded-full"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-40 bg-surface-container rounded-xl"></div>
+<div class="h-40 bg-surface-container rounded-xl"></div>
+<div class="h-40 bg-surface-container rounded-xl"></div>
+<div class="h-40 bg-surface-container rounded-xl"></div>
+</div>
+</div>
+</div>
+<!-- Main Modal Container -->
+<div class="relative z-50 w-full max-w-[375px] h-screen flex flex-col justify-end md:justify-center px-4 pb-8 md:pb-0">
+<!-- Shared TopAppBar Execution (from JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between w-full max-w-2xl mx-auto bg-[#fbf9f6] dark:bg-stone-900 w-full top-0 px-6 pt-4 pb-2">
+<button class="hover:opacity-80 transition-opacity scale-95 duration-200 ease-out text-[#25686a] dark:text-[#61a0a2]">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-serif italic font-medium text-stone-800 dark:text-stone-100 text-[#25686a] dark:text-[#61a0a2]">Daily Reward</h1>
+<div class="w-6"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- The Reward Modal Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col items-center text-center modal-shadow relative overflow-hidden border-none">
+<!-- Decorative Glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-secondary-container/20 rounded-full blur-[60px] -z-10"></div>
+<!-- Illustration Area -->
+<div class="relative w-48 h-48 mb-6 flex items-center justify-center">
+<!-- Watercolor Illustration Mockup -->
+<div class="absolute inset-0 bg-secondary-container/10 rounded-full scale-110"></div>
+<div class="relative z-10 text-7xl text-secondary-fixed-dim drop-shadow-xl">
+<span class="material-symbols-outlined !text-[80px]" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+<!-- Light Rays -->
+<div class="absolute inset-0 flex items-center justify-center animate-pulse">
+<div class="w-full h-[2px] bg-secondary-container/40 rotate-45 rounded-full"></div>
+<div class="w-full h-[2px] bg-secondary-container/40 -rotate-45 rounded-full"></div>
+</div>
+</div>
+<!-- Header Typography -->
+<div class="space-y-2 mb-8">
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant/60 font-body">Daily Practice Complete!</p>
+<h2 class="text-3xl headline-serif text-on-surface leading-tight">You found a new treasure!</h2>
+</div>
+<!-- Reward Reveal Sticker -->
+<div class="mb-8 relative group">
+<div class="w-40 h-40 rounded-full bg-surface-container-low p-2 border-dashed border-2 border-outline-variant/30 flex items-center justify-center overflow-hidden rotate-[-3deg]">
+<div class="w-full h-full rounded-full bg-white flex flex-col items-center justify-center shadow-sm">
+<!-- Sticker Content -->
+<div class="text-4xl mb-1">🐯</div>
+<p class="font-headline italic text-lg text-primary">The Brave Tiger</p>
+</div>
+</div>
+<!-- Stamp Edges (Decorative) -->
+<div class="absolute -top-1 -right-1 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-body font-semibold">NEW</div>
+</div>
+<!-- Streak Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-surface-container rounded-full mb-10">
+<span class="text-sm">🔥</span>
+<span class="text-xs font-medium text-on-surface tracking-tight font-body">5 Day Streak!</span>
+</div>
+<!-- Actions -->
+<div class="w-full space-y-6">
+<button class="w-full watercolor-primary text-on-primary py-4 px-6 rounded-full font-body font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98] duration-200">
+          Add to Sticker Book
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="text-on-surface-variant font-body text-sm font-medium hover:text-on-surface transition-colors">
+          Continue
+        </button>
+</div>
+</div>
+<!-- Padding for BottomNavBar space -->
+<div class="h-24 md:hidden"></div>
+</div>
+<!-- Shared BottomNavBar Execution (from JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#fbf9f6]/80 dark:bg-stone-900/80 backdrop-blur-md fixed bottom-0 w-full rounded-t-[3rem] border-t-0 shadow-[0_-20px_40px_rgba(66,72,72,0.06)] md:hidden">
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2] transition-opacity">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-sans text-xs tracking-tight font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#7A9E7E] text-white rounded-full px-5 py-2 Active: scale-90 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-sans text-xs tracking-tight font-medium">Stickers</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2] transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-sans text-xs tracking-tight font-medium">Lessons</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2] transition-opacity">
+<span class="material-symbols-outlined" data-icon="face">face</span>
+<span class="font-sans text-xs tracking-tight font-medium">Profile</span>
+</div>
+</nav>
+<!-- Visual Polish: Content Filter -->
+<div class="fixed inset-0 pointer-events-none z-[60] bg-on-surface/5"></div>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Daily Challenge</title>
+<!-- Google Fonts: Newsreader for Editorial Serif, Inter for Functional Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dbdad7",
+              "on-primary-container": "#003234",
+              "inverse-surface": "#30312f",
+              "tertiary-fixed": "#e6deff",
+              "tertiary": "#61549b",
+              "inverse-on-surface": "#f2f0ed",
+              "primary-fixed": "#aeeef0",
+              "primary-fixed-dim": "#92d2d3",
+              "on-secondary-container": "#79542f",
+              "tertiary-fixed-dim": "#cabeff",
+              "tertiary-container": "#978ad5",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#7c5732",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-secondary-fixed-variant": "#613f1d",
+              "secondary-container": "#fdcb9d",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1b1c1a",
+              "secondary-fixed-dim": "#eebd90",
+              "on-secondary-fixed": "#2d1600",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e4e2df",
+              "outline-variant": "#bfc8c8",
+              "surface": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "primary-container": "#5f9ea0",
+              "on-primary-fixed-variant": "#004f51",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#f5f3f0",
+              "surface-container": "#efeeeb",
+              "on-background": "#1b1c1a",
+              "on-tertiary-container": "#2e2165",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#3f4849",
+              "outline": "#6f7979",
+              "surface-bright": "#fbf9f6",
+              "on-error-container": "#93000a",
+              "background": "#fbf9f6",
+              "on-primary-fixed": "#002021",
+              "surface-container-highest": "#e4e2df",
+              "primary": "#25686a",
+              "surface-container-high": "#eae8e5",
+              "inverse-primary": "#92d2d3",
+              "surface-tint": "#25686a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        /* Custom progress ring logic */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6]/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(45,49,66,0.06)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="font-['Newsreader'] text-[#25686a] dark:text-[#5f9ea0] text-2xl italic font-bold">
+                BoloBridge
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#25686a] font-semibold font-label uppercase tracking-widest text-[11px] transition-opacity hover:opacity-80" href="#">Challenges</a>
+<a class="text-[#2d3142]/60 dark:text-zinc-400 font-label uppercase tracking-widest text-[11px] transition-opacity hover:opacity-80" href="#">Garden</a>
+<a class="text-[#2d3142]/60 dark:text-zinc-400 font-label uppercase tracking-widest text-[11px] transition-opacity hover:opacity-80" href="#">Library</a>
+<a class="text-[#2d3142]/60 dark:text-zinc-400 font-label uppercase tracking-widest text-[11px] transition-opacity hover:opacity-80" href="#">Progress</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#25686a] text-2xl cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 mb-12">
+<div class="relative overflow-hidden bg-gradient-to-br from-[#2D3142] to-[#25686a] rounded-xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-2xl">
+<!-- Abstract Background Shapes -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-[-10%] left-[-5%] w-64 h-64 bg-primary-fixed-dim rounded-full blur-[80px]"></div>
+<div class="absolute bottom-[-20%] right-[10%] w-96 h-96 bg-tertiary-container rounded-full blur-[100px]"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-2xl text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-4 mb-6">
+<span class="material-symbols-outlined text-primary-fixed text-4xl" data-icon="timer">timer</span>
+<h1 class="font-headline italic font-bold text-4xl md:text-6xl text-white tracking-tight">Today's Challenge</h1>
+</div>
+<p class="text-white/80 text-lg md:text-xl font-light mb-10 max-w-lg">
+                        A curated 5-minute mix of speech exercises just for you.
+                    </p>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-10 py-4 rounded-full font-semibold text-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3 shadow-lg group">
+                        Start Challenge 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Circular Timer Graphic -->
+<div class="relative z-10 mt-12 md:mt-0 flex items-center justify-center">
+<div class="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+<!-- Progress Ring SVG -->
+<svg class="absolute inset-0 w-full h-full transform -rotate-90">
+<circle class="text-white/10" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary-fixed-dim progress-ring__circle" cx="50%" cy="50%" fill="transparent" r="45%" stroke="currentColor" stroke-dasharray="600" stroke-dashoffset="150" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="text-center">
+<span class="block font-headline italic text-5xl md:text-7xl text-white">5:00</span>
+<span class="block text-white/50 text-xs uppercase tracking-widest font-medium mt-2">Minutes Left</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Exercise Preview Bento Grid -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- ROW 1 (Left, wide) -->
+<div class="md:col-span-2 group relative overflow-hidden bg-gradient-to-br from-primary-container/20 to-primary/40 rounded-xl p-8 h-80 flex flex-col justify-end transition-all hover:shadow-xl">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-40 group-hover:scale-110 transition-transform duration-700">
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&amp;w=2730&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-overlay" data-alt="Abstract jungle leaves and organic sound wave patterns"></div>
+</div>
+<div class="relative z-10">
+<span class="inline-block bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">2 exercises</span>
+<h3 class="font-headline italic text-3xl text-primary font-bold mb-2">Sound Safari</h3>
+<p class="text-on-surface-variant max-w-xs">Explore deep textures and resonant vowels in the wild.</p>
+</div>
+</div>
+<!-- ROW 1 (Right, narrow) -->
+<div class="group relative overflow-hidden bg-gradient-to-br from-tertiary-container/20 to-tertiary/40 rounded-xl p-8 h-80 flex flex-col justify-end transition-all hover:shadow-xl">
+<div class="absolute top-[-20%] right-[-20%] w-48 h-48 bg-tertiary/30 rounded-full blur-3xl"></div>
+<div class="absolute inset-0 opacity-30 group-hover:rotate-6 transition-transform duration-700">
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&amp;w=2673&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-overlay" data-alt="Abstract floating book pages and lavender gradients"></div>
+</div>
+<div class="relative z-10">
+<span class="inline-block bg-tertiary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">1 exercise</span>
+<h3 class="font-headline italic text-3xl text-tertiary font-bold mb-2">Story Studio</h3>
+<p class="text-on-surface-variant">Narrate your own journey with melodic prose.</p>
+</div>
+</div>
+<!-- ROW 2 (Three equal cards) -->
+<!-- Card 1: Word Garden -->
+<div class="group bg-surface-container-low rounded-xl p-6 h-64 flex flex-col justify-between transition-all hover:bg-surface-container shadow-sm hover:shadow-md">
+<div class="w-14 h-14 bg-primary-fixed-dim/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_florist">local_florist</span>
+</div>
+<div>
+<h4 class="font-headline italic text-2xl text-on-surface font-bold mb-1">Word Garden</h4>
+<p class="text-on-surface-variant text-sm">Nurture expanding vocabulary roots.</p>
+</div>
+</div>
+<!-- Card 2: Rhythm River -->
+<div class="group bg-surface-container-low rounded-xl p-6 h-64 flex flex-col justify-between transition-all hover:bg-surface-container shadow-sm hover:shadow-md">
+<div class="w-14 h-14 bg-primary-container/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="waves">waves</span>
+</div>
+<div>
+<h4 class="font-headline italic text-2xl text-on-surface font-bold mb-1">Rhythm River</h4>
+<p class="text-on-surface-variant text-sm">Flow with the tempo of natural speech.</p>
+</div>
+</div>
+<!-- Card 3: Emotion Echo -->
+<div class="group bg-surface-container-low rounded-xl p-6 h-64 flex flex-col justify-between transition-all hover:bg-surface-container shadow-sm hover:shadow-md">
+<div class="w-14 h-14 bg-secondary-container/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</div>
+<div>
+<h4 class="font-headline italic text-2xl text-on-surface font-bold mb-1">Emotion Echo</h4>
+<p class="text-on-surface-variant text-sm">Shape the sounds of how we feel.</p>
+</div>
+</div>
+<!-- ROW 3 (Wide banner) -->
+<div class="md:col-span-3 group relative overflow-hidden bg-surface-container-highest rounded-xl p-10 flex flex-col md:flex-row items-center justify-between transition-all hover:bg-[#e4e2df]">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-1/4 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]"></div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+<div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="music_note">music_note</span>
+</div>
+<div class="text-center md:text-left">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-tertiary mb-2 block">Fun Warm-ups</span>
+<h3 class="font-headline italic text-4xl text-on-surface font-bold">Tongue Gym</h3>
+<p class="text-on-surface-variant mt-2 max-w-md">Linguistical aerobics with abstract ribbons of sound and melody. No sweat, all play.</p>
+</div>
+</div>
+<button class="mt-8 md:mt-0 px-12 py-4 bg-on-surface text-white rounded-full font-semibold hover:opacity-90 active:scale-95 transition-all relative z-10">
+                        Let's Go!
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="max-w-7xl mx-auto px-6 mt-16">
+<div class="bg-surface-container-low/50 backdrop-blur-sm rounded-xl py-6 px-10 flex flex-wrap justify-center md:justify-around gap-12 items-center">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🔥</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-bold text-lg">5 days</span>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant/70">Current streak</span>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex items-center gap-3">
+<span class="text-2xl">⭐</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-bold text-lg">12 days</span>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant/70">Best streak</span>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex items-center gap-3">
+<span class="text-2xl">✨</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-bold text-lg">1,250 XP</span>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant/70">Total XP Earned</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-[3rem] bg-[#fbf9f6]/90 dark:bg-zinc-900/90 backdrop-blur-2xl shadow-[0_-10px_30px_rgba(45,49,66,0.04)] flex justify-around items-center px-8 pb-8 pt-4 bg-gradient-to-t from-[#fbf9f6] to-transparent">
+<a class="flex flex-col items-center justify-center bg-[#25686a] text-white rounded-full px-6 py-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-['Inter'] text-[9px] font-medium uppercase tracking-widest mt-1">Challenges</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2d3142]/50 dark:text-zinc-500 px-4 py-2 hover:text-[#25686a] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+<span class="font-['Inter'] text-[9px] font-medium uppercase tracking-widest mt-1">Garden</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2d3142]/50 dark:text-zinc-500 px-4 py-2 hover:text-[#25686a] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Inter'] text-[9px] font-medium uppercase tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2d3142]/50 dark:text-zinc-500 px-4 py-2 hover:text-[#25686a] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Inter'] text-[9px] font-medium uppercase tracking-widest mt-1">Progress</span>
+</a>
+</nav>
+</body></html>

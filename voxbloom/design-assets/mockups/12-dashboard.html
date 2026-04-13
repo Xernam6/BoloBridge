@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#eae8e5",
+                        "on-secondary-fixed-variant": "#613f1d",
+                        "primary": "#25686a",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#493c81",
+                        "primary-container": "#61a0a2",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#aeeef0",
+                        "surface-tint": "#25686a",
+                        "secondary-fixed-dim": "#eebd90",
+                        "on-background": "#1b1c1a",
+                        "surface-bright": "#fbf9f6",
+                        "inverse-on-surface": "#f2f0ed",
+                        "tertiary-fixed": "#e6deff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#727971",
+                        "inverse-surface": "#30312f",
+                        "tertiary": "#61549b",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-highest": "#e4e2df",
+                        "secondary-container": "#fdcb9d",
+                        "surface-container-low": "#f5f3f0",
+                        "tertiary-container": "#988bd6",
+                        "on-secondary-fixed": "#2d1600",
+                        "on-tertiary-fixed": "#1c0b54",
+                        "on-tertiary-container": "#2f2166",
+                        "inverse-primary": "#92d2d3",
+                        "surface-container": "#efeeeb",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#cabeff",
+                        "surface": "#fbf9f6",
+                        "secondary": "#7c5732",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#004f51",
+                        "on-primary-container": "#003435",
+                        "primary-fixed-dim": "#92d2d3",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c8bf",
+                        "secondary-fixed": "#ffdcbf",
+                        "on-secondary-container": "#79542f",
+                        "on-surface": "#1b1c1a",
+                        "background": "#fbf9f6",
+                        "on-surface-variant": "#424842",
+                        "on-primary-fixed": "#002021",
+                        "surface-variant": "#e4e2df",
+                        "on-secondary": "#ffffff",
+                        "sage-green": "#7A9E7E"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAzNWWnKRFiiNMr379pLBVvew8DcohEpR4i2mycgsfaWSPIyxGL5vcza1Zrcwk5TnNbT8sNINllLj-aOlKyCbt3ObKyz8bjp3RbKioDozygkIdPfQ0i7yeg3zpfgreIjQiJkON85fF3ViGJJPRatq1KuojgPCoiQxkFXQCDBL2JffkxDGNWd1_J3KnL2goNEX-xdnL9r5LKo4VEAlp-zFS4ZAXwHUlj5UD443JQ8aiPgUI0yOS4TN6kF0DTHsx9ht65FMvDdkFG3EL_)
+    }
+.watercolor-cta {
+    background: linear-gradient(45deg, #25686a, #61a0a2)
+    }
+.editorial-shadow {
+    box-shadow: 0 20px 40px rgba(66, 72, 66, 0.06)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-stone-900/80 backdrop-blur-md">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="flex items-center gap-8">
+<span class="text-[#25686a] dark:text-[#61a0a2] font-serif italic text-2xl tracking-tight">BoloBridge</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#25686a] dark:text-[#61a0a2] border-b-2 border-[#7A9E7E] pb-1 font-semibold" href="#">Dashboard</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans hover:text-[#25686a] transition-colors" href="#">Milestones</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans hover:text-[#25686a] transition-colors" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#f5f3f0]/50 dark:hover:bg-stone-800/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-[#25686a]">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#f5f3f0]/50 dark:hover:bg-stone-800/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined text-[#25686a]">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden border-2 border-surface-container">
+<img alt="Parent profile avatar" class="w-full h-full object-cover" data-alt="Portrait of a smiling woman in warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA2IMg-KXfxsQxoEl6CopI15zZZTN6SFZi7k5QOG7gMZGW0NZotpTIS6QjPlCmb8N_PlW6qy9dkgUkOLkNSEqXxeUeDn1lK5WeG0HERu3cI_aPUE0-adpvTxV1YAnRV-XbblIp-N-A4lBdb1yU9YBQIH-9rL5Wq71KjT3WFB2FsPlug2Cq9c3l80ZgV5c0D7qeEIZmOb_Jft9ZxZy19xljURARCLn6QuZfwHh5kG0hADr9TR07KTpyhrWZ0iTTfsijTXi4CGgMkXdv"/>
+</div>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-32 pb-20 max-w-7xl mx-auto px-6">
+<!-- Header Section -->
+<section class="mb-12 flex justify-between items-end">
+<div>
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high text-primary font-medium text-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                    Parent Dashboard
+                </span>
+<h1 class="font-headline italic text-6xl text-primary mb-2 tracking-tight">Leo's Progress</h1>
+<p class="text-on-surface-variant text-lg">Tracking speech development journey with gentle steps.</p>
+</div>
+<button class="group flex items-center justify-center w-12 h-12 rounded-full border border-outline-variant hover:border-primary transition-all active:scale-90">
+<span class="material-symbols-outlined text-outline group-hover:text-primary">lock</span>
+</button>
+</section>
+<!-- Stat Rows -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg editorial-shadow flex items-center gap-4 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Total Exercises</p>
+<p class="text-3xl font-bold text-primary">47</p>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg editorial-shadow flex items-center gap-4 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-fixed-dim"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">local_fire_department</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Current Streak</p>
+<p class="text-3xl font-bold text-secondary">5 days</p>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg editorial-shadow flex items-center gap-4 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">volume_up</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Sounds Mastered</p>
+<p class="text-3xl font-bold text-tertiary">12</p>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg editorial-shadow flex items-center gap-4 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-sage-green"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-sage-green" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Level 3</p>
+<p class="text-3xl font-bold text-sage-green">580 XP</p>
+</div>
+</div>
+</section>
+<!-- Charts Row -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+<!-- Progress Over Time -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow">
+<h3 class="font-headline italic text-2xl text-primary mb-6">Progress Over Time</h3>
+<div class="h-64 flex items-end justify-between gap-2 px-2 relative">
+<!-- Abstract Line Chart Visualization -->
+<svg class="absolute bottom-0 left-0 w-full h-48 pointer-events-none overflow-visible" viewbox="0 0 400 150">
+<path d="M0,120 Q50,110 100,80 T200,90 T300,40 T400,20" fill="none" stroke="#25686a" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,140 Q50,130 100,100 T200,110 T300,60 T400,40" fill="none" stroke="#988bd6" stroke-dasharray="8 4" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="flex flex-col items-center flex-1">
+<div class="text-[10px] text-outline mt-auto pt-48">Mon</div>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="text-[10px] text-outline mt-auto pt-48">Tue</div>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="text-[10px] text-outline mt-auto pt-48">Wed</div>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="text-[10px] text-outline mt-auto pt-48">Thu</div>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="text-[10px] text-outline mt-auto pt-48">Fri</div>
+</div>
+</div>
+<div class="flex gap-4 mt-8 justify-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-xs text-on-surface-variant">Weekly Score</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="text-xs text-on-surface-variant">Experience Points</span>
+</div>
+</div>
+</div>
+<!-- Skill Breakdown -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow flex flex-col items-center">
+<h3 class="font-headline italic text-2xl text-primary mb-6 self-start w-full">Skill Breakdown</h3>
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Radar Chart Placeholder -->
+<div class="absolute inset-0 border border-surface-container rounded-full"></div>
+<div class="absolute inset-8 border border-surface-container rounded-full"></div>
+<div class="absolute inset-16 border border-surface-container rounded-full"></div>
+<svg class="w-full h-full transform -rotate-45" viewbox="0 0 100 100">
+<polygon fill="#25686a" fill-opacity="0.1" points="50,10 90,50 50,70 20,50" stroke="#25686a" stroke-width="1.5"></polygon>
+</svg>
+<!-- Labels -->
+<span class="absolute -top-4 left-1/2 -translate-x-1/2 text-xs font-semibold text-primary">Articulation</span>
+<span class="absolute top-1/2 -right-6 -translate-y-1/2 text-xs font-semibold text-primary">Vocabulary</span>
+<span class="absolute -bottom-4 left-1/2 -translate-x-1/2 text-xs font-semibold text-primary">Fluency</span>
+<span class="absolute top-1/2 -left-6 -translate-y-1/2 text-xs font-semibold text-primary">Oral Motor</span>
+</div>
+</div>
+</section>
+<!-- XP Progress Bar -->
+<section class="bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden mb-12">
+<div class="h-1.5 w-full bg-gradient-to-r from-primary via-tertiary-container to-secondary-fixed-dim"></div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<h3 class="font-headline italic text-2xl text-primary">Level Progress</h3>
+</div>
+<span class="text-primary font-bold">Level 3 <span class="text-on-surface-variant font-normal px-2">→</span> Level 4</span>
+</div>
+<div class="relative w-full h-6 bg-surface-container rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-primary-container transition-all duration-1000" style="width: 72%;">
+<div class="absolute inset-0 bg-white/10 animate-pulse"></div>
+</div>
+</div>
+<div class="flex justify-between mt-3 text-sm text-on-surface-variant">
+<span>Current: 580 XP</span>
+<span>72% Completed</span>
+<span>Next Level: 800 XP</span>
+</div>
+</div>
+</section>
+<!-- Badges Section -->
+<section class="bg-surface-container rounded-xl p-10">
+<h3 class="font-headline italic text-3xl text-primary mb-8 text-center">Achievement Stamps</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+<!-- Badge 1: Unlocked -->
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 rounded-2xl bg-secondary-fixed-dim flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-on-secondary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/p6.png')]"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary">First Sound</span>
+</div>
+<!-- Badge 2: Unlocked -->
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 rounded-2xl bg-tertiary-fixed flex items-center justify-center -rotate-3 group-hover:rotate-0 transition-transform shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/p6.png')]"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-tertiary">3-Day Streak</span>
+</div>
+<!-- Badge 3: Unlocked -->
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 rounded-2xl bg-primary-fixed flex items-center justify-center rotate-6 group-hover:rotate-0 transition-transform shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-on-primary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">track_changes</span>
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/p6.png')]"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Perfect Score</span>
+</div>
+<!-- Badge 4: Unlocked -->
+<div class="flex flex-col items-center gap-3 group">
+<div class="w-20 h-20 rounded-2xl bg-secondary-container flex items-center justify-center -rotate-6 group-hover:rotate-0 transition-transform shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/p6.png')]"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-on-secondary-container">Quiet Focus</span>
+</div>
+<!-- Badge 5: Locked -->
+<div class="flex flex-col items-center gap-3 opacity-40 grayscale group">
+<div class="w-20 h-20 rounded-2xl bg-surface-dim flex items-center justify-center rotate-2 shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-outline text-4xl">emoji_events</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Master Speaker</span>
+</div>
+<!-- Badge 6: Locked -->
+<div class="flex flex-col items-center gap-3 opacity-40 grayscale group">
+<div class="w-20 h-20 rounded-2xl bg-surface-dim flex items-center justify-center -rotate-2 shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-outline text-4xl">menu_book</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Storyteller</span>
+</div>
+<!-- Badge 7: Locked -->
+<div class="flex flex-col items-center gap-3 opacity-40 grayscale group">
+<div class="w-20 h-20 rounded-2xl bg-surface-dim flex items-center justify-center rotate-3 shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-outline text-4xl">groups</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Social Butterfly</span>
+</div>
+<!-- Badge 8: Locked -->
+<div class="flex flex-col items-center gap-3 opacity-40 grayscale group">
+<div class="w-20 h-20 rounded-2xl bg-surface-dim flex items-center justify-center -rotate-3 shadow-sm border-4 border-white/50 relative overflow-hidden">
+<span class="material-symbols-outlined text-outline text-4xl">psychology</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Word Thinker</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#efeeeb] dark:border-stone-800 bg-[#f5f3f0] dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<span class="font-serif italic text-lg text-[#25686a]">BoloBridge</span>
+<p class="font-sans text-sm tracking-tight leading-relaxed text-stone-500 dark:text-stone-400">© 2024 BoloBridge. Nurturing every word with care.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#eebd90] transition-colors duration-300 font-sans text-sm tracking-tight leading-relaxed" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#eebd90] transition-colors duration-300 font-sans text-sm tracking-tight leading-relaxed" href="#">Support</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#eebd90] transition-colors duration-300 font-sans text-sm tracking-tight leading-relaxed" href="#">Terms of Service</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#eebd90] transition-colors duration-300 font-sans text-sm tracking-tight leading-relaxed" href="#">Journal</a>
+</div>
+</div>
+</footer>
+</body></html>

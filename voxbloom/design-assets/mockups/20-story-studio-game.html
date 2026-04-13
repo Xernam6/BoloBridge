@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Story Studio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#ffdbd1",
+              "on-surface-variant": "#3f4849",
+              "on-primary-container": "#003234",
+              "surface-tint": "#25686a",
+              "surface-dim": "#dbdad7",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#6f7979",
+              "on-primary-fixed": "#002021",
+              "on-secondary-container": "#795930",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#bfc8c8",
+              "on-primary-fixed-variant": "#004f51",
+              "primary-container": "#5f9ea0",
+              "secondary": "#78582f",
+              "primary": "#25686a",
+              "tertiary-fixed-dim": "#ffb59f",
+              "surface-container-low": "#f5f3f0",
+              "on-tertiary-fixed-variant": "#81280a",
+              "secondary-fixed": "#ffddb7",
+              "primary-fixed": "#aeeef0",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#eabf8d",
+              "tertiary-container": "#e6724f",
+              "inverse-primary": "#92d2d3",
+              "on-secondary-fixed": "#2a1700",
+              "secondary-container": "#fed39f",
+              "on-tertiary-fixed": "#3b0a00",
+              "primary-fixed-dim": "#92d2d3",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-surface": "#1b1c1a",
+              "surface-container": "#efeeeb",
+              "surface": "#fbf9f6",
+              "surface-container-highest": "#e4e2df",
+              "surface-variant": "#e4e2df",
+              "surface-bright": "#fbf9f6",
+              "background": "#fbf9f6",
+              "inverse-on-surface": "#f2f0ed",
+              "tertiary": "#a13f20",
+              "surface-container-high": "#eae8e5",
+              "inverse-surface": "#30312f",
+              "on-background": "#1b1c1a",
+              "on-secondary-fixed-variant": "#5e411a",
+              "on-tertiary-container": "#581300"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAzs0ewjXYrh0qWjZ4wzYB0yin9xMatsFiJ-EZsy9uE5XEhsbVrjASvU4w_QZ4AWlW0v4VplKHi6PTTWTPL26v3hYy9K-eOauLW42Y-c_xMw9haj4hlqgyk0bpxs4Xd2b0kp6m9Hu-BJUC_QkpN9IBkZnL3QoGbnkG038pWUH-QqJ4eJZA6w1qfIojbM7hpXMjj351dKwrTxa30fxeiXbJ-yffuFXbuonG2LT0o-UU6i8FgVDdUBf69JublMA65Ixci56o7K5Wda9uE)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.vocal-ripple {
+    box-shadow: 0 0 0 0 rgba(37, 104, 106, 0.4)
+    }
+.asymmetric-layout {
+    padding-left: 4rem;
+    /* spacing-16 */
+    padding-right: 2.5rem;
+    /* spacing-10 */
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<div class="film-grain"></div>
+<!-- Top Navigation Bar -->
+<header class="bg-[#fdfbf7] dark:bg-[#1b1c1a] shadow-[0_30px_60px_rgba(27,28,26,0.05)] sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-full">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-[#78582f] opacity-70 hover:bg-[#f2eee4] transition-colors p-2 rounded-lg group">
+<span class="material-symbols-outlined text-2xl group-active:scale-95 duration-200">arrow_back</span>
+<span class="font-label font-medium">Play</span>
+</button>
+<h1 class="text-2xl font-serif italic text-[#25686a] dark:text-[#5F9EA0]">Story Studio</h1>
+</div>
+<!-- Progress Tracker -->
+<div class="hidden md:flex flex-col items-center gap-2">
+<span class="font-headline italic text-lg text-secondary">Chapter 3 of 5</span>
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary opacity-30"></div>
+<div class="w-3 h-3 rounded-full bg-secondary opacity-30"></div>
+<div class="w-8 h-3 rounded-full bg-secondary"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-primary-container/20 px-4 py-2 rounded-full flex items-center gap-2 border border-primary-container/10">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label font-bold text-primary">45 XP</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary opacity-70 hover:bg-[#f2eee4] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</button>
+<button class="p-2 text-primary opacity-70 hover:bg-[#f2eee4] rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto py-12 asymmetric-layout">
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Story Card Area (Bento-style layout) -->
+<section class="lg:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_40px_80px_rgba(27,28,26,0.04)] overflow-hidden transition-all duration-500 hover:shadow-[0_50px_100px_rgba(27,28,26,0.06)]">
+<!-- Illustrated Scene -->
+<div class="relative h-[400px] w-full overflow-hidden bg-gradient-to-br from-primary-container/10 to-secondary-container/10">
+<img alt="Finn the fox in a watercolor forest glade" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Watercolor illustration of a fox in a sage green forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWXBU2Z9nE9flkKXq7vbIn82ve2oT8mAk-ol5X_sgWGV-PDzG2M-DihoYmeEiEhQQVIH2Zn_IRsNOuoM55ATc6WpJ2SXFGyTeUffvP0K8cuT5Zl0wuKdQk_x1e5VxUePt5PSO7kI-FQLHCKFsBa_4sVo1QZDjYd9dIITD4fbg4F8Nt042EqPvLww-uULTjPvtv6rUxaNudwiD_4UKaHv4bnDxxxGycPgRbc91a8D_9ZfzfPAfFZD_PuwVI4Td4UJPX326U0WmJyiId"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+<!-- Story Text -->
+<div class="p-12 md:p-16">
+<p class="font-headline italic text-3xl md:text-4xl leading-relaxed text-on-surface">
+                            Finn the <span class="text-secondary font-bold underline decoration-2 underline-offset-8 decoration-secondary-container/60">f</span>ox 
+                            <span class="text-secondary font-bold underline decoration-2 underline-offset-8 decoration-secondary-container/60">f</span>ound 
+                            a <span class="text-secondary font-bold underline decoration-2 underline-offset-8 decoration-secondary-container/60">f</span>antastic 
+                            <span class="text-secondary font-bold underline decoration-2 underline-offset-8 decoration-secondary-container/60">f</span>eather 
+                            <span class="text-secondary font-bold underline decoration-2 underline-offset-8 decoration-secondary-container/60">f</span>loating 
+                            by the <span class="text-secondary font-bold underline decoration-2 underline-offset-8 decoration-secondary-container/60">f</span>orest path.
+                        </p>
+</div>
+</div>
+<!-- Score / Result Section (Post-Recording State) -->
+<div class="bg-secondary-container/20 rounded-lg p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-6">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-secondary/10" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-secondary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="29" stroke-width="6"></circle>
+</svg>
+<span class="absolute font-headline text-xl text-secondary">87%</span>
+</div>
+<div>
+<h3 class="font-headline italic text-2xl text-secondary">Great job!</h3>
+<p class="font-body text-sm text-on-surface-variant">87% accuracy on the /f/ sound</p>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+<span class="material-symbols-outlined text-4xl text-outline-variant">star</span>
+</div>
+</div>
+</section>
+<!-- Recording & Control Area -->
+<aside class="lg:col-span-4 space-y-8 sticky top-32">
+<div class="bg-surface-container-high rounded-xl p-8 flex flex-col items-center text-center space-y-8">
+<div class="space-y-2">
+<p class="font-body font-medium text-on-surface">Now read the story out loud!</p>
+<p class="text-sm text-outline font-body">Focus on the <span class="font-bold text-secondary">/f/</span> sound.</p>
+</div>
+<!-- Recording Interaction -->
+<div class="relative group cursor-pointer">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-all"></div>
+<button class="relative w-32 h-32 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-2xl transition-transform active:scale-95 vocal-ripple">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+<!-- Waveform Visualization -->
+<div class="w-full flex items-center justify-center gap-1.5 h-16">
+<div class="w-1.5 h-4 bg-secondary-fixed-dim rounded-full"></div>
+<div class="w-1.5 h-8 bg-secondary-fixed-dim rounded-full"></div>
+<div class="w-1.5 h-12 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-6 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-10 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-14 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-8 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-12 bg-secondary rounded-full"></div>
+<div class="w-1.5 h-6 bg-secondary-fixed-dim rounded-full"></div>
+<div class="w-1.5 h-4 bg-secondary-fixed-dim rounded-full"></div>
+</div>
+<button class="w-full py-4 bg-surface-container-lowest text-primary font-bold rounded-lg hover:bg-white transition-colors border border-outline-variant/20">
+                        Check Progress
+                    </button>
+</div>
+<!-- Contextual Action Button -->
+<button class="w-full py-5 bg-tertiary text-on-tertiary rounded-lg font-headline italic text-xl shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-3">
+                    Next Chapter
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</aside>
+</div>
+</main>
+<!-- Hint Section (Bottom Collapsible) -->
+<section class="fixed bottom-0 left-0 w-full z-50">
+<div class="bg-secondary-container shadow-[0_-10px_40px_rgba(27,28,26,0.1)] rounded-t-xl mx-auto max-w-5xl transition-all hover:translate-y-1">
+<div class="p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
+<!-- Mouth Diagram Placeholder -->
+<div class="w-32 h-32 bg-white/40 rounded-lg flex items-center justify-center p-4 backdrop-blur-sm">
+<div class="w-full h-full border-2 border-secondary/20 rounded-full relative flex items-center justify-center">
+<div class="w-16 h-4 bg-secondary/30 rounded-full absolute top-1/3"></div>
+<div class="w-16 h-6 bg-secondary rounded-full absolute bottom-1/3"></div>
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl">💨</span>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<div class="flex items-center gap-2 text-on-secondary-container font-headline italic text-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+                        Mouth Tip:
+                    </div>
+<p class="font-body text-on-secondary-container/80 text-lg leading-relaxed">
+                        For <span class="font-bold text-on-secondary-container">/f/</span>, gently bite your lower lip and blow air through your teeth. It should feel like a soft breeze!
+                    </p>
+</div>
+<button class="p-3 bg-secondary text-on-secondary rounded-full hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Bar (Hidden in Focused Game State per logic, but here for structural consistency if needed) -->
+<!-- Suppression logic applied: Game focus prioritizes content canvas over global nav -->
+</body></html>

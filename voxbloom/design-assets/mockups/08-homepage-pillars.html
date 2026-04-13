@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-primary-fixed": "#002021",
+              "background": "#fbf9f6",
+              "tertiary-container": "#988bd6",
+              "secondary-container": "#fdcb9d",
+              "tertiary": "#61549b",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#003435",
+              "surface-container-high": "#eae8e5",
+              "on-background": "#1b1c1a",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "inverse-surface": "#30312f",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e4e2df",
+              "surface-container": "#efeeeb",
+              "on-secondary-container": "#79542f",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-low": "#f5f3f0",
+              "on-tertiary-container": "#2f2166",
+              "surface": "#fbf9f6",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#aeeef0",
+              "on-secondary-fixed": "#2d1600",
+              "tertiary-fixed": "#e6deff",
+              "primary-container": "#61a0a2",
+              "on-surface": "#1b1c1a",
+              "on-surface-variant": "#424842",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#92d2d3",
+              "surface-variant": "#e4e2df",
+              "outline-variant": "#c2c8bf",
+              "inverse-on-surface": "#f2f0ed",
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-tertiary-fixed": "#1c0b54",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "on-primary-fixed-variant": "#004f51",
+              "outline": "#727971",
+              "inverse-primary": "#92d2d3",
+              "surface-tint": "#25686a",
+              "secondary-fixed-dim": "#eebd90",
+              "primary": "#25686a",
+              "secondary": "#7c5732"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-gradient-primary {
+            background: linear-gradient(45deg, #25686a 0%, #61a0a2 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<div class="film-grain"></div>
+<!-- Navigation Shell -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f6] dark:bg-stone-900/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="font-serif italic text-2xl text-[#25686a] dark:text-[#61a0a2] font-headline tracking-tight">BoloBridge</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#25686a] transition-colors duration-300 font-label" href="#">Library</a>
+<a class="text-[#5F9EA0] dark:text-[#7A9E7E] border-b-2 border-[#5F9EA0] pb-1 font-bold font-label" href="#">Journey</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#25686a] transition-colors duration-300 font-label" href="#">Awards</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#25686a] transition-colors duration-300 font-label" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<div class="bg-[#f5f3f0] h-[1px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-20 lg:py-32">
+<!-- Section Header -->
+<div class="mb-16 lg:mb-24 text-center">
+<span class="font-label uppercase tracking-widest text-[11px] font-bold text-[#5F9EA0] mb-4 block">Core Features</span>
+<h1 class="font-headline italic text-4xl lg:text-6xl text-primary leading-tight">Four Pillars of Speech Wellness</h1>
+</div>
+<!-- Asymmetric Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+<!-- Pillar 1: Smart Screening (Tall Column) -->
+<div class="md:col-span-5 flex flex-col">
+<div class="bg-surface-container-lowest rounded-xl p-8 lg:p-12 flex-grow transition-all duration-500 hover:scale-[1.01] flex flex-col shadow-[0_20px_40px_rgba(66,72,66,0.06)]">
+<div class="w-full aspect-[4/3] rounded-lg mb-8 bg-[#E6F3F3] flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Abstract watercolor waves in shades of sage teal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfjCnAxuX10DsLCx5m42yquVyPW5Wr24bPeSsKM8FLX9YX_9hAafqOMRKUBaC5hqhmx63QP61VP0GKvS8dCq_0pjFmdZXpr4_D2E-hjMC1EErxVmeMexCjwBrAWQP1uFfDCY9bcEdLjj_O3zmQPrUcPBPwRtINkNQDmQEJbgJMAANpffIZV8BLrEKAlxzjJxC1SvQTNUl5J3YYExGT5RLU3xKJlrO18tLX3g-z9hEAKrD8bVPqE-tUC3n5WiZneeHfR_44RH4WN3p6"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline italic text-3xl text-primary mb-4">Smart Screening</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg mb-8 font-body">AI-powered speech assessment adapts to your child's age and language, creating a personalized baseline for therapy.</p>
+</div>
+<a class="inline-flex items-center font-bold text-[#5F9EA0] hover:text-[#25686a] transition-colors group" href="#">
+                        Start Screening 
+                        <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right Column with Smaller Cards -->
+<div class="md:col-span-7 grid grid-cols-1 gap-8 lg:gap-12">
+<!-- Pillar 2: Learning Modules (Wide) -->
+<div class="bg-surface-container-low rounded-xl p-8 lg:p-10 flex flex-col md:flex-row gap-8 items-center transition-all duration-500 hover:scale-[1.01]">
+<div class="w-full md:w-1/2 aspect-square md:aspect-auto h-full rounded-lg bg-[#F0F4F0] overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Abstract watercolor open book with floating leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdVSuc4Pv7NNaNAJNbqLwW9x4wRcYRVbdGawvRBenTEAm6B4dvrwq9L0ier4hyCpxgQ6tpdEshLAsuzTQ6eG5DN0Nk9DcQHYDfGeueD6u_oSz7dlglOA4wm7e8iZA1exiNxWPFYd-HrzJSzGeeZuHL_SBgvNvWQfsLVAy3K2PiEdqwbjB9OgcHWetcEcmxnYWwz8A5eeGCc7iJnc7SdF2ktPxf32zVKJLkZ1Izf3susrcsXaklD6L_aomQxPzfTguJW25quAomSNnj"/>
+</div>
+<div class="md:w-1/2">
+<h3 class="font-headline italic text-2xl text-[#7A9E7E] mb-3">Learning Modules</h3>
+<p class="text-on-surface-variant leading-relaxed font-body mb-6">8 interactive lessons from breathing to conversation skills designed by specialists.</p>
+<a class="inline-flex items-center font-bold text-[#7A9E7E] hover:text-[#25686a] transition-colors group" href="#">
+                            Explore Modules 
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Nested Grid for Play and Track -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+<!-- Pillar 3: Speech Games -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col transition-all duration-500 hover:scale-[1.01] shadow-[0_10px_30px_rgba(66,72,66,0.04)]">
+<div class="w-full aspect-video rounded-lg mb-6 bg-[#FEF6EE] overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Abstract warm camel watercolor shapes and circles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI9LAWNAMo7hkAAI4ob0XOzE4F2lXfUOh7b-FxQDCN5HhqjXNoflutvzLARwIRGxjLQgQmfg0SgMDe7duyjnkoexWr2w1b_PtNwNcqNZq7tRPGmGrJmTODFz5Tegno4wQ7zcy27c4OYVqTtw26rTj3L-_PgRgjKjcz6nXC2IGlHGAoICM-EsfEY1HnUlXBvVuWqzcpIip9VobyZvePML0D8Fid8bt99tuFG2HeXdJlYgrFwDqsKNo2Ia7HAK_JmoTi4DArZV8xSsR0"/>
+</div>
+<h3 class="font-headline italic text-2xl text-[#C2956B] mb-3">Speech Games</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">6 engaging games: Story Studio, Sound Safari, Word Garden, and more to make practice fun.</p>
+<a class="inline-flex items-center font-bold text-[#C2956B] hover:text-secondary transition-colors group" href="#">
+                            Play Now 
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Pillar 4: Progress Tracking -->
+<div class="bg-surface-container rounded-xl p-8 flex flex-col transition-all duration-500 hover:scale-[1.01]">
+<div class="w-full aspect-video rounded-lg mb-6 bg-[#F3F1FB] overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Abstract lavender watercolor chart and growth lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUVoiY1vkuafGTuzKEXAt2iu58brtqVeP9WnPeA6GBJwHQT2AKTJAa6usZTdb_xrbQ2SUifTj6M0UZSRrVltJO0ZnLOqNOov0KBHQDqK_U-jP_XDSXN6OhvAvm-lOXbWM7E0LMobnYLzdYQ69YcsSQeDG_dPk2KUXd_vBMjSMFKdUAG1qLv5DMUOlnmVkltLGgTTLZul2edwRb1oQobW3H2o44Pfri5agnkc-y_d3udOyIoCagUs_K-7ELerhk6P6QwbyBE42x0OqT"/>
+</div>
+<h3 class="font-headline italic text-2xl text-[#8B7EC8] mb-3">Progress Tracking</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Parent dashboard with vocal biomarkers and skill breakdowns to see real-world growth.</p>
+<a class="inline-flex items-center font-bold text-[#8B7EC8] hover:text-tertiary transition-colors group" href="#">
+                            View Dashboard 
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-[#f5f3f0] dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-serif italic text-lg text-[#25686a] font-headline mb-2">BoloBridge</div>
+<p class="font-label uppercase tracking-widest text-[10px] text-stone-400 dark:text-stone-500">© 2024 BoloBridge. The Tactile Storybook.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label uppercase tracking-widest text-[10px] text-stone-400 dark:text-stone-500 hover:text-[#5F9EA0] transition-opacity" href="#">Privacy</a>
+<a class="font-label uppercase tracking-widest text-[10px] text-stone-400 dark:text-stone-500 hover:text-[#5F9EA0] transition-opacity" href="#">Terms</a>
+<a class="font-label uppercase tracking-widest text-[10px] text-stone-400 dark:text-stone-500 hover:text-[#5F9EA0] transition-opacity" href="#">Support</a>
+<a class="font-label uppercase tracking-widest text-[10px] text-stone-400 dark:text-stone-500 hover:text-[#5F9EA0] transition-opacity" href="#">Parent Guide</a>
+</div>
+</div>
+</footer>
+</body></html>

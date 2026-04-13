@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 500" preserveAspectRatio="none">
+  <defs>
+    <!-- Gradient palette -->
+    <linearGradient id="hw-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5F9EA0" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#5F9EA0" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#5F9EA0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hw-lavender" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B7EC8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#8B7EC8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#8B7EC8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hw-camel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2956B" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C2956B" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#C2956B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hw-rose" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D16D6D" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D16D6D" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D16D6D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hw-blend" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5F9EA0" stop-opacity="0.5"/>
+      <stop offset="35%" stop-color="#8B7EC8" stop-opacity="0.4"/>
+      <stop offset="65%" stop-color="#C2956B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#D16D6D" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="hw-blur1"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="hw-blur2"><feGaussianBlur stdDeviation="1"/></filter>
+    <filter id="hw-blur3"><feGaussianBlur stdDeviation="3.5"/></filter>
+  </defs>
+
+  <!-- Layer 1: Deep background ambient waves (heavily blurred) -->
+  <path d="M-50,300 C100,180 250,380 450,260 C650,140 800,340 1000,250 C1200,160 1350,360 1550,270 C1750,180 1850,320 1970,280" fill="none" stroke="#5F9EA0" stroke-width="40" opacity="0.06" filter="url(#hw-blur3)" stroke-linecap="round"/>
+  <path d="M-50,220 C150,340 350,120 550,240 C750,360 950,130 1150,250 C1350,370 1500,150 1700,240 C1850,310 1920,200 1970,230" fill="none" stroke="#8B7EC8" stroke-width="35" opacity="0.05" filter="url(#hw-blur3)" stroke-linecap="round"/>
+
+  <!-- Layer 2: Mid-ground flowing waveforms -->
+  <path d="M-20,260 C80,190 200,320 360,240 C520,160 640,310 800,250 C960,190 1080,330 1240,260 C1400,190 1520,310 1680,250 C1800,200 1880,280 1940,260" fill="none" stroke="url(#hw-teal)" stroke-width="3.5" stroke-linecap="round" filter="url(#hw-blur1)"/>
+  <path d="M-20,250 C120,340 280,150 440,260 C600,370 720,180 880,270 C1040,360 1160,170 1320,260 C1480,350 1600,180 1760,260 C1880,320 1940,240 1940,250" fill="none" stroke="url(#hw-lavender)" stroke-width="2.5" stroke-linecap="round" filter="url(#hw-blur1)"/>
+  <path d="M-20,240 C160,300 320,180 480,250 C640,320 800,190 960,250 C1120,310 1280,190 1440,250 C1600,310 1760,200 1940,240" fill="none" stroke="url(#hw-camel)" stroke-width="2" stroke-linecap="round" opacity="0.7" filter="url(#hw-blur2)"/>
+
+  <!-- Layer 3: Foreground crisp detail lines -->
+  <path d="M0,250 C96,210 192,290 288,250 C384,210 480,290 576,250 C672,210 768,290 864,250 C960,210 1056,290 1152,250 C1248,210 1344,290 1440,250 C1536,210 1632,290 1728,250 C1824,210 1920,290 1920,250" fill="none" stroke="url(#hw-blend)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Secondary harmonic -->
+  <path d="M0,250 C64,230 128,270 192,250 C256,230 320,270 384,250 C448,230 512,270 576,250 C640,230 704,270 768,250 C832,230 896,270 960,250 C1024,230 1088,270 1152,250 C1216,230 1280,270 1344,250 C1408,230 1472,270 1536,250 C1600,230 1664,270 1728,250 C1792,230 1856,270 1920,250" fill="none" stroke="#5F9EA0" stroke-width="0.8" opacity="0.35" stroke-linecap="round"/>
+  <!-- Third harmonic (tighter) -->
+  <path d="M0,250 C32,240 64,260 96,250 C128,240 160,260 192,250 C224,240 256,260 288,250 C320,240 352,260 384,250 C416,240 448,260 480,250 C512,240 544,260 576,250 C608,240 640,260 672,250 C704,240 736,260 768,250 C800,240 832,260 864,250 C896,240 928,260 960,250 C992,240 1024,260 1056,250 C1088,240 1120,260 1152,250 C1184,240 1216,260 1248,250 C1280,240 1312,260 1344,250 C1376,240 1408,260 1440,250 C1472,240 1504,260 1536,250 C1568,240 1600,260 1632,250 C1664,240 1696,260 1728,250 C1760,240 1792,260 1824,250 C1856,240 1888,260 1920,250" fill="none" stroke="#8B7EC8" stroke-width="0.5" opacity="0.2" stroke-linecap="round"/>
+
+  <!-- Layer 4: Accent nodes at waveform peaks/troughs — resembling audio analysis points -->
+  <circle cx="288" cy="250" r="4" fill="#5F9EA0" opacity="0.4"/>
+  <circle cx="288" cy="250" r="8" fill="none" stroke="#5F9EA0" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="576" cy="250" r="3.5" fill="#8B7EC8" opacity="0.35"/>
+  <circle cx="576" cy="250" r="7" fill="none" stroke="#8B7EC8" stroke-width="0.5" opacity="0.18"/>
+  <circle cx="864" cy="250" r="4" fill="#C2956B" opacity="0.3"/>
+  <circle cx="864" cy="250" r="8" fill="none" stroke="#C2956B" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="1152" cy="250" r="3" fill="#D16D6D" opacity="0.25"/>
+  <circle cx="1152" cy="250" r="6" fill="none" stroke="#D16D6D" stroke-width="0.5" opacity="0.12"/>
+  <circle cx="1440" cy="250" r="4" fill="#5F9EA0" opacity="0.3"/>
+  <circle cx="1440" cy="250" r="8" fill="none" stroke="#5F9EA0" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="1728" cy="250" r="3.5" fill="#8B7EC8" opacity="0.25"/>
+
+  <!-- Layer 5: Floating micro-particles -->
+  <circle cx="120" cy="200" r="1.5" fill="#5F9EA0" opacity="0.2"/>
+  <circle cx="320" cy="310" r="1" fill="#8B7EC8" opacity="0.15"/>
+  <circle cx="520" cy="180" r="1.8" fill="#C2956B" opacity="0.12"/>
+  <circle cx="720" cy="320" r="1.2" fill="#5F9EA0" opacity="0.18"/>
+  <circle cx="920" cy="190" r="1.5" fill="#8B7EC8" opacity="0.14"/>
+  <circle cx="1120" cy="310" r="1" fill="#C2956B" opacity="0.12"/>
+  <circle cx="1320" cy="185" r="1.8" fill="#D16D6D" opacity="0.1"/>
+  <circle cx="1520" cy="315" r="1.3" fill="#5F9EA0" opacity="0.15"/>
+  <circle cx="1720" cy="195" r="1" fill="#8B7EC8" opacity="0.12"/>
+  <circle cx="1850" cy="290" r="1.5" fill="#C2956B" opacity="0.1"/>
+</svg>

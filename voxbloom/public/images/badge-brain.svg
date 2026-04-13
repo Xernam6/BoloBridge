@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#2D3142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Brain outline with organic curves -->
+  <path d="M64 108 L64 96" />
+  <path d="M64 96 C44 96, 28 80, 28 60 C28 44, 36 32, 48 26 C48 16, 56 10, 64 10 C72 10, 80 16, 80 26 C92 32, 100 44, 100 60 C100 80, 84 96, 64 96 Z" />
+  <!-- Brain fold lines -->
+  <path d="M48 40 C56 48, 56 56, 48 64" opacity="0.5"/>
+  <path d="M80 40 C72 48, 72 56, 80 64" opacity="0.5"/>
+  <path d="M44 52 L84 52" opacity="0.3"/>
+  <!-- Neural nodes -->
+  <circle cx="52" cy="42" r="2.5" fill="#5F9EA0" stroke="none"/>
+  <circle cx="76" cy="42" r="2.5" fill="#8B7EC8" stroke="none"/>
+  <circle cx="64" cy="60" r="2.5" fill="#C2956B" stroke="none"/>
+</svg>

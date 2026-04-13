@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge Utility States</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-secondary-fixed": "#2d1600",
+                "surface-dim": "#dbdad7",
+                "secondary-fixed-dim": "#eebd90",
+                "on-primary-fixed": "#002021",
+                "primary-fixed-dim": "#92d2d3",
+                "on-primary-fixed-variant": "#004f51",
+                "on-error-container": "#93000a",
+                "tertiary": "#61549b",
+                "on-background": "#1b1c1a",
+                "outline": "#727971",
+                "on-tertiary": "#ffffff",
+                "on-surface-variant": "#424842",
+                "primary-container": "#61a0a2",
+                "on-primary": "#ffffff",
+                "tertiary-fixed-dim": "#cabeff",
+                "outline-variant": "#c2c8bf",
+                "on-surface": "#1b1c1a",
+                "secondary-fixed": "#ffdcbf",
+                "inverse-on-surface": "#f2f0ed",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#eae8e5",
+                "surface": "#fbf9f6",
+                "on-secondary": "#ffffff",
+                "tertiary-container": "#988bd6",
+                "surface-variant": "#e4e2df",
+                "tertiary-fixed": "#e6deff",
+                "surface-container-highest": "#e4e2df",
+                "on-tertiary-container": "#2f2166",
+                "on-primary-container": "#003435",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f5f3f0",
+                "on-tertiary-fixed-variant": "#493c81",
+                "surface-container": "#efeeeb",
+                "primary": "#25686a",
+                "inverse-surface": "#30312f",
+                "inverse-primary": "#92d2d3",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#aeeef0",
+                "on-secondary-container": "#79542f",
+                "surface-bright": "#fbf9f6",
+                "secondary": "#7c5732",
+                "on-tertiary-fixed": "#1c0b54",
+                "surface-tint": "#25686a",
+                "background": "#fbf9f6",
+                "on-secondary-fixed-variant": "#613f1d",
+                "secondary-container": "#fdcb9d",
+                "on-error": "#ffffff",
+                "sage-green": "#7A9E7E"
+              },
+              fontFamily: {
+                "headline": ["Newsreader"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDU6KuESebfqPxCXW8T-lm1oiRPE9UcjjVKmR3vzljCDF6W8tg-bTq9E9v_O2Nhjz7iKT93gIOjZ03yVFeYR02jzbt5-6rs7bZDIxOHik2dYo9mpNq5eR26QVnv_DUW-Pu6wnfVrEmohYtNlnRQ4eMyBGJUQ3NbaQjHOMVJ6OMwx82Nzua6l3PrqUZu5NkG78Blm6zJm1ggJTfSneMx_7jhBJuGsTSt-cw0a5ostgpVEy80c79vo290L-o2x3MjiIMVrID82WBeUYDc)
+    }
+.watercolor-primary {
+    background: linear-gradient(45deg, #25686a, #61a0a2)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="film-grain"></div>
+<!-- Navigation Shell -->
+<header class="bg-[#fbf9f6] dark:bg-stone-900 sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="font-serif italic text-[#25686a] dark:text-[#61a0a2] text-2xl">BoloBridge</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-stone-500 dark:text-stone-400 font-sans hover:text-[#7A9E7E] transition-colors duration-300" href="#">Library</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans hover:text-[#7A9E7E] transition-colors duration-300" href="#">Sessions</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans hover:text-[#7A9E7E] transition-colors duration-300" href="#">Progress</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans hover:text-[#7A9E7E] transition-colors duration-300" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4 text-[#7A9E7E]">
+<button class="material-symbols-outlined">settings</button>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-[1px] w-full"></div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-16 space-y-32">
+<!-- SECTION 1: EMPTY STATE -->
+<section class="relative group">
+<div class="absolute inset-0 border-[12px] border-surface-container-low rounded-xl pointer-events-none opacity-40"></div>
+<!-- Flower Vine Decorative Element (Abstract Placeholder) -->
+<div class="absolute -top-6 -left-6 text-sage-green opacity-20">
+<span class="material-symbols-outlined text-9xl">eco</span>
+</div>
+<div class="absolute -bottom-6 -right-6 text-sage-green opacity-20 rotate-180">
+<span class="material-symbols-outlined text-9xl">eco</span>
+</div>
+<div class="flex flex-col items-center text-center py-20 px-6 max-w-2xl mx-auto relative z-10">
+<div class="mb-12 relative">
+<div class="w-64 h-64 bg-secondary-fixed rounded-full overflow-hidden flex items-center justify-center">
+<img alt="Sleeping owl illustration" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A whimsical watercolor illustration of a sleeping owl on a branch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD46DYPV0XW6BoBEH34MXZPiNvjOBXQbYr4jjkKvht2hDTZ7u8ETeytMMJGfY8zOteMgJnT-JGHTTNe-RYjUQAdr4RdYSAyMpY6kzASz5Dk5B2NtKHv4X3ifQbqwIEGVtXZv2V8XORhdXM0Hme83-bBQ8JpyYCkoZoa2b4xJtfW__AmkwJPxUSGVLJOjF51PblG3XEquAQmIYL1RAjPQH2lPoCN7p2kgEFPy_vSXSSYVeP7bhEwjOcJx6pN3SVZtPYW5swbnrzh_uT9"/>
+</div>
+<!-- Abstract floating Z's -->
+<div class="absolute -top-4 right-10 flex flex-col items-start gap-2 italic font-headline text-secondary text-2xl animate-pulse">
+<span>Z</span>
+<span class="ml-4 text-xl">z</span>
+<span class="ml-8 text-lg">z</span>
+</div>
+</div>
+<h1 class="font-headline italic text-5xl text-primary mb-6">Your Journey Starts Here</h1>
+<p class="text-on-surface-variant text-xl max-w-lg mb-10 leading-relaxed">
+                    Complete your first speech exercise to see your progress bloom!
+                </p>
+<button class="watercolor-primary text-on-primary px-10 py-4 rounded-full font-medium text-lg hover:opacity-90 transition-opacity flex items-center gap-3">
+                    Start an Exercise <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: LOADING STATE -->
+<section class="flex flex-col items-center justify-center py-32 bg-surface-container-low rounded-xl">
+<div class="flex flex-col items-center max-w-sm w-full">
+<!-- Abstract BoloBridge Flower Logo -->
+<div class="mb-10 text-primary">
+<span class="material-symbols-outlined text-7xl" data-icon="local_florist">local_florist</span>
+</div>
+<h2 class="font-headline italic text-2xl text-on-surface-variant mb-8">Growing your experience...</h2>
+<!-- Progress Bar: Sage Teal Gradient -->
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-gradient-to-r from-primary to-sage-green rounded-full shadow-inner"></div>
+</div>
+<p class="mt-4 text-sm font-label tracking-widest uppercase opacity-40">Just a quiet moment</p>
+</div>
+</section>
+<!-- SECTION 3: ERROR STATE -->
+<section class="flex justify-center py-20">
+<div class="bg-surface-container-lowest p-12 rounded-xl max-w-xl w-full text-center shadow-[0_20px_40px_rgba(66,72,66,0.06)] border-none">
+<div class="mb-8 flex justify-center">
+<div class="w-32 h-32 bg-surface-container-high rounded-full flex items-center justify-center overflow-hidden">
+<img alt="Apologetic cloud" class="w-full h-full object-cover mix-blend-darken opacity-60" data-alt="A soft watercolor sad cloud in warm grey tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWUfiEK8V_5640YrTA4F8w5OqHsZN4eItdH_0fmMcmjacO7SA8o2fa5eKuLR6P0IDyDEgq8KXhMJUhTXbleGvB6udbIvUGzJKJRdMx5dP_j_i-2gZVZS8u_5-D761QQSbDn3DaqJ6qiJfHyGBYLF5TE1FjJ5SD8SlWNKc1k9OJTdx2MB-FVyytnZwSoGj_BHYXVZX9LPfoa6h5kem_61fidWyCBHdOdFI6hAhBSXoXm0Hp-J9JSY97H0Un8dwc3qP6TTcYvySjQDQ6"/>
+</div>
+</div>
+<h3 class="font-headline italic text-4xl text-primary mb-4">Oops, Something Went Wrong</h3>
+<p class="font-body text-on-surface-variant text-lg mb-10">
+                    Don't worry — your progress is safe! We're just having a small hiccup.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="watercolor-primary text-on-primary px-10 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
+                        Try Again
+                    </button>
+<button class="px-10 py-3 rounded-full font-medium text-tertiary hover:bg-surface-container transition-colors">
+                        Go Back
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#f5f3f0] dark:bg-stone-950 mt-32">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
+<div class="flex flex-col gap-2">
+<div class="font-serif italic text-lg text-[#25686a]">BoloBridge</div>
+<p class="font-sans text-sm tracking-wide leading-relaxed text-stone-500">© BoloBridge 2024. Crafted for quiet moments.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-500 hover:text-[#25686a] transition-all font-sans text-sm tracking-wide" href="#">Support</a>
+<a class="text-stone-500 hover:text-[#25686a] transition-all font-sans text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="text-stone-500 hover:text-[#25686a] transition-all font-sans text-sm tracking-wide" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation (Suppressed per task context of single screen utility) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container border-t-0 p-4 flex justify-around items-center z-40 backdrop-blur-md bg-opacity-80">
+<span class="material-symbols-outlined text-primary">local_library</span>
+<span class="material-symbols-outlined text-stone-500">history</span>
+<span class="material-symbols-outlined text-stone-500">bar_chart</span>
+<span class="material-symbols-outlined text-stone-500">person</span>
+</div>
+</body></html>

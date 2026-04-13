@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | The Midnight Archivist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#dee1f8",
+                        "on-secondary-container": "#a0bfb4",
+                        "on-background": "#dee1f8",
+                        "on-surface-variant": "#c7c6cd",
+                        "secondary-fixed": "#cae9de",
+                        "on-primary-fixed": "#291800",
+                        "primary-fixed-dim": "#e5c191",
+                        "outline-variant": "#46464c",
+                        "secondary-container": "#324f46",
+                        "inverse-on-surface": "#2c3041",
+                        "primary-container": "#442d0a",
+                        "secondary-fixed-dim": "#aecdc2",
+                        "primary-fixed": "#ffddb3",
+                        "surface-dim": "#0e1322",
+                        "tertiary-fixed-dim": "#c9c7bc",
+                        "on-tertiary-container": "#9c9a90",
+                        "on-surface": "#dee1f8",
+                        "on-secondary": "#19352e",
+                        "on-secondary-fixed-variant": "#304c44",
+                        "surface-variant": "#303445",
+                        "on-tertiary-fixed-variant": "#48473f",
+                        "surface-tint": "#e5c191",
+                        "surface-container": "#1b1f2f",
+                        "secondary": "#aecdc2",
+                        "outline": "#909097",
+                        "surface-container-lowest": "#090d1d",
+                        "tertiary": "#c9c7bc",
+                        "on-tertiary-fixed": "#1c1c15",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#0e1322",
+                        "on-tertiary": "#31312a",
+                        "error": "#ffb4ab",
+                        "background": "#0e1322",
+                        "on-secondary-fixed": "#022019",
+                        "surface-container-highest": "#303445",
+                        "on-primary-fixed-variant": "#5b421e",
+                        "tertiary-fixed": "#e5e2d8",
+                        "primary": "#e5c191",
+                        "surface-container-high": "#25293a",
+                        "on-primary": "#422c09",
+                        "on-primary-container": "#b59468",
+                        "surface-bright": "#34384a",
+                        "inverse-primary": "#755a33",
+                        "tertiary-container": "#32322b",
+                        "on-error": "#690005",
+                        "surface-container-low": "#171b2b"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary/30">
+<div class="film-grain"></div>
+<!-- Navigation -->
+<nav class="bg-[#0e1322]/90 backdrop-blur-xl docked full-width top-0 sticky z-50">
+<div class="bg-gradient-to-b from-[#1b1f2f] to-transparent h-px w-full"></div>
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic flex items-center gap-1">
+<span class="text-[#e5c191]">Bolo</span><span class="text-secondary">Bridge</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-xs font-bold uppercase tracking-widest text-[#e5c191] border-b border-[#e5c191] pb-1" href="#">Our Pillars</a>
+<a class="text-xs font-bold uppercase tracking-widest text-[#e5c191]/70 hover:text-[#e5c191] transition-colors duration-300" href="#">How It Works</a>
+<a class="text-xs font-bold uppercase tracking-widest text-[#e5c191]/70 hover:text-[#e5c191] transition-colors duration-300" href="#">Testimonials</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-95 transition-transform duration-200">
+                Join the Archive
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[870px] flex items-center overflow-hidden px-12 pt-20">
+<div class="absolute inset-0 bg-[#2D3142]/40 z-0"></div>
+<!-- Abstract Orbs -->
+<div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] opacity-40"></div>
+<div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] opacity-30"></div>
+<div class="relative z-10 max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h1 class="text-7xl md:text-8xl font-headline italic leading-[1.1] text-primary">
+                    Bridging Every <br/>Voice to <span class="text-[#c8a97e]">Confidence</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                    A curated digital scriptorium for speech evolution. We weave ancient linguistic wisdom with modern clinical practice.
+                </p>
+<div class="flex gap-6 pt-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:opacity-90 transition-opacity">
+                        Begin Discovery
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<button class="border border-primary/40 text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary/5 transition-colors">
+                        The Scholarly Method
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-surface-container rounded-full p-12 border border-outline-variant/20 flex items-center justify-center">
+<div class="relative w-full h-full rounded-full overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 mix-blend-lighten" data-alt="Abstract watercolor glowing speech bubbles in midnight dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpCbMjHWEQDFnfQC6SOSgvZH6SoYpw6Urij4e0Q3hs3duYEbd1Lt8jMzpwgDXsKzEjGELWhggTA_niv5IAj0i3N_PWbH8bP81KCmAhfXKg4zpBHZJEq084BZS2Mm_bzILr4Uo9ZgX8Ybznrsaqahtk4tQlNcfcKG8nNpK8Hm1wq3xB9dwqnRdwL9EPtwOi8DzqCSJoE-01wNU-CTK_MtwURy2FEDkvwcdicg0Dw4wlRo3u3i7UsYEnXTwRB2HILRP_opFNyWgqnWy-"/>
+</div>
+<!-- Floating Accents -->
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-secondary-container/40 backdrop-blur-md rounded-full border border-secondary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Four Pillars -->
+<section class="py-32 bg-surface-dim relative px-12">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-24 space-y-4">
+<span class="text-xs font-bold uppercase tracking-[0.3em] text-secondary">Foundation</span>
+<h2 class="text-5xl font-headline italic text-primary">The Four Pillars</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1: Screen -->
+<div class="group bg-surface-container-low p-8 h-[400px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">clinical_notes</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary">Diagnostic Screen</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Precision analysis of vocal patterns using archival clarity and modern metrics.</p>
+</div>
+<div class="h-1.5 w-full bg-secondary absolute bottom-0 left-0"></div>
+</div>
+<!-- Card 2: Learn -->
+<div class="group bg-surface-container-low p-8 h-[400px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 relative overflow-hidden lg:mt-12">
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary">Guided Learning</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Immersive modules that bridge the gap between theory and vocal mastery.</p>
+</div>
+<div class="h-1.5 w-full bg-[#c8a97e] absolute bottom-0 left-0"></div>
+</div>
+<!-- Card 3: Play -->
+<div class="group bg-surface-container-low p-8 h-[400px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-full bg-[#3e345c] flex items-center justify-center text-[#b1a2e3]">
+<span class="material-symbols-outlined text-3xl">rebase_edit</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary">Interactive Play</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Gamified exercises designed to make vocal practice a ritual of joy.</p>
+</div>
+<div class="h-1.5 w-full bg-[#b1a2e3] absolute bottom-0 left-0"></div>
+</div>
+<!-- Card 4: Track -->
+<div class="group bg-surface-container-low p-8 h-[400px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 relative overflow-hidden lg:mt-12">
+<div class="space-y-6">
+<div class="w-16 h-16 rounded-full bg-secondary-container/50 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl">timeline</span>
+</div>
+<h3 class="text-2xl font-headline italic text-primary">Progress Track</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Visualizing the silent steps of growth into audible triumphs.</p>
+</div>
+<div class="h-1.5 w-full bg-on-secondary-container absolute bottom-0 left-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-32 bg-surface px-12 overflow-hidden">
+<div class="max-w-screen-xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-5xl font-headline italic text-primary">The Archival Journey</h2>
+</div>
+<div class="relative">
+<!-- Vertical Beam -->
+<div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/40 to-transparent"></div>
+<div class="space-y-24">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-12 relative">
+<div class="flex-1 text-right hidden md:block">
+<h4 class="text-3xl font-headline italic text-primary">Consult the Oracle</h4>
+<p class="text-on-surface-variant mt-2">Complete your initial assessment to map your unique vocal architecture.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface border-4 border-secondary z-10 flex items-center justify-center shrink-0">
+<span class="text-xs font-bold text-secondary">01</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<img class="w-full h-48 object-cover rounded-lg opacity-60 mb-6" data-alt="Dark desk with ancient books and a modern tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2vlbnkCXoZCUoO2cx3WqTXS1mLijqgOMUY4ycxnOuIFsPEJz7V_kftp-iwguRC4gPc1xHhgnMMOfVvpfQtnT5UUDWWuNx17HsX0zXzIoPd1Dydjkt-VEpNT_Wv9A3H3SrAXSX7sZ56xugAn2zGzSLzLKHPBkoRZnstImTw1VXTwPIgHriloM-ks-CN9OHsLvmOWhomDQNpM1-kqUqkKstpF7D7HRRIHn21-4uurye1UFJ9mvJWUj08X0dM5YuF68D0Roa37U8tFf5"/>
+<h4 class="text-xl font-bold md:hidden text-primary">Consult the Oracle</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Our algorithms analyze tonal frequencies and structural clarity to build your profile.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-12 relative">
+<div class="flex-1 text-left hidden md:block">
+<h4 class="text-3xl font-headline italic text-primary">The Daily Practice</h4>
+<p class="text-on-surface-variant mt-2">Engage with curated exercises tailored to your developmental path.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface border-4 border-[#c8a97e] z-10 flex items-center justify-center shrink-0">
+<span class="text-xs font-bold text-[#c8a97e]">02</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<img class="w-full h-48 object-cover rounded-lg opacity-60 mb-6" data-alt="Close up of soft candlelight illuminating a journal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxIBwCZmfS4FftPsBZGHYp09gmXL2GxRSVUw26qYGHzW20J_3eScu9vNrCgWoNk9G6Fg6dpOJXFjDrtI2hvJhouW3KfcsxUDBk7juWX9JkDw8f8Op9DMyWuIQ70bpjNCtSax4seIJzpbilbjZTAPl7SP0ETgqqYbZiSbxYNXmDhfc8nBmpwGZrRBq88-4NJZ3WLU8Tl5Bomp_PiqNtFM8nzvzMnwG_a1kwPbuAldeGWU2nYVrmpSKF0bXlFlLI662TSyBt4eS1Um2o"/>
+<h4 class="text-xl font-bold md:hidden text-primary">The Daily Practice</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Bite-sized interactions that respect your schedule while building lasting muscle memory.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-12 relative">
+<div class="flex-1 text-right hidden md:block">
+<h4 class="text-3xl font-headline italic text-primary">Behold the Mastery</h4>
+<p class="text-on-surface-variant mt-2">Review progress reports and celebrate the evolution of your voice.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface border-4 border-on-secondary-container z-10 flex items-center justify-center shrink-0">
+<span class="text-xs font-bold text-on-secondary-container">03</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<img class="w-full h-48 object-cover rounded-lg opacity-60 mb-6" data-alt="A triumphant golden light shining through a dark window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcRKQz5Xte_Gz1KqT7AaugXg_Zus8fY6YK4W-dr6E2rMUc4tpt_PDJS5tYNz1CpWuaA_qh3cPjwxXWYF9qk2npHFwBtfwm05TN09NDTxOpM-X0CeZX6zwdHJIt_SZRX6jNkkmSzgEkf-sks6KH6TvnNfni6khnDOIumUQJWhZ2DLFxd4x8iUHcRD-A8sGGFAMwIhCbdehcSz7KTqjK8XGUQ6GvA21JXwWqA7qASfq_KX-PrWxClu6hwnSWI8SPFoVh9beJFY3MZu_Y"/>
+<h4 class="text-xl font-bold md:hidden text-primary">Behold the Mastery</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Step back into the world with a voice that reflects the strength of your character.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Banner -->
+<section class="py-20 bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+<div class="space-y-2">
+<div class="text-5xl font-headline italic text-primary">10K+</div>
+<div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Families Served</div>
+</div>
+<div class="space-y-2">
+<div class="text-5xl font-headline italic text-primary">6</div>
+<div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Languages</div>
+</div>
+<div class="space-y-2">
+<div class="text-5xl font-headline italic text-primary">50+</div>
+<div class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Exercises</div>
+</div>
+<div class="space-y-2">
+<div class="text-5xl font-headline italic text-primary">Free</div>
+<div class="text-xs font-bold uppercase tracking-widest text-on-secondary-container">Forever Access</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface px-12">
+<div class="max-w-screen-2xl mx-auto">
+<h2 class="text-5xl font-headline italic text-primary text-center mb-24">Whispers of Success</h2>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/5 space-y-8 relative">
+<span class="material-symbols-outlined text-4xl text-primary/40 absolute top-8 right-8">format_quote</span>
+<div class="flex gap-1 text-[#e5c191]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg font-headline italic text-on-surface leading-relaxed">
+                        "The interface alone creates a sense of calm. My daughter has progressed more in three months here than in a year of traditional therapy."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container border border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Warm portrait of a mother in soft light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrRCNVwbwscPZICl4Yn23cc_Hj9ykYzXFu-L3rZyyEUOb5pYLOGd-BarWyajv6J76X3M5JPTFxEPeqkc5vPeGG9agD9mjNTfccM05q2-y35SeWpnBQ0NbkQfwUK-n-50mClfsvxIpTVMWUU97tfxAvX14jC1Cqx7zexumGn9G-D3HpRBwZB33T6GHZCW8RmY6vgtsBAehV05PFYQzM2XmJyiE8kh5bYVx4fKcGcumHA24GzjYtqOgX97QYet1twyW391VD3MjwdGW1"/>
+</div>
+<div>
+<div class="font-bold text-sm">Eleanor P.</div>
+<div class="text-xs text-on-surface-variant">Mother of Leo</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/5 space-y-8 mt-12 md:mt-0">
+<span class="material-symbols-outlined text-4xl text-primary/40 absolute top-8 right-8">format_quote</span>
+<div class="flex gap-1 text-[#e5c191]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg font-headline italic text-on-surface leading-relaxed">
+                        "As a linguist, I find the methodology impeccable. It respects the cadence of natural speech while pushing for clinical accuracy."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container border border-secondary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a distinguished man in a library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXOyFhvnK8RagST1pc1Ppzbbw2aaRR_L4XAfq65mY05TguP3BvE1QhyvPZVU9unL7O7w_3sBoDjiYwvJkpXS_gWxDiLWr0y2gi4DxSFBMfp6xG9TOs0Reoq8FZTgsTMVOcWIxdECqR1SUOxUwz4yEQ0erJ_vnwvf31yE5_cSZ84Eus644ivSJX91P72Z_5Ad6YbzBNpJOoTPIpv9UEBnMyO-V7ueJMfm080sR2PUHUpZvoYZCyey_Kb10gymb1l19tbZdLIbONc0bh"/>
+</div>
+<div>
+<div class="font-bold text-sm">Dr. Julian Vance</div>
+<div class="text-xs text-on-surface-variant">Linguistic Scholar</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/5 space-y-8 relative mt-12 md:mt-0">
+<span class="material-symbols-outlined text-4xl text-primary/40 absolute top-8 right-8">format_quote</span>
+<div class="flex gap-1 text-[#e5c191]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg font-headline italic text-on-surface leading-relaxed">
+                        "BoloBridge gave me back my voice. The gamified pillars made the hardest parts of recovery feel like play."
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container border border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Warm smiling portrait of a young woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrx-UU6oPy7XHRAaj7tqK7rpcYenNev1HgaaXkQKpBBdCOrhJpXdImrW3L_rFUkdBzhGmMGeKDstWJUrUQ0kvhL3gXvivGLVRmVQpCuQeDyPLHMHv8OPgFwb92hKKv4tVnvaIJXLBbSPSy0qbWp3dISJd-gBiJ2mp5l97Ynh8oczaywX7beUh3s7vbwUFyai_-At_GPmzaOJHQMCLNJ7O94XxJd6UH7iNoVKwAUc6cz2nMpdCkeS9HcHL5TAE-H1AzGVtbs4OPaiox"/>
+</div>
+<div>
+<div class="font-bold text-sm">Sofia R.</div>
+<div class="text-xs text-on-surface-variant">Adult Learner</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-40 relative px-12 overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 bg-radial-gradient from-primary/5 to-transparent pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px] opacity-20"></div>
+<div class="max-w-screen-md mx-auto text-center space-y-12 relative z-10">
+<h2 class="text-6xl font-headline italic text-primary leading-tight">Start Your Journey Today</h2>
+<p class="text-xl text-on-surface-variant max-w-lg mx-auto leading-relaxed">
+                Join the archive of voices finding their strength. No fees, no barriers—just the bridge to your potential.
+            </p>
+<div class="flex justify-center">
+<button class="bg-secondary text-on-secondary px-12 py-5 rounded-xl text-lg font-bold shadow-2xl hover:scale-105 transition-transform">
+                    Enter the Bridge
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#090d1d] border-t border-[#46464c]/20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-serif italic text-[#e5c191]">BoloBridge</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                    Preserving the sanctity of human expression through digital innovation and archival care.
+                </p>
+</div>
+<div class="space-y-6">
+<div class="text-xs font-bold uppercase tracking-widest text-primary">Foundations</div>
+<ul class="space-y-3">
+<li><a class="text-sm text-[#e5c191]/40 hover:text-[#e5c191] transition-all hover:translate-x-1 inline-block" href="#">The Pillars</a></li>
+<li><a class="text-sm text-[#e5c191]/40 hover:text-[#e5c191] transition-all hover:translate-x-1 inline-block" href="#">Chronicle</a></li>
+<li><a class="text-sm text-[#e5c191]/40 hover:text-[#e5c191] transition-all hover:translate-x-1 inline-block" href="#">Our Mission</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<div class="text-xs font-bold uppercase tracking-widest text-primary">Library</div>
+<ul class="space-y-3">
+<li><a class="text-sm text-[#e5c191]/40 hover:text-[#e5c191] transition-all hover:translate-x-1 inline-block" href="#">Research Papers</a></li>
+<li><a class="text-sm text-[#e5c191]/40 hover:text-[#e5c191] transition-all hover:translate-x-1 inline-block" href="#">User Guide</a></li>
+<li><a class="text-sm text-[#e5c191]/40 hover:text-[#e5c191] transition-all hover:translate-x-1 inline-block" href="#">Privacy Parchment</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<div class="text-xs font-bold uppercase tracking-widest text-primary">Connect</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-[#46464c]/10 text-center">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#e5c191]/20">© 2024 BoloBridge. The Midnight Archivist. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

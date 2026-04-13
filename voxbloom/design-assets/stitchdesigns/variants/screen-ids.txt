@@ -1,0 +1,7 @@
+Play Variants:
+- play-v1-scrapbook: f0b7fa9cfc8c4a56a16eb33c5cd8d378
+- play-v2-magazine: 767c2e427b6f442d8023bf67ad33a0ce
+- play-v3-stacked: a6bf646f0c8d408ea2e579ca1d137682
+- play-v4-islands: f8ed637ed4f54301942bd199a02b8b6d
+
+Stitch Project ID: 18420450775014572633

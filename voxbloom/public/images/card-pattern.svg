@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="cardGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5F9EA0" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#8B7EC8" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softEdge">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="#FAF8F5"/>
+  <rect width="800" height="800" fill="url(#cardGlow)"/>
+  <!-- Decorative organic circles -->
+  <circle cx="200" cy="200" r="80" fill="none" stroke="#5F9EA0" stroke-width="0.8" opacity="0.12" filter="url(#softEdge)"/>
+  <circle cx="600" cy="300" r="60" fill="none" stroke="#8B7EC8" stroke-width="0.6" opacity="0.1" filter="url(#softEdge)"/>
+  <circle cx="400" cy="600" r="100" fill="none" stroke="#C2956B" stroke-width="0.8" opacity="0.08" filter="url(#softEdge)"/>
+  <!-- Subtle dots grid -->
+  <circle cx="100" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="200" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="300" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="400" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="500" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="600" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="700" cy="100" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="100" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="200" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="300" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="400" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="500" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="600" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="700" cy="300" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="100" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="200" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="300" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="400" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="500" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="600" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="700" cy="500" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="100" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="200" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="300" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="400" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="500" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="600" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+  <circle cx="700" cy="700" r="1.5" fill="#2D3142" opacity="0.06"/>
+</svg>

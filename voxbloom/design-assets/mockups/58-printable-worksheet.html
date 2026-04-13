@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#613f1d",
+              "primary": "#25686a",
+              "on-surface-variant": "#424842",
+              "primary-container": "#61a0a2",
+              "surface-bright": "#fbf9f6",
+              "on-primary-fixed-variant": "#004f51",
+              "on-tertiary-fixed": "#1c0b54",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#727971",
+              "tertiary-container": "#988bd6",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e4e2df",
+              "surface-variant": "#e4e2df",
+              "on-primary-fixed": "#002021",
+              "on-surface": "#1b1c1a",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#30312f",
+              "surface": "#fbf9f6",
+              "on-background": "#1b1c1a",
+              "background": "#fbf9f6",
+              "tertiary-fixed": "#e6deff",
+              "outline-variant": "#c2c8bf",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#eebd90",
+              "primary-fixed": "#aeeef0",
+              "secondary-fixed": "#ffdcbf",
+              "surface-container": "#efeeeb",
+              "surface-container-high": "#eae8e5",
+              "surface-dim": "#dbdad7",
+              "tertiary": "#61549b",
+              "secondary-container": "#fdcb9d",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#92d2d3",
+              "on-tertiary-container": "#2f2166",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-low": "#f5f3f0",
+              "on-secondary-fixed": "#2d1600",
+              "error": "#ba1a1a",
+              "inverse-on-surface": "#f2f0ed",
+              "on-secondary-container": "#79542f",
+              "surface-tint": "#25686a",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#003435",
+              "inverse-primary": "#92d2d3",
+              "secondary": "#7c5732"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>@media print {
+    .no-print {
+        display: none
+        }
+    body {
+        background-color: white !important
+        }
+    .sheet {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 100% !important
+        }
+    }
+.dotted-line {
+    border-bottom: 2px dotted #c2c8bf;
+    height: 1.5rem;
+    width: 100%;
+    display: inline-block
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCV-avqqbp0JFptbU0cFGMIMENPAOiioeGuz6oLzUy8b8N1jUTEl5Aqtj4vDA4Pabd-urhp87DsQciNAsFMAlYH2VhdLwfjTd2u2XTVFW6iRIO0rvmlGYZGU8uUR-ZHG6PAnUrAvNi1Q545wwMMQkak7Ynu0AoqNFniLWZn58fTz1EeQGsrMKzcApgkxgdL2BAmjPB5zdbQpMcQVeIRXokWWNacmRUwDb-3Vl2ghdXOmrqcdeW2Rx9mmZwWiqffM3WrLabaWjqHDIes);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-[#FAF8F5] font-body text-on-surface selection:bg-secondary-fixed min-h-screen flex flex-col items-center py-12 px-4">
+<!-- TopAppBar Command Execution -->
+<header class="w-full max-w-5xl mx-auto top-0 z-50 flex justify-between items-center px-6 py-4 bg-[#fbf9f6] no-print mb-8 rounded-full">
+<div class="text-2xl font-['Newsreader'] italic font-bold text-[#25686a]">BoloBridge</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#25686a] border-b-2 border-[#7A9E7E] pb-1 font-['Newsreader'] italic tracking-tight" href="#">Worksheets</a>
+<a class="text-[#424842] hover:text-[#7A9E7E] transition-colors duration-200 font-['Newsreader'] italic tracking-tight" href="#">Progress</a>
+<a class="text-[#424842] hover:text-[#7A9E7E] transition-colors duration-200 font-['Newsreader'] italic tracking-tight" href="#">Library</a>
+</nav>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-primary hover:scale-95 transition-all" data-icon="print" onclick="window.print()">print</button>
+<button class="material-symbols-outlined text-primary hover:scale-95 transition-all" data-icon="download">download</button>
+<button class="material-symbols-outlined text-primary hover:scale-95 transition-all" data-icon="settings">settings</button>
+</div>
+</header>
+<!-- Main Worksheet Canvas -->
+<main class="sheet relative bg-surface-container-lowest w-full max-w-[8.5in] min-h-[11in] shadow-[0_20px_40px_rgba(66,72,66,0.06)] p-12 md:p-16 flex flex-col gap-12 overflow-hidden rounded-xl">
+<div class="absolute inset-0 grain-overlay"></div>
+<!-- Header Section -->
+<section class="flex flex-col gap-8 relative z-10">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="text-primary font-headline italic text-4xl font-bold tracking-tight">BoloBridge</h1>
+<p class="text-on-surface-variant font-headline italic text-xl">Practice Worksheet</p>
+</div>
+<div class="flex flex-col gap-4 w-64">
+<div class="flex items-end gap-2">
+<span class="text-sm font-label uppercase tracking-widest text-outline">Name:</span>
+<div class="dotted-line flex-1 mb-1"></div>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-sm font-label uppercase tracking-widest text-outline">Date:</span>
+<div class="dotted-line flex-1 mb-1"></div>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high w-full"></div>
+<div class="flex items-center gap-4">
+<span class="bg-secondary-fixed-dim text-on-secondary-fixed-variant px-4 py-1 rounded-full text-sm font-medium">Section 1</span>
+<h2 class="text-2xl font-headline italic text-primary">Today's Target Sound: <span class="not-italic font-bold">/s/</span></h2>
+</div>
+</section>
+<!-- Grid Section (3x2 Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+<!-- Box 1: Snake -->
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl border border-transparent hover:border-primary-container/20 transition-all">
+<div class="aspect-square bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain opacity-80" data-alt="Soft watercolor illustration of a green snake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMrEx46bwCdBuat-q0k0CdOgkSIQ94pOS95tAdFQ0_x0LFLX0SV6viJFeCloE05D3LYsKAV4ej7Mpn-yH83At676wJRp57ZvKcInGWMNrpUaVJybK2qG3uNXzJIAhHwG7OToDCrckRigozyYzZrY8a1akK_7gSjsBnFDAg4nGlrffLI2UvS9jpp45XC2F6R2a3CMn51h6keBLyeZuD38YSjSXLAVGlJVZSye9cGWwsTAkD1xxdCtGcQF59zIbkaJn2BIHfzqPkxHpO"/>
+</div>
+<div class="text-center">
+<p class="font-headline italic text-2xl mb-2 text-on-surface"><span class="text-[#C5A377] font-bold">S</span>nake</p>
+<div class="dotted-line w-full"></div>
+</div>
+</div>
+<!-- Box 2: Sun -->
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<div class="aspect-square bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain opacity-80" data-alt="Watercolor painting of a bright yellow sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1nLm4tr466F1qWlULWAgp66DyDaqCngQ6_uapt59LpnyqhUS6N3LMLnNOWby5pURpkuFZVOc2ngTZ5X8-i5Ttrb6gJBO44BBbBGlvNI9XWtoxceAlyRgoa0c3ImmyERKooTDJtBGjSEBNDGmejIXRIB6UOesERNzsZ9Hoe7l3t7l0sQXPMVbTY0afwzVb0eq-kLpDfUcqKqOjy-Tz0FuQa9-F5_0GoVQAza0L1DmbNYq80kyfgSL0gOsEVJTYkLUd-WtsffmBQOMB"/>
+</div>
+<div class="text-center">
+<p class="font-headline italic text-2xl mb-2 text-on-surface"><span class="text-[#C5A377] font-bold">S</span>un</p>
+<div class="dotted-line w-full"></div>
+</div>
+</div>
+<!-- Box 3: Star -->
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<div class="aspect-square bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain opacity-80" data-alt="Soft watercolor golden star on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyjhAa8J_lkhmx-3MfAHudZnygwQEgBCsGjNNiCYdVjiUzcdBQDU4D0clFe_-so7h80UGZyBkIMyFBpV_Yh0Nr3ZbIBkjGbYHjUZ4KpAtDb9YMmmdowLXVoyqqGdRj5KUrQnqU7Ze8hIP-c4kE2U1XjTUHDIDqdl-UvZWba88R062KODoCJOkiWT61TNWAfy2M9wN8F9VRzyLqDzHYf6b5rf1rVD3tG0AocRo6YMMeKzqL8uSyXhpShnDkNakf4v7iao_t2Vu_qbXU"/>
+</div>
+<div class="text-center">
+<p class="font-headline italic text-2xl mb-2 text-on-surface"><span class="text-[#C5A377] font-bold">S</span>tar</p>
+<div class="dotted-line w-full"></div>
+</div>
+</div>
+<!-- Box 4: Sock -->
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<div class="aspect-square bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain opacity-80" data-alt="Watercolor drawing of a pair of cozy socks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZjxlpdkTzRNIsvMMU5Fus37qVM6eAhIl8ux7dXYgKhhJAHn9NlcsvPkw9b9fLv4ttmC_u13batdUYg8lWfs6vXJ9YJjw5Mdh771DjU0zryZUUEKRz4sYq5pJ86SrY5Wt3INNHkkxhQOr9UcOvuJvmhRg_O8NBHfn82wmClqo36ZACGhOPQ1jZMO7UOwU-8YcthSU5_7aO7xmD3i7l_Fy3l3OrLSfTnt1ZoKxTsjf26XQj9qq2hLq2-sUVKY4wX5NvfB1nuO4Pv5Uq"/>
+</div>
+<div class="text-center">
+<p class="font-headline italic text-2xl mb-2 text-on-surface"><span class="text-[#C5A377] font-bold">S</span>ock</p>
+<div class="dotted-line w-full"></div>
+</div>
+</div>
+<!-- Box 5: Sandwich -->
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<div class="aspect-square bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain opacity-80" data-alt="Minimalist watercolor illustration of a sandwich" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABX4cXGWo199kgS_TGsTQBmVGyQjRVWg_SeS7b_c-e3ZQh0G-ZkfvajjesR9-jQ4Uf8cDB1xxOA-_oKZlLkc1OUtor1Vz20WAZD6n8b85sLnVc31MvU9NhL8b3an1FnUJDqW46kMfBspFChu7N0EDhcc5LpKq-Yjs1Oq1p227Qrm1ivaREzeg1sseJy1NZOatDSQIcIQO3uZsCEl9ys3k28zraUTxz96QRByzK5iY38o6qGNJUzA548jK3_ePIGmSq9DfHTSBA728k"/>
+</div>
+<div class="text-center">
+<p class="font-headline italic text-2xl mb-2 text-on-surface"><span class="text-[#C5A377] font-bold">S</span>andwich</p>
+<div class="dotted-line w-full"></div>
+</div>
+</div>
+<!-- Box 6: Soup -->
+<div class="flex flex-col gap-4 p-6 bg-surface-container-low rounded-xl">
+<div class="aspect-square bg-white rounded-lg flex items-center justify-center p-4">
+<img class="w-full h-full object-contain opacity-80" data-alt="Watercolor bowl of warm orange soup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkwt_EFyzGS6fYfIsmjCnsD5gmwZ0HK1i-vsWCr4jlpTs7YEXa_vo_G1It-FTRiRt_T13sZ9qpOU89xEdGvpUn1ep42BnMK9obxwF0HHrhIWON0Wg5AyLvG2XMLIoXd30LHRmkglziH4XS2tmCde-gbYkL-JU2zuQ_2-PwuJPAdHht86LiVZWxmNY_XYzu8wHwpE5qVYZg4LL9WT-L7gDrorwJ6H7YxFh14QxvmtP88B7pI0BNm7GSXcpZWqJ36HaiZtwACuwymInE"/>
+</div>
+<div class="text-center">
+<p class="font-headline italic text-2xl mb-2 text-on-surface"><span class="text-[#C5A377] font-bold">S</span>oup</p>
+<div class="dotted-line w-full"></div>
+</div>
+</div>
+</section>
+<!-- Sentence Section -->
+<section class="flex flex-col gap-6 relative z-10">
+<div class="flex items-center gap-4">
+<span class="bg-secondary-fixed-dim text-on-secondary-fixed-variant px-4 py-1 rounded-full text-sm font-medium">Section 2</span>
+<h2 class="text-2xl font-headline italic text-primary">Say It in a Sentence</h2>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-8">
+<div class="flex items-end gap-2 text-xl font-body leading-loose">
+                    1. The <div class="dotted-line w-40 mb-2"></div> slithered in the garden.
+                </div>
+<div class="flex items-end gap-2 text-xl font-body leading-loose">
+                    2. I see the bright <div class="dotted-line w-40 mb-2"></div>.
+                </div>
+<div class="flex items-end gap-2 text-xl font-body leading-loose">
+                    3. Put on your warm <div class="dotted-line w-40 mb-2"></div>.
+                </div>
+</div>
+</section>
+<!-- Assessment Section -->
+<section class="flex flex-col gap-6 relative z-10">
+<div class="flex items-center gap-4">
+<span class="bg-secondary-fixed-dim text-on-secondary-fixed-variant px-4 py-1 rounded-full text-sm font-medium">Section 3</span>
+<h2 class="text-2xl font-headline italic text-primary">How Did I Do?</h2>
+</div>
+<div class="flex justify-around items-center py-4">
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-16 h-16 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:bg-primary-container/10 group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary-container" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+</div>
+<span class="text-sm font-label text-on-surface-variant">Great</span>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-16 h-16 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:bg-secondary-container/10 group-hover:border-secondary-container transition-all">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-on-secondary-container" data-icon="sentiment_neutral">sentiment_neutral</span>
+</div>
+<span class="text-sm font-label text-on-surface-variant">Okay</span>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-16 h-16 rounded-full border-2 border-outline-variant flex items-center justify-center group-hover:bg-error-container/10 group-hover:border-error transition-all">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-error" data-icon="sentiment_dissatisfied">sentiment_dissatisfied</span>
+</div>
+<span class="text-sm font-label text-on-surface-variant">Tricky</span>
+</div>
+</div>
+</section>
+<!-- Parent Notes -->
+<section class="flex flex-col gap-6 relative z-10 flex-grow">
+<div class="flex items-center gap-4">
+<span class="bg-secondary-fixed-dim text-on-secondary-fixed-variant px-4 py-1 rounded-full text-sm font-medium">Section 4</span>
+<h2 class="text-2xl font-headline italic text-primary">Parent Notes</h2>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto pt-12 border-t border-surface-container-high relative z-10">
+<div class="flex justify-between items-center text-[10px] text-outline uppercase tracking-widest font-label">
+<span>Generated by BoloBridge</span>
+<span class="italic text-on-surface-variant font-headline lowercase text-xs tracking-normal normal-case">Not a substitute for professional guidance</span>
+<span>Ref: SOUND_S_LVL1</span>
+</div>
+</footer>
+</main>
+<!-- Side Navigation (Suppressed per Transactional Rule) -->
+<!-- The SideNavBar was excluded because this is a focused, task-based "Printable" canvas -->
+<div class="no-print mt-12 text-on-surface-variant text-sm flex items-center gap-2 bg-surface-container-low px-6 py-3 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+        For best results, print with "Background Graphics" enabled in your browser settings.
+    </div>
+</body></html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff8f8;
+            background-image: radial-gradient(at 0% 0%, rgba(255, 217, 226, 0.3) 0px, transparent 50%),
+                              radial-gradient(at 100% 0%, rgba(243, 218, 255, 0.3) 0px, transparent 50%);
+        }
+        .grain-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+        .newsreader-italic { font-family: 'Newsreader', serif; font-style: italic; }
+        .pearl-card { background-color: #FFF8FA; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fff8f8",
+                        "surface-container-highest": "#ecdfe3",
+                        "inverse-surface": "#352e32",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#591f35",
+                        "tertiary": "#30685b",
+                        "primary-fixed-dim": "#ffb1c8",
+                        "surface-container-high": "#f2e5e9",
+                        "surface-container": "#f7ebef",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#2a0e3c",
+                        "on-background": "#201a1d",
+                        "outline": "#847377",
+                        "on-tertiary-fixed": "#00201a",
+                        "primary": "#8d4960",
+                        "secondary": "#715284",
+                        "outline-variant": "#d6c1c6",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#99d2c2",
+                        "secondary-fixed-dim": "#deb9f2",
+                        "on-surface": "#201a1d",
+                        "secondary-container": "#e9c4fe",
+                        "inverse-on-surface": "#faedf1",
+                        "tertiary-container": "#6fa798",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#3a061d",
+                        "primary-fixed": "#ffd9e2",
+                        "inverse-primary": "#ffb1c8",
+                        "surface-variant": "#ecdfe3",
+                        "surface-bright": "#fff8f8",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#583b6b",
+                        "secondary-fixed": "#f3daff",
+                        "on-secondary-container": "#6c4e7f",
+                        "surface-dim": "#e3d7db",
+                        "on-tertiary-fixed-variant": "#135043",
+                        "tertiary-fixed": "#b4eedd",
+                        "background": "#fff8f8",
+                        "surface-tint": "#8d4960",
+                        "on-primary-fixed-variant": "#713249",
+                        "surface-container-low": "#fdf0f4",
+                        "primary-container": "#d4859e",
+                        "on-surface-variant": "#524347",
+                        "on-tertiary-container": "#003b31"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="min-h-screen text-on-surface selection:bg-primary-fixed">
+<div class="grain-overlay"></div>
+<!-- Navigation Header -->
+<header class="fixed top-0 w-full z-50 bg-rose-50/70 backdrop-blur-md shadow-[0_20px_80px_rgba(59,28,53,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-['Newsreader'] italic text-rose-800">BoloBridge</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-zinc-500 hover:text-rose-600 transition-colors duration-400 font-medium" href="#">Stories</a>
+<a class="text-rose-900 border-b-0 relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-rose-400 after:rounded-full font-medium" href="#">Progress</a>
+<a class="text-zinc-500 hover:text-rose-600 transition-colors duration-400 font-medium" href="#">Library</a>
+<a class="text-zinc-500 hover:text-rose-600 transition-colors duration-400 font-medium" href="#">Guidance</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-rose-100/30 transition-all duration-400 active:scale-95">
+<span class="material-symbols-outlined text-rose-800">person_outline</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+<!-- Header Section -->
+<div class="mb-16">
+<h1 class="text-5xl md:text-7xl newsreader-italic text-[#3B1C35] tracking-tight mb-4">Speech Games</h1>
+<p class="text-on-surface-variant max-w-lg text-lg leading-relaxed">A curated collection of vocal adventures designed to nurture confidence and clarity through play.</p>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[280px]">
+<!-- 1. Story Studio (Large Card) -->
+<div class="md:col-span-2 md:row-span-2 pearl-card rounded-lg overflow-hidden flex flex-col relative group transition-transform duration-500 hover:-translate-y-1">
+<div class="p-10 flex flex-col h-full z-10">
+<div class="mb-auto">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold tracking-wider uppercase mb-6">Featured Experience</span>
+<h2 class="text-4xl newsreader-italic text-[#3B1C35] mb-4">Story Studio</h2>
+<p class="text-on-surface-variant max-w-xs leading-relaxed">Narrate immersive tales where your voice shapes the world's destiny.</p>
+</div>
+<button class="w-fit px-8 py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-medium active:scale-95 transition-transform">
+                        Open Book
+                    </button>
+</div>
+<div class="absolute right-0 bottom-0 w-3/4 h-3/4 opacity-80 pointer-events-none transform translate-x-10 translate-y-10">
+<img class="w-full h-full object-contain object-bottom" data-alt="Watercolor illustration of an open magic book with soft lavender and pink tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXu0c86YxUxzI-soIK7ZzFl-QPb7I_RWFLGiXXokKT3ELYSXbObz6AqvpLD55P2pUURYzNpwEqeozv_lg6bySjRro2Ga32scgH9fRLDwrwm4IvKPmmuEwOsUa7zXMHbaUk2HauThRFGB-PzO3ODb--8qXOuFsu-kOxDDWB6O5egOx6DgOWbDQheASx0R4ycyazBOmUtGwtI1PG6hWUKavxdueqRI6W7ozKYjG6fFvLG_LxWtpQEhoSVdHpiyTpkl-qKQV_-xRfm5Mj"/>
+</div>
+</div>
+<!-- 2. Daily Challenge -->
+<div class="pearl-card rounded-lg p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-2xl bg-[#FFE4E1] flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<span class="text-xs font-bold text-primary bg-primary-fixed px-3 py-1 rounded-full">LIVE</span>
+</div>
+<h3 class="text-2xl newsreader-italic text-[#3B1C35] mb-2">Daily Challenge</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">A quick 2-minute vocal warm-up to start your morning.</p>
+<div class="mt-auto flex items-center gap-2 text-primary font-semibold text-sm">
+                    Keep Streak <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- 3. Sound Safari -->
+<div class="pearl-card rounded-lg p-8 flex flex-col relative overflow-hidden transition-transform duration-500 hover:-translate-y-1">
+<h3 class="text-2xl newsreader-italic text-[#3B1C35] mb-2">Sound Safari</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Track down elusive phonemes in the pastel jungle.</p>
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-secondary-container/30 rounded-full blur-2xl"></div>
+<div class="mt-auto">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed border-2 border-[#FFF8FA] flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-fixed">pets</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed border-2 border-[#FFF8FA] flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-tertiary-fixed">eco</span>
+</div>
+</div>
+</div>
+<div class="absolute right-4 bottom-4 w-20 h-20 opacity-40">
+<img class="w-full h-full object-contain" data-alt="Abstract pastel animal shapes with soft grape and lavender accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIiCcAi2qpx2VSLb_r1wfFZ9kg8Q3fFWbFeC0cr4eFu-ETP7sTsnynu-QBMxInTZAd5BSoujcUXuam19zD_HiVZx_OhnnFzSQEo_7N9WbcBAxsPyJzZw7pW0xYVZqqI34ngb-n0_mf8D8cZ8VHPQ984Nk8jzooHabkCujNj_C0EHjnfUlIyLJeOQtkFZhncD31ugJYg7rKSVd9y2QlzgNLLN4TxoJPqrnR4Ngq2MO---RXIa68ZcjvL85AEhLF3zu9S8DHH9MJ-7SH"/>
+</div>
+</div>
+<!-- 4. Word Garden -->
+<div class="pearl-card rounded-lg p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed/40 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary">potted_plant</span>
+</div>
+<h3 class="text-2xl newsreader-italic text-[#3B1C35] mb-2">Word Garden</h3>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Nurture new vocabulary and watch your garden bloom.</p>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mt-auto">
+<div class="bg-tertiary w-2/3 h-full"></div>
+</div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-tertiary mt-2">65% to next bloom</span>
+</div>
+<!-- 5. Rhyme Time -->
+<div class="pearl-card rounded-lg p-8 flex flex-col relative overflow-hidden transition-transform duration-500 hover:-translate-y-1">
+<h3 class="text-2xl newsreader-italic text-[#3B1C35] mb-2">Rhyme Time</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Master the rhythm and flow of lyrical puzzles.</p>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="text-xs font-medium text-secondary">Acoustic Mode</span>
+</div>
+<div class="absolute -right-8 -top-8 w-24 h-24 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-8xl text-secondary">music_note</span>
+</div>
+</div>
+<!-- 6. Tongue Gym (Horizontal Banner) -->
+<div class="md:col-span-2 pearl-card rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden transition-transform duration-500 hover:-translate-y-1">
+<div class="flex-1 z-10">
+<h3 class="text-3xl newsreader-italic text-[#3B1C35] mb-3">Tongue Gym</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">Flex your articulation muscles with whimsical vocal drills and rhythmic twisters.</p>
+<div class="mt-6 flex gap-4">
+<div class="px-4 py-2 bg-surface-container-low rounded-full text-xs font-semibold text-primary">ADVANCED</div>
+<div class="px-4 py-2 bg-surface-container-low rounded-full text-xs font-semibold text-primary">5 MINS</div>
+</div>
+</div>
+<div class="w-48 h-full relative opacity-90 hidden md:block">
+<img class="w-full h-full object-contain" data-alt="Abstract whimsical shapes in blush pink representing vocal exercises" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRC9jBkrTTUkMpn8NgaCVJQxDD0qbyGi4LlgugNUHbvMiVoqf88Hs8rQCWfEHJYvCRKkEolz_GeqfT3-uq5HrTO59TZ816R8z1_Rw95VjHRUfeSyVmrWbi6jUmZkDX4YVXD4O_08_eflVi6hmLwaXSPYTaRn45WQ0Lo3X_RtQ1MQRqDrf9NOPsQryOGRtXtEded5xODxv24eT6Hpa4ynTOxESTz1_XmOFUAueMqdl4E9MSvncm5WBTnikjSHgiLqKmFfwHo4My3Tvm"/>
+</div>
+<div class="absolute -right-12 -bottom-12 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl -z-0"></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 border-t-0">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto gap-4">
+<div class="font-['Inter'] text-sm tracking-tight leading-relaxed text-zinc-400">
+                © 2024 BoloBridge Archive. All rights reserved.
+            </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-sm tracking-tight text-zinc-400 hover:text-rose-500 transition-colors" href="#">Privacy</a>
+<a class="font-['Inter'] text-sm tracking-tight text-zinc-400 hover:text-rose-500 transition-colors" href="#">Terms</a>
+<a class="font-['Inter'] text-sm tracking-tight text-zinc-400 hover:text-rose-500 transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

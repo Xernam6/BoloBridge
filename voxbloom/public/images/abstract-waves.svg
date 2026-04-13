@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <radialGradient id="aw-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F5F1EB"/>
+    </radialGradient>
+    <linearGradient id="aw-teal" x1="0%" y1="0%" x2="30%" y2="0%">
+      <stop offset="0%" stop-color="#5F9EA0" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#5F9EA0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#5F9EA0" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="aw-lavender" x1="30%" y1="0%" x2="70%" y2="0%">
+      <stop offset="0%" stop-color="#8B7EC8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#8B7EC8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B7EC8" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="aw-camel" x1="70%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2956B" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#C2956B" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#C2956B" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="aw-blur1"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="aw-blur2"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="aw-blur3"><feGaussianBlur stdDeviation="1.5"/></filter>
+    <filter id="aw-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#aw-bg)"/>
+
+  <!-- Layer 1: Deep ambient wash blobs – the "watercolor" feel -->
+  <ellipse cx="150" cy="200" rx="200" ry="100" fill="#5F9EA0" opacity="0.06" filter="url(#aw-blur1)"/>
+  <ellipse cx="400" cy="200" rx="180" ry="90" fill="#8B7EC8" opacity="0.05" filter="url(#aw-blur1)"/>
+  <ellipse cx="650" cy="200" rx="200" ry="100" fill="#C2956B" opacity="0.06" filter="url(#aw-blur1)"/>
+
+  <!-- Layer 2: Mid-ground flowing forms (broad strokes) -->
+  <path d="M-20,200 C60,140 120,280 200,190 C280,100 340,300 420,200 C500,100 560,310 640,200 C720,90 780,260 820,200" fill="none" stroke="url(#aw-teal)" stroke-width="20" opacity="0.08" filter="url(#aw-blur2)" stroke-linecap="round"/>
+  <path d="M-20,210 C80,280 160,120 240,210 C320,300 400,110 480,210 C560,310 640,130 720,210 C780,270 820,180 820,210" fill="none" stroke="url(#aw-lavender)" stroke-width="18" opacity="0.06" filter="url(#aw-blur2)" stroke-linecap="round"/>
+  <path d="M-20,195 C100,260 180,140 260,200 C340,260 420,150 500,195 C580,240 660,160 740,200 C800,230 820,190 820,195" fill="none" stroke="url(#aw-camel)" stroke-width="15" opacity="0.06" filter="url(#aw-blur2)" stroke-linecap="round"/>
+
+  <!-- Layer 3: Foreground crisp flowing lines — the "editorial" edge -->
+  <!-- Primary teal wave -->
+  <path d="M0,200 C50,160 100,240 150,190 C200,140 250,260 300,200 C350,140 400,260 450,200 C500,140 550,260 600,200 C650,140 700,260 750,200 C780,170 800,220 800,200" fill="none" stroke="#5F9EA0" stroke-width="2.5" opacity="0.45" stroke-linecap="round" filter="url(#aw-blur3)"/>
+  <!-- Secondary lavender wave (offset) -->
+  <path d="M0,210 C60,260 120,150 180,210 C240,270 300,140 360,210 C420,280 480,130 540,210 C600,290 660,140 720,210 C760,250 800,190 800,210" fill="none" stroke="#8B7EC8" stroke-width="2" opacity="0.35" stroke-linecap="round" filter="url(#aw-blur3)"/>
+  <!-- Tertiary camel wave -->
+  <path d="M0,195 C70,240 140,155 210,195 C280,235 350,160 420,195 C490,230 560,165 630,195 C700,225 770,175 800,195" fill="none" stroke="#C2956B" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Layer 4: Fine harmonic lines -->
+  <path d="M0,200 C25,185 50,215 75,200 C100,185 125,215 150,200 C175,185 200,215 225,200 C250,185 275,215 300,200 C325,185 350,215 375,200 C400,185 425,215 450,200 C475,185 500,215 525,200 C550,185 575,215 600,200 C625,185 650,215 675,200 C700,185 725,215 750,200 C775,185 800,215 800,200" fill="none" stroke="#5F9EA0" stroke-width="0.8" opacity="0.15" stroke-linecap="round"/>
+  <path d="M0,200 C15,194 30,206 45,200 C60,194 75,206 90,200 C105,194 120,206 135,200 C150,194 165,206 180,200 C195,194 210,206 225,200 C240,194 255,206 270,200 C285,194 300,206 315,200 C330,194 345,206 360,200 C375,194 390,206 405,200 C420,194 435,206 450,200 C465,194 480,206 495,200 C510,194 525,206 540,200 C555,194 570,206 585,200 C600,194 615,206 630,200 C645,194 660,206 675,200 C690,194 705,206 720,200 C735,194 750,206 765,200 C780,194 800,206 800,200" fill="none" stroke="#8B7EC8" stroke-width="0.5" opacity="0.1" stroke-linecap="round"/>
+
+  <!-- Film grain -->
+  <rect width="800" height="400" filter="url(#aw-grain)" opacity="0.02"/>
+
+  <!-- Micro particles -->
+  <circle cx="100" cy="160" r="1.5" fill="#5F9EA0" opacity="0.15"/>
+  <circle cx="250" cy="260" r="1" fill="#8B7EC8" opacity="0.12"/>
+  <circle cx="400" cy="150" r="1.8" fill="#C2956B" opacity="0.1"/>
+  <circle cx="550" cy="270" r="1.2" fill="#5F9EA0" opacity="0.12"/>
+  <circle cx="700" cy="160" r="1.5" fill="#8B7EC8" opacity="0.1"/>
+  <circle cx="350" cy="280" r="1" fill="#C2956B" opacity="0.08"/>
+  <circle cx="200" cy="140" r="0.8" fill="#D16D6D" opacity="0.06"/>
+  <circle cx="600" cy="250" r="0.8" fill="#D16D6D" opacity="0.06"/>
+</svg>

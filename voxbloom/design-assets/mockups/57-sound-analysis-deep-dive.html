@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sound Analysis Deep-Dive | BoloBridge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#61a0a2",
+              "on-secondary": "#ffffff",
+              "background": "#fbf9f6",
+              "inverse-on-surface": "#f2f0ed",
+              "on-secondary-fixed-variant": "#613f1d",
+              "primary": "#25686a",
+              "tertiary-fixed": "#e6deff",
+              "secondary-fixed-dim": "#eebd90",
+              "secondary-fixed": "#ffdcbf",
+              "primary-fixed": "#aeeef0",
+              "on-surface": "#1b1c1a",
+              "secondary": "#7c5732",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "surface-container-low": "#f5f3f0",
+              "surface-bright": "#fbf9f6",
+              "primary-fixed-dim": "#92d2d3",
+              "outline": "#727971",
+              "on-primary-fixed": "#002021",
+              "on-primary-container": "#003435",
+              "on-background": "#1b1c1a",
+              "surface-dim": "#dbdad7",
+              "outline-variant": "#c2c8bf",
+              "surface-tint": "#25686a",
+              "on-secondary-fixed": "#2d1600",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-high": "#eae8e5",
+              "surface-container": "#efeeeb",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e4e2df",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#004f51",
+              "on-tertiary-fixed-variant": "#493c81",
+              "secondary-container": "#fdcb9d",
+              "on-secondary-container": "#79542f",
+              "inverse-surface": "#30312f",
+              "on-tertiary": "#ffffff",
+              "inverse-primary": "#92d2d3",
+              "surface": "#fbf9f6",
+              "on-tertiary-container": "#2f2166",
+              "tertiary": "#61549b",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#424842",
+              "tertiary-container": "#988bd6",
+              "sage-green": "#7A9E7E",
+              "soft-coral": "#E5989B"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #fbf9f6;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCArNPvzv3NMzTSKrRkQt4ErmYmE2TCzfyMQqZuB2EMPgwMZDHtGSSgXHFo4J1zEwhXpq3-zfwg470jreDrlNKeu49EKdo7e79aZGDU6ASqYnOgc9Xmx95orfYYgMPj7qzt9M4FaN4iCx8M8Qv1WCt7toMKCJSyGkvQAy0X0O4R_1pIPyAMPclseZx404C-9RSWMVG--bFd8j1tI58ceA5-EowdV0In02uWVHLnze6MC9oDUs6lk859MwdYvUwx45QmhXGYCmQtag3i);
+    background-repeat: repeat
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.accuracy-ring {
+    transition: stroke-dashoffset 0.5s ease
+    }</style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-white">
+<!-- Top AppBar (from JSON) -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f6] dark:bg-stone-900 border-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-['Newsreader'] italic text-2xl text-[#25686a] dark:text-[#61a0a2]">BoloBridge</span>
+<span class="bg-secondary-fixed-dim text-on-secondary-fixed px-4 py-1 rounded-full text-xs font-semibold tracking-wide">Leo</span>
+</div>
+<div class="flex items-center space-x-4">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-medium text-stone-600">Last 30 Days</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center space-x-1">
+<button class="p-2 rounded-full hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-[#25686a] dark:text-[#61a0a2]" data-icon="account_circle">account_circle</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-[#25686a] dark:text-[#61a0a2]" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-px w-full"></div>
+</header>
+<div class="flex max-w-7xl mx-auto">
+<!-- SideNavBar (from JSON) - Hidden on Mobile, Fixed on Desktop -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-72px)] w-64 sticky top-[72px] py-8 space-y-2 bg-[#f5f3f0] dark:bg-stone-900 border-r-0">
+<div class="px-6 mb-8">
+<h2 class="font-['Newsreader'] italic text-xl text-[#25686a] dark:text-[#61a0a2]">Deep Dive</h2>
+<p class="font-['Inter'] text-sm tracking-tight leading-relaxed text-stone-500">The Tactile Storybook</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-stone-600 dark:text-stone-400 px-4 py-3 mx-2 flex items-center gap-3 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 px-4 py-3 mx-2 flex items-center gap-3 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="mic_none">mic_none</span>
+<span class="font-medium">Sound Library</span>
+</a>
+<a class="bg-[#ffffff] dark:bg-stone-800 text-[#25686a] dark:text-[#61a0a2] rounded-full mx-2 px-4 py-3 font-bold flex items-center gap-3 translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Deep Dive</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 px-4 py-3 mx-2 flex items-center gap-3 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="moving">moving</span>
+<span class="font-medium">Progress</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white rounded-full font-semibold shadow-sm hover:scale-[1.02] active:scale-95 transition-all">
+                    New Session
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 px-8 py-10 pb-32">
+<header class="mb-12">
+<h1 class="font-headline italic text-5xl text-primary tracking-tight mb-2">Sound Analysis</h1>
+<p class="text-stone-500 max-w-xl leading-relaxed">A detailed overview of Leo's phonological progression. We're currently prioritizing liquid sounds and sibilants.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Phoneme Grid (Left 2 Columns) -->
+<div class="lg:col-span-2 space-y-12">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+<!-- Mastered (Green) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl hover:bg-white transition-all group border-none shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/b/</span>
+<span class="material-symbols-outlined text-sage-green text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#7A9E7E" stroke-dasharray="125.6" stroke-dashoffset="12.5" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">90%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-sage-green uppercase tracking-widest">Mastered</p>
+<p class="text-[10px] text-stone-400">+2% vs last week</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/d/</span>
+<span class="material-symbols-outlined text-sage-green text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#7A9E7E" stroke-dasharray="125.6" stroke-dashoffset="5" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">96%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-sage-green uppercase tracking-widest">Mastered</p>
+<p class="text-[10px] text-stone-400">Stable</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/f/</span>
+<span class="material-symbols-outlined text-sage-green text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#7A9E7E" stroke-dasharray="125.6" stroke-dashoffset="15" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">88%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-sage-green uppercase tracking-widest">Mastered</p>
+<p class="text-[10px] text-stone-400">+4%</p>
+</div>
+</div>
+</div>
+<!-- Developing (Warm Camel) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none ring-2 ring-secondary-fixed-dim/20">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/r/</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#eebd90" stroke-dasharray="125.6" stroke-dashoffset="45" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">64%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-widest">Developing</p>
+<p class="text-[10px] text-stone-400">+7% Focus</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/s/</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#eebd90" stroke-dasharray="125.6" stroke-dashoffset="35" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">72%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-widest">Developing</p>
+<p class="text-[10px] text-stone-400">+2%</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/l/</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#eebd90" stroke-dasharray="125.6" stroke-dashoffset="50" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">58%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-widest">Developing</p>
+<p class="text-[10px] text-stone-400">+1%</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/z/</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" data-icon="trending_flat">trending_flat</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#eebd90" stroke-dasharray="125.6" stroke-dashoffset="40" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">68%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-widest">Developing</p>
+<p class="text-[10px] text-stone-400">Stable</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/v/</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#eebd90" stroke-dasharray="125.6" stroke-dashoffset="60" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">52%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary-fixed-dim uppercase tracking-widest">Developing</p>
+<p class="text-[10px] text-stone-400">+5%</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/k/</span>
+<span class="material-symbols-outlined text-sage-green text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#7A9E7E" stroke-dasharray="125.6" stroke-dashoffset="18" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">85%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-sage-green uppercase tracking-widest">Mastered</p>
+<p class="text-[10px] text-stone-400">+3%</p>
+</div>
+</div>
+</div>
+<!-- Needs Work (Soft Coral) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/θ/</span>
+<span class="material-symbols-outlined text-soft-coral text-sm" data-icon="trending_down">trending_down</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#E5989B" stroke-dasharray="125.6" stroke-dashoffset="95" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">24%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-soft-coral uppercase tracking-widest">Needs Work</p>
+<p class="text-[10px] text-stone-400">-3% Drop</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/ʃ/</span>
+<span class="material-symbols-outlined text-soft-coral text-sm" data-icon="trending_flat">trending_flat</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#E5989B" stroke-dasharray="125.6" stroke-dashoffset="85" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">32%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-soft-coral uppercase tracking-widest">Needs Work</p>
+<p class="text-[10px] text-stone-400">Stable</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-none">
+<div class="flex justify-between items-start mb-4">
+<span class="font-headline italic text-3xl text-primary">/tʃ/</span>
+<span class="material-symbols-outlined text-soft-coral text-sm" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle cx="24" cy="24" fill="none" r="20" stroke="#f5f3f0" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#E5989B" stroke-dasharray="125.6" stroke-dashoffset="75" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold text-on-surface">40%</span>
+</div>
+<div>
+<p class="text-xs font-bold text-soft-coral uppercase tracking-widest">Needs Work</p>
+<p class="text-[10px] text-stone-400">+5% Recovery</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Spotlight Section -->
+<section class="bg-surface-container-high rounded-xl p-10 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<div class="bg-primary p-4 rounded-full">
+<span class="font-headline italic text-4xl text-white">/r/</span>
+</div>
+<div>
+<h3 class="font-headline italic text-3xl text-primary">Focus Sound: The Rhotic /r/</h3>
+<p class="text-stone-600 font-medium">Leo's biggest opportunity for growth this session.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-6">
+<p class="text-sm font-bold uppercase tracking-widest text-primary/60">Waveform Comparison</p>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="text-[10px] font-bold uppercase tracking-tighter text-stone-400">First Attempt (Oct 12)</span>
+</div>
+<div class="h-12 flex items-center gap-1">
+<div class="bg-stone-200 h-2 w-full rounded-full overflow-hidden flex items-center">
+<div class="h-full bg-stone-300 w-1/4"></div>
+<div class="h-2 w-1 bg-white mx-[1px]"></div>
+<div class="h-full bg-stone-300 w-1/2"></div>
+<div class="h-2 w-1 bg-white mx-[1px]"></div>
+<div class="h-full bg-stone-300 w-1/4"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="text-[10px] font-bold uppercase tracking-tighter text-primary">Latest Attempt (Today)</span>
+<span class="text-[10px] font-bold text-primary">+12% Clarity</span>
+</div>
+<div class="h-12 flex items-center gap-1">
+<div class="bg-primary/10 h-3 w-full rounded-full overflow-hidden flex items-center">
+<div class="h-full bg-primary w-1/3"></div>
+<div class="h-3 w-1 bg-white mx-[1px]"></div>
+<div class="h-full bg-primary w-1/6"></div>
+<div class="h-3 w-1 bg-white mx-[1px]"></div>
+<div class="h-full bg-primary w-1/2"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<p class="text-sm font-bold uppercase tracking-widest text-primary/60">Target Words</p>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white/60 p-4 rounded-full text-center">
+<span class="text-stone-800 font-medium tracking-tight underline decoration-sage-green decoration-2 underline-offset-4">r</span>abbit
+                                        </div>
+<div class="bg-white/60 p-4 rounded-full text-center">
+<span class="text-stone-800 font-medium tracking-tight underline decoration-sage-green decoration-2 underline-offset-4">r</span>ed
+                                        </div>
+<div class="bg-white/60 p-4 rounded-full text-center">
+                                            ca<span class="text-stone-800 font-medium tracking-tight underline decoration-sage-green decoration-2 underline-offset-4">r</span>
+</div>
+<div class="bg-white/60 p-4 rounded-full text-center">
+                                            sta<span class="text-stone-800 font-medium tracking-tight underline decoration-sage-green decoration-2 underline-offset-4">r</span>
+</div>
+</div>
+<button class="w-full py-4 bg-sage-green text-white rounded-full font-bold shadow-sm hover:bg-[#6b8c6f] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+                                        Start /r/ Practice
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Abstract Watercolor texture overlay -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px]"></div>
+</section>
+</div>
+<!-- Sidebar Summary -->
+<aside class="space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h4 class="font-headline italic text-2xl text-primary mb-8">Sound Summary</h4>
+<!-- Donut Chart -->
+<div class="relative w-48 h-48 mx-auto mb-10 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<!-- Mastered 4/12 (120deg) -->
+<circle class="scale-[4] origin-center" cx="24" cy="24" fill="none" r="20" stroke="#7A9E7E" stroke-dasharray="125.6" stroke-dashoffset="0" stroke-width="6" viewbox="0 0 48 48"></circle>
+<!-- Developing 5/12 (150deg) -->
+<circle class="scale-[4] origin-center" cx="24" cy="24" fill="none" r="20" stroke="#eebd90" stroke-dasharray="125.6" stroke-dashoffset="41.8" stroke-width="6" viewbox="0 0 48 48"></circle>
+<!-- Needs Work 3/12 (90deg) -->
+<circle class="scale-[4] origin-center" cx="24" cy="24" fill="none" r="20" stroke="#E5989B" stroke-dasharray="125.6" stroke-dashoffset="94.2" stroke-width="6" viewbox="0 0 48 48"></circle>
+</svg>
+<div class="absolute text-center">
+<span class="block text-4xl font-headline italic text-primary">12</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-stone-400">Phonemes</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-sage-green"></div>
+<span class="text-sm font-medium">Mastered</span>
+</div>
+<span class="font-bold text-stone-600">4</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></div>
+<span class="text-sm font-medium">Developing</span>
+</div>
+<span class="font-bold text-stone-600">5</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-soft-coral"></div>
+<span class="text-sm font-medium">Needs Work</span>
+</div>
+<span class="font-bold text-stone-600">3</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border-none shadow-sm">
+<h4 class="font-headline italic text-xl text-primary mb-4">Therapist Notes</h4>
+<p class="text-sm text-stone-500 leading-loose italic">
+                            "Leo is showing great enthusiasm for the new animal-themed modules. His lip rounding for /w/ is naturally transitioning to help with the rhotic /r/ sounds. Recommend focusing on final-position /r/ sounds next week."
+                        </p>
+<div class="mt-6 pt-6 border-t border-surface-container flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary font-bold">DR</div>
+<div>
+<p class="text-xs font-bold">Dr. Sarah Rhodes</p>
+<p class="text-[10px] text-stone-400">Lead Pathologist</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (from JSON) - Only visible on Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-6 pb-6 pt-2 bg-[#fbf9f6]/80 dark:bg-stone-900/80 backdrop-blur-md shadow-[0_-20px_40px_rgba(66,72,66,0.06)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 p-2 hover:text-[#25686a] dark:hover:text-[#61a0a2]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#7A9E7E] text-white rounded-full p-3 mb-2 scale-110 shadow-lg active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="equalizer" style="font-variation-settings: 'FILL' 1;">equalizer</span>
+<span class="hidden">Analysis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 p-2 hover:text-[#25686a] dark:hover:text-[#61a0a2]" href="#">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 p-2 hover:text-[#25686a] dark:hover:text-[#61a0a2]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Grain Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[100]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhD8AiI-Ja5YLO8md_WYlPiWCQHDzgHYmUHjigmeDHuwsrHvUjeCq7-qvRKltBTo-xSgHUV8FIUAfIQcXS-xMZ8cimOLT9dnsNA2p0jxfhv2FqtlD51v8rGrgaT5qCEyo31PuecCqiW8YseZ65IPRQjcoWJiBJ-V0_btgkgATXOutXd8ePJpgKjTK2WK6AIdndGidNXjV0JtAkmhdiogbFsPozUWyVfKpfFjO3el3xGlPIg7iCbFsyXIMuZ87El4oL_c6AYUSEWxOG');"></div>
+</body></html>

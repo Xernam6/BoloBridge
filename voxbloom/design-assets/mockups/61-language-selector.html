@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#613f1d",
+                        "primary-fixed": "#aeeef0",
+                        "on-primary-container": "#003435",
+                        "on-secondary-fixed": "#2d1600",
+                        "inverse-primary": "#92d2d3",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#61a0a2",
+                        "tertiary-container": "#988bd6",
+                        "on-primary-fixed-variant": "#004f51",
+                        "surface": "#fbf9f6",
+                        "on-tertiary-fixed": "#1c0b54",
+                        "surface-container-low": "#f5f3f0",
+                        "surface-container-highest": "#e4e2df",
+                        "background": "#fbf9f6",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ed",
+                        "primary": "#25686a",
+                        "tertiary": "#61549b",
+                        "surface-container-high": "#eae8e5",
+                        "surface-tint": "#25686a",
+                        "outline": "#727971",
+                        "surface-variant": "#e4e2df",
+                        "on-primary-fixed": "#002021",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf9f6",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1b1c1a",
+                        "secondary-fixed": "#ffdcbf",
+                        "on-tertiary-fixed-variant": "#493c81",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#efeeeb",
+                        "primary-fixed-dim": "#92d2d3",
+                        "outline-variant": "#c2c8bf",
+                        "tertiary-fixed-dim": "#cabeff",
+                        "tertiary-fixed": "#e6deff",
+                        "on-secondary-container": "#79542f",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#eebd90",
+                        "secondary": "#7c5732",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1c1a",
+                        "secondary-container": "#fdcb9d",
+                        "on-tertiary-container": "#2f2166",
+                        "on-surface-variant": "#424842",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312f",
+                        "on-tertiary": "#ffffff",
+                        "sage-green": "#7A9E7E"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-gradient {
+            background: linear-gradient(45deg, #25686a, #61a0a2);
+        }
+        .sage-gradient {
+            background: linear-gradient(45deg, #7A9E7E, #92b095);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-white">
+<!-- Film Grain Overlay -->
+<div class="film-grain"></div>
+<!-- Background Content (Blurred) -->
+<div class="min-h-screen p-8 filter blur-lg opacity-40 select-none pointer-events-none">
+<nav class="flex justify-between items-center mb-16">
+<div class="font-headline italic text-2xl text-primary">BoloBridge</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high"></div>
+</div>
+</nav>
+<div class="max-w-4xl mx-auto space-y-12">
+<div class="h-64 rounded-xl bg-surface-container-low w-full"></div>
+<div class="grid grid-cols-3 gap-6">
+<div class="h-48 rounded-xl bg-surface-container-low"></div>
+<div class="h-48 rounded-xl bg-surface-container-low"></div>
+<div class="h-48 rounded-xl bg-surface-container-low"></div>
+</div>
+</div>
+</div>
+<!-- Language Selector Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-[#FAF8F5]/80 backdrop-blur-[20px]"></div>
+<!-- Modal Container -->
+<div class="relative w-full max-w-[640px] bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(66,72,66,0.06)] overflow-hidden flex flex-col">
+<!-- Close Button -->
+<button class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="close">close</span>
+</button>
+<!-- Header -->
+<div class="pt-12 pb-8 px-8 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full sage-gradient flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="public" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<h1 class="font-headline italic text-4xl text-on-surface mb-3 tracking-tight">Choose Your Language</h1>
+<p class="text-on-surface-variant text-lg max-w-md font-medium leading-relaxed">
+                    BoloBridge supports 6 languages for speech practice
+                </p>
+</div>
+<!-- Language Grid -->
+<div class="px-8 pb-8 overflow-y-auto max-h-[614px]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option 1: English -->
+<button class="group relative flex items-start p-6 rounded-lg bg-surface-container-low border-2 border-transparent hover:border-secondary-fixed-dim hover:bg-surface-container-lowest transition-all duration-300 text-left">
+<span aria-hidden="true" class="text-3xl mr-4">🇺🇸</span>
+<div class="flex flex-col">
+<span class="font-headline italic text-xl text-on-surface leading-none mb-1">English</span>
+<span class="text-on-surface-variant text-sm font-medium">Hello, how are you?</span>
+</div>
+</button>
+<!-- Option 2: Hindi -->
+<button class="group relative flex items-start p-6 rounded-lg bg-surface-container-low border-2 border-transparent hover:border-secondary-fixed-dim hover:bg-surface-container-lowest transition-all duration-300 text-left">
+<span aria-hidden="true" class="text-3xl mr-4">🇮🇳</span>
+<div class="flex flex-col">
+<span class="font-headline italic text-xl text-on-surface leading-none mb-1">हिन्दी</span>
+<span class="text-on-surface-variant text-sm font-medium">नमस्ते, आप कैसे हैं?</span>
+</div>
+</button>
+<!-- Option 3: Spanish (Selected State) -->
+<button class="group relative flex items-start p-6 rounded-lg bg-surface-container-lowest border-2 border-sage-green shadow-[0_0_15px_rgba(122,158,126,0.15)] transition-all duration-300 text-left">
+<span aria-hidden="true" class="text-3xl mr-4">🇪🇸</span>
+<div class="flex flex-col">
+<span class="font-headline italic text-xl text-on-surface leading-none mb-1">Español</span>
+<span class="text-on-surface-variant text-sm font-medium">¿Hola, cómo estás?</span>
+</div>
+<div class="absolute top-4 right-4 bg-sage-green text-white rounded-full w-6 h-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</button>
+<!-- Option 4: Chinese -->
+<button class="group relative flex items-start p-6 rounded-lg bg-surface-container-low border-2 border-transparent hover:border-secondary-fixed-dim hover:bg-surface-container-lowest transition-all duration-300 text-left">
+<span aria-hidden="true" class="text-3xl mr-4">🇨🇳</span>
+<div class="flex flex-col">
+<span class="font-headline italic text-xl text-on-surface leading-none mb-1">中文</span>
+<span class="text-on-surface-variant text-sm font-medium">你好，你好吗？</span>
+</div>
+</button>
+<!-- Option 5: Arabic -->
+<button class="group relative flex items-start p-6 rounded-lg bg-surface-container-low border-2 border-transparent hover:border-secondary-fixed-dim hover:bg-surface-container-lowest transition-all duration-300 text-left">
+<span aria-hidden="true" class="text-3xl mr-4">🇸🇦</span>
+<div class="flex flex-col">
+<span class="font-headline italic text-xl text-on-surface leading-none mb-1">العربية</span>
+<span class="text-on-surface-variant text-sm font-medium">مرحبا، كيف حالك؟</span>
+</div>
+</button>
+<!-- Option 6: French -->
+<button class="group relative flex items-start p-6 rounded-lg bg-surface-container-low border-2 border-transparent hover:border-secondary-fixed-dim hover:bg-surface-container-lowest transition-all duration-300 text-left">
+<span aria-hidden="true" class="text-3xl mr-4">🇫🇷</span>
+<div class="flex flex-col">
+<span class="font-headline italic text-xl text-on-surface leading-none mb-1">Français</span>
+<span class="text-on-surface-variant text-sm font-medium">Bonjour, comment allez-vous ?</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<div class="px-8 pb-10 pt-4 flex flex-col items-center gap-4">
+<button class="w-full py-5 rounded-full sage-gradient text-white font-semibold text-lg hover:opacity-90 active:scale-[0.98] transition-all shadow-sm">
+                    Continue
+                </button>
+<p class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">
+                    More languages coming soon
+                </p>
+</div>
+</div>
+</div>
+</body></html>

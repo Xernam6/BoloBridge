@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "outline": "#6e7979",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#bcece4",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d2dcda",
+              "surface-tint": "#00696c",
+              "on-primary-container": "#c0fdff",
+              "on-surface-variant": "#3e4949",
+              "surface-container-low": "#ecf6f4",
+              "on-tertiary-fixed-variant": "#1f4e48",
+              "secondary-fixed": "#ffdad3",
+              "primary-fixed": "#9df0f3",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#a0d0c8",
+              "secondary-fixed-dim": "#ffb4a5",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#721c0d",
+              "outline-variant": "#bec9c9",
+              "on-primary-fixed": "#002021",
+              "secondary": "#a13e2b",
+              "primary": "#006063",
+              "on-primary-fixed-variant": "#004f52",
+              "primary-container": "#1b7a7d",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#dbe5e3",
+              "on-surface": "#141d1c",
+              "surface-container": "#e6f0ee",
+              "surface": "#f1fbf9",
+              "inverse-primary": "#81d4d7",
+              "tertiary-container": "#487670",
+              "secondary-container": "#fc836b",
+              "on-tertiary-fixed": "#00201d",
+              "primary-fixed-dim": "#81d4d7",
+              "on-secondary-fixed": "#3e0400",
+              "on-background": "#141d1c",
+              "inverse-surface": "#293231",
+              "on-secondary-fixed-variant": "#822717",
+              "on-tertiary-container": "#cafbf3",
+              "surface-bright": "#f1fbf9",
+              "background": "#f1fbf9",
+              "surface-variant": "#dbe5e3",
+              "inverse-on-surface": "#e9f3f1",
+              "surface-container-high": "#e0eae8",
+              "tertiary": "#2f5d57"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.watercolor-bg {
+    background: radial-gradient(circle at 20% 30%, rgba(0, 96, 99, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(161, 62, 43, 0.05) 0%, transparent 50%);
+    filter: contrast(120%) brightness(105%)
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBmBvBOphaeUl6XvB8_8DGizhOjbTtWU5l-CejKQ2y_CTagognGW1R2HMO7BSOijB8dkOHHMZBN2Ktfiadr6f7dvsleWEdR3sL060Z7b6-eFjCCff86RV8bhCPiTy_i3dw4fH2a27_AAOHEPm_TzIx_jnGUfYltSdaD8yR99o_isBUz6bxtnyIkX7cK1UoZxWqtC8E1jCNcpL-hnOlqA2UbT1_viAC_hNER62s-7km7SirsY8XxIF2mpUOiOg6jXuxQmP0aI1du6Mcg);
+    z-index: 9999
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-container">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F1FBF9]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(26,46,48,0.06)] flex items-center justify-between px-6 h-16 w-full">
+<div class="text-[#006063] font-['Newsreader'] italic font-bold text-2xl tracking-tight">BoloBridge</div>
+<button class="text-[#006063] hover:opacity-80 transition-opacity duration-300 flex items-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<main class="pt-24 px-6 min-h-screen flex flex-col watercolor-bg">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6">
+<!-- Badge -->
+<div class="flex">
+<span class="bg-primary px-4 py-1 rounded-full text-on-primary text-[0.75rem] font-medium uppercase tracking-widest">
+                    Speech Wellness
+                </span>
+</div>
+<!-- Heading -->
+<h1 class="font-headline font-bold text-[2.75rem] leading-[1.1] text-on-surface">
+                Every Voice Deserves a <span class="italic text-secondary">Bridge</span>
+</h1>
+<!-- Subtext -->
+<p class="text-on-surface/70 text-lg leading-relaxed max-w-[90%]">
+                Science-backed speech support that connects your child to the world through play and story.
+            </p>
+<!-- CTA Group -->
+<div class="flex flex-col gap-3 mt-4">
+<button class="bg-primary-container text-on-primary py-4 px-8 rounded-full font-semibold text-lg hover:scale-[1.02] transition-transform active:scale-95">
+                    Start Free Screening
+                </button>
+<button class="border-2 border-secondary text-secondary py-4 px-8 rounded-full font-semibold text-lg hover:bg-secondary/5 transition-colors active:scale-95">
+                    Learn More
+                </button>
+</div>
+</section>
+<!-- Illustration Area -->
+<section class="mt-12 relative h-64 w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<!-- Decorative watercolor elements simulated with gradients -->
+<div class="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 right-10 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
+</div>
+<img alt="Whimsical children silhouettes and floating speech bubbles illustration" class="w-full h-full object-contain mix-blend-multiply opacity-90" data-alt="Watercolor children silhouettes connected by floating colorful speech bubbles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5qyABZYt8Y_2mxN_l5maKjnlaw0P54xakqJDUSc3q5yYhGETxJk2l6MhB5E0FXUkzmN64RTRzPpiGePC46Ml19yrEiAQTaNeGaa5ldbUMzpm7XP1cAfhdyLXP3GwmfI2JLGUYjmZYcjt73hXd4MlIXkpfjcQFSjJzs4-Qj6JXtzSdMql7zUntMdAvBMpZtjxPk6dLDLVpP9wA13omQ_-bFkrAWT61K9-jrsBFH6Bq4hnqKG12erYXbx0ww9Ul_GG36Si0y2L_ctmv"/>
+</section>
+<!-- Trust Badges -->
+<section class="mt-8 mb-12 flex flex-wrap gap-2 justify-center">
+<div class="bg-[#D4A65C]/20 border border-[#D4A65C]/30 px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="text-[#1A2E30] font-label text-[0.75rem] font-bold uppercase tracking-widest">Free</span>
+</div>
+<div class="bg-[#D4A65C]/20 border border-[#D4A65C]/30 px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="text-[#1A2E30] font-label text-[0.75rem] font-bold uppercase tracking-widest">6 Languages</span>
+</div>
+<div class="bg-[#D4A65C]/20 border border-[#D4A65C]/30 px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="text-[#1A2E30] font-label text-[0.75rem] font-bold uppercase tracking-widest">Research-Based</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#ECF6F4] text-[#006063] font-['Inter'] text-[0.75rem] uppercase tracking-widest w-full py-12 px-6 flex flex-col items-center justify-center gap-6 mt-auto">
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-[#1A2E30]/70 hover:text-[#A13E2B] transition-colors" href="#">About</a>
+<a class="text-[#1A2E30]/70 hover:text-[#A13E2B] transition-colors" href="#">Privacy</a>
+<a class="text-[#1A2E30]/70 hover:text-[#A13E2B] transition-colors" href="#">Terms</a>
+<a class="text-[#1A2E30]/70 hover:text-[#A13E2B] transition-colors" href="#">Contact</a>
+</div>
+<p class="text-[#1A2E30]/50 text-center">© 2024 BoloBridge. The Coastal Collector.</p>
+</footer>
+<!-- Bottom Navigation (Mobile Requirement) -->
+<nav class="fixed bottom-0 w-full bg-[#F1FBF9]/90 backdrop-blur-lg md:hidden flex justify-around items-center py-3 shadow-[0_-10px_30px_rgba(26,46,48,0.04)] z-50">
+<button class="flex flex-col items-center gap-1 text-[#006063] scale-105">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#1A2E30]/60">
+<span class="material-symbols-outlined" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+<span class="text-[10px]">Collections</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#1A2E30]/60">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-[10px]">Journal</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#1A2E30]/60">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px]">Settings</span>
+</button>
+</nav>
+<!-- Spacer for Bottom Nav -->
+<div class="h-20 md:hidden"></div>
+</body></html>

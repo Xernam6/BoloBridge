@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="tt-ribbon1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2956B"/>
+      <stop offset="50%" stop-color="#D4A373"/>
+      <stop offset="100%" stop-color="#D16D6D"/>
+    </linearGradient>
+    <linearGradient id="tt-ribbon2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D16D6D" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#C2956B" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="tt-ribbon3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B7EC8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#C2956B" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="tt-soft"><feGaussianBlur stdDeviation="1.5"/></filter>
+    <filter id="tt-glow">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Subtle background radial -->
+  <radialGradient id="tt-bg" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#FAF8F5"/>
+    <stop offset="100%" stop-color="#F5F1EB"/>
+  </radialGradient>
+  <rect width="800" height="800" fill="url(#tt-bg)"/>
+
+  <!-- Deep background ghost ribbons -->
+  <path d="M150,600 C200,500 100,400 200,350 C300,300 250,200 350,180 C450,160 400,280 500,250 C600,220 550,340 650,300" fill="none" stroke="#C2956B" stroke-width="30" opacity="0.05" filter="url(#tt-soft)" stroke-linecap="round"/>
+  <path d="M600,650 C550,550 650,450 550,400 C450,350 500,250 400,230 C300,210 350,330 250,300 C150,270 200,390 100,360" fill="none" stroke="#D16D6D" stroke-width="25" opacity="0.04" filter="url(#tt-soft)" stroke-linecap="round"/>
+
+  <!-- Main ribbon — thick, fleshy tongue-like ribbon that loops -->
+  <path d="M200,700 C180,620 280,580 260,500 C240,420 340,400 320,340 C300,280 400,260 420,300 C440,340 380,380 420,420 C460,460 540,420 520,360 C500,300 580,280 600,320 C620,360 560,400 580,460 C600,520 520,560 540,620 C560,680 480,700 460,660" fill="none" stroke="url(#tt-ribbon1)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" filter="url(#tt-glow)"/>
+
+  <!-- Secondary ribbon — thinner parallel ribbon showing the fold -->
+  <path d="M230,680 C215,610 300,565 285,495 C270,425 360,385 345,335 C330,285 415,255 440,290 C465,325 400,365 435,405 C470,445 525,410 510,355 C495,300 565,275 585,310 C605,345 545,385 560,445 C575,505 505,540 520,600 C535,660 465,680 445,645" fill="none" stroke="url(#tt-ribbon2)" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Highlight stripe on the main ribbon — gives 3D feel -->
+  <path d="M210,690 C192,615 290,575 272,505 C254,430 348,396 332,340 C316,284 408,258 428,296 C448,334 386,376 424,416 C462,456 534,418 518,360 C502,302 576,278 596,316 C616,354 556,396 574,456 C592,516 516,554 534,614 C552,674 476,694 458,656" fill="none" stroke="#FAF8F5" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
+
+  <!-- Tertiary whisper ribbon — lavender accent -->
+  <path d="M300,750 C280,680 380,640 360,580 C340,520 440,480 460,520 C480,560 420,580 440,620 C460,660 540,640 520,580 C500,520 580,500 600,530" fill="none" stroke="url(#tt-ribbon3)" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Motion trail wisps -->
+  <path d="M180,720 C170,700 190,680 200,690" fill="none" stroke="#C2956B" stroke-width="2" opacity="0.2" stroke-linecap="round"/>
+  <path d="M600,290 C610,270 630,280 620,300" fill="none" stroke="#D16D6D" stroke-width="2" opacity="0.2" stroke-linecap="round"/>
+  <path d="M460,180 C470,160 490,170 480,190" fill="none" stroke="#8B7EC8" stroke-width="1.5" opacity="0.15" stroke-linecap="round"/>
+  <path d="M140,500 C130,480 150,470 160,490" fill="none" stroke="#C2956B" stroke-width="1.5" opacity="0.15" stroke-linecap="round"/>
+  <path d="M650,460 C660,440 680,450 670,470" fill="none" stroke="#D16D6D" stroke-width="1.5" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- Decorative dots / sparkles -->
+  <circle cx="350" cy="200" r="3" fill="#C2956B" opacity="0.25"/>
+  <circle cx="350" cy="200" r="6" fill="none" stroke="#C2956B" stroke-width="0.5" opacity="0.12"/>
+  <circle cx="500" cy="180" r="2" fill="#8B7EC8" opacity="0.2"/>
+  <circle cx="250" cy="350" r="2.5" fill="#D16D6D" opacity="0.18"/>
+  <circle cx="600" cy="500" r="2" fill="#5F9EA0" opacity="0.15"/>
+  <circle cx="180" cy="450" r="1.5" fill="#C2956B" opacity="0.15"/>
+  <circle cx="650" cy="350" r="2" fill="#8B7EC8" opacity="0.12"/>
+  <circle cx="400" cy="700" r="1.8" fill="#D16D6D" opacity="0.15"/>
+  <circle cx="550" cy="700" r="1.5" fill="#5F9EA0" opacity="0.12"/>
+</svg>

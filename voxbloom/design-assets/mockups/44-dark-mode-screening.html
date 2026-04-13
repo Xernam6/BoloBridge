@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Speech Sound Check</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#2c3041",
+              "error-container": "#93000a",
+              "inverse-surface": "#e2e2ea",
+              "on-tertiary-container": "#e67a79",
+              "surface": "#111319",
+              "surface-container-low": "#191b21",
+              "on-error": "#690005",
+              "surface-container-highest": "#33353b",
+              "tertiary-fixed-dim": "#ffb3b0",
+              "on-secondary-container": "#9ebfb7",
+              "surface-container": "#1d1f26",
+              "tertiary": "#ffb3b0",
+              "on-tertiary-fixed-variant": "#7d2a2c",
+              "on-primary-fixed": "#171b2b",
+              "tertiary-container": "#611519",
+              "secondary-container": "#304f48",
+              "background": "#111319",
+              "on-background": "#e2e2ea",
+              "error": "#ffb4ab",
+              "on-tertiary": "#5f1318",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#282a30",
+              "on-primary-container": "#9599ad",
+              "secondary-fixed": "#c7eae1",
+              "on-primary-fixed-variant": "#424658",
+              "outline-variant": "#46464c",
+              "inverse-on-surface": "#2e3037",
+              "on-secondary-fixed-variant": "#2d4c46",
+              "surface-bright": "#373940",
+              "on-tertiary-fixed": "#410006",
+              "primary": "#c2c5db",
+              "secondary": "#accec5",
+              "inverse-primary": "#5a5d70",
+              "surface-tint": "#c2c5db",
+              "secondary-fixed-dim": "#accec5",
+              "outline": "#909097",
+              "tertiary-fixed": "#ffdad8",
+              "on-secondary-fixed": "#00201b",
+              "primary-container": "#2d3142",
+              "surface-container-lowest": "#0c0e14",
+              "primary-fixed": "#dee1f8",
+              "surface-dim": "#111319",
+              "primary-fixed-dim": "#c2c5db",
+              "on-secondary": "#163630",
+              "surface-variant": "#33353b",
+              "on-surface": "#e2e2ea",
+              "on-surface-variant": "#c7c6cd"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuABIZpB1yoWRU4twpTxd4O8Fo08tdryqkKMZiIt1YmQvFibLslSd8vS7K2eKzRnaMn4UPMMljyAPuzx7hhhFp95L0Nao5P8gwknOzu31L-iTQX43uQRoHOG9wQOc-QSxz9xsA--_RCOp7RdjyVqeBl_WjDPPZmcADGj7ODGYHHhVAZkjy8rqmujVeja88GrdxsO_ShLpnjWzBOzcfFkAwpWbS3CIsExsOLQOD4-uuOwTJe1poYb0wa6VuDleiVFBFIaJIJ-4K98qNWc);
+    opacity: 0.03
+    }
+.archival-gradient {
+    background: radial-gradient(circle at top right, rgba(172, 206, 197, 0.15), transparent), linear-gradient(to bottom, #2d3142, #111319)
+    }
+.warm-glow {
+    box-shadow: 0 0 40px rgba(255, 179, 176, 0.1)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-tertiary/30">
+<div class="grain-overlay"></div>
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#2D3142] dark:bg-[#111319]/70 backdrop-blur-xl">
+<div class="text-2xl font-serif italic text-[#E2E2EA]">BoloBridge</div>
+<div class="flex items-center gap-6">
+<span class="text-[#C2C5DB] font-bold cursor-pointer transition-colors duration-300 hover:text-[#FF7F50]">Screening</span>
+<span class="material-symbols-outlined text-[#C2C5DB] cursor-pointer hover:text-[#FF7F50] transition-colors duration-300" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-24 pb-20 px-4 md:px-12 max-w-[1440px] mx-auto overflow-x-hidden">
+<!-- SECTION 1: SCREENING INTRO -->
+<section class="archival-gradient rounded-xl p-8 md:p-16 mb-16 relative overflow-hidden">
+<!-- Background Glow -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-tertiary/10 rounded-full blur-[100px]"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center mb-8 warm-glow border border-primary/10">
+<span class="material-symbols-outlined text-4xl text-tertiary" data-icon="stethoscope" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline italic text-on-surface mb-12 tracking-tight">Speech Sound Check</h1>
+<!-- Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-12">
+<!-- Card 1 -->
+<div class="bg-surface-dim p-8 rounded-xl flex flex-col items-start text-left border-l-2 border-secondary/20 transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="smart_toy">smart_toy</span>
+<h3 class="text-xl font-headline italic mb-2">AI-Powered</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Smart analysis adapts to each sound as your child speaks.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-dim p-8 rounded-xl flex flex-col items-start text-left border-l-2 border-secondary/20 transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="cake">cake</span>
+<h3 class="text-xl font-headline italic mb-2">Age-Appropriate</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Calibrated to developmental norms for every age group.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-dim p-8 rounded-xl flex flex-col items-start text-left border-l-2 border-secondary/20 transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="menu_book">menu_book</span>
+<h3 class="text-xl font-headline italic mb-2">Research-Based</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Grounded in ASHA and McLeod &amp; Crowe clinical data.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-dim p-8 rounded-xl flex flex-col items-start text-left border-l-2 border-secondary/20 transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="info">info</span>
+<h3 class="text-xl font-headline italic mb-2">Not a Diagnosis</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">A helpful guide, not a substitute for clinical assessment.</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="bg-secondary-container text-on-secondary-container px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 active:scale-95 shadow-lg shadow-secondary/5 border border-secondary/20">
+                    Begin Screening
+                </button>
+</div>
+<!-- Disclaimer Bar -->
+<div class="mt-16 w-full bg-surface-container-low p-4 rounded-lg border-l-4 border-tertiary flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="priority_high">priority_high</span>
+<p class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest font-semibold">Important: This screening is an educational tool and does not provide a formal medical diagnosis.</p>
+</div>
+</section>
+<!-- SECTION 2: PHONEME CARD (Active State) -->
+<section class="max-w-4xl mx-auto">
+<div class="bg-surface-dim rounded-xl p-8 md:p-12 border border-outline-variant/10 shadow-2xl relative">
+<!-- Progress Header -->
+<div class="flex justify-between items-center mb-12">
+<h2 class="text-3xl font-headline text-on-surface">Early Sounds</h2>
+<div class="flex flex-col items-end gap-2">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Sound 3 of 8</span>
+<div class="w-48 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[37%] rounded-full"></div>
+</div>
+<span class="text-[10px] text-secondary font-bold">37% COMPLETE</span>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<div class="flex flex-col items-center py-12">
+<div class="text-9xl mb-8 transform transition-transform hover:scale-110 duration-500 cursor-default select-none">
+                        🐻
+                    </div>
+<div class="text-center mb-12">
+<div class="inline-flex items-center px-4 py-1 bg-on-tertiary-container/10 border border-on-tertiary-container/20 rounded-full mb-4">
+<span class="text-on-tertiary-container text-sm font-bold tracking-widest">/b/</span>
+</div>
+<h2 class="text-6xl font-headline italic text-on-surface mb-4">Bear</h2>
+<p class="text-2xl font-headline italic text-on-surface/60">"The bear likes honey"</p>
+</div>
+<!-- Mic Interaction -->
+<div class="flex flex-col items-center gap-6">
+<button class="group relative w-24 h-24 rounded-full bg-secondary flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_30px_rgba(172,206,197,0.4)] active:scale-90">
+<span class="material-symbols-outlined text-4xl text-on-secondary" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+<!-- Animated Pulse Effect Simulation -->
+<div class="absolute inset-0 rounded-full border-2 border-secondary animate-ping opacity-20"></div>
+</button>
+<span class="text-xs font-label uppercase tracking-tighter text-on-surface-variant font-bold">Tap the mic to begin</span>
+</div>
+</div>
+<!-- Decorative Archival Element -->
+<div class="absolute bottom-4 right-8 opacity-10 pointer-events-none">
+<div class="text-[8rem] font-headline italic select-none">B</div>
+</div>
+</div>
+<!-- Contextual Navigation -->
+<div class="flex justify-between mt-8 px-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors font-label uppercase text-xs font-bold tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                    Previous
+                </button>
+<button class="flex items-center gap-2 text-secondary hover:text-on-secondary-container transition-colors font-label uppercase text-xs font-bold tracking-widest">
+                    Skip Sound
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer Anchor -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#111319] border-t border-[#C2C5DB]/10">
+<div class="text-xl font-serif italic text-[#E2E2EA]">BoloBridge</div>
+<div class="flex flex-col md:flex-row items-center gap-8 text-sm text-[#C2C5DB]/50">
+<span class="hover:text-[#FF7F50] transition-opacity cursor-pointer">Privacy Policy</span>
+<span class="hover:text-[#FF7F50] transition-opacity cursor-pointer">Terms of Service</span>
+<span class="hover:text-[#FF7F50] transition-opacity cursor-pointer">Support Archive</span>
+</div>
+<div class="text-xs text-[#C2C5DB]/30 font-label">© 2024 BoloBridge. The Digital Curator.</div>
+</footer>
+</body></html>

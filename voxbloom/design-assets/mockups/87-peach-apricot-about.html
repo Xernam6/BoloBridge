@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About BoloBridge | Every Child's Voice Matters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#86736a",
+              "surface-container-high": "#f0e6e0",
+              "primary-fixed-dim": "#ffb68d",
+              "on-surface-variant": "#53433b",
+              "secondary-fixed-dim": "#ffb692",
+              "surface-container-highest": "#eae1da",
+              "on-secondary-fixed": "#341000",
+              "tertiary-fixed": "#ffdbcc",
+              "on-tertiary-fixed": "#351000",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1f1b17",
+              "surface-container": "#f6ece5",
+              "tertiary-fixed-dim": "#ffb695",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#6e381c",
+              "secondary-container": "#ffb28c",
+              "secondary-fixed": "#ffdbcb",
+              "surface": "#fff8f4",
+              "primary-fixed": "#ffdbc9",
+              "on-error-container": "#93000a",
+              "primary-container": "#e19162",
+              "on-tertiary-fixed-variant": "#733515",
+              "error-container": "#ffdad6",
+              "on-tertiary-container": "#632909",
+              "primary": "#8e4d24",
+              "surface-container-low": "#fcf2eb",
+              "inverse-surface": "#34302b",
+              "on-primary-fixed": "#331200",
+              "inverse-primary": "#ffb68d",
+              "on-background": "#1f1b17",
+              "secondary": "#8a4f31",
+              "surface-tint": "#8e4d24",
+              "surface-bright": "#fff8f4",
+              "on-secondary-container": "#7a4224",
+              "surface-dim": "#e2d8d2",
+              "tertiary": "#904c2a",
+              "inverse-on-surface": "#f9efe8",
+              "on-error": "#ffffff",
+              "surface-variant": "#eae1da",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#e48f68",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#612a03",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#71370f",
+              "outline-variant": "#d9c2b7",
+              "background": "#fff8f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff8f4;
+            color: #1f1b17;
+            font-family: 'Inter', sans-serif;
+        }
+        .film-grain {
+            position: relative;
+        }
+        .film-grain::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+        }
+        .editorial-asymmetry {
+            margin-left: clamp(1rem, 5vw, 4rem);
+            margin-right: clamp(1rem, 8vw, 6rem);
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff8f4]/80 backdrop-blur-md no-border bg-[#f6ece5]/30">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+<div class="font-['Newsreader'] italic text-2xl text-[#3B2419]">BoloBridge</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#8a4f31] font-['Inter'] font-medium hover:text-[#e19162] transition-colors duration-300" href="#">Journey</a>
+<a class="text-[#8a4f31] font-['Inter'] font-medium hover:text-[#e19162] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#8a4f31] font-['Inter'] font-medium hover:text-[#e19162] transition-colors duration-300" href="#">Research</a>
+<a class="text-[#8e4d24] font-semibold border-b-2 border-[#e19162] pb-1 hover:text-[#e19162] transition-colors duration-300" href="#">About</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-medium shadow-sm Active:opacity-80 Active:scale-95 transition-all">
+                Join Us
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="film-grain min-h-[716px] flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-[#ffdbc9]/40 to-surface">
+<span class="label-sm uppercase tracking-[0.15em] text-secondary font-semibold mb-6">Our Shared Purpose</span>
+<h1 class="font-headline italic text-6xl md:text-8xl text-[#3B2419] tracking-tight max-w-5xl leading-[1.1]">
+                Every Child's Voice <span class="text-[#e19162]">Matters</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant mt-8 max-w-2xl leading-relaxed">
+                Nurturing digital bridges between thought and expression through the warmth of sun-drenched communication tools.
+            </p>
+</section>
+<!-- What is BoloBridge Section -->
+<section class="py-24 editorial-asymmetry">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 bg-surface-container-low p-12 md:p-20 rounded-[2.75rem] relative overflow-hidden">
+<div class="absolute top-8 right-8 text-[#e19162]">
+<span class="material-symbols-outlined text-4xl" data-icon="sparkle">spark</span>
+</div>
+<h2 class="font-headline italic text-4xl text-[#3B2419] mb-8">What is BoloBridge?</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                        BoloBridge is an editorial approach to augmentative communication. We believe technology should feel like a warm afternoon in a Mediterranean orchard—organic, accessible, and deeply human. 
+                        <br/><br/>
+                        Our platform transforms complex linguistic needs into a curated, tactile journey, allowing every child to find the words that resonate with their unique perspective of the world.
+                    </p>
+<div class="flex items-center gap-4">
+<span class="px-6 py-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-sm font-semibold tracking-wide">AUTHENTIC VOICE</span>
+<span class="px-6 py-2 bg-primary-fixed text-on-primary-fixed rounded-full text-sm font-semibold tracking-wide">NURTURING DESIGN</span>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+<img alt="A young child peacefully reading a book in soft sunlight" class="w-full h-full object-cover" data-alt="Soft peach watercolor illustration of a child reading" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPDW7LclJzR9krH3ePEZRzqo-byyBjl7_jPnVyz2iF38lwlmwMvF7ti9G12gywGPnGq88Q_sb7hwGs7MzID4SIiVNJPWmi5Qi9DY7XVke4ojBYRwQdfD2IoC_MI5BBbuYh_IDdFWLlEPz2G0yCUc-XmBALsStas6ZZDvmQEJwQwW6T12ebBH1CJMAsA-Nk0cd-Kzkl7Yl_tXvOIzipNLydLV7LN0CaWhrCHyl9pr0UcZE14V1a4XoQsTY0fpn5xhT3rULnAQc0jpeG"/>
+</div>
+<div class="absolute -bottom-8 -left-8 w-48 h-48 bg-[#e19162]/10 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Mission Cards -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline italic text-4xl text-[#3B2419]">The Pillars of Connection</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Accessible -->
+<div class="bg-surface-container p-10 rounded-[2rem] hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-14 h-14 bg-primary-container/20 rounded-2xl flex items-center justify-center text-[#e19162] mb-8">
+<span class="material-symbols-outlined text-3xl" data-icon="accessibility_new">accessibility_new</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-[#3B2419]">Accessible</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        Eliminating barriers to entry with intuitive, sun-soaked interfaces that feel like home from the first touch.
+                    </p>
+</div>
+<!-- Inclusive -->
+<div class="bg-surface-container p-10 rounded-[2rem] hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-14 h-14 bg-[#F4A883]/20 rounded-2xl flex items-center justify-center text-[#F4A883] mb-8">
+<span class="material-symbols-outlined text-3xl" data-icon="diversity_1">diversity_1</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-[#3B2419]">Inclusive</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        Designed for every spectrum of ability, ensuring no child is left outside the conversation of modern life.
+                    </p>
+</div>
+<!-- Empowering -->
+<div class="bg-surface-container p-10 rounded-[2rem] hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-14 h-14 bg-[#F7C59F]/20 rounded-2xl flex items-center justify-center text-[#F7C59F] mb-8">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-[#3B2419]">Empowering</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        Turning communication into a joyful act of creation, giving children agency over their own digital narrative.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Developer Section -->
+<section class="py-24 editorial-asymmetry">
+<div class="bg-[#A65D3A] rounded-[3rem] overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+<div class="p-12 md:p-20 flex flex-col justify-center">
+<span class="text-primary-fixed/60 font-semibold tracking-widest text-xs uppercase mb-6">From the Founder</span>
+<blockquote class="font-headline italic text-3xl md:text-4xl text-white leading-snug mb-8">
+                        "BoloBridge started as a quiet dream to make the digital landscape as warm and welcoming as a childhood garden."
+                    </blockquote>
+<div class="flex items-center gap-4">
+<div class="h-px w-12 bg-primary-fixed/40"></div>
+<p class="text-primary-fixed font-medium">Elena Vance, Lead Architect</p>
+</div>
+</div>
+<div class="relative h-[400px] lg:h-auto">
+<img alt="Warm portrait of a woman looking thoughtfully ahead" class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="Warm abstract portrait of the developer in golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCrDqlmPKS_hNhW7oeSEUtqQEdhTas8a0ces1fHO9kBvqLIGeoSFWXXF4bNn5HxGJgT5ooJ7NPE8Y9Zs7njmLArSyuba3stynv-JLza_oIRrffS0sxhgXKp_Xjgcj-ocUKd6vMOcVkJgqCPWoYz50QYMPTAXDkwP3xioEAvJirGQuibXS9QtrdqZ-hTKzDm1t1E03_fZUrP09vsDyLFGLvKaiZWJUdkQk8Ha1qvDgEleu-QEMdN7tOKGeQiZ4VneuZw5sF3LURG7Ct"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#A65D3A] via-transparent to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Research Foundations -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline italic text-4xl text-[#3B2419] mb-6">Research Foundations</h2>
+<p class="font-body text-on-surface-variant">Our methodology is grounded in decades of linguistic research and developmental psychology, translated into a tactile interface.</p>
+</div>
+<button class="text-primary font-semibold border-b-2 border-primary/20 pb-1 hover:border-primary transition-all">View All Publications</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group border-l-4 border-[#A65D3A] pl-8 py-4">
+<span class="text-xs font-bold text-secondary uppercase tracking-tighter">Journal of Pediatric Speech, 2023</span>
+<h4 class="font-headline text-2xl text-[#3B2419] my-3 group-hover:text-primary transition-colors">Visual Anchors in Non-Verbal Communication Environments</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed italic">
+                        "The integration of soft tonal palettes significantly reduces cognitive fatigue in children with ASD during extended communication sessions..."
+                    </p>
+</div>
+<div class="group border-l-4 border-[#A65D3A] pl-8 py-4">
+<span class="text-xs font-bold text-secondary uppercase tracking-tighter">BoloBridge Lab Report, 2024</span>
+<h4 class="font-headline text-2xl text-[#3B2419] my-3 group-hover:text-primary transition-colors">Tactile Feedback Loops in Editorial-First Interfaces</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed italic">
+                        "Moving away from high-contrast 'safety' palettes toward organic apricot and peach tones fostered a higher sense of emotional security..."
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[2.75rem] bg-[#f6ece5] dark:bg-stone-900 mt-20 tonal-shift">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<span class="font-['Newsreader'] italic text-3xl text-[#3B2419] mb-4 block">BoloBridge</span>
+<p class="font-['Inter'] text-sm leading-relaxed text-[#8a4f31]">© 2024 BoloBridge. Cultivating connection through the sun-drenched editorial lens.</p>
+</div>
+<div>
+<h4 class="font-bold text-[#8e4d24] mb-6">Explore</h4>
+<ul class="space-y-4 font-['Inter'] text-sm">
+<li><a class="text-[#8a4f31] hover:text-[#e19162] transition-all underline-offset-4" href="#">Mission</a></li>
+<li><a class="text-[#8a4f31] hover:text-[#e19162] transition-all underline-offset-4" href="#">Our Story</a></li>
+<li><a class="text-[#8a4f31] hover:text-[#e19162] transition-all underline-offset-4" href="#">Research Lab</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#8e4d24] mb-6">Legal</h4>
+<ul class="space-y-4 font-['Inter'] text-sm">
+<li><a class="text-[#8a4f31] hover:text-[#e19162] transition-all underline-offset-4" href="#">Privacy</a></li>
+<li><a class="text-[#8a4f31] hover:text-[#e19162] transition-all underline-offset-4" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#8e4d24] mb-6">Connect</h4>
+<a class="text-[#8a4f31] hover:text-[#e19162] font-['Inter'] text-sm transition-all" href="mailto:hello@bolobridge.com">Contact Us</a>
+<div class="flex gap-4 mt-6">
+<span class="material-symbols-outlined text-[#8a4f31] cursor-pointer hover:text-[#e19162]" data-icon="share">share</span>
+<span class="material-symbols-outlined text-[#8a4f31] cursor-pointer hover:text-[#e19162]" data-icon="favorite">favorite</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

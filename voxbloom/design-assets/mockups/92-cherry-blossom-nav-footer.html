@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge Showcase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#efe6e8",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#c6ecc7",
+              "on-primary-fixed-variant": "#792b46",
+              "primary-fixed-dim": "#ffb1c5",
+              "surface-container-low": "#fbf1f3",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#5b7d5e",
+              "surface-container-highest": "#eae0e2",
+              "on-surface": "#1f1a1c",
+              "surface-tint": "#96425d",
+              "surface-bright": "#fff8f8",
+              "on-primary-container": "#fffbff",
+              "inverse-surface": "#342f31",
+              "on-primary-fixed": "#3f001b",
+              "surface-variant": "#eae0e2",
+              "on-background": "#1f1a1c",
+              "on-secondary-fixed-variant": "#643a46",
+              "tertiary": "#426447",
+              "secondary-fixed-dim": "#f1b7c5",
+              "on-surface-variant": "#534246",
+              "primary": "#93405b",
+              "outline-variant": "#d8c1c5",
+              "tertiary-fixed-dim": "#abd0ac",
+              "on-tertiary-fixed-variant": "#2e4e33",
+              "on-secondary-container": "#7a4d59",
+              "on-secondary-fixed": "#32101b",
+              "secondary-container": "#fdc2d0",
+              "secondary": "#7f515e",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#ffd9e1",
+              "outline": "#867276",
+              "on-tertiary-container": "#f7fff3",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#e1d8da",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#ffb1c5",
+              "primary-container": "#b15873",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f8eef0",
+              "surface": "#fff8f8",
+              "primary-fixed": "#ffd9e1",
+              "on-tertiary-fixed": "#01210a",
+              "surface-container": "#f5ebed",
+              "background": "#fff8f8"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grainy {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAEOuzIVGJXcLk72gRiaWRDafrN6Gc1xVZxZtRuYlAlOpGYEJJLeglc1H6fheAmeTClNbJtmbDo3KG3N1E6onWaS7_83pwnjfS5tR16mHtD93CwFyncCeSXt87v9njD7pOe2T7sx5Z542UYqi1uhV7x8vHXvxxptSTTwcfanwyd6JVGmrT8Ih3jnxZysyaAbfOhNes07GvtAEAJnqTwZIEtWaraXpv00tWkZsQlcMODOyEbQYBDEqSbDKDqHWQwkgOFHVSxU1SDLNEL)
+    }
+.watercolor-branch {
+    mask-image: linear-gradient(to bottom, black, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-[#FFF8F8]/80 dark:bg-[#1F1A1C]/80 backdrop-blur-xl shadow-[0_32px_32px_rgba(31,26,28,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-0 text-2xl font-['Newsreader'] italic">
+<span class="text-[#3A1A2B] dark:text-[#FDC2D0]">Bolo</span><span class="text-[#D1728E]">Bridge</span>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-10">
+<!-- Festivals is active for this showcase -->
+<a class="text-[#D1728E] border-b-2 border-[#D1728E] pb-1 relative after:content-['🌸'] after:absolute after:-right-4 after:text-[10px] font-medium text-sm tracking-wide" href="#">Festivals</a>
+<a class="text-[#3A1A2B]/60 dark:text-[#FDC2D0]/60 hover:text-[#3A1A2B] transition-colors duration-300 font-medium text-sm tracking-wide" href="#">Artisans</a>
+<a class="text-[#3A1A2B]/60 dark:text-[#FDC2D0]/60 hover:text-[#3A1A2B] transition-colors duration-300 font-medium text-sm tracking-wide" href="#">Workshops</a>
+<a class="text-[#3A1A2B]/60 dark:text-[#FDC2D0]/60 hover:text-[#3A1A2B] transition-colors duration-300 font-medium text-sm tracking-wide" href="#">About</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<button class="text-[#93405B] hover:opacity-80 transition-opacity duration-300 flex items-center">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="text-[#93405B] hover:opacity-80 transition-opacity duration-300 flex items-center">
+<span class="material-symbols-outlined" data-icon="motion_photos_on">motion_photos_on</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-[#D1728E] p-0.5 overflow-hidden">
+<img alt="User profile with cherry border" class="h-full w-full object-cover rounded-full" data-alt="Close up portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ8bxuWRMtPMJIxs7W4j4FfrHxlPVdjXT_vzLyhISSHkzkDemC4sujU4YWK7BqKjju_9PSYOXB42Xk3ORf0C6LYpEUOCq2WI4T6vCDHGnNQlchp8WsMurhPRWv6UYEfqIPn-NYewBZvVitaSw44PbI9PlEHDK9V40PdPy_yMo6VnC3HLlaIKK6ggHTLSirYoc_pL-zALuM43avbhDWup5ifZDFLt6xmPw5hvcWbHxRxwxtaTqi0115ikXgG1dsiOpGObDOMtX1RN2I"/>
+</div>
+</div>
+</div>
+<!-- Decorative subtle gradient line at bottom -->
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#D1728E]/20 to-transparent"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-20 min-h-[716px] flex flex-col items-center justify-center max-w-screen-2xl mx-auto px-8">
+<div class="text-center space-y-8">
+<h1 class="font-headline italic text-7xl md:text-9xl text-primary/20 select-none">
+                Coming Soon
+            </h1>
+<p class="font-headline italic text-2xl text-on-surface-variant max-w-xl mx-auto leading-relaxed opacity-60">
+                A digital silk scroll of artistry and heritage is currently being woven.
+            </p>
+<!-- Contextual Visual Element -->
+<div class="relative w-full max-w-4xl h-[400px] mt-12 rounded-xl overflow-hidden shadow-sm bg-surface-container-low group">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary-container/20 to-transparent opacity-50"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-6xl text-primary/30" style="font-variation-settings: 'FILL' 1;">filter_vintage</span>
+<div class="h-[2px] w-12 bg-outline-variant"></div>
+<p class="text-sm font-label tracking-widest uppercase text-on-surface-variant/40">The Floating World Experience</p>
+</div>
+</div>
+<!-- Abstract "painted" element -->
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -top-20 -left-20 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full pt-16 pb-8 bg-[#3A1A2B] dark:bg-[#1F1A1C] grainy relative overflow-hidden">
+<!-- Watercolor Cherry Blossom Branch Illustrations (CSS Corner Accents) -->
+<div class="absolute top-0 right-0 w-64 h-64 pointer-events-none opacity-20 rotate-12 translate-x-12 -translate-y-12">
+<img alt="watercolor cherry branch top" class="w-full h-full object-contain watercolor-branch" data-alt="Artistic cherry blossom branch with pink flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ1hYXlq3qmCYOd23dJPOv3635As17-4mUfdw8uiFcDkJVt4Q35d7Cpk_u3u-71DLCcAkIgxCjIoAyJQCvFjiMdoSn6lJiLTkHy_7U8ZIlh5OWJD0EqXYn51uq9AAGdAd723PDWBhrDN7v6YwfT1pEociIjLIB_Gc8ToMCGtm6e4p1riOc3nNz0JJRcxu439elcgoYwh4h2jx5grnTZuBu3eOZ_P67lIslzmDnRXxX6alWDqevntg6BZNO9l5_GJ2HaPfVY3MAIOWg"/>
+</div>
+<div class="absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-20 -rotate-45 -translate-x-8 translate-y-8">
+<img alt="watercolor cherry branch bottom" class="w-full h-full object-contain watercolor-branch" data-alt="Artistic cherry blossom branch with pink flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHB_U5RxAUNF1GFGN6R5eQsCx6k0GrASJ2xB28ImCIPxtdoFZu69u6cIsE4SNnsoQK8fNk6qhGuUOWcEn0KH0xWlbThPKs3S_Bdkf58tMNnyX21jzwqBcqFq5kbR3HDZLpgZGapvYmr32oUDIyAqpJE7WDm4bk1YwkNsg_9daNuqHolBh7wGNZcODvYRxVR4ZQR_KU9qeD3cFkUDl5bmh1AvQfrU0de1yZQ0YZOjPrusSeO96Vd5RJPc-Lt-Jf_hU-gnQBstqkHPzb"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-screen-2xl mx-auto border-t border-[#D1728E]/20 pt-16 relative z-10">
+<!-- Brand Column -->
+<div class="flex flex-col">
+<div class="text-3xl font-['Newsreader'] text-[#F2B8C6] italic mb-6">BoloBridge</div>
+<p class="text-[#F2B8C6]/50 text-sm leading-relaxed max-w-xs font-label">
+                    Bridging the gap between traditional craftsmanship and the modern ephemeral lifestyle.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[#F2B8C6] font-bold text-sm tracking-widest uppercase mb-2">Explore</h4>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Festivals</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Artists</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Galleries</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Journal</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[#F2B8C6] font-bold text-sm tracking-widest uppercase mb-2">Our Story</h4>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">The Philosophy</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Sustainability</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Press</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Careers</a>
+</div>
+<!-- Links Column 3 -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[#F2B8C6] font-bold text-sm tracking-widest uppercase mb-2">Community</h4>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Events</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Memberships</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Support</a>
+<a class="text-[#F2B8C6]/50 hover:text-[#F2B8C6] transition-colors hover:translate-x-1 transition-transform duration-300 font-label text-sm" href="#">Privacy</a>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="max-w-screen-2xl mx-auto px-12 mt-20 flex flex-col items-center">
+<!-- Gradient Divider -->
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#D1728E]/30 to-transparent mb-8"></div>
+<div class="text-[#F2B8C6]/25 text-xs font-['Inter'] tracking-widest uppercase">
+                © 2024 BoloBridge. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

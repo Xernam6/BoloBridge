@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge Help Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#1b1c1a",
+              "on-surface-variant": "#414845",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#adcec1",
+              "surface-dim": "#dbdad7",
+              "surface-variant": "#e4e2df",
+              "primary-fixed": "#c9eadc",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#2b1700",
+              "tertiary-fixed": "#e5deff",
+              "primary-container": "#5d7b70",
+              "outline": "#727975",
+              "secondary-fixed-dim": "#ecbe8e",
+              "surface-tint": "#47645a",
+              "inverse-primary": "#adcec1",
+              "primary": "#456258",
+              "secondary": "#7a5830",
+              "on-secondary-fixed-variant": "#5f401a",
+              "inverse-on-surface": "#f2f0ed",
+              "outline-variant": "#c1c8c4",
+              "on-tertiary-fixed": "#1c1638",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#ffddba",
+              "on-primary-fixed-variant": "#2f4c43",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#f6fff9",
+              "surface-container-high": "#eae8e5",
+              "on-background": "#1b1c1a",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#022018",
+              "on-tertiary-fixed-variant": "#484266",
+              "background": "#fbf9f6",
+              "secondary-container": "#fecf9d",
+              "tertiary-container": "#767097",
+              "tertiary": "#5d577d",
+              "surface-container-highest": "#e4e2df",
+              "on-secondary-container": "#79572f",
+              "surface-container": "#efeeeb",
+              "tertiary-fixed-dim": "#c9c1ed",
+              "surface-container-low": "#f5f3f0",
+              "surface": "#fbf9f6",
+              "on-tertiary-container": "#fffcff",
+              "on-error": "#ffffff",
+              "inverse-surface": "#30312f",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDLTTxIePyz0ZWVuZrCeIgbC_3UwI4zsrzdye1RmCiYTldJUkFaOgswxag16HAsn-RpcRZb193G2O2zZJPsnfwlnx_1bD0bvzVwoyQX9xgp1V-3_TfcPTTXQJJ9VLvoqZUewFgB0GESfLEJI3eSlaG-erRVXPr02w9p6J5hRUrEXDH5USuLLymFKi0r02EsoyrHlbRQbqHiDOXPjM5LNdhgV9_xeJVm-Qx9AXwGfJD2B0uEnppgue9LFsojygsf15yYNaOgVWVNXoFC)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-fixed">
+<div class="film-grain"></div>
+<!-- Navigation -->
+<nav class="bg-[#fbf9f6]/80 dark:bg-stone-900/80 backdrop-blur-md fixed top-0 z-50 w-full transition-all border-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic font-bold text-[#456258] dark:text-[#5d7b70]">BoloBridge</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 font-sans hover:text-[#5d7b70] transition-colors" href="#">Articles</a>
+<a class="text-stone-600 dark:text-stone-400 font-sans hover:text-[#5d7b70] transition-colors" href="#">Categories</a>
+<a class="text-stone-600 dark:text-stone-400 font-sans hover:text-[#5d7b70] transition-colors" href="#">Community</a>
+<a class="text-stone-600 dark:text-stone-400 font-sans hover:text-[#5d7b70] transition-colors" href="#">Contact</a>
+<span class="material-symbols-outlined text-stone-600 cursor-pointer">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<header class="relative overflow-hidden bg-gradient-to-br from-surface to-secondary-container/20 pt-32 pb-24 px-8 text-center">
+<div class="max-w-4xl mx-auto">
+<h1 class="font-headline italic text-5xl md:text-7xl mb-8 tracking-tight text-on-surface">How Can We Help?</h1>
+<div class="relative max-w-2xl mx-auto">
+<div class="flex items-center bg-surface-container-lowest rounded-full p-2 shadow-sm focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<span class="material-symbols-outlined ml-4 text-outline-variant">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 px-4 text-lg placeholder:text-stone-400" placeholder="Search for articles, guides, or keywords..." type="text"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-medium hover:opacity-90 transition-all">Search</button>
+</div>
+</div>
+</div>
+</header>
+<!-- FAQ Content -->
+<section class="max-w-3xl mx-auto px-8 py-20">
+<!-- Category: Getting Started -->
+<div class="mb-16">
+<h2 class="font-headline italic text-3xl text-primary mb-8 border-b border-outline-variant/20 pb-4">Getting Started</h2>
+<div class="space-y-4">
+<!-- Expanded Question -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left group">
+<span class="font-medium text-lg text-on-surface">What is BoloBridge?</span>
+<span class="material-symbols-outlined text-outline-variant transition-transform rotate-180">expand_more</span>
+</button>
+<div class="px-6 pb-6 bg-surface-container-low transition-all">
+<div class="prose prose-stone max-w-none text-on-surface-variant leading-relaxed">
+<p>BoloBridge is a digital bridge for early childhood speech development. We combine professional-grade screening tools with engaging, game-based practice to help children find their voice in a safe, supportive digital archive of learning.</p>
+<p class="mt-2">Think of it as a personal speech laboratory that feels like playtime.</p>
+</div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">How do I create my child's profile?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<!-- Row 3 -->
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Is BoloBridge free?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Category: Speech Screening -->
+<div class="mb-16">
+<h2 class="font-headline italic text-3xl text-secondary mb-8 border-b border-outline-variant/20 pb-4">Speech Screening</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">How accurate is the screening?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">What do the results mean?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Should I share results with my child's doctor?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Category: Games & Practice -->
+<div class="mb-16">
+<h2 class="font-headline italic text-3xl text-primary-container mb-8 border-b border-outline-variant/20 pb-4">Games &amp; Practice</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">How much should my child practice?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Can I skip games?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Why does it need microphone access?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Category: Privacy & Data -->
+<div class="mb-16">
+<h2 class="font-headline italic text-3xl text-tertiary mb-8 border-b border-outline-variant/20 pb-4">Privacy &amp; Data</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Is my child's data safe?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Can I delete my data?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl group transition-all hover:bg-surface-container-low">
+<button class="w-full flex justify-between items-center px-6 py-5 text-left">
+<span class="font-medium text-lg text-on-surface">Does BoloBridge work offline?</span>
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contact Card -->
+<div class="mt-32 p-12 bg-secondary-container/30 rounded-3xl text-center border border-white/40 backdrop-blur-sm">
+<h3 class="font-headline italic text-3xl mb-4">Still need help?</h3>
+<p class="text-on-surface-variant mb-8 max-w-md mx-auto">Our team of specialists is ready to guide you through any technical or clinical questions.</p>
+<a class="inline-flex items-center gap-2 font-headline italic text-xl text-primary hover:text-primary-container transition-colors group" href="mailto:support@bolobridge.com">
+                    Contact us at support@bolobridge.com
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fbf9f6] dark:bg-stone-950 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-stone-200/20 mt-20">
+<div class="font-serif italic text-lg text-stone-800 dark:text-stone-200">BoloBridge</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-sans text-xs tracking-wide uppercase text-stone-500 hover:text-[#456258] transition-colors" href="#">Privacy Policy</a>
+<a class="font-sans text-xs tracking-wide uppercase text-stone-500 hover:text-[#456258] transition-colors" href="#">Terms of Service</a>
+<a class="font-sans text-xs tracking-wide uppercase text-stone-500 hover:text-[#456258] transition-colors" href="#">Cookie Settings</a>
+<a class="font-sans text-xs tracking-wide uppercase text-stone-500 hover:text-[#456258] transition-colors" href="#">Accessibility</a>
+</div>
+<div class="text-stone-500 font-sans text-xs uppercase tracking-widest">© 2024 BoloBridge Digital Archive. All rights preserved.</div>
+</footer>
+</body></html>

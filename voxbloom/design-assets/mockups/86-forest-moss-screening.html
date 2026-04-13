@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary-fixed": "#b8f0c4",
+          "inverse-primary": "#9dd3aa",
+          "surface-variant": "#e5e2dd",
+          "secondary-fixed": "#c6eeb5",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#2e4f24",
+          "surface-bright": "#fcf9f4",
+          "surface-tint": "#376947",
+          "on-primary-fixed-variant": "#1d5031",
+          "tertiary-fixed": "#caedb8",
+          "background": "#fcf9f4",
+          "on-tertiary-fixed-variant": "#314e27",
+          "surface-dim": "#dcdad5",
+          "on-secondary-container": "#4b6d40",
+          "on-surface-variant": "#414941",
+          "on-tertiary-container": "#b2d4a2",
+          "primary-container": "#2d5f3e",
+          "surface-container-low": "#f6f3ee",
+          "tertiary": "#29451f",
+          "primary-fixed-dim": "#9dd3aa",
+          "surface-container-high": "#ebe8e3",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#31302d",
+          "on-primary-container": "#a1d7ad",
+          "surface-container-highest": "#e5e2dd",
+          "surface": "#fcf9f4",
+          "on-secondary": "#ffffff",
+          "on-primary": "#ffffff",
+          "outline-variant": "#c1c9bf",
+          "secondary": "#45673a",
+          "primary": "#134728",
+          "on-tertiary-fixed": "#062102",
+          "outline": "#717971",
+          "surface-container": "#f0ede8",
+          "on-error-container": "#93000a",
+          "on-secondary-fixed": "#022100",
+          "on-background": "#1c1c19",
+          "on-surface": "#1c1c19",
+          "tertiary-fixed-dim": "#aed09e",
+          "secondary-fixed-dim": "#aad19b",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed": "#00210e",
+          "error-container": "#ffdad6",
+          "tertiary-container": "#405d35",
+          "on-error": "#ffffff",
+          "secondary-container": "#c6eeb5",
+          "inverse-on-surface": "#f3f0eb"
+        },
+        fontFamily: {
+          "headline": ["Newsreader", "serif"],
+          "body": ["Inter", "sans-serif"],
+          "label": ["Inter", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+        .paper-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f4]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0px_12px_32px_rgba(30,46,30,0.06)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<span class="text-2xl font-serif text-[#134728] dark:text-[#fcf9f4] tracking-tighter font-['Newsreader'] font-medium">BoloBridge</span>
+<div class="hidden md:flex gap-10 font-['Newsreader'] font-medium tracking-tight">
+<a class="text-[#134728] border-b-2 border-[#45673a] pb-1 transition-colors duration-300" href="#">Preserves</a>
+<a class="text-[#1E2E1E]/70 dark:text-[#e5e2dd]/70 hover:text-[#134728] transition-colors duration-300" href="#">Archives</a>
+<a class="text-[#1E2E1E]/70 dark:text-[#e5e2dd]/70 hover:text-[#134728] transition-colors duration-300" href="#">Trails</a>
+<a class="text-[#1E2E1E]/70 dark:text-[#e5e2dd]/70 hover:text-[#134728] transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#134728] cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined text-[#134728] cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="relative pt-24 min-h-screen overflow-hidden">
+<div class="absolute inset-0 paper-grain pointer-events-none"></div>
+<section class="relative px-8 md:px-20 py-24 bg-gradient-to-br from-[#F5F2ED] to-surface-container-low overflow-hidden">
+<div class="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="text-6xl md:text-8xl font-headline italic font-medium text-primary-container leading-[0.9] tracking-tight mb-8">
+                        Speech Sound Check
+                    </h1>
+<p class="text-lg md:text-xl text-secondary max-w-md mb-10 leading-relaxed font-body">
+                        A quiet moment for discovery. Explore your child's articulation through the lens of our editorial arboretum.
+                    </p>
+<button class="group relative inline-flex items-center gap-4 bg-secondary text-white px-10 py-5 rounded-lg shadow-[0px_12px_32px_rgba(30,46,30,0.06)] hover:bg-primary transition-all duration-300 transform active:scale-[0.98]">
+<span class="font-label uppercase tracking-widest text-sm font-bold">Begin Screening</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="relative flex justify-end">
+<div class="w-full max-w-lg aspect-[4/5] bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl rotate-3 transform hover:rotate-0 transition-transform duration-700">
+<img alt="Fern specimen" class="w-full h-full object-cover" data-alt="Detailed macro shot of a forest fern specimen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcUGFleVwdbuTTlRnob9S2meyAHYhYwmafBRa_WLrTMaAX3-yN7NHgm5oDB1sX2Q7SEvTiQNG_6J9D_tDlTnU_ekgcQHUJXZhK8sQX7AP5wnlBTuXK8zvt3cl-6n5CONNFnaTgeqbwu6ocTJL2clWhlM5vBliKVgOz83QrGXUEMEXds2pdd0MalNY8l7OLTdHUX9pnv_Kkm4EDRtn5G1Rqg72MwdolxE1Pqryti6JZABXQp5VhEcHb3lb0w2yQ77oC0UP2Ufwb0-_E"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-8 md:px-20 py-20 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group hover:bg-surface-container transition-colors border-l-4 border-secondary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-icon="psychology">psychology</span>
+<h3 class="font-label uppercase tracking-wider text-xs font-bold text-primary mb-2">AI-Powered</h3>
+<p class="text-sm text-on-surface-variant leading-snug">Sophisticated acoustic analysis for precise phonetic mapping.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group hover:bg-surface-container transition-colors border-l-4 border-secondary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-icon="child_care">child_care</span>
+<h3 class="font-label uppercase tracking-wider text-xs font-bold text-primary mb-2">Age-Appropriate</h3>
+<p class="text-sm text-on-surface-variant leading-snug">Designed for the playful nature of childhood exploration.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group hover:bg-surface-container transition-colors border-l-4 border-secondary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-icon="microscope">magnification_small</span>
+<h3 class="font-label uppercase tracking-wider text-xs font-bold text-primary mb-2">Research-Based</h3>
+<p class="text-sm text-on-surface-variant leading-snug">Validated against standard clinical articulation protocols.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm group hover:bg-surface-container transition-colors border-l-4 border-secondary">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-icon="info">info</span>
+<h3 class="font-label uppercase tracking-wider text-xs font-bold text-primary mb-2">Not a Diagnosis</h3>
+<p class="text-sm text-on-surface-variant leading-snug">A screening tool meant to guide, not to formally diagnose.</p>
+</div>
+</div>
+</section>
+<section class="px-8 md:px-20 py-16 flex justify-center items-center">
+<div class="bg-[#F8F6F2] w-full max-w-2xl rounded-xl shadow-xl overflow-hidden p-12 md:p-20 relative">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="eco">eco</span>
+</div>
+<div class="flex flex-col items-center text-center space-y-10">
+<div class="text-9xl mb-4 transform hover:scale-110 transition-transform cursor-default">🐻</div>
+<div class="space-y-2">
+<h2 class="text-6xl font-headline font-medium text-primary">Bear</h2>
+<div class="inline-flex bg-secondary-container px-6 py-2 rounded-full">
+<span class="text-on-secondary-container font-medium tracking-widest">/b/</span>
+</div>
+</div>
+<div class="w-full space-y-8">
+<div class="flex justify-center">
+<button class="w-24 h-24 rounded-full bg-gradient-to-tr from-secondary to-primary flex items-center justify-center text-white shadow-lg hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-4xl" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+<div class="w-full space-y-3">
+<div class="flex justify-between font-label text-[10px] uppercase tracking-widest text-secondary font-bold">
+<span>Voice Input</span>
+<span>Level Analysis</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-[#7B5B3A] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-8 md:px-20 py-12 max-w-screen-xl mx-auto">
+<div class="bg-surface-container-low border-l-[6px] border-[#B85C38] p-8 md:p-10 rounded-r-lg">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-[#B85C38] shrink-0" data-icon="warning">warning</span>
+<div>
+<h4 class="font-headline text-xl text-on-surface mb-2 italic">Educational Guidance Notice</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-3xl">
+                            BoloBridge is an educational screening tool designed to provide preliminary insights into speech patterns. It is not a clinical assessment, medical diagnosis, or a replacement for professional speech-language pathology services. Please consult a licensed specialist for a comprehensive evaluation.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#e5e2dd] dark:bg-stone-950 w-full mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="font-['Inter'] text-xs uppercase tracking-[0.05em] text-[#134728]/60 dark:text-[#e5e2dd]/50">
+                © 2024 BoloBridge Editorial Arboretum. All rights preserved.
+            </div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs uppercase tracking-[0.05em]">
+<a class="text-[#1E2E1E]/60 dark:text-[#e5e2dd]/50 hover:underline decoration-2 underline-offset-4 transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-[#1E2E1E]/60 dark:text-[#e5e2dd]/50 hover:underline decoration-2 underline-offset-4 transition-all duration-200" href="#">Terms of Service</a>
+<a class="text-[#1E2E1E]/60 dark:text-[#e5e2dd]/50 hover:underline decoration-2 underline-offset-4 transition-all duration-200" href="#">Botanical Guidelines</a>
+<a class="text-[#1E2E1E]/60 dark:text-[#e5e2dd]/50 hover:underline decoration-2 underline-offset-4 transition-all duration-200" href="#">Contact Archivist</a>
+</div>
+</div>
+</footer>
+</body></html>

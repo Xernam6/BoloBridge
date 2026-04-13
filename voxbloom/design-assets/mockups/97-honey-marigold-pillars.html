@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#ffeee0",
+              "on-primary-container": "#503100",
+              "surface": "#fff8f4",
+              "tertiary-fixed-dim": "#eac255",
+              "on-tertiary-fixed-variant": "#584400",
+              "on-primary-fixed": "#2a1800",
+              "secondary": "#7c5800",
+              "surface-container-high": "#fde4cd",
+              "error-container": "#ffdad6",
+              "surface-container": "#ffead9",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#463600",
+              "inverse-surface": "#3c2e1f",
+              "primary-container": "#d4953a",
+              "on-primary-fixed-variant": "#643f00",
+              "surface-dim": "#eed6c0",
+              "on-surface": "#26190b",
+              "outline-variant": "#d5c4b1",
+              "primary": "#845400",
+              "inverse-primary": "#feb95b",
+              "surface-container-low": "#fff1e7",
+              "outline": "#837565",
+              "surface-tint": "#845400",
+              "secondary-fixed-dim": "#f3be56",
+              "on-tertiary-fixed": "#241a00",
+              "on-secondary-fixed-variant": "#5e4200",
+              "on-secondary-container": "#735200",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#feb95b",
+              "surface-container-lowest": "#ffffff",
+              "surface-bright": "#fff8f4",
+              "on-background": "#26190b",
+              "primary-fixed": "#ffddb5",
+              "secondary-fixed": "#ffdea6",
+              "secondary-container": "#fcc65d",
+              "tertiary-container": "#c19d33",
+              "surface-container-highest": "#f7dec8",
+              "tertiary-fixed": "#ffdf90",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#514537",
+              "tertiary": "#755b00",
+              "on-secondary-fixed": "#271900",
+              "background": "#fff8f4",
+              "on-error": "#ffffff",
+              "surface-variant": "#f7dec8",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .bento-asymmetric {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(180px, auto);
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<div class="film-grain"></div>
+<!-- Top Navigation Shell -->
+<header class="w-full sticky top-0 z-50 bg-[#fff8f4] dark:bg-[#26190b]/90 backdrop-blur-xl shadow-[0_12px_40px_rgba(38,25,11,0.06)] transition-colors duration-500">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-3xl font-bold font-['Newsreader'] italic text-[#845400] dark:text-[#f7dec8]">
+                BoloBridge
+            </div>
+<nav class="hidden md:flex items-center space-x-12">
+<a class="text-[#26190b]/60 dark:text-[#f7dec8]/60 hover:text-[#845400] transition-colors font-body text-sm tracking-wide" href="#">Screen</a>
+<a class="text-[#26190b]/60 dark:text-[#f7dec8]/60 hover:text-[#845400] transition-colors font-body text-sm tracking-wide" href="#">Learn</a>
+<a class="text-[#26190b]/60 dark:text-[#f7dec8]/60 hover:text-[#845400] transition-colors font-body text-sm tracking-wide" href="#">Play</a>
+<a class="text-[#26190b]/60 dark:text-[#f7dec8]/60 hover:text-[#845400] transition-colors font-body text-sm tracking-wide" href="#">Track</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-[#845400] dark:text-[#f7dec8] p-2 hover:bg-[#f7dec8]/20 rounded-full transition-all active:scale-95">
+                    account_circle
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-12 py-24">
+<!-- Section Header -->
+<div class="mb-20 max-w-3xl">
+<h1 class="font-headline italic text-[5rem] leading-[1.1] text-on-surface tracking-tight mb-6">
+                Everything Your Child Needs
+            </h1>
+<p class="text-on-surface-variant text-xl max-w-xl leading-relaxed">
+                A holistic journey designed to nurture speech and cognitive development through warmth, play, and precise observation.
+            </p>
+</div>
+<!-- Asymmetric Bento Grid -->
+<div class="bento-asymmetric">
+<!-- Card 1: Large Pillar (Screen) -->
+<div class="col-span-12 md:col-span-7 row-span-2 bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group hover:translate-y-[-4px] transition-all duration-500 shadow-[0_12px_40px_rgba(38,25,11,0.04)] relative">
+<div class="h-2 w-full bg-primary-container"></div>
+<div class="p-12 flex flex-col h-full">
+<div class="flex justify-between items-start mb-auto">
+<div>
+<span class="font-headline italic text-4xl text-on-surface block mb-2">Screen</span>
+<p class="text-on-surface-variant text-lg">Gentle speech assessment</p>
+</div>
+<div class="bg-surface-container-high p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+</div>
+</div>
+<div class="mt-12 flex justify-center items-center flex-grow">
+<div class="relative w-72 h-72">
+<!-- Illustration Placeholder with specific visual description -->
+<img alt="Illustration of marigold watercolor stethoscope made of sunflowers" class="w-full h-full object-contain mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700" data-alt="Watercolor painting of a floral stethoscope with sunflower head" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhEiUu2TCJTw-rPSflRcryys7dMejmp-MfQUqmn7iyP0woRKMvEh2mfDszmtryVsytScDpEbvhWa0PuNQeoH2c7PbAN61tbXycAuC1X-63WCdNJ9TO7w0jkos1yVyKDVYT-UIHUcdcm5JI6NQwiKria6m5s2NZNqGuBG3dzbgKTPCUTZ0n_X4VlgCAP7Cy_vVs9fGVpe65ThJ_IbdJf7CepsYvrvkjLfxZDWkj4VWGKICQr8q-csSMh0mOJOmwDAATV5GR1fBejaAx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Learn -->
+<div class="col-span-12 md:col-span-5 row-span-1 bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group hover:translate-y-[-4px] transition-all duration-500 shadow-[0_12px_40px_rgba(38,25,11,0.04)]">
+<div class="h-2 w-full bg-primary-container"></div>
+<div class="p-10 flex items-center space-x-8">
+<div class="w-1/2">
+<span class="font-headline italic text-3xl text-on-surface block mb-2">Learn</span>
+<p class="text-on-surface-variant">Daily therapeutic insights tailored to your journey.</p>
+</div>
+<div class="w-1/2 relative flex justify-end">
+<img alt="Honey accent book with golden pages" class="w-32 h-32 object-contain mix-blend-multiply group-hover:rotate-6 transition-transform duration-500" data-alt="Illustration of an open vintage book with honey golden pages" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO8tloUt9psZjHE-n8DzKqlzlcHTwzpyWkarILR1FOlJrsKX8U8kqBZk7TxnICfVs7kYA-uxowTjyqxFuwq40dddpJGkFiUxfj4pmpE9DtwNXA2xteWwDxuooR13Ist0fRA4lcWbOK4wWm6dTq24fhyYbgxkA7_sxVSwAgrsOzn6A6imfjdUuzVDAPjjmgRp3eL7VYRXNWOaa1E5GaipSdsMUIKu5ua45m9jo-E8RHSBZQ8SNXbvMv9bH-4v0flwiTCzAPmH0sgGrE"/>
+</div>
+</div>
+</div>
+<!-- Card 3: Play -->
+<div class="col-span-12 md:col-span-5 row-span-1 bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group hover:translate-y-[-4px] transition-all duration-500 shadow-[0_12px_40px_rgba(38,25,11,0.04)]">
+<div class="h-2 w-full bg-primary-container"></div>
+<div class="p-10 flex items-center space-x-8">
+<div class="w-1/2 relative">
+<img alt="Sunflower game controller with daisy buttons" class="w-32 h-32 object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="Artistic sunflower themed video game controller illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDs8IxmKY55SDZdngvgyTtZpLLkUgids8kx3UuKhnuCRwhiCvCeHfJ6v7hpinBIfmZeUopqBmkQA53oslIoDBVgQm_LSAeV8zl6Q5hBobduWhZ62bh-7ZGN6R2kjo0se5In6oq_3Xns2sc08LHVjUvwzSqotPQ1Vj4hzqF_NxfP7XGT8Yq7fweDhaCTEQTIAnWSvvE7RkHljF5wM1OKbdl8MZkorHe3B3kXXygYW_Fs19F6yuy2KyiSYoqZN7gzodTQoxhkrBiE9FA"/>
+</div>
+<div class="w-1/2 text-right">
+<span class="font-headline italic text-3xl text-on-surface block mb-2">Play</span>
+<p class="text-on-surface-variant text-sm">Interactive games that stimulate vocal response.</p>
+</div>
+</div>
+</div>
+<!-- Card 4: Track (Large Horizontal) -->
+<div class="col-span-12 row-span-1 bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col group hover:translate-y-[-4px] transition-all duration-500 shadow-[0_12px_40px_rgba(38,25,11,0.04)]">
+<div class="h-2 w-full bg-primary-container"></div>
+<div class="p-12 flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-1/3 mb-8 md:mb-0">
+<span class="font-headline italic text-4xl text-on-surface block mb-4">Track</span>
+<p class="text-on-surface-variant text-lg leading-relaxed">Watch the meadow grow. Detailed insights into progress, milestones, and daily growth trajectories.</p>
+<button class="mt-8 flex items-center space-x-2 text-primary font-semibold group/btn">
+<span>View progress chart</span>
+<span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<img alt="Amber ascending chart with sunflower markers" class="w-full h-48 object-contain mix-blend-multiply group-hover:opacity-100 transition-opacity duration-500" data-alt="Watercolor growth chart with golden yellow markers and soft lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfNxqwbDRqqf1IxypDM8wjlp4mNOZY0o9wHUbO5Z-qP6j9uUHQcYNJ7UuavHfBvsNhIrHXqcLs5Qv7hy5ptmyLRU4vzBp1YKYuv7mhV36WO5WctSh_-wKGWhpon39mdxpW2gAPbzR5D2OqOlwgRVGQ2TkU7d0A8EVX6ILIyixn9INv9jmKE1IXqbuuH681fWaOyFkFJHoE7S3xNmur4w4wSXjIlB3EnCjeHiBSlMHitfK2pOaaHUCfRJAIED5sENmFBke52xmcudks"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-[#fff1e7]/80 dark:bg-[#26190b]/80 backdrop-blur-2xl rounded-t-[32px] shadow-[0_-8px_30px_rgba(38,25,11,0.04)] flex justify-around items-center px-6 pb-8 pt-4">
+<a class="flex flex-col items-center justify-center bg-[#845400] text-[#fff8f4] rounded-full px-6 py-2 scale-105 transition-all" href="#">
+<span class="material-symbols-outlined">visibility</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-widest mt-1">Screen</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#845400]/50 dark:text-[#f7dec8]/40 px-4 py-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-widest mt-1">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#845400]/50 dark:text-[#f7dec8]/40 px-4 py-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-widest mt-1">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#845400]/50 dark:text-[#f7dec8]/40 px-4 py-2 hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-widest mt-1">Track</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-12 right-12 bg-primary text-on-primary w-20 h-20 rounded-full flex items-center justify-center shadow-[0_12px_40px_rgba(38,25,11,0.15)] hover:bg-primary-container hover:scale-110 active:scale-95 transition-all duration-300 z-40 group">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

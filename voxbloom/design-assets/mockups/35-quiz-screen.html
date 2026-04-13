@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Quiz Module</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#fbf9f6",
+                        "inverse-surface": "#30312f",
+                        "outline-variant": "#c2c8bf",
+                        "on-primary-fixed-variant": "#004f51",
+                        "surface": "#fbf9f6",
+                        "tertiary-fixed": "#e6deff",
+                        "surface-container-highest": "#e4e2df",
+                        "secondary": "#7c5732",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ed",
+                        "inverse-primary": "#92d2d3",
+                        "primary-fixed": "#aeeef0",
+                        "on-secondary-container": "#79542f",
+                        "on-surface": "#1b1c1a",
+                        "on-secondary-fixed-variant": "#613f1d",
+                        "background": "#fbf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1c0b54",
+                        "secondary-fixed": "#ffdcbf",
+                        "tertiary-container": "#988bd6",
+                        "surface-tint": "#25686a",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#61a0a2",
+                        "surface-dim": "#dbdad7",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#002021",
+                        "tertiary": "#61549b",
+                        "outline": "#727971",
+                        "on-background": "#1b1c1a",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#cabeff",
+                        "on-tertiary-fixed-variant": "#493c81",
+                        "surface-container-low": "#f5f3f0",
+                        "secondary-fixed-dim": "#eebd90",
+                        "on-primary-container": "#003435",
+                        "surface-variant": "#e4e2df",
+                        "on-secondary-fixed": "#2d1600",
+                        "surface-container": "#efeeeb",
+                        "on-primary": "#ffffff",
+                        "primary": "#25686a",
+                        "on-surface-variant": "#424842",
+                        "surface-container-high": "#eae8e5",
+                        "secondary-container": "#fdcb9d",
+                        "on-tertiary-container": "#2f2166",
+                        "primary-fixed-dim": "#92d2d3"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAzXH6CIRoDdKyqeuxq9PAYRKHuv6ollLCWJ_SaDjWsjGCwJXw3eaAbA3g29JZCeNWP_NE6RPKS-DZFvmHLzKi12hxR_Oo3EOZrpLUK4MlLg5Z4vS6756Xm1KY4UgB0JuyAWoGNMBeMeVim7J5pE_Rkx1BjeR_MtJcEvSUcf6uFj_Tg1P_UD1agTPvCtybSjEHXfF078u6kJYfVCFqxq75HltEj4vyOsU_-7X8GXkicr-KY4gEDD81zKK4eq0aPofaO7aGr90Mx5X8Q)
+    }
+.watercolor-primary {
+    background: linear-gradient(45deg, #25686a 0%, #61a0a2 100%)
+    }
+.custom-shadow {
+    box-shadow: 0 20px 40px rgba(66, 72, 66, 0.06)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen selection:bg-primary-container/30">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f6] dark:bg-stone-900">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-serif italic text-2xl text-[#25686a] dark:text-[#61a0a2]">BoloBridge</span>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<span class="font-headline italic text-lg text-on-surface-variant">How We Make Sounds</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-primary-container/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></div>
+</div>
+<span class="font-label text-on-surface-variant font-medium text-sm">2 of 4</span>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-px w-full"></div>
+</header>
+<main class="max-w-4xl mx-auto px-6 pt-12 pb-32">
+<!-- Question Card -->
+<div class="bg-surface-container-low rounded-xl p-8 md:p-12 mb-8 border border-transparent">
+<div class="flex flex-col items-center text-center">
+<span class="inline-block bg-tertiary-container text-on-tertiary-container px-6 py-1.5 rounded-full text-sm font-semibold mb-8">Q2</span>
+<h1 class="font-headline italic text-3xl md:text-4xl text-on-surface mb-10 leading-tight">
+                    What do your vocal cords do when you speak?
+                </h1>
+<!-- Watercolor Illustration Placeholder -->
+<div class="relative w-48 h-48 mb-12 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary-container/10 rounded-full blur-3xl opacity-50"></div>
+<div class="relative w-full h-full rounded-full overflow-hidden bg-surface-container-lowest custom-shadow flex items-center justify-center p-4">
+<img alt="Vocal cords vibration diagram" class="w-32 h-32 object-contain opacity-80" data-alt="Abstract watercolor diagram of vibrating vocal cords" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBzzUDru-8ljZe6L7YfO16gn0VqMrgYRffdXrqoI9Frj7J7vlVyZs6UTjGKLR8R1YEGD5qm597xWibTbt1ejYRL_5WgDqJqkB9jd1pci9Efk1NCxhOahirwZl53hja24RhtQbP7quLzY3KvXBeUgXyOZ_y2rrL05YolihKpDvi-HeLobge2BciYS_kBV3PCZwv0lPWEOc8aEYXw8dPEM8kQjjuF6OK8jkT2S6uVtLIo0lazAgCyKhnztkfhsyEZb75Au3O32lWVBQS"/>
+</div>
+</div>
+<!-- Answer Options -->
+<div class="w-full space-y-4">
+<!-- Option A -->
+<button class="w-full text-left p-6 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-primary-container/20 transition-all custom-shadow flex items-center justify-between group">
+<span class="font-body text-lg text-on-surface">They help you breathe quietly</span>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary-container transition-colors"></div>
+</button>
+<!-- Option B (Correct/Selected) -->
+<div class="w-full">
+<button class="w-full text-left p-6 watercolor-primary rounded-lg border-2 border-transparent transition-all custom-shadow flex items-center justify-between mb-4 active:scale-[0.99] duration-200">
+<span class="font-body text-lg text-on-primary font-medium">They vibrate to create sound</span>
+<div class="w-8 h-8 rounded-full bg-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl font-bold">check</span>
+</div>
+</button>
+<!-- Feedback Card -->
+<div class="bg-primary/5 border border-primary-container/20 rounded-lg p-6 flex gap-4 items-start animate-in fade-in slide-in-from-top-4">
+<span class="material-symbols-outlined text-primary-container">auto_awesome</span>
+<div>
+<p class="font-body text-on-primary-container font-medium text-lg leading-relaxed">
+                                    Correct! They vibrate like tiny guitar strings.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Option C (Error State) -->
+<button class="w-full text-left p-6 bg-surface-container-lowest rounded-lg border-2 border-error/20 hover:border-error transition-all custom-shadow flex items-center justify-between">
+<span class="font-body text-lg text-on-surface">They help you swallow food</span>
+<div class="w-8 h-8 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-xl">close</span>
+</div>
+</button>
+<!-- Option D -->
+<button class="w-full text-left p-6 bg-surface-container-lowest rounded-lg border-2 border-transparent hover:border-primary-container/20 transition-all custom-shadow flex items-center justify-between group">
+<span class="font-body text-lg text-on-surface">They keep air in your lungs</span>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary-container transition-colors"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Bottom -->
+<div class="flex justify-center mt-12">
+<button class="watercolor-primary text-on-primary px-10 py-5 rounded-full text-xl font-semibold custom-shadow flex items-center gap-3 active:scale-95 transition-transform">
+                Next Question
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar - Contextually Suppressed for Task-Focus -->
+<!-- As per instructions: "suppress the navigation to prioritize the content canvas" for focused journeys -->
+<footer class="fixed bottom-0 left-0 w-full py-6 px-12 pointer-events-none flex justify-between items-end opacity-40 select-none">
+<div class="text-xs font-label tracking-widest text-outline uppercase">Educational Content © BoloBridge 2024</div>
+<div class="w-24 h-24 bg-secondary-container/20 rounded-full blur-3xl"></div>
+</footer>
+</body></html>

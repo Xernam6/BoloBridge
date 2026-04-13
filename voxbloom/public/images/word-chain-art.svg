@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="wc-bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F5F1EB"/>
+    </radialGradient>
+    <linearGradient id="wc-link1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B7EC8"/>
+      <stop offset="100%" stop-color="#5F9EA0"/>
+    </linearGradient>
+    <linearGradient id="wc-link2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5F9EA0"/>
+      <stop offset="100%" stop-color="#C2956B"/>
+    </linearGradient>
+    <filter id="wc-glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="wc-soft"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#wc-bg)"/>
+
+  <!-- Deep background: faint connection field -->
+  <line x1="100" y1="200" x2="300" y2="300" stroke="#8B7EC8" stroke-width="20" opacity="0.03" filter="url(#wc-soft)"/>
+  <line x1="300" y1="300" x2="500" y2="200" stroke="#5F9EA0" stroke-width="20" opacity="0.03" filter="url(#wc-soft)"/>
+  <line x1="500" y1="200" x2="700" y2="350" stroke="#C2956B" stroke-width="20" opacity="0.03" filter="url(#wc-soft)"/>
+  <line x1="300" y1="500" x2="500" y2="600" stroke="#8B7EC8" stroke-width="20" opacity="0.03" filter="url(#wc-soft)"/>
+
+  <!-- Connection lines between bubbles -->
+  <path d="M205,235 C250,270 260,280 300,295" fill="none" stroke="url(#wc-link1)" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.5"/>
+  <path d="M370,280 C420,250 440,230 475,215" fill="none" stroke="url(#wc-link2)" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.5"/>
+  <path d="M565,230 C610,280 630,310 660,340" fill="none" stroke="url(#wc-link1)" stroke-width="2" stroke-dasharray="5 4" opacity="0.4"/>
+  <path d="M250,380 C280,420 290,450 310,480" fill="none" stroke="#C2956B" stroke-width="2" stroke-dasharray="5 4" opacity="0.35"/>
+  <path d="M400,490 C440,510 460,530 490,555" fill="none" stroke="#8B7EC8" stroke-width="2" stroke-dasharray="5 4" opacity="0.35"/>
+  <path d="M590,540 C620,510 640,490 665,465" fill="none" stroke="url(#wc-link2)" stroke-width="2" stroke-dasharray="5 4" opacity="0.3"/>
+  <path d="M340,620 C380,630 420,640 460,645" fill="none" stroke="#5F9EA0" stroke-width="2" stroke-dasharray="5 4" opacity="0.3"/>
+
+  <!-- Bubble 1 — top left -->
+  <ellipse cx="170" cy="210" rx="55" ry="48" fill="#8B7EC8" opacity="0.12" filter="url(#wc-glow)"/>
+  <ellipse cx="170" cy="210" rx="55" ry="48" fill="none" stroke="#8B7EC8" stroke-width="1.5" opacity="0.5"/>
+  <text x="170" y="215" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2D3142" opacity="0.4">ab</text>
+
+  <!-- Bubble 2 — top center -->
+  <ellipse cx="340" cy="280" rx="50" ry="44" fill="#5F9EA0" opacity="0.1" filter="url(#wc-glow)"/>
+  <ellipse cx="340" cy="280" rx="50" ry="44" fill="none" stroke="#5F9EA0" stroke-width="1.5" opacity="0.45"/>
+  <text x="340" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2D3142" opacity="0.35">cd</text>
+
+  <!-- Bubble 3 — top right -->
+  <ellipse cx="520" cy="200" rx="58" ry="50" fill="#C2956B" opacity="0.1" filter="url(#wc-glow)"/>
+  <ellipse cx="520" cy="200" rx="58" ry="50" fill="none" stroke="#C2956B" stroke-width="1.5" opacity="0.4"/>
+  <text x="520" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2D3142" opacity="0.35">ef</text>
+
+  <!-- Bubble 4 — far right -->
+  <ellipse cx="690" cy="360" rx="48" ry="42" fill="#8B7EC8" opacity="0.08" filter="url(#wc-glow)"/>
+  <ellipse cx="690" cy="360" rx="48" ry="42" fill="none" stroke="#8B7EC8" stroke-width="1.2" opacity="0.35"/>
+  <text x="690" y="365" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2D3142" opacity="0.3">gh</text>
+
+  <!-- Bubble 5 — center left -->
+  <ellipse cx="230" cy="400" rx="46" ry="40" fill="#5F9EA0" opacity="0.08" filter="url(#wc-glow)"/>
+  <ellipse cx="230" cy="400" rx="46" ry="40" fill="none" stroke="#5F9EA0" stroke-width="1.2" opacity="0.35"/>
+  <text x="230" y="405" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2D3142" opacity="0.3">ij</text>
+
+  <!-- Bubble 6 — center -->
+  <ellipse cx="400" cy="500" rx="52" ry="46" fill="#C2956B" opacity="0.1" filter="url(#wc-glow)"/>
+  <ellipse cx="400" cy="500" rx="52" ry="46" fill="none" stroke="#C2956B" stroke-width="1.5" opacity="0.4"/>
+  <text x="400" y="505" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2D3142" opacity="0.35">kl</text>
+
+  <!-- Bubble 7 — center right -->
+  <ellipse cx="610" cy="540" rx="44" ry="38" fill="#8B7EC8" opacity="0.08" filter="url(#wc-glow)"/>
+  <ellipse cx="610" cy="540" rx="44" ry="38" fill="none" stroke="#8B7EC8" stroke-width="1.2" opacity="0.3"/>
+  <text x="610" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2D3142" opacity="0.25">mn</text>
+
+  <!-- Bubble 8 — bottom left -->
+  <ellipse cx="300" cy="640" rx="50" ry="44" fill="#5F9EA0" opacity="0.08" filter="url(#wc-glow)"/>
+  <ellipse cx="300" cy="640" rx="50" ry="44" fill="none" stroke="#5F9EA0" stroke-width="1.2" opacity="0.3"/>
+  <text x="300" y="645" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2D3142" opacity="0.3">op</text>
+
+  <!-- Bubble 9 — bottom center -->
+  <ellipse cx="510" cy="660" rx="56" ry="48" fill="#C2956B" opacity="0.1" filter="url(#wc-glow)"/>
+  <ellipse cx="510" cy="660" rx="56" ry="48" fill="none" stroke="#C2956B" stroke-width="1.5" opacity="0.35"/>
+  <text x="510" y="665" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2D3142" opacity="0.3">qr</text>
+
+  <!-- Fine particle field -->
+  <circle cx="130" cy="300" r="1.5" fill="#8B7EC8" opacity="0.15"/>
+  <circle cx="450" cy="150" r="1.2" fill="#5F9EA0" opacity="0.12"/>
+  <circle cx="650" cy="250" r="1.8" fill="#C2956B" opacity="0.1"/>
+  <circle cx="150" cy="550" r="1" fill="#5F9EA0" opacity="0.1"/>
+  <circle cx="700" cy="600" r="1.5" fill="#8B7EC8" opacity="0.08"/>
+  <circle cx="400" cy="350" r="1.2" fill="#C2956B" opacity="0.08"/>
+  <circle cx="550" cy="400" r="1" fill="#5F9EA0" opacity="0.1"/>
+  <circle cx="250" cy="160" r="1.5" fill="#D16D6D" opacity="0.08"/>
+  <circle cx="600" cy="700" r="1" fill="#8B7EC8" opacity="0.08"/>
+</svg>

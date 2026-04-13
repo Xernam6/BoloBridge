@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Tongue Gym</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "background": "#fbf9f6",
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#493c81",
+              "surface-container-low": "#f5f3f0",
+              "on-background": "#1b1c1a",
+              "on-tertiary-container": "#2f2166",
+              "surface-tint": "#25686a",
+              "outline": "#727971",
+              "on-primary-fixed-variant": "#004f51",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#92d2d3",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-primary-container": "#003435",
+              "surface-container-high": "#eae8e5",
+              "inverse-on-surface": "#f2f0ed",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e4e2df",
+              "secondary": "#7c5732",
+              "primary": "#25686a",
+              "on-error-container": "#93000a",
+              "tertiary": "#61549b",
+              "on-surface": "#1b1c1a",
+              "on-secondary-container": "#79542f",
+              "surface": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#aeeef0",
+              "on-surface-variant": "#424842",
+              "inverse-surface": "#30312f",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container": "#efeeeb",
+              "secondary-container": "#fdcb9d",
+              "secondary-fixed-dim": "#eebd90",
+              "tertiary-fixed": "#e6deff",
+              "on-error": "#ffffff",
+              "tertiary-container": "#988bd6",
+              "inverse-primary": "#92d2d3",
+              "surface-dim": "#dbdad7",
+              "surface-bright": "#fbf9f6",
+              "outline-variant": "#c2c8bf",
+              "primary-container": "#61a0a2",
+              "on-secondary-fixed": "#2d1600",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "on-primary-fixed": "#002021"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-gradient {
+            background: linear-gradient(45deg, #25686a, #61a0a2);
+        }
+        .path-stroke {
+            stroke-dasharray: 8 8;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="w-full top-0 flex justify-between items-center px-6 py-4 w-full bg-[#fbf9f6] dark:bg-[#1a1917] sticky z-50">
+<div class="flex items-center gap-4">
+<button class="text-[#25686a] dark:text-[#61a0a2] hover:opacity-80 transition-opacity Active: scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Newsreader'] italic text-[#25686a] dark:text-[#61a0a2] text-xl">Tongue Gym</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-high px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="text-on-surface-variant font-medium text-sm">4 of 8</span>
+<div class="flex gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-variant"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-variant"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-variant"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-variant"></div>
+</div>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-bold text-sm">20 XP</span>
+</div>
+<button class="text-[#25686a] dark:text-[#61a0a2] hover:opacity-80 transition-opacity Active: scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-12 pt-8 pb-32 grid grid-cols-12 gap-8 items-start">
+<!-- Center Content: Exercise Card -->
+<section class="col-start-4 col-span-6 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(66,72,66,0.06)] p-12 text-center relative overflow-hidden">
+<!-- Abstract Watercolor Swirl Background -->
+<div class="absolute top-0 right-0 w-64 h-64 opacity-10 blur-3xl rounded-full bg-secondary-container -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 space-y-8">
+<!-- Exercise Illustration -->
+<div class="flex justify-center">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<div class="absolute inset-0 bg-secondary-fixed-dim/20 rounded-full animate-pulse"></div>
+<svg class="w-40 h-40" viewbox="0 0 100 100">
+<circle class="text-secondary-fixed-dim path-stroke" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-primary-container/30" cx="50" cy="50" fill="none" r="30" stroke="currentColor" stroke-width="4"></circle>
+<path class="text-secondary opacity-40" d="M50 10 A40 40 0 1 1 49.9 10" fill="none" stroke="currentColor" stroke-width="1"></path>
+<circle cx="50" cy="10" fill="#7c5732" r="6"></circle>
+</svg>
+<div class="absolute bg-white/80 backdrop-blur-sm p-4 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-5xl text-secondary-container" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline italic text-4xl text-on-surface">The Lollipop Lick</h2>
+<p class="text-on-surface-variant text-lg max-w-md mx-auto leading-relaxed">
+                            Move your tongue slowly around your lips like licking a lollipop! Make circles 5 times.
+                        </p>
+</div>
+<!-- Interactive Timer/Progress -->
+<div class="flex flex-col items-center gap-6 pt-4">
+<div class="relative flex items-center justify-center w-32 h-32">
+<svg class="transform -rotate-90 w-32 h-32">
+<circle class="text-surface-variant" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-[#7A9E7E]" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-bold text-on-surface">10s</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Hold</span>
+</div>
+</div>
+<!-- Repetition Counter (Bloom Tracker Style) -->
+<div class="flex gap-3">
+<div class="w-4 h-4 rounded-full bg-[#7A9E7E]"></div>
+<div class="w-4 h-4 rounded-full bg-[#7A9E7E]"></div>
+<div class="w-4 h-4 rounded-full bg-surface-variant"></div>
+<div class="w-4 h-4 rounded-full bg-surface-variant"></div>
+<div class="w-4 h-4 rounded-full bg-surface-variant"></div>
+</div>
+<span class="font-label text-sm text-on-surface-variant">2 of 5 cycles done</span>
+</div>
+</div>
+</div>
+<!-- Demonstration Area -->
+<div class="bg-surface-container-low rounded-xl p-8 flex items-center justify-between gap-8 border border-white/50">
+<div class="flex-1 space-y-2">
+<h3 class="font-headline italic text-xl">Quick Guide</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Keep your lips together as you move your tongue in a wide, circular sweep behind your teeth and against your inner lips.</p>
+</div>
+<div class="w-32 h-32 bg-white rounded-full flex items-center justify-center relative overflow-hidden group shadow-inner">
+<img alt="Simplified abstract illustration of tongue movement" class="w-16 h-16 opacity-80" data-alt="Abstract watercolor diagram of tongue path" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZvMNwRN6V-VJ1h8E1WdCEnu7BtcP2b_RbmITHggZwDBUz3HNixrwLja7jT_q9QpLtoXJNVgbfXoQf0uqzHFAEjk_1XcYrM4TyFV3_axlRkE4pmeMgWHyxR84OCNuvs2vChRR88XNC5kEM4SV-fC3kRLojyjb5OUYhp6yKfk1fxG2jMyg-wakZCVRHyWRSVdUV9ct7Yia9DmiFJSpGLcLxQgOZTWzmT1BDkTADL7t6cRysZ0ua71rOGlkutrOGML-4W4YVORk0GGCH"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+</div>
+</section>
+<!-- Right Side: Tips (Optional but adds to Analog Editorial feel) -->
+<aside class="col-span-3 space-y-6 pt-12">
+<div class="p-6 rounded-lg bg-secondary-fixed/30 border-l-4 border-secondary-fixed">
+<span class="material-symbols-outlined text-secondary" data-icon="lightbulb">lightbulb</span>
+<h4 class="font-bold text-sm mt-2">Pro Tip</h4>
+<p class="text-xs text-on-secondary-fixed-variant leading-relaxed mt-1 italic">"Try looking in a mirror to see your lollipop circles!"</p>
+</div>
+</aside>
+</main>
+<!-- Footer Controls -->
+<footer class="fixed bottom-0 left-0 w-full z-40">
+<!-- Persistent Session Progress -->
+<div class="h-1.5 w-full bg-surface-variant/30 overflow-hidden">
+<div class="h-full watercolor-gradient w-[45%]"></div>
+</div>
+<div class="bg-surface/80 backdrop-blur-lg px-12 py-8 flex justify-between items-center shadow-[0_-20px_40px_rgba(66,72,66,0.06)]">
+<button class="px-8 py-3 rounded-full text-tertiary font-medium hover:bg-tertiary/10 transition-colors Active: scale-95 duration-200">
+                Skip for now
+            </button>
+<div class="flex gap-4">
+<button class="px-10 py-3 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed font-bold hover:opacity-90 transition-all Active: scale-95 duration-200">
+                    Pause
+                </button>
+<button class="px-16 py-3 rounded-full watercolor-gradient text-white font-bold text-lg hover:shadow-lg transition-all Active: scale-95 duration-200 flex items-center gap-2">
+                    Next Exercise
+                    <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Suppression: Not needed here as it's a focused task screen -->
+</body></html>

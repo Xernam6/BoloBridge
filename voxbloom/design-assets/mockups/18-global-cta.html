@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#fbf9f6",
+              "on-surface-variant": "#424842",
+              "error": "#ba1a1a",
+              "secondary-container": "#fdcb9d",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-secondary-fixed": "#2d1600",
+              "tertiary": "#61549b",
+              "on-background": "#1b1c1a",
+              "surface-container-high": "#eae8e5",
+              "surface": "#fbf9f6",
+              "inverse-primary": "#92d2d3",
+              "tertiary-fixed-dim": "#cabeff",
+              "secondary": "#7c5732",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#eebd90",
+              "outline": "#727971",
+              "surface-dim": "#dbdad7",
+              "tertiary-container": "#988bd6",
+              "surface-variant": "#e4e2df",
+              "on-primary-fixed-variant": "#004f51",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#613f1d",
+              "tertiary-fixed": "#e6deff",
+              "surface-tint": "#25686a",
+              "surface-container-low": "#f5f3f0",
+              "on-primary-container": "#003435",
+              "on-tertiary-container": "#2f2166",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#92d2d3",
+              "on-secondary-container": "#79542f",
+              "surface-container-highest": "#e4e2df",
+              "primary-fixed": "#aeeef0",
+              "primary": "#25686a",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#002021",
+              "surface-container": "#efeeeb",
+              "inverse-on-surface": "#f2f0ed",
+              "inverse-surface": "#30312f",
+              "surface-bright": "#fbf9f6",
+              "outline-variant": "#c2c8bf",
+              "on-surface": "#1b1c1a",
+              "primary-container": "#61a0a2",
+              "secondary-fixed": "#ffdcbf",
+              "sage-green": "#7A9E7E"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: relative
+    }
+.film-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCSOKZOog21bAuiAVTfO3T675PSrTy9LPc0yCK1WYijQYcrblaiJmk34qP0lJUpdptEW4_nRH0fDo6anD8Z7qvaWdqbjSzr0IPG7ChSDJbUqv99ud67m0tn3vrziTyjLHkx4GJhQuCCTcGc4wOJMkSwxpiTyYpdpSGSrCo8k7t693mMDUjBsfrulMvPqlphF77WbfzwmBcy7EBbfqwqkBKwQwGEvBVowOKoi5M5NJQ_kqvPeOI7NcwlTZAyp7zfdD_8lWHdAzY4-s-F);
+    opacity: 0.03
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.watercolor-primary {
+    background: linear-gradient(45deg, #25686a, #61a0a2)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-background film-grain">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-stone-900/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] italic text-2xl font-bold text-[#25686a] dark:text-[#61a0a2]">BoloBridge</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#25686a] transition-colors" href="#">Journey</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#25686a] transition-colors" href="#">Library</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-[#25686a] transition-colors" href="#">Progress</a>
+<a class="font-['Newsreader'] italic text-lg tracking-tight text-[#25686a] dark:text-[#61a0a2] border-b-2 border-[#7A9E7E] pb-1" href="#">Global Impact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-stone-600 font-medium px-4 py-2 hover:bg-[#f5f3f0] rounded-full transition-all">Sign In</button>
+<button class="watercolor-primary text-white px-6 py-2 rounded-full font-medium active:scale-95 duration-200 ease-in-out">Start Blooming</button>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-[1px] w-full absolute bottom-0"></div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- GLOBAL IMPACT SECTION -->
+<section class="bg-surface-container-low py-24 md:py-32">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<!-- Left: Interactive Globe Illustration -->
+<div class="relative order-2 md:order-1 flex justify-center">
+<div class="relative w-80 h-80 md:w-[500px] md:h-[500px]">
+<!-- Decorative Tonal Circles -->
+<div class="absolute inset-0 bg-secondary-fixed-dim/20 rounded-full blur-3xl animate-pulse"></div>
+<!-- Illustration Placeholder -->
+<div class="relative w-full h-full bg-white/40 backdrop-blur-sm rounded-full border border-sage-green/10 flex items-center justify-center p-8 overflow-hidden shadow-sm">
+<img alt="Stylized illustration of a warm-toned globe with connecting lines between continents" class="w-full h-full object-cover rounded-full opacity-80 mix-blend-multiply" data-alt="Abstract warm-toned globe with glowing connection points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNuJU3Ew9A5Vx_-tRMd0wGGANuVbFa_QqBSqRGhqEFcHyyIQ9rRrT0u7DbKEIr4SkToV5Qcu6JNvWiE5NeYwxDJQ8Iat1swVNP06xbNocYzNZ2zEyVgazb-bA8pPWoEePlPJ10vsAqE9v6suhby552iQYn0A4G44_w-l7Z-29Qsz4j2nJ_DEIX4AIe9UmT8tbyeK2C6Wqv3y_C76CZLkvxlGOjCBoLXwknWRenkdXIlDLSpeVRbMoT8NBauoh3C08uzvr3F1Afysvb"/>
+<!-- Floating Connection Badges (Decorative) -->
+<div class="absolute top-1/4 right-1/4 bg-white p-2 rounded-xl shadow-lg border border-surface-container">
+<span class="material-symbols-outlined text-primary text-2xl">language</span>
+</div>
+<div class="absolute bottom-1/3 left-1/4 bg-white p-2 rounded-xl shadow-lg border border-surface-container">
+<span class="material-symbols-outlined text-sage-green text-2xl">chat_bubble</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Content -->
+<div class="order-1 md:order-2 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2">
+<span class="w-8 h-[1px] bg-sage-green"></span>
+<span class="text-sage-green font-label font-bold uppercase tracking-[0.2em] text-xs">Global Reach</span>
+</div>
+<h2 class="font-headline italic text-5xl md:text-7xl text-primary leading-tight">
+                        Bridging Voices Worldwide
+                    </h2>
+<p class="font-body text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-lg">
+                        Our platform is designed to be culturally inclusive and linguistically diverse, supporting children across 6 languages and growing. We believe every child deserves to be heard.
+                    </p>
+<div class="mt-8 flex flex-wrap gap-3">
+<!-- Language Pills -->
+<div class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-primary/20 text-on-primary-container font-medium text-sm flex items-center gap-2 hover:bg-primary/5 transition-colors cursor-default">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                            English
+                        </div>
+<div class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-primary/20 text-on-primary-container font-medium text-sm flex items-center gap-2 hover:bg-primary/5 transition-colors cursor-default">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                            Hindi
+                        </div>
+<div class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-primary/20 text-on-primary-container font-medium text-sm flex items-center gap-2 hover:bg-primary/5 transition-colors cursor-default">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                            Spanish
+                        </div>
+<div class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-primary/20 text-on-primary-container font-medium text-sm flex items-center gap-2 hover:bg-primary/5 transition-colors cursor-default">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                            Mandarin
+                        </div>
+<div class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-primary/20 text-on-primary-container font-medium text-sm flex items-center gap-2 hover:bg-primary/5 transition-colors cursor-default">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                            Arabic
+                        </div>
+<div class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-primary/20 text-on-primary-container font-medium text-sm flex items-center gap-2 hover:bg-primary/5 transition-colors cursor-default">
+<span class="w-2 h-2 rounded-full bg-sage-green"></span>
+                            French
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CTA SECTION -->
+<section class="px-6 md:px-12 py-12">
+<div class="relative max-w-7xl mx-auto bg-[#1a1f2c] rounded-xl overflow-hidden py-24 md:py-32 film-grain shadow-[0_-20px_40px_rgba(0,0,0,0.1)]">
+<!-- Background Orbs -->
+<div class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-tertiary/10 rounded-full blur-[140px] translate-x-1/4 translate-y-1/4"></div>
+<div class="relative z-20 flex flex-col items-center text-center px-6 max-w-3xl mx-auto">
+<h2 class="font-headline italic text-5xl md:text-7xl text-white mb-6">
+                        Start Your Child's Speech Journey
+                    </h2>
+<p class="font-body text-xl text-white/40 mb-12 max-w-xl">
+                        Free, research-based, built with love. No login required.
+                    </p>
+<div class="flex flex-col items-center gap-4">
+<button class="bg-white text-primary px-10 py-5 rounded-full text-xl font-bold flex items-center gap-3 hover:bg-surface-container-lowest transition-all hover:scale-[1.02] active:scale-95">
+                            ❤️ Create a Profile →
+                        </button>
+<span class="text-white/25 text-sm font-label uppercase tracking-widest">
+                            No login required
+                        </span>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-12 right-12 opacity-10 hidden lg:block">
+<span class="material-symbols-outlined text-white text-[120px]">psychology</span>
+</div>
+<div class="absolute bottom-12 left-12 opacity-10 hidden lg:block">
+<span class="material-symbols-outlined text-white text-[120px]">storm</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-[#1a1f2c] dark:bg-[#0f1117] relative">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 overflow-hidden relative max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-['Newsreader'] italic text-xl text-white">BoloBridge</div>
+<p class="font-['Inter'] text-sm tracking-normal leading-relaxed text-[#eebd90] max-w-xs text-center md:text-left">
+                    © 2024 BoloBridge. Nurturing every voice with intention.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+<a class="font-['Inter'] text-sm text-stone-400 hover:text-[#eebd90] hover:translate-y-[-2px] transition-transform duration-300" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-stone-400 hover:text-[#eebd90] hover:translate-y-[-2px] transition-transform duration-300" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm text-stone-400 hover:text-[#eebd90] hover:translate-y-[-2px] transition-transform duration-300" href="#">Speech Guides</a>
+<a class="font-['Inter'] text-sm text-stone-400 hover:text-[#eebd90] hover:translate-y-[-2px] transition-transform duration-300" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

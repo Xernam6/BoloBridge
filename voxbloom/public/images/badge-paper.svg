@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#2D3142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Paper with folded corner -->
+  <path d="M38 16 L82 16 L96 30 L96 112 L38 112 Z" />
+  <path d="M82 16 L82 30 L96 30" />
+  <!-- Text lines -->
+  <line x1="50" y1="46" x2="84" y2="46" opacity="0.4"/>
+  <line x1="50" y1="58" x2="84" y2="58" opacity="0.4"/>
+  <line x1="50" y1="70" x2="74" y2="70" opacity="0.4"/>
+  <line x1="50" y1="82" x2="80" y2="82" opacity="0.4"/>
+  <line x1="50" y1="94" x2="68" y2="94" opacity="0.4"/>
+  <!-- Accent mark — checkmark or highlight -->
+  <circle cx="42" cy="46" r="3" fill="#6B8F71" stroke="none"/>
+  <circle cx="42" cy="58" r="3" fill="#6B8F71" stroke="none"/>
+</svg>

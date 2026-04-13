@@ -1,0 +1,1572 @@
+[
+  {
+    "id": "how-we-make-sounds",
+    "title": "How We Make Sounds",
+    "description": "Discover the amazing journey air takes to become your voice!",
+    "icon": "🎵",
+    "color": "from-cyan to-blue-500",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Your Amazing Voice",
+        "content": "Did you know your voice starts all the way down in your lungs? Let's follow the path of air as it becomes sound!",
+        "type": "info"
+      },
+      {
+        "id": "lungs",
+        "title": "The Air Factory",
+        "content": "Your lungs are like big balloons! When you breathe in, they fill up with air. When you breathe out, the air travels up through a tube called your windpipe.",
+        "type": "info"
+      },
+      {
+        "id": "vocal-cords",
+        "title": "The Vibrating Strings",
+        "content": "At the top of your windpipe are your vocal cords — two tiny flaps that vibrate when air passes through them. This vibration makes the basic sound of your voice! Try humming — you can feel them vibrate!",
+        "type": "interactive"
+      },
+      {
+        "id": "mouth",
+        "title": "The Shape Maker",
+        "content": "Your mouth, tongue, teeth, and lips work together to shape the sound into different words. Try saying 'aaah' and then 'eeee' — notice how your mouth changes shape?",
+        "type": "interactive"
+      },
+      {
+        "id": "nose",
+        "title": "The Nose Knows",
+        "content": "Some sounds travel through your nose instead of your mouth! Hold your nose and try saying 'mmm' or 'nnn'. You can feel the buzzing because the air wants to go through your nose for those sounds!",
+        "type": "interactive"
+      },
+      {
+        "id": "volume",
+        "title": "Loud and Quiet",
+        "content": "You can control how loud or quiet your voice is by changing how much air you push out. Try whispering 'hello' and then saying it in a normal voice. What feels different?",
+        "type": "interactive"
+      },
+      {
+        "id": "pitch",
+        "title": "High and Low",
+        "content": "Your vocal cords can stretch tight to make high sounds or relax to make low sounds — just like a guitar string! Try making a siren sound from low to high. Can you feel your throat change?",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Sound Quiz!",
+        "content": "Which part of your body vibrates to make your voice?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Nose Sound Quiz!",
+        "content": "Which sounds travel through your nose?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "meet-your-mouth",
+    "title": "Meet Your Mouth",
+    "description": "Get to know the amazing parts of your mouth that help you speak!",
+    "icon": "🗣️",
+    "color": "from-pink-400 to-rose-500",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Your Mouth is Amazing!",
+        "content": "Your mouth has many different parts, and each one has a special job in making sounds. Let's meet them all!",
+        "type": "info"
+      },
+      {
+        "id": "tongue",
+        "title": "The Mighty Tongue",
+        "content": "Your tongue is the busiest muscle in your mouth! It can touch the roof of your mouth, press against your teeth, and curl in many different ways to make different sounds.",
+        "type": "interactive"
+      },
+      {
+        "id": "lips",
+        "title": "Lovely Lips",
+        "content": "Your lips help make sounds like 'b', 'p', and 'm'. They can stretch wide for a smile, pucker for a kiss, or press together to make popping sounds!",
+        "type": "interactive"
+      },
+      {
+        "id": "teeth",
+        "title": "Terrific Teeth",
+        "content": "Your teeth help make sounds like 'f', 'v', 'th', and 's'. Your tongue touches or comes close to your teeth for these sounds.",
+        "type": "interactive"
+      },
+      {
+        "id": "palate",
+        "title": "The Roof of Your Mouth",
+        "content": "Run your tongue along the roof of your mouth. Feel the bumpy ridge behind your top teeth? That's where your tongue goes for sounds like 't', 'd', and 'n'!",
+        "type": "interactive"
+      },
+      {
+        "id": "jaw",
+        "title": "The Jaw Drop",
+        "content": "Your jaw opens and closes to help you make different vowel sounds. Try saying 'ah' with your jaw open wide, then say 'ee' with your jaw almost closed. Your jaw is like a door for your voice!",
+        "type": "interactive"
+      },
+      {
+        "id": "soft-palate",
+        "title": "The Soft Back Part",
+        "content": "Behind the hard roof of your mouth, there's a soft, squishy part called the soft palate. It lifts up to close off your nose when you make sounds like 'g' and 'k'. Try saying 'k' and feel the back of your tongue touch it!",
+        "type": "interactive"
+      },
+      {
+        "id": "teamwork",
+        "title": "Mouth Teamwork",
+        "content": "All the parts of your mouth work together like a team. When you say 'splash', your lips, tongue, teeth, and jaw all move in perfect order — and it happens in less than a second! Your mouth is incredible!",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Mouth Parts Quiz!",
+        "content": "Which part of your mouth helps you make the sounds 'b', 'p', and 'm'?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "sound-map",
+    "title": "The Sound Map",
+    "description": "Explore a beautiful garden of speech sounds!",
+    "icon": "🗺️",
+    "color": "from-grape to-indigo-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Welcome to the Sound Garden!",
+        "content": "Every language is made up of special sounds called phonemes. In this garden, each flower represents a different sound. Let's explore!",
+        "type": "info"
+      },
+      {
+        "id": "consonants",
+        "title": "Consonant Corner",
+        "content": "Consonants are sounds you make by partly blocking the air with your tongue, lips, or teeth. Sounds like 'b', 'd', 'k', and 's' are all consonants. In our garden, they're the blue flowers!",
+        "type": "interactive"
+      },
+      {
+        "id": "vowels",
+        "title": "Vowel Valley",
+        "content": "Vowels are sounds you make with an open mouth — the air flows freely! 'A', 'E', 'I', 'O', 'U' are vowels. In our garden, they're warm, colorful flowers!",
+        "type": "interactive"
+      },
+      {
+        "id": "blends",
+        "title": "Blend Bridges",
+        "content": "Blends are two or more consonants that work together, like 'bl' in bloom, 'st' in star, or 'tr' in tree. They're the purple flowers in our garden!",
+        "type": "interactive"
+      },
+      {
+        "id": "digraphs",
+        "title": "Special Sound Pairs",
+        "content": "Sometimes two letters team up to make one brand-new sound! 'Sh', 'ch', 'th', and 'wh' are called digraphs. Say 'ship' and 'chip' — the 'sh' and 'ch' are each one smooth sound, not two separate ones!",
+        "type": "interactive"
+      },
+      {
+        "id": "voiced-unvoiced",
+        "title": "Buzzy and Quiet Sounds",
+        "content": "Some sounds make your throat buzz and some don't! Put your hand on your throat and say 'zzz' — feel the buzz? Now say 'sss' — no buzz! 'Z' is voiced (buzzy) and 's' is unvoiced (quiet). Try 'b' and 'p' — same idea!",
+        "type": "interactive"
+      },
+      {
+        "id": "diphthongs",
+        "title": "Sliding Vowels",
+        "content": "Some vowel sounds actually slide from one sound to another! Say 'boy' slowly — hear how the vowel glides? Or 'cow' — your mouth moves while you say it. These sliding vowels are called diphthongs!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Sound Map Quiz!",
+        "content": "What do we call sounds like 'sh', 'ch', and 'th' where two letters make one new sound?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "speech-milestones",
+    "title": "Speech Milestones",
+    "description": "Learn about the amazing journey of learning to talk!",
+    "icon": "📈",
+    "color": "from-amber-400 to-orange-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Growing Your Voice",
+        "content": "Everyone learns to speak at their own pace. Let's learn about the amazing milestones on the journey of learning to talk!",
+        "type": "info"
+      },
+      {
+        "id": "baby",
+        "title": "Baby Sounds (0-1 year)",
+        "content": "Babies start by cooing and babbling! They make sounds like 'ba-ba' and 'ma-ma'. This is how they practice using their voice.",
+        "type": "info"
+      },
+      {
+        "id": "toddler",
+        "title": "First Words (1-2 years)",
+        "content": "Around their first birthday, most children say their first real words! By age 2, many children know about 50 words and start putting two words together.",
+        "type": "info"
+      },
+      {
+        "id": "preschool",
+        "title": "Sentences (3-4 years)",
+        "content": "Preschoolers start speaking in sentences! They love asking 'why?' and telling stories. Most people can understand what they say.",
+        "type": "info"
+      },
+      {
+        "id": "school",
+        "title": "Clear Speech (5-7 years)",
+        "content": "By school age, children can say most sounds clearly. Some trickier sounds like 'r', 'th', and 'l' might still be developing — and that's completely normal!",
+        "type": "info"
+      },
+      {
+        "id": "early-sounds",
+        "title": "First Sounds to Learn",
+        "content": "The earliest sounds most children learn are 'p', 'b', 'm', 'd', and 'n'. These are made with the lips and the front of the tongue — the parts of the mouth that are easiest to control. That's why 'mama' and 'dada' are often first words!",
+        "type": "info"
+      },
+      {
+        "id": "later-sounds",
+        "title": "Sounds That Come Later",
+        "content": "Sounds like 'r', 'l', 's', 'z', 'sh', 'ch', and 'th' usually come later because they need very precise tongue movements. Most children master these by age 7 or 8, so there's no need to worry if they take a while!",
+        "type": "info"
+      },
+      {
+        "id": "everyone-different",
+        "title": "Every Journey Is Unique",
+        "content": "Some children talk early and some take more time — both are okay! Children who grow up hearing two languages might mix them at first, but they end up being great communicators in both. Everyone's speech journey is special.",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Milestones Quiz!",
+        "content": "Why are 'mama' and 'dada' often among a baby's first words?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "tricky-sounds",
+    "title": "When Sounds Are Tricky",
+    "description": "It's okay when some sounds are hard! Let's learn why.",
+    "icon": "🧩",
+    "color": "from-teal-400 to-cyan",
+    "difficulty": 3,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Everyone Has Tricky Sounds!",
+        "content": "Some sounds are harder to learn than others, and that's totally normal! Let's learn about why some sounds can be tricky and what can help.",
+        "type": "info"
+      },
+      {
+        "id": "common",
+        "title": "Common Tricky Sounds",
+        "content": "The sounds 'r', 'l', 'th', 's', and 'sh' are tricky for lots of children. Your mouth has to do very precise movements to make these sounds, and it takes practice!",
+        "type": "info"
+      },
+      {
+        "id": "why-tricky",
+        "title": "Why Are Some Sounds Hard?",
+        "content": "Tricky sounds usually need your tongue to be in a very exact position. For example, 'r' needs the sides of your tongue to touch your back teeth while the tip curls up — that's a lot of things at once! It's like patting your head and rubbing your tummy.",
+        "type": "info"
+      },
+      {
+        "id": "substitutions",
+        "title": "Sound Swaps",
+        "content": "When a sound is tricky, your brain might swap it for an easier one. Saying 'wabbit' instead of 'rabbit' or 'fumb' instead of 'thumb' is very common. Your brain is being clever by using a sound it already knows!",
+        "type": "info"
+      },
+      {
+        "id": "practice",
+        "title": "Practice Makes Progress",
+        "content": "The more you practice, the easier sounds become. It's like learning to ride a bike — it feels wobbly at first, but your muscles learn over time!",
+        "type": "info"
+      },
+      {
+        "id": "mirror-trick",
+        "title": "The Mirror Trick",
+        "content": "One great way to practice tricky sounds is to watch yourself in a mirror! You can see where your tongue and lips are going and try to match the right position. Try it — say 'sss' in front of a mirror and watch your tongue!",
+        "type": "interactive"
+      },
+      {
+        "id": "help",
+        "title": "Getting Help",
+        "content": "If sounds are really tricky, a speech-language pathologist (SLP) can help! They're friendly experts who know special exercises to make sounds easier. Asking for help is always a great idea!",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Tricky Sounds Quiz!",
+        "content": "When a child says 'wabbit' instead of 'rabbit', what is happening?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "breathing-for-speech",
+    "title": "Breathing for Speech",
+    "description": "Learn how your breath powers your voice like fuel powers a rocket!",
+    "icon": "🌬️",
+    "color": "from-sky-400 to-blue-500",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Breath Is Your Superpower!",
+        "content": "Every word you say is powered by your breath! Without air, your voice wouldn't work at all. Let's learn how breathing and speaking work together.",
+        "type": "info"
+      },
+      {
+        "id": "how-breathing-works",
+        "title": "In and Out",
+        "content": "When you breathe in, a big muscle under your lungs called the diaphragm moves down to make room for air. When you breathe out, it pushes back up and the air flows out. This air is what makes your voice work!",
+        "type": "info"
+      },
+      {
+        "id": "belly-breathing",
+        "title": "Belly Breathing",
+        "content": "Put your hand on your belly and breathe in slowly through your nose. Does your belly push out? That means your diaphragm is working! Now breathe out slowly through your mouth. This is called belly breathing, and it gives you the best breath support for talking.",
+        "type": "interactive"
+      },
+      {
+        "id": "breath-and-voice",
+        "title": "Breath Meets Voice",
+        "content": "Try taking a deep belly breath and then saying 'ahhhhh' for as long as you can. How many seconds can you hold it? With practice, you can make your breath last longer, which helps you speak in longer sentences without running out of air!",
+        "type": "interactive"
+      },
+      {
+        "id": "breath-control",
+        "title": "Controlling Your Airflow",
+        "content": "Speaking needs steady, controlled air — not too fast, not too slow. Try blowing on your hand gently like you're cooling hot soup. Now try blowing hard like you're blowing out candles. For talking, you need the gentle, steady flow!",
+        "type": "interactive"
+      },
+      {
+        "id": "breath-pauses",
+        "title": "Breathing Breaks",
+        "content": "When you talk, you take tiny breathing breaks between sentences and phrases. That's why commas and periods exist — they mark places where your voice pauses and your lungs grab more air. Try reading a sentence out loud and notice where you breathe!",
+        "type": "interactive"
+      },
+      {
+        "id": "fun-exercises",
+        "title": "Fun Breath Games",
+        "content": "You can practice breath control with fun activities! Try blowing bubbles with slow, steady breaths. Or blow a cotton ball across a table using a straw. These games train the same muscles you use for speaking!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Breathing Quiz!",
+        "content": "What is the name of the big muscle under your lungs that helps you breathe?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "listening-skills",
+    "title": "Listening Skills",
+    "description": "Train your ears to become a super listener!",
+    "icon": "👂",
+    "color": "from-violet-400 to-purple-600",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Listening Is a Superpower!",
+        "content": "Good listening is just as important as good speaking! Your ears and brain work together to understand the sounds and words around you. Let's learn how to become a super listener!",
+        "type": "info"
+      },
+      {
+        "id": "how-hearing-works",
+        "title": "How Your Ears Work",
+        "content": "Sound waves travel through the air and into your ear canal. Deep inside your ear, tiny bones and a curly tube called the cochlea turn those sound waves into messages for your brain. Your brain then figures out what the sounds mean!",
+        "type": "info"
+      },
+      {
+        "id": "hearing-vs-listening",
+        "title": "Hearing vs. Listening",
+        "content": "Hearing happens automatically — your ears pick up sounds even when you're not trying. Listening is different — it means paying attention on purpose! Think of it like this: you might hear birds outside, but you listen to your teacher.",
+        "type": "info"
+      },
+      {
+        "id": "sound-detective",
+        "title": "Sound Detective",
+        "content": "Close your eyes for 30 seconds and count how many different sounds you can hear. Maybe a clock ticking, birds outside, a fan humming, or people talking. How many did you find? Being a sound detective helps train your listening skills!",
+        "type": "interactive"
+      },
+      {
+        "id": "similar-sounds",
+        "title": "Sounds That Sound Alike",
+        "content": "Some sounds are very similar, like 'b' and 'p', or 'f' and 'v'. The difference is tiny! Listening carefully to these small differences helps you understand words correctly. Try saying 'bat' and 'pat' — can you hear the difference?",
+        "type": "interactive"
+      },
+      {
+        "id": "following-directions",
+        "title": "Following Directions",
+        "content": "Good listeners can follow directions step by step. Try this: touch your nose, clap your hands, then turn around. Could you remember all three steps? Practicing with multi-step directions makes your listening brain stronger!",
+        "type": "interactive"
+      },
+      {
+        "id": "active-listening",
+        "title": "Active Listening Tips",
+        "content": "Great listeners look at the person talking, keep their body still, think about what is being said, and wait for their turn to speak. You can also show you're listening by nodding or saying 'uh-huh'. These habits help you understand and remember more!",
+        "type": "info"
+      },
+      {
+        "id": "noisy-places",
+        "title": "Listening in Noisy Places",
+        "content": "It can be hard to listen when there's lots of noise around you. Your brain has to work extra hard to pick out the voice you want to hear! If it's too noisy, you can move closer to the speaker, ask them to speak up, or find a quieter spot.",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Listening Quiz!",
+        "content": "What is the difference between hearing and listening?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "conversation-skills",
+    "title": "Conversation Skills",
+    "description": "Learn to be an awesome conversation partner!",
+    "icon": "💬",
+    "color": "from-emerald-400 to-green-600",
+    "difficulty": 3,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Let's Talk About Talking!",
+        "content": "Conversations are how we share ideas, make friends, and learn new things. A good conversation is like playing catch — you take turns throwing and catching. Let's learn the skills that make conversations fun!",
+        "type": "info"
+      },
+      {
+        "id": "taking-turns",
+        "title": "Taking Turns",
+        "content": "In a conversation, one person talks while the other listens, and then you switch! It's important to wait for the other person to finish before you start talking. Imagine if both people threw the ball at the same time — it would be a mess!",
+        "type": "info"
+      },
+      {
+        "id": "starting-conversations",
+        "title": "Starting a Conversation",
+        "content": "Starting a conversation can feel tricky, but it gets easier with practice! You can say hello, ask a question like 'What are you playing?' or make a comment like 'I like your drawing!' Try practicing with a family member — say hi and ask them about their day.",
+        "type": "interactive"
+      },
+      {
+        "id": "asking-questions",
+        "title": "The Power of Questions",
+        "content": "Asking questions shows you're interested and keeps the conversation going! Try asking 'who', 'what', 'where', 'when', 'why', and 'how' questions. Instead of just saying 'cool', try 'How did you make that?' People love when you ask about their ideas!",
+        "type": "interactive"
+      },
+      {
+        "id": "staying-on-topic",
+        "title": "Staying on Topic",
+        "content": "Good conversations stay on track! If your friend is talking about their pet cat, you could say 'My cat likes to nap too!' instead of suddenly talking about dinosaurs. When you want to change the topic, you can say 'That reminds me of...' or 'Speaking of animals...'",
+        "type": "info"
+      },
+      {
+        "id": "body-language",
+        "title": "Talking Without Words",
+        "content": "Did you know that a lot of communication happens without words? Your face, hands, and body send messages too! A smile means you're happy, crossed arms might mean you're upset, and nodding shows you agree. Try making a happy face, a surprised face, and a thinking face!",
+        "type": "interactive"
+      },
+      {
+        "id": "feelings-words",
+        "title": "Sharing Your Feelings",
+        "content": "Being able to tell people how you feel is an important conversation skill. Using 'I feel' statements helps others understand you. Instead of 'You're being mean!', try 'I feel sad when that happens.' It's a friendlier way to share your feelings.",
+        "type": "info"
+      },
+      {
+        "id": "ending-conversations",
+        "title": "Wrapping Up Nicely",
+        "content": "Knowing how to end a conversation is important too! You can say 'It was nice talking to you!', 'I have to go now, bye!', or 'Let's talk more later!' A friendly goodbye leaves everyone feeling good.",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Conversation Quiz!",
+        "content": "Why is a good conversation like playing catch?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "voice-care",
+    "title": "Voice Care",
+    "description": "Learn how to keep your voice healthy and strong every day!",
+    "icon": "🎤",
+    "color": "from-rose-400 to-pink-600",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Your Voice Is Precious!",
+        "content": "Your voice is one of a kind — nobody else in the whole world sounds exactly like you! Just like you take care of your teeth by brushing them, you can take care of your voice too. Let's learn how!",
+        "type": "info"
+      },
+      {
+        "id": "how-voice-gets-tired",
+        "title": "When Your Voice Gets Tired",
+        "content": "Have you ever talked or shouted so much that your voice felt scratchy or sore? That happens because your vocal cords get tired and swollen from too much rubbing together. It's like how your hands get sore if you clap for a really long time.",
+        "type": "info"
+      },
+      {
+        "id": "water-is-magic",
+        "title": "Water Is Voice Fuel",
+        "content": "Drinking water is one of the best things you can do for your voice! Water keeps your vocal cords smooth and slippery so they can vibrate easily. Try to drink water throughout the day — your voice will thank you! Take a sip of water right now if you can.",
+        "type": "interactive"
+      },
+      {
+        "id": "indoor-voice",
+        "title": "Using Your Inside Voice",
+        "content": "Yelling and screaming can be really hard on your vocal cords. When you need to get someone's attention, try walking closer to them instead of shouting across the room. Practice saying 'excuse me' in a clear, normal voice instead of yelling.",
+        "type": "interactive"
+      },
+      {
+        "id": "vocal-rest",
+        "title": "Giving Your Voice a Break",
+        "content": "Sometimes the best thing for your voice is a little rest — just like your body needs sleep! If your voice feels tired or scratchy, try being quiet for a while. You can draw, read, or play a quiet game. Your vocal cords will recover and feel better.",
+        "type": "info"
+      },
+      {
+        "id": "warm-up",
+        "title": "Voice Warm-Ups",
+        "content": "Singers and actors warm up their voices before performing, and you can too! Try humming your favorite song gently, or make a soft 'brrr' sound with your lips like a little motor. This gets your vocal cords ready to work without straining them.",
+        "type": "interactive"
+      },
+      {
+        "id": "whispering-myth",
+        "title": "The Whispering Surprise",
+        "content": "Here is something surprising — whispering can actually be harder on your voice than talking normally! When you whisper, your vocal cords squeeze together tightly. If your voice is tired, it's better to talk softly and gently than to whisper.",
+        "type": "info"
+      },
+      {
+        "id": "healthy-habits",
+        "title": "Daily Voice Habits",
+        "content": "Here are three easy habits for a healthy voice: drink plenty of water, avoid yelling when you can, and rest your voice when it feels tired. Try following these habits for a whole week and see how your voice feels! Ask a grown-up to help you remember.",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Voice Care Quiz!",
+        "content": "What is one of the best things you can do to keep your voice healthy?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Whispering Quiz!",
+        "content": "Why can whispering actually be hard on your voice?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "rhyming-fun",
+    "title": "Rhyming Fun",
+    "description": "Play with words that sound alike and discover the magic of rhymes!",
+    "icon": "🎶",
+    "color": "from-yellow-400 to-amber-500",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Welcome to Rhyme Time!",
+        "content": "Rhyming is when words have the same ending sound, like 'cat' and 'hat' or 'book' and 'cook'. Rhyming is a really important skill that helps your brain get ready for reading and spelling. And it's so much fun!",
+        "type": "info"
+      },
+      {
+        "id": "what-is-rhyme",
+        "title": "How Rhymes Work",
+        "content": "Two words rhyme when they end with the same sound. 'Sun' and 'fun' rhyme because they both end with 'un'. 'Tree' and 'bee' rhyme because they both end with 'ee'. The beginning of the word is different, but the ending matches!",
+        "type": "info"
+      },
+      {
+        "id": "rhyme-chain",
+        "title": "Rhyme Chain Game",
+        "content": "Let's play a rhyme chain! Start with the word 'dog'. Can you think of a word that rhymes? How about 'log'? Now try another — 'fog'! Keep going and see how many rhyming words you can find. Say each one out loud!",
+        "type": "interactive"
+      },
+      {
+        "id": "word-families",
+        "title": "Word Families",
+        "content": "Words that share the same ending sound belong to a word family. The '-at' family has cat, hat, bat, mat, sat, and rat. The '-op' family has hop, mop, top, stop, and pop. Word families help you learn to read new words faster!",
+        "type": "info"
+      },
+      {
+        "id": "syllable-clapping",
+        "title": "Clap the Syllables",
+        "content": "Words are made of small beats called syllables. You can find them by clapping! Clap along: 'cat' is one clap, 'rab-bit' is two claps, 'el-e-phant' is three claps. Try clapping your own name — how many syllables does it have?",
+        "type": "interactive"
+      },
+      {
+        "id": "silly-rhymes",
+        "title": "Silly Rhyme Time",
+        "content": "Making up silly rhymes is a great way to practice! Try finishing this: 'I saw a bear sitting on a ___.' Did you say 'chair'? Or maybe 'stair'? Now make up your own silly sentence with a rhyme at the end. The sillier, the better!",
+        "type": "interactive"
+      },
+      {
+        "id": "rhyme-or-not",
+        "title": "Rhyme or Not?",
+        "content": "Let's test your rhyme ears! Do these words rhyme? 'cake' and 'lake' — yes, they do! How about 'house' and 'tree'? Nope, those don't rhyme. Try this: say two words out loud and listen carefully to the ending sounds. If they match, they rhyme!",
+        "type": "interactive"
+      },
+      {
+        "id": "nursery-rhymes",
+        "title": "Why Nursery Rhymes Matter",
+        "content": "Songs like 'Twinkle Twinkle Little Star' and 'Humpty Dumpty' are full of rhymes! When you sing these songs, your brain practices hearing word patterns. This skill helps you become a better reader and speller later on. Try singing your favorite nursery rhyme right now!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Rhyming Quiz!",
+        "content": "Which word rhymes with 'cake'?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Syllable Quiz!",
+        "content": "How many syllables does the word 'butterfly' have?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "storytelling-skills",
+    "title": "Storytelling Skills",
+    "description": "Become an amazing storyteller by learning how to build great stories!",
+    "icon": "📖",
+    "color": "from-orange-400 to-red-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Everyone Is a Storyteller!",
+        "content": "Stories are everywhere — in books, movies, and even when you tell someone about your day! Being a good storyteller helps you share your ideas clearly and keeps people interested. Let's learn the secrets of great storytelling!",
+        "type": "info"
+      },
+      {
+        "id": "story-parts",
+        "title": "The Three Parts of a Story",
+        "content": "Every good story has three parts: a beginning, a middle, and an end. The beginning introduces who and where. The middle tells what happens. The end wraps everything up. Think of it like a sandwich — the beginning and end are the bread, and the middle is the yummy filling!",
+        "type": "info"
+      },
+      {
+        "id": "characters",
+        "title": "Creating Characters",
+        "content": "Characters are the people or animals in your story. Great storytellers describe their characters so you can picture them! Try this: think of a character and describe them out loud. What do they look like? What do they like to do? What makes them special?",
+        "type": "interactive"
+      },
+      {
+        "id": "sequencing",
+        "title": "First, Then, Finally",
+        "content": "Stories happen in order. Using words like 'first', 'then', 'next', 'after that', and 'finally' helps your listener follow along. Try telling what you did this morning using these order words: 'First I woke up, then I...' Keep going!",
+        "type": "interactive"
+      },
+      {
+        "id": "descriptive-words",
+        "title": "Painting with Words",
+        "content": "Descriptive words make stories come alive! Instead of 'The dog ran,' try 'The fluffy brown dog zoomed across the muddy yard.' Adding colors, sizes, feelings, and action words helps your listener see the story in their mind.",
+        "type": "info"
+      },
+      {
+        "id": "problem-solution",
+        "title": "The Problem and the Fix",
+        "content": "The most exciting part of a story is when something goes wrong and the character has to fix it! Think of a problem: maybe a kitten gets stuck in a tree. Now think of how to solve it. Tell the whole mini-story out loud — the problem and how it gets fixed!",
+        "type": "interactive"
+      },
+      {
+        "id": "feelings-in-stories",
+        "title": "How Characters Feel",
+        "content": "Good stories tell us how characters feel. Was the kitten scared? Was the person who helped proud? Adding feelings like happy, worried, surprised, and brave makes your story more interesting and helps your listener care about what happens.",
+        "type": "info"
+      },
+      {
+        "id": "retelling",
+        "title": "Retell a Favorite Story",
+        "content": "Pick a story you know well — maybe a favorite book or movie. Now try retelling it out loud in your own words. Remember to include: Who was in the story? What happened first? What was the problem? How did it end? You are the storyteller now!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Storytelling Quiz!",
+        "content": "What are the three main parts of a story?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Descriptive Words Quiz!",
+        "content": "Why do good storytellers use descriptive words?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "reading-aloud",
+    "title": "Reading Aloud",
+    "description": "Discover how to bring words on a page to life with your voice!",
+    "icon": "📚",
+    "color": "from-lime-400 to-green-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Reading Out Loud Is a Superpower!",
+        "content": "When you read aloud, you turn words on a page into something people can hear and enjoy. Reading aloud helps you become a better speaker, a better reader, and a better listener — all at the same time!",
+        "type": "info"
+      },
+      {
+        "id": "pacing",
+        "title": "Finding Your Speed",
+        "content": "Reading too fast can make it hard for people to understand you. Reading too slowly can be boring. The best speed is somewhere in the middle — clear and comfortable. Try reading a sentence out loud at three different speeds: super fast, super slow, and just right.",
+        "type": "interactive"
+      },
+      {
+        "id": "punctuation-power",
+        "title": "Punctuation Is Your Guide",
+        "content": "Punctuation marks are like road signs for your voice! A period means stop and take a breath. A comma means a short pause. A question mark means your voice goes up at the end. An exclamation mark means you sound excited! Try reading this: 'Is it raining? Yes! Grab your coat.'",
+        "type": "interactive"
+      },
+      {
+        "id": "expression",
+        "title": "Reading with Feeling",
+        "content": "The best readers use their voice to show feelings. If a character is scared, they read in a shaky, quiet voice. If something exciting happens, their voice gets louder and faster. Try reading 'The door slowly creaked open...' in a spooky voice!",
+        "type": "interactive"
+      },
+      {
+        "id": "character-voices",
+        "title": "Giving Characters a Voice",
+        "content": "When you read a story with different characters talking, try giving each one a slightly different voice! Maybe the bear has a deep, rumbly voice and the mouse has a tiny, squeaky voice. This makes the story so much more fun to listen to.",
+        "type": "interactive"
+      },
+      {
+        "id": "volume-and-clarity",
+        "title": "Loud Enough and Clear",
+        "content": "When reading aloud, make sure everyone can hear you! Sit up straight, hold the book so it doesn't cover your mouth, and speak clearly. Try reading a sentence to someone across the room — could they hear and understand every word?",
+        "type": "interactive"
+      },
+      {
+        "id": "practice-tips",
+        "title": "How to Get Better",
+        "content": "The best way to get better at reading aloud is to practice! Read to a stuffed animal, a pet, a younger sibling, or a grown-up. You can even record yourself and listen back. Every time you practice, your reading voice gets stronger and more confident.",
+        "type": "info"
+      },
+      {
+        "id": "why-it-matters",
+        "title": "Why Reading Aloud Helps Speech",
+        "content": "Reading aloud exercises so many speech skills at once: breath control, clear sounds, voice expression, and pacing. It also builds your vocabulary because you meet new words in books! The more you read aloud, the more comfortable and powerful your speaking voice becomes.",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Reading Aloud Quiz!",
+        "content": "What should your voice do when you see a question mark?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Expression Quiz!",
+        "content": "What does it mean to read with expression?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "tongue-twisters",
+    "title": "Tongue Twisters",
+    "description": "Challenge your mouth with tricky phrases that twist your tongue!",
+    "icon": "🌀",
+    "color": "from-fuchsia-400 to-purple-500",
+    "difficulty": 3,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Get Ready to Twist!",
+        "content": "Tongue twisters are special phrases that are hard to say quickly because they use very similar sounds. They're a fun challenge, and they actually help you speak more clearly! Let's warm up and see how fast your tongue can go.",
+        "type": "info"
+      },
+      {
+        "id": "why-they-help",
+        "title": "Why Tongue Twisters Work",
+        "content": "When you practice tongue twisters, your mouth has to switch between similar sounds very quickly. This trains your tongue, lips, and jaw to be more precise and nimble. It's like an obstacle course for your mouth muscles!",
+        "type": "info"
+      },
+      {
+        "id": "level-1",
+        "title": "Easy Warm-Up",
+        "content": "Let's start easy! Say this three times fast: 'Red lorry, yellow lorry.' Now try: 'Toy boat, toy boat, toy boat.' Take your time at first, then speed up. If you stumble, that's the whole point — it means your mouth is learning!",
+        "type": "interactive"
+      },
+      {
+        "id": "level-2",
+        "title": "Getting Trickier",
+        "content": "Ready for a challenge? Try saying: 'She sells seashells by the seashore.' This one is tricky because 'sh' and 's' are very similar sounds and your tongue has to switch between them quickly. Say it slowly first, then try to go faster.",
+        "type": "interactive"
+      },
+      {
+        "id": "level-3",
+        "title": "The P and B Challenge",
+        "content": "Try this one: 'Peter Piper picked a peck of pickled peppers.' All those 'p' sounds make your lips work really hard! Now try: 'Betty Botter bought some butter.' The 'b' and 't' sounds keep your tongue and lips bouncing back and forth.",
+        "type": "interactive"
+      },
+      {
+        "id": "level-4",
+        "title": "The Ultimate Challenge",
+        "content": "Think you're ready for the hardest ones? Try: 'The sixth sick sheik's sixth sheep's sick.' Or: 'Irish wristwatch, Swiss wristwatch.' These are some of the trickiest tongue twisters in English! Don't worry if you can't do them perfectly — even adults struggle with these.",
+        "type": "interactive"
+      },
+      {
+        "id": "make-your-own",
+        "title": "Create Your Own Tongue Twister",
+        "content": "You can make your own tongue twister! Pick a sound, like 's', and think of lots of words that start with it: silly, seven, snakes, slid, sideways. Now put them in a sentence: 'Seven silly snakes slid sideways.' Try saying your creation three times fast!",
+        "type": "interactive"
+      },
+      {
+        "id": "slow-then-fast",
+        "title": "The Slow-to-Fast Method",
+        "content": "The best way to master a tongue twister is to say it very slowly and clearly first. Make sure every single sound is correct. Then gradually speed up, a little faster each time. If you make a mistake, slow back down. It's like learning a song — practice makes progress!",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Tongue Twister Quiz!",
+        "content": "Why are tongue twisters good for your speech?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Best Method Quiz!",
+        "content": "What is the best way to practice a tongue twister?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "social-communication",
+    "title": "Social Communication",
+    "description": "Learn the hidden rules of how people talk and connect with each other!",
+    "icon": "🤝",
+    "color": "from-indigo-400 to-blue-600",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "More Than Just Words",
+        "content": "Communication is about so much more than the words you say! The way you say something, your face, and even when you choose to speak all send messages. Let's explore the hidden rules that help people understand each other.",
+        "type": "info"
+      },
+      {
+        "id": "greetings",
+        "title": "Saying Hello and Goodbye",
+        "content": "Greetings are how we start and end interactions. You might wave, say 'hi', or shake hands. Different situations need different greetings — you might say 'hey' to a friend but 'hello' to a teacher. Practice greeting someone in three different ways right now!",
+        "type": "interactive"
+      },
+      {
+        "id": "tone-of-voice",
+        "title": "It's Not What You Say, It's How You Say It",
+        "content": "The same words can mean very different things depending on your tone of voice! Try saying 'That's great' in a happy voice, then in a bored voice, then in a surprised voice. See how the meaning changes? Paying attention to tone helps you understand what people really mean.",
+        "type": "interactive"
+      },
+      {
+        "id": "facial-expressions",
+        "title": "Reading Faces",
+        "content": "People's faces tell you a lot about how they feel! Raised eyebrows might mean surprise, a furrowed brow could mean confusion, and a smile usually means happiness. Look at the people around you — can you guess how they're feeling just from their face?",
+        "type": "interactive"
+      },
+      {
+        "id": "personal-space",
+        "title": "The Space Between Us",
+        "content": "Everyone has an invisible bubble of personal space around them. Standing too close can make people uncomfortable, but standing too far away makes it hard to talk. About an arm's length apart is usually just right for a conversation. Try measuring that distance with a friend or family member!",
+        "type": "interactive"
+      },
+      {
+        "id": "sarcasm-basics",
+        "title": "When Words Mean the Opposite",
+        "content": "Sometimes people say the opposite of what they mean, and you can tell by their tone of voice and face. If it's raining and someone says 'What lovely weather!' with a playful smile, they're being funny — they don't really think it's lovely. This is called sarcasm, and it takes practice to spot!",
+        "type": "info"
+      },
+      {
+        "id": "context-clues",
+        "title": "Reading the Room",
+        "content": "Good communicators notice what is happening around them. If everyone is quiet in a library, you know to whisper. If people at a party are laughing, it's okay to be louder. Paying attention to where you are and what others are doing helps you choose the right way to communicate.",
+        "type": "info"
+      },
+      {
+        "id": "polite-words",
+        "title": "Magic Words and Manners",
+        "content": "Words like 'please', 'thank you', 'excuse me', and 'I'm sorry' are small but powerful. They show respect and kindness, and they make people feel good. Try using 'please' and 'thank you' at least five extra times today and notice how people react!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Social Communication Quiz!",
+        "content": "If someone says 'That's great' in a bored, flat voice, what do they probably mean?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Personal Space Quiz!",
+        "content": "How far apart should you usually stand when having a conversation?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "vowel-adventures",
+    "title": "Vowel Adventures",
+    "description": "Explore the wonderful world of vowel sounds and how your mouth shapes each one!",
+    "icon": "\uD83C\uDFA4",
+    "color": "from-rose-400 to-amber-400",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Welcome to Vowel Land!",
+        "content": "Every word you say has at least one vowel sound in it. Vowels are the open, singing sounds your voice makes — A, E, I, O, and U. Without vowels, we would only have consonants, and that would sound pretty funny! Let's discover what makes vowels so special.",
+        "type": "info"
+      },
+      {
+        "id": "what-are-vowels",
+        "title": "What Makes a Vowel a Vowel?",
+        "content": "When you say a vowel, the air flows freely out of your mouth without anything blocking it. Your tongue, lips, and jaw move into different positions, but they never close off the air the way they do for consonants like 'b' or 't'. That is why vowels sound so smooth and musical!",
+        "type": "info"
+      },
+      {
+        "id": "short-a-e",
+        "title": "Short Vowels: A and E",
+        "content": "Short vowels are quick little sounds. The short 'a' sounds like the middle of 'cat' — say 'cat', 'bat', 'map' and listen to that short 'a'. The short 'e' sounds like the middle of 'bed' — say 'bed', 'red', 'pet'. Try saying them and feel how your mouth is fairly open for 'a' but a bit tighter for 'e'.",
+        "type": "interactive"
+      },
+      {
+        "id": "short-i-o-u",
+        "title": "Short Vowels: I, O, and U",
+        "content": "The short 'i' is in 'sit' and 'pig'. The short 'o' is in 'hot' and 'dog'. The short 'u' is in 'cup' and 'bug'. Say all five short vowels in a row: a-e-i-o-u! Try to feel how your mouth changes shape for each one. Your jaw opens wider for 'a' and 'o' and stays smaller for 'i' and 'u'.",
+        "type": "interactive"
+      },
+      {
+        "id": "long-vowels",
+        "title": "Long Vowels Say Their Name",
+        "content": "Long vowels sound just like the letter's name! Long 'a' is in 'cake' and 'rain'. Long 'e' is in 'tree' and 'beach'. Long 'i' is in 'kite' and 'pie'. Long 'o' is in 'bone' and 'coat'. Long 'u' is in 'flute' and 'blue'. Say each one and notice how they last longer than the short vowels.",
+        "type": "info"
+      },
+      {
+        "id": "mouth-shapes",
+        "title": "Mouth Shape Mirror Game",
+        "content": "Grab a mirror or look at a shiny spoon! Say 'aaah' and watch your mouth open wide. Now say 'eeee' and watch your mouth stretch to the sides. Say 'oooo' and your lips make a round circle. Each vowel has its own special mouth shape. Try switching between 'eeee' and 'oooo' — your lips are doing a workout!",
+        "type": "interactive"
+      },
+      {
+        "id": "vowel-song",
+        "title": "The Vowel Song",
+        "content": "Let's sing the vowels! Take a deep breath and sing: 'Aaaa-Eeee-Iiii-Oooo-Uuuu' in one long breath, sliding smoothly from one sound to the next. Try it high, then try it low. Singing vowels is a wonderful way to warm up your voice and practice keeping each sound clear and strong.",
+        "type": "interactive"
+      },
+      {
+        "id": "vowels-in-words",
+        "title": "Vowel Detectives",
+        "content": "Every single word has at least one vowel. Look around the room and pick an object. Say its name slowly — can you hear the vowel? In 'chair' the vowel is the 'air' sound. In 'lamp' the vowel is the short 'a'. Try finding the vowels in five things around you!",
+        "type": "interactive"
+      },
+      {
+        "id": "short-vs-long",
+        "title": "Short or Long? You Decide!",
+        "content": "Sometimes changing the vowel from short to long changes the whole word! 'Cap' has a short 'a', but 'cape' has a long 'a'. 'Kit' has a short 'i', but 'kite' has a long 'i'. Often a silent 'e' at the end of a word makes the vowel say its name. That little 'e' is like a magic wand!",
+        "type": "info"
+      },
+      {
+        "id": "vowel-pairs",
+        "title": "When Two Vowels Walk Together",
+        "content": "Sometimes two vowels appear side by side in a word, like 'rain', 'boat', or 'team'. There is a fun rule: when two vowels go walking, the first one does the talking! In 'rain', the 'a' says its name and the 'i' stays quiet. Try it with 'coat' — the 'o' talks and the 'a' is silent!",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Vowel Quiz!",
+        "content": "What happens to the vowel sound when you add a silent 'e' to the end of a word like 'cap'?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Mouth Shape Quiz!",
+        "content": "Which vowel sound makes your lips form a round circle?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "word-families",
+    "title": "Word Families",
+    "description": "Build new words from patterns and discover how rhyming families work!",
+    "icon": "\uD83C\uDFE0",
+    "color": "from-teal-400 to-emerald-500",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Welcome to Word Family Town!",
+        "content": "Imagine a neighborhood where all the houses on one street share the same ending sound. That is a word family! Words in the same family look alike, sound alike, and rhyme with each other. Learning word families is one of the fastest ways to become a great reader and speller.",
+        "type": "info"
+      },
+      {
+        "id": "at-family",
+        "title": "The -AT Family",
+        "content": "Let's visit the -at family! This family includes cat, hat, bat, mat, rat, sat, and flat. They all end with the same sound. Say them out loud and clap each time you hear the '-at' ending. Now try making up a silly sentence with as many -at words as you can!",
+        "type": "interactive"
+      },
+      {
+        "id": "ig-family",
+        "title": "The -IG Family",
+        "content": "Now let's meet the -ig family! Big, dig, fig, jig, pig, wig, and zig all belong here. Say each word and listen to that '-ig' at the end. Try this: can you think of a word that is NOT in the -ig family? How about 'dog'? It ends with '-og', so it belongs to a different family!",
+        "type": "interactive"
+      },
+      {
+        "id": "op-family",
+        "title": "The -OP Family",
+        "content": "Hop, mop, pop, top, stop, drop, and shop are all in the -op family. Say them quickly one after another — they almost sound like a song! Now try acting them out: hop like a bunny, pretend to mop the floor, and pop like a bubble. Moving while you say words helps your brain remember them.",
+        "type": "interactive"
+      },
+      {
+        "id": "un-family",
+        "title": "The -UN Family",
+        "content": "The -un family is full of fun words: bun, fun, gun, run, sun, and spun. Say the word 'run' and then change just the first letter — bun, fun, sun! You are building new words by swapping the beginning sound. This is the magic trick that word families teach you.",
+        "type": "interactive"
+      },
+      {
+        "id": "building-words",
+        "title": "Build-a-Word Workshop",
+        "content": "Pick a word family ending like '-an'. Now think of beginning sounds: c-an, f-an, m-an, p-an, r-an, v-an, t-an. Say each new word out loud. You just built seven words by knowing just one pattern! This is why word families are so powerful — learn one ending and you unlock lots of words.",
+        "type": "interactive"
+      },
+      {
+        "id": "rhyming-within-families",
+        "title": "Rhyming Inside Families",
+        "content": "Every word in a word family rhymes with every other word in that family. That means if you know the -at family, you already know a whole list of rhyming words! Rhyming helps your brain notice sound patterns, and those patterns are the building blocks of reading.",
+        "type": "info"
+      },
+      {
+        "id": "mixed-up-families",
+        "title": "Mixed-Up Families Game",
+        "content": "Let's sort words into their families! Here are some words: hat, pig, mop, big, cat, top. Which ones belong to the -at family? Which ones belong to the -ig family? And which ones go with -op? Say each word out loud and listen to the ending sound to figure it out!",
+        "type": "interactive"
+      },
+      {
+        "id": "longer-families",
+        "title": "Bigger Word Families",
+        "content": "As you grow as a reader, you will meet longer word families too! The '-ight' family has light, night, right, sight, bright, and flight. The '-ank' family has bank, tank, sank, blank, and thank. The same idea works — learn the pattern, and new words become easy.",
+        "type": "info"
+      },
+      {
+        "id": "make-a-story",
+        "title": "Word Family Story Time",
+        "content": "Pick one word family and try to tell a tiny story using as many words from that family as you can. For example, with the -at family: 'A fat cat sat on a mat and wore a hat!' The story does not have to make perfect sense — the sillier, the better! Tell your story out loud right now.",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Word Family Quiz!",
+        "content": "Which word does NOT belong in the -ig family?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Pattern Quiz!",
+        "content": "What is the trick to building new words using word families?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "sentence-building",
+    "title": "Sentence Building",
+    "description": "Learn how to put words together to say exactly what you mean!",
+    "icon": "\uD83E\uDDF1",
+    "color": "from-blue-400 to-indigo-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Building with Words!",
+        "content": "A sentence is a group of words that shares a complete thought. Just like building blocks stack together to make a tower, words stack together to make sentences. Learning to build strong sentences helps people understand exactly what you mean. Let's become expert builders!",
+        "type": "info"
+      },
+      {
+        "id": "subject-verb",
+        "title": "The Two Most Important Parts",
+        "content": "Every sentence needs two things: a subject (who or what the sentence is about) and a verb (what they are doing). 'Dogs bark.' 'Birds fly.' 'I laugh.' These tiny sentences have everything they need! The subject tells us who, and the verb tells us what happens.",
+        "type": "info"
+      },
+      {
+        "id": "try-subject-verb",
+        "title": "Build a Mini Sentence",
+        "content": "Think of an animal — that is your subject. Now think of something it does — that is your verb. Say your mini sentence out loud! 'Cats purr.' 'Fish swim.' 'Frogs jump.' Now try three more with people you know: 'Mom cooks.' 'Dad sings.' You are already building sentences!",
+        "type": "interactive"
+      },
+      {
+        "id": "adding-details",
+        "title": "Adding Details",
+        "content": "Mini sentences are great, but details make them interesting! You can add where, when, how, or what. 'Dogs bark' becomes 'Big dogs bark loudly at night.' Each detail you add paints a clearer picture. Think of your mini sentence from before and add one detail at a time.",
+        "type": "info"
+      },
+      {
+        "id": "growing-sentences",
+        "title": "The Growing Sentence Game",
+        "content": "Let's grow a sentence together! Start with: 'A bird sat.' Now add where: 'A bird sat on a branch.' Add what kind: 'A tiny blue bird sat on a branch.' Add when: 'This morning, a tiny blue bird sat on a branch.' Say the sentence at each stage and notice how it gets richer each time!",
+        "type": "interactive"
+      },
+      {
+        "id": "questions-vs-telling",
+        "title": "Asking vs. Telling",
+        "content": "Sentences can do different jobs! Telling sentences share information: 'The sun is out.' Asking sentences want to know something: 'Is the sun out?' Notice how your voice goes up at the end of a question. Try turning these into questions: 'You like pizza.' becomes 'Do you like pizza?'",
+        "type": "interactive"
+      },
+      {
+        "id": "exclamations",
+        "title": "Exciting Sentences!",
+        "content": "Some sentences show strong feelings. 'That was amazing!' 'Watch out!' 'I love this!' These are called exclamations, and they end with an exclamation mark. Your voice gets louder or more excited when you say them. Try saying 'It is snowing' in a calm voice, then say 'It is snowing!' with excitement. Hear the difference?",
+        "type": "interactive"
+      },
+      {
+        "id": "joining-sentences",
+        "title": "Joining Sentences Together",
+        "content": "You can join two short sentences into one longer one using words like 'and', 'but', 'so', and 'because'. 'I was hungry' + 'I ate a sandwich' = 'I was hungry, so I ate a sandwich.' These joining words are called conjunctions, and they make your speech flow smoothly.",
+        "type": "info"
+      },
+      {
+        "id": "practice-joining",
+        "title": "Conjunction Practice",
+        "content": "Try joining these pairs of sentences out loud! 'I like ice cream. I do not like broccoli.' You could say: 'I like ice cream, but I do not like broccoli.' Now try: 'It was raining. I took an umbrella.' Use 'so' or 'because' to join them. Say your new sentence out loud!",
+        "type": "interactive"
+      },
+      {
+        "id": "sentence-starters",
+        "title": "Sentence Starters",
+        "content": "If you ever get stuck, sentence starters can help! Try beginning with: 'I think...', 'One time...', 'My favorite...', 'Did you know...', or 'I wonder why...' These little beginnings can spark a whole sentence. Pick one and finish it out loud right now!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Sentence Quiz!",
+        "content": "What are the two parts every sentence needs?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Conjunction Quiz!",
+        "content": "Which word can join two sentences together?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "volume-control",
+    "title": "Volume Control",
+    "description": "Learn when to whisper, when to talk, and when to use your big outdoor voice!",
+    "icon": "\uD83D\uDD0A",
+    "color": "from-amber-400 to-yellow-500",
+    "difficulty": 1,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Your Voice Has a Volume Dial!",
+        "content": "Imagine your voice has a volume dial, just like the one on a TV or radio. You can turn it way down for a whisper, keep it in the middle for regular talking, or turn it all the way up for a shout. Knowing which volume to use is an important part of being a great communicator!",
+        "type": "info"
+      },
+      {
+        "id": "whisper",
+        "title": "Level 1: Whisper",
+        "content": "A whisper is the quietest your voice can go while still being heard. You use a whisper in places like libraries, when someone is sleeping, or when you want to share a secret. Try whispering your name right now. Can you feel how your breath does most of the work?",
+        "type": "interactive"
+      },
+      {
+        "id": "soft-voice",
+        "title": "Level 2: Soft Voice",
+        "content": "A soft voice is a little louder than a whisper. You might use it in a restaurant, a waiting room, or when talking to someone sitting right next to you. Try saying 'Hello, how are you?' in a soft, gentle voice. It should feel comfortable and easy.",
+        "type": "interactive"
+      },
+      {
+        "id": "normal-voice",
+        "title": "Level 3: Normal Talking Voice",
+        "content": "Your normal talking voice is the one you use most of the day — in conversations, at the dinner table, and in the classroom. It is loud enough for people nearby to hear you clearly but not so loud that it bothers anyone. Say a sentence about your favorite food in your normal voice.",
+        "type": "interactive"
+      },
+      {
+        "id": "loud-voice",
+        "title": "Level 4: Loud Voice",
+        "content": "A loud voice is for bigger spaces, like calling a friend across the playground or cheering at a game. You push more air from your belly to make your voice carry farther. Try calling out 'Over here!' as if your friend is across a big room.",
+        "type": "interactive"
+      },
+      {
+        "id": "shout",
+        "title": "Level 5: The Shout",
+        "content": "Shouting is the loudest your voice goes. You should only use it for emergencies, playing outdoors, or cheering at a sports game. Shouting too much can make your voice tired and sore. Remember, a shout is a special tool, not your everyday voice!",
+        "type": "info"
+      },
+      {
+        "id": "matching-volume",
+        "title": "Match the Volume Game",
+        "content": "What volume would you use in these places? A library, a birthday party, a movie theater, a soccer field. Think about each one and say a sentence at the right volume. If you are at home right now, try switching between your library voice and your playground voice. Can you feel the difference in your body?",
+        "type": "interactive"
+      },
+      {
+        "id": "volume-dial-practice",
+        "title": "The Volume Dial",
+        "content": "Pretend you are holding a volume dial in your hand. Start by whispering the word 'hello' and slowly turn the dial up, getting louder and louder until you reach a shout. Then slowly turn it back down to a whisper. This exercise helps you learn to control your voice smoothly.",
+        "type": "interactive"
+      },
+      {
+        "id": "why-volume-matters",
+        "title": "Why Volume Matters",
+        "content": "Using the right volume helps people feel comfortable around you. Speaking too quietly can make it hard for others to hear your great ideas. Speaking too loudly can surprise or overwhelm people. When you match your volume to the situation, people enjoy talking with you!",
+        "type": "info"
+      },
+      {
+        "id": "reading-the-room",
+        "title": "Reading the Room",
+        "content": "One helpful trick is to look around and listen before you start talking. Are other people speaking softly? Then match their level. Is it a noisy playground? You might need to be louder. Matching the volume of the room is called 'reading the room', and it is a skill that gets better with practice.",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Volume Quiz!",
+        "content": "What volume level should you use in a library?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Volume Matching Quiz!",
+        "content": "Why is it important to match your voice volume to the place you are in?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "speed-of-speech",
+    "title": "Speed of Speech",
+    "description": "Discover how speaking fast or slow changes everything about how people hear you!",
+    "icon": "\u23F1\uFE0F",
+    "color": "from-cyan to-sky-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Fast, Slow, and Just Right!",
+        "content": "Have you ever tried to tell someone something exciting and the words came tumbling out super fast? Or have you listened to someone talk so slowly that you lost track of what they were saying? The speed of your speech — called your pace — makes a big difference in how well people understand you.",
+        "type": "info"
+      },
+      {
+        "id": "too-fast",
+        "title": "What Happens When You Talk Too Fast",
+        "content": "When you speak really fast, your words can crash into each other and become hard to understand. Sounds get mushed together, and your listener's brain cannot keep up. Try saying 'I want to go to the playground after lunch' as fast as you possibly can. Was it easy to understand?",
+        "type": "interactive"
+      },
+      {
+        "id": "too-slow",
+        "title": "What Happens When You Talk Too Slowly",
+        "content": "Speaking very slowly can also be tricky. If there are long pauses between every word, the listener might forget the beginning of your sentence by the time you reach the end! Try saying the same sentence — 'I want to go to the playground after lunch' — very, very slowly. How does it feel?",
+        "type": "interactive"
+      },
+      {
+        "id": "just-right",
+        "title": "Finding Your Just-Right Speed",
+        "content": "The best speed is clear and comfortable — not rushing, not dragging. Each word should be easy to hear, and your sentences should flow smoothly. Try saying that playground sentence one more time at a comfortable pace. That is your 'just-right' speed!",
+        "type": "interactive"
+      },
+      {
+        "id": "speed-and-feelings",
+        "title": "Speed Shows Feelings",
+        "content": "Your pace can show how you feel! Excited people tend to speak faster. Sad or tired people often speak more slowly. Scared people might talk very fast or freeze up entirely. Pay attention to how fast people around you are talking — it gives you clues about their mood.",
+        "type": "info"
+      },
+      {
+        "id": "dramatic-pauses",
+        "title": "The Power of the Pause",
+        "content": "A pause is when you stop talking for just a moment on purpose. Pauses give your listener time to think about what you said. They also make important words stand out! Try saying: 'And the winner is...' then pause for two seconds before saying a name. Feel how exciting that pause is?",
+        "type": "interactive"
+      },
+      {
+        "id": "pacing-practice",
+        "title": "Pacing Practice",
+        "content": "Let's practice pacing with a fun exercise. Pick a sentence and say it three ways: first like a race car — super fast, then like a slow turtle, and finally like a friendly teacher — clear and steady. Notice which one feels the easiest to understand. That is the one to aim for in everyday speaking!",
+        "type": "interactive"
+      },
+      {
+        "id": "chunking",
+        "title": "Speaking in Chunks",
+        "content": "Long sentences can be easier to say if you break them into chunks. Instead of rushing through the whole thing, pause slightly at natural breaks. 'After school today / I want to go to the park / and play with my friends.' Those tiny pauses help both you and your listener.",
+        "type": "info"
+      },
+      {
+        "id": "storytelling-speed",
+        "title": "Speed in Storytelling",
+        "content": "Great storytellers change their speed on purpose! They slow down for the scary parts to build suspense, speed up for the exciting parts, and pause before a big surprise. Try telling a short story and changing your pace for different parts. It makes the story come alive!",
+        "type": "interactive"
+      },
+      {
+        "id": "daily-practice",
+        "title": "Everyday Speed Check",
+        "content": "A great way to practice your pace is to read a few sentences from a book out loud, then ask someone if you sounded clear and comfortable. You can also record yourself on a phone and listen back. Over time, you will naturally find your perfect speaking speed.",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "Speed Quiz!",
+        "content": "What is the best way to describe a good speaking pace?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Pause Quiz!",
+        "content": "Why do good speakers use pauses?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "describing-things",
+    "title": "Describing Things",
+    "description": "Paint pictures with your words by learning to describe the world around you!",
+    "icon": "\uD83C\uDFA8",
+    "color": "from-violet-400 to-fuchsia-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Words That Paint Pictures!",
+        "content": "When you describe something well, the person listening can picture it in their mind — even if they have never seen it! Describing is one of the most important language skills you can learn. It helps in conversations, storytelling, schoolwork, and everyday life. Let's become master describers!",
+        "type": "info"
+      },
+      {
+        "id": "what-are-adjectives",
+        "title": "Meet the Adjectives",
+        "content": "Adjectives are words that describe things. They tell us about size, color, shape, texture, temperature, and more. Instead of 'a dog', you can say 'a fluffy brown dog'. Instead of 'a ball', you can say 'a small red bouncy ball'. Adjectives turn plain words into vivid pictures!",
+        "type": "info"
+      },
+      {
+        "id": "see-it",
+        "title": "Describe What You See",
+        "content": "Look at something near you right now — a toy, a cup, a shoe, anything! Describe it out loud using at least three adjectives. What color is it? How big is it? What shape? Is it shiny or dull? Smooth or bumpy? The more details you give, the better someone else can picture it.",
+        "type": "interactive"
+      },
+      {
+        "id": "five-senses",
+        "title": "Using Your Five Senses",
+        "content": "The best descriptions use all five senses: sight, sound, touch, smell, and taste. Think about an orange. It looks round and orange (sight). It sounds squelchy when you peel it (sound). It feels bumpy and cool (touch). It smells sweet and fresh (smell). It tastes tangy and juicy (taste)!",
+        "type": "info"
+      },
+      {
+        "id": "senses-practice",
+        "title": "Five Senses Practice",
+        "content": "Think about your favorite food. Now describe it using all five senses! What does it look like? What sounds does it make when you eat it? How does it feel in your hands or mouth? What does it smell like? What does it taste like? Tell someone your description and see if they can guess the food!",
+        "type": "interactive"
+      },
+      {
+        "id": "comparing",
+        "title": "Comparing Things",
+        "content": "Comparing helps people understand things by connecting them to something they already know. You can say 'the pillow is soft like a cloud' or 'the ice was as slippery as a banana peel'. These comparisons are called similes, and they make your descriptions fun and easy to understand.",
+        "type": "info"
+      },
+      {
+        "id": "comparing-practice",
+        "title": "Comparison Game",
+        "content": "Try finishing these comparisons out loud! 'The kitten was as tiny as a ___.' 'The thunder was as loud as ___.' 'The blanket felt as warm as ___.' There are no wrong answers — whatever you think of is perfect! Making up your own comparisons exercises your creative brain.",
+        "type": "interactive"
+      },
+      {
+        "id": "mystery-object",
+        "title": "Mystery Object Game",
+        "content": "Think of an object but do not say its name. Describe it to someone using only adjectives and senses — no naming it! For example: 'It is cold, white, soft, and it falls from the sky in winter.' Can they guess it? (It is snow!) This game is amazing practice for describing skills.",
+        "type": "interactive"
+      },
+      {
+        "id": "feelings-descriptions",
+        "title": "Describing Feelings",
+        "content": "You can describe feelings too, not just objects! Instead of saying 'I am happy', try 'I feel like sunshine is inside my chest' or 'My whole body feels light and bouncy'. Describing feelings with detail helps other people truly understand how you are feeling.",
+        "type": "info"
+      },
+      {
+        "id": "rich-descriptions",
+        "title": "From Boring to Brilliant",
+        "content": "Let's upgrade some plain sentences! 'The flower is nice' becomes 'The tall purple flower has soft petals and smells like honey.' 'The cat is cute' becomes 'The tiny orange kitten has bright green eyes and the fluffiest tail.' Pick a plain sentence and make it brilliant — say it out loud!",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Describing Quiz!",
+        "content": "What are adjectives?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Senses Quiz!",
+        "content": "How many senses can you use when describing something?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "following-directions",
+    "title": "Following Directions",
+    "description": "Train your listening brain to follow one, two, and three steps in a row!",
+    "icon": "\uD83E\uDDED",
+    "color": "from-green-400 to-teal-500",
+    "difficulty": 2,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "Listen, Remember, Do!",
+        "content": "Following directions is a skill you use all day long — at home, at school, and when playing with friends. It takes good listening, a strong memory, and knowing the right order to do things. The great news is that this skill gets stronger the more you practice it!",
+        "type": "info"
+      },
+      {
+        "id": "one-step",
+        "title": "One-Step Directions",
+        "content": "A one-step direction asks you to do one thing. 'Touch your nose.' 'Stand up.' 'Clap your hands.' These are simple because you only have to remember one action. Try these right now: touch your ear. Stamp your foot. Wave your hand. You did it!",
+        "type": "interactive"
+      },
+      {
+        "id": "two-step",
+        "title": "Two-Step Directions",
+        "content": "Two-step directions ask you to do two things in order. 'Touch your head AND jump once.' You have to remember both steps and do them in the right order. Try this: clap your hands AND then spin around. Did you remember both steps? Wonderful!",
+        "type": "interactive"
+      },
+      {
+        "id": "three-step",
+        "title": "Three-Step Directions",
+        "content": "Three steps are trickier because your brain has to hold more information! Try this: touch your toes, then clap three times, then sit down. Say the steps to yourself before you start — that helps your brain remember. Ready? Go!",
+        "type": "interactive"
+      },
+      {
+        "id": "sequence-words",
+        "title": "First, Then, Last",
+        "content": "Sequence words tell you the order of steps. 'First' means the starting step. 'Then' or 'next' means what comes after. 'Last' or 'finally' means the ending step. When you hear these words, they are like signposts that keep you on track. Listen for them the next time someone gives you directions!",
+        "type": "info"
+      },
+      {
+        "id": "key-words",
+        "title": "Listening for Key Words",
+        "content": "When someone gives directions, certain words are extra important. In 'Put the RED book ON the TOP shelf', the key words are 'red', 'on', and 'top'. If you miss them, you might put the wrong book in the wrong place! Practice picking out the most important words by listening carefully to everything said around you.",
+        "type": "info"
+      },
+      {
+        "id": "simon-says",
+        "title": "Simon Says Practice",
+        "content": "Simon Says is a perfect game for practicing directions! Here are some to try: Simon says touch your left knee. Simon says blink your eyes three times. Simon says put both hands on your head. Did you only do the ones where I said 'Simon says'? That takes extra-careful listening!",
+        "type": "interactive"
+      },
+      {
+        "id": "repeat-back",
+        "title": "The Repeat-Back Trick",
+        "content": "One of the best ways to remember directions is to repeat them back in your own words. If someone says 'After you wash your hands, set the table', you can say 'First wash hands, then set the table.' Saying it out loud helps lock it into your memory. Try it the next time you get directions!",
+        "type": "interactive"
+      },
+      {
+        "id": "tricky-directions",
+        "title": "Tricky Direction Words",
+        "content": "Some direction words can be confusing. 'Before' means do this first: 'Before you sit down, push in your chair.' 'After' means do this second: 'After you eat, brush your teeth.' 'Instead of' means do this one, not that one. Knowing these words helps you follow directions like a pro!",
+        "type": "info"
+      },
+      {
+        "id": "real-life-practice",
+        "title": "Practice at Home",
+        "content": "Ask a family member to give you two-step or three-step directions, like 'Go to the kitchen, get a cup, and bring it to me.' See how many steps you can follow correctly! Then switch — you give them directions! Teaching directions is just as good for your brain as following them.",
+        "type": "interactive"
+      },
+      {
+        "id": "quiz",
+        "title": "Directions Quiz!",
+        "content": "What is a good trick for remembering multi-step directions?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Sequence Quiz!",
+        "content": "In the sentence 'First wash your hands, then eat your snack', what should you do first?",
+        "type": "quiz"
+      }
+    ]
+  },
+  {
+    "id": "speech-sounds-world",
+    "title": "Speech Sounds Around the World",
+    "description": "Explore the amazing sounds people make in languages all around the globe!",
+    "icon": "\uD83C\uDF0D",
+    "color": "from-indigo-400 to-purple-600",
+    "difficulty": 3,
+    "steps": [
+      {
+        "id": "intro",
+        "title": "A World Full of Sounds!",
+        "content": "There are over 7,000 languages spoken around the world, and each one has its own special set of sounds! Some sounds are found in almost every language, while others exist in only one or two. Learning about the sounds of the world helps us appreciate how amazing human speech really is.",
+        "type": "info"
+      },
+      {
+        "id": "shared-sounds",
+        "title": "Sounds Everyone Shares",
+        "content": "Some sounds are found in nearly every language on Earth! The sounds 'a' (like in 'father'), 'm', and 'n' show up almost everywhere. That makes sense — 'a' is the simplest vowel, and 'm' and 'n' are some of the easiest consonants to make. Say them now and notice how natural they feel!",
+        "type": "interactive"
+      },
+      {
+        "id": "click-sounds",
+        "title": "Click Languages",
+        "content": "Some languages in southern Africa, like Zulu and Xhosa, use clicking sounds as regular speech sounds! A click is made by pulling your tongue away from the roof of your mouth or your teeth. Try making a 'tsk tsk' sound — that is actually a type of click! Imagine using that sound inside words.",
+        "type": "interactive"
+      },
+      {
+        "id": "rolled-r",
+        "title": "Rolling Your R",
+        "content": "In Spanish, Hindi, and many other languages, the 'r' sound is made by tapping or rolling the tip of your tongue against the ridge behind your top teeth. It sounds like a little purr! Try putting your tongue tip behind your top teeth and blowing air gently. Can you get it to flutter? It takes practice!",
+        "type": "interactive"
+      },
+      {
+        "id": "tonal-languages",
+        "title": "Languages That Sing",
+        "content": "In some languages, the pitch of your voice changes the meaning of a word! These are called tonal languages. In many languages spoken in Asia and Africa, saying a word with a high pitch might mean something completely different from saying it with a low pitch. It is like every sentence is a little melody!",
+        "type": "info"
+      },
+      {
+        "id": "unique-sounds",
+        "title": "Sounds That Are Hard to Find",
+        "content": "The English 'th' sound (like in 'the') is actually quite rare around the world! Most languages do not have it. And English does not have many sounds that other languages use, like the Welsh 'll' or the special deep sounds found in some African languages. Every language has its own flavor!",
+        "type": "info"
+      },
+      {
+        "id": "bilingual-brains",
+        "title": "The Bilingual Superpower",
+        "content": "People who speak more than one language can make more different sounds than people who speak just one! Their mouths and brains get extra practice switching between sound systems. If you speak more than one language, or are learning one, your speech muscles are getting a wonderful workout!",
+        "type": "info"
+      },
+      {
+        "id": "greetings-world",
+        "title": "Say Hello Around the World",
+        "content": "Let's try saying hello in a few languages! In Spanish, say 'Hola' (OH-lah). In Hindi, say 'Namaste' (nah-mah-STAY). In Tagalog, say 'Kumusta' (koo-moo-STAH). Listen to how different sounds and rhythms feel in your mouth. Each greeting uses different parts of your mouth in different ways!",
+        "type": "interactive"
+      },
+      {
+        "id": "language-families",
+        "title": "Language Families",
+        "content": "Just like people belong to families, languages belong to families too! Spanish, Hindi, and English are all distant cousins in a big family called Indo-European. Languages in the same family often share some sounds and words. That is why some words in different languages sound a little bit alike!",
+        "type": "info"
+      },
+      {
+        "id": "celebrating",
+        "title": "Celebrating All Languages",
+        "content": "Every language in the world is special and important. There is no such thing as a 'better' or 'worse' language — they are all amazing systems that humans created to share ideas, tell stories, and connect with each other. If you or your friends speak different languages, that is something truly wonderful to celebrate!",
+        "type": "info"
+      },
+      {
+        "id": "quiz",
+        "title": "World Sounds Quiz!",
+        "content": "Which speech sounds are found in almost every language on Earth?",
+        "type": "quiz"
+      },
+      {
+        "id": "quiz-2",
+        "title": "Tonal Language Quiz!",
+        "content": "What makes a tonal language different from English?",
+        "type": "quiz"
+      }
+    ]
+  }
+]

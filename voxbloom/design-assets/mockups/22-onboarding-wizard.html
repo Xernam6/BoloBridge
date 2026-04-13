@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#727971",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-low": "#f5f3f0",
+              "surface-container-highest": "#e4e2df",
+              "primary-container": "#61a0a2",
+              "on-primary-fixed": "#002021",
+              "surface-bright": "#fbf9f6",
+              "on-surface": "#1b1c1a",
+              "primary-fixed": "#aeeef0",
+              "on-primary-container": "#003435",
+              "tertiary": "#61549b",
+              "on-tertiary-fixed": "#1c0b54",
+              "secondary": "#7c5732",
+              "on-surface-variant": "#424842",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1b1c1a",
+              "inverse-primary": "#92d2d3",
+              "tertiary-container": "#988bd6",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e4e2df",
+              "secondary-fixed-dim": "#eebd90",
+              "surface-dim": "#dbdad7",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#004f51",
+              "background": "#fbf9f6",
+              "primary": "#25686a",
+              "surface-container-high": "#eae8e5",
+              "secondary-fixed": "#ffdcbf",
+              "on-secondary-fixed": "#2d1600",
+              "on-secondary-container": "#79542f",
+              "on-error": "#ffffff",
+              "inverse-surface": "#30312f",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-tertiary-container": "#2f2166",
+              "on-primary": "#ffffff",
+              "surface": "#fbf9f6",
+              "secondary-container": "#fdcb9d",
+              "inverse-on-surface": "#f2f0ed",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#e6deff",
+              "surface-tint": "#25686a",
+              "on-secondary-fixed-variant": "#613f1d",
+              "surface-container": "#efeeeb",
+              "outline-variant": "#c2c8bf",
+              "primary-fixed-dim": "#92d2d3",
+              "sage-green": "#7A9E7E"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-gradient {
+            background: linear-gradient(45deg, #25686a, #61a0a2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed-dim">
+<div class="film-grain"></div>
+<!-- Onboarding Flow Header -->
+<header class="w-full top-0 sticky bg-[#fbf9f6] dark:bg-[#1a1917] z-50">
+<div class="flex justify-between items-center px-6 py-4 max-w-2xl mx-auto">
+<h1 class="font-headline italic text-2xl tracking-tight text-primary">BoloBridge</h1>
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-[#2a2825] h-px w-full opacity-50"></div>
+</header>
+<main class="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-6 pb-24 max-w-2xl mx-auto">
+<!-- Hero Section with Asymmetric Layout -->
+<div class="relative w-full mb-12 flex justify-center">
+<!-- Watercolor Abstract Illustration Container -->
+<div class="relative w-72 h-72 md:w-96 md:h-96">
+<!-- Decorative organic shapes for watercolor feel -->
+<div class="absolute inset-0 bg-primary-fixed opacity-20 rounded-full blur-3xl transform -translate-x-10 translate-y-4"></div>
+<div class="absolute inset-0 bg-secondary-fixed opacity-30 rounded-full blur-2xl transform translate-x-8 -translate-y-6"></div>
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<img alt="Abstract blooming flower with concentric sound waves" class="w-full h-full object-contain mix-blend-multiply opacity-90" data-alt="Abstract blooming flower watercolor with sound waves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVkrKz0UILF70YwzwPYDw0BqkSSei9xDzO-AHunRyvL-zCRqnw2Gri9BZLE-BdDxhQqci58YycAuiHQP0HBVCwl5uf24BVbUaz6e3uoPwCjkRGc1R-m4FdVhMPvUtiod3L6gNNfqCEwpJAoIYhzq4Zo_dQ086r_8bCAuLeEAaHYEGmEf_4Rq0kuhIX0TTiSBMqoZUx6z5DoYBSTFQLEJCsVNwLwwSi5uA9jVeQKfRMVWL7uk2elr12y3L7i6VaCDAFx3dq9ofM5gBD"/>
+</div>
+</div>
+</div>
+<!-- Typography & Content -->
+<div class="text-center space-y-6 max-w-md">
+<h2 class="font-headline italic text-5xl md:text-6xl text-primary tracking-tight">
+                Welcome to BoloBridge
+            </h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-body">
+                Let's set up your child's speech journey with calm, intentional steps designed for growth.
+            </p>
+</div>
+<!-- Progress Indicator -->
+<div class="flex items-center gap-3 mt-12 mb-10">
+<div class="w-2.5 h-2.5 rounded-full bg-sage-green"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+</div>
+<!-- Primary Action -->
+<div class="w-full max-w-xs space-y-4">
+<button class="w-full py-5 rounded-full watercolor-gradient text-on-primary font-semibold text-lg hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/10">
+                Get Started
+            </button>
+<p class="text-center text-sm text-outline font-medium tracking-tight">
+                Step 1 of 4: Setup Profile
+            </p>
+</div>
+</main>
+<!-- Suppressed BottomNavBar for focused Onboarding context per rules -->
+<!-- Navigation is omitted to prioritize the focused onboarding journey -->
+<!-- Decorative Corner Element -->
+<div class="fixed bottom-0 right-0 p-8 pointer-events-none opacity-20 hidden md:block">
+<span class="material-symbols-outlined text-8xl text-secondary" style="font-variation-settings: 'wght' 100;">nature</span>
+</div>
+</body></html>

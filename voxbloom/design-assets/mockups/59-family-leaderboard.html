@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#c7eae1",
+              "on-tertiary-container": "#32381f",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c4caa8",
+              "surface-container-low": "#f5f3f0",
+              "secondary-container": "#fdc7cb",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "tertiary": "#5b6146",
+              "tertiary-fixed": "#e0e6c3",
+              "on-primary-container": "#1b3b35",
+              "on-background": "#1b1c1a",
+              "on-secondary-fixed": "#301216",
+              "surface-dim": "#dbdad7",
+              "on-tertiary-fixed-variant": "#444930",
+              "surface": "#fbf9f6",
+              "secondary": "#7c5357",
+              "primary-fixed-dim": "#accec5",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#eeb9bd",
+              "on-surface-variant": "#414846",
+              "on-primary-fixed-variant": "#2d4c46",
+              "surface-container": "#efeeeb",
+              "primary": "#45645e",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#623c40",
+              "surface-tint": "#45645e",
+              "on-primary-fixed": "#00201b",
+              "inverse-primary": "#accec5",
+              "on-surface": "#1b1c1a",
+              "inverse-on-surface": "#f2f0ed",
+              "on-tertiary": "#ffffff",
+              "outline": "#717976",
+              "surface-variant": "#e4e2df",
+              "primary-container": "#84a59d",
+              "inverse-surface": "#30312f",
+              "tertiary-container": "#9ba182",
+              "surface-container-highest": "#e4e2df",
+              "on-tertiary-fixed": "#191e08",
+              "secondary-fixed": "#ffdadc",
+              "on-secondary-container": "#795154",
+              "outline-variant": "#c1c8c5",
+              "surface-bright": "#fbf9f6",
+              "surface-container-high": "#eae8e5",
+              "background": "#fbf9f6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f6;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-underline {
+            position: relative;
+        }
+        .active-tab-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #84a59d;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-[#1b1c1a]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="text-2xl font-['Newsreader'] italic text-[#45645e] dark:text-[#84a59d]">BoloBridge</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#45645e] dark:text-[#84a59d] border-b-2 border-[#45645e] font-medium transition-opacity hover:opacity-80" href="#">Family</a>
+<a class="text-[#414846] dark:text-[#c1c8c5] transition-opacity hover:opacity-80" href="#">Friends</a>
+<a class="text-[#414846] dark:text-[#c1c8c5] transition-opacity hover:opacity-80" href="#">Global</a>
+</nav>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+<div class="bg-[#e4e2df] dark:bg-[#2d2e2c] h-[1px]"></div>
+</header>
+<main class="pt-32 pb-24 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+<!-- Hero Header -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="uppercase tracking-widest text-[10px] font-bold text-primary mb-2 block">Together in Progress</span>
+<h1 class="text-6xl md:text-8xl font-headline italic tracking-tight text-primary leading-none">Practice Together</h1>
+<p class="mt-6 text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        Speech practice is more fun with friends! Share milestones, stay connected, and grow your confidence side-by-side.
+                    </p>
+</div>
+<!-- Secondary Tab Bar -->
+<nav class="flex space-x-10 text-sm font-semibold uppercase tracking-widest pb-2">
+<a class="text-primary active-tab-underline" href="#">Family</a>
+<a class="text-outline hover:text-primary transition-colors" href="#">Friends</a>
+<a class="text-outline hover:text-primary transition-colors" href="#">Global</a>
+</nav>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Family Leaderboard Section -->
+<div class="lg:col-span-7 space-y-4">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-headline italic text-primary">Family Leaderboard</h2>
+<span class="text-xs font-bold uppercase tracking-widest text-outline">Updated 2m ago</span>
+</div>
+<!-- Rank 1: Leo -->
+<div class="group relative bg-[#f9f3e6] rounded-xl p-6 transition-all duration-300 hover:scale-[1.01] shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)]">
+<div class="flex items-center gap-6">
+<div class="text-3xl">🥇</div>
+<div class="relative">
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#e6c38a] to-[#f9f3e6] p-1">
+<img alt="" class="w-full h-full rounded-full bg-white object-cover" data-alt="Profile avatar of a young boy smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexblXVY9-nCUTVyuUDSSsHEaqQl0CCy2YZ7TYKWfaDevODEgGUD3RPlEfZccVYdUKqCEiL_GZfMITkRjNEwHWN3xcq8p-TTGjlWUxx2rzkNVrfKP_TjkYCEwhaFuhNatukRiZU2o9hqQqS2wgQAguclIWTXOKA0JYQ2P5KyxTVg9noPYyVwKThNNHG0SuucoADhUpSPCPIUyxpx0gVPNaJnWtKAZiFSBiQ2a53KCdDLg0P6VlAPwlBh6RTRl9KdIF7LKNRhUvHgi6"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-[#e6c38a] text-lg" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="text-2xl font-headline italic text-on-surface">Leo</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-orange-500 text-lg" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-sm font-bold">12-day streak</span>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-3">
+<div class="flex-1 h-2 bg-on-surface/5 rounded-full overflow-hidden">
+<div class="h-full bg-[#e6c38a] w-[85%] rounded-full"></div>
+</div>
+<span class="text-sm font-bold text-on-surface-variant">580 XP</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold uppercase tracking-wider text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="record_voice_over">record_voice_over</span>
+                                    Sound Specialist
+                                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rank 2: Maya -->
+<div class="group relative bg-[#efefef] rounded-xl p-6 transition-all duration-300 hover:scale-[1.01]">
+<div class="flex items-center gap-6">
+<div class="text-3xl">🥈</div>
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#c1c8c5] to-[#efefef] p-1">
+<img alt="" class="w-full h-full rounded-full bg-white object-cover" data-alt="Profile avatar of a teenage girl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC15w5H31tuJBrUHzHb3ifvdKfKlJ3dsov4siUBr0coFjcRxz_AUgdnRWAplkQa_l7_Pdql4HlvPNlSMWzDd1jDX4LkpkTFa1Stu3hRghb4p1qWgzVVsrX8QU1PRF09KoTZAhibv5n8ME_QULH11yeUJq8mwkcrNkQnlSg-0o2l4Ti6_YRnyAaVzhnsTRuDQsJGiogEKbFerpbWOSGVfyLWhXXFt3fjJa6B16NmIiIEzInqnq1YETVOUaCNsxpthQhOSI1k_af9pB00"/>
+</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="text-2xl font-headline italic text-on-surface">Maya</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-orange-500 text-lg" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-sm font-bold">8-day streak</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1 h-2 bg-on-surface/5 rounded-full overflow-hidden">
+<div class="h-full bg-[#c1c8c5] w-[65%] rounded-full"></div>
+</div>
+<span class="text-sm font-bold text-on-surface-variant">420 XP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rank 3: Dad -->
+<div class="group relative bg-[#f5ebe0] rounded-xl p-6 transition-all duration-300 hover:scale-[1.01]">
+<div class="flex items-center gap-6">
+<div class="text-3xl">🥉</div>
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#d4a373] to-[#f5ebe0] p-1">
+<img alt="" class="w-full h-full rounded-full bg-white object-cover" data-alt="Profile avatar of a middle-aged man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoo0ArRfm3Prr2khkh--bg46KnGLFxaI80Vw1eAA8-FZsyrgbjwRQs8EglheNfqZELBoR45Zh7bner8UCxF3AdJa-eIUOCD4ubxDiENW9xSLUF4_X50WUw-SSlv-ks5o0I8p6KZKTNzG3Uvv7pRvX09jJitKFQM894_hmyhAnC9Dkaev5kij7o9hDIvRFe2aA7OqB2Nyb3wt_QOPexejQN7XKz0MUpRBfvK5Yajibtq-c_mR0d5aRVLXCIM_jzfW7JITiUwCclqvr-"/>
+</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="text-2xl font-headline italic text-on-surface">Dad</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-orange-500 text-lg" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-sm font-bold">5-day streak</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1 h-2 bg-on-surface/5 rounded-full overflow-hidden">
+<div class="h-full bg-[#d4a373] w-[50%] rounded-full"></div>
+</div>
+<span class="text-sm font-bold text-on-surface-variant">350 XP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rank 4: Mom -->
+<div class="group relative bg-white rounded-xl p-6 transition-all duration-300 hover:scale-[1.01]">
+<div class="flex items-center gap-6">
+<div class="text-3xl opacity-20 text-center w-[30px] font-bold text-lg italic">4</div>
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-surface-container-low to-white p-1">
+<img alt="" class="w-full h-full rounded-full bg-white object-cover" data-alt="Profile avatar of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdTCGCyyTnMFiUz9FLc7SZW2fhy2NXX1wU02Kp2MM3_andC-U11jUSMXZfhh4EbGj-LTMq5kecxT8_vQ__UICLPwRKvG7ak32icsM_R4Qa83Y9IZE7IpKvv1CnI7gIedX5mcI4KwCxJDGYq2vLQ-F3vvUA-AanQQ2ij-7nPN8WF3PUnCuoaR2yQfwUFAIbIHRgaxEzHnsdNR6QYDy6PWzxYv6PUFHXJigYxiJTslyzltrUNUSqIg1RFRhbajsS8FwyScsRMHbHoz4M"/>
+</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="text-2xl font-headline italic text-on-surface">Mom</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-orange-500 text-lg" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-sm font-bold">3-day streak</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1 h-2 bg-on-surface/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[40%] rounded-full"></div>
+</div>
+<span class="text-sm font-bold text-on-surface-variant">280 XP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Invite CTA -->
+<div class="pt-8">
+<button class="w-full py-6 rounded-xl border-2 border-dashed border-outline-variant text-primary font-bold uppercase tracking-widest text-sm hover:bg-primary/5 transition-colors flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Invite a Practice Buddy
+                    </button>
+</div>
+</div>
+<!-- Cooperative Side Content -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Weekly Challenge Card -->
+<div class="bg-surface-container-low rounded-xl p-8 relative overflow-hidden border border-white/50">
+<!-- Watercolor aesthetic element -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<span class="uppercase tracking-widest text-[10px] font-bold text-secondary mb-4 block">Cooperative Quest</span>
+<h2 class="text-3xl font-headline italic text-on-surface leading-tight mb-6">This Week's Family Goal: Practice 100 minutes together!</h2>
+<div class="space-y-6 relative z-10">
+<div class="flex items-end justify-between">
+<div class="text-5xl font-headline italic text-primary">67 <span class="text-lg font-body uppercase font-bold tracking-tighter text-on-surface-variant">/ 100 min</span></div>
+<div class="text-xs font-bold uppercase tracking-widest text-outline">67% Complete</div>
+</div>
+<div class="h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#d4a373] to-[#e6c38a] w-[67%] rounded-full"></div>
+</div>
+<div class="p-4 bg-white/60 rounded-lg flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="movie" style="font-variation-settings: 'FILL' 1;">movie</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Reward: Family Movie Night! 🎬</p>
+<p class="text-xs text-on-surface-variant">33 minutes remaining to unlock.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Friends Snapshot (Asymmetric Layout) -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-headline italic text-primary">Friend Activity</h2>
+<a class="text-xs font-bold uppercase tracking-widest text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full mb-3 ring-2 ring-primary-container ring-offset-2">
+<img alt="" class="w-full h-full rounded-full" data-alt="Friend profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChoMrC3hGAC8UrocHkWa6hmjC0qoh_YY2yCi_H_WXf7G7jxl_-kNGGTe7wQA_5oXfDA5AwQiUYlM3gD2YnT3ovn2ca99ZZHpXNIhoZUyzGXEo7-6McwHC28pNzrQIKWwBuwHBEoNFUMbdX_X28bVJJiRAB9YnT5RWii6s46z6WXB6xj8d2Fjs4oYBboPlJHNgjKznWgTtjDJ4LnsF4gBLXqUfC1FuxXByqdMiedMj5fW10RLFoYvv5utoHovj15cxBYjL8-14x0xJ2"/>
+</div>
+<p class="font-headline italic text-on-surface">Sam</p>
+<p class="text-[10px] uppercase font-bold text-outline">Just finished session</p>
+</div>
+<div class="bg-white p-4 rounded-xl flex flex-col items-center text-center translate-y-4">
+<div class="w-12 h-12 rounded-full mb-3 grayscale">
+<img alt="" class="w-full h-full rounded-full" data-alt="Friend profile picture offline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZYW1RQYALTY1V7jYg1sTsnpotC4WRN_C4qY5_fDtfE6-fZJVnQ4R7KhF8k2We4ovYMTlA4EKFowRw9vh0SC3ptFOCUSH50jx9zEjavGhTJl2NOJ9kVlQ6IrzwCSF3bbLhSRvO4OMGsqibJiXrY4ZjTlsahhtAnfnSQMuh12czu77rmUsOfMbKG4JFPJSH_IP1gyfHKEZrmC_l5_MAw8MuPa3N92mRg9EhG9n6sGISjQeMptY4agpyQt8xFvsmw-AcYmMaL4uj6uPz"/>
+</div>
+<p class="font-headline italic text-on-surface">Chloe</p>
+<p class="text-[10px] uppercase font-bold text-outline">Last active 4h ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#fbf9f6]/85 dark:bg-[#1b1c1a]/85 backdrop-blur-xl z-50 rounded-t-xl border-t border-[#c1c8c5]/15 shadow-[0_-12px_32px_-4px_rgba(65,72,70,0.08)]">
+<a class="flex flex-col items-center justify-center text-[#414846] dark:text-[#c1c8c5] px-4 py-2 hover:bg-[#f5f3f0] dark:hover:bg-[#2d2e2c] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="record_voice_over">record_voice_over</span>
+<span class="font-['Inter'] text-[10px] tracking-wide uppercase">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414846] dark:text-[#c1c8c5] px-4 py-2 hover:bg-[#f5f3f0] dark:hover:bg-[#2d2e2c] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="insights">insights</span>
+<span class="font-['Inter'] text-[10px] tracking-wide uppercase">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#84a59d]/10 text-[#45645e] dark:text-[#84a59d] rounded-xl px-4 py-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Inter'] text-[10px] tracking-wide uppercase">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414846] dark:text-[#c1c8c5] px-4 py-2 hover:bg-[#f5f3f0] dark:hover:bg-[#2d2e2c] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

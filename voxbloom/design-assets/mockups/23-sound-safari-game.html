@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sound Safari - BoloBridge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#cabeff",
+              "tertiary-fixed": "#e6deff",
+              "on-secondary-container": "#79542f",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeeeb",
+              "primary-fixed-dim": "#92d2d3",
+              "outline-variant": "#c2c8bf",
+              "secondary": "#7c5732",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#eebd90",
+              "surface-dim": "#dbdad7",
+              "on-surface": "#1b1c1a",
+              "error": "#ba1a1a",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "on-tertiary-fixed-variant": "#493c81",
+              "inverse-surface": "#30312f",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#fdcb9d",
+              "on-tertiary-container": "#2f2166",
+              "on-background": "#1b1c1a",
+              "on-surface-variant": "#424842",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f5f3f0",
+              "surface-container-highest": "#e4e2df",
+              "background": "#fbf9f6",
+              "on-secondary-fixed": "#2d1600",
+              "inverse-primary": "#92d2d3",
+              "error-container": "#ffdad6",
+              "primary-container": "#61a0a2",
+              "on-secondary-fixed-variant": "#613f1d",
+              "primary-fixed": "#aeeef0",
+              "on-primary-container": "#003435",
+              "surface": "#fbf9f6",
+              "on-tertiary-fixed": "#1c0b54",
+              "tertiary-container": "#988bd6",
+              "on-primary-fixed-variant": "#004f51",
+              "surface-tint": "#25686a",
+              "outline": "#727971",
+              "tertiary": "#61549b",
+              "surface-container-high": "#eae8e5",
+              "on-primary-fixed": "#002021",
+              "surface-variant": "#e4e2df",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f2f0ed",
+              "primary": "#25686a",
+              "sage-green": "#7A9E7E"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f6;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-gradient {
+            background: linear-gradient(45deg, #25686a, #61a0a2);
+        }
+        .safari-landscape {
+            background: linear-gradient(to bottom, #ffdcbf 0%, #fbf9f6 100%);
+            position: relative;
+        }
+        .pulse-ring {
+            box-shadow: 0 0 0 0 rgba(37, 104, 106, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 backdrop-blur-md bg-[#fbf9f6]/80">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#25686a]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Newsreader'] italic text-[#25686a] text-xl tracking-tight">Sound Safari</h1>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex flex-col items-end">
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase text-[#7A9E7E]">Animal 4 of 8</span>
+<div class="flex gap-1 mt-1">
+<div class="w-2 h-2 rounded-full bg-sage-green"></div>
+<div class="w-2 h-2 rounded-full bg-sage-green"></div>
+<div class="w-2 h-2 rounded-full bg-sage-green"></div>
+<div class="w-2 h-2 rounded-full bg-sage-green"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+</div>
+</div>
+<div class="bg-secondary-container px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-bold text-on-secondary-container text-sm">32 XP</span>
+</div>
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[#25686a]" data-icon="stars">stars</span>
+</button>
+</div>
+</header>
+<main class="h-screen w-full pt-20 flex flex-col items-center justify-between safari-landscape">
+<!-- Main Landscape View -->
+<div class="w-full max-w-7xl px-8 flex-1 flex flex-col items-center justify-center relative">
+<!-- Floating Decorative Hills/Clouds (Abstract Design) -->
+<div class="absolute top-1/4 left-10 w-64 h-32 bg-secondary-fixed/30 rounded-full blur-3xl"></div>
+<div class="absolute bottom-1/4 right-10 w-96 h-48 bg-primary-fixed/20 rounded-full blur-3xl"></div>
+<!-- Animal Card -->
+<div class="relative z-10 w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(66,72,66,0.06)] p-12 flex flex-col items-center gap-8">
+<!-- Animal Image Container -->
+<div class="w-64 h-64 bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center">
+<img alt="Giraffe illustration" class="w-full h-full object-cover mix-blend-multiply opacity-90" data-alt="Abstract watercolor giraffe with warm earthy colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLawe5mYhXrfzS4EW64GnutkirNAC9AMs4dau4yQBqavS9KTLpTuDtixY6jeogcT6f822SBllKXKvaC15iPzLMWI7YbUQyF7deg2ycJ-dwUYEzAI8LtIXTWYUO1pAP5I_NIM_RHeC3EwHNTwaE3HfkjCXXKzHAFAMIo6GrFo1o8ffGcA9fBu9SoOcdRqf7-A8AmkqybSr8MaVp4JjHArapM2ufdTXQJgNbbiJBNEaHMHvH-863BOSs7mhrE3UxrVfSgGaS9Nfl_dcM"/>
+</div>
+<!-- Animal Info -->
+<div class="text-center">
+<div class="flex items-center justify-center gap-4 mb-2">
+<h2 class="font-headline italic text-4xl text-on-surface">Giraffe</h2>
+<span class="bg-tertiary-fixed text-on-tertiary-container px-4 py-1 rounded-full text-sm font-medium">/ʤ/</span>
+</div>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed max-w-md">
+                        The <span class="text-secondary font-bold italic">g</span>iraffe is so <span class="text-secondary font-bold italic">g</span>entle and tall.
+                    </p>
+</div>
+<!-- Feedback Area (Appears on speech detection) -->
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center gap-1 text-sage-green">
+<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<p class="font-headline italic text-2xl text-sage-green">Amazing! 92%</p>
+</div>
+</div>
+<!-- Mic Button Interaction -->
+<div class="mt-12 flex flex-col items-center gap-4">
+<button class="w-24 h-24 rounded-full watercolor-gradient flex items-center justify-center text-white shadow-xl hover:scale-105 active:scale-90 transition-transform pulse-ring">
+<span class="material-symbols-outlined text-4xl" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase text-on-surface-variant">Tap to speak</span>
+</div>
+</div>
+<!-- Bottom Navigation / Collected Animals (BottomNavBar Integration) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex flex-col items-center">
+<!-- Animal Stamp Collection -->
+<div class="mb-4 flex gap-3 px-6 py-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-full shadow-lg border border-surface-container">
+<!-- owl ✓ -->
+<div class="w-10 h-10 rounded-full bg-sage-green flex items-center justify-center text-white relative">
+<span class="material-symbols-outlined text-xl" data-icon="pest_control_rodent">pest_control_rodent</span>
+<div class="absolute -top-1 -right-1 bg-white rounded-full w-4 h-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-sage-green font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- snake ✓ -->
+<div class="w-10 h-10 rounded-full bg-sage-green flex items-center justify-center text-white relative">
+<span class="material-symbols-outlined text-xl" data-icon="waves">waves</span>
+<div class="absolute -top-1 -right-1 bg-white rounded-full w-4 h-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-sage-green font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- fish ✓ -->
+<div class="w-10 h-10 rounded-full bg-sage-green flex items-center justify-center text-white relative">
+<span class="material-symbols-outlined text-xl" data-icon="set_meal">set_meal</span>
+<div class="absolute -top-1 -right-1 bg-white rounded-full w-4 h-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-sage-green font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- giraffe (current) -->
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white ring-2 ring-primary ring-offset-2">
+<span class="material-symbols-outlined text-xl" data-icon="pets">pets</span>
+</div>
+<!-- greyed out bear -->
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-xl" data-icon="emoji_nature">emoji_nature</span>
+</div>
+<!-- greyed out lion -->
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-xl" data-icon="cruelty_free">cruelty_free</span>
+</div>
+<!-- greyed out cat -->
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-xl" data-icon="catching_pokemon">capture</span>
+</div>
+<!-- greyed out dog -->
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-xl" data-icon="sound_detection_dog">sound_detection_dog_barking</span>
+</div>
+</div>
+<!-- Global Nav -->
+<nav class="w-full bg-[#fbf9f6]/80 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(66,72,66,0.06)] flex justify-around items-center px-4 pb-6 pt-2 backdrop-blur-xl border-t border-[#f5f3f0]">
+<a class="flex flex-col items-center justify-center text-[#25686a]/60 p-3 hover:bg-[#f5f3f0] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase mt-1">Stamps</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#25686a]/60 p-3 hover:bg-[#f5f3f0] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase mt-1">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#7A9E7E] text-white rounded-full p-3 active:scale-90 transition-transform duration-300 shadow-md" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#25686a]/60 p-3 hover:bg-[#f5f3f0] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase mt-1">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#25686a]/60 p-3 hover:bg-[#f5f3f0] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase mt-1">Exit</span>
+</a>
+</nav>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Parent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#d2beeb",
+                        "surface-container-high": "#25293a",
+                        "primary-fixed-dim": "#e3c19f",
+                        "surface": "#0e1322",
+                        "surface-container-highest": "#303445",
+                        "on-tertiary": "#38294d",
+                        "inverse-surface": "#dee1f8",
+                        "on-primary-container": "#b39475",
+                        "secondary": "#abcdcb",
+                        "on-secondary": "#153534",
+                        "on-primary": "#412c14",
+                        "outline-variant": "#46464c",
+                        "on-background": "#dee1f8",
+                        "on-secondary-fixed": "#00201f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#1b1f2f",
+                        "outline": "#909097",
+                        "on-tertiary-fixed": "#221437",
+                        "primary": "#e3c19f",
+                        "on-surface": "#dee1f8",
+                        "surface-container-lowest": "#090d1d",
+                        "tertiary-fixed-dim": "#d2beeb",
+                        "secondary-fixed-dim": "#abcdcb",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#291803",
+                        "secondary-container": "#2f4e4d",
+                        "inverse-on-surface": "#2c3041",
+                        "tertiary-container": "#392b4f",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffddbb",
+                        "inverse-primary": "#735a3e",
+                        "surface-variant": "#303445",
+                        "secondary-fixed": "#c7e9e7",
+                        "surface-bright": "#34384a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#2d4c4b",
+                        "tertiary-fixed": "#eddcff",
+                        "background": "#0e1322",
+                        "surface-tint": "#e3c19f",
+                        "on-primary-fixed-variant": "#5a4229",
+                        "on-secondary-container": "#9dbfbd",
+                        "surface-dim": "#0e1322",
+                        "on-tertiary-fixed-variant": "#4f4065",
+                        "on-surface-variant": "#c7c6cd",
+                        "on-tertiary-container": "#a492bd",
+                        "surface-container-low": "#171b2b",
+                        "primary-container": "#422e16"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #0e1322;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAb1pyVK7LsZM5fS_BlEQDTlLeLgdGVA625iN7dsvbg268mG1epmdkBHT8aYb7Ul7zzD95ZGynBJkzc0MEEu-xdsQ91Rs5WkU1ws_myWrwoec1-uHd2iZHiznRW-ND8Bsf1MEZJxu1xqt0jq8h4zZhGBGmPe_ObjTdto55TfBk9jlPtTFgNfKnuqRv0CtmCt3985h7moG-HTeRaqpPas05RkGX2ZiEpnmwYKIsbEHpE8yMzQXlpQHVy9zMKXd-idMa2w83EcnA1PvKB);
+    /* Subtle grain texture */
+    font-family: "Inter", sans-serif
+    }
+.newsreader-italic {
+    font-family: "Newsreader", serif;
+    font-style: italic
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="sticky top-0 z-50 flex justify-between items-center w-full px-8 py-4 max-w-none bg-[#2D3142]/70 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+<div class="text-2xl italic font-serif text-[#fbf9f6] newsreader-italic">BoloBridge</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#fbf9f6] border-b-2 border-[#e3c19f] pb-1 Inter font-medium text-sm tracking-wide" href="#">Dashboard</a>
+<a class="text-[#fbf9f6]/50 hover:text-[#fbf9f6] transition-colors duration-300 Inter font-medium text-sm tracking-wide" href="#">Milestones</a>
+<a class="text-[#fbf9f6]/50 hover:text-[#fbf9f6] transition-colors duration-300 Inter font-medium text-sm tracking-wide" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#fbf9f6]/5 rounded-full transition-all duration-300 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[#fbf9f6]">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Parent Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzOIGQ2RI0sxV73bgMqVUDfLOIs3h0KSa-1c-V2uWNHG6vfuwaPlFg8CznHSwhxMruAWqH08VdsR6Wt6ZeEyIzmzZbm-aruULM0iGa5OP6-DLFh92f7fUvvChPZ0of8mk94Ue3bhSwY5UZJ55eIhNX6hGuh0NHe6dz-VINATgh2J9RGfHlR3JHg4NOw46NrBsmQHh9UsN6YuwHlbnLYjbSCgSpoQOIwiTl8GV0hwmsFkLNDoDQVu2FXWlSdUoz8UqYZhVDby_Sq7fk"/>
+</div>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-8 pb-24">
+<!-- Header Section -->
+<header class="relative mt-8 mb-12 rounded-xl overflow-hidden bg-gradient-to-br from-[#2D3142] to-surface-container-lowest p-12 md:p-20">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+<div class="relative z-10 flex flex-col gap-6">
+<div class="flex items-center gap-3 bg-secondary-container/20 w-fit px-4 py-1.5 rounded-full border border-secondary/10">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-secondary text-sm font-medium tracking-wide">Parent Dashboard</span>
+</div>
+<h1 class="text-6xl md:text-8xl newsreader-italic text-[#fbf9f6] tracking-tight">Leo's Progress</h1>
+<p class="text-xl md:text-2xl text-[#fbf9f6]/60 font-light max-w-2xl leading-relaxed">
+                    Tracking speech development journey with gentle steps.
+                </p>
+</div>
+</header>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- 2. STAT CARDS (Left Column) -->
+<section class="lg:col-span-5 grid grid-cols-2 gap-6">
+<!-- Total Exercises -->
+<div class="bg-surface-container-low rounded-lg p-8 relative overflow-hidden group transition-all duration-500 hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<span class="text-[#fbf9f6]/50 text-xs font-bold uppercase tracking-[0.1em] mb-4 block">Total Exercises</span>
+<div class="newsreader-italic text-5xl text-[#fbf9f6]">47</div>
+<span class="material-symbols-outlined absolute right-6 top-8 text-secondary/20 scale-150">auto_stories</span>
+</div>
+<!-- Current Streak -->
+<div class="bg-surface-container-low rounded-lg p-8 relative overflow-hidden group transition-all duration-500 hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<span class="text-[#fbf9f6]/50 text-xs font-bold uppercase tracking-[0.1em] mb-4 block">Current Streak</span>
+<div class="flex items-baseline gap-2">
+<div class="newsreader-italic text-5xl text-[#fbf9f6]">5</div>
+<span class="text-primary newsreader-italic text-xl">days</span>
+</div>
+<span class="material-symbols-outlined absolute right-6 top-8 text-primary/20 scale-150">local_fire_department</span>
+</div>
+<!-- Sounds Mastered -->
+<div class="bg-surface-container-low rounded-lg p-8 relative overflow-hidden group transition-all duration-500 hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<span class="text-[#fbf9f6]/50 text-xs font-bold uppercase tracking-[0.1em] mb-4 block">Sounds Mastered</span>
+<div class="newsreader-italic text-5xl text-[#fbf9f6]">12</div>
+<span class="material-symbols-outlined absolute right-6 top-8 text-tertiary/20 scale-150">graphic_eq</span>
+</div>
+<!-- XP/Level -->
+<div class="bg-surface-container-low rounded-lg p-8 relative overflow-hidden group transition-all duration-500 hover:bg-surface-container">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<span class="text-[#fbf9f6]/50 text-xs font-bold uppercase tracking-[0.1em] mb-4 block">Level 3</span>
+<div class="flex items-baseline gap-2">
+<div class="newsreader-italic text-5xl text-[#fbf9f6]">580</div>
+<span class="text-secondary newsreader-italic text-xl">XP</span>
+</div>
+<span class="material-symbols-outlined absolute right-6 top-8 text-secondary/20 scale-150">military_tech</span>
+</div>
+</section>
+<!-- 3. CHART PANELS (Right Column) -->
+<section class="lg:col-span-7 flex flex-col md:flex-row gap-8">
+<!-- Panel 1: Weekly Progress -->
+<div class="flex-1 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/10">
+<h3 class="newsreader-italic text-2xl text-[#fbf9f6] mb-8">Weekly Progress</h3>
+<div class="relative h-48 flex items-end justify-between gap-2 px-2">
+<!-- Simulated Chart Grid -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-white/5 w-full"></div>
+<div class="border-t border-white/5 w-full"></div>
+<div class="border-t border-white/5 w-full"></div>
+<div class="border-t border-white/5 w-full"></div>
+</div>
+<!-- Simulated Line Points -->
+<div class="w-full h-full relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 80 Q 25 20, 50 60 T 100 10" fill="none" stroke="#abcdcb" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<path d="M0 90 Q 30 70, 60 85 T 100 40" fill="none" stroke="#d2beeb" stroke-dasharray="4 2" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-[#fbf9f6]/30 uppercase tracking-widest font-bold">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Panel 2: Skill Breakdown -->
+<div class="flex-1 bg-surface-container-lowest rounded-lg p-8 border border-outline-variant/10">
+<h3 class="newsreader-italic text-2xl text-[#fbf9f6] mb-8">Skill Breakdown</h3>
+<div class="relative aspect-square flex items-center justify-center">
+<!-- Radar Chart Simulation -->
+<div class="absolute inset-0 border border-white/5 rounded-full scale-[0.33]"></div>
+<div class="absolute inset-0 border border-white/5 rounded-full scale-[0.66]"></div>
+<div class="absolute inset-0 border border-white/5 rounded-full"></div>
+<svg class="w-full h-full p-4" viewbox="0 0 100 100">
+<polygon fill="url(#warmGradient)" fill-opacity="0.4" points="50,15 85,50 50,75 15,50" stroke="#e3c19f" stroke-width="1"></polygon>
+<defs>
+<lineargradient id="warmGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#e3c19f;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#d2beeb;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute -top-2 text-[10px] text-primary uppercase tracking-tighter">Articulation</div>
+<div class="absolute -right-6 text-[10px] text-secondary uppercase tracking-tighter">Fluency</div>
+<div class="absolute -bottom-2 text-[10px] text-tertiary uppercase tracking-tighter">Oral Motor</div>
+<div class="absolute -left-8 text-[10px] text-[#fbf9f6]/60 uppercase tracking-tighter">Vocabulary</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 4. XP BAR SECTION -->
+<section class="mt-12 bg-surface-container-low rounded-xl p-10 border border-outline-variant/5">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h4 class="newsreader-italic text-3xl text-[#fbf9f6]">Next Milestone</h4>
+<p class="text-[#fbf9f6]/60 text-sm mt-1">72% to Level 4 • Mastering compound sounds</p>
+</div>
+<div class="text-right">
+<span class="text-xs uppercase tracking-widest text-[#fbf9f6]/40 font-bold block mb-1">Current Progress</span>
+<span class="newsreader-italic text-2xl text-primary">580 XP</span>
+</div>
+</div>
+<div class="h-4 w-full bg-surface-container-lowest rounded-full overflow-hidden p-1 shadow-inner">
+<div class="h-full rounded-full bg-gradient-to-r from-secondary via-tertiary to-primary transition-all duration-1000 w-[72%]"></div>
+</div>
+</section>
+<!-- 5. BADGES: ACHIEVEMENT STAMPS -->
+<section class="mt-16">
+<h3 class="newsreader-italic text-4xl text-[#fbf9f6] mb-10 text-center">Achievement Stamps</h3>
+<div class="flex flex-wrap justify-center gap-12">
+<!-- Achievement 1 -->
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary/40 relative group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="absolute inset-0 rounded-full border border-primary/20 scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fbf9f6]/50">First Sound</span>
+</div>
+<!-- Achievement 2 -->
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-secondary/20 flex items-center justify-center border-4 border-secondary/40 relative group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fbf9f6]/50">Chatterbox</span>
+</div>
+<!-- Achievement 3 -->
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-tertiary/20 flex items-center justify-center border-4 border-tertiary/40 relative group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fbf9f6]/50">Patience</span>
+</div>
+<!-- Achievement 4 (Locked) -->
+<div class="flex flex-col items-center gap-4 opacity-30 grayscale transition-all duration-500 hover:opacity-50">
+<div class="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center border-4 border-white/10 relative">
+<span class="material-symbols-outlined text-4xl text-on-surface">lock</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fbf9f6]/50">Loud &amp; Clear</span>
+</div>
+<!-- Achievement 5 (Locked) -->
+<div class="flex flex-col items-center gap-4 opacity-30 grayscale transition-all duration-500 hover:opacity-50">
+<div class="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center border-4 border-white/10 relative">
+<span class="material-symbols-outlined text-4xl text-on-surface">lock</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#fbf9f6]/50">Polyglot</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#1a1d28] rounded-t-[3rem] mt-20">
+<div class="text-lg italic font-serif text-[#fbf9f6] newsreader-italic">BoloBridge Archive</div>
+<div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.05rem]">
+<a class="text-[#fbf9f6]/60 hover:text-[#fbf9f6] transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-[#fbf9f6]/60 hover:text-[#fbf9f6] transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-[#fbf9f6]/60 hover:text-[#fbf9f6] transition-colors duration-300" href="#">Contact Us</a>
+</div>
+<div class="text-[10px] font-bold uppercase tracking-[0.05rem] text-[#fbf9f6]/40">
+            © BoloBridge Archive. All rights reserved.
+        </div>
+</footer>
+<!-- Image for Context -->
+<div class="hidden">
+<img data-alt="Abstract warm dark navy texture with particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqIyo4zYLPXBsfbFWqv7fXw6SLZkXeKq7Zj0ObGeeama_0dVwttThtl1sjBDJnKo3XPzIs68lku-aUUog4XdM7D_OU3Bimu_pgKD3t4phmLHN3tuDtY3TrldgHceOHHWVD9HvXBW4X0geLQ4hWc3bNafYGNbYD7mIGhGNYbGrxfzV0M-mcc3SZCmMK4nK_JmY9s1KwjEB8OnliP8wX5bAz3eFqy29NrBnuYfXVWSHliTrXSsk1R2I1wviYtaw7x0V1MB-nxBU6Jx78"/>
+</div>
+</body></html>

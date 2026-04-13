@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Premium Game Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#79542f",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312f",
+                        "tertiary": "#61549b",
+                        "surface-dim": "#dbdad7",
+                        "on-primary-container": "#003234",
+                        "surface-container-low": "#f5f3f0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1c1a",
+                        "tertiary-fixed-dim": "#cabeff",
+                        "secondary": "#7c5732",
+                        "on-surface": "#1b1c1a",
+                        "on-secondary-fixed-variant": "#613f1d",
+                        "primary-fixed": "#aeeef0",
+                        "secondary-fixed": "#ffdcbf",
+                        "on-primary-fixed": "#002021",
+                        "primary-fixed-dim": "#92d2d3",
+                        "surface-bright": "#fbf9f6",
+                        "secondary-container": "#fdcb9d",
+                        "on-tertiary-fixed-variant": "#493c81",
+                        "on-tertiary-fixed": "#1c0b54",
+                        "surface": "#fbf9f6",
+                        "surface-container-high": "#eae8e5",
+                        "outline": "#6f7979",
+                        "surface-tint": "#25686a",
+                        "primary-container": "#5f9ea0",
+                        "secondary-fixed-dim": "#eebd90",
+                        "tertiary-fixed": "#e6deff",
+                        "primary": "#25686a",
+                        "surface-container-highest": "#e4e2df",
+                        "on-surface-variant": "#3f4849",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#2e2165",
+                        "surface-variant": "#e4e2df",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-primary-fixed-variant": "#004f51",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#efeeeb",
+                        "tertiary-container": "#978ad5",
+                        "inverse-primary": "#92d2d3",
+                        "outline-variant": "#bfc8c8",
+                        "on-secondary-fixed": "#2d1600",
+                        "error": "#ba1a1a",
+                        "background": "#fbf9f6"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-story { background: linear-gradient(135deg, #61549b, #978ad5); }
+        .bg-safari { background: linear-gradient(135deg, #25686a, #5f9ea0); }
+        .bg-garden { background: linear-gradient(135deg, #ba1a1a, #fdcb9d); }
+        .bg-river { background: linear-gradient(135deg, #004f51, #92d2d3); }
+        .bg-echo { background: linear-gradient(135deg, #7c5732, #eebd90); }
+        .bg-gym { background: linear-gradient(135deg, #93000a, #ffdad6); }
+        
+        body { transition: background-color 0.3s ease; }
+    </style>
+</head>
+<body class="bg-background dark:bg-[#1a1c1e] text-on-surface dark:text-inverse-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#fbf9f6] dark:bg-[#1a1c1e]/80 backdrop-blur-xl docked full-width top-0 z-50 fixed">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-serif italic text-[#25686a] dark:text-[#5f9ea0] tracking-tight">BoloBridge</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#25686a] dark:text-[#5f9ea0] font-semibold hover:opacity-80 transition-opacity Active: scale-95 duration-200" href="#">Library</a>
+<a class="text-[#6b7280] dark:text-[#9ca3af] hover:opacity-80 transition-opacity Active: scale-95 duration-200" href="#">Journey</a>
+<a class="text-[#6b7280] dark:text-[#9ca3af] hover:opacity-80 transition-opacity Active: scale-95 duration-200" href="#">Awards</a>
+<a class="text-[#6b7280] dark:text-[#9ca3af] hover:opacity-80 transition-opacity Active: scale-95 duration-200" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full surface-container-highest dark:bg-surface-dim/20 hover:opacity-80 transition-opacity" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-on-surface dark:text-surface-bright" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-[#25686a] dark:text-[#5f9ea0]" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#25686a] dark:text-[#5f9ea0]" data-icon="face">face</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<h1 class="font-headline italic text-5xl md:text-6xl text-on-surface dark:text-surface-bright mb-4">Adventure awaits, <br/><span class="text-primary dark:text-primary-fixed-dim">Leo.</span></h1>
+<p class="text-on-surface-variant dark:text-outline-variant text-lg max-w-lg">Choose a world to explore and practice your magic words today.</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[14rem]">
+<!-- Card 1: Story Studio (Featured Large) -->
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-[#2d3142] shadow-[0_20_40_rgba(45,49,66,0.06)] hover:scale-[0.98] transition-all duration-300">
+<div class="h-48 bg-story relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Whimsical illustration of an open magic book with glowing stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVCESatQAE-WGcBzy6hn9tkndszDA8fg2OwCg6zcalYLdUOUlAiMJoQYCgWjI8WjwqJdyLB_Ug0W1Y1y3CMAUZeHUFAcpSx2hAsUTJq8twCnMxGn_bAnDlw9VUL_AqF6J2o2uf06IIYXMFGMoq76XA8VwMgavFf-lo0IECyeJMVQsEWlS_QslEiFQqPszXTUAtEZyhdGUjsTtcgr4N38L3my2RdvZT3jTj1ySAiHSCTC6XI0w9D3s23peo0KTDUg3-jzBECZcms92Z"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-8xl opacity-40" data-icon="auto_stories">auto_stories</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 rounded-full bg-surface/20 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase">AI-Powered</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline italic text-3xl text-on-surface dark:text-surface-bright mb-2">Story Studio</h3>
+<p class="text-on-surface-variant dark:text-outline-variant max-w-md">Co-create animated tales using your voice. Watch your characters come to life with every word.</p>
+</div>
+<span class="text-5xl">🎭</span>
+</div>
+<div class="flex items-center gap-4 mt-6">
+<button class="bg-primary hover:opacity-90 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 group/btn transition-all">
+                            Play Now
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Sound Safari -->
+<div class="md:col-span-1 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-[#2d3142] shadow-[0_20_40_rgba(45,49,66,0.06)] hover:scale-[0.98] transition-all duration-300">
+<div class="h-56 bg-safari relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 mix-blend-multiply" data-alt="Stylized jungle path with tropical leaves and golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkkC2jqoXsSN6U3S_0RrbXEGtOKhJnDNLE4pzlWaKSAItPf3ZlucFIymHzCkhvQaiWWLQf22jlS6YgrTG5HgyeSvZLMtvwGxzvETd7lk3V3zsN7S62d8YQOD76jtMQbfB-tCcS9VV2ICZscXRzIj2NZTaBe7X0VMEzncsTlJRM9N82uOBcxHjTQaTMyEZ9mIPQlutId0LsONSDCQxMTJzj5esOux5kUVRUOyZiL21nv43wY2JXE3_V9mZEWAxSy6XmArj7EiB19Mla"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-7xl opacity-30" data-icon="pets">pets</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 rounded-full bg-surface/20 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase">All Levels</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline italic text-2xl text-on-surface dark:text-surface-bright">Sound Safari</h3>
+<span class="text-3xl">🦁</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant text-sm mb-6">Track down elusive animal sounds in the wild. Perfect for phoneme recognition.</p>
+<button class="w-full py-3 rounded-full bg-surface-container-highest dark:bg-white/5 text-on-surface dark:text-surface-bright font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+                        Enter Wild
+                        <span class="material-symbols-outlined text-sm" data-icon="explore">explore</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Word Garden -->
+<div class="md:col-span-1 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-[#2d3142] shadow-[0_20_40_rgba(45,49,66,0.06)] hover:scale-[0.98] transition-all duration-300">
+<div class="h-40 bg-garden relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="Abstract colorful flower garden with floating petals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhXGrkdoa1NpNpHcbV-UHBvbQ8exns5ENHQugc_qtqFRxuPj0KhQ_swfXjH14U5h-7g7txzCYPSiCA0qrpclcj13j2dXB6j7JFkdAAgstoa4lkHsUwlVEEfujL6HMSmmFKv7RkqUBrf_jzN7grg6kYwXBHSZQjw7RUQVmj-aB77khYDobVrtgvUvWD8sSAIyEQPbU-0fJbwlrwjT00d_6JbqGQtAtF1u0uYIAARvonM_ekGJTsaUQIPphw5k4xbFkWX-fLA_BuRmdn"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 rounded-full bg-surface/20 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase">Beginner</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline italic text-2xl text-on-surface dark:text-surface-bright">Word Garden</h3>
+<span class="text-3xl">🌻</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant text-sm mb-6">Plant seeds of vocabulary and watch them bloom into beautiful sentences.</p>
+<a class="text-primary dark:text-primary-fixed-dim font-bold flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                        Start Planting
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Rhythm River -->
+<div class="md:col-span-1 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-[#2d3142] shadow-[0_20_40_rgba(45,49,66,0.06)] hover:scale-[0.98] transition-all duration-300">
+<div class="h-40 bg-river relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 mix-blend-color-dodge" data-alt="Sparkling river water reflecting blue and cyan hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfEB6loer0Z5X4b8DX0fN5o0RfJNLnofmbTNPiR07Tf8qDNjbDLLsv5_q6FSzE4DOd8ppO8RCLgKFRemIqrcphVeveYLfTtsyR3qIpGX-W7PzUBs7GHeH3zZDL1UUSF-xcp3oecyJYS5X8-GtCpXjULcQPmfhaiDEHQzyXml0EP1pwZ614XrSJ1IoWXhv1HUR4bOGuYzx7gQ_jzx7P_Gj6QY7L2_CQIJVGF-0uzYMu-lWfOmaFabSExwFa7yVgPeZaHRRkOk2y_1Z5"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 rounded-full bg-surface/20 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase">All Levels</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline italic text-2xl text-on-surface dark:text-surface-bright">Rhythm River</h3>
+<span class="text-3xl">🌊</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant text-sm mb-6">Flow with the beat of speech. Tap into the rhythm of syllables and pacing.</p>
+<a class="text-primary dark:text-primary-fixed-dim font-bold flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                        Dive In
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 5: Emotion Echo -->
+<div class="md:col-span-1 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-[#2d3142] shadow-[0_20_40_rgba(45,49,66,0.06)] hover:scale-[0.98] transition-all duration-300">
+<div class="h-40 bg-echo relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-40 mix-blend-soft-light" data-alt="Whimsical carnival tent under a starlit sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Gf1YF9G0z8JuDe73kvFEbuVUNmrEPPGkbSzGL0M32_DobL3KEDf2kgvm3C789Bjb8oP8tQOGaeckNZAtFlxhdKY3JM8Bv92Xid6Q2FSJRLs0aGXUkFaK1s9ytcfiCx7rNlsW9gT59one0qrth0UCxUUzv6HtjTnWlUQ3-ZDgwraS5d9e5tNuquZcteOcDDRVS6xrVIQS-qlCou44hWdinf2BX15z142Q51zqDNTnA-55cqcOkWfwh6ftwc8rQmVCNXQR2E5IM-Zb"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 rounded-full bg-surface/20 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase">AI-Powered</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline italic text-2xl text-on-surface dark:text-surface-bright">Emotion Echo</h3>
+<span class="text-3xl">🎪</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant text-sm mb-6">Learn to express feelings through tone and pitch at the Vox Circus.</p>
+<a class="text-primary dark:text-primary-fixed-dim font-bold flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                        Join Circus
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 6: Tongue Gym -->
+<div class="md:col-span-3 md:row-span-1 group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-[#2d3142] shadow-[0_20_40_rgba(45,49,66,0.06)] hover:scale-[0.98] transition-all duration-300 flex flex-col md:flex-row">
+<div class="md:w-1/3 bg-gym relative overflow-hidden h-32 md:h-auto">
+<img class="w-full h-full object-cover opacity-40" data-alt="Playful abstract shapes representing tongue movements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKmA89nOb-yQOoJRLSUqYkfjF9p8MNRyTML0AuoeW_XJfScHtuUhTcaC0gHcVOOoU95tLHrFQFTa2oEHxcm8CRv3-qRr0lNcfe1AdaYC_hrPRxzQl2CiwmNxVbL2nFNz2MBGViRCUM_1wAA61VmidzaeeZmz3HRZfmYyxf18mo4CUu4CVa2hihBXCtFlHH6sEiRxke7HPWtABOPAJydDK5ikiQ6LdNIPccgR7T34MQSOtPOfRVCx7QZVoMTK-0zZs1FDjU1QuEMc21"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl" data-icon="fitness_center">fitness_center</span>
+</div>
+</div>
+<div class="p-6 md:p-8 md:w-2/3 flex flex-col justify-center">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-headline italic text-2xl text-on-surface dark:text-surface-bright">Tongue Gym</h3>
+<span class="px-4 py-1.5 rounded-full bg-tertiary/10 text-tertiary text-xs font-bold tracking-widest uppercase">Daily Challenge</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant text-sm mb-4">Fun oral-motor exercises to build strength and precision. Today: 'L' and 'R' loops!</p>
+<div class="flex gap-4">
+<button class="bg-primary hover:opacity-90 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all">Start Workout</button>
+<span class="text-3xl">💪</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fbf9f6]/90 dark:bg-[#1a1c1e]/90 backdrop-blur-2xl rounded-t-[3rem] border-t border-[#e4e2df]/20 shadow-[0_-10px_40px_rgba(45,49,66,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#5f9ea0]/10 dark:bg-[#5f9ea0]/20 text-[#25686a] dark:text-[#5f9ea0] rounded-full px-5 py-2 scale-90 duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-sans text-[11px] font-medium tracking-wide uppercase mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b7280] dark:text-[#9ca3af] px-5 py-2 hover:text-[#25686a] dark:hover:text-[#5f9ea0] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-sans text-[11px] font-medium tracking-wide uppercase mt-1">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b7280] dark:text-[#9ca3af] px-5 py-2 hover:text-[#25686a] dark:hover:text-[#5f9ea0] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-sans text-[11px] font-medium tracking-wide uppercase mt-1">Awards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6b7280] dark:text-[#9ca3af] px-5 py-2 hover:text-[#25686a] dark:hover:text-[#5f9ea0] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-sans text-[11px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

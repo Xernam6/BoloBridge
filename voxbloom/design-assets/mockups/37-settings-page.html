@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#763226",
+                        "surface-container-highest": "#e4e2df",
+                        "on-surface-variant": "#424842",
+                        "on-background": "#1b1c1a",
+                        "background": "#fbf9f6",
+                        "surface-dim": "#dbdad7",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "primary-container": "#7a9e7e",
+                        "tertiary-fixed-dim": "#ffb4a6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1b1c1a",
+                        "surface": "#fbf9f6",
+                        "surface-tint": "#44664a",
+                        "surface-variant": "#e4e2df",
+                        "on-surface": "#1b1c1a",
+                        "tertiary-fixed": "#ffdad4",
+                        "secondary-container": "#e1dfdc",
+                        "tertiary-container": "#d57d6d",
+                        "on-primary-container": "#13341c",
+                        "surface-container": "#efeeeb",
+                        "outline-variant": "#c2c8bf",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f5f3f0",
+                        "secondary": "#5e5e5c",
+                        "on-tertiary-fixed": "#3c0702",
+                        "inverse-surface": "#30312f",
+                        "primary-fixed-dim": "#aad0ad",
+                        "on-tertiary-container": "#55190f",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474745",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f6",
+                        "error-container": "#ffdad6",
+                        "outline": "#727971",
+                        "surface-container-high": "#eae8e5",
+                        "on-primary-fixed": "#00210b",
+                        "primary": "#44664a",
+                        "primary-fixed": "#c6ecc8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c4",
+                        "tertiary": "#93493b",
+                        "secondary-fixed": "#e4e2df",
+                        "on-primary-fixed-variant": "#2d4e33",
+                        "on-secondary-container": "#636361",
+                        "inverse-primary": "#aad0ad"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.grainy {
+    position: relative
+    }
+.grainy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBDwzpbmBLVfl64eYmFs257DvRso3eTf5sl8jfF-HhggtnaBSbk2oirxjWhLUYJtLHr3kxd5waPQ9mjBJ63v3bhsXqx5wpLHmhriV0Hh_j0ozwmyzQRdmpvqURu8d6SNJqm251_7oeTk5BEbUY9IVs1Wddq9WO-rkA13dkAnREqJMbp1gCpEHwaPDR7m19tDnxIjnuqNkbzQkmP8CN7lNbbfaM_IuNsYU59McWVWxqwUgpEH-nrAaUQLY5UCll6MTf5ZjDpbjWCRg0p);
+    z-index: 10
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #44664a;
+    cursor: pointer;
+    border-radius: 50%
+    }</style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed grainy min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-[#fbf9f6] dark:bg-stone-950">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[700px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#44664a] dark:text-[#7A9E7E] hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-colors duration-300 p-2 rounded-full Active: opacity-80 scale-[0.99] transition-all">
+                    arrow_back
+                </button>
+<h1 class="font-['Newsreader'] italic text-2xl tracking-tight text-[#44664a] dark:text-[#7A9E7E]">Settings</h1>
+</div>
+<button class="material-symbols-outlined text-[#44664a] dark:text-[#7A9E7E] hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-colors duration-300 p-2 rounded-full">
+                more_vert
+            </button>
+</div>
+<div class="h-[1px] bg-[#f5f3f0] dark:bg-stone-900 w-full"></div>
+</header>
+<main class="max-w-[700px] mx-auto px-6 py-12 space-y-12">
+<!-- Intro -->
+<section class="space-y-2">
+<h2 class="font-headline italic text-4xl lg:text-5xl text-primary">Customize your BoloBridge experience</h2>
+<p class="text-on-surface-variant font-body tracking-tight">Tailor the ambiance and privacy of your digital sanctuary.</p>
+</section>
+<!-- Appearance Group -->
+<section class="space-y-6">
+<h3 class="font-headline italic text-2xl px-2">Appearance</h3>
+<div class="bg-surface-container-lowest grainy rounded-lg p-8 shadow-sm">
+<div class="space-y-10">
+<!-- Theme Slider -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="font-medium text-on-surface">Theme</span>
+<span class="text-xs uppercase tracking-widest text-primary font-bold">Sage Active</span>
+</div>
+<div class="flex bg-surface-container-low p-1.5 rounded-full relative">
+<button class="flex-1 py-2 text-sm font-medium rounded-full bg-primary text-on-primary transition-all">Light</button>
+<button class="flex-1 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-all">Dark</button>
+</div>
+</div>
+<!-- Text Size -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-medium">Text Size</span>
+<span class="text-sm text-on-surface-variant">Medium</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="3" min="1" step="1" type="range" value="2"/>
+<div class="flex justify-between px-1 text-[10px] font-bold uppercase tracking-tighter text-outline">
+<span>Small</span>
+<span>Medium</span>
+<span>Large</span>
+</div>
+</div>
+<!-- Reduce Motion -->
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-medium">Reduce Motion</span>
+<span class="text-xs text-on-surface-variant">Simplifies transitions for visual comfort</span>
+</div>
+<button class="w-12 h-6 bg-surface-container-high rounded-full relative p-1 transition-colors hover:bg-outline-variant">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm translate-x-0"></div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Language Group -->
+<section class="space-y-6">
+<div class="flex items-center gap-3 px-2">
+<h3 class="font-headline italic text-2xl">Language</h3>
+<span class="bg-primary-container text-on-primary-container px-3 py-0.5 rounded-full text-xs font-semibold">🇺🇸 English</span>
+</div>
+<div class="bg-surface-container-lowest grainy rounded-lg overflow-hidden shadow-sm">
+<div class="divide-y divide-outline-variant/15">
+<button class="w-full text-left px-8 py-5 hover:bg-surface-container-low transition-colors flex justify-between items-center group">
+<span class="font-body">Español</span>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full text-left px-8 py-5 hover:bg-surface-container-low transition-colors flex justify-between items-center group">
+<span class="font-body">Français</span>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full text-left px-8 py-5 hover:bg-surface-container-low transition-colors flex justify-between items-center group">
+<span class="font-body">Deutsch</span>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full text-left px-8 py-5 hover:bg-surface-container-low transition-colors flex justify-between items-center group">
+<span class="font-body">日本語</span>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full text-left px-8 py-5 hover:bg-surface-container-low transition-colors flex justify-between items-center group">
+<span class="font-body">Português</span>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full text-left px-8 py-5 hover:bg-surface-container-low transition-colors flex justify-between items-center group">
+<span class="font-body">Italiano</span>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Audio Group -->
+<section class="space-y-6">
+<h3 class="font-headline italic text-2xl px-2">Audio</h3>
+<div class="bg-surface-container-lowest grainy rounded-lg p-8 shadow-sm space-y-8">
+<div class="flex justify-between items-center">
+<span class="font-medium">Sound Effects</span>
+<button class="w-12 h-6 bg-primary rounded-full relative p-1 transition-all">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm translate-x-6"></div>
+</button>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-medium">Background Music</span>
+<button class="w-12 h-6 bg-primary rounded-full relative p-1 transition-all">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm translate-x-6"></div>
+</button>
+</div>
+<div class="space-y-3">
+<label class="font-medium block">Mic Quality</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-b-lg p-4 font-body text-on-surface appearance-none focus:bg-primary-fixed focus:ring-0 transition-all cursor-pointer">
+<option>Studio (24-bit/96kHz)</option>
+<option>High Definition</option>
+<option>Standard Balanced</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">unfold_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy Group -->
+<section class="space-y-6">
+<h3 class="font-headline italic text-2xl px-2">Privacy</h3>
+<div class="bg-surface-container-lowest grainy rounded-lg p-8 shadow-sm space-y-8">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-medium">Anonymous Analytics</span>
+<span class="text-xs text-on-surface-variant">Helps us improve the app without tracking you</span>
+</div>
+<button class="w-12 h-6 bg-surface-container-high rounded-full relative p-1 transition-colors">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm translate-x-0"></div>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="bg-surface-container-high text-on-surface py-4 px-6 rounded-lg font-medium hover:bg-surface-container-highest transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+                        Change PIN
+                    </button>
+<button class="bg-surface-container-high text-on-surface py-4 px-6 rounded-lg font-medium hover:bg-surface-container-highest transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Download My Data
+                    </button>
+</div>
+<div class="pt-4 flex justify-center">
+<button class="text-tertiary hover:underline underline-offset-8 transition-all font-medium text-sm">Remove All Data</button>
+</div>
+</div>
+</section>
+<!-- About Group -->
+<section class="space-y-6">
+<h3 class="font-headline italic text-2xl px-2">About</h3>
+<div class="bg-surface-container-lowest grainy rounded-lg p-8 shadow-sm">
+<div class="flex flex-col items-center text-center gap-6">
+<div class="space-y-1">
+<p class="font-bold text-lg text-primary">BoloBridge</p>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant">Version 1.0.0</p>
+</div>
+<div class="flex flex-col gap-3 w-full max-w-xs">
+<a class="text-primary hover:underline underline-offset-4 flex items-center justify-center gap-2 text-sm" href="#">
+                            Research Sources <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+<a class="text-primary hover:underline underline-offset-4 flex items-center justify-center gap-2 text-sm" href="#">
+                            Open Source <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Component: Family Log -->
+<section class="space-y-4">
+<h3 class="font-headline italic text-xl px-2 opacity-60">System Log</h3>
+<div class="bg-surface-container-lowest grainy rounded-lg p-6 shadow-sm border border-outline-variant/10">
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<span class="font-headline italic text-primary text-sm whitespace-nowrap pt-0.5">Today, 08:14</span>
+<p class="font-body text-sm text-on-surface-variant">Privacy PIN was successfully updated from your primary device.</p>
+</div>
+<div class="flex items-start gap-4 opacity-50">
+<span class="font-headline italic text-primary text-sm whitespace-nowrap pt-0.5">Oct 12, 19:45</span>
+<p class="font-body text-sm text-on-surface-variant">Language set to English (US) during initial calibration.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-transparent border-t border-stone-200/15 dark:border-stone-800/15 py-12">
+<div class="flex flex-col items-center gap-4 w-full max-w-[700px] mx-auto text-center">
+<div class="flex gap-6 mb-2">
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-stone-400 dark:text-stone-500 hover:text-[#44664a] dark:hover:text-[#7A9E7E] transition-colors" href="#">Support</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-stone-400 dark:text-stone-500 hover:text-[#44664a] dark:hover:text-[#7A9E7E] transition-colors" href="#">Privacy</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-stone-400 dark:text-stone-500 hover:text-[#44664a] dark:hover:text-[#7A9E7E] transition-colors" href="#">Terms</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-stone-400 dark:text-stone-500 hover:text-[#44664a] dark:hover:text-[#7A9E7E] transition-colors" href="#">Feedback</a>
+</div>
+<p class="font-['Inter'] text-xs tracking-wide uppercase text-stone-400 dark:text-stone-500 fade-in duration-500">© 2024 BoloBridge. Crafted for Calm.</p>
+</div>
+</footer>
+</body></html>

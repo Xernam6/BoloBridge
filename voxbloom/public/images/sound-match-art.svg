@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="sm-bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F5F1EB"/>
+    </radialGradient>
+    <linearGradient id="sm-teal" x1="0%" y1="50%" x2="50%" y2="50%">
+      <stop offset="0%" stop-color="#5F9EA0" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#5F9EA0"/>
+    </linearGradient>
+    <linearGradient id="sm-camel" x1="100%" y1="50%" x2="50%" y2="50%">
+      <stop offset="0%" stop-color="#C2956B" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#C2956B"/>
+    </linearGradient>
+    <filter id="sm-glow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sm-softblur"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="sm-tinyblur"><feGaussianBlur stdDeviation="1"/></filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sm-bg)"/>
+
+  <!-- Background ambient radials at the merge point -->
+  <circle cx="400" cy="400" r="180" fill="#8B7EC8" opacity="0.04" filter="url(#sm-softblur)"/>
+  <circle cx="400" cy="400" r="120" fill="#5F9EA0" opacity="0.05" filter="url(#sm-softblur)"/>
+  <circle cx="400" cy="400" r="60" fill="#C2956B" opacity="0.06" filter="url(#sm-softblur)"/>
+
+  <!-- LEFT WAVEFORM — Teal side, 5 layered wave lines -->
+  <path d="M40,400 C80,340 120,460 170,380 C220,300 260,480 310,390 C340,330 370,420 400,400" fill="none" stroke="url(#sm-teal)" stroke-width="4" stroke-linecap="round" filter="url(#sm-glow)"/>
+  <path d="M40,400 C90,360 130,440 180,390 C230,340 270,450 320,400 C350,370 375,415 400,400" fill="none" stroke="#5F9EA0" stroke-width="2.5" opacity="0.5" stroke-linecap="round" filter="url(#sm-tinyblur)"/>
+  <path d="M40,400 C100,380 140,420 190,395 C240,370 280,425 330,405 C360,390 380,408 400,400" fill="none" stroke="#5F9EA0" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M80,400 C110,370 150,430 200,400 C250,370 290,430 340,400 C360,390 385,405 400,400" fill="none" stroke="#5F9EA0" stroke-width="0.8" opacity="0.2" stroke-linecap="round"/>
+  <path d="M60,400 C100,390 140,410 190,400 C240,390 280,410 330,400 C370,395 390,402 400,400" fill="none" stroke="#4F8587" stroke-width="0.5" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- RIGHT WAVEFORM — Camel side, 5 layered wave lines -->
+  <path d="M760,400 C720,340 680,460 630,380 C580,300 540,480 490,390 C460,330 430,420 400,400" fill="none" stroke="url(#sm-camel)" stroke-width="4" stroke-linecap="round" filter="url(#sm-glow)"/>
+  <path d="M760,400 C710,360 670,440 620,390 C570,340 530,450 480,400 C450,370 425,415 400,400" fill="none" stroke="#C2956B" stroke-width="2.5" opacity="0.5" stroke-linecap="round" filter="url(#sm-tinyblur)"/>
+  <path d="M760,400 C700,380 660,420 610,395 C560,370 520,425 470,405 C440,390 420,408 400,400" fill="none" stroke="#C2956B" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <path d="M720,400 C690,370 650,430 600,400 C550,370 510,430 460,400 C440,390 415,405 400,400" fill="none" stroke="#C2956B" stroke-width="0.8" opacity="0.2" stroke-linecap="round"/>
+  <path d="M740,400 C700,390 660,410 610,400 C560,390 520,410 470,400 C430,395 410,402 400,400" fill="none" stroke="#D4A373" stroke-width="0.5" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- CENTER MERGE — Lavender accent bloom -->
+  <circle cx="400" cy="400" r="16" fill="#8B7EC8" opacity="0.15" filter="url(#sm-glow)"/>
+  <circle cx="400" cy="400" r="8" fill="#8B7EC8" opacity="0.25"/>
+  <circle cx="400" cy="400" r="3" fill="#FAF8F5" opacity="0.6"/>
+  <!-- Rings around center-->
+  <circle cx="400" cy="400" r="24" fill="none" stroke="#8B7EC8" stroke-width="0.8" opacity="0.2"/>
+  <circle cx="400" cy="400" r="40" fill="none" stroke="#8B7EC8" stroke-width="0.5" opacity="0.12"/>
+  <circle cx="400" cy="400" r="60" fill="none" stroke="#8B7EC8" stroke-width="0.3" opacity="0.08"/>
+
+  <!-- Symmetry guide lines (very subtle) -->
+  <line x1="400" y1="200" x2="400" y2="600" stroke="#2D3142" stroke-width="0.3" opacity="0.06" stroke-dasharray="4 8"/>
+  <line x1="200" y1="400" x2="600" y2="400" stroke="#2D3142" stroke-width="0.3" opacity="0.06" stroke-dasharray="4 8"/>
+
+  <!-- Particle field -->
+  <circle cx="100" cy="350" r="1.5" fill="#5F9EA0" opacity="0.18"/>
+  <circle cx="150" cy="450" r="1" fill="#5F9EA0" opacity="0.12"/>
+  <circle cx="250" cy="320" r="2" fill="#5F9EA0" opacity="0.1"/>
+  <circle cx="700" cy="350" r="1.5" fill="#C2956B" opacity="0.18"/>
+  <circle cx="650" cy="450" r="1" fill="#C2956B" opacity="0.12"/>
+  <circle cx="550" cy="320" r="2" fill="#C2956B" opacity="0.1"/>
+  <circle cx="400" cy="280" r="1.5" fill="#8B7EC8" opacity="0.12"/>
+  <circle cx="400" cy="520" r="1.5" fill="#8B7EC8" opacity="0.12"/>
+  <circle cx="320" cy="300" r="1" fill="#5F9EA0" opacity="0.08"/>
+  <circle cx="480" cy="300" r="1" fill="#C2956B" opacity="0.08"/>
+  <circle cx="320" cy="500" r="1" fill="#5F9EA0" opacity="0.08"/>
+  <circle cx="480" cy="500" r="1" fill="#C2956B" opacity="0.08"/>
+</svg>

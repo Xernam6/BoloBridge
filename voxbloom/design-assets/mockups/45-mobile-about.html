@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,400;1,600;1,700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#30312f",
+              "surface": "#fbf9f6",
+              "on-tertiary-container": "#2f2166",
+              "surface-container-low": "#f5f3f0",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e4e2df",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container": "#efeeeb",
+              "on-secondary-container": "#79542f",
+              "tertiary": "#61549b",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-primary-fixed": "#002021",
+              "tertiary-container": "#988bd6",
+              "secondary-container": "#fdcb9d",
+              "background": "#fbf9f6",
+              "on-background": "#1b1c1a",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#eae8e5",
+              "on-primary-container": "#003435",
+              "secondary-fixed": "#ffdcbf",
+              "on-primary-fixed-variant": "#004f51",
+              "outline-variant": "#c2c8bf",
+              "on-secondary-fixed-variant": "#613f1d",
+              "inverse-on-surface": "#f2f0ed",
+              "surface-bright": "#fbf9f6",
+              "on-tertiary-fixed": "#1c0b54",
+              "primary": "#25686a",
+              "secondary": "#7c5732",
+              "surface-tint": "#25686a",
+              "secondary-fixed-dim": "#eebd90",
+              "inverse-primary": "#92d2d3",
+              "outline": "#727971",
+              "tertiary-fixed": "#e6deff",
+              "on-secondary-fixed": "#2d1600",
+              "primary-container": "#61a0a2",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#aeeef0",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#92d2d3",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e4e2df",
+              "on-surface": "#1b1c1a",
+              "on-surface-variant": "#424842"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-stone-950 flex items-center justify-between px-6 py-4 w-full">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[#7A9E7E] dark:text-emerald-400">menu</span>
+</button>
+<h1 class="font-['Newsreader'] italic text-[#25686a] dark:text-emerald-300 text-2xl tracking-wide">BoloBridge</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 ring-2 ring-primary-container/20">
+<img alt="Therapist Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling female therapist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTKAju2iruHmYylUvcnrdXQik8jfN5UCsVkIK1SM6UALRkotape7R3OVo6bFKUm7dTwHZ7_HLik4ei1ozoKX4GmqXbYjQvKUfSJ4PvBffNlctibYOHRtSawETNfz-Z8ZM92Y3kzXLT3BpFbtkO_bw_HKbwhEonQmuEcwd7HXmINxp4ZooAjqId2BaYQS7pSZBaHCaJJMgZLhOgWQLpJIiKZuBZkoXA3EjkKlMF_iTtR-5FJZN2jxuPAcKP1CT94lVn4jaulwKiSWj3"/>
+</div>
+</header>
+<div class="fixed top-[64px] w-full z-50 bg-[#f5f3f0] dark:bg-stone-900 h-[1px]"></div>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative h-[420px] flex flex-col items-center justify-center px-8 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-secondary-fixed opacity-90"></div>
+<div class="absolute inset-0" data-alt="Abstract soft focus of children playing with blocks" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHO1U6MxdRfBDoU5uMCbF3apyhROzh9t8Jh4M45k4R8cgzXLM2QDTaO5iQiX31B3jhwYZuw9dXjFigW3PtaMdmSUEgpkz3kENK2mGGBwvM3CcdxUhAxc4BSdXwTlWQoYApBqArleZhm7HYWzID32f1BUfcAT3Vp0VlxUw2ajbZTe0dnyNO-pWXTuSjyKLCNWH2LrxKjj0Nm34Z_AHxJ94bqqkUje7xas_1KL7Cj6jSFldvG5tcCDad3io0rNLZwvDdyq3ZunNe0LvK'); background-size: cover; background-position: center; mix-blend-mode: soft-light;"></div>
+<div class="relative z-10 text-center space-y-4">
+<h2 class="font-headline italic text-4xl text-on-primary leading-tight tracking-tight">Every Child's Voice Matters</h2>
+<p class="text-on-primary/80 font-body text-lg max-w-[280px] mx-auto leading-relaxed">Nurturing confidence through the art of gentle speech therapy.</p>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-surface to-transparent"></div>
+</section>
+<!-- What is BoloBridge -->
+<section class="px-6 -mt-12 relative z-20">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_20px_40px_rgba(66,72,66,0.06)] border border-surface-container-high/50">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">auto_awesome</span>
+<h3 class="font-headline italic text-2xl text-primary">What is BoloBridge?</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-4">
+                    BoloBridge is a digital sanctuary where speech-language pathology meets the warmth of a bedtime story. We've redesigned the therapeutic journey to feel less like work and more like play.
+                </p>
+<div class="h-1 w-12 bg-secondary-fixed-dim rounded-full"></div>
+</div>
+</section>
+<!-- Developer Section -->
+<section class="px-6 mt-12">
+<div class="bg-tertiary-fixed/30 rounded-xl p-8 border border-tertiary-fixed-dim/20 relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden ring-4 ring-white shadow-md">
+<img alt="Founder" class="w-full h-full object-cover" data-alt="Portrait of a professional woman with a warm expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD40UuLYCYyasl_3PYZMr_ink1YE5u57V9kwIzgB4L5_BNT-47kX9MTvwnDW4HF8RmqpIU3YP6tj7TH9pW8G9N4_HiN7ajkkQfeqlcy9oij_FFwT4S5NKmsXrp6gE9CCz1VpINoOP5z85fjH2jHkR-8m8DGrNidQuVAQrhljCV12f94UR9-GG3juUxaa3aRZ3J-gIKHk51ScazIm_BFuhMbLTpQO9gTLwJR_XSawEz6itYuSZxwgjyizKwOBKpbQXhDwm62Md8Ua8tY"/>
+</div>
+<div>
+<h4 class="font-headline italic text-xl text-on-tertiary-fixed">Founded by Dr. Elena Reed</h4>
+<p class="text-on-tertiary-fixed-variant text-sm font-medium">SLP-CCC &amp; Child Psychologist</p>
+</div>
+</div>
+<p class="text-on-tertiary-fixed-variant italic leading-relaxed text-sm">
+                        "We built BoloBridge to bridge the gap between clinical excellence and the emotional comfort children need to truly blossom."
+                    </p>
+</div>
+</div>
+</section>
+<!-- Mission Cards -->
+<section class="px-6 mt-12 space-y-6">
+<h3 class="font-headline italic text-2xl text-on-surface px-2">Our Guiding Light</h3>
+<!-- Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-start gap-5">
+<div class="bg-primary/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary">universal_currency_alt</span>
+</div>
+<div>
+<h4 class="font-body font-semibold text-on-surface mb-1">Accessible</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Quality therapy shouldn't be a luxury. We provide tools for families regardless of location or income.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-start gap-5">
+<div class="bg-secondary/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-secondary">groups</span>
+</div>
+<div>
+<h4 class="font-body font-semibold text-on-surface mb-1">Inclusive</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Celebrating neurodiversity in every interaction. Designed for every unique way a child communicates.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-start gap-5">
+<div class="bg-primary-container/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary-container">auto_graph</span>
+</div>
+<div>
+<h4 class="font-body font-semibold text-on-surface mb-1">Empowering</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Turning 'I can't' into 'Watch me.' We focus on the wins, no matter how small they might seem.</p>
+</div>
+</div>
+</section>
+<!-- Research Accordion -->
+<section class="px-6 mt-12 mb-8">
+<h3 class="font-headline italic text-2xl text-on-surface px-2 mb-6">Rooted in Research</h3>
+<div class="space-y-4">
+<div class="bg-surface-container rounded-lg overflow-hidden">
+<div class="px-6 py-4 flex justify-between items-center bg-surface-container-high/50">
+<span class="font-body font-medium text-on-surface">Digital Play Intervention</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg overflow-hidden border border-primary/20">
+<div class="px-6 py-4 flex justify-between items-center bg-surface-container-lowest">
+<span class="font-body font-medium text-primary">The Science of Bloom</span>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</div>
+<div class="px-6 pb-6 pt-2 bg-surface-container-lowest">
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Our methodology is based on the 2023 study "Interactive Screens and Articulation Success" published in the Journal of Child Development.
+                        </p>
+<a class="text-primary text-xs font-semibold mt-4 inline-flex items-center gap-1 uppercase tracking-wider" href="#">
+                            Read Publication <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg overflow-hidden">
+<div class="px-6 py-4 flex justify-between items-center bg-surface-container-high/50">
+<span class="font-body font-medium text-on-surface">Community Outcomes</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Editorial -->
+<section class="px-6 py-12 text-center">
+<p class="font-headline italic text-primary-container text-lg">BoloBridge Version 2.4.0</p>
+<p class="text-on-surface-variant text-xs mt-2 font-body opacity-60">Crafted with intention in Portland, Oregon.</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fbf9f6]/80 dark:bg-stone-950/80 backdrop-blur-md rounded-t-[3rem] border-t border-stone-200/20 shadow-[0_-10px_40px_rgba(66,72,66,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-[#7A9E7E] dark:hover:text-emerald-400 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-tight mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-[#7A9E7E] dark:hover:text-emerald-400 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-tight mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-[#7A9E7E] dark:hover:text-emerald-400 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-tight mt-1">Progress</span>
+</a>
+<!-- Active Tab: Profile (Closest to About/Settings) -->
+<a class="flex flex-col items-center justify-center bg-[#7A9E7E]/10 dark:bg-emerald-900/20 text-[#25686a] dark:text-emerald-300 rounded-full px-5 py-2 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-tight mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,222 @@
+{
+  "source": "Based on ASHA (American Speech-Language-Hearing Association) speech sound development norms",
+  "categories": [
+    {
+      "id": "early",
+      "name": "Early Sounds",
+      "description": "Sounds typically mastered by ages 2-3",
+      "phonemes": [
+        {
+          "sound": "/p/",
+          "ageExpected": 2,
+          "word": "puppy",
+          "emoji": "🐶",
+          "sentence": "The puppy plays in the park."
+        },
+        {
+          "sound": "/b/",
+          "ageExpected": 2,
+          "word": "ball",
+          "emoji": "⚽",
+          "sentence": "Bounce the big ball."
+        },
+        {
+          "sound": "/m/",
+          "ageExpected": 2,
+          "word": "moon",
+          "emoji": "🌙",
+          "sentence": "The moon is so bright."
+        },
+        {
+          "sound": "/n/",
+          "ageExpected": 2,
+          "word": "nose",
+          "emoji": "👃",
+          "sentence": "I can touch my nose."
+        },
+        {
+          "sound": "/w/",
+          "ageExpected": 2,
+          "word": "water",
+          "emoji": "💧",
+          "sentence": "I want some water."
+        },
+        {
+          "sound": "/h/",
+          "ageExpected": 2,
+          "word": "hat",
+          "emoji": "🎩",
+          "sentence": "The hat is on my head."
+        },
+        {
+          "sound": "/d/",
+          "ageExpected": 3,
+          "word": "duck",
+          "emoji": "🦆",
+          "sentence": "The duck swims in the pond."
+        },
+        {
+          "sound": "/t/",
+          "ageExpected": 3,
+          "word": "tiger",
+          "emoji": "🐯",
+          "sentence": "The tiger is very tall."
+        }
+      ]
+    },
+    {
+      "id": "middle",
+      "name": "Middle Sounds",
+      "description": "Sounds typically mastered by ages 3-5",
+      "phonemes": [
+        {
+          "sound": "/k/",
+          "ageExpected": 3,
+          "word": "cat",
+          "emoji": "🐱",
+          "sentence": "The cat can climb."
+        },
+        {
+          "sound": "/g/",
+          "ageExpected": 3,
+          "word": "goat",
+          "emoji": "🐐",
+          "sentence": "The goat eats green grass."
+        },
+        {
+          "sound": "/f/",
+          "ageExpected": 3,
+          "word": "fish",
+          "emoji": "🐟",
+          "sentence": "Five fish swim fast."
+        },
+        {
+          "sound": "/y/",
+          "ageExpected": 4,
+          "word": "yellow",
+          "emoji": "💛",
+          "sentence": "The yellow yarn is yours."
+        },
+        {
+          "sound": "/s/",
+          "ageExpected": 5,
+          "word": "sun",
+          "emoji": "☀️",
+          "sentence": "The sun shines so bright."
+        },
+        {
+          "sound": "/z/",
+          "ageExpected": 5,
+          "word": "zebra",
+          "emoji": "🦓",
+          "sentence": "The zebra has zigzag stripes."
+        }
+      ]
+    },
+    {
+      "id": "later",
+      "name": "Later Sounds",
+      "description": "Sounds typically mastered by ages 5-7",
+      "phonemes": [
+        {
+          "sound": "/sh/",
+          "ageExpected": 5,
+          "word": "ship",
+          "emoji": "🚢",
+          "sentence": "The ship sails on the shiny sea."
+        },
+        {
+          "sound": "/ch/",
+          "ageExpected": 5,
+          "word": "cherry",
+          "emoji": "🍒",
+          "sentence": "I chose a cherry for my lunch."
+        },
+        {
+          "sound": "/j/",
+          "ageExpected": 5,
+          "word": "jump",
+          "emoji": "🤸",
+          "sentence": "Jump for joy in June."
+        },
+        {
+          "sound": "/l/",
+          "ageExpected": 6,
+          "word": "lion",
+          "emoji": "🦁",
+          "sentence": "The little lion loves to laugh."
+        },
+        {
+          "sound": "/r/",
+          "ageExpected": 6,
+          "word": "rabbit",
+          "emoji": "🐰",
+          "sentence": "The rabbit ran really fast."
+        },
+        {
+          "sound": "/v/",
+          "ageExpected": 6,
+          "word": "violin",
+          "emoji": "🎻",
+          "sentence": "I have a very nice violin."
+        },
+        {
+          "sound": "/th/",
+          "ageExpected": 7,
+          "word": "thumb",
+          "emoji": "👍",
+          "sentence": "I think with my thumb up."
+        }
+      ]
+    },
+    {
+      "id": "blends",
+      "name": "Blends",
+      "description": "Consonant clusters typically mastered by ages 5-7",
+      "phonemes": [
+        {
+          "sound": "/bl/",
+          "ageExpected": 5,
+          "word": "blue",
+          "emoji": "🔵",
+          "sentence": "The blue bird blinks."
+        },
+        {
+          "sound": "/st/",
+          "ageExpected": 5,
+          "word": "star",
+          "emoji": "⭐",
+          "sentence": "Stars stay still in the sky."
+        },
+        {
+          "sound": "/tr/",
+          "ageExpected": 6,
+          "word": "tree",
+          "emoji": "🌳",
+          "sentence": "The tree trunk is brown."
+        },
+        {
+          "sound": "/gr/",
+          "ageExpected": 6,
+          "word": "grapes",
+          "emoji": "🍇",
+          "sentence": "Green grapes grow on the ground."
+        },
+        {
+          "sound": "/sn/",
+          "ageExpected": 6,
+          "word": "snake",
+          "emoji": "🐍",
+          "sentence": "The snake snuck through the snow."
+        },
+        {
+          "sound": "/sp/",
+          "ageExpected": 6,
+          "word": "spider",
+          "emoji": "🕷️",
+          "sentence": "The spider spins a special web."
+        }
+      ]
+    }
+  ]
+}

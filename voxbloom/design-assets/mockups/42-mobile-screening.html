@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — Screening</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-secondary-fixed-variant": "#613f1d",
+                "error": "#ba1a1a",
+                "on-error": "#ffffff",
+                "secondary-fixed-dim": "#eebd90",
+                "secondary": "#7c5732",
+                "outline": "#727971",
+                "inverse-primary": "#92d2d3",
+                "surface-variant": "#e4e2df",
+                "inverse-on-surface": "#f2f0ed",
+                "secondary-fixed": "#ffdcbf",
+                "on-secondary-container": "#79542f",
+                "surface": "#fbf9f6",
+                "on-primary": "#ffffff",
+                "surface-container-highest": "#e4e2df",
+                "surface-tint": "#25686a",
+                "surface-bright": "#fbf9f6",
+                "background": "#fbf9f6",
+                "on-primary-container": "#003435",
+                "surface-container-high": "#eae8e5",
+                "tertiary": "#61549b",
+                "outline-variant": "#c2c8bf",
+                "on-primary-fixed": "#002021",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#1b1c1a",
+                "on-tertiary-container": "#2f2166",
+                "surface-container": "#efeeeb",
+                "inverse-surface": "#30312f",
+                "surface-dim": "#dbdad7",
+                "on-tertiary-fixed": "#1c0b54",
+                "on-secondary": "#ffffff",
+                "primary-container": "#61a0a2",
+                "on-tertiary": "#ffffff",
+                "primary-fixed-dim": "#92d2d3",
+                "on-error-container": "#93000a",
+                "primary": "#25686a",
+                "on-tertiary-fixed-variant": "#493c81",
+                "tertiary-fixed-dim": "#cabeff",
+                "primary-fixed": "#aeeef0",
+                "on-secondary-fixed": "#2d1600",
+                "secondary-container": "#fdcb9d",
+                "error-container": "#ffdad6",
+                "tertiary-fixed": "#e6deff",
+                "tertiary-container": "#988bd6",
+                "surface-container-low": "#f5f3f0",
+                "on-background": "#1b1c1a",
+                "on-surface-variant": "#424842",
+                "on-primary-fixed-variant": "#004f51"
+              },
+              fontFamily: {
+                "headline": ["Newsreader"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-primary {
+            background: linear-gradient(45deg, #25686a, #61a0a2);
+        }
+        .shadow-ambient {
+            box-shadow: 0 20px 40px rgba(66, 72, 66, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen max-w-[375px] mx-auto overflow-x-hidden relative">
+<div class="film-grain"></div>
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-stone-900 flex items-center justify-between px-6 py-4 w-full max-w-[375px] mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#7A9E7E]" data-icon="notes">notes</span>
+</div>
+<h1 class="font-['Newsreader'] italic text-[#25686a] dark:text-[#61a0a2] text-2xl tracking-tight">BoloBridge</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Avatar of a small child smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt8DNXKsic6nZ1Vl47FcrL7HUgYaMrQxfL5aIoSdIR0QrcszWH-sXqb63llL5xD4Gh_V1fOnt6KRl7jMIjFL6NvrT53D9hMMHVQkgZs6QSZ4kWaM7SmEr3youjNdGjVU4OdFdBmKzXYWMIokE7gVYADiGQBuWYao75i6VyS3NPQcOtxAwrwNDmedM-8_fEMylRdsb85gX46axLUyGwyhfD7nFaOqzYJnu4nBdQiawBF_y5CGj5JTK_CL9IwQ-F-qyHg33KBMc_vFAn"/>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800/50 h-px w-full absolute bottom-0 left-0"></div>
+</header>
+<main class="pt-24 pb-32 px-6">
+<!-- Progress Header -->
+<section class="mb-8">
+<h2 class="font-headline italic text-3xl text-primary mb-2">Early Sounds</h2>
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs font-medium text-on-surface-variant tracking-tight">Sound 3 of 8 — 37%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full watercolor-primary w-[37%] rounded-full"></div>
+</div>
+</section>
+<!-- Main Phoneme Card -->
+<section class="relative mb-12">
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col items-center text-center shadow-ambient border border-white/50">
+<div class="text-7xl mb-6">🐻</div>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="font-headline italic text-4xl text-on-surface">Bear</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-0.5 rounded-full text-sm font-semibold">/b/</span>
+</div>
+<p class="font-headline italic text-xl text-on-surface-variant">“The bear likes honey”</p>
+</div>
+<!-- Result Overlay (Conditional Mock) -->
+<div class="absolute inset-0 bg-surface/90 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-6 text-center z-10">
+<div class="w-16 h-16 bg-[#7A9E7E]/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[#7A9E7E] text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="text-[#7A9E7E] font-headline italic text-3xl mb-1">Great! 85%</h4>
+<p class="text-on-surface-variant text-sm mb-6">Clear pronunciation detected.</p>
+<button class="w-full watercolor-primary text-white font-medium py-4 rounded-full mb-3 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                    Next Sound
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="text-tertiary font-medium text-sm hover:opacity-70 transition-opacity">Skip for now</button>
+</div>
+</section>
+<!-- Recording Interface -->
+<section class="flex flex-col items-center">
+<div class="relative mb-4">
+<!-- Pulse Rings -->
+<div class="absolute inset-0 bg-[#7A9E7E] rounded-full opacity-20 scale-125"></div>
+<div class="absolute inset-0 bg-[#7A9E7E] rounded-full opacity-10 scale-150"></div>
+<button class="relative w-[72px] h-[72px] bg-[#7A9E7E] text-white rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</button>
+</div>
+<p class="text-on-surface-variant font-medium text-sm tracking-tight">Tap to record</p>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 max-w-[375px] mx-auto bg-[#fbf9f6]/80 dark:bg-stone-900/80 backdrop-blur-md rounded-t-[3rem] z-50 shadow-[0_-20px_40px_rgba(66,72,66,0.06)]">
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-px w-full absolute top-0 left-0 opacity-50"></div>
+<div class="flex flex-col items-center justify-center bg-[#7A9E7E] text-white rounded-full w-12 h-12 transition-all duration-300">
+<span class="material-symbols-outlined text-[24px]" data-icon="local_florist" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="font-['Inter'] font-medium text-[0px] leading-0">Bloom</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2] active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[24px]" data-icon="menu_book">menu_book</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-tight mt-1">Lessons</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2] active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[24px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-tight mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-4 py-2 hover:text-[#25686a] dark:hover:text-[#61a0a2] active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+<span class="font-['Inter'] font-medium text-[10px] tracking-tight mt-1">Settings</span>
+</div>
+</nav>
+<!-- Overall Session Progress Footer -->
+<footer class="fixed bottom-[88px] w-full max-w-[375px] px-6">
+<div class="bg-surface-container-low/60 backdrop-blur-sm p-4 rounded-xl border border-white/30">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Session Progress</span>
+<span class="text-[10px] font-bold text-primary">12 / 24 items</span>
+</div>
+<div class="flex gap-1">
+<div class="h-1 flex-1 rounded-full bg-primary opacity-80"></div>
+<div class="h-1 flex-1 rounded-full bg-primary opacity-80"></div>
+<div class="h-1 flex-1 rounded-full bg-primary opacity-40"></div>
+<div class="h-1 flex-1 rounded-full bg-surface-variant"></div>
+<div class="h-1 flex-1 rounded-full bg-surface-variant"></div>
+<div class="h-1 flex-1 rounded-full bg-surface-variant"></div>
+</div>
+</div>
+</footer>
+</body></html>

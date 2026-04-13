@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#e7fff0",
+              "error-dim": "#821a01",
+              "secondary-fixed": "#ffdcc4",
+              "on-surface": "#313330",
+              "inverse-on-surface": "#9e9d9a",
+              "outline": "#7a7b78",
+              "on-tertiary": "#fef6ff",
+              "surface-dim": "#dadad6",
+              "on-secondary-fixed-variant": "#795336",
+              "background": "#fbf9f6",
+              "on-error": "#fff7f6",
+              "secondary": "#7d5739",
+              "surface-container-low": "#f5f3f0",
+              "on-tertiary-fixed-variant": "#625671",
+              "primary": "#4f6459",
+              "inverse-surface": "#0e0e0d",
+              "inverse-primary": "#e7fff1",
+              "primary-fixed": "#d1e8da",
+              "surface-container-high": "#e9e8e4",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#fff7f4",
+              "surface-container-highest": "#e3e3de",
+              "tertiary-container": "#ecdcfd",
+              "tertiary-fixed-dim": "#deceee",
+              "outline-variant": "#b2b2ae",
+              "on-surface-variant": "#5e5f5c",
+              "primary-container": "#d1e8da",
+              "secondary-dim": "#704b2e",
+              "on-primary-fixed": "#2f443a",
+              "primary-fixed-dim": "#c3dacc",
+              "on-primary-fixed-variant": "#4b6055",
+              "on-error-container": "#671200",
+              "on-background": "#313330",
+              "tertiary": "#665a75",
+              "secondary-fixed-dim": "#fecaa5",
+              "on-secondary-fixed": "#59381d",
+              "primary-dim": "#43584d",
+              "surface-tint": "#4f6459",
+              "secondary-container": "#ffdcc4",
+              "on-secondary-container": "#6e4a2d",
+              "surface-bright": "#fbf9f6",
+              "on-tertiary-fixed": "#453b54",
+              "surface-container": "#efeeea",
+              "error-container": "#fa7150",
+              "tertiary-dim": "#5a4e69",
+              "surface": "#fbf9f6",
+              "tertiary-fixed": "#ecdcfd",
+              "surface-variant": "#e3e3de",
+              "error": "#aa371c",
+              "on-tertiary-container": "#584d67",
+              "on-primary-container": "#42564c"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.paper-texture {
+    background-color: #fbf9f6;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAbgIMr1prPl2IlCsTZW6IIWpMb1OxjYoQEDh-iwMXqZBBFYZ5B9iJ9kKgrRzuzEKjhWj1PcpkBIZnhOo-jUuFnw7cCE7aEASZUSdaCZ_kYIhK0i4ZSBotYQkJTMb2rqnJtb_fPnXKXE0knbMLJuWQs-MXP2XYjmilZYmUq236ZLXtrtBKCjJostV2IOAdKK3SVkmWkH4Xz0ZhX0JjoQsPpRcAGQsonIlNLNszKwI6durJsQ3KJIcV4lYGXie66CQF7rks7E1XdMWYZ)
+    }
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px
+    }
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent
+    }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #b2b2ae;
+    border-radius: 10px
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Shared Component -->
+<header class="bg-[#fbf9f6]/80 dark:bg-[#313330]/80 backdrop-blur-md shadow-[0_12px_32px_rgba(49,51,48,0.05)] fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-screen-2xl mx-auto">
+<div class="text-[#4f6459] font-['Newsreader'] italic font-bold text-2xl">BoloBridge</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#4f6459] border-b-2 border-[#4f6459] pb-1 font-bold" href="#">Learn</a>
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 font-['Inter'] font-medium hover:text-[#7d5739] transition-colors duration-300" href="#">Library</a>
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 font-['Inter'] font-medium hover:text-[#7d5739] transition-colors duration-300" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="scale-95 duration-200 ease-in-out text-[#4f6459]">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-40 px-6 max-w-[900px] mx-auto min-h-screen">
+<!-- Breadcrumb Section -->
+<nav class="mb-8 flex items-center gap-2 text-on-surface-variant/70 font-headline italic text-lg">
+<span>Learn</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>How We Make Sounds</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">Step 2</span>
+</nav>
+<!-- Video Player Section -->
+<section class="relative group">
+<div class="aspect-video w-full rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(49,51,48,0.1)] paper-texture border border-outline-variant/10 relative">
+<!-- Video Content Placeholder -->
+<div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-container/30 to-secondary-container/20">
+<img alt="Abstract watercolor illustration of human vocal cords" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Abstract watercolor illustration of human vocal cords in sage and beige" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB34kBKZjajCReevq4fv1XjYOgEU2W7DL0Q7SC35oB3UCa7o1lHsnE4LMdaZxnYdv4OTplSRSxFANpWxCjA3tQPBHfrKerNv9Vznp5zAv5NgjE9hjNP5U0zc7SHt3VquI7yLvNyzK-ZYLDZ-qWtx-RkO1zoEELFkVvApHiWeIFSf_0h7--IKdDLT0dTVHHivgUJS4OPNOt4mIZnyTy89zx8KOmA8zx4mM-9-Deu6i_yj72CHSkwRBxIer59NOUpmnT_g-7LycezMqyr"/>
+<!-- Large Central Play Button -->
+<button class="z-10 bg-primary text-on-primary w-24 h-24 rounded-full flex items-center justify-center shadow-2xl transform transition-transform duration-300 hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Custom Player Controls Overlay -->
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/40 to-transparent pt-20 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<!-- Progress Bar -->
+<div class="w-full h-1.5 bg-white/20 rounded-full mb-4 overflow-hidden group/bar cursor-pointer">
+<div class="h-full w-[44%] bg-gradient-to-r from-secondary to-secondary-fixed-dim rounded-full relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-md scale-0 group-hover/bar:scale-100 transition-transform"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-white">
+<div class="flex items-center gap-6">
+<button class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined">play_arrow</span></button>
+<button class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined">replay_10</span></button>
+<button class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined">forward_10</span></button>
+<div class="text-sm font-label font-medium opacity-90">1:24 / 3:15</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined">closed_caption</span></button>
+<div class="flex items-center gap-2 group/vol">
+<span class="material-symbols-outlined">volume_up</span>
+<div class="w-0 group-hover/vol:w-16 h-1 bg-white/30 rounded-full transition-all overflow-hidden relative">
+<div class="absolute inset-0 w-3/4 bg-white"></div>
+</div>
+</div>
+<button class="text-sm font-bold font-label px-2 py-0.5 rounded border border-white/30 hover:bg-white hover:text-on-surface transition-all">1x</button>
+<button class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined">fullscreen</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lesson Content Section -->
+<section class="mt-12 space-y-10">
+<header>
+<h1 class="font-headline italic text-5xl text-primary leading-tight">The Vocal Cords — Nature's Guitar Strings</h1>
+</header>
+<!-- Key Takeaway Card -->
+<div class="bg-secondary-container/40 p-8 rounded-xl flex items-start gap-5 border border-secondary-fixed/30">
+<div class="bg-secondary p-2 rounded-lg text-on-secondary">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-label uppercase tracking-widest text-[10px] font-bold text-on-secondary-container/60">Core Concept</h3>
+<p class="text-on-secondary-container text-lg font-medium leading-relaxed">Your vocal cords vibrate up to 1000 times per second!</p>
+</div>
+</div>
+<!-- Interaction Prompt -->
+<div class="flex flex-col items-center text-center p-10 border-y border-outline-variant/15">
+<span class="font-headline italic text-2xl text-secondary mb-2">"Hum and touch your throat — feel the buzz!"</span>
+<p class="text-on-surface-variant text-sm font-label">Take a moment to experience the physical vibration of your own instrument.</p>
+</div>
+<!-- Transcript Accordion -->
+<details class="group cursor-pointer">
+<summary class="flex items-center justify-between py-6 border-b border-outline-variant/15 list-none">
+<span class="font-headline italic text-xl text-on-surface flex items-center gap-3">
+                        Read Along
+                        <span class="font-label text-xs uppercase tracking-tighter opacity-40 font-bold px-2 py-0.5 bg-surface-container-high rounded">Transcript</span>
+</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="py-8 text-on-surface-variant leading-loose font-body text-lg space-y-6 max-h-[400px] overflow-y-auto pr-6 custom-scrollbar">
+<p><span class="text-primary font-bold">0:00</span> Imagine a delicate instrument tucked away inside your throat. These are your vocal folds, often called vocal cords. They aren't strings in the literal sense, but two flexible bands of muscle tissue.</p>
+<p><span class="text-primary font-bold">0:45</span> When you prepare to speak, these bands draw together. As air from your lungs pushes past them, they begin to oscillate—vibrating back and forth with incredible precision. This is what creates the initial sound wave.</p>
+<p><span class="text-primary font-bold">1:24</span> The pitch you hear is determined by how fast these folds vibrate. Higher notes require more tension, much like tightening a guitar string. A child's vocal cords might vibrate much faster than an adult's, leading to a higher natural frequency.</p>
+<p class="italic text-on-surface-variant/60">... [End of segment]</p>
+</div>
+</details>
+</section>
+</main>
+<!-- BottomNavBar Shared Component -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-[#f5f3f0] dark:bg-[#313330] border-t border-[#313330]/10 flex justify-between items-center px-12 py-6">
+<!-- Previous Step Button -->
+<button class="flex flex-col items-center justify-center text-[#7d5739] px-6 py-2 hover:bg-[#7d5739]/10 transition-all rounded-xl">
+<span class="material-symbols-outlined mb-1">arrow_back_ios</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Previous Step</span>
+</button>
+<!-- Next Step Button (Active Intent) -->
+<button class="flex flex-col items-center justify-center bg-[#4f6459] text-[#fbf9f6] rounded-full px-8 py-3 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined mb-1">arrow_forward_ios</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold">Next Step</span>
+</button>
+</footer>
+<!-- Subtle texture overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply paper-texture z-[100]"></div>
+</body></html>

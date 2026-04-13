@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#fcfcff",
+              "secondary-container": "#b9e2ff",
+              "surface-container-low": "#f0f4f8",
+              "inverse-surface": "#2c3134",
+              "on-primary-fixed": "#001e30",
+              "surface-tint": "#2b6388",
+              "surface-variant": "#dfe3e7",
+              "on-tertiary-fixed": "#2b1700",
+              "on-tertiary-container": "#fffbff",
+              "primary-fixed-dim": "#98ccf6",
+              "on-secondary-container": "#3d657e",
+              "background": "#f6fafe",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffddba",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#98ccf6",
+              "surface-dim": "#d6dade",
+              "inverse-on-surface": "#edf1f5",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f6fafe",
+              "surface-container-high": "#e4e9ed",
+              "on-background": "#171c1f",
+              "outline": "#71787f",
+              "on-surface": "#171c1f",
+              "tertiary-container": "#9b6a2f",
+              "tertiary-fixed-dim": "#f7bb78",
+              "surface-container": "#eaeef2",
+              "tertiary": "#7f5219",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#064b6f",
+              "primary": "#286185",
+              "on-tertiary-fixed-variant": "#663e03",
+              "outline-variant": "#c1c7cf",
+              "surface-container-highest": "#dfe3e7",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#214b63",
+              "secondary": "#3b637b",
+              "primary-container": "#447a9f",
+              "primary-fixed": "#cae6ff",
+              "on-secondary-fixed": "#001e2d",
+              "on-surface-variant": "#41474e",
+              "surface": "#f6fafe",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#c6e7ff",
+              "secondary-fixed-dim": "#a3cce8",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #F2F6FA;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCwsqVgkiJDRmxUQu7DXcT8gCxG9jp4MAnI4NGTGiWgk4dcfMiRc9zpIq97PNW2ZnWOOpaVXwW1FGRHsqpCCbZbyMbtAn0oejj4RgFrqKb8bqr-EbO1nwRX1ZzR3fePkkatidBZTqI4uMy7c7TmN15r-L0BoRfTJV027GCK-iyHgyLbbiZztczgx34dX_BuXE8-vaiRYDufT_5r7S3m4PfuK2-upBsEbWqiJzbj-Pajm1SD4NrICV6AwOgz5Ehvp1QgJ1h5xJSClCJB);
+    background-attachment: fixed
+    }
+.frost-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #dfe3e7;
+    border-radius: 9999px;
+    outline: none
+    }
+.frost-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #286185;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(40, 97, 133, 0.2)
+    }
+.custom-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px
+    }
+.custom-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0
+    }
+.slider-round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #B8CAD8;
+    transition: 0.4s;
+    border-radius: 34px
+    }
+.slider-round:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%
+    }
+input:checked + .slider-round {
+    background-color: #286185
+    }
+input:checked + .slider-round:before {
+    transform: translatex(20px)
+    }</style>
+</head>
+<body class="font-body text-on-surface antialiased min-h-screen">
+<!-- Shared TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 max-w-[700px] mx-auto left-0 right-0 bg-white/70 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#286185] hover:bg-[#286185]/5 p-2 rounded-full transition-colors active:scale-95 duration-200" data-icon="arrow_back">arrow_back</button>
+<h1 class="font-serif italic text-xl text-[#1B2D45]">Settings &amp; Preferences</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-sans uppercase tracking-wider text-[0.7rem] text-[#3b637b]">BoloBridge v1.2</span>
+</div>
+</header>
+<main class="max-w-[700px] mx-auto pt-28 pb-32 px-6">
+<!-- Introduction / Header -->
+<header class="mb-12">
+<h2 class="font-headline italic text-4xl text-[#1B2D45] tracking-tight leading-tight mb-2">Configure Your Experience</h2>
+<p class="font-body text-[#3b637b] text-sm tracking-wide">Refine the glacial clarity of your interaction.</p>
+</header>
+<!-- Settings Groups -->
+<div class="space-y-8">
+<!-- Sound Group -->
+<section class="bg-[#FAFCFF] rounded-[24px] p-8 shadow-sm border border-white/50">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-[#286185]" data-icon="volume_up">volume_up</span>
+<h3 class="font-label uppercase tracking-[0.15em] text-xs font-bold text-[#1B2D45]">Sound</h3>
+</div>
+<div class="space-y-10">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-body text-sm font-medium text-[#1B2D45]">Volume</label>
+<span class="font-label text-[0.7rem] text-[#3b637b]">85%</span>
+</div>
+<input class="frost-slider w-full" type="range" value="85"/>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Text-to-Speech</p>
+<p class="text-[0.75rem] text-[#3b637b] mt-1">Enable spoken feedback for all actions.</p>
+</div>
+<label class="custom-toggle">
+<input checked="" type="checkbox"/>
+<span class="slider-round"></span>
+</label>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-body text-sm font-medium text-[#1B2D45]">Voice Speed</label>
+<span class="font-label text-[0.7rem] text-[#3b637b]">1.0x</span>
+</div>
+<input class="frost-slider w-full" type="range" value="50"/>
+</div>
+</div>
+</section>
+<!-- Display Group -->
+<section class="bg-[#FAFCFF] rounded-[24px] p-8 shadow-sm border border-white/50">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-[#3b637b]" data-icon="palette">palette</span>
+<h3 class="font-label uppercase tracking-[0.15em] text-xs font-bold text-[#1B2D45]">Display</h3>
+</div>
+<div class="space-y-10">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Interface Theme</p>
+<div class="flex gap-2 mt-4">
+<button class="px-4 py-2 bg-[#286185] text-white rounded-full text-[0.7rem] uppercase tracking-widest font-bold">Light</button>
+<button class="px-4 py-2 bg-surface-container-low text-[#3b637b] rounded-full text-[0.7rem] uppercase tracking-widest font-bold hover:bg-[#286185]/5 transition-colors">Dark</button>
+<button class="px-4 py-2 bg-surface-container-low text-[#3b637b] rounded-full text-[0.7rem] uppercase tracking-widest font-bold hover:bg-[#286185]/5 transition-colors">Auto</button>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-body text-sm font-medium text-[#1B2D45]">Text Size</label>
+<span class="font-label text-[0.7rem] text-[#3b637b]">Standard</span>
+</div>
+<input class="frost-slider w-full" type="range" value="40"/>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Reduced Motion</p>
+<p class="text-[0.75rem] text-[#3b637b] mt-1">Minimize interface animations.</p>
+</div>
+<label class="custom-toggle">
+<input type="checkbox"/>
+<span class="slider-round"></span>
+</label>
+</div>
+</div>
+</section>
+<!-- Privacy Group -->
+<section class="bg-[#FAFCFF] rounded-[24px] p-8 shadow-sm border border-white/50">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-[#3b637b]" data-icon="security">security</span>
+<h3 class="font-label uppercase tracking-[0.15em] text-xs font-bold text-[#1B2D45]">Privacy</h3>
+</div>
+<div class="space-y-8">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Personalized Data Sharing</p>
+<p class="text-[0.75rem] text-[#3b637b] mt-1">Allow research use for algorithmic training.</p>
+</div>
+<label class="custom-toggle">
+<input checked="" type="checkbox"/>
+<span class="slider-round"></span>
+</label>
+</div>
+<div class="flex justify-between items-center py-4 bg-surface-container-low px-4 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-600 text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Microphone Permissions</p>
+</div>
+<span class="font-label text-[0.65rem] uppercase tracking-widest text-[#286185] font-bold">Granted</span>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Anonymous Analytics</p>
+<p class="text-[0.75rem] text-[#3b637b] mt-1">Help us improve the editorial experience.</p>
+</div>
+<label class="custom-toggle">
+<input checked="" type="checkbox"/>
+<span class="slider-round"></span>
+</label>
+</div>
+</div>
+</section>
+<!-- Account Group -->
+<section class="bg-[#FAFCFF] rounded-[24px] p-8 shadow-sm border border-white/50">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-[#7f5219]" data-icon="person">person</span>
+<h3 class="font-label uppercase tracking-[0.15em] text-xs font-bold text-[#1B2D45]">Account</h3>
+</div>
+<div class="space-y-8">
+<div class="flex justify-between items-center">
+<label class="font-body text-sm font-medium text-[#1B2D45]">System Language</label>
+<select class="bg-surface-container-low border-none rounded-lg text-xs font-medium text-[#1B2D45] py-2 px-4 focus:ring-0">
+<option>English (UK)</option>
+<option>Norsk (Bokmål)</option>
+<option>Svenska</option>
+<option>Dansk</option>
+</select>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body text-sm font-medium text-[#1B2D45]">Linked SLP Profile</p>
+<p class="text-[0.75rem] text-[#3b637b] mt-1">Dr. Arvid Sorensson</p>
+</div>
+<button class="material-symbols-outlined text-[#3b637b] hover:text-[#286185]" data-icon="open_in_new">open_in_new</button>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<button class="w-full py-4 bg-primary text-white rounded-xl text-[0.75rem] uppercase tracking-[0.2em] font-bold hover:bg-primary-container transition-all active:scale-[0.98]">
+                            Export All Data
+                        </button>
+<button class="w-full py-4 text-error font-headline italic text-lg hover:underline transition-all">
+                            Delete Account
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Shared Footer -->
+<footer class="w-full max-w-[700px] mx-auto flex flex-col items-center gap-4 px-8 pb-16">
+<div class="flex gap-8">
+<a class="font-sans text-[0.75rem] uppercase tracking-widest Inter text-[#3b637b]/70 hover:text-[#286185] transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-sans text-[0.75rem] uppercase tracking-widest Inter text-[#3b637b]/70 hover:text-[#286185] transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-sans text-[0.75rem] uppercase tracking-widest Inter text-[#3b637b]/70 hover:text-[#286185] transition-all opacity-80 hover:opacity-100" href="#">Help Center</a>
+</div>
+<p class="font-sans text-[0.65rem] uppercase tracking-[0.2em] Inter text-[#3b637b]/50">© 2024 Arctic Editorial. All rights reserved.</p>
+</footer>
+</body></html>

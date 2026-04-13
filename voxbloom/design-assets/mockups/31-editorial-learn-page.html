@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Library | BoloBridge</title>
+<!-- Google Fonts: Newsreader for Serif Editorial, Inter for UI/Body -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffddb7",
+              "on-primary-container": "#003234",
+              "primary": "#25686a",
+              "primary-fixed-dim": "#92d2d3",
+              "on-tertiary-container": "#581300",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#aeeef0",
+              "secondary-fixed-dim": "#eabf8d",
+              "on-secondary-fixed-variant": "#5e411a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#eae8e5",
+              "tertiary": "#a13f20",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "secondary-container": "#fed39f",
+              "on-surface-variant": "#3f4849",
+              "on-secondary-fixed": "#2a1700",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#ffb59f",
+              "on-tertiary-fixed-variant": "#81280a",
+              "surface-container-low": "#f5f3f0",
+              "surface-container": "#efeeeb",
+              "tertiary-fixed": "#ffdbd1",
+              "on-tertiary-fixed": "#3b0a00",
+              "outline-variant": "#bfc8c8",
+              "inverse-primary": "#92d2d3",
+              "surface-container-highest": "#e4e2df",
+              "surface": "#fbf9f6",
+              "on-background": "#1b1c1a",
+              "inverse-on-surface": "#f2f0ed",
+              "primary-container": "#5f9ea0",
+              "surface-bright": "#fbf9f6",
+              "background": "#fbf9f6",
+              "inverse-surface": "#30312f",
+              "tertiary-container": "#e6724f",
+              "on-secondary-container": "#795930",
+              "surface-variant": "#e4e2df",
+              "surface-tint": "#25686a",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#002021",
+              "secondary": "#78582f",
+              "surface-dim": "#dbdad7",
+              "on-primary-fixed-variant": "#004f51",
+              "outline": "#6f7979",
+              "on-surface": "#1b1c1a",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD2sKuteWY-tcEzdoEDMzQ6u7lYcnXvB-hcTfbNPnYqsz1g1agVOyO7tEOtaQbLHcR6KPZzXgh1ZUy6tcTd-Ybc4E9K1XW2nEq70AOvJfcxdkpJ7E7jW9VM9Kn2CVjwA00eM5WempMivtNnfFVpRUN64uop1iPAYk33oGxI8nEjAbtEZ7whvNq5QHH6rO7Ibf7C6B1uMPEgHxq_g8nwg_89QldNAYmmYWg9w-ttz_vGv94F9myTwCV6-zXlST9rWVrNmpRaS2sKn9ZK)
+    }
+.editorial-row:hover .progress-pebble {
+    transform: scale(1.1)
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<div class="film-grain"></div>
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-[#FDFCF8] dark:bg-[#1B1C1A] shadow-[0_30px_60px_-15px_rgba(27,28,26,0.05)] sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-none">
+<div class="text-2xl italic font-serif text-[#25686A] dark:text-[#5F9EA0]">BoloBridge</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-[#25686A] dark:text-[#5F9EA0] border-b-2 border-[#25686A] pb-1 font-semibold" href="#">Library</a>
+<a class="text-[#1B1C1A]/60 dark:text-[#FDFCF8]/60 hover:text-[#25686A] transition-colors duration-300" href="#">Progress</a>
+<a class="text-[#1B1C1A]/60 dark:text-[#FDFCF8]/60 hover:text-[#25686A] transition-colors duration-300" href="#">Archive</a>
+<a class="text-[#1B1C1A]/60 dark:text-[#FDFCF8]/60 hover:text-[#25686A] transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:bg-[#25686A]/5 p-2 rounded-full transition-colors" data-icon="search">search</button>
+<button class="material-symbols-outlined text-primary hover:bg-[#25686A]/5 p-2 rounded-full transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+</header>
+<main class="max-w-[1440px] mx-auto px-16 py-20">
+<!-- Hero Section -->
+<section class="mb-24 flex flex-col md:flex-row items-end justify-between gap-12">
+<div class="max-w-2xl">
+<span class="font-label text-secondary uppercase tracking-[0.2em] text-sm mb-4 block">The Anthology</span>
+<h1 class="font-headline italic text-7xl md:text-8xl text-primary leading-none tracking-tight">The Library</h1>
+<p class="font-body text-on-surface-variant text-lg mt-8 max-w-lg leading-relaxed">
+                    A curated collection of wisdom, exercises, and insights designed to nurture the art of speech. Every sound is a story waiting to be told.
+                </p>
+</div>
+<div class="hidden lg:block w-32 h-32 rounded-full bg-secondary-container opacity-20 blur-2xl -mb-10 -mr-10"></div>
+</section>
+<!-- Chapter List (The Table of Contents) -->
+<section class="space-y-0">
+<!-- Row Header (Desktop Only) -->
+<div class="hidden md:grid grid-cols-12 gap-8 pb-4 px-6 font-label text-[10px] uppercase tracking-widest text-on-surface/40">
+<div class="col-span-1">Chapter</div>
+<div class="col-span-4">Theme</div>
+<div class="col-span-4">Insight</div>
+<div class="col-span-2">Progress</div>
+<div class="col-span-1 text-right">Access</div>
+</div>
+<!-- Chapter Rows -->
+<div class="divide-y divide-secondary/10">
+<!-- Chapter I -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1">
+<span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary transition-colors">I</span>
+</div>
+<div class="col-span-4">
+<h3 class="font-headline italic text-3xl text-on-surface group-hover:text-primary transition-colors">How We Make Sounds</h3>
+</div>
+<div class="col-span-4">
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">'Explore the fascinating journey of air becoming speech'</p>
+</div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all duration-500"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" data-icon="arrow_right_alt">arrow_right_alt</span>
+</div>
+</div>
+<!-- Chapter II -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">II</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">Meet Your Mouth</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'Get to know the team that creates every sound'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+<!-- Chapter III -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">III</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">The Sound Map</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'Navigate consonant corners and vowel valleys'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+<!-- Chapter IV -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">IV</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">Speech Milestones</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'What to expect at every age'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+<!-- Chapter V -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">V</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">When Sounds Are Tricky</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'Understanding common challenges'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+<!-- Chapter VI -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">VI</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">Breathing for Speech</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'Your breath is your superpower'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+<!-- Chapter VII -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">VII</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">Listening Skills</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'Becoming a sound detective'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+<!-- Chapter VIII -->
+<div class="editorial-row group grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-12 px-6 hover:bg-surface-container-low transition-all duration-500 rounded-xl cursor-pointer">
+<div class="col-span-1"><span class="font-headline text-4xl text-secondary/40 group-hover:text-secondary">VIII</span></div>
+<div class="col-span-4"><h3 class="font-headline italic text-3xl group-hover:text-primary transition-colors">Conversation Skills</h3></div>
+<div class="col-span-4"><p class="font-body text-on-surface-variant text-sm leading-relaxed">'The art of talking together'</p></div>
+<div class="col-span-2 flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-outline-variant progress-pebble transition-all"></div>
+<span class="font-label text-xs text-outline font-medium tracking-tighter">0%</span>
+</div>
+<div class="col-span-1 text-right"><span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" data-icon="arrow_right_alt">arrow_right_alt</span></div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="mt-24">
+<div class="relative bg-surface-container-high rounded-xl p-12 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 group">
+<div class="relative z-10 max-w-xl">
+<span class="font-label text-secondary uppercase tracking-[0.2em] text-[10px] mb-4 block">Pick up where you left off</span>
+<h2 class="font-headline italic text-4xl md:text-5xl text-primary mb-6">Continue: The Anatomy of Breath</h2>
+<p class="font-body text-on-surface-variant text-md mb-8 leading-relaxed">
+                        Discover how the diaphragm acts as the primary engine for steady, confident speech.
+                    </p>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label text-sm font-semibold hover:bg-on-primary-fixed-variant transition-colors duration-300 shadow-xl shadow-primary/10">
+                        Continue Reading →
+                    </button>
+</div>
+<div class="relative w-full md:w-1/3 aspect-square bg-white rounded-xl shadow-2xl p-8 flex flex-col justify-end overflow-hidden transform group-hover:rotate-1 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary/10 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-headline text-6xl text-secondary/20 block mb-4 italic">VI</span>
+<div class="h-1 w-12 bg-secondary/30 mb-4"></div>
+<span class="font-label uppercase text-[8px] tracking-[0.3em] text-on-surface/40">Technical Manual</span>
+</div>
+<!-- Abstract Image Placeholder -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/20 rounded-bl-full filter blur-3xl"></div>
+<img alt="A beautifully typeset open book on a wooden table" class="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-multiply" data-alt="Open antique book on wooden desk background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeko_PSoAIZJn1yuUFz7rL2gSoJPbt14zeCy7qKuBB9uSlbqeqEe-hk3vwp_fIWLjkTZ-6VkmJgsBvy4y_ocAL4HiNI_3XhxSq0I1uB8R4KPDiRXy2qtX1UJJaPRbhQRNlwKO0T-ukaFFgzxVfqUmzEa2a5i8CnTTPel22aeXbAWfiMpGk_5KXn5as28EfRXJsfxbGY9VuHNIokdYs0CAr2uJIgqVb40XkO0dREgoxs8bfgimBGRSs-1BQTbgAF_cqWLUzssMgJyCh"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#FDFCF8] dark:bg-[#1B1C1A] border-t border-[#1B1C1A]/10 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-16 py-12 gap-8 max-w-[1440px] mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg italic font-serif text-[#25686A]">BoloBridge</div>
+<p class="font-sans text-[12px] uppercase tracking-widest text-[#1B1C1A]/50">© 2024 BoloBridge. A Tactile Keepsake for Speech Wellness.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-sans text-[12px] uppercase tracking-widest text-[#1B1C1A]/40 dark:text-[#FDFCF8]/40 hover:text-[#25686A] dark:hover:text-[#5F9EA0] transition-opacity" href="#">Terms of Service</a>
+<a class="font-sans text-[12px] uppercase tracking-widest text-[#1B1C1A]/40 dark:text-[#FDFCF8]/40 hover:text-[#25686A] dark:hover:text-[#5F9EA0] transition-opacity" href="#">Privacy Policy</a>
+<a class="font-sans text-[12px] uppercase tracking-widest text-[#1B1C1A]/40 dark:text-[#FDFCF8]/40 hover:text-[#25686A] dark:hover:text-[#5F9EA0] transition-opacity" href="#">Contact Support</a>
+<a class="font-sans text-[12px] uppercase tracking-widest text-[#1B1C1A]/40 dark:text-[#FDFCF8]/40 hover:text-[#25686A] dark:hover:text-[#5F9EA0] transition-opacity" href="#">Editorial Guidelines</a>
+</div>
+</div>
+</footer>
+</body></html>

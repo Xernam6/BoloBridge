@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — The Calm Analog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e2df",
+              "on-primary-fixed": "#002021",
+              "surface-container-high": "#eae8e5",
+              "inverse-primary": "#92d2d3",
+              "surface-tint": "#25686a",
+              "primary": "#25686a",
+              "outline": "#727971",
+              "on-error-container": "#93000a",
+              "background": "#fbf9f6",
+              "surface-bright": "#fbf9f6",
+              "on-surface-variant": "#424842",
+              "surface-container-low": "#f5f3f0",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#2f2166",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "surface-container": "#efeeeb",
+              "on-background": "#1b1c1a",
+              "surface-variant": "#e4e2df",
+              "outline-variant": "#c2c8bf",
+              "surface": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#004f51",
+              "primary-container": "#61a0a2",
+              "on-surface": "#1b1c1a",
+              "secondary-container": "#fdcb9d",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#eebd90",
+              "on-secondary-fixed": "#2d1600",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#cabeff",
+              "tertiary-container": "#988bd6",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#7c5732",
+              "on-secondary-fixed-variant": "#613f1d",
+              "on-tertiary-fixed-variant": "#493c81",
+              "on-tertiary-fixed": "#1c0b54",
+              "on-primary-container": "#003435",
+              "inverse-surface": "#30312f",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#92d2d3",
+              "on-secondary-container": "#79542f",
+              "tertiary-fixed": "#e6deff",
+              "tertiary": "#61549b",
+              "inverse-on-surface": "#f2f0ed",
+              "primary-fixed": "#aeeef0"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f6;
+            position: relative;
+        }
+        /* Film Grain Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .watercolor-gradient {
+            background: linear-gradient(45deg, #25686a, #61a0a2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 backdrop-blur-md bg-[#fbf9f6]/80 dark:bg-stone-900/80">
+<div class="flex items-center gap-8">
+<span class="font-['Newsreader'] italic text-[#25686a] dark:text-[#61a0a2] text-2xl font-bold tracking-tight">BoloBridge</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#25686a] dark:text-[#61a0a2] font-semibold transition-opacity duration-300 hover:opacity-80" href="#">Garden</a>
+<a class="text-[#7A9E7E] dark:text-[#4a5f4c] transition-opacity duration-300 hover:opacity-80" href="#">Library</a>
+<a class="text-[#7A9E7E] dark:text-[#4a5f4c] transition-opacity duration-300 hover:opacity-80" href="#">Progress</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#25686a] dark:text-[#61a0a2] text-2xl p-2 active:scale-95 transition-transform">account_circle</button>
+</div>
+</header>
+<!-- Separation Line -->
+<div class="fixed top-[68px] left-0 w-full z-50 bg-[#f5f3f0] dark:bg-stone-800 h-px opacity-50"></div>
+<main class="max-w-[1440px] mx-auto px-6 pt-32 pb-40 min-h-screen">
+<!-- Hero Section Header -->
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h1 class="font-headline italic text-5xl md:text-6xl text-primary leading-tight mb-6">Explore the Wonders of Speech</h1>
+<p class="text-body text-lg text-on-surface-variant leading-relaxed">
+                A gentle journey through the sounds, movements, and milestones that bring our voices to life.
+            </p>
+</div>
+<!-- 2x2 Bento Grid of Learning Modules -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- CARD 1: Your Amazing Voice -->
+<article class="flex flex-col gap-6 group">
+<div class="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-surface-container-low shadow-[0_20px_40px_rgba(66,72,66,0.06)] hover:shadow-lg transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-br from-[#7A9E7E]/10 to-[#eebd90]/10 mix-blend-multiply pointer-events-none"></div>
+<img alt="Abstract anatomical diagram of vocal tract in soft watercolor" class="w-full h-full object-cover mix-blend-darken opacity-90" data-alt="Abstract anatomical head and neck silhouette with air flow paths" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgPn9QktOPvhPHmbNaLk8XGGaw6FbpqtCXGGebQ8vPxD98AceTVJ1m2AnovIlEUzZeGMvM3J9iYZmv5TGj548_x8460Den6Fqo29-1lRaMwTS9ISXW5l1KFj2MdFLXym_900W4kcvQE3teOt5PJ9TWaFhcMAION5LModI0VQxO_FwFX7HGcHzL1tIEOkTf46PZsdHE6S7GppKLsFGvWiIuOTJlqOn5YCCH9tZt2-gYj7GX2kL6lhBPCjGjpYyvN7edpjHzaNVYyPQv"/>
+<!-- Illustrative Labels Overlay -->
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="bg-surface-container-lowest/90 px-4 py-2 rounded-full text-xs font-medium tracking-wide uppercase text-primary">Nose (Flow arrows)</span>
+<span class="bg-surface-container-lowest/90 px-4 py-2 rounded-full text-xs font-medium tracking-wide uppercase text-primary">Mouth (Opening shapes)</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="bg-surface-container-lowest/90 px-4 py-2 rounded-full text-xs font-medium tracking-wide uppercase text-primary">Lungs (Air bubbles)</span>
+<span class="bg-surface-container-lowest/90 px-4 py-2 rounded-full text-xs font-medium tracking-wide uppercase text-primary">Vocal Cords (Vibrations)</span>
+</div>
+</div>
+</div>
+<div class="px-2">
+<h2 class="font-headline italic text-3xl text-primary mb-2">Your Amazing Voice</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">Understanding how air from our lungs becomes the music of our words.</p>
+</div>
+</article>
+<!-- CARD 2: The Speech Team -->
+<article class="flex flex-col gap-6 group">
+<div class="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-surface-container-low shadow-[0_20px_40px_rgba(66,72,66,0.06)] hover:shadow-lg transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-tr from-[#fdcb9d]/20 to-[#988bd6]/10 mix-blend-multiply pointer-events-none"></div>
+<img alt="Friendly abstract mouth diagram front view watercolor" class="w-full h-full object-cover mix-blend-multiply opacity-85" data-alt="Friendly abstract mouth diagram with colorful watercolor labels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_2aWhrxUgOaCz_nouRwb0p064CdPppcK5SJtxLx8a-y2s5DuuGC4KuekTMEZAbXKJ91OYyY25-5XdiL3mZDRhSGvtT-5ZdlKYfHOeqoH8JTE7jb7BZoE6nHu-kPJ3c0fqy6kETZCUYgiTK6qsWvnQM-vivIl1SFOVFCXoKUEWbtH3vXhia0DfbWFbj0g1oIrQMXUKB1jn38lzlxjraQFAX2woknLMZv1zU7Vjv67alwaudowuttuXpidsJXMo5lmOUrGbDdgvz0Mh"/>
+<!-- Annotations -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm border border-primary/5 px-3 py-1 rounded-full text-[10px] font-bold text-secondary uppercase">Tongue (Pink-Salmon)</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm border border-primary/5 px-3 py-1 rounded-full text-[10px] font-bold text-[#e8998d] uppercase">Lips (Coral)</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm border border-primary/5 px-3 py-1 rounded-full text-[10px] font-bold text-on-surface-variant uppercase">Teeth (Warm White)</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-sm border border-primary/5 px-3 py-1 rounded-full text-[10px] font-bold text-tertiary uppercase">Palate (Lavender)</div>
+</div>
+</div>
+</div>
+<div class="px-2">
+<h2 class="font-headline italic text-3xl text-primary mb-2">The Speech Team</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">How our tongue, lips, and teeth work in harmony to shape every sound.</p>
+</div>
+</article>
+<!-- CARD 3: The Sound Garden -->
+<article class="flex flex-col gap-6 group">
+<div class="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-surface-container-low shadow-[0_20px_40px_rgba(66,72,66,0.06)] hover:shadow-lg transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#7A9E7E]/20 pointer-events-none"></div>
+<img alt="Whimsical watercolor garden with colorful sound flowers" class="w-full h-full object-cover mix-blend-darken" data-alt="Sound garden layout with blue, warm, and purple flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1C3ZvL7fno1pUBYxuhTRMmmPyvNF-_eTxbIXyh2VkLCygRJII5ym9Fva5GS7vgp8m_xNemWNFAWvVIcUJVUB27EYyzianJIvKlD3s6s0MVfJp_wO-Beaq_a28A68Htqk0ib97Hs6-VPfwUvcOeJmRcW0PX-mzKEYnuYO2IuZ-bKCmdWJcbW4DEeHbqkJs4PoBSsfO3cfrV7Syoh15LDtZ_nYL_SQNiEmJ4L4_eZo0dsfP2Hi-4mzqsPJaX6H_l8iadlk_fXGRTmUB"/>
+<div class="absolute bottom-8 left-8 right-8 flex justify-around">
+<div class="text-center">
+<div class="w-3 h-3 rounded-full bg-primary-container mx-auto mb-2"></div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Consonant Corner</span>
+</div>
+<div class="text-center">
+<div class="w-3 h-3 rounded-full bg-secondary-fixed-dim mx-auto mb-2"></div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Vowel Valley</span>
+</div>
+<div class="text-center">
+<div class="w-3 h-3 rounded-full bg-tertiary-container mx-auto mb-2"></div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Blend Bridges</span>
+</div>
+</div>
+</div>
+<div class="px-2">
+<h2 class="font-headline italic text-3xl text-primary mb-2">The Sound Garden</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">Wander through paths of vowels and consonants in our playful landscape.</p>
+</div>
+</article>
+<!-- CARD 4: Growing Your Voice -->
+<article class="flex flex-col gap-6 group">
+<div class="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-surface-container-low shadow-[0_20px_40px_rgba(66,72,66,0.06)] hover:shadow-lg transition-all duration-500">
+<img alt="Editorial timeline with golden line and milestone bubbles" class="w-full h-full object-cover mix-blend-multiply opacity-70" data-alt="Horizontal timeline showing speech milestones from baby to school age" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcmi_drIWwlwVVNBp2_J7jKAdjIIfgwzhZj9z3xGVPl3eLv7H_nc3Rt9SgT5y6640T92LrC06161FDgN2ZPCpZxHxpT4xJTJEKuyiUu1MvAJ1rg6u6rjRr-RRpd-7xWRmLSN5PILdQzVtAymTewpUZ8yuKeyrFfOWPc8JicitmMpc61PpC1kFjAvTZtPL24NaOZ3jHuuFPSB5IvBTwPQjh2PdpOaMqS36W5pk43xorRP7qZFNuaEGO9VfGjYL7596mc-fZ4QytX26q"/>
+<div class="absolute inset-x-8 top-1/2 -translate-y-1/2">
+<div class="relative w-full h-1 bg-secondary-fixed-dim/40 rounded-full">
+<div class="absolute top-1/2 -left-1 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-sm"></div>
+<div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-sm"></div>
+<div class="absolute top-1/2 left-2/3 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-sm"></div>
+<div class="absolute top-1/2 -right-1 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-sm"></div>
+</div>
+<div class="grid grid-cols-4 mt-8">
+<div class="text-center"><span class="block font-bold text-secondary text-xs">0-1</span><span class="text-[10px] text-on-surface-variant italic">Bubbles</span></div>
+<div class="text-center"><span class="block font-bold text-secondary text-xs">1-2</span><span class="text-[10px] text-on-surface-variant italic">First Words</span></div>
+<div class="text-center"><span class="block font-bold text-secondary text-xs">3-4</span><span class="text-[10px] text-on-surface-variant italic">Why?</span></div>
+<div class="text-center"><span class="block font-bold text-secondary text-xs">5-7</span><span class="text-[10px] text-on-surface-variant italic">Stories</span></div>
+</div>
+</div>
+</div>
+<div class="px-2">
+<h2 class="font-headline italic text-3xl text-primary mb-2">Growing Your Voice</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">A gentle timeline tracking the magic of developmental milestones.</p>
+</div>
+</article>
+</div>
+<!-- Asymmetric Decorative Element -->
+<div class="mt-24 p-12 rounded-xl bg-surface-container flex flex-col md:flex-row items-center gap-12 border border-surface-container-highest/30">
+<div class="md:w-1/3">
+<div class="w-48 h-48 rounded-full watercolor-gradient opacity-20 blur-3xl absolute -z-10"></div>
+<h3 class="font-headline italic text-4xl text-primary leading-tight">Every word is a bloom waiting to open.</h3>
+</div>
+<div class="md:w-2/3">
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    BoloBridge uses evidence-based techniques wrapped in the warmth of storytelling. Whether you are a parent, educator, or therapist, our tools are designed to make speech practice feel like a quiet moment of discovery rather than a clinical chore.
+                </p>
+<button class="mt-8 px-8 py-3 rounded-full watercolor-gradient text-on-primary font-medium hover:opacity-90 transition-opacity active:scale-95 duration-200">
+                    Begin Your Session
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 backdrop-blur-xl bg-[#fbf9f6]/80 dark:bg-stone-900/80 shadow-[0_-10px_40px_rgba(66,72,66,0.04)] rounded-t-[3rem]">
+<!-- Garden - ACTIVE -->
+<a class="flex flex-col items-center justify-center bg-[#7A9E7E] text-white rounded-full px-5 py-2 scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase">Garden</span>
+</a>
+<!-- Library -->
+<a class="flex flex-col items-center justify-center text-[#25686a] dark:text-[#61a0a2] px-5 py-2 opacity-60 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase">Library</span>
+</a>
+<!-- Progress -->
+<a class="flex flex-col items-center justify-center text-[#25686a] dark:text-[#61a0a2] px-5 py-2 opacity-60 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">moving</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase">Progress</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#25686a] dark:text-[#61a0a2] px-5 py-2 opacity-60 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 rounded-full transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">person_pin_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight uppercase">Profile</span>
+</a>
+</nav>
+<!-- Global Grain Container Overlay for Surface Elements -->
+<div class="fixed inset-0 pointer-events-none opacity-5 mix-blend-overlay bg-surface shadow-inner"></div>
+</body></html>

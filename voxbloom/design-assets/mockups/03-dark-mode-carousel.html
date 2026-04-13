@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Practice Makes Perfect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Lora:ital,wght@0,400;0,600;1,400;1,600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5F9EA0",
+                        "dark-navy": "#2D3142",
+                        "sage": "#5F9EA0",
+                        "camel": "#C2956B",
+                        "lavender": "#8B7EC8"
+                    },
+                    fontFamily: {
+                        "headline": ["Lora", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "brand": ["Newsreader", "serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #2D3142;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDaGJGUWJVBicd3Lq4H2XyZ7luONgVahdz7Ipiwc4o25GjQOkf92AymnyolQLMcS_EQCRSkew0YuAdHGjrWw6YvGCWDpvKgC24s5vhfKL2q_TdjL0M9_We2WpMCqwJyTekveg8x5xbPbLGEOjXCF2Rsnqr55zHgRHadvB4aXC4kbI_qcPLi8JQiDsW-OV-TycBaebHKF90adHXcvDG_TOKyfarW3d4tpdgcetguqJljnxDf6XS5_1pmqms34nAO1VrEmKbXneypV98I);
+    /* Grain texture */
+    }
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    }
+.carousel-container {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent)
+    }
+.hero-illustration {
+    background: radial-gradient(circle at center, rgba(95, 158, 160, 0.15) 0%, transparent 70%)
+    }
+.phoneme {
+    font-family: "Lora", serif;
+    font-style: italic;
+    opacity: 0.3;
+    pointer-events: none
+    }
+.bg-story {
+    background: linear-gradient(135deg, #61549b, #978ad5)
+    }
+.bg-safari {
+    background: linear-gradient(135deg, #25686a, #5f9ea0)
+    }
+.bg-garden {
+    background: linear-gradient(135deg, #ba1a1a, #fdcb9d)
+    }
+.bg-river {
+    background: linear-gradient(135deg, #004f51, #92d2d3)
+    }
+.bg-echo {
+    background: linear-gradient(135deg, #7c5732, #eebd90)
+    }
+.bg-gym {
+    background: linear-gradient(135deg, #93000a, #ffdad6)
+    }
+.carousel-scroll::-webkit-scrollbar {
+    display: none
+    }
+.carousel-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+    }</style>
+</head>
+<body class="text-white font-body selection:bg-primary/30 min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-dark-navy/80 backdrop-blur-xl top-0 z-50 fixed w-full border-b border-white/5">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-brand italic text-sage tracking-tight">BoloBridge</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white font-semibold hover:text-sage transition-colors" href="#">Library</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Journey</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Awards</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white" data-icon="search">search</span>
+</button>
+<div class="flex gap-2 items-center">
+<span class="material-symbols-outlined text-sage" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-camel/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="face">face</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Section 1: Hero Section -->
+<section class="relative w-full py-20 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-6">
+<h1 class="font-headline text-6xl md:text-7xl leading-tight">Practice Makes <br/><span class="italic text-sage">Perfect</span></h1>
+<p class="text-white/60 text-xl max-w-lg leading-relaxed font-light">Choose your adventure and start building speech confidence through play.</p>
+<div class="pt-4">
+<button class="bg-sage hover:bg-sage/90 text-dark-navy px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105">
+                        Get Started
+                    </button>
+</div>
+</div>
+<!-- Abstract Editorial Illustration -->
+<div class="relative hero-illustration aspect-square flex items-center justify-center">
+<!-- Floating Phonemes -->
+<span class="absolute top-10 left-10 phoneme text-5xl">th</span>
+<span class="absolute bottom-20 left-0 phoneme text-6xl">sh</span>
+<span class="absolute top-20 right-0 phoneme text-4xl">r</span>
+<span class="absolute bottom-10 right-20 phoneme text-5xl">l</span>
+<span class="absolute top-1/2 -right-4 phoneme text-3xl">ch</span>
+<div class="relative w-full h-full flex items-center justify-center">
+<!-- Placeholder for Watercolor Children Illustration -->
+<div class="relative w-4/5 h-4/5">
+<svg class="w-full h-full opacity-80" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<!-- Soft Washes -->
+<circle cx="200" cy="200" fill="#5F9EA0" fill-opacity="0.15" r="120"></circle>
+<circle cx="150" cy="180" fill="#C2956B" fill-opacity="0.1" r="100"></circle>
+<circle cx="250" cy="220" fill="#8B7EC8" fill-opacity="0.12" r="90"></circle>
+<!-- Sound Wave Ribbons -->
+<path class="opacity-40 animate-pulse" d="M100,200 Q200,100 300,200 T400,200" fill="none" stroke="#5F9EA0" stroke-dasharray="5,5" stroke-width="2"></path>
+<path class="opacity-40" d="M50,250 Q180,350 350,250" fill="none" stroke="#C2956B" stroke-width="2"></path>
+<path class="opacity-40" d="M80,150 Q220,50 320,150" fill="none" stroke="#8B7EC8" stroke-width="2"></path>
+<!-- Abstract Child Forms (Simplified for Illustration style) -->
+<g transform="translate(140, 120)">
+<circle cx="0" cy="0" fill="#C2956B" fill-opacity="0.6" r="30"></circle>
+<path d="M-20,40 Q0,80 20,40" fill="none" stroke="#C2956B" stroke-linecap="round" stroke-width="15"></path>
+</g>
+<g transform="translate(260, 180)">
+<circle cx="0" cy="0" fill="#5F9EA0" fill-opacity="0.6" r="28"></circle>
+<path d="M-20,40 Q0,80 20,40" fill="none" stroke="#5F9EA0" stroke-linecap="round" stroke-width="15"></path>
+</g>
+<g transform="translate(180, 280)">
+<circle cx="0" cy="0" fill="#8B7EC8" fill-opacity="0.6" r="32"></circle>
+<path d="M-25,45 Q0,85 25,45" fill="none" stroke="#8B7EC8" stroke-linecap="round" stroke-width="15"></path>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Card Carousel -->
+<section class="pb-32 relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 relative">
+<div class="flex justify-between items-end mb-12">
+<h2 class="text-3xl font-headline italic">Your World of Play</h2>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="carousel-container overflow-visible">
+<div class="carousel-scroll flex gap-8 pb-12 overflow-x-auto snap-x snap-mandatory px-[10%]">
+<!-- Card 1: Story Studio (Active/Larger) -->
+<div class="min-w-[400px] snap-center glass-card rounded-3xl overflow-hidden transform scale-105 transition-all duration-500 shadow-2xl">
+<div class="h-44 bg-story relative p-6">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase">AI-Powered</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl italic">Story Studio</h3>
+<span class="text-3xl">🎭</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Co-create animated tales using your voice. Watch your characters come to life with every word.</p>
+<button class="w-full bg-white text-dark-navy py-3 rounded-xl font-bold hover:bg-sage transition-colors">Play Now</button>
+</div>
+</div>
+<!-- Card 2: Sound Safari -->
+<div class="min-w-[400px] snap-center glass-card rounded-3xl overflow-hidden -ml-12 hover:z-10 transition-all shadow-xl">
+<div class="h-44 bg-safari relative p-6">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase">Intermediate</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="pets">pets</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl italic">Sound Safari</h3>
+<span class="text-3xl">🦁</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Track down elusive animal sounds in the wild. Perfect for phoneme recognition.</p>
+<button class="w-full bg-white/10 hover:bg-white/20 py-3 rounded-xl font-bold transition-colors">Play Now</button>
+</div>
+</div>
+<!-- Card 3: Word Garden -->
+<div class="min-w-[400px] snap-center glass-card rounded-3xl overflow-hidden -ml-12 hover:z-10 transition-all shadow-xl">
+<div class="h-44 bg-garden relative p-6">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase">Beginner</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="local_florist">local_florist</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl italic">Word Garden</h3>
+<span class="text-3xl">🌻</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Plant seeds of vocabulary and watch them bloom into beautiful sentences.</p>
+<button class="w-full bg-white/10 hover:bg-white/20 py-3 rounded-xl font-bold transition-colors">Play Now</button>
+</div>
+</div>
+<!-- Card 4: Rhythm River -->
+<div class="min-w-[400px] snap-center glass-card rounded-3xl overflow-hidden -ml-12 hover:z-10 transition-all shadow-xl">
+<div class="h-44 bg-river relative p-6">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase">Advanced</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="waves">waves</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl italic">Rhythm River</h3>
+<span class="text-3xl">🌊</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Flow with the beat of speech. Tap into the rhythm of syllables and pacing.</p>
+<button class="w-full bg-white/10 hover:bg-white/20 py-3 rounded-xl font-bold transition-colors">Play Now</button>
+</div>
+</div>
+<!-- Card 5: Emotion Echo -->
+<div class="min-w-[400px] snap-center glass-card rounded-3xl overflow-hidden -ml-12 hover:z-10 transition-all shadow-xl">
+<div class="h-44 bg-echo relative p-6">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase">AI-Powered</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="theater_comedy">theater_comedy</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl italic">Emotion Echo</h3>
+<span class="text-3xl">🎪</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Learn to express feelings through tone and pitch at the Vox Circus.</p>
+<button class="w-full bg-white/10 hover:bg-white/20 py-3 rounded-xl font-bold transition-colors">Play Now</button>
+</div>
+</div>
+<!-- Card 6: Tongue Gym -->
+<div class="min-w-[400px] snap-center glass-card rounded-3xl overflow-hidden -ml-12 hover:z-10 transition-all shadow-xl mr-[10%]">
+<div class="h-44 bg-gym relative p-6">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase">Daily Challenge</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="fitness_center">fitness_center</span>
+</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-2xl italic">Tongue Gym</h3>
+<span class="text-3xl">💪</span>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">Fun oral-motor exercises to build strength and precision for hard sounds.</p>
+<button class="w-full bg-white/10 hover:bg-white/20 py-3 rounded-xl font-bold transition-colors">Play Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dot Indicators -->
+<div class="flex justify-center gap-3 mt-8">
+<div class="w-3 h-3 rounded-full bg-white"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+<div class="w-3 h-3 rounded-full bg-white/20"></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="py-12 border-t border-white/5 bg-dark-navy">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-brand italic text-sage text-xl">BoloBridge</span>
+<div class="flex gap-8 text-white/40 text-sm">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Parent Guide</a>
+</div>
+<p class="text-white/30 text-xs">© 2024 BoloBridge. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#a3ced0",
+              "primary-fixed": "#beebed",
+              "on-primary-fixed": "#002021",
+              "secondary-fixed": "#ffdcc3",
+              "surface-bright": "#fbf9f6",
+              "secondary": "#7a573b",
+              "on-surface": "#1b1c1a",
+              "on-secondary-fixed-variant": "#604025",
+              "surface-container-low": "#f5f3f0",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "tertiary": "#914230",
+              "surface-dim": "#dbdad7",
+              "on-primary-container": "#e0feff",
+              "tertiary-fixed-dim": "#ffb4a3",
+              "on-background": "#1b1c1a",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#79563a",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#30312f",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#2d1602",
+              "error": "#ba1a1a",
+              "background": "#fbf9f6",
+              "on-tertiary-container": "#fff7f5",
+              "surface-variant": "#e4e2df",
+              "inverse-on-surface": "#f2f0ed",
+              "on-primary-fixed-variant": "#224d4f",
+              "primary": "#366062",
+              "surface-container-highest": "#e4e2df",
+              "on-surface-variant": "#404848",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#efeeeb",
+              "tertiary-container": "#af5a46",
+              "inverse-primary": "#a3ced0",
+              "outline-variant": "#c0c8c8",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#ebbd9b",
+              "primary-container": "#4f797b",
+              "tertiary-fixed": "#ffdad2",
+              "on-tertiary-fixed": "#3d0600",
+              "on-tertiary-fixed-variant": "#78301f",
+              "surface": "#fbf9f6",
+              "secondary-container": "#fdceaa",
+              "outline": "#717979",
+              "surface-tint": "#3b6567",
+              "surface-container-high": "#eae8e5"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .watercolor-blob {
+            filter: blur(40px);
+            border-radius: 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<div class="fixed inset-0 grain-overlay z-50"></div>
+<main class="max-w-[375px] mx-auto min-h-screen bg-surface relative overflow-hidden flex flex-col items-center">
+<!-- Screen 1: Welcome -->
+<section class="min-h-screen w-full flex flex-col items-center justify-between py-16 px-8 relative snap-start">
+<header class="w-full flex items-center justify-center h-16 sticky top-0 bg-[#fbf9f6] dark:bg-[#1b1c1a]">
+<h1 class="text-2xl font-['Newsreader'] italic text-[#366062] dark:text-[#4F797B]">BoloBridge</h1>
+</header>
+<div class="flex-1 w-full flex flex-col items-center justify-center gap-12">
+<div class="relative w-64 h-64 flex items-center justify-center">
+<div class="absolute inset-0 watercolor-blob bg-primary/10 -rotate-12 translate-x-4"></div>
+<div class="absolute inset-0 watercolor-blob bg-secondary-container/20 rotate-12 -translate-x-4"></div>
+<img class="relative z-10 w-48 h-48 object-contain drop-shadow-sm" data-alt="Flowering plant growing out of a speech bubble illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUaJjN06DEUmV7cJ2Kz6Y-2dthE8-ytI7-Wm4J-Vka6M6qESUTm7gGFSc8zZT5-78sWFx0gBaug1yUuuFk7WVEyAcCEfrPRKvWRgsAyXjcj2VXstMbXFxJt_Xyzn145rgh2UMwBlYvHJIq6Y3Lu0HOZR1iurnWH0rVjLscnGlcBEj_jj-VXlSsflScwvJ4ljxUnSgLc9iWUaSk2LejYFx-zkGNehym4CGiXZOdkR3tlwwD7x_3vJ_l09QUjFH-Ie9c9D_fh2BIQT9z"/>
+</div>
+<div class="text-center space-y-4">
+<h2 class="text-4xl font-headline italic leading-tight text-primary">Welcome to BoloBridge</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed px-4">AI-powered speech practice for every child</p>
+</div>
+</div>
+<div class="w-full flex flex-col items-center gap-8">
+<div class="flex gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-medium rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                    Next
+                </button>
+</div>
+</section>
+<!-- Screen 2: Screening -->
+<section class="min-h-screen w-full flex flex-col items-center justify-between py-16 px-8 relative snap-start bg-surface-container-low">
+<div class="flex-1 w-full flex flex-col items-center justify-center gap-12">
+<div class="relative w-64 h-64 flex items-center justify-center">
+<div class="absolute inset-0 watercolor-blob bg-tertiary/10 scale-110"></div>
+<img class="relative z-10 w-48 h-48 object-contain" data-alt="Stethoscope made of flowers in warm teal and camel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXv1yDk4IdUXFKzNesvLBAL6NeQ3YKBJucmlyImwibKQ4bvWedHDslxSlihR1C5Ojtp4CqmOm4bxWvI8yo6Pdb8dudU59d6pCz_zDzqnAeKoVqsRmQmekslvYwFNEZIo0tFspUW0K_D2fZgjyNjYvRhoSs5Fm2SOqSKyUfZ82YIlclKB634nuVifaefiF8Robyusrg48a2ryQoU_irPeWzrRSk5ratqLkKQHpKaXx6Ily53dmuTtUa73GfB_VeTE5MNdFWANGpBT4a"/>
+</div>
+<div class="text-center space-y-4">
+<h2 class="text-4xl font-headline italic leading-tight text-primary">Quick Speech Check</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed px-4">Our gentle screening identifies which sounds to practice</p>
+</div>
+</div>
+<div class="w-full flex flex-col items-center gap-8">
+<div class="flex gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-medium rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                    Next
+                </button>
+</div>
+</section>
+<!-- Screen 3: Play -->
+<section class="min-h-screen w-full flex flex-col items-center justify-between py-16 px-8 relative snap-start bg-surface-container">
+<div class="flex-1 w-full flex flex-col items-center justify-center gap-12">
+<div class="relative w-64 h-64 flex items-center justify-center">
+<div class="absolute inset-0 watercolor-blob bg-secondary/10 -translate-y-4"></div>
+<img class="relative z-10 w-48 h-48 object-contain" data-alt="Game controller with growing vines and flowers illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtPTZE17DI21SV7ixkQjy8uay_y4OWqtr45AcaLn4hhOcnlxTVBVxYW5qAdf-YzE-RCQQ9KzxsYc93nK1IUQOO-lFvaOjNPbE6MvaWlYuEGt2y-29CIAlAUJVLXSEZDfNtBH1mZtzpu77JsTg8Idu9-J2UhQG0hV3wF70DlJO6JPEETD1RWb1EcX1FU7vkSqNsmNvgCLknla0PB4pcOqf0Gz6ms1E_opg0H7eBDiw17PW4X040fUEqNpaO2cGwySlaHMOXOshuhiM"/>
+</div>
+<div class="text-center space-y-4">
+<h2 class="text-4xl font-headline italic leading-tight text-primary">Learn Through Play</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed px-4">6 fun games designed by speech therapists</p>
+</div>
+</div>
+<div class="w-full flex flex-col items-center gap-8">
+<div class="flex gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-medium rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                    Next
+                </button>
+</div>
+</section>
+<!-- Screen 4: Confidence -->
+<section class="min-h-screen w-full flex flex-col items-center justify-between py-16 px-8 relative snap-start bg-surface-bright">
+<div class="flex-1 w-full flex flex-col items-center justify-center gap-12">
+<div class="relative w-72 h-64 flex items-center justify-center">
+<div class="absolute inset-0 watercolor-blob bg-primary/5 translate-y-8 scale-150"></div>
+<img class="relative z-10 w-56 h-56 object-contain" data-alt="Bridge connecting two islands with speech bubbles above them" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7de2VlCjgd_OF63MPk4riJxuDCvJcbBGkvUcg_eEdyRolb7rU_-r_demLiJDLBVK3X1DKUtoBl3cLWzycp4zE1WGsdkCen8j9apCGSSKX5jVqWony1bCZxx16c009AZYUHncSIRmYfe9CDHBW1Kx1FNigoaRyk2wi8VcOoGIJHFsDGfS_NT88TUOEnlRZUpMSGNhnAwEOsv24T76sYs-83CZiXZzRPk1hejsGcJ6DqkZztxE-MIKyZDw34Y8jb8fTr8BnMrRtgT5w"/>
+</div>
+<div class="text-center space-y-4">
+<h2 class="text-4xl font-headline italic leading-tight text-primary">Bridge to Confidence</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed px-4">Track progress and watch your child bloom</p>
+</div>
+</div>
+<div class="w-full flex flex-col items-center gap-8">
+<div class="flex gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+<nav class="fixed bottom-0 left-0 w-full flex justify-between items-center px-8 pb-8 pt-4 bg-[#fbf9f6]/80 dark:bg-[#1b1c1a]/80 backdrop-blur-md border-t border-[#c0c8c8]/15 shadow-[0_-20px_40px_rgba(121,86,58,0.08)] rounded-t-lg z-50">
+<button class="flex flex-col items-center justify-center text-[#366062] dark:text-[#4F797B] px-6 py-2 font-['Newsreader'] italic normal-case hover:bg-[#efeeeb] dark:hover:bg-[#2c2d2b] scale-95 transition-transform duration-200">
+                        Skip
+                    </button>
+<button class="flex flex-col items-center justify-center bg-[#fdceaa] dark:bg-[#7a573b] text-[#1b1c1a] dark:text-[#fbf9f6] rounded-md px-6 py-2 font-['Inter'] uppercase tracking-[0.05em] text-xs hover:bg-[#efeeeb] dark:hover:bg-[#2c2d2b] scale-95 transition-transform duration-200">
+<div class="flex items-center gap-2">
+                            Get Started
+                            <span class="material-symbols-outlined text-sm">done_all</span>
+</div>
+</button>
+</nav>
+</div>
+</section>
+</main>
+</body></html>

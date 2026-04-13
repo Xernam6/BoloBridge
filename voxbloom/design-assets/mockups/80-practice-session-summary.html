@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice Session Summary - BoloBridge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#584d67",
+              "tertiary-fixed-dim": "#deceee",
+              "surface-container-low": "#f5f3f0",
+              "on-primary": "#e7fff0",
+              "on-error-container": "#671200",
+              "on-secondary": "#fff7f4",
+              "on-primary-container": "#42564c",
+              "error-dim": "#821a01",
+              "surface": "#fbf9f6",
+              "on-error": "#fff7f6",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#fa7150",
+              "surface-container": "#efeeea",
+              "primary": "#4f6459",
+              "on-surface": "#313330",
+              "inverse-primary": "#e7fff1",
+              "on-tertiary": "#fef6ff",
+              "inverse-surface": "#0e0e0d",
+              "secondary-fixed": "#ffdcc4",
+              "outline-variant": "#b2b2ae",
+              "surface-container-high": "#e9e8e4",
+              "surface-bright": "#fbf9f6",
+              "secondary-dim": "#704b2e",
+              "primary-fixed": "#d1e8da",
+              "secondary-container": "#ffdcc4",
+              "tertiary": "#665a75",
+              "tertiary-fixed": "#ecdcfd",
+              "on-background": "#313330",
+              "on-secondary-fixed": "#59381d",
+              "surface-dim": "#dadad6",
+              "on-tertiary-fixed-variant": "#625671",
+              "secondary": "#7d5739",
+              "primary-dim": "#43584d",
+              "primary-fixed-dim": "#c3dacc",
+              "error": "#aa371c",
+              "secondary-fixed-dim": "#fecaa5",
+              "on-surface-variant": "#5e5f5c",
+              "on-primary-fixed-variant": "#4b6055",
+              "surface-tint": "#4f6459",
+              "on-primary-fixed": "#2f443a",
+              "on-secondary-fixed-variant": "#795336",
+              "inverse-on-surface": "#9e9d9a",
+              "outline": "#7a7b78",
+              "surface-variant": "#e3e3de",
+              "primary-container": "#d1e8da",
+              "surface-container-highest": "#e3e3de",
+              "on-tertiary-fixed": "#453b54",
+              "tertiary-dim": "#5a4e69",
+              "tertiary-container": "#ecdcfd",
+              "on-secondary-container": "#6e4a2d",
+              "background": "#fbf9f6"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBcp-u6V35WAc8Skima7VKS0MM8WerCsWwUr8gyh3nGN0zg-Swug8xON2r_xb9gEEtPSyiB1JqIa9MrkdkajoeOgkKWY0JoU0PGyBTHe0F58diDUSAi_eKVowwW-FpK9q92YxD6OtDIqA9ryfUzBXKODcrLBi9YyEpWuvzHFx-GsVphUKPz6GCrBfRFN3K3lWhnhA0YIpL8CKZP_ihndb0zBVGOilf9cIw1yxFZVJHI2w4EzD-UD0LJNTX6KK3vpXdv32uU1vP9brFD);
+    pointer-events: none
+    }
+.radial-progress {
+    background: radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(#4f6459 87%, #efeeea 0)
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container min-h-screen relative">
+<div class="fixed inset-0 grain-overlay opacity-20 z-0"></div>
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6]/80 dark:bg-[#313330]/80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full">
+<div class="text-2xl font-serif italic text-[#4f6459] dark:text-[#d1e8da]">BoloBridge</div>
+<div class="flex items-center gap-4">
+<button class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</header>
+<main class="relative z-10 pt-24 pb-32 px-6 max-w-4xl mx-auto overflow-x-hidden">
+<!-- Confetti Burst Header -->
+<div class="relative flex flex-col items-center mb-16">
+<div class="absolute -top-12 flex justify-center w-full pointer-events-none">
+<!-- Decorative Particles -->
+<div class="w-2 h-2 rounded-full bg-secondary absolute animate-bounce" style="left: 20%; top: 10px;"></div>
+<div class="w-3 h-3 rounded-full bg-primary absolute" style="left: 45%; top: -20px;"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary absolute animate-pulse" style="left: 70%; top: 5px;"></div>
+<div class="w-2 h-3 bg-secondary-fixed rotate-12 absolute" style="left: 30%; top: -30px;"></div>
+<div class="w-3 h-2 bg-primary-fixed -rotate-45 absolute" style="left: 60%; top: -15px;"></div>
+</div>
+<h1 class="text-5xl md:text-6xl font-headline italic text-primary text-center mb-2">Practice Complete!</h1>
+<p class="font-label uppercase tracking-widest text-on-surface-variant text-sm">You're making beautiful progress</p>
+</div>
+<!-- Central Stats Bento Card -->
+<section class="bg-surface-container-lowest rounded-[28px] p-8 md:p-12 shadow-[0_12px_32px_rgba(49,51,48,0.05)] mb-12 relative overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<!-- Left Column: Core Stats -->
+<div class="md:col-span-7 space-y-8">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="text-3xl font-headline italic text-secondary mb-1">Sound Safari 🦁</h2>
+<p class="text-on-surface-variant">Duration: 4 minutes</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-bold text-primary">+35 XP</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold tracking-tight">🔥 Day 5!</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-5 rounded-xl">
+<span class="font-label text-xs uppercase tracking-wider text-on-surface-variant block mb-1">Words Practiced</span>
+<span class="text-2xl font-headline italic text-on-surface">8 of 8</span>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl">
+<span class="font-label text-xs uppercase tracking-wider text-on-surface-variant block mb-1">Target Sounds</span>
+<span class="text-2xl font-headline italic text-on-surface">/s/, /z/</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Accuracy Gauge -->
+<div class="md:col-span-5 flex flex-col items-center justify-center border-l border-outline-variant/15 md:pl-12">
+<div class="relative w-48 h-48 radial-progress flex items-center justify-center rounded-full">
+<div class="text-center">
+<span class="text-5xl font-headline italic text-primary block">87%</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Accuracy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Word Breakdown Section -->
+<section class="mb-20">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-headline italic text-on-surface">Word Breakdown</h3>
+<span class="font-label text-xs text-on-surface-variant">Swipe to explore details</span>
+</div>
+<div class="flex overflow-x-auto pb-8 -mx-6 px-6 gap-4 no-scrollbar">
+<!-- Snake -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">snake</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[92%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">92%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Zoo -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">zoo</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">88%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Sun -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">sun</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[95%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">95%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Zebra -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">zebra</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[80%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">80%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Sock -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">sock</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">90%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Zipper -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center border-2 border-error/10">
+<span class="text-error font-bold text-lg mb-2">zipper</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-error h-full w-[65%]"></div>
+</div>
+<span class="text-error text-sm font-semibold">65%</span>
+<span class="material-symbols-outlined text-error mt-2" data-icon="cancel" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</div>
+<!-- Star -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">star</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[91%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">91%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Puzzle -->
+<div class="min-w-[160px] bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center">
+<span class="text-primary font-bold text-lg mb-2">puzzle</span>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<span class="text-primary text-sm font-semibold">85%</span>
+<span class="material-symbols-outlined text-primary mt-2" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<footer class="flex flex-col items-center gap-6">
+<button class="w-full max-w-sm bg-primary text-on-primary py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all active:scale-95">
+                Play Again
+            </button>
+<button class="w-full max-w-sm border-2 border-outline-variant text-primary py-4 rounded-full font-bold text-lg hover:bg-surface-container-low transition-all active:scale-95">
+                Try Another Game
+            </button>
+<a class="text-on-surface-variant font-label text-sm uppercase tracking-widest hover:text-primary transition-colors" href="#">
+                Back to Home
+            </a>
+</footer>
+</main>
+<!-- Bottom Navigation Shell (Suppress for summary but using for structure as a placeholder or consistent anchor) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff] dark:bg-[#313330] rounded-t-3xl shadow-[0_-12px_32px_rgba(49,51,48,0.05)] border-t border-[#313330]/10 dark:border-[#fbf9f6]/10 z-50">
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-[#fbf9f6]/70 hover:bg-[#f5f3f0] dark:hover:bg-[#3c3e3b] rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium Inter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#d1e8da] dark:bg-[#4f6459] text-[#4f6459] dark:text-[#fbf9f6] rounded-full px-5 py-1.5 active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+<span class="text-[10px] font-medium Inter">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-[#fbf9f6]/70 hover:bg-[#f5f3f0] dark:hover:bg-[#3c3e3b] rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-medium Inter">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-[#fbf9f6]/70 hover:bg-[#f5f3f0] dark:hover:bg-[#3c3e3b] rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="text-[10px] font-medium Inter">Library</span>
+</a>
+</nav>
+</body></html>

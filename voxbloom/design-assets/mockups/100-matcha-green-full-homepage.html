@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#a8d1a4",
+              "on-secondary-container": "#486d48",
+              "secondary": "#436742",
+              "primary-container": "#4a6741",
+              "surface-container-high": "#e9e9dc",
+              "error": "#ba1a1a",
+              "surface": "#fafaed",
+              "outline": "#73796f",
+              "surface-container-highest": "#e3e3d7",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#002105",
+              "on-error-container": "#93000a",
+              "secondary-container": "#c4eebf",
+              "on-secondary-fixed-variant": "#2b4f2c",
+              "background": "#fafaed",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#301400",
+              "inverse-primary": "#afd0a1",
+              "on-tertiary-fixed-variant": "#6e3908",
+              "tertiary-fixed-dim": "#ffb782",
+              "secondary-fixed": "#c4eebf",
+              "tertiary": "#6f3a09",
+              "on-background": "#1a1c15",
+              "inverse-surface": "#2f3129",
+              "surface-tint": "#496640",
+              "primary": "#334f2b",
+              "on-surface-variant": "#434840",
+              "surface-container": "#efefe2",
+              "surface-bright": "#fafaed",
+              "primary-fixed": "#caecbc",
+              "primary-fixed-dim": "#afd0a1",
+              "on-primary-fixed": "#062104",
+              "on-surface": "#1a1c15",
+              "surface-variant": "#e3e3d7",
+              "surface-container-low": "#f4f4e7",
+              "on-primary-container": "#c2e4b4",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#dbdbce",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdcc5",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f1f1e5",
+              "tertiary-container": "#8c5120",
+              "on-primary-fixed-variant": "#324e2a",
+              "on-tertiary-container": "#ffd1b3",
+              "outline-variant": "#c3c8bd"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.washi-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC2Ws0sJUQhRAdPy2sEF45MRKulJzIFMB1LkIFHTNvxCqcc406JqeEfe-Ij_qEnH1IdY0ApanO6Lo8bkUT53fr11JzJkOEFm_3iT06XVkORtpVtJYJn1w2yJ09007mVCBV0cMEwyvM969DTPnieNf8TrN7-HbDFSK3x5trxLX6UUAjd7I2-FZxmnDaTo97zxENJJ0-TYrUXz9rT83Arce17cN37ya7yOc5o2vc46kpWMeYYmByf-FXWx3YNYZJWdEzvGuniEqXEY-9T);
+    background-blend-mode: multiply
+    }
+.watercolor-gradient {
+    background: radial-gradient(circle at 70% 30%, rgba(196, 238, 191, 0.15) 0%, transparent 60%)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body washi-texture selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fafaed]/85 dark:bg-[#1a1c15]/85 backdrop-blur-md shadow-[0_20px_80px_-10px_rgba(26,28,21,0.06)]">
+<nav class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="font-['Newsreader'] text-2xl font-semibold text-[#334f2b] dark:text-[#c4eebf]">BoloBridge</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-['Newsreader'] italic tracking-wide text-lg text-[#1a1c15]/60 dark:text-[#fafaed]/60 hover:text-[#334f2b] transition-colors duration-300" href="#">Archive</a>
+<a class="font-['Newsreader'] italic tracking-wide text-lg text-[#1a1c15]/60 dark:text-[#fafaed]/60 hover:text-[#334f2b] transition-colors duration-300" href="#">Philosophy</a>
+<a class="font-['Newsreader'] italic tracking-wide text-lg text-[#1a1c15]/60 dark:text-[#fafaed]/60 hover:text-[#334f2b] transition-colors duration-300" href="#">Collections</a>
+<a class="font-['Newsreader'] italic tracking-wide text-lg text-[#1a1c15]/60 dark:text-[#fafaed]/60 hover:text-[#334f2b] transition-colors duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center space-x-6 text-[#334f2b] dark:text-[#c4eebf]">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity" data-icon="search">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity" data-icon="menu">menu</span>
+</div>
+</nav>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Section 1: HERO -->
+<section class="relative min-h-[921px] flex items-center px-12 md:px-24 overflow-hidden bg-surface-container-low washi-texture">
+<div class="max-w-4xl z-10">
+<h1 class="font-headline italic text-6xl md:text-8xl leading-tight text-primary-container mb-8">
+                    Bridging Every Voice to <span class="text-tertiary not-italic font-bold">Confidence</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
+                    A sanctuary for resonant communication. Discover the archival wisdom of speech mastery through our meditative bridge of connection.
+                </p>
+<div class="flex gap-6 items-center">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-body font-semibold text-lg tracking-wide hover:bg-primary-container transition-all hover:-translate-y-1 active:scale-[0.98]">
+                        Get Started
+                    </button>
+<button class="text-primary font-body font-bold text-lg border-b-2 border-primary/20 hover:border-primary transition-all pb-1">
+                        View Philosophy
+                    </button>
+</div>
+</div>
+<!-- Hero Decorative Elements -->
+<div class="absolute -right-20 bottom-0 w-2/3 h-full opacity-40 pointer-events-none mix-blend-multiply">
+<img alt="Watercolor bridge illustration" class="w-full h-full object-contain object-right-bottom" data-alt="Minimalist watercolor Japanese bridge illustration with bamboo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRckWLcZTNAn0qVAPbgBfGKspyWNRDADBsIiETk4an7A1OkOTM6-uHtQA72_3Yr3Mp0AYOTJD8vplhQP1I_kcfuB-EZntx6BZz1cJS7yhAXhzTsAUmHm7leWElW-CuqphJRUhuBG3I68iXUw2lFGmrSL_EgiCGAAYLIs3kndqzQxx0OjKq49ce3ky8WKjK6FMv0M4-weWVGqwbWkAaVoVaEOmtav0HWgs4U7mwgGYIUooNTwDjcfXzKRz-MgldcKF5qvssem9n7dhs"/>
+</div>
+<div class="absolute top-1/4 -right-12 text-[24rem] font-headline text-primary/5 select-none italic pointer-events-none">Zen</div>
+</section>
+<!-- Section 2: FOUR PILLARS -->
+<section class="py-32 px-12 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row gap-8 mb-20 items-end">
+<h2 class="font-headline text-5xl text-primary max-w-md">Our Pillars of Communication</h2>
+<div class="h-px flex-grow bg-outline-variant/30 mb-4 hidden md:block"></div>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-outline mb-4">Foundation 01—04</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Card 1 -->
+<div class="group relative bg-[#FAFAF0] p-10 rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 border-l-4 border-primary">
+<div class="text-secondary text-5xl mb-8 opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-4 italic">Clarity</h3>
+<p class="text-on-surface-variant leading-relaxed">The pure stream of thought translated into precise articulation.</p>
+<div class="absolute bottom-4 right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<img alt="Leaf silhouette" data-alt="Watercolor bamboo leaf silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8wP1UWxtmuJR_l3xEE8xs13vwKkeA4dGCmIhfupjbzLtw-3gjuWs3Fe5u5GV3s6NItLWvGAMem8veCmLPS_5iJbcJ2Qqqb4OodKta8wLgl0bOyMqa43b7rzccviGUYF3zDJcFqsiZss76GJVaTa6YqhmagCq65-vFAk7c5c3J8TSE6H4CO1OhDiZNwNTCRDzTwXZsCoChO6cpVfwdCRiKJBggxIaQInIKcHoR5V1xN2B_zLb_uE6zj3fRTX8T4GevheJZCbWw-8RC"/>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-[#FAFAF0] p-10 rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 border-l-4 border-primary mt-8 lg:mt-12">
+<div class="text-secondary text-5xl mb-8 opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="waves">waves</span>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-4 italic">Resonance</h3>
+<p class="text-on-surface-variant leading-relaxed">Finding the frequency that bridges hearts and minds together.</p>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-[#FAFAF0] p-10 rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 border-l-4 border-primary">
+<div class="text-secondary text-5xl mb-8 opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-4 italic">Structure</h3>
+<p class="text-on-surface-variant leading-relaxed">Architecting narratives that stand firm as ancient bridges.</p>
+</div>
+<!-- Card 4 -->
+<div class="group relative bg-[#FAFAF0] p-10 rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 border-l-4 border-primary mt-8 lg:mt-12">
+<div class="text-secondary text-5xl mb-8 opacity-60 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="eco">eco</span>
+</div>
+<h3 class="font-headline text-2xl text-primary mb-4 italic">Intent</h3>
+<p class="text-on-surface-variant leading-relaxed">Mindful speech rooted in deep archival intention.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: HOW IT WORKS -->
+<section class="py-32 bg-surface-container-low relative">
+<div class="max-w-screen-xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="absolute left-6 top-0 bottom-0 w-px bg-secondary/30"></div>
+<div class="space-y-24 py-12">
+<!-- Step 1 -->
+<div class="relative pl-16">
+<div class="absolute left-[1.125rem] top-1 w-6 h-6 rounded-full bg-secondary-container border-4 border-surface ring-4 ring-secondary/10"></div>
+<span class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block">Step 01</span>
+<h4 class="font-headline text-3xl text-primary mb-4">Archive Analysis</h4>
+<p class="text-on-surface-variant max-w-sm">We begin by auditing your current vocal presence through our archival lens.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-16">
+<div class="absolute left-[1.125rem] top-1 w-6 h-6 rounded-full bg-secondary-container border-4 border-surface ring-4 ring-secondary/10"></div>
+<span class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block">Step 02</span>
+<h4 class="font-headline text-3xl text-primary mb-4">Mindful Practice</h4>
+<p class="text-on-surface-variant max-w-sm">Curated exercises designed to cultivate stillness and vocal power.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-16">
+<div class="absolute left-[1.125rem] top-1 w-6 h-6 rounded-full bg-secondary-container border-4 border-surface ring-4 ring-secondary/10"></div>
+<span class="font-label text-xs tracking-widest text-secondary uppercase mb-2 block">Step 03</span>
+<h4 class="font-headline text-3xl text-primary mb-4">The Bridging</h4>
+<p class="text-on-surface-variant max-w-sm">Seamlessly integrate your new resonance into high-stakes environments.</p>
+</div>
+</div>
+</div>
+<div class="relative aspect-square rounded-full overflow-hidden border-8 border-surface shadow-2xl">
+<img alt="Zen garden" class="w-full h-full object-cover grayscale-[20%] opacity-90" data-alt="A tranquil Zen garden with raked sand and stones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTwOuEmnj4JBy2kYGKHyOJv1nupKiFxzERTc41JIzdsnQGg7Occ4ggqZ2A-f8fdBkeoeXyYQiy76NxuAm_sswMZeFz3fIAeqSC1pQ1euSr0lpFSzYqM-DzGdVfmNSFNQd2beHVKyBl549yDNj1GqsLI6fqonPRyS2COTaZianeGpkLJI592YR6YHFhWLPJ4OUCNz0YzFvznGcpBOzqf9D2x_s3rdmp_gVmEX-iPnxOZ0TDsP6GuG_Gn8a1hxG7nctU8dE0TgewJMHi"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+<!-- Section 4: STATS BANNER -->
+<section class="bg-primary py-24 px-12">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-around items-center gap-16 text-center">
+<div class="group">
+<div class="font-headline text-8xl text-secondary-container mb-2 transition-transform group-hover:scale-110 duration-500">8M+</div>
+<div class="font-label text-sm uppercase tracking-[0.3em] text-on-primary/60">Voices Bridged</div>
+</div>
+<div class="w-px h-16 bg-on-primary/10 hidden md:block"></div>
+<div class="group">
+<div class="font-headline text-8xl text-secondary-container mb-2 transition-transform group-hover:scale-110 duration-500">90%</div>
+<div class="font-label text-sm uppercase tracking-[0.3em] text-on-primary/60">Confidence Gain</div>
+</div>
+<div class="w-px h-16 bg-on-primary/10 hidden md:block"></div>
+<div class="group">
+<div class="font-headline text-8xl text-secondary-container mb-2 transition-transform group-hover:scale-110 duration-500">6+</div>
+<div class="font-label text-sm uppercase tracking-[0.3em] text-on-primary/60">Global Centers</div>
+</div>
+</div>
+</section>
+<!-- Section 5: TESTIMONIALS -->
+<section class="py-40 px-12 bg-surface washi-texture overflow-hidden">
+<div class="max-w-screen-2xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="font-headline text-5xl text-primary mb-6 italic">Voices of the Archive</h2>
+<p class="font-body text-on-surface-variant uppercase tracking-widest text-xs">Echoes from our community</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 perspective-1000">
+<!-- Card 1 -->
+<div class="bg-[#FAFAF0] p-12 rounded-lg relative transform hover:-rotate-y-6 hover:translate-z-4 transition-all duration-700 shadow-sm">
+<div class="text-tertiary mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="format_quote">format_quote</span>
+</div>
+<p class="font-headline text-2xl text-primary-container leading-relaxed mb-10 italic">
+                            "The transition from noise to resonance was meditative. BoloBridge provided the tools to truly own my narrative."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-px bg-tertiary"></div>
+<div class="font-label text-xs uppercase tracking-widest font-bold">Kenji S. — Founder</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-[#FAFAF0] p-12 rounded-lg relative transform translate-y-12 hover:rotate-y-0 hover:translate-z-4 transition-all duration-700 shadow-sm border-t-2 border-tertiary/20">
+<div class="text-tertiary mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="format_quote">format_quote</span>
+</div>
+<p class="font-headline text-2xl text-primary-container leading-relaxed mb-10 italic">
+                            "A sanctuary for the voice. The archival approach feels both ancient and remarkably modern."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-px bg-tertiary"></div>
+<div class="font-label text-xs uppercase tracking-widest font-bold">Aria L. — Creative Dir.</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#FAFAF0] p-12 rounded-lg relative transform hover:rotate-y-6 hover:translate-z-4 transition-all duration-700 shadow-sm">
+<div class="text-tertiary mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="format_quote">format_quote</span>
+</div>
+<p class="font-headline text-2xl text-primary-container leading-relaxed mb-10 italic">
+                            "Finding confidence wasn't about shouting louder, but about refining the silence between words."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-px bg-tertiary"></div>
+<div class="font-label text-xs uppercase tracking-widest font-bold">Marc V. — Advocate</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: FINAL CTA -->
+<section class="mx-12 mb-20">
+<div class="bg-primary rounded-3xl p-24 relative overflow-hidden text-center">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="font-headline text-5xl md:text-6xl text-on-primary mb-12 leading-tight italic">
+                        Begin Your Archival Journey Toward Masterful Resonance.
+                    </h2>
+<button class="bg-secondary-container text-primary font-body font-bold text-lg px-12 py-6 rounded-xl hover:scale-105 transition-all shadow-lg">
+                        Join the Archive
+                    </button>
+<p class="mt-8 text-on-primary/60 font-label text-xs tracking-widest uppercase">Limited intake for Q4 available</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1a2818] dark:bg-[#0d140c] w-full py-20 washi-texture">
+<div class="flex flex-col md:flex-row justify-between items-center px-16 w-full max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-['Newsreader'] text-xl text-[#fafaed]">BoloBridge</div>
+<p class="text-[#fafaed]/30 text-[10px] mt-2 tracking-[0.2em] uppercase font-['Manrope']">Zen Garden Mastery</p>
+</div>
+<div class="flex gap-12 mb-12 md:mb-0">
+<a class="font-['Manrope'] tracking-[0.1em] uppercase text-xs text-[#fafaed]/50 hover:text-[#ffffff] transition-all" href="#">Provenance</a>
+<a class="font-['Manrope'] tracking-[0.1em] uppercase text-xs text-[#fafaed]/50 hover:text-[#ffffff] transition-all" href="#">Privacy</a>
+<a class="font-['Manrope'] tracking-[0.1em] uppercase text-xs text-[#fafaed]/50 hover:text-[#ffffff] transition-all" href="#">Terms</a>
+<a class="font-['Manrope'] tracking-[0.1em] uppercase text-xs text-[#fafaed]/50 hover:text-[#ffffff] transition-all" href="#">Contact</a>
+</div>
+<div class="font-['Manrope'] tracking-[0.1em] uppercase text-xs text-[#c4eebf]">
+                © 2024 BoloBridge. Curated with Intention.
+            </div>
+</div>
+<!-- Subtle Bottom Border Decoration -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#c4eebf]/20 to-transparent mt-16"></div>
+</footer>
+</body></html>

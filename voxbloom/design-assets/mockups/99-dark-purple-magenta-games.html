@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge | Speech Games</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,400;1,600;1,700;1,800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#3b3551",
+              "on-primary-container": "#56003c",
+              "surface-tint": "#ffafd7",
+              "on-primary-fixed": "#3c0029",
+              "inverse-surface": "#e6deff",
+              "on-secondary-fixed-variant": "#6c189b",
+              "tertiary": "#51dbcb",
+              "secondary-fixed-dim": "#e5b4ff",
+              "surface-variant": "#36314d",
+              "on-background": "#e6deff",
+              "error": "#ffb4ab",
+              "surface-container-high": "#2b2641",
+              "on-primary": "#610044",
+              "tertiary-fixed": "#72f8e7",
+              "on-primary-fixed-variant": "#890062",
+              "primary-fixed-dim": "#ffafd7",
+              "surface-container-low": "#1d1832",
+              "surface-container-highest": "#36314d",
+              "on-surface": "#e6deff",
+              "tertiary-container": "#00a295",
+              "on-secondary": "#4f0077",
+              "on-tertiary-container": "#00302b",
+              "outline": "#a38a95",
+              "inverse-primary": "#ad1d7d",
+              "primary-container": "#ed57b3",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0f0a24",
+              "surface-dim": "#140f29",
+              "error-container": "#93000a",
+              "surface": "#140f29",
+              "primary-fixed": "#ffd8e9",
+              "on-tertiary-fixed": "#00201d",
+              "inverse-on-surface": "#322d48",
+              "surface-container": "#211c36",
+              "background": "#140f29",
+              "primary": "#ffafd7",
+              "on-surface-variant": "#dbbfcb",
+              "on-secondary-fixed": "#30004b",
+              "outline-variant": "#56414b",
+              "tertiary-fixed-dim": "#51dbcb",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-secondary-container": "#db9cff",
+              "secondary-container": "#6c189b",
+              "secondary": "#e5b4ff",
+              "on-tertiary": "#003732",
+              "on-error": "#690005",
+              "secondary-fixed": "#f5d9ff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.cosmic-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC7Idl0vjB3oAyUNrv3FeL9BK5M_PA7xFYi7yqRyK4Z7jkoBIopVAyBqDC949q61bXwcxt0ZartgK_gsITPM6M64wpq74vy6_KPB78962aajOlTGsv2krALkRfkza4Bd14_8yHO_NHX-UAHDaB28qeFZ6vlku97EPK72V33S_oy3OhWo6e517TyhrWTHbK1AQV0IG72uaI4bmGJ8Qjf2YWfNPsffq2-ITBgLI0gpp6jsXjJ2Z88F1qpXVB7NMGnWm0O8bkaYXItV-HE);
+    opacity: 0.02;
+    pointer-events: none
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.glass-card {
+    background: rgba(30, 21, 64, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 175, 215, 0.2);
+    border-radius: 24px
+    }
+.magenta-glow {
+    text-shadow: 0 0 10px rgba(217, 70, 162, 0.5)
+    }
+.cyan-glow {
+    filter: drop-shadow(0 0 8px rgba(93, 229, 213, 0.4))
+    }</style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- Cosmic Grain Overlay -->
+<div class="fixed inset-0 cosmic-grain z-[100]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#140f29]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(217,70,162,0.1)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic tracking-tighter text-[#ffafd7]">NEON_MONOLITH</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#ffafd7] border-b-2 border-[#ffafd7] pb-1 font-['Newsreader'] italic tracking-tighter" href="#">LATEST</a>
+<a class="text-[#F0EDF5]/60 hover:text-[#ffafd7] transition-colors font-['Newsreader'] italic tracking-tighter" href="#">ARCHIVE</a>
+<a class="text-[#F0EDF5]/60 hover:text-[#ffafd7] transition-colors font-['Newsreader'] italic tracking-tighter" href="#">STORE</a>
+<a class="text-[#F0EDF5]/60 hover:text-[#ffafd7] transition-colors font-['Newsreader'] italic tracking-tighter" href="#">COMMUNITY</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#F0EDF5]/60 hover:bg-[#36314d]/50 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Cyberpunk female character portrait profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrDUdRRQ-FauTCtJaChcodMa9-1F2nDxl10mmizJ15eSKiahdaZqZOidYQ7XjFfihIjt1EGcMqoVgq9jlEpFSZ5SpgIQD22EpjWqb89QVRA4dqxw_titC12gP6gC4QD3Ua_6_80-yyBHd_4m9edHu_f2Cy3Z3-KpmiY_9uscZzVkBYK8y3jwgNO0f8tfBd6sv4CWx-XdF9nBpDemCM9nbpdPixBuCJ2NW9hsHAMJIZVfmQRbM2PA0pt3iF9Z0V-mJXIhWO0Gq615ij"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-4 top-24 bottom-8 w-20 rounded-sm border border-[#ffafd7]/20 bg-[#1E1540]/60 backdrop-blur-lg shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-40 flex flex-col items-center py-8 gap-10">
+<div class="flex flex-col items-center gap-1 mb-4">
+<div class="text-[#51dbcb] font-black text-xs">CYBER_OS</div>
+<div class="text-[8px] text-[#51dbcb]/50 tracking-widest">V.2.0.4</div>
+</div>
+<nav class="flex flex-col gap-10">
+<button class="text-[#ffafd7] scale-110 drop-shadow-[0_0_8px_rgba(255,175,215,0.6)] group">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="sr-only">Library</span>
+</button>
+<button class="text-[#56414b] hover:text-[#51dbcb] hover:scale-105 transition-transform group">
+<span class="material-symbols-outlined">download</span>
+<span class="sr-only">Downloads</span>
+</button>
+<button class="text-[#56414b] hover:text-[#51dbcb] hover:scale-105 transition-transform group">
+<span class="material-symbols-outlined">cloud</span>
+<span class="sr-only">Cloud</span>
+</button>
+<button class="text-[#56414b] hover:text-[#51dbcb] hover:scale-105 transition-transform group">
+<span class="material-symbols-outlined">settings</span>
+<span class="sr-only">Settings</span>
+</button>
+<button class="text-[#56414b] hover:text-[#51dbcb] hover:scale-105 transition-transform group">
+<span class="material-symbols-outlined">help</span>
+<span class="sr-only">Support</span>
+</button>
+</nav>
+<div class="mt-auto flex flex-col items-center gap-6">
+<button class="text-[#56414b] hover:text-[#ffafd7] transition-colors">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pt-32 pb-20 pl-32 pr-12 max-w-[1440px] mx-auto">
+<!-- Header Section -->
+<div class="mb-12 relative">
+<h1 class="text-7xl font-headline italic tracking-tighter text-[#F0EDF5]">
+                Speech <span class="text-[#D946A2] magenta-glow">Games</span>
+</h1>
+<p class="mt-4 font-body uppercase tracking-[0.3em] text-[#51dbcb] text-xs font-bold">Refine your resonance // Bridge the gap</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 grid-rows-6 gap-6 h-[800px]">
+<!-- 1. Story Studio (Large Featured Card) -->
+<div class="col-span-8 row-span-4 glass-card relative overflow-hidden group border-primary/40">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+<div class="absolute top-8 right-8 px-3 py-1 bg-primary text-on-primary-container text-[10px] font-bold tracking-widest uppercase rounded-sm">Featured</div>
+<div class="p-12 h-full flex flex-col justify-between relative z-10">
+<div>
+<div class="w-24 h-24 mb-6 relative">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full"></div>
+<span class="material-symbols-outlined text-7xl text-primary" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+<h2 class="text-5xl font-headline italic text-on-surface mb-4">Story Studio</h2>
+<p class="text-[#F0EDF5]/60 max-w-md font-body leading-relaxed">Craft cinematic narratives using your voice. Real-time pitch analysis maps your tone to atmospheric world-building.</p>
+</div>
+<button class="w-fit px-8 py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-bold text-sm tracking-widest uppercase rounded-sm hover:brightness-110 transition-all active:scale-95">
+                        Initialize Session
+                    </button>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute bottom-0 right-0 w-1/2 h-full opacity-30 pointer-events-none">
+<img alt="Abstract neon storybook shapes" class="w-full h-full object-cover mix-blend-screen" data-alt="Abstract neon waves and geometric storybook patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Iq1x1624vomiJ09bLbRpANxqABl-2vER3JkWDXXf1WDVStJTlIG4l2yJbWr10jPWnlJvV-QTm8etEM8GsuIxV_YGyHLcTE6ldZs6NSQP9C-VNQcUDaSyFWBHzeMlf08U_Rk4vyUlSU7ju_khMta1LC3WF7oW2PAxeWxvAMziwahyN3CmDYOPsUKxmDKOlUkHV6MH3n9iE0WDIOtwxYmd8xv9HxXla6NQnKPoYkfV4yIFcdYclTRuej7JhgXh9iEwpbR016AKrX9w"/>
+</div>
+</div>
+<!-- 2. Daily Challenge -->
+<div class="col-span-4 row-span-2 glass-card p-8 flex flex-col justify-between border-tertiary/20">
+<div class="flex justify-between items-start">
+<div class="cyan-glow">
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="text-[10px] font-bold text-tertiary tracking-widest">STATUS: ACTIVE</div>
+</div>
+<div>
+<h3 class="text-2xl font-headline italic text-on-surface mb-2">Daily Challenge</h3>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mb-2">
+<div class="bg-tertiary h-full w-[65%]"></div>
+</div>
+<p class="text-[10px] text-tertiary/60 tracking-wider font-bold">65% COMPLETED — 4 HOURS REMAINING</p>
+</div>
+</div>
+<!-- 3. Sound Safari -->
+<div class="col-span-4 row-span-2 glass-card p-8 relative overflow-hidden group">
+<div class="absolute inset-0 bg-[#9B4DCA]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<span class="material-symbols-outlined text-4xl text-[#9B4DCA]">pets</span>
+<div>
+<h3 class="text-2xl font-headline italic text-on-surface">Sound Safari</h3>
+<p class="text-xs text-[#F0EDF5]/40 mt-1 uppercase tracking-widest">Phonetic Mimicry</p>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20 transform rotate-12 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-8xl text-[#9B4DCA]">waves</span>
+</div>
+</div>
+<!-- 4. Word Garden -->
+<div class="col-span-4 row-span-2 glass-card p-8 flex flex-col justify-between border-secondary/20 group">
+<span class="material-symbols-outlined text-4xl text-[#C292E5]">filter_vintage</span>
+<div>
+<h3 class="text-2xl font-headline italic text-on-surface">Word Garden</h3>
+<p class="text-xs text-[#F0EDF5]/40 mt-1 uppercase tracking-widest">Enunciation Flora</p>
+</div>
+</div>
+<!-- 5. Rhyme Time -->
+<div class="col-span-4 row-span-2 glass-card p-8 flex flex-col justify-between border-tertiary/20 group">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-tertiary text-2xl animate-pulse">music_note</span>
+<span class="material-symbols-outlined text-tertiary/60 text-xl">music_note</span>
+</div>
+<div>
+<h3 class="text-2xl font-headline italic text-on-surface">Rhyme Time</h3>
+<p class="text-xs text-[#F0EDF5]/40 mt-1 uppercase tracking-widest">Flow &amp; Cadence</p>
+</div>
+</div>
+<!-- 6. Tongue Gym (Bottom Banner) -->
+<div class="col-span-12 row-span-2 glass-card p-0 flex items-stretch border-primary/30 overflow-hidden">
+<div class="w-1/3 bg-gradient-to-r from-primary/20 to-transparent p-10 flex flex-col justify-center border-r border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<h3 class="text-4xl font-headline italic text-on-surface">Tongue Gym</h3>
+</div>
+<p class="text-[#F0EDF5]/60 text-sm">High-intensity vocal articulatory exercises for precision.</p>
+</div>
+<div class="w-1/3 flex items-center justify-center gap-12 px-10">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary/40 block text-3xl mb-2">graphic_eq</span>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold uppercase">Ripples</div>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary block text-3xl mb-2">vibration</span>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold uppercase">Waves</div>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary/40 block text-3xl mb-2">vibration</span>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold uppercase">Frequency</div>
+</div>
+</div>
+<div class="w-1/3 flex items-center justify-end px-12">
+<button class="px-10 py-4 border border-primary text-primary font-bold text-sm tracking-widest uppercase rounded-sm hover:bg-primary/10 transition-all">
+                        Start Workout
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-[#56414b]/10 py-12 bg-[#140f29]">
+<div class="flex flex-col items-center gap-6 w-full max-w-7xl mx-auto px-8">
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#F0EDF5]/40 hover:text-[#ffafd7] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#F0EDF5]/40 hover:text-[#ffafd7] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#F0EDF5]/40 hover:text-[#ffafd7] transition-colors" href="#">Archival Manifesto</a>
+<a class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#F0EDF5]/40 hover:text-[#ffafd7] transition-colors" href="#">Contact Command</a>
+</nav>
+<p class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-[#F0EDF5]/40">© 2024 NEON MONOLITH EDITORIAL. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

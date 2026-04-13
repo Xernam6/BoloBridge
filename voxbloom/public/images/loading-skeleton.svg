@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <linearGradient id="shimmer" x1="-100%" y1="0%" x2="200%" y2="0%">
+      <stop offset="0%" stop-color="#F5F1EB" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FAF8F5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F5F1EB" stop-opacity="0"/>
+      <animate attributeName="x1" values="-100%;200%" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;300%" dur="2.5s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+  <!-- Skeleton bars in warm parchment tones -->
+  <rect x="20" y="24" width="240" height="20" rx="10" fill="#F5F1EB"/>
+  <rect x="20" y="60" width="360" height="14" rx="7" fill="#F5F1EB"/>
+  <rect x="20" y="88" width="300" height="14" rx="7" fill="#F5F1EB"/>
+  <rect x="20" y="116" width="200" height="14" rx="7" fill="#F5F1EB"/>
+  <rect x="20" y="148" width="280" height="14" rx="7" fill="#F5F1EB"/>
+  <!-- Shimmer overlay -->
+  <rect x="0" y="0" width="400" height="200" fill="url(#shimmer)" style="mix-blend-mode: overlay;"/>
+</svg>

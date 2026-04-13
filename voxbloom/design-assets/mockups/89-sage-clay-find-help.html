@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#baccad",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#31302c",
+              "surface": "#fdf9f2",
+              "secondary-fixed-dim": "#f5ba94",
+              "secondary": "#815435",
+              "on-secondary-fixed-variant": "#663d20",
+              "surface-container-low": "#f7f3ec",
+              "on-error": "#ffffff",
+              "primary-fixed": "#d6e8c8",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#baccad",
+              "secondary-container": "#ffc29c",
+              "surface-container": "#f1ede6",
+              "on-tertiary-container": "#464020",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#69795e",
+              "on-primary-container": "#f8ffee",
+              "tertiary": "#655f3b",
+              "on-surface": "#1c1c18",
+              "on-secondary-container": "#7a4e2f",
+              "surface-variant": "#e6e2db",
+              "background": "#fdf9f2",
+              "surface-container-highest": "#e6e2db",
+              "on-surface-variant": "#444840",
+              "error-container": "#ffdad6",
+              "surface-tint": "#536349",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#d0c79c",
+              "tertiary-container": "#b5ac83",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#3c4b33",
+              "on-background": "#1c1c18",
+              "tertiary-fixed": "#ede3b6",
+              "on-tertiary-fixed": "#201c02",
+              "surface-container-high": "#ebe8e1",
+              "surface-dim": "#dddad3",
+              "on-primary-fixed": "#111f0b",
+              "on-tertiary-fixed-variant": "#4d4726",
+              "outline-variant": "#c5c8be",
+              "outline": "#757870",
+              "inverse-on-surface": "#f4f0e9",
+              "primary": "#516147",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#311300",
+              "secondary-fixed": "#ffdcc7",
+              "surface-bright": "#fdf9f2"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.linen-grain {
+    background-color: #f7f3ec;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBBjI0QJry5lIXQUOWL8SPnir0GzLKTDykfc3BIrRKcHGtcaIMv_ac8CWQZrJyi9Twf5OkgpAUM6QEDzmRzE1uL1wuzBPYu9bvjWyX-WKcRy9BPYaLOiOe7ioK5nZOuwqrWQ2PwwNntIxwlUkuktQmuDJ0Kg1rOLtVLsgrZ5w1VOg_rpZ6UneySyw1mwUVEEAY6iygfcZjr71EurzLONq_kJQF8aVIJ9I_uITPzTmlsbY_hSMv58L8qRRRcWw1_8JRuxqEHBbQHx4h-)
+    }
+.clay-gradient {
+    background: linear-gradient(15deg, #815435 0%, #a67351 100%)
+    }
+.sage-gradient {
+    background: linear-gradient(15deg, #516147 0%, #69795e 100%)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="font-body text-[#2f2b26] linen-grain min-h-screen flex flex-col">
+<nav class="w-full top-0 sticky bg-[#fdf9f2] dark:bg-[#1c1c18] z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+<div class="font-['Newsreader'] font-bold text-2xl text-[#2f2b26] dark:text-[#f7f3ec]">BoloBridge</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#2f2b26]/70 dark:text-[#f7f3ec]/70 font-['Newsreader'] italic text-lg tracking-tight hover:text-[#516147] transition-colors duration-300" href="#">Programs</a>
+<a class="text-[#2f2b26]/70 dark:text-[#f7f3ec]/70 font-['Newsreader'] italic text-lg tracking-tight hover:text-[#516147] transition-colors duration-300" href="#">Methodology</a>
+<a class="text-[#2f2b26]/70 dark:text-[#f7f3ec]/70 font-['Newsreader'] italic text-lg tracking-tight text-[#516147] dark:text-[#7A8B6F] font-bold border-b-2 border-[#7A8B6F] pb-1" href="#">Resources</a>
+<a class="text-[#2f2b26]/70 dark:text-[#f7f3ec]/70 font-['Newsreader'] italic text-lg tracking-tight hover:text-[#516147] transition-colors duration-300" href="#">About</a>
+</div>
+<button class="sage-gradient text-on-primary px-6 py-2 rounded-lg font-medium shadow-sm hover:opacity-90 transition-all duration-200">Start Journey</button>
+</div>
+<div class="bg-[#f7f3ec] dark:bg-[#2f2b26] h-[1px] w-full opacity-20"></div>
+</nav>
+<main class="flex-grow max-w-7xl mx-auto w-full px-8 pb-24">
+<header class="pt-24 pb-16 text-center">
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-6xl text-[#815435]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h1 class="font-headline text-7xl italic text-[#2f2b26] mb-4">You're Not Alone</h1>
+<p class="max-w-2xl mx-auto text-lg text-[#2f2b26]/80 font-headline italic">Finding the right support for speech and communication is a journey. We are here to help you mold a path forward with care and expertise.</p>
+</header>
+<section class="max-w-3xl mx-auto mb-24">
+<div class="bg-surface-container-lowest p-2 rounded-xl shadow-sm flex items-center gap-2 outline-variant/15 outline outline-1">
+<div class="flex-grow flex items-center px-4">
+<span class="material-symbols-outlined text-[#815435] mr-3">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-[#2f2b26] placeholder-[#2f2b26]/40 py-4" placeholder="Search for local specialists, clinics, or resources..." type="text"/>
+</div>
+<button class="sage-gradient text-on-primary px-8 py-4 rounded-lg font-medium hover:opacity-90 transition-all">Find Support</button>
+</div>
+</section>
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-[#FAF7F1] p-10 rounded-xl transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-8">
+<span class="material-symbols-outlined text-4xl text-[#516147]" style="font-variation-settings: 'FILL' 1;">child_care</span>
+<span class="material-symbols-outlined text-[#2f2b26]/20">arrow_forward</span>
+</div>
+<h3 class="font-headline text-3xl text-[#2f2b26] mb-3">Under 3</h3>
+<p class="text-[#2f2b26]/70 leading-relaxed">Early intervention is like preparing the clay. Discover specialized programs for toddlers and infants focused on developmental milestones.</p>
+</div>
+<div class="bg-[#FAF7F1] p-10 rounded-xl transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-8">
+<span class="material-symbols-outlined text-4xl text-[#815435]" style="font-variation-settings: 'FILL' 1;">child_friendly</span>
+<span class="material-symbols-outlined text-[#2f2b26]/20">arrow_forward</span>
+</div>
+<h3 class="font-headline text-3xl text-[#2f2b26] mb-3">Ages 3-12</h3>
+<p class="text-[#2f2b26]/70 leading-relaxed">School-age support designed to build confidence. We connect families with pediatric therapists who specialize in childhood speech patterns.</p>
+</div>
+<div class="bg-[#FAF7F1] p-10 rounded-xl transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-8">
+<span class="material-symbols-outlined text-4xl text-[#655f3b]" style="font-variation-settings: 'FILL' 1;">language</span>
+<span class="material-symbols-outlined text-[#2f2b26]/20">arrow_forward</span>
+</div>
+<h3 class="font-headline text-3xl text-[#2f2b26] mb-3">Online Resources</h3>
+<p class="text-[#2f2b26]/70 leading-relaxed">Handmade guides and digital workshops you can access from your own workshop. Practical tools for daily practice and understanding.</p>
+</div>
+<div class="bg-[#FAF7F1] p-10 rounded-xl transition-transform hover:-translate-y-1 cursor-pointer">
+<div class="flex items-start justify-between mb-8">
+<span class="material-symbols-outlined text-4xl text-[#475B7D]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="material-symbols-outlined text-[#2f2b26]/20">arrow_forward</span>
+</div>
+<h3 class="font-headline text-3xl text-[#2f2b26] mb-3">Cost Concerns</h3>
+<p class="text-[#2f2b26]/70 leading-relaxed">Support should be accessible to all. Find information on insurance, sliding scale clinics, and community-funded therapy programs.</p>
+</div>
+</div>
+</section>
+<section class="mb-32">
+<h2 class="font-headline text-4xl text-center italic mb-12">International Resources</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl border-2 border-[#815435]/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-6 border border-outline-variant/30">
+<img alt="US Flag" class="w-full h-full object-cover" data-alt="The United States flag in a circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACCAnfNqC3QuOmE7qBw38hDB93EgdoOmW-SPcWh2_sqKRZqEyUIwr-Zgi9_dRoJ9Iotn3b8jb1OEewY1GmoXEXDAbGmgQJY80b3JIFiab_KKsdqKi12f0VsQTZgO7mpTsbb5ninzNZUv-hiGUcTZ4aK7roBDY02FrPowujs2nEHJ4O-2QarebmwVOwcLG0wbB012zKqznl1tWvyM1Eu3QU1aPvgS30Ov169l1rtjWr1P4j_FC6JkBQhRboflm43y7ZlwLcPGobrd-d"/>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">ASHA</h4>
+<p class="text-sm text-[#2f2b26]/70 leading-relaxed mb-6">The American Speech-Language-Hearing Association. A leading global authority for certification and professional standards in the US.</p>
+<a class="mt-auto text-[#516147] font-bold text-sm underline decoration-[#516147]/30 underline-offset-4 hover:decoration-[#516147]" href="#">Visit Website</a>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border-2 border-[#815435]/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-6 border border-outline-variant/30">
+<img alt="UK Flag" class="w-full h-full object-cover" data-alt="The United Kingdom flag in a circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDALBZrEA7Ec7yObq1lRA2cQ99OI55Sgf2k2STUfWfx3GbhX8j1KFijP1pjbHrjq31AO-ShMyO3WttpBMTnJFADQ5V1kRZ5jFF6L9cPCaUokCycMY_JXszBm4h07qHFghvOCSQEUXldNQXLoliVi4NrVnB4iwGWbXpLFDsdxWELDXegtHRYxNaxhPtkz6UqwrOhc4M9tMvnR_6Gzl_va1-NnpZQOsAtCM9OyJ1uX_jl2IhSyb_Gag1HGo_J-twplt986bYL7MGVV2_W"/>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">RCSLT</h4>
+<p class="text-sm text-[#2f2b26]/70 leading-relaxed mb-6">Royal College of Speech and Language Therapists. The professional body for SLTs and support workers across the United Kingdom.</p>
+<a class="mt-auto text-[#516147] font-bold text-sm underline decoration-[#516147]/30 underline-offset-4 hover:decoration-[#516147]" href="#">Visit Website</a>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border-2 border-[#815435]/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-6 border border-outline-variant/30">
+<img alt="Australia Flag" class="w-full h-full object-cover" data-alt="The Australian flag in a circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1PDZSYbGL8UM2bPunm-e_QcSBFajkMxPpY12XAIf0XTl-1Qn9-hfwPs7tMxENhb0Gu1eN8SVwZF9E2_VYL94usNfh7POLpUE_TuKjbEZhr8hBOqM7swuaseLkujIjyvm7d3du4kw_o93VAOLON5tJDPXxS80yZjDFuyHuQudMNx6ckz5GuT-wq502_N34a-KElVrBosDXLHCr7N4lE34ARLa3TlOUpndlpBZR0rXM6g2cYPFIK3RXnIqDUxo2Xwu27Y_m8TAn9qXe"/>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">SPA</h4>
+<p class="text-sm text-[#2f2b26]/70 leading-relaxed mb-6">Speech Pathology Australia. Supporting individuals with communication and swallowing difficulties throughout the continent.</p>
+<a class="mt-auto text-[#516147] font-bold text-sm underline decoration-[#516147]/30 underline-offset-4 hover:decoration-[#516147]" href="#">Visit Website</a>
+</div>
+</div>
+</section>
+<section class="max-w-3xl mx-auto py-12 px-8 bg-[#b5624e]/5 rounded-xl border border-[#b5624e]/10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#b5624e]">info</span>
+<p class="text-[#b5624e] text-sm leading-relaxed">
+<strong>Disclaimer:</strong> BoloBridge is a navigational resource. We do not provide medical diagnoses or clinical treatment directly. Please consult with a licensed healthcare professional for a formal assessment. In case of a crisis, please contact your local emergency services.
+                </p>
+</div>
+</section>
+</main>
+<footer class="w-full bg-[#f7f3ec] dark:bg-[#1c1c18] border-t-0">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto gap-6">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<div class="font-['Newsreader'] italic font-medium text-[#2f2b26] text-xl">BoloBridge</div>
+<p class="font-['Inter'] text-sm leading-relaxed text-[#2f2b26] dark:text-[#f7f3ec] opacity-80">© 2024 BoloBridge Pottery Studio. Mending speech with heart.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-sm text-[#2f2b26] dark:text-[#f7f3ec] opacity-80 hover:opacity-100 hover:text-[#516147] transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-[#2f2b26] dark:text-[#f7f3ec] opacity-80 hover:opacity-100 hover:text-[#516147] transition-opacity duration-200" href="#">Terms</a>
+<a class="font-['Inter'] text-sm text-[#2f2b26] dark:text-[#f7f3ec] opacity-80 hover:opacity-100 hover:text-[#516147] transition-opacity duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

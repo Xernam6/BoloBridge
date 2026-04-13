@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#aad0ad",
+              "on-background": "#e0e1f6",
+              "tertiary-container": "#969593",
+              "on-primary-fixed": "#00210b",
+              "secondary-fixed-dim": "#eabf8d",
+              "secondary-fixed": "#ffddb7",
+              "surface-container-lowest": "#0a0d1b",
+              "tertiary": "#c8c6c4",
+              "primary-fixed": "#c6ecc8",
+              "on-secondary": "#442b06",
+              "surface-container-highest": "#313444",
+              "on-surface-variant": "#c2c8bf",
+              "surface-tint": "#aad0ad",
+              "error-container": "#93000a",
+              "inverse-primary": "#44664a",
+              "secondary": "#eabf8d",
+              "surface-container": "#1c1f2e",
+              "surface-variant": "#313444",
+              "error": "#ffb4ab",
+              "on-secondary-container": "#d7ae7d",
+              "surface": "#0f1321",
+              "surface-dim": "#0f1321",
+              "on-error-container": "#ffdad6",
+              "surface-bright": "#353848",
+              "surface-container-high": "#262939",
+              "outline-variant": "#424842",
+              "primary-container": "#7a9e7e",
+              "on-surface": "#e0e1f6",
+              "background": "#0f1321",
+              "on-primary": "#16371f",
+              "on-secondary-fixed": "#2a1700",
+              "secondary-container": "#5e411a",
+              "surface-container-low": "#181b29",
+              "on-error": "#690005",
+              "on-tertiary": "#30312f",
+              "on-secondary-fixed-variant": "#5e411a",
+              "on-primary-fixed-variant": "#2d4e33",
+              "primary": "#aad0ad",
+              "outline": "#8c928a",
+              "inverse-on-surface": "#2d303f",
+              "inverse-surface": "#e0e1f6",
+              "on-primary-container": "#13341c",
+              "tertiary-fixed-dim": "#c8c6c4",
+              "on-tertiary-fixed": "#1b1c1a",
+              "on-tertiary-container": "#2d2e2c",
+              "tertiary-fixed": "#e4e2df",
+              "on-tertiary-fixed-variant": "#474745"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: relative
+    }
+.film-grain::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.02;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDtGaPBNcV4EFe00Fs7omh5AkFBCiAk-bEvMm2UiEznayiVBh8X-v4DSSb7jFNi21xnJtMbGrH-WWbvBkxfGpe0f_5Pf9bGDLSoVyyW4Qm4dFMC3deFyI0yg42Kdt7wu4oC2fRHwtAcfzM800bZpDa1qJ0IewJYTL2Njlw-50NhpeQCA94GDWQUQTkaQeBRjZ_JO8GDrI6EiQmdW4Mz2Ba4I6jC2neJNyyW2uQs-NdcPWgsXjuYj3REDvkZPS18bAJcoQ9k-WELChuQ)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.active-nav-border {
+    border-bottom: 2px solid #aad0ad
+    }</style>
+</head>
+<body class="bg-surface text-on-surface font-body film-grain min-h-screen flex flex-col overflow-x-hidden">
+<header class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-none bg-[#0f1321] dark:bg-[#0f1321] backdrop-blur-xl bg-opacity-95 z-50">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-headline italic tracking-tight" href="#">
+<span class="text-[#FBF9F6]">Bolo</span><span class="text-[#7A9E7E]">Bridge</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-semibold text-lg font-headline italic transition-all duration-300" href="#">Screen</a>
+<a class="text-slate-400 font-label hover:text-primary transition-colors text-lg font-headline italic" href="#">Learn</a>
+<a class="text-slate-400 font-label hover:text-primary transition-colors text-lg font-headline italic" href="#">Play</a>
+<a class="text-slate-400 font-label hover:text-primary transition-colors text-lg font-headline italic" href="#">Dashboard</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-primary/80 transition-all active:scale-95">
+<span class="material-symbols-outlined">public</span>
+</button>
+<button class="text-primary hover:text-primary/80 transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/20 hover:scale-105 transition-transform cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a professional woman profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbzONPoeaLYZNYK9Uw-McYy3jeDW24iiM88qcpBeKizhBhyJMIo3kDjJ_Uu0brtNJxBGUhAo50FBYdQT_h8GyMnD1loOVwS3WWmWh7YONEZXUcimiaiVIFhVDWUcwpOdWLnTaaaitcvISRPADSdm2zrrNbWw5ZaxqWBf7ZdvXo8_DjA1RMRdlnGgoDH0RpDTsUV4QLQiZAAyhcuTcyYjH2J-LHhB1R_XtLPb0LKUaXbSyBEapAp1eW6qW3wli39OYGKMic6qPny4Pa"/>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-20 px-8 max-w-[1440px] mx-auto w-full">
+<section class="mb-16">
+<h1 class="font-headline text-5xl md:text-7xl italic text-secondary mb-8 leading-tight max-w-3xl">
+                The Midnight <br/>Archivist Collection
+            </h1>
+<p class="font-body text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                A digital environment curated for deep focus. Designed with tactile grain, 
+                asymmetric layouts, and the soulful interplay of sage and navy.
+            </p>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 min-h-[400px] flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700">
+<img alt="Library Background" class="w-full h-full object-cover" data-alt="Dark atmospheric library with rows of old books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6r203vmU5qlJAhcoptJp_db7sySRNqsAU6WmwlRdcH2afhAd7I6Qq5dbAADdpoLzLPRGAXlADgiR-NuNHNmfnB86IkULZGghbEtiNHWGfzOWt-d9_r38QoA8XmtgUQGA_4U5EhooSEalfJ77fZ1d6M1NIMpuemDEy4cOGpnxZuJtjl_Z1sEE091-RaDnKhDwcEOoulspV_LNNu7csEaz3hVTX2WkDrCQWaohbsSQ-k2L40f3IzyPeJxbByfWg0KHoQUrdGhgwcR4j"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest mb-4 rounded-sm">Featured</span>
+<h2 class="font-headline text-4xl text-on-surface italic mb-4">Curating Digital Silence</h2>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-bold text-sm tracking-wide active:scale-95 transition-all">
+                        EXPLORE ARCHIVE
+                    </button>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-high rounded-xl p-6 flex-grow border border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">auto_stories</span>
+<span class="text-xs font-label text-outline uppercase tracking-tighter">01 / 04</span>
+</div>
+<h3 class="font-headline text-2xl italic text-on-surface mb-2">Editorial Rhythm</h3>
+<p class="text-sm text-on-surface-variant font-body">Pairing Newsreader with Manrope creates a sophisticated typographic dialogue.</p>
+</div>
+<div class="bg-primary-container/10 rounded-xl p-6 flex-grow border border-primary/10">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+<span class="text-xs font-label text-outline uppercase tracking-tighter">02 / 04</span>
+</div>
+<h3 class="font-headline text-2xl italic text-on-surface mb-2">Atmospheric Depth</h3>
+<p class="text-sm text-on-surface-variant font-body">No-line rule: Boundaries defined through background tonal shifts.</p>
+</div>
+</div>
+</div>
+<section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="h-px w-12 bg-secondary"></div>
+<h4 class="font-headline text-xl italic text-secondary">The Archival Mindset</h4>
+<p class="text-sm text-on-surface-variant leading-loose">We move away from sterile SaaS patterns to embrace the tactile warmth of high-end print. Every pixel is intentional.</p>
+</div>
+<div class="space-y-4">
+<div class="h-px w-12 bg-secondary"></div>
+<h4 class="font-headline text-xl italic text-secondary">Intentional Pace</h4>
+<p class="text-sm text-on-surface-variant leading-loose">Generous whitespace allows the content to breathe, fostering a sense of curated luxury and archival permanence.</p>
+</div>
+<div class="space-y-4">
+<div class="h-px w-12 bg-secondary"></div>
+<h4 class="font-headline text-xl italic text-secondary">Bespoke Accents</h4>
+<p class="text-sm text-on-surface-variant leading-loose">Film grain overlays and glassmorphism layers add a sensory depth that pure digital flat design lacks.</p>
+</div>
+</section>
+</main>
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full mt-auto bg-[#0a0d1b] border-t border-[#eabf8d]/10">
+<div class="space-y-6">
+<div class="font-headline italic text-2xl">
+<span class="text-[#FBF9F6]">Bolo</span><span class="text-[#7A9E7E]">Bridge</span>
+</div>
+<p class="text-slate-500 font-body text-sm leading-relaxed max-w-xs">
+                Designed for the Midnight Archivist. A sanctuary for curated knowledge and aesthetic focus.
+            </p>
+<div class="flex gap-4">
+<a class="text-slate-500 hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-500 hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-500 hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-secondary font-headline italic text-lg border-b border-[#eabf8d]/20 pb-2 inline-block">Explore</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">The Collection</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Featured Artists</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">New Arrivals</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Archive Index</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-secondary font-headline italic text-lg border-b border-[#eabf8d]/20 pb-2 inline-block">Resources</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Style Guidelines</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Curation Process</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Developer API</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">System Status</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-secondary font-headline italic text-lg border-b border-[#eabf8d]/20 pb-2 inline-block">Connect</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Contact Us</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Newsletter</a></li>
+<li><a class="text-slate-500 hover:text-secondary transition-transform inline-block hover:translate-x-1 duration-200" href="#">Community</a></li>
+</ul>
+<div class="pt-4 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] text-slate-400 font-bold tracking-widest border border-outline-variant/20 uppercase">EN</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] text-slate-400 font-bold tracking-widest border border-outline-variant/20 uppercase opacity-50">FR</span>
+</div>
+</div>
+<div class="md:col-span-4 mt-8 pt-8 border-t border-[#eabf8d]/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body text-slate-500 tracking-wide">
+<p>© 2024 BoloBridge. All rights reserved. Designed for the Midnight Archivist.</p>
+<div class="flex gap-6">
+<a class="hover:text-secondary" href="#">Privacy Policy</a>
+<a class="hover:text-secondary" href="#">Terms of Service</a>
+<a class="hover:text-secondary" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge — Onboarding Complete</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          cream: "#FAF8F5",
+          "sage-teal": "#5F9EA0",
+          "warm-camel": "#C2956B",
+          "muted-lavender": "#8B7EC8",
+          "deep-navy": "#2D3142",
+          "sage-green": "#6B8F71",
+          "card-bg": "#F5F1EB",
+        },
+        fontFamily: {
+          headline: ["Lora", "serif"],
+          body: ["Inter", "sans-serif"],
+        },
+        borderRadius: {
+          card: "24px",
+        },
+      },
+    },
+  };
+</script>
+<style>
+  /* Film grain overlay */
+  .film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  /* Fade-in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes floatSoft {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(4px, -8px) rotate(3deg); }
+    66% { transform: translate(-3px, -4px) rotate(-2deg); }
+  }
+
+  @keyframes floatSoftAlt {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-5px, -6px) rotate(-4deg); }
+    66% { transform: translate(3px, -10px) rotate(2deg); }
+  }
+
+  @keyframes floatSoftSlow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(2px, -12px) scale(1.03); }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 800ms ease both;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+  .delay-900 { animation-delay: 900ms; }
+  .delay-1000 { animation-delay: 1000ms; }
+  .delay-1200 { animation-delay: 1200ms; }
+
+  .float-shape {
+    animation: floatSoft 8s ease-in-out infinite;
+  }
+  .float-shape-alt {
+    animation: floatSoftAlt 10s ease-in-out infinite;
+  }
+  .float-shape-slow {
+    animation: floatSoftSlow 12s ease-in-out infinite;
+  }
+
+  /* Magnetic button hover */
+  .btn-magnetic {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .btn-magnetic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(95, 158, 160, 0.25);
+  }
+  .btn-magnetic:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(95, 158, 160, 0.15);
+  }
+
+  /* Tip card hover */
+  .tip-card {
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+  .tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  }
+</style>
+</head>
+
+<body class="bg-cream min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-body text-deep-navy">
+
+<!-- Film grain overlay -->
+<div class="film-grain"></div>
+
+<!-- Floating watercolor shapes — organic celebration -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+
+  <!-- Sage-teal circle, top-left -->
+  <svg class="absolute float-shape animate-fade-in delay-300" style="top: 6%; left: 8%; width: 90px; height: 90px;" viewBox="0 0 90 90" fill="none">
+    <circle cx="45" cy="45" r="38" fill="#5F9EA0" opacity="0.12"/>
+    <circle cx="48" cy="42" r="28" fill="#5F9EA0" opacity="0.08"/>
+  </svg>
+
+  <!-- Warm-camel leaf, top-right -->
+  <svg class="absolute float-shape-alt animate-fade-in delay-500" style="top: 10%; right: 12%; width: 80px; height: 100px;" viewBox="0 0 80 100" fill="none">
+    <path d="M40 5 C60 25, 70 50, 40 95 C10 50, 20 25, 40 5Z" fill="#C2956B" opacity="0.13"/>
+  </svg>
+
+  <!-- Muted-lavender petal, left -->
+  <svg class="absolute float-shape-slow animate-fade-in delay-400" style="top: 35%; left: 5%; width: 70px; height: 90px;" viewBox="0 0 70 90" fill="none">
+    <ellipse cx="35" cy="45" rx="28" ry="40" transform="rotate(-15 35 45)" fill="#8B7EC8" opacity="0.10"/>
+  </svg>
+
+  <!-- Sage-teal abstract petal, right -->
+  <svg class="absolute float-shape animate-fade-in delay-600" style="top: 45%; right: 6%; width: 100px; height: 80px;" viewBox="0 0 100 80" fill="none">
+    <path d="M10 40 C10 10, 50 0, 70 20 C90 40, 70 75, 40 70 C15 66, 10 55, 10 40Z" fill="#5F9EA0" opacity="0.09"/>
+  </svg>
+
+  <!-- Warm-camel circle, bottom-left -->
+  <svg class="absolute float-shape-alt animate-fade-in delay-700" style="bottom: 12%; left: 15%; width: 60px; height: 60px;" viewBox="0 0 60 60" fill="none">
+    <circle cx="30" cy="30" r="25" fill="#C2956B" opacity="0.10"/>
+  </svg>
+
+  <!-- Muted-lavender leaf, bottom-right -->
+  <svg class="absolute float-shape-slow animate-fade-in delay-800" style="bottom: 15%; right: 18%; width: 65px; height: 85px;" viewBox="0 0 65 85" fill="none">
+    <path d="M32 5 C52 20, 60 45, 32 80 C5 45, 12 20, 32 5Z" fill="#8B7EC8" opacity="0.11"/>
+  </svg>
+
+  <!-- Small sage-green dot, top-center -->
+  <svg class="absolute float-shape animate-fade-in delay-900" style="top: 14%; left: 45%; width: 35px; height: 35px;" viewBox="0 0 35 35" fill="none">
+    <circle cx="17" cy="17" r="14" fill="#6B8F71" opacity="0.12"/>
+  </svg>
+
+  <!-- Small warm-camel petal, mid-left -->
+  <svg class="absolute float-shape-alt animate-fade-in delay-1000" style="top: 22%; left: 25%; width: 50px; height: 50px;" viewBox="0 0 50 50" fill="none">
+    <ellipse cx="25" cy="25" rx="20" ry="12" transform="rotate(30 25 25)" fill="#C2956B" opacity="0.08"/>
+  </svg>
+
+  <!-- Sage-teal dot, bottom-center -->
+  <svg class="absolute float-shape-slow animate-fade-in delay-600" style="bottom: 20%; left: 55%; width: 40px; height: 40px;" viewBox="0 0 40 40" fill="none">
+    <circle cx="20" cy="20" r="16" fill="#5F9EA0" opacity="0.10"/>
+  </svg>
+
+</div>
+
+<!-- Main content -->
+<main class="relative z-10 flex flex-col items-center justify-center w-full max-w-3xl mx-auto px-6 py-12 min-h-screen">
+
+  <!-- Headline -->
+  <h1 class="font-headline italic text-4xl sm:text-5xl text-deep-navy text-center mb-6 animate-fade-in-up" style="line-height: 1.25;">
+    Welcome to BoloBridge!
+  </h1>
+
+  <!-- Child avatar -->
+  <div class="animate-fade-in-up delay-200 mb-5">
+    <div class="w-24 h-24 rounded-full bg-card-bg flex items-center justify-center" style="box-shadow: 0 8px 32px rgba(0,0,0,0.06);">
+      <svg viewBox="0 0 80 80" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Head -->
+        <circle cx="40" cy="34" r="22" fill="#5F9EA0" opacity="0.85"/>
+        <!-- Eyes — abstract dots -->
+        <circle cx="32" cy="30" r="3" fill="#FAF8F5"/>
+        <circle cx="48" cy="30" r="3" fill="#FAF8F5"/>
+        <!-- Gentle smile arc -->
+        <path d="M33 39 Q40 46 47 39" stroke="#FAF8F5" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <!-- Abstract ear/leaf accents -->
+        <ellipse cx="20" cy="24" rx="5" ry="8" transform="rotate(-20 20 24)" fill="#6B8F71" opacity="0.6"/>
+        <ellipse cx="60" cy="24" rx="5" ry="8" transform="rotate(20 60 24)" fill="#6B8F71" opacity="0.6"/>
+        <!-- Body hint -->
+        <path d="M24 54 Q40 62 56 54 Q58 68 40 72 Q22 68 24 54Z" fill="#C2956B" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Personalized greeting -->
+  <p class="text-lg sm:text-xl text-center text-deep-navy/80 mb-10 max-w-md animate-fade-in-up delay-300 leading-relaxed">
+    Great job, little explorer! Your speech garden is ready to bloom.
+  </p>
+
+  <!-- Quick-start tip cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full mb-10 animate-fade-in-up delay-500">
+
+    <!-- Card 1: Play Games -->
+    <div class="tip-card bg-card-bg rounded-card p-6 flex flex-col items-center text-center" style="box-shadow: 0 8px 32px rgba(0,0,0,0.06);">
+      <div class="w-12 h-12 rounded-full bg-sage-teal/10 flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-sage-teal" style="font-size: 28px;">sports_esports</span>
+      </div>
+      <h3 class="font-headline italic text-base font-semibold text-deep-navy mb-2">Play Games</h3>
+      <p class="text-sm text-deep-navy/65 leading-relaxed">Start with Sound Safari for a fun warm-up</p>
+    </div>
+
+    <!-- Card 2: Learn & Grow -->
+    <div class="tip-card bg-card-bg rounded-card p-6 flex flex-col items-center text-center" style="box-shadow: 0 8px 32px rgba(0,0,0,0.06);">
+      <div class="w-12 h-12 rounded-full bg-warm-camel/10 flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-warm-camel" style="font-size: 28px;">menu_book</span>
+      </div>
+      <h3 class="font-headline italic text-base font-semibold text-deep-navy mb-2">Learn &amp; Grow</h3>
+      <p class="text-sm text-deep-navy/65 leading-relaxed">Explore lessons at your own pace</p>
+    </div>
+
+    <!-- Card 3: Track Progress -->
+    <div class="tip-card bg-card-bg rounded-card p-6 flex flex-col items-center text-center" style="box-shadow: 0 8px 32px rgba(0,0,0,0.06);">
+      <div class="w-12 h-12 rounded-full bg-muted-lavender/10 flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-muted-lavender" style="font-size: 28px;">eco</span>
+      </div>
+      <h3 class="font-headline italic text-base font-semibold text-deep-navy mb-2">Track Progress</h3>
+      <p class="text-sm text-deep-navy/65 leading-relaxed">Watch your garden bloom as you practice</p>
+    </div>
+
+  </div>
+
+  <!-- CTA Button -->
+  <div class="animate-fade-in-up delay-700 flex flex-col items-center gap-4 mb-10">
+    <button class="btn-magnetic bg-sage-teal text-white font-body font-medium text-base px-10 py-3.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-teal/40 focus:ring-offset-2 focus:ring-offset-cream" style="border-radius: 12px;">
+      Start Your Journey
+    </button>
+    <a href="#" class="text-sm text-deep-navy/50 hover:text-deep-navy/70 transition-colors duration-300 font-body">
+      Skip to Dashboard
+    </a>
+  </div>
+
+  <!-- BoloBridge logo mark -->
+  <div class="animate-fade-in delay-1200 mt-auto pt-4">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BoloBridge logo">
+      <!-- Abstract bloom mark -->
+      <circle cx="18" cy="18" r="6" fill="#5F9EA0" opacity="0.7"/>
+      <ellipse cx="18" cy="10" rx="4" ry="6" fill="#5F9EA0" opacity="0.35"/>
+      <ellipse cx="18" cy="26" rx="4" ry="6" fill="#5F9EA0" opacity="0.35"/>
+      <ellipse cx="10" cy="18" rx="6" ry="4" fill="#6B8F71" opacity="0.3"/>
+      <ellipse cx="26" cy="18" rx="6" ry="4" fill="#6B8F71" opacity="0.3"/>
+      <ellipse cx="12" cy="12" rx="4" ry="5" transform="rotate(-45 12 12)" fill="#C2956B" opacity="0.25"/>
+      <ellipse cx="24" cy="12" rx="4" ry="5" transform="rotate(45 24 12)" fill="#8B7EC8" opacity="0.25"/>
+    </svg>
+  </div>
+
+</main>
+
+</body>
+</html>

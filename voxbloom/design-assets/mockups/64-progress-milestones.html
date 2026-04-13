@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leo's Milestones | BoloBridge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#c7eae1",
+              "primary-container": "#84a59d",
+              "on-secondary-fixed": "#301216",
+              "tertiary-fixed": "#e0e6c3",
+              "on-surface-variant": "#414846",
+              "on-surface": "#1b1c1a",
+              "surface-variant": "#e4e2df",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dbdad7",
+              "primary-fixed-dim": "#accec5",
+              "on-tertiary-fixed": "#191e08",
+              "surface-bright": "#fbf9f6",
+              "outline-variant": "#c1c8c5",
+              "on-secondary-fixed-variant": "#623c40",
+              "inverse-on-surface": "#f2f0ed",
+              "on-primary-fixed-variant": "#2d4c46",
+              "secondary-fixed": "#ffdadc",
+              "outline": "#717976",
+              "surface-tint": "#45645e",
+              "secondary-fixed-dim": "#eeb9bd",
+              "inverse-primary": "#accec5",
+              "secondary": "#7c5357",
+              "primary": "#45645e",
+              "background": "#fbf9f6",
+              "tertiary-container": "#9ba182",
+              "secondary-container": "#fdc7cb",
+              "on-tertiary-fixed-variant": "#444930",
+              "on-primary-fixed": "#00201b",
+              "tertiary": "#5b6146",
+              "surface-container-high": "#eae8e5",
+              "on-primary-container": "#1b3b35",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-background": "#1b1c1a",
+              "inverse-surface": "#30312f",
+              "error-container": "#ffdad6",
+              "on-primary": "#ffffff",
+              "surface-container": "#efeeeb",
+              "on-secondary-container": "#795154",
+              "tertiary-fixed-dim": "#c4caa8",
+              "surface-container-highest": "#e4e2df",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f5f3f0",
+              "surface": "#fbf9f6",
+              "on-tertiary-container": "#32381f"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #fbf9f6;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB5i39LnirpYvee6UhX4CJEhlE2T169eFdohsI0oPjDpfToNq4LycJLUvM0VcysncbNAeEO7zgCGpUUSwuNg_l-dG2DeCri1vGA81AFSQ07zEQUa1JIxtI7gnDn5dBJVW6I_BA_Wo3Ng0fRiw50ldkbyfHxMAy81LF4X1xwVdocg4w474NS6SpiR2uaShYysiWEgZSCspPUVOlWfsEgvcKsk6jjeq3P3QPLYEfaOAj3ABo1HjnuR_YZrNTkJQgoDkAdFE_AvUxTQ5tQ);
+    color: #1b1c1a;
+    font-family: "Inter", sans-serif
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.watercolor-vine {
+    background: linear-gradient(to bottom, transparent, #84a59d 15%, #c7eae1 50%, #84a59d 85%, transparent);
+    width: 2px;
+    filter: blur(0.5px)
+    }
+.serif-italic {
+    font-family: "Newsreader", serif;
+    font-style: italic
+    }</style>
+</head>
+<body class="min-h-screen">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-[#fbf9f6] dark:bg-stone-900 z-50">
+<div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+<div class="text-2xl italic font-serif text-[#45645e] dark:text-[#84a59d] serif-italic">BoloBridge</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#84a59d] transition-colors duration-300" href="#">Milestones</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#84a59d] transition-colors duration-300" href="#">Library</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#84a59d] transition-colors duration-300" href="#">Practice</a>
+<a class="text-[#45645e] dark:text-[#84a59d] font-bold border-b-2 border-[#45645e] pb-1" href="#">Profile</a>
+</div>
+<div class="flex items-center space-x-6 text-[#45645e] dark:text-[#84a59d]">
+<span class="material-symbols-outlined cursor-pointer hover:scale-95 transition-transform duration-200">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-95 transition-transform duration-200">settings</span>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-12 pb-24">
+<!-- Hero Section -->
+<header class="mb-24 relative">
+<div class="absolute -top-10 -left-10 w-48 h-48 bg-secondary-container opacity-20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<p class="label-md uppercase tracking-[0.1em] text-secondary font-bold mb-2">Progress Journal</p>
+<h1 class="text-7xl serif-italic text-on-background tracking-tighter leading-tight">Leo's Milestones</h1>
+<p class="text-xl text-on-surface-variant font-body leading-relaxed max-w-lg mt-4">Every step of the journey, celebrated.</p>
+</div>
+</header>
+<!-- Timeline Section -->
+<div class="relative max-w-[900px] mx-auto">
+<!-- Center Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full watercolor-vine opacity-40"></div>
+<div class="space-y-32 relative">
+<!-- Milestone 1: Left -->
+<div class="flex flex-col md:flex-row items-center justify-start md:justify-end w-full md:pr-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-primary-container max-w-sm w-full md:mr-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 1, 2026</span>
+<div class="w-10 h-10 flex items-center justify-center bg-primary-fixed rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="potted_plant">potted_plant</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">First Practice</h3>
+<p class="text-on-surface-variant leading-relaxed">Leo completed their very first exercise!</p>
+<div class="mt-6">
+<img class="w-16 h-16 rounded-lg opacity-80 mix-blend-multiply" data-alt="Subtle watercolor green sprout illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA30alatm_dWk1DULTfxV5HrlgQ82FzM-Qoe3qMVfwcxS_VHTvrR_Cii8QNrBq8nxkd17FVQ07bEqZQfok5Ym0AaDR2xM_klObrmRCMDpk1zrFdWmyJf1wVSSZdzmRvCrc5oL6Q5nf6yQZjOl8BXX4A90TxJI0i5MgyiO3Hr0VdLMF1SkRIQ7XkQx1czI0VGC07ThqSHOyFYRCwewjUh1kpY0V2ZOIr6v6mhCtcY3gbn3uVqIfyg22aNA5x0SRe21jdDt0mSjDz85cY"/>
+</div>
+</div>
+</div>
+<!-- Milestone 2: Right -->
+<div class="flex flex-col md:flex-row items-center justify-start w-full md:pl-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary-container border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-tertiary-container max-w-sm w-full md:ml-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 3</span>
+<div class="w-10 h-10 flex items-center justify-center bg-tertiary-fixed rounded-full text-tertiary shadow-[0_0_15px_rgba(132,165,157,0.3)]">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">First Perfect Score</h3>
+<p class="text-on-surface-variant leading-relaxed">100% on /b/ sounds!</p>
+<div class="mt-6 flex items-center gap-2">
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-full"></div>
+</div>
+<span class="text-xs font-bold text-primary">100%</span>
+</div>
+</div>
+</div>
+<!-- Milestone 3: Left -->
+<div class="flex flex-col md:flex-row items-center justify-start md:justify-end w-full md:pr-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-secondary-container max-w-sm w-full md:mr-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 5</span>
+<div class="w-10 h-10 flex items-center justify-center bg-secondary-fixed rounded-full text-secondary">
+<span class="material-symbols-outlined" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">3-Day Streak</h3>
+<p class="text-on-surface-variant leading-relaxed">Three days in a row!</p>
+<div class="mt-6">
+<div class="flex gap-1">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold text-secondary">1</div>
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold text-secondary">2</div>
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[10px] font-bold text-on-secondary">3</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Milestone 4: Right -->
+<div class="flex flex-col md:flex-row items-center justify-start w-full md:pl-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-tertiary border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-tertiary-fixed-dim max-w-sm w-full md:ml-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 8</span>
+<div class="w-10 h-10 flex items-center justify-center bg-tertiary-fixed rounded-full text-tertiary">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">Chapter Completed</h3>
+<p class="text-on-surface-variant leading-relaxed">Finished "How We Make Sounds"</p>
+<div class="mt-4 py-2 px-3 bg-surface-container-low rounded inline-block text-xs font-medium text-tertiary italic">"How We Make Sounds" — Vol. 1</div>
+</div>
+</div>
+<!-- Milestone 5: Left -->
+<div class="flex flex-col md:flex-row items-center justify-start md:justify-end w-full md:pr-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-primary-fixed max-w-sm w-full md:mr-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 12</span>
+<div class="w-12 h-12 flex items-center justify-center border-2 border-dashed border-tertiary-container rounded-full text-tertiary rotate-12">
+<span class="material-symbols-outlined" data-icon="trophy">trophy</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">Level 2 Reached</h3>
+<p class="text-on-surface-variant leading-relaxed">Earned 200 XP!</p>
+<div class="mt-6">
+<div class="inline-flex items-center gap-2 bg-tertiary-fixed px-3 py-1 rounded-full text-xs font-bold text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-sm" data-icon="stars">stars</span>
+                                LEVEL 2 RANK
+                            </div>
+</div>
+</div>
+</div>
+<!-- Milestone 6: Right -->
+<div class="flex flex-col md:flex-row items-center justify-start w-full md:pl-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary-container border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-primary-container max-w-sm w-full md:ml-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 18</span>
+<div class="w-10 h-10 flex items-center justify-center bg-primary-fixed rounded-full text-primary animate-pulse">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">Sound Master</h3>
+<p class="text-on-surface-variant leading-relaxed">Mastered 5 phonemes!</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant">/B/</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant">/P/</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant">/M/</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant">/T/</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-on-surface-variant">/D/</span>
+</div>
+</div>
+</div>
+<!-- Milestone 7: Left -->
+<div class="flex flex-col md:flex-row items-center justify-start md:justify-end w-full md:pr-[50%] relative group">
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-surface shadow-sm z-20"></div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(65,72,70,0.08)] border-l-4 border-secondary max-w-sm w-full md:mr-12 hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">March 20</span>
+<div class="w-12 h-12 flex items-center justify-center bg-secondary-container rounded-full text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+<h3 class="serif-italic text-2xl text-on-surface mb-2">10-Day Streak</h3>
+<p class="text-on-surface-variant leading-relaxed">Incredible dedication!</p>
+<div class="mt-6">
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Future Milestones (Faded Sketches) -->
+<div class="mt-40 space-y-16 opacity-30">
+<div class="flex items-center justify-center gap-8 italic text-outline font-serif">
+<div class="w-1/3 h-[1px] bg-outline-variant"></div>
+<span class="whitespace-nowrap">Looking Forward</span>
+<div class="w-1/3 h-[1px] bg-outline-variant"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-12 max-w-2xl mx-auto">
+<div class="border border-outline-variant border-dashed p-6 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" data-icon="draw">draw</span>
+<div>
+<p class="text-sm font-bold uppercase tracking-tighter">Next Milestone</p>
+<p class="serif-italic text-lg">Complete 3 modules</p>
+</div>
+</div>
+<div class="border border-outline-variant border-dashed p-6 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" data-icon="palette">palette</span>
+<div>
+<p class="text-sm font-bold uppercase tracking-tighter">Growth Goal</p>
+<p class="serif-italic text-lg">Earn 500 XP</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-[#f5f3f0] dark:bg-stone-950 border-t border-[#c1c8c5]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-7xl mx-auto">
+<div class="text-lg italic font-serif text-[#45645e] serif-italic mb-8 md:mb-0">BoloBridge</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-stone-500 dark:text-stone-500 text-xs uppercase tracking-widest font-label hover:text-[#7c5357] transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-500 text-xs uppercase tracking-widest font-label hover:text-[#7c5357] transition-colors" href="#">Terms of Service</a>
+<a class="text-stone-500 dark:text-stone-500 text-xs uppercase tracking-widest font-label hover:text-[#7c5357] transition-colors" href="#">Parent Guide</a>
+<a class="text-stone-500 dark:text-stone-500 text-xs uppercase tracking-widest font-label hover:text-[#7c5357] transition-colors" href="#">Contact Support</a>
+</div>
+<p class="text-stone-500 dark:text-stone-500 text-xs uppercase tracking-widest font-label">© 2024 BoloBridge. Nurturing every word.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#7c5732",
+              "tertiary": "#61549b",
+              "on-tertiary-fixed-variant": "#493c81",
+              "inverse-primary": "#92d2d3",
+              "on-tertiary-container": "#2e2165",
+              "primary-fixed": "#aeeef0",
+              "surface-variant": "#e4e2df",
+              "surface-container": "#efeeeb",
+              "on-secondary-fixed-variant": "#613f1d",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#cabeff",
+              "tertiary-container": "#978ad5",
+              "surface-tint": "#25686a",
+              "surface-container-low": "#f5f3f0",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "primary": "#25686a",
+              "on-tertiary-fixed": "#1c0b54",
+              "surface-container-highest": "#e4e2df",
+              "on-secondary-fixed": "#2d1600",
+              "outline-variant": "#bfc8c8",
+              "on-secondary-container": "#79542f",
+              "on-primary-fixed-variant": "#004f51",
+              "surface-dim": "#dbdad7",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdcb9d",
+              "secondary-fixed-dim": "#eebd90",
+              "on-primary-fixed": "#002021",
+              "inverse-surface": "#30312f",
+              "on-primary-container": "#003234",
+              "on-surface-variant": "#3f4849",
+              "on-surface": "#1b1c1a",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#92d2d3",
+              "surface": "#fbf9f6",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "outline": "#6f7979",
+              "surface-bright": "#fbf9f6",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#e6deff",
+              "primary-container": "#5f9ea0",
+              "background": "#fbf9f6",
+              "secondary-fixed": "#ffdcbf",
+              "surface-container-high": "#eae8e5",
+              "on-background": "#1b1c1a",
+              "inverse-on-surface": "#f2f0ed"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .grain-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#FAF8F5] dark:bg-stone-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic text-[#25686A] dark:text-[#5F9EA0]">BoloBridge</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#5F9EA0] transition-colors duration-300" href="#">Programs</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#5F9EA0] transition-colors duration-300" href="#">Methodology</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#5F9EA0] transition-colors duration-300" href="#">Resources</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#5F9EA0] transition-colors duration-300" href="#">About</a>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2 rounded-full font-medium scale-98 active:opacity-80 transition-all">Get Started</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 max-w-7xl mx-auto px-8">
+<!-- Section Header -->
+<div class="text-center mb-20">
+<span class="text-primary font-bold tracking-[0.2em] text-xs uppercase block mb-4">What Parents Say</span>
+<h2 class="text-5xl md:text-6xl font-headline italic text-on-surface leading-tight">Trusted by Families Worldwide</h2>
+</div>
+<!-- Testimonial Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Sarah M. -->
+<div class="relative bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between overflow-hidden group hover:shadow-[0_20px_40px_rgba(45,49,66,0.06)] transition-all duration-500">
+<div class="grain-texture absolute inset-0"></div>
+<div class="absolute -top-6 -left-2 text-[12rem] font-headline italic text-secondary opacity-10 select-none pointer-events-none">“</div>
+<div class="relative z-10">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body leading-relaxed text-on-surface mb-8">
+                        "BoloBridge made speech practice feel like playtime. My daughter asks to do it every day!"
+                    </p>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline italic text-xl">S</div>
+<div>
+<p class="font-bold text-primary">Sarah M.</p>
+<p class="text-sm text-outline">mother of 4-year-old</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Dr. James K. -->
+<div class="relative bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between overflow-hidden group hover:shadow-[0_20px_40px_rgba(45,49,66,0.06)] transition-all duration-500">
+<div class="grain-texture absolute inset-0"></div>
+<div class="absolute -top-6 -left-2 text-[12rem] font-headline italic text-secondary opacity-10 select-none pointer-events-none">“</div>
+<div class="relative z-10">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body leading-relaxed text-on-surface mb-8">
+                        "The screening tool helped us understand exactly where our son needed support. So grateful for this free resource."
+                    </p>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-container to-secondary flex items-center justify-center text-white font-headline italic text-xl">J</div>
+<div>
+<p class="font-bold text-secondary">Dr. James K.</p>
+<p class="text-sm text-outline">SLP</p>
+</div>
+</div>
+</div>
+<!-- Card 3: Priya R. -->
+<div class="relative bg-surface-container-lowest rounded-xl p-10 flex flex-col justify-between overflow-hidden group hover:shadow-[0_20px_40px_rgba(45,49,66,0.06)] transition-all duration-500">
+<div class="grain-texture absolute inset-0"></div>
+<div class="absolute -top-6 -left-2 text-[12rem] font-headline italic text-secondary opacity-10 select-none pointer-events-none">“</div>
+<div class="relative z-10">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary material-symbols-fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xl font-body leading-relaxed text-on-surface mb-8">
+                        "The learning modules are beautifully designed and actually educational. It's rare to find both in one app."
+                    </p>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-tertiary-container to-tertiary flex items-center justify-center text-white font-headline italic text-xl">P</div>
+<div>
+<p class="font-bold text-tertiary">Priya R.</p>
+<p class="text-sm text-outline">speech therapist</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-[#F5F3F0] dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-serif italic text-lg text-[#25686A]">BoloBridge</div>
+<p class="font-sans text-sm text-stone-500 mt-2">© 2024 BoloBridge Therapy. All rights reserved.</p>
+</div>
+<div class="flex gap-8 text-sm">
+<a class="text-stone-500 hover:text-[#25686A] transition-opacity opacity-80" href="#">Privacy Policy</a>
+<a class="text-stone-500 hover:text-[#25686A] transition-opacity opacity-80" href="#">Terms of Service</a>
+<a class="text-stone-500 hover:text-[#25686A] transition-opacity opacity-80" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#6e4a2d",
+              "on-error-container": "#671200",
+              "surface-tint": "#4f6459",
+              "secondary-fixed-dim": "#fecaa5",
+              "inverse-surface": "#0e0e0d",
+              "error-container": "#fa7150",
+              "on-surface-variant": "#5e5f5c",
+              "background": "#fbf9f6",
+              "tertiary": "#665a75",
+              "primary-dim": "#43584d",
+              "on-secondary-fixed": "#59381d",
+              "surface-container": "#efeeea",
+              "tertiary-container": "#ecdcfd",
+              "on-tertiary": "#fef6ff",
+              "on-tertiary-fixed": "#453b54",
+              "surface-variant": "#e3e3de",
+              "inverse-primary": "#e7fff1",
+              "inverse-on-surface": "#9e9d9a",
+              "on-background": "#313330",
+              "on-tertiary-fixed-variant": "#625671",
+              "primary-fixed-dim": "#c3dacc",
+              "secondary-container": "#ffdcc4",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#ffdcc4",
+              "tertiary-fixed": "#ecdcfd",
+              "on-primary-fixed-variant": "#4b6055",
+              "tertiary-dim": "#5a4e69",
+              "error-dim": "#821a01",
+              "surface-container-high": "#e9e8e4",
+              "surface-dim": "#dadad6",
+              "on-secondary": "#fff7f4",
+              "error": "#aa371c",
+              "secondary-dim": "#704b2e",
+              "tertiary-fixed-dim": "#deceee",
+              "on-primary-fixed": "#2f443a",
+              "on-primary": "#e7fff0",
+              "on-primary-container": "#42564c",
+              "primary": "#4f6459",
+              "secondary": "#7d5739",
+              "on-surface": "#313330",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e3e3de",
+              "primary-container": "#d1e8da",
+              "on-secondary-fixed-variant": "#795336",
+              "outline-variant": "#b2b2ae",
+              "outline": "#7a7b78",
+              "surface-container-low": "#f5f3f0",
+              "primary-fixed": "#d1e8da",
+              "surface": "#fbf9f6",
+              "on-error": "#fff7f6",
+              "on-tertiary-container": "#584d67"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bear-gradient {
+            background: radial-gradient(circle at 30% 30%, #fbf9f6 0%, #d1e8da 100%);
+        }
+        .pedestal-glow {
+            background: radial-gradient(50% 50% at 50% 50%, #ffdcc4 0%, rgba(251, 249, 246, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6]/80 dark:bg-[#313330]/80 backdrop-blur-md shadow-[0_12px_32px_rgba(49,51,48,0.05)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#4f6459]/5 transition-colors duration-300 p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined text-[#4f6459] dark:text-[#d1e8da]">arrow_back</span>
+</button>
+<h1 class="font-['Newsreader'] italic text-[#4f6459] dark:text-[#d1e8da] text-2xl tracking-tight">BoloBridge</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:text-[#4f6459] transition-colors duration-300 font-label text-sm uppercase tracking-wider" href="#">Gallery</a>
+<a class="text-[#4f6459] font-bold border-b-2 border-[#4f6459] font-label text-sm uppercase tracking-wider" href="#">Studio</a>
+<a class="text-[#313330]/60 dark:text-[#fbf9f6]/60 hover:text-[#4f6459] transition-colors duration-300 font-label text-sm uppercase tracking-wider" href="#">Stories</a>
+</nav>
+</div>
+<button class="hover:bg-[#4f6459]/5 transition-colors duration-300 p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined text-[#4f6459] dark:text-[#d1e8da]">close</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row pt-20">
+<!-- LEFT: Avatar Preview (60%) -->
+<section class="w-full md:w-[60%] h-[512px] md:h-auto flex flex-col items-center justify-center relative bg-surface overflow-hidden">
+<!-- Atmospheric Lighting/Shadows -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/20 rounded-full blur-[120px]"></div>
+</div>
+<!-- Pedestal -->
+<div class="absolute bottom-20 md:bottom-32 w-80 h-12 pedestal-glow rounded-[100%] opacity-60"></div>
+<!-- Abstract Geometric Bear -->
+<div class="relative z-10 flex flex-col items-center">
+<!-- Body -->
+<div class="w-64 h-64 md:w-80 md:h-80 bear-gradient rounded-full shadow-[0_32px_64px_rgba(79,100,89,0.15)] relative flex items-center justify-center">
+<!-- Head -->
+<div class="absolute -top-12 md:-top-16 w-40 h-40 md:w-48 md:h-48 bear-gradient rounded-full shadow-[0_16px_32px_rgba(79,100,89,0.1)] flex items-center justify-center">
+<!-- Ears -->
+<div class="absolute -top-4 -left-4 w-12 h-12 md:w-16 md:h-16 bear-gradient rounded-full"></div>
+<div class="absolute -top-4 -right-4 w-12 h-12 md:w-16 md:h-16 bear-gradient rounded-full"></div>
+<!-- Face (Minimalist) -->
+<div class="flex gap-6 mt-4">
+<div class="w-3 h-3 bg-on-surface-variant rounded-full opacity-60"></div>
+<div class="w-3 h-3 bg-on-surface-variant rounded-full opacity-60"></div>
+</div>
+</div>
+<!-- Ambient Glow Overlay -->
+<div class="absolute inset-0 rounded-full border-[8px] border-white/20 blur-sm"></div>
+</div>
+</div>
+<!-- Hint Text -->
+<div class="absolute bottom-12 text-center px-6">
+<p class="font-headline italic text-lg text-primary/70">Your companion is waiting for a new look.</p>
+</div>
+</section>
+<!-- RIGHT: Customization Panel (40%) -->
+<section class="w-full md:w-[40%] bg-surface-container-low md:shadow-[-12px_0_32px_rgba(49,51,48,0.03)] flex flex-col h-[calc(100vh-80px)] overflow-hidden">
+<div class="p-8 md:p-12 overflow-y-auto custom-scrollbar flex flex-col h-full">
+<header class="mb-12">
+<h2 class="font-headline italic text-4xl md:text-5xl text-on-surface tracking-tight mb-2">Design Your Companion</h2>
+<div class="w-12 h-1 bg-secondary rounded-full"></div>
+</header>
+<!-- Color Palette Selection -->
+<div class="mb-12">
+<h3 class="font-label text-xs uppercase tracking-[0.15em] text-on-surface/50 mb-6">Color Palette</h3>
+<div class="grid grid-cols-5 gap-4">
+<!-- Sage Teal (Selected) -->
+<button class="relative group outline-none">
+<div class="w-full aspect-square bg-[#4f6459] rounded-full ring-2 ring-offset-4 ring-[#4f6459] transition-all duration-300"></div>
+</button>
+<!-- Warm Camel -->
+<button class="relative group outline-none">
+<div class="w-full aspect-square bg-[#7d5739] rounded-full ring-0 ring-offset-0 ring-[#7d5739] hover:ring-2 hover:ring-offset-2 transition-all duration-300"></div>
+</button>
+<!-- Soft Lavender -->
+<button class="relative group outline-none">
+<div class="w-full aspect-square bg-[#665a75] rounded-full ring-0 ring-offset-0 ring-[#665a75] hover:ring-2 hover:ring-offset-2 transition-all duration-300"></div>
+</button>
+<!-- Coral -->
+<button class="relative group outline-none">
+<div class="w-full aspect-square bg-[#aa371c] rounded-full ring-0 ring-offset-0 ring-[#aa371c] hover:ring-2 hover:ring-offset-2 transition-all duration-300"></div>
+</button>
+<!-- Muted Yellow -->
+<button class="relative group outline-none">
+<div class="w-full aspect-square bg-[#ffdcc4] rounded-full ring-0 ring-offset-0 ring-[#ffdcc4] hover:ring-2 hover:ring-offset-2 transition-all duration-300"></div>
+</button>
+</div>
+</div>
+<!-- Accessories Selection -->
+<div class="mb-12">
+<h3 class="font-label text-xs uppercase tracking-[0.15em] text-on-surface/50 mb-6">Accessories</h3>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl hover:bg-white transition-all duration-300 group">
+<span class="material-symbols-outlined text-3xl text-primary/60 group-hover:text-primary transition-colors">eyeglasses</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-3 text-on-surface/40 group-hover:text-on-surface">Glasses</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl hover:bg-white transition-all duration-300 group">
+<span class="material-symbols-outlined text-3xl text-primary/60 group-hover:text-primary transition-colors">potted_plant</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-3 text-on-surface/40 group-hover:text-on-surface">Hats</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-primary-container/30 border-2 border-primary/10 rounded-xl hover:bg-white transition-all duration-300 group">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">texture</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-3 text-primary font-bold">Scarf</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl hover:bg-white transition-all duration-300 group">
+<span class="material-symbols-outlined text-3xl text-primary/60 group-hover:text-primary transition-colors">backpack</span>
+<span class="font-label text-[10px] uppercase tracking-wider mt-3 text-on-surface/40 group-hover:text-on-surface">Backpack</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-auto pt-8">
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-label text-sm uppercase tracking-[0.2em] font-semibold hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 active:scale-[0.98]">
+                        Save Changes
+                    </button>
+<p class="text-center mt-6 text-on-surface/30 font-label text-[10px] uppercase tracking-widest">Saved to BoloBridge Studio</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="bg-[#f5f3f0] dark:bg-[#3c3e3b] w-full py-8 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
+<p class="font-['Inter'] text-xs tracking-wider uppercase text-[#313330]/50 dark:text-[#fbf9f6]/50 mb-4 md:mb-0">
+                © 2024 BoloBridge Studio. Handcrafted for the Analog Soul.
+            </p>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs tracking-wider uppercase text-[#313330]/50 dark:text-[#fbf9f6]/50 hover:text-[#4f6459] transition-colors" href="#">Privacy</a>
+<a class="font-['Inter'] text-xs tracking-wider uppercase text-[#313330]/50 dark:text-[#fbf9f6]/50 hover:text-[#4f6459] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs tracking-wider uppercase text-[#313330]/50 dark:text-[#fbf9f6]/50 hover:text-[#4f6459] transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</body></html>

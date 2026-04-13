@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#93452a",
+              "on-primary-container": "#fffbff",
+              "secondary": "#8f4c29",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#343029",
+              "on-primary-fixed": "#390c00",
+              "on-error-container": "#93000a",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#773a18",
+              "tertiary-fixed-dim": "#dbc39b",
+              "secondary-fixed-dim": "#ffb693",
+              "surface-tint": "#96472c",
+              "surface-variant": "#e9e1d8",
+              "on-tertiary-fixed": "#261a01",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#b25d40",
+              "inverse-primary": "#ffb59d",
+              "surface-container-highest": "#e9e1d8",
+              "background": "#fff8f2",
+              "tertiary": "#6b5a38",
+              "on-surface-variant": "#55433d",
+              "on-secondary-fixed": "#351000",
+              "tertiary-container": "#85724f",
+              "surface-container": "#f5ede3",
+              "on-surface": "#1e1b15",
+              "on-tertiary": "#ffffff",
+              "secondary-container": "#fda77c",
+              "primary-fixed-dim": "#ffb59d",
+              "on-secondary-fixed-variant": "#723614",
+              "on-tertiary-fixed-variant": "#554425",
+              "outline-variant": "#dac1ba",
+              "outline": "#88726c",
+              "surface-container-low": "#fbf2e8",
+              "secondary-fixed": "#ffdbcb",
+              "surface": "#fff8f2",
+              "primary-fixed": "#ffdbd0",
+              "tertiary-fixed": "#f8dfb5",
+              "surface-bright": "#fff8f2",
+              "inverse-on-surface": "#f8f0e6",
+              "on-background": "#1e1b15",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#fffbff",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "surface-container-high": "#efe7dd",
+              "surface-dim": "#e0d9cf",
+              "on-primary-fixed-variant": "#783117"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grainy-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen relative overflow-x-hidden">
+<div class="fixed inset-0 grainy-bg z-0"></div>
+<!-- Decorative Corner Elements -->
+<div class="absolute -top-20 -left-20 w-80 h-80 opacity-20 pointer-events-none transform -rotate-12">
+<img alt="" class="w-full h-full object-contain" data-alt="Mediterranean watercolor pottery pattern illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEuH5lmNgP5M65Tj5qGnQFGoe-jC8KsxZAj-M_5Kao-IxCLth8LuKhBFscSo0K5smiFz72UV3A8fGDS848-0B6brIIjzS_lIed8BggKjxfFueX0io3yMjLfRjgywD9CR7dnVlHYJR7YP5P0UhR1xlh3R0MO5ZCTFOVDb5kGorKeFfLcbe14KX_GGqwqsW8JhwdAie0glZ42gI5B-eIE7YcEcDHouqTE4sJpg5Rfr7OvRX_fwI15m10co_5coyqc-vMgaXVTd4ZtCSI"/>
+</div>
+<div class="absolute -bottom-20 -right-20 w-96 h-96 opacity-15 pointer-events-none transform rotate-45">
+<img alt="" class="w-full h-full object-contain" data-alt="Terracotta tile patterns in watercolor style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANsYIy3xiSMffmaCFxm01AL0pWYPn8aGcttRuXN5VWIyHPqUeIDuDlpdOL2IJsa0qkadZn8EK4Rx7J8mcLbiUtU4wLmb5wLZq22_KKQoK4tKQMompXE1bcfCEz5Mj0MBCnUOP8d_L7TCQTQTHmZHz1mpPZBReRZjc9ZdeHsuTE4N0wh8gEYGEXXI5bi1pa3MCtwIubRLzplnNm92lGuELqN2NQJz8zJrS-9iYbGlbuFgGbLdZsIW3ERUTFeMp4_rZQFXKLt8lRl_xM"/>
+</div>
+<!-- Top Navigation (Shell Implementation) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fff8f2]/70 backdrop-blur-xl shadow-[0_40px_60px_-5px_rgba(30,27,21,0.05)]">
+<div class="text-2xl font-['Newsreader'] italic text-primary">SpeechAtelier</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-tertiary hover:bg-[#e9e1d8]/50 transition-colors duration-300 rounded-full active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</nav>
+<main class="relative z-10 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+<header class="text-center mb-16">
+<h1 class="font-headline italic text-5xl md:text-6xl text-on-surface leading-tight mb-4 tracking-tight">Create Your Child's Profile</h1>
+<p class="text-tertiary text-lg md:text-xl font-medium max-w-xl mx-auto">This helps us personalize their speech journey</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Form Section -->
+<div class="lg:col-span-8 space-y-8">
+<section class="bg-surface-container-lowest p-8 md:p-10 rounded-[2rem] shadow-sm border-none">
+<div class="space-y-10">
+<!-- Avatar Selection -->
+<div>
+<label class="block text-sm font-label tracking-wider uppercase text-tertiary mb-6">Choose an Avatar</label>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
+<button class="group flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-secondary-fixed flex items-center justify-center transition-all duration-300 ring-offset-4 hover:ring-2 hover:ring-primary group-focus:ring-2 group-focus:ring-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="pets">pets</span>
+</div>
+<span class="text-xs font-medium text-tertiary">Bear</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-highest flex items-center justify-center transition-all duration-300 ring-offset-4 hover:ring-2 hover:ring-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="owl">owl</span>
+</div>
+<span class="text-xs font-medium text-tertiary">Owl</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-300 ring-offset-4 hover:ring-2 hover:ring-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="cruelty_free">cruelty_free</span>
+</div>
+<span class="text-xs font-medium text-tertiary">Fox</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-300 ring-offset-4 hover:ring-2 hover:ring-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="rabbit">pets</span>
+</div>
+<span class="text-xs font-medium text-tertiary">Rabbit</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-300 ring-offset-4 hover:ring-2 hover:ring-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="deer">deblur</span>
+</div>
+<span class="text-xs font-medium text-tertiary">Deer</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-300 ring-offset-4 hover:ring-2 hover:ring-primary shadow-inner">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-icon="flutter_dash">flutter_dash</span>
+</div>
+<span class="text-xs font-medium text-tertiary">Butterfly</span>
+</button>
+</div>
+</div>
+<!-- Basic Info -->
+<div class="space-y-8">
+<div class="group">
+<label class="block text-sm font-label tracking-wider uppercase text-tertiary mb-2" for="child-name">Child's First Name</label>
+<input class="w-full bg-transparent border-none border-b-2 border-outline-variant/30 py-3 text-2xl font-headline italic placeholder:text-outline-variant focus:ring-0 focus:border-primary transition-all duration-300 outline-none" id="child-name" placeholder="e.g. Mateo" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-label tracking-wider uppercase text-tertiary mb-4">How old are they?</label>
+<div class="flex flex-wrap gap-3">
+<!-- Age Pills -->
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">3</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">4</button>
+<button class="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold shadow-md ring-2 ring-primary-container ring-offset-2 active:scale-95">5</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">6</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">7</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">8</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">9</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant/50 text-tertiary hover:border-primary hover:text-primary transition-all duration-300 font-medium active:scale-95">10+</button>
+</div>
+</div>
+</div>
+<!-- Language & Concerns -->
+<div class="space-y-8">
+<div class="relative">
+<label class="block text-sm font-label tracking-wider uppercase text-tertiary mb-2">Primary Language</label>
+<div class="relative group">
+<select class="w-full appearance-none bg-surface-container-high rounded-xl px-4 py-4 pr-10 text-on-surface font-medium focus:ring-1 focus:ring-primary border-none transition-all duration-300">
+<option>English</option>
+<option>Spanish</option>
+<option>French</option>
+<option>Italian</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-label tracking-wider uppercase text-tertiary mb-4">Focus Areas (Select all that apply)</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-full border-2 border-primary text-primary font-bold bg-primary/5 active:scale-95 transition-all">Pronunciation</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-tertiary hover:border-primary hover:text-primary transition-all active:scale-95">Vocabulary</button>
+<button class="px-4 py-2 rounded-full border-2 border-primary text-primary font-bold bg-primary/5 active:scale-95 transition-all">Stuttering</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-tertiary hover:border-primary hover:text-primary transition-all active:scale-95">Social Skills</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-tertiary hover:border-primary hover:text-primary transition-all active:scale-95">Reading Aloud</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
+<div class="flex items-center gap-3 text-tertiary/80 bg-surface-container p-3 rounded-2xl">
+<span class="material-symbols-outlined text-primary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-sm font-medium">Your data is stored securely and never shared with 3rd parties.</span>
+</div>
+<button class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-br from-primary to-primary-container text-white font-bold text-lg shadow-[0_20px_40px_-10px_rgba(147,69,42,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(147,69,42,0.4)] transition-all duration-500 active:scale-95">
+                        Start the Journey
+                    </button>
+</div>
+</div>
+<!-- Side Aesthetic Card -->
+<div class="lg:col-span-4 hidden lg:block">
+<div class="sticky top-32 space-y-6">
+<div class="bg-primary/5 rounded-[2.5rem] p-8 relative overflow-hidden group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700"></div>
+<h3 class="font-headline italic text-3xl text-primary mb-4 leading-snug">Why details matter?</h3>
+<p class="text-tertiary leading-relaxed">
+                            Each speech journey is as unique as a handmade ceramic. By knowing Mateo's age and focus areas, we tailor exercises to his developmental stage and interests.
+                        </p>
+<div class="mt-8 flex justify-center">
+<img alt="" class="w-32 h-32 object-contain" data-alt="Cute 3D fox emoji representating an avatar selection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgk9VL12uUAwai5p0daXTKXQfMl8-xMq03Vg1-Gfbt-EKtjNoyfdzGmGkudgrVkhlCmsCoVXPpjjlpe78dKNmMgJT1ylQQuNDsnnfCrmNeASylb-bP0c4-F5wvYTrxWmbkJAen15QmHMEaqc4Boh5od3ZKhIyoaQA762Pi30k8qu9-PXAc9MAAJc6rpzHxiMNjmOg7CZfgVOJt8ASBBEFyK_b3AhVTqX7t5NvIRyZWBHGjhyTAk8Q2jEGSeefynEG7VDr6DZeP1Ihj"/>
+</div>
+</div>
+<div class="border border-outline-variant/20 rounded-[2.5rem] p-8">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-bold text-on-surface">Trusted by Families</span>
+</div>
+<p class="text-sm text-tertiary">
+                            "The personalization made all the difference. My daughter feels like the garden grows just for her." — Elena R.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only Shell) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-[#fff8f2]/80 backdrop-blur-2xl rounded-t-[2rem]">
+<div class="flex flex-col items-center justify-center text-[#6b5a38] p-3 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Garden</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b5a38] p-3 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Lessons</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#6b5a38] p-3 active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Progress</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#93452a] to-[#b25d40] text-white rounded-2xl p-3 shadow-lg active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="face_6" style="font-variation-settings: 'FILL' 1;">face_6</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Profile</span>
+</div>
+</nav>
+</body></html>

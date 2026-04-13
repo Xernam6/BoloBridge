@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data &amp; Privacy | BoloBridge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffa086",
+              "surface-container-highest": "#e3e3de",
+              "on-primary-fixed": "#304437",
+              "background": "#fbf9f6",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e9e8e4",
+              "secondary-container": "#ffdbcd",
+              "primary-fixed": "#d1e8d7",
+              "on-secondary-fixed": "#63321b",
+              "on-primary": "#e7ffed",
+              "on-background": "#313330",
+              "tertiary-dim": "#982e0d",
+              "surface-bright": "#fbf9f6",
+              "primary-dim": "#43584b",
+              "tertiary": "#a83a19",
+              "on-secondary": "#fff7f5",
+              "secondary-fixed": "#ffdbcd",
+              "secondary-dim": "#7b452d",
+              "on-tertiary-fixed": "#440c00",
+              "on-surface-variant": "#5e5f5c",
+              "secondary": "#8a5037",
+              "primary-container": "#d1e8d7",
+              "on-secondary-container": "#7a432b",
+              "on-tertiary-fixed-variant": "#7a1d00",
+              "surface-container": "#efeeea",
+              "inverse-primary": "#e2fae8",
+              "primary": "#4f6456",
+              "surface-variant": "#e3e3de",
+              "on-surface": "#313330",
+              "on-tertiary-container": "#6b1800",
+              "surface": "#fbf9f6",
+              "tertiary-fixed-dim": "#ff8b6a",
+              "error-container": "#f56965",
+              "on-primary-fixed-variant": "#4b6053",
+              "outline": "#7a7b78",
+              "on-error-container": "#65000b",
+              "secondary-fixed-dim": "#ffc8b3",
+              "inverse-on-surface": "#9e9d9a",
+              "on-secondary-fixed-variant": "#854d34",
+              "error": "#ac3434",
+              "surface-tint": "#4f6456",
+              "tertiary-container": "#ffa086",
+              "on-primary-container": "#425649",
+              "surface-dim": "#dadad6",
+              "surface-container-low": "#f5f3f0",
+              "on-error": "#fff7f6",
+              "outline-variant": "#b2b2ae",
+              "primary-fixed-dim": "#c3dac9",
+              "on-tertiary": "#fff7f5",
+              "inverse-surface": "#0e0e0d",
+              "error-dim": "#70030f"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCyNKW99g34yHhCRzzBCyl4-StKkrak0GqwLKhg5MK7w-6Qn6tllh7YnvaZsxns9taxpa9ljoprhKDGhWN7GikXcaIRIow8YknkbpLIr2OiJ_CaTOcnA1CAT9NmoIcM6chVKt70wO0FuXW2X5TtwnkuKsk_sfrkasCvpAhIlO9YbYenLXj5rA1P6-ol78bIi1u4EodcbvOu2xtl07_57UhL8Np1amp_nBgft_GUO8ugnd6Ksa4OXsciioZw0pGaDeOgd3iLlKfFAO-3)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.watercolor-bg {
+    background: linear-gradient(135deg, #d1e8d7 0%, #fbf9f6 100%)
+    }</style>
+</head>
+<body class="bg-background font-body text-on-background selection:bg-primary-container">
+<div class="film-grain"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f6] dark:bg-[#1a1c19] backdrop-blur-md opacity-90">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-xl mx-auto">
+<div class="text-2xl font-serif italic text-[#4f6456] dark:text-[#d1e8d7]">BoloBridge</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#768C7D] dark:text-[#b2b2ae] hover:text-[#4f6456] transition-colors duration-300 font-label text-xs uppercase tracking-widest" href="#">Archive</a>
+<a class="text-[#4f6456] dark:text-[#d1e8d7] border-b border-[#4f6456] pb-1 font-label text-xs uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-[#768C7D] dark:text-[#b2b2ae] hover:text-[#4f6456] transition-colors duration-300 font-label text-xs uppercase tracking-widest" href="#">Settings</a>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="account_circle">account_circle</span>
+</nav>
+</div>
+<div class="bg-[#efeeea] dark:bg-[#2d2f2c] h-[1px] w-full"></div>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-[700px] mx-auto">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="lock">lock</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] font-semibold">Privacy First Architecture</span>
+</div>
+<h1 class="font-headline italic text-5xl md:text-6xl text-on-background leading-tight mb-6">Your Data, Your Control</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-[600px]">
+                BoloBridge stores everything locally on your device. Here's what we collect and how you control it.
+            </p>
+</section>
+<div class="flex flex-col gap-12">
+<!-- Card 1: What We Store -->
+<div class="bg-surface-container-low rounded-xl p-8 transition-transform hover:-rotate-1 duration-500">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-1.5 h-6 bg-primary rounded-full"></div>
+<h2 class="font-headline italic text-2xl text-on-background">What We Store</h2>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="record_voice_over">record_voice_over</span>
+<div>
+<p class="font-medium text-on-surface">Practice recordings</p>
+<p class="text-sm text-on-surface-variant font-label uppercase tracking-wider mt-1">Local Only</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="analytics">analytics</span>
+<div>
+<p class="font-medium text-on-surface">Screening scores</p>
+<p class="text-sm text-on-surface-variant font-label uppercase tracking-wider mt-1">Local Only</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="trending_up">trending_up</span>
+<div>
+<p class="font-medium text-on-surface">Exercise progress</p>
+<p class="text-sm text-on-surface-variant font-label uppercase tracking-wider mt-1">Local Only</p>
+</div>
+</li>
+</ul>
+<div class="mt-10 p-4 bg-primary-container/30 border border-primary/10 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary font-bold" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="text-on-primary-container font-semibold text-sm">No data is sent to external servers</p>
+</div>
+</div>
+<!-- Card 2: Export Your Data -->
+<div class="bg-surface-container-low rounded-xl p-8 transition-transform hover:rotate-1 duration-500">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-1.5 h-6 bg-secondary rounded-full"></div>
+<h2 class="font-headline italic text-2xl text-on-background">Export Your Data</h2>
+</div>
+<p class="text-on-surface-variant mb-8">Download everything in one file for your records or professional consultation.</p>
+<div class="mb-8">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-4">Select Format</label>
+<div class="flex gap-4">
+<button class="flex-1 py-3 px-4 border border-outline-variant/30 rounded-lg font-medium text-sm hover:bg-surface-container-high transition-colors">JSON</button>
+<button class="flex-1 py-3 px-4 border border-primary bg-primary text-on-primary rounded-lg font-medium text-sm">CSV</button>
+<button class="flex-1 py-3 px-4 border border-outline-variant/30 rounded-lg font-medium text-sm hover:bg-surface-container-high transition-colors">PDF Report</button>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<button class="w-full py-4 bg-primary text-on-primary font-headline italic text-lg rounded-md shadow-sm hover:shadow-lg transition-all active:opacity-70">
+                        Export All Data
+                    </button>
+<p class="text-[10px] font-label uppercase tracking-widest text-outline">Estimated size: ~2.4 MB</p>
+</div>
+</div>
+<!-- Card 3: Delete Your Data -->
+<div class="bg-surface-container-lowest border border-error/5 rounded-xl p-8">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-1.5 h-6 bg-tertiary rounded-full"></div>
+<h2 class="font-headline italic text-2xl text-on-background">Delete Your Data</h2>
+</div>
+<p class="text-on-surface-variant mb-6">Permanently remove all data from this device. This includes your progress, history, and recordings.</p>
+<div class="p-4 bg-error-container/10 border-l-4 border-error mb-8">
+<div class="flex items-center gap-2 text-error mb-1">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+<p class="font-bold text-xs uppercase tracking-wider">Warning</p>
+</div>
+<p class="text-error font-semibold text-sm">This action cannot be undone.</p>
+</div>
+<div class="space-y-6">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-tertiary focus:ring-tertiary" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">I understand this is permanent</span>
+</label>
+<button class="w-full flex items-center justify-center gap-2 py-4 border-2 border-tertiary text-tertiary font-headline italic text-lg rounded-md hover:bg-tertiary/5 transition-all">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+                        Delete All Data
+                    </button>
+</div>
+</div>
+<!-- Card 4: Privacy Promise -->
+<div class="bg-surface-container-low rounded-xl p-8 relative overflow-hidden">
+<!-- Abstract "lavender" watercolor accent element -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="flex items-center gap-2 mb-8">
+<div class="w-1.5 h-6 bg-secondary-dim rounded-full"></div>
+<h2 class="font-headline italic text-2xl text-on-background">Privacy Promise</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">No ads, ever</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">No tracking cookies</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">No data sold to third parties</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">COPPA compliant</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">Open source</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Information -->
+<footer class="mt-24 pt-12 border-t border-surface-container-high">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-center md:text-left">
+<p class="font-serif italic text-primary text-xl mb-1">BoloBridge</p>
+<p class="text-[10px] font-label uppercase tracking-widest text-outline-variant">© 2024 BoloBridge Archive. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms</a>
+<a class="text-xs font-label uppercase tracking-widest text-primary underline decoration-tertiary" href="#">Privacy</a>
+<a class="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

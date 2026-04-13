@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - Clinician Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "cream": "#FAF8F5",
+              "sage-teal": "#5F9EA0",
+              "sage-teal-dark": "#4D8486",
+              "warm-camel": "#C2956B",
+              "muted-lavender": "#8B7EC8",
+              "deep-navy": "#2D3142",
+              "soft-coral": "#D16D6D",
+              "sage-green": "#6B8F71",
+              "card-bg": "#F5F1EB",
+              "card-bg-hover": "#F0EBE3",
+            },
+            fontFamily: {
+              "headline": ["Lora"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem",
+              "card": "1.25rem",
+              "card-lg": "1.5rem",
+              "btn": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAzs0ewjXYrh0qWjZ4wzYB0yin9xMatsFiJ-EZsy9uE5XEhsbVrjASvU4w_QZ4AWlW0v4VplKHi6PTTWTPL26v3hYy9K-eOauLW42Y-c_xMw9haj4hlqgyk0bpxs4Xd2b0kp6m9Hu-BJUC_QkpN9IBkZnL3QoGbnkG038pWUH-QqJ4eJZA6w1qfIojbM7hpXMjj351dKwrTxa30fxeiXbJ-yffuFXbuonG2LT0o-UU6i8FgVDdUBf69JublMA65Ixci56o7K5Wda9uE);
+}
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+</style>
+</head>
+<body class="bg-cream text-deep-navy font-body min-h-screen overflow-x-hidden selection:bg-sage-teal/20 selection:text-deep-navy">
+<div class="film-grain"></div>
+
+<!-- Top Navigation Bar -->
+<header class="bg-white/80 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.04)] sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-[1440px] mx-auto">
+    <div class="flex items-center gap-10">
+        <a href="#" class="font-headline italic text-2xl text-sage-teal font-semibold tracking-tight">BoloBridge</a>
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#" class="font-body text-sm font-medium text-deep-navy/90 hover:text-sage-teal transition-colors duration-500">Dashboard</a>
+            <a href="#" class="font-body text-sm font-medium text-deep-navy/50 hover:text-sage-teal transition-colors duration-500">Patients</a>
+            <a href="#" class="font-body text-sm font-medium text-deep-navy/50 hover:text-sage-teal transition-colors duration-500">Schedule</a>
+            <a href="#" class="font-body text-sm font-medium text-deep-navy/50 hover:text-sage-teal transition-colors duration-500">Reports</a>
+            <a href="#" class="font-body text-sm font-medium text-deep-navy/50 hover:text-sage-teal transition-colors duration-500">Resources</a>
+        </nav>
+    </div>
+    <div class="flex items-center gap-5">
+        <button class="relative p-2 text-deep-navy/50 hover:text-sage-teal hover:-translate-y-0.5 hover:shadow-md rounded-btn transition-all duration-500">
+            <span class="material-symbols-outlined text-[22px]">notifications</span>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-soft-coral rounded-full"></span>
+        </button>
+        <button class="relative p-2 text-deep-navy/50 hover:text-sage-teal hover:-translate-y-0.5 hover:shadow-md rounded-btn transition-all duration-500">
+            <span class="material-symbols-outlined text-[22px]">help_outline</span>
+        </button>
+        <div class="flex items-center gap-3 pl-4 border-l border-deep-navy/10">
+            <div class="text-right hidden sm:block">
+                <p class="font-body text-sm font-semibold text-deep-navy">Dr. Sarah Chen</p>
+                <p class="font-body text-xs text-deep-navy/50">SLP, CCC-SLP</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-sage-teal/15 flex items-center justify-center">
+                <span class="font-body font-semibold text-sage-teal text-sm">SC</span>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+<main class="max-w-[1440px] mx-auto px-8 py-24">
+
+    <!-- Page Header -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+            <p class="font-body text-sm font-medium text-sage-teal mb-2">Good morning, Dr. Chen</p>
+            <h1 class="font-headline italic text-4xl md:text-5xl text-deep-navy leading-tight">Clinician Dashboard</h1>
+            <p class="font-body text-deep-navy/50 mt-3 text-base">Friday, March 21, 2026</p>
+        </div>
+        <div class="flex gap-3">
+            <button class="px-5 py-3 bg-white text-deep-navy font-body font-medium text-sm rounded-btn border border-deep-navy/10 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-500 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                Export
+            </button>
+            <button class="px-5 py-3 bg-sage-teal text-white font-body font-medium text-sm rounded-btn hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(95,158,160,0.3)] transition-all duration-500 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">add</span>
+                New Patient
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats Row -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <!-- Active Patients -->
+        <div class="bg-card-bg rounded-card-lg p-7 shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-11 h-11 rounded-card bg-sage-teal/12 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sage-teal text-[22px]">group</span>
+                </div>
+                <span class="font-body text-xs font-medium text-sage-green bg-sage-green/10 px-2.5 py-1 rounded-full">+3 this month</span>
+            </div>
+            <p class="font-headline italic text-3xl text-deep-navy mb-1">24</p>
+            <p class="font-body text-sm text-deep-navy/50">Active Patients</p>
+        </div>
+        <!-- Sessions This Week -->
+        <div class="bg-card-bg rounded-card-lg p-7 shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-11 h-11 rounded-card bg-muted-lavender/12 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-muted-lavender text-[22px]">event</span>
+                </div>
+                <span class="font-body text-xs font-medium text-deep-navy/40">4 remaining</span>
+            </div>
+            <p class="font-headline italic text-3xl text-deep-navy mb-1">18</p>
+            <p class="font-body text-sm text-deep-navy/50">Sessions This Week</p>
+        </div>
+        <!-- Avg. Progress -->
+        <div class="bg-card-bg rounded-card-lg p-7 shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-11 h-11 rounded-card bg-warm-camel/12 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-warm-camel text-[22px]">trending_up</span>
+                </div>
+                <span class="font-body text-xs font-medium text-sage-green bg-sage-green/10 px-2.5 py-1 rounded-full">+5% vs last week</span>
+            </div>
+            <p class="font-headline italic text-3xl text-deep-navy mb-1">72%</p>
+            <p class="font-body text-sm text-deep-navy/50">Avg. Progress</p>
+        </div>
+        <!-- Pending Reports -->
+        <div class="bg-card-bg rounded-card-lg p-7 shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500">
+            <div class="flex items-center justify-between mb-5">
+                <div class="w-11 h-11 rounded-card bg-soft-coral/12 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-soft-coral text-[22px]">description</span>
+                </div>
+                <span class="font-body text-xs font-medium text-soft-coral bg-soft-coral/10 px-2.5 py-1 rounded-full">2 overdue</span>
+            </div>
+            <p class="font-headline italic text-3xl text-deep-navy mb-1">5</p>
+            <p class="font-body text-sm text-deep-navy/50">Pending Reports</p>
+        </div>
+    </section>
+
+    <!-- Main Content Grid: Patient List + Sidebar -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Patient List Section -->
+        <section class="lg:col-span-8 space-y-6">
+            <div class="flex items-center justify-between">
+                <h2 class="font-headline italic text-2xl text-deep-navy">Your Patients</h2>
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-deep-navy/30 text-[18px]">search</span>
+                        <input type="text" placeholder="Search patients..." class="pl-9 pr-4 py-2.5 bg-white border border-deep-navy/10 rounded-btn font-body text-sm text-deep-navy placeholder:text-deep-navy/30 focus:outline-none focus:border-sage-teal/40 focus:ring-2 focus:ring-sage-teal/10 transition-all duration-500 w-56"/>
+                    </div>
+                    <button class="p-2.5 bg-white border border-deep-navy/10 rounded-btn text-deep-navy/50 hover:-translate-y-0.5 hover:shadow-md transition-all duration-500">
+                        <span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Patient Cards -->
+            <div class="bg-white rounded-card-lg shadow-[0_8px_32px_rgba(0,0,0,0.06)] overflow-hidden">
+                <!-- Table Header -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-4 border-b border-deep-navy/5 bg-cream/50">
+                    <div class="col-span-3 font-body text-xs font-semibold text-deep-navy/40 uppercase tracking-wider">Patient</div>
+                    <div class="col-span-2 font-body text-xs font-semibold text-deep-navy/40 uppercase tracking-wider">Diagnosis</div>
+                    <div class="col-span-2 font-body text-xs font-semibold text-deep-navy/40 uppercase tracking-wider">Last Session</div>
+                    <div class="col-span-3 font-body text-xs font-semibold text-deep-navy/40 uppercase tracking-wider">Progress</div>
+                    <div class="col-span-2 font-body text-xs font-semibold text-deep-navy/40 uppercase tracking-wider text-right">Status</div>
+                </div>
+
+                <!-- Patient 1 -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-5 border-b border-deep-navy/5 hover:bg-card-bg/40 transition-colors duration-500 cursor-pointer items-center">
+                    <div class="col-span-3 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-sage-teal/15 flex items-center justify-center flex-shrink-0">
+                            <span class="font-body font-semibold text-sage-teal text-xs">EM</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Ethan Miller</p>
+                            <p class="font-body text-xs text-deep-navy/40">Age 6</p>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Articulation Disorder</p>
+                        <p class="font-body text-xs text-deep-navy/35">/r/, /s/ sounds</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Mar 19, 2026</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-2 bg-deep-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-sage-green rounded-full transition-all duration-500" style="width: 78%"></div>
+                            </div>
+                            <span class="font-body text-xs font-semibold text-sage-green">78%</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-right">
+                        <span class="inline-block px-3 py-1 bg-sage-green/10 text-sage-green font-body text-xs font-medium rounded-full">On Track</span>
+                    </div>
+                </div>
+
+                <!-- Patient 2 -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-5 border-b border-deep-navy/5 hover:bg-card-bg/40 transition-colors duration-500 cursor-pointer items-center">
+                    <div class="col-span-3 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-muted-lavender/15 flex items-center justify-center flex-shrink-0">
+                            <span class="font-body font-semibold text-muted-lavender text-xs">SP</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Sofia Patel</p>
+                            <p class="font-body text-xs text-deep-navy/40">Age 4</p>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Phonological Disorder</p>
+                        <p class="font-body text-xs text-deep-navy/35">Cluster reduction</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Mar 20, 2026</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-2 bg-deep-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-sage-green rounded-full transition-all duration-500" style="width: 65%"></div>
+                            </div>
+                            <span class="font-body text-xs font-semibold text-sage-green">65%</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-right">
+                        <span class="inline-block px-3 py-1 bg-sage-green/10 text-sage-green font-body text-xs font-medium rounded-full">On Track</span>
+                    </div>
+                </div>
+
+                <!-- Patient 3 -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-5 border-b border-deep-navy/5 hover:bg-card-bg/40 transition-colors duration-500 cursor-pointer items-center">
+                    <div class="col-span-3 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-warm-camel/15 flex items-center justify-center flex-shrink-0">
+                            <span class="font-body font-semibold text-warm-camel text-xs">LW</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Liam Whitaker</p>
+                            <p class="font-body text-xs text-deep-navy/40">Age 8</p>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Childhood Apraxia</p>
+                        <p class="font-body text-xs text-deep-navy/35">Motor planning</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Mar 18, 2026</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-2 bg-deep-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-warm-camel rounded-full transition-all duration-500" style="width: 42%"></div>
+                            </div>
+                            <span class="font-body text-xs font-semibold text-warm-camel">42%</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-right">
+                        <span class="inline-block px-3 py-1 bg-soft-coral/10 text-soft-coral font-body text-xs font-medium rounded-full">Needs Review</span>
+                    </div>
+                </div>
+
+                <!-- Patient 4 -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-5 border-b border-deep-navy/5 hover:bg-card-bg/40 transition-colors duration-500 cursor-pointer items-center">
+                    <div class="col-span-3 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-sage-green/15 flex items-center justify-center flex-shrink-0">
+                            <span class="font-body font-semibold text-sage-green text-xs">OJ</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Olivia James</p>
+                            <p class="font-body text-xs text-deep-navy/40">Age 7</p>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Stuttering</p>
+                        <p class="font-body text-xs text-deep-navy/35">Fluency shaping</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Mar 20, 2026</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-2 bg-deep-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-sage-green rounded-full transition-all duration-500" style="width: 81%"></div>
+                            </div>
+                            <span class="font-body text-xs font-semibold text-sage-green">81%</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-right">
+                        <span class="inline-block px-3 py-1 bg-sage-green/10 text-sage-green font-body text-xs font-medium rounded-full">On Track</span>
+                    </div>
+                </div>
+
+                <!-- Patient 5 -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-5 border-b border-deep-navy/5 hover:bg-card-bg/40 transition-colors duration-500 cursor-pointer items-center">
+                    <div class="col-span-3 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-soft-coral/15 flex items-center justify-center flex-shrink-0">
+                            <span class="font-body font-semibold text-soft-coral text-xs">NR</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Noah Robinson</p>
+                            <p class="font-body text-xs text-deep-navy/40">Age 5</p>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Articulation Disorder</p>
+                        <p class="font-body text-xs text-deep-navy/35">/th/, /l/ sounds</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Mar 17, 2026</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-2 bg-deep-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-sage-green rounded-full transition-all duration-500" style="width: 55%"></div>
+                            </div>
+                            <span class="font-body text-xs font-semibold text-deep-navy/50">55%</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-right">
+                        <span class="inline-block px-3 py-1 bg-warm-camel/10 text-warm-camel font-body text-xs font-medium rounded-full">In Progress</span>
+                    </div>
+                </div>
+
+                <!-- Patient 6 -->
+                <div class="grid grid-cols-12 gap-4 px-7 py-5 hover:bg-card-bg/40 transition-colors duration-500 cursor-pointer items-center">
+                    <div class="col-span-3 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-deep-navy/10 flex items-center justify-center flex-shrink-0">
+                            <span class="font-body font-semibold text-deep-navy/60 text-xs">AT</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Ava Thompson</p>
+                            <p class="font-body text-xs text-deep-navy/40">Age 9</p>
+                        </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Language Disorder</p>
+                        <p class="font-body text-xs text-deep-navy/35">Expressive language</p>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="font-body text-sm text-deep-navy/70">Mar 21, 2026</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex items-center gap-3">
+                            <div class="flex-1 h-2 bg-deep-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-sage-green rounded-full transition-all duration-500" style="width: 90%"></div>
+                            </div>
+                            <span class="font-body text-xs font-semibold text-sage-green">90%</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-right">
+                        <span class="inline-block px-3 py-1 bg-muted-lavender/10 text-muted-lavender font-body text-xs font-medium rounded-full">Near Discharge</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex items-center justify-between pt-2">
+                <p class="font-body text-sm text-deep-navy/40">Showing 6 of 24 patients</p>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 bg-white border border-deep-navy/10 rounded-btn font-body text-sm text-deep-navy/50 hover:-translate-y-0.5 hover:shadow-md transition-all duration-500">Previous</button>
+                    <button class="px-4 py-2 bg-sage-teal text-white rounded-btn font-body text-sm font-medium hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(95,158,160,0.3)] transition-all duration-500">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Sidebar -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-card-lg shadow-[0_8px_32px_rgba(0,0,0,0.06)] p-7">
+                <h3 class="font-headline italic text-xl text-deep-navy mb-6">Quick Actions</h3>
+                <div class="space-y-3">
+                    <button class="w-full flex items-center gap-4 px-5 py-4 bg-card-bg rounded-btn hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-500 text-left group">
+                        <div class="w-10 h-10 rounded-btn bg-sage-teal/12 flex items-center justify-center flex-shrink-0 group-hover:bg-sage-teal/20 transition-colors duration-500">
+                            <span class="material-symbols-outlined text-sage-teal text-[20px]">person_add</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">New Patient</p>
+                            <p class="font-body text-xs text-deep-navy/40">Add a new patient profile</p>
+                        </div>
+                    </button>
+                    <button class="w-full flex items-center gap-4 px-5 py-4 bg-card-bg rounded-btn hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-500 text-left group">
+                        <div class="w-10 h-10 rounded-btn bg-muted-lavender/12 flex items-center justify-center flex-shrink-0 group-hover:bg-muted-lavender/20 transition-colors duration-500">
+                            <span class="material-symbols-outlined text-muted-lavender text-[20px]">calendar_add_on</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Schedule Session</p>
+                            <p class="font-body text-xs text-deep-navy/40">Book a therapy session</p>
+                        </div>
+                    </button>
+                    <button class="w-full flex items-center gap-4 px-5 py-4 bg-card-bg rounded-btn hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-500 text-left group">
+                        <div class="w-10 h-10 rounded-btn bg-warm-camel/12 flex items-center justify-center flex-shrink-0 group-hover:bg-warm-camel/20 transition-colors duration-500">
+                            <span class="material-symbols-outlined text-warm-camel text-[20px]">summarize</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">Generate Report</p>
+                            <p class="font-body text-xs text-deep-navy/40">Create progress reports</p>
+                        </div>
+                    </button>
+                    <button class="w-full flex items-center gap-4 px-5 py-4 bg-card-bg rounded-btn hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-500 text-left group">
+                        <div class="w-10 h-10 rounded-btn bg-sage-green/12 flex items-center justify-center flex-shrink-0 group-hover:bg-sage-green/20 transition-colors duration-500">
+                            <span class="material-symbols-outlined text-sage-green text-[20px]">send</span>
+                        </div>
+                        <div>
+                            <p class="font-body text-sm font-semibold text-deep-navy">View Referrals</p>
+                            <p class="font-body text-xs text-deep-navy/40">Manage incoming referrals</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Today's Schedule -->
+            <div class="bg-white rounded-card-lg shadow-[0_8px_32px_rgba(0,0,0,0.06)] p-7">
+                <h3 class="font-headline italic text-xl text-deep-navy mb-6">Today's Schedule</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="font-body text-xs font-semibold text-sage-teal">9:00</p>
+                            <p class="font-body text-[10px] text-deep-navy/30">AM</p>
+                        </div>
+                        <div class="flex-1 px-4 py-3 bg-sage-teal/5 rounded-btn border-l-[3px] border-sage-teal">
+                            <p class="font-body text-sm font-medium text-deep-navy">Ethan Miller</p>
+                            <p class="font-body text-xs text-deep-navy/40">Articulation - /r/ drills</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="font-body text-xs font-semibold text-muted-lavender">10:30</p>
+                            <p class="font-body text-[10px] text-deep-navy/30">AM</p>
+                        </div>
+                        <div class="flex-1 px-4 py-3 bg-muted-lavender/5 rounded-btn border-l-[3px] border-muted-lavender">
+                            <p class="font-body text-sm font-medium text-deep-navy">Sofia Patel</p>
+                            <p class="font-body text-xs text-deep-navy/40">Phonological - Clusters</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="font-body text-xs font-semibold text-warm-camel">1:00</p>
+                            <p class="font-body text-[10px] text-deep-navy/30">PM</p>
+                        </div>
+                        <div class="flex-1 px-4 py-3 bg-warm-camel/5 rounded-btn border-l-[3px] border-warm-camel">
+                            <p class="font-body text-sm font-medium text-deep-navy">Olivia James</p>
+                            <p class="font-body text-xs text-deep-navy/40">Fluency - Easy onset</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-center flex-shrink-0 w-12">
+                            <p class="font-body text-xs font-semibold text-sage-green">3:00</p>
+                            <p class="font-body text-[10px] text-deep-navy/30">PM</p>
+                        </div>
+                        <div class="flex-1 px-4 py-3 bg-sage-green/5 rounded-btn border-l-[3px] border-sage-green">
+                            <p class="font-body text-sm font-medium text-deep-navy">Ava Thompson</p>
+                            <p class="font-body text-xs text-deep-navy/40">Language - Narrative skills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Recent Activity Feed -->
+    <section class="mt-24">
+        <h2 class="font-headline italic text-2xl text-deep-navy mb-8">Recent Activity</h2>
+        <div class="bg-white rounded-card-lg shadow-[0_8px_32px_rgba(0,0,0,0.06)] divide-y divide-deep-navy/5">
+            <!-- Activity 1 -->
+            <div class="flex items-start gap-5 px-7 py-6">
+                <div class="w-10 h-10 rounded-full bg-sage-green/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-sage-green text-[20px]">check_circle</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-body text-sm text-deep-navy"><span class="font-semibold">Olivia James</span> completed Story Studio Chapter 5 with 87% accuracy on fluency targets.</p>
+                    <p class="font-body text-xs text-deep-navy/35 mt-1.5">Today at 2:15 PM</p>
+                </div>
+                <button class="font-body text-xs font-medium text-sage-teal hover:text-sage-teal-dark transition-colors duration-500 flex-shrink-0">View</button>
+            </div>
+            <!-- Activity 2 -->
+            <div class="flex items-start gap-5 px-7 py-6">
+                <div class="w-10 h-10 rounded-full bg-muted-lavender/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-muted-lavender text-[20px]">assignment</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-body text-sm text-deep-navy"><span class="font-semibold">Progress report</span> for Ethan Miller is ready for review. 12-week milestone reached.</p>
+                    <p class="font-body text-xs text-deep-navy/35 mt-1.5">Today at 11:30 AM</p>
+                </div>
+                <button class="font-body text-xs font-medium text-sage-teal hover:text-sage-teal-dark transition-colors duration-500 flex-shrink-0">Review</button>
+            </div>
+            <!-- Activity 3 -->
+            <div class="flex items-start gap-5 px-7 py-6">
+                <div class="w-10 h-10 rounded-full bg-warm-camel/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-warm-camel text-[20px]">family_restroom</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-body text-sm text-deep-navy"><span class="font-semibold">Parent feedback</span> received from the Robinson family. They noted improvement in /th/ sound at home.</p>
+                    <p class="font-body text-xs text-deep-navy/35 mt-1.5">Yesterday at 6:45 PM</p>
+                </div>
+                <button class="font-body text-xs font-medium text-sage-teal hover:text-sage-teal-dark transition-colors duration-500 flex-shrink-0">Read</button>
+            </div>
+            <!-- Activity 4 -->
+            <div class="flex items-start gap-5 px-7 py-6">
+                <div class="w-10 h-10 rounded-full bg-sage-teal/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-sage-teal text-[20px]">person_add</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-body text-sm text-deep-navy"><span class="font-semibold">New referral</span> received: Marcus Lee, age 5, referred by Dr. Pham for initial speech evaluation.</p>
+                    <p class="font-body text-xs text-deep-navy/35 mt-1.5">Yesterday at 3:20 PM</p>
+                </div>
+                <button class="font-body text-xs font-medium text-sage-teal hover:text-sage-teal-dark transition-colors duration-500 flex-shrink-0">Accept</button>
+            </div>
+            <!-- Activity 5 -->
+            <div class="flex items-start gap-5 px-7 py-6">
+                <div class="w-10 h-10 rounded-full bg-soft-coral/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-soft-coral text-[20px]">warning</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-body text-sm text-deep-navy"><span class="font-semibold">Liam Whitaker</span> missed home practice for 5 consecutive days. Consider scheduling a parent check-in.</p>
+                    <p class="font-body text-xs text-deep-navy/35 mt-1.5">Yesterday at 9:00 AM</p>
+                </div>
+                <button class="font-body text-xs font-medium text-sage-teal hover:text-sage-teal-dark transition-colors duration-500 flex-shrink-0">Follow Up</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-deep-navy/5 mt-12">
+    <div class="max-w-[1440px] mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="font-headline italic text-lg text-sage-teal">BoloBridge</p>
+        <p class="font-body text-xs text-deep-navy/35">Clinician Portal v2.1 &middot; HIPAA Compliant &middot; &copy; 2026 BoloBridge Inc.</p>
+    </div>
+</footer>
+
+</body></html>

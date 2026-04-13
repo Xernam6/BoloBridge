@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge - The Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#665a75",
+              "surface-tint": "#4f6459",
+              "surface-variant": "#e3e3de",
+              "primary": "#4f6459",
+              "on-secondary-fixed-variant": "#795336",
+              "primary-container": "#d1e8da",
+              "on-secondary-fixed": "#59381d",
+              "on-tertiary-fixed": "#453b54",
+              "on-background": "#313330",
+              "secondary-container": "#ffdcc4",
+              "on-surface-variant": "#5e5f5c",
+              "on-secondary": "#fff7f4",
+              "outline-variant": "#b2b2ae",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeeea",
+              "tertiary-fixed": "#ecdcfd",
+              "secondary-dim": "#704b2e",
+              "secondary-fixed-dim": "#fecaa5",
+              "on-error-container": "#671200",
+              "primary-dim": "#43584d",
+              "error": "#aa371c",
+              "on-surface": "#313330",
+              "surface-container-high": "#e9e8e4",
+              "outline": "#7a7b78",
+              "on-primary-fixed": "#2f443a",
+              "on-primary": "#e7fff0",
+              "inverse-on-surface": "#9e9d9a",
+              "surface-container-highest": "#e3e3de",
+              "background": "#fbf9f6",
+              "surface-container-low": "#f5f3f0",
+              "primary-fixed": "#d1e8da",
+              "on-primary-container": "#42564c",
+              "inverse-primary": "#e7fff1",
+              "error-container": "#fa7150",
+              "tertiary-container": "#ecdcfd",
+              "on-primary-fixed-variant": "#4b6055",
+              "surface": "#fbf9f6",
+              "inverse-surface": "#0e0e0d",
+              "error-dim": "#821a01",
+              "tertiary-dim": "#5a4e69",
+              "on-tertiary": "#fef6ff",
+              "on-tertiary-container": "#584d67",
+              "primary-fixed-dim": "#c3dacc",
+              "tertiary-fixed-dim": "#deceee",
+              "on-secondary-container": "#6e4a2d",
+              "on-error": "#fff7f6",
+              "secondary": "#7d5739",
+              "surface-bright": "#fbf9f6",
+              "surface-dim": "#dadad6",
+              "on-tertiary-fixed-variant": "#625671",
+              "secondary-fixed": "#ffdcc4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grainy-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen relative overflow-x-hidden">
+<div class="fixed inset-0 grainy-bg z-50"></div>
+<!-- TopNavBar -->
+<header class="bg-[#FAF8F5]/80 backdrop-blur-md dark:bg-stone-900/80 shadow-sm dark:shadow-none docked full-width top-0 z-40 fixed w-full">
+<div class="flex justify-between items-center w-full px-8 py-5 max-w-full">
+<div class="flex items-center gap-6">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-[#f5f3f0] transition-colors active:scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-2xl font-headline italic text-[#4f6459] dark:text-[#d1e8da]">BoloBridge</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-low active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-[#f5f3f0] dark:bg-stone-800 h-[1px]"></div>
+</header>
+<main class="max-w-[1024px] mx-auto px-10 pt-32 pb-40">
+<!-- Page Header -->
+<header class="mb-16 space-y-2">
+<h2 class="text-6xl font-headline italic text-on-background tracking-tight">The Library</h2>
+<p class="text-lg font-label uppercase tracking-[0.15em] text-secondary opacity-80">Explore the science of speech</p>
+</header>
+<!-- Module Grid -->
+<section class="grid grid-cols-2 gap-x-12 gap-y-16">
+<!-- Module 1 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-primary">
+<div class="h-64 bg-primary-container/30 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract watercolor waves in sage teal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgGSURRTEVlaO8YHgwukG_ps_nAjkH6TzgsEWLamV-L-O96T5REi8lyTObV3IyFsoINyrB86CvLuGVhI9g_PGm9y6wBkbwoVXvyI9wSWOM6ueHDHGLqqdJjCnSWu6NrRNZ_iQ-1-GwLWubM-3AZgloCQ3LgABSLPe07st3MinZZV951dGE_3Za4zEFYIFSfxTazkBIq7_98oHDxk4j11PwXfNLw_0XiAEdHP6-1Wu3ocIpurI_LUX7lbDxq_NWELtJXIWRQD3M2v8r"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter I</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">7 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">How We Make Sounds</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-primary text-right">65% Complete</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-secondary">
+<div class="h-64 bg-secondary-container/30 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract warm camel watercolor anatomical shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Cl08y2wKUvAUeZsz-YNuh8p3CJo0v51GMv3O-ZywJ8f-6jblxcB_Z6rOeFpl5_R0qmVrby05iX3Hg-A_1KnRtiJnwsiqLbO1osu25bBhyeB7JDMfHfw_ZhaM2GRHVkvI_brt2dM9OIGACfIwui6BalGbDrBcTC33hmA9gm8A9CWTOmHgVuvVoR12O9Twdafsh39981B-yWc7OPQrUTtU-QM_RP1AV-Kw3bIxG9GRoGAWoVDYes8pQgk63vo52A3yDWaS0aEhzHvq"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter II</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">5 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">Meet Your Mouth</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[20%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-secondary text-right">20% Complete</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-[#8ca691]">
+<div class="h-64 bg-[#d1e8da]/30 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract sage green map topography watercolor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYifZzLzIID1oPcI2ytBP-gJHfRS4vhjNr2zARggO8HjZU7VCUvUltFTt2qArC8_5B6c_Jzy2I6f-yoePhd5pyvTBGDQt8r9IegZ5Spy9X4UjijhnuRbfDGMVBGk1dWQxK1vkT6-k3I6rrr4L70GoBHAEZ4JXqTBCIFnhccclUdgh-fBwRzw5GTphTJYqFo6ZZMYFY9CfJHn4Lmq7Mo4cWn3yzhFlK5f6DbvVB_4fX75Yk_Cr_h-tq5oZni1K1ww7yuxGUbNsqIUry"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter III</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">12 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">The Sound Map</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-[#8ca691] h-full w-[0%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-[#8ca691] text-right">0% Complete</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 4 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-tertiary">
+<div class="h-64 bg-tertiary-container/30 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Soft lavender clouds watercolor painting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOcU2k21T3cuvHtj5F4zj2tlEhBMsXXi3uQXm_6M22vj3Eo3GJDj140Gd5AQ8phsB7JD_e4UsmYaOBOBzmJCtcnj9TWqDSryinnnW2dHyhS7bFR_PJz8n5oQyA-S0_IIleRkRZyXKRyMo7ojz3lOZcZ69U2wlU32w1Y_Amt9jtFndi4XHfOQmC0v14Ou4bBmFXU0RmovijjwXEG7gw2IhPQrRohBecTY3ApiYMrxx3u_i8FP-FrF5c9cjZ4aNfM5mNNe0cDcwP-Byj"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter IV</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">8 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">Speech Milestones</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[0%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-tertiary text-right">Locked</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 5 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-error">
+<div class="h-64 bg-error-container/20 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Soft coral and red watercolor splashes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9AS1ZEsvgR_MmVew8exbz8m7uW75w5ljUFyvWzynEhOl8f-kj-o5OiP7hY7h9h7tzlm6P6ch3861NxFH8XJkgIeOCF7X2gtM0yyGbPXck1_bEGBBEgykYiSJIEjnJlFYruorftOErvJM91pAFi6UIGTbv1v3q9ayKVrRrrOClcKa4zxZx9cx2wNkaOLkwTIRMt-ZYw5giE3LPoSsWhVNTWFK9On8_ykbINzBJvkCTE6V1Vdu_uoG9qW75-Nik6yRB7QIoSAIRE1hI"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter V</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">10 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">Tricky Sounds</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-error h-full w-[0%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-error text-right">Locked</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 6 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-sky-400">
+<div class="h-64 bg-sky-50 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Ethereal sky blue watercolor wash" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZowlzvCLrSj5oju2b3V9ZOBMLs9O9poiFhhyezJBbRf2Rfl_2ZrgflSzU6-joF1kOGjsLwKLN21JYVrjoyeYLu-SDsncnLRgi7YDUF3XdwfOTzzHuZwJwVWEXMNP73YilnhopohdyxXAPendSlTW4XBcfaWU004ESchoHLnJFRJAubO75jR79hRNpzrjzsP0lYyKJR_vbEVsr7Yd95kFwB3-_j5CsmGERIdu1B4ikVzoSPpISGMJBtWyC9zRFO1hyuolTYONsPdh0"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter VI</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">6 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">Breathing for Speech</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-sky-400 h-full w-[0%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-sky-400 text-right">Locked</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 7 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-amber-500">
+<div class="h-64 bg-amber-50 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Warm golden sunset watercolor textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeUD1VzBSyOWSVmsKf7XSVJuJuKsUxK0_nZUkYCxEmxbjyxJsvNbKzkx21R3hAoRQ-dQbnqzOjZCWJ_3NPXR8aoKxRgfGy0a5MXW6sW9jvWnswfHeFkYJXFv4ZKdspzeIAxJst0mr6_5hbWmAKJto3V2MSWv8XLrphFi2D6kYHiXNiduIHFKHJFIZe3VJrGeUMr4vYFXw2BvC6SuI1MKFaoYBwfw0faj7yAiVshgfFpYfyk0q2FhdcKvc9dbY6nbBRrMajTgIntUJT"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter VII</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">9 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">Listening Skills</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full w-[0%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-amber-500 text-right">Locked</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 8 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md relative border-l-8 border-rose-400">
+<div class="h-64 bg-rose-50 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Muted rose petals abstract watercolor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZfq2YrRkMtwjbhWMBTum74PVYgsYD0G46VRYV-UDYIlWN639oW-Oc1rYvA5vzNjjZdkIf1h26wyP4rSHdx6RmWzQXNHMYYfWwWILAerUEYIvxOsNC5M0Hq6-CbHYYBCofPzFv_0NhJ2vCuTbUpooDddXf0hRzE-9ToNIjr-NBVAZjA_yzlEFPymYjvC9DBIJq0G5TArED14GPycIg_-6rf6ZbxebE4I4CTqJWPxIY270li6OYfAEDZcQqQsGbuHQU4IyV6GjoQKdH"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-end">
+<span class="font-headline text-lg italic text-secondary">Chapter VIII</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">15 lessons</span>
+</div>
+<h3 class="text-3xl font-headline italic text-on-background leading-tight">Conversation</h3>
+<div class="space-y-2 pt-4">
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-rose-400 h-full w-[0%]"></div>
+</div>
+<p class="font-label text-xs font-bold text-rose-400 text-right">Locked</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-10 pt-4 bg-[#FAF8F5] dark:bg-stone-900 border-t border-[#f5f3f0] dark:border-stone-800">
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-stone-400 px-8 py-1 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-all active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-sans text-[11px] tracking-wide uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#d1e8da] dark:bg-[#4f6459]/30 text-[#4f6459] dark:text-[#d1e8da] rounded-xl px-8 py-2 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-sans text-[11px] tracking-wide uppercase font-bold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-stone-400 px-8 py-1 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-all active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="extension">extension</span>
+<span class="font-sans text-[11px] tracking-wide uppercase">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-stone-400 px-8 py-1 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-all active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="trending_up">trending_up</span>
+<span class="font-sans text-[11px] tracking-wide uppercase">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7d5739] dark:text-stone-400 px-8 py-1 hover:bg-[#f5f3f0] dark:hover:bg-stone-800 transition-all active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-sans text-[11px] tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BoloBridge Onboarding Wizard</title>
+<!-- Google Fonts: Newsreader for Serifs, Inter for Sans-Serif -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#ffdbc8",
+              "surface-container": "#f4ede5",
+              "tertiary": "#270f00",
+              "surface-variant": "#e8e1da",
+              "on-tertiary-container": "#c0835a",
+              "surface-tint": "#775846",
+              "tertiary-fixed": "#ffdcc6",
+              "inverse-surface": "#33302b",
+              "tertiary-container": "#461f00",
+              "surface-container-high": "#eee7df",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#fff8f1",
+              "on-primary-container": "#ad8975",
+              "on-surface": "#1e1b17",
+              "primary": "#241004",
+              "primary-fixed-dim": "#e7bea8",
+              "secondary-fixed": "#ffdcc4",
+              "surface-dim": "#dfd9d1",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e8e1da",
+              "secondary-container": "#ffcaa3",
+              "inverse-primary": "#e7bea8",
+              "tertiary-fixed-dim": "#fcb88a",
+              "surface": "#fff8f1",
+              "on-primary-fixed-variant": "#5d4030",
+              "secondary-fixed-dim": "#f0bc96",
+              "on-tertiary-fixed": "#311400",
+              "secondary": "#7d5637",
+              "surface-container-low": "#f9f3eb",
+              "on-secondary-container": "#7a5334",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#d4c3bb",
+              "primary-container": "#3c2415",
+              "on-secondary-fixed": "#2f1500",
+              "on-secondary-fixed-variant": "#623f22",
+              "background": "#fff8f1",
+              "outline": "#82746e",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#693b18",
+              "on-background": "#1e1b17",
+              "inverse-on-surface": "#f7f0e8",
+              "on-primary-fixed": "#2c1608",
+              "on-surface-variant": "#50443f",
+              "on-error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .watercolor-blob {
+            mask-image: radial-gradient(circle, black 30%, transparent 70%);
+            filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low font-body text-primary min-h-screen relative overflow-x-hidden">
+<!-- Subtle Grain Overlay -->
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Top Navigation Anchor (Manual application of JSON styles) -->
+<header class="bg-[#FFF8F1] dark:bg-[#241004] text-[#241004] dark:text-[#FFF8F1] flex justify-between items-center w-full px-8 py-4 fixed top-0 z-50">
+<div class="text-2xl font-bold font-['Newsreader'] text-[#241004] dark:text-[#FFF8F1]">BoloBridge</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-32 pb-24 px-12 max-w-[1440px] mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-16 max-w-2xl">
+<h1 class="font-headline text-5xl leading-tight text-primary mb-4 italic">The Art of Communication</h1>
+<p class="font-body text-secondary text-lg leading-relaxed">A refined journey designed to help your child find their voice through the warmth of storytelling and structured play.</p>
+</section>
+<!-- Onboarding Wizard Track -->
+<div class="relative">
+<!-- Progress Line (Caramel #D4956A / secondary-container) -->
+<div class="absolute top-12 left-[160px] right-[160px] h-[2px] bg-secondary-container/40 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+<!-- Card 1: Welcome -->
+<div class="w-[320px] bg-surface-bright p-8 rounded-xl shadow-[0_40px_40px_rgba(36,16,4,0.04)] flex flex-col items-center text-center">
+<!-- Step Indicator -->
+<div class="w-3 h-3 rounded-full bg-secondary mb-10 ring-8 ring-surface-container-low"></div>
+<div class="relative w-full h-40 mb-8 flex items-center justify-center">
+<div class="absolute inset-0 bg-secondary/10 rounded-full watercolor-blob"></div>
+<span class="material-symbols-outlined text-6xl text-secondary" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<h2 class="font-headline text-2xl text-primary mb-4">Welcome to BoloBridge</h2>
+<p class="text-secondary body-md leading-relaxed px-2">Where every sound is a brushstroke in the masterpiece of speech.</p>
+</div>
+<!-- Card 2: Create Profile -->
+<div class="w-[320px] bg-surface-bright p-8 rounded-xl shadow-[0_40px_40px_rgba(36,16,4,0.04)] flex flex-col items-center">
+<!-- Step Indicator -->
+<div class="w-3 h-3 rounded-full bg-secondary mb-10 ring-8 ring-surface-container-low"></div>
+<h2 class="font-headline text-2xl text-primary mb-8 text-center">Create a Profile</h2>
+<div class="w-full space-y-8">
+<div>
+<label class="block font-label text-[10px] tracking-widest uppercase text-secondary mb-2">Child's Name</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-secondary-container focus:ring-0 focus:border-secondary transition-colors font-headline text-lg text-primary placeholder:text-outline-variant/50 px-0 py-2" placeholder="e.g. Julian" type="text"/>
+</div>
+<div>
+<label class="block font-label text-[10px] tracking-widest uppercase text-secondary mb-2">Age</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-secondary-container focus:ring-0 focus:border-secondary transition-colors font-headline text-lg text-primary placeholder:text-outline-variant/50 px-0 py-2" placeholder="Select years" type="text"/>
+</div>
+</div>
+</div>
+<!-- Card 3: Choose Your Focus -->
+<div class="w-[320px] bg-surface-bright p-8 rounded-xl shadow-[0_40px_40px_rgba(36,16,4,0.04)] flex flex-col items-center">
+<!-- Step Indicator -->
+<div class="w-3 h-3 rounded-full bg-secondary mb-10 ring-8 ring-surface-container-low"></div>
+<h2 class="font-headline text-2xl text-primary mb-6 text-center">Choose Your Focus</h2>
+<div class="flex flex-wrap gap-2 justify-center">
+<button class="px-5 py-2 rounded-full border border-secondary/20 text-secondary font-label text-xs tracking-wider uppercase hover:bg-secondary-container/20 transition-all">Articulation</button>
+<button class="px-5 py-2 rounded-full bg-on-secondary-container/10 border border-on-secondary-container/30 text-secondary font-label text-xs tracking-wider uppercase">Vowels</button>
+<button class="px-5 py-2 rounded-full border border-secondary/20 text-secondary font-label text-xs tracking-wider uppercase hover:bg-secondary-container/20 transition-all">Daily Words</button>
+<button class="px-5 py-2 rounded-full border border-secondary/20 text-secondary font-label text-xs tracking-wider uppercase hover:bg-secondary-container/20 transition-all">Social Cues</button>
+<button class="px-5 py-2 rounded-full border border-secondary/20 text-secondary font-label text-xs tracking-wider uppercase hover:bg-secondary-container/20 transition-all">Rhyming</button>
+</div>
+</div>
+<!-- Card 4: Ready to Begin -->
+<div class="w-[320px] bg-surface-bright p-8 rounded-xl shadow-[0_40px_40px_rgba(36,16,4,0.04)] flex flex-col items-center text-center">
+<!-- Step Indicator -->
+<div class="w-3 h-3 rounded-full bg-secondary mb-10 ring-8 ring-surface-container-low"></div>
+<div class="relative w-full h-32 mb-6 flex items-center justify-center">
+<div class="absolute w-24 h-24 bg-on-tertiary-container/10 rounded-full watercolor-blob translate-x-4"></div>
+<div class="absolute w-20 h-20 bg-secondary-container/20 rounded-full watercolor-blob -translate-x-4"></div>
+<span class="material-symbols-outlined text-5xl text-primary relative z-10" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h2 class="font-headline text-2xl text-primary mb-3">Ready to Begin!</h2>
+<p class="text-secondary text-sm leading-relaxed mb-10">Your curated path to expressive speech is prepared.</p>
+<div class="flex items-center justify-between w-full mt-auto">
+<button class="text-[#7D5637] font-['Newsreader'] underline decoration-[#FFDCC4] decoration-2 underline-offset-4 hover:opacity-80 transition-opacity">Back</button>
+<button class="flex items-center justify-center bg-gradient-to-r from-[#241004] to-[#3C2415] text-white rounded-full px-8 py-3 hover:brightness-110 transition-all active:scale-[0.98]">
+<span class="font-['Inter'] label-md tracking-wider uppercase mr-2">Next</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Content: The Philosophy -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative aspect-square bg-surface-container rounded-xl overflow-hidden">
+<img alt="Artisan morning light" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Sun-drenched morning light in a refined artisan coffee shop setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnzB09_mcvIUv_zfswbD4j9K1X6ey_NVFofZxGCtywkkNpjuiHFZoDK-IGWV9UuXLoHOpioBpFs425ytoP4uB5mpuKdnDI6m3jEDLef0cml2_3mUcwFQb29wcA93uupfa7lESm6niKY6Mc0hhGp-PwzUMFkTyflFgBiQcX9BSS5Om-u40HJbw4slaDBFiT7zWPy_wSJoLJJ2DGnmeNtygsrPBsDe7dE2Aw44JsT4e8wa_y4UlmuPifJIQ9rvNslx8kyGOPRicEv8e_"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+<div class="space-y-6">
+<span class="font-label text-xs tracking-[0.2em] uppercase text-secondary block mb-2">Our Philosophy</span>
+<h3 class="font-headline text-4xl text-primary leading-tight">Nurturing voice through refined environments.</h3>
+<p class="font-body text-secondary leading-relaxed">We believe that learning should feel like a curated experience, not a chore. BoloBridge bridges the gap between clinical speech therapy and the warmth of home life.</p>
+<div class="pt-4">
+<button class="font-headline text-lg italic text-primary underline decoration-secondary-fixed decoration-4 underline-offset-8">Read the story of BoloBridge</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-between items-center px-10 py-6 bg-white/80 dark:bg-[#241004]/80 backdrop-blur-lg z-50 rounded-t-[1rem] border-t border-[#241004]/15 shadow-[0_-4px_40px_rgba(36,16,4,0.06)] md:hidden">
+<button class="flex items-center justify-center text-[#7D5637] font-['Newsreader'] underline decoration-[#FFDCC4] decoration-2 underline-offset-4 hover:brightness-110 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined mr-2" data-icon="arrow_back">arrow_back</span>
+<span class="font-['Inter'] label-md tracking-wider uppercase">Back</span>
+</button>
+<button class="flex items-center justify-center bg-gradient-to-r from-[#241004] to-[#3C2415] text-white rounded-full px-8 py-3 hover:brightness-110 transition-all active:scale-[0.98]">
+<span class="font-['Inter'] label-md tracking-wider uppercase mr-2">Next</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</nav>
+</body></html>

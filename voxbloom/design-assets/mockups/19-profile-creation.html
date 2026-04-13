@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Profile - The Tactile Keepsake</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#81280a",
+                        "surface-container-low": "#f5f3f0",
+                        "primary-fixed": "#aeeef0",
+                        "secondary-fixed": "#ffddb7",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb59f",
+                        "secondary-fixed-dim": "#eabf8d",
+                        "on-secondary-container": "#795930",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#bfc8c8",
+                        "on-primary-fixed": "#002021",
+                        "secondary": "#78582f",
+                        "primary": "#25686a",
+                        "on-primary-fixed-variant": "#004f51",
+                        "primary-container": "#5f9ea0",
+                        "error": "#ba1a1a",
+                        "outline": "#6f7979",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdbd1",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dbdad7",
+                        "surface-tint": "#25686a",
+                        "on-surface-variant": "#3f4849",
+                        "on-primary-container": "#003234",
+                        "on-background": "#1b1c1a",
+                        "inverse-surface": "#30312f",
+                        "on-secondary-fixed-variant": "#5e411a",
+                        "on-tertiary-container": "#581300",
+                        "surface-bright": "#fbf9f6",
+                        "background": "#fbf9f6",
+                        "surface-variant": "#e4e2df",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface-container-high": "#eae8e5",
+                        "tertiary": "#a13f20",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e4e2df",
+                        "on-surface": "#1b1c1a",
+                        "surface-container": "#efeeeb",
+                        "surface": "#fbf9f6",
+                        "inverse-primary": "#92d2d3",
+                        "tertiary-container": "#e6724f",
+                        "secondary-container": "#fed39f",
+                        "on-tertiary-fixed": "#3b0a00",
+                        "primary-fixed-dim": "#92d2d3",
+                        "on-secondary-fixed": "#2a1700"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .vocal-ripple {
+            box-shadow: 0 0 0 0 rgba(95, 158, 160, 0.4);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #25686a;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease-out;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<div class="film-grain"></div>
+<!-- Navigation Shell (TopAppBar Mapping) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-stone-50/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-primary font-medium hover:bg-stone-200/50 p-2 rounded-lg transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-body text-sm tracking-wide">Home</span>
+</button>
+</div>
+<div class="text-2xl font-serif italic text-primary">The Tactile Keepsake</div>
+<div class="w-24"></div> <!-- Spacer for balance -->
+</header>
+<main class="pt-24 pb-16 px-6 max-w-7xl mx-auto flex flex-col items-center">
+<!-- Hero Header -->
+<div class="text-center mb-12 space-y-4">
+<h1 class="text-4xl md:text-5xl font-headline italic font-bold tracking-tight text-on-background">Create Your Child's Profile</h1>
+<p class="text-secondary font-body max-w-md mx-auto opacity-80">Help us personalize the experience for your child's unique growth journey.</p>
+</div>
+<!-- Main Form Card -->
+<div class="w-full max-w-[640px] bg-surface-container-lowest rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.04)] p-8 md:p-12 space-y-10 relative overflow-hidden">
+<!-- Background Decorative Texture -->
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl"></div>
+<form class="relative z-10 space-y-12">
+<!-- Avatar Selector Section -->
+<div class="flex flex-col items-center space-y-8">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full bg-gradient-to-br from-secondary-container to-secondary flex items-center justify-center text-on-secondary-container shadow-lg ring-4 ring-background">
+<span class="material-symbols-outlined text-4xl" data-icon="camera_alt">camera_alt</span>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-105 transition-transform" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="w-full">
+<label class="block text-center text-xs font-semibold tracking-widest uppercase text-outline mb-4">Choose an Avatar</label>
+<div class="flex justify-between items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-transparent hover:border-primary-container p-0.5 transition-all" type="button"><img class="w-full h-full rounded-full bg-surface-container-low" data-alt="Stylized owl animal avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7NtY-yh2knjsq9LeJHOEVufMFBseOKLmRTfyKlIkH2gdPxHMAKTV-5iS4UDukji6z6DVgijy2Vgno-bWbGjt6x0564HVeaiys581kp7alBbf_so6gwx7nqQaBeUs0p86gTIseKvlQNWytOAI6_umnHpBUMKnP7xKyEgMlzoOIde2isAFUmAZOC1Xqimb88Fz9GXyYRPh796dDtpKmLpr0HFM7M_YV9CCFWhOgEQF2WfPyMJnl6xNIpvt1EpN-4IBp_Bb9PTTjy1m5"/></button>
+<button class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary-container p-0.5 transition-all" type="button"><img class="w-full h-full rounded-full bg-surface-container-low" data-alt="Stylized fox animal avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXp1zMzzYh6qgzF80re8IYQK9MrM4rqpwFUTUQroBuIGVtRzvvKI0pR8i1CIaNmYOhGVCOXP0CLObz0_Uv7-xfgcJg3hbNWZ48pQspeIprof4dYJUoI_S46wazqv1z9pJGqCjdo8RQu2qyTGWNDu70Fm1D80bYWseM1uiA8yDWBgLxa8mANj3RLK-IzcMRlWugnC7jIr4rzZHEZe-tKZ92krxsf072sunIAnpW8KjyRf46AfyT-WSnwnuvdcYB0jB_JvWTMWyA2up_"/></button>
+<button class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-transparent hover:border-primary-container p-0.5 transition-all" type="button"><img class="w-full h-full rounded-full bg-surface-container-low" data-alt="Stylized bear animal avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAClvrx6orL9X9didUqIFAIA6yuTN7OrTPmorYzh5BL5gv9vvXHHXE2c44XrzgpDEuNvoU0fLwWV9EunjQM4bnWE-LCKK5Ql9wnSstSzx2TYXEevWg2N6akT1TvYQRH7vFB6_axtleOGGg-CXq23IB1VadPP8-BpsWkZjkMn7EWX3wttykD2PPybF3flfgvrira903zq4_IV_flQZI2Ay2tdwLpPGYTXvrRAwTyQXTCpOMmcPDE25uj4eLY90rle25Rphj9EE6cHUgo"/></button>
+<button class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-transparent hover:border-primary-container p-0.5 transition-all" type="button"><img class="w-full h-full rounded-full bg-surface-container-low" data-alt="Stylized bunny animal avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxo1j6vV_Yo5tiiLyYwT2AahvcVBenxeENI8vZUmrpl-1m4H_pv0EzBZFe7K7OLmJ_PEFd1DnBaW_5CMthUpAn-aIwK6OdbmmwhSH0Mxp_FNjsQuJrUoSKKHm5X6XDytK15jW-kJxndqHOQ70a4cHYU6ySTqgJtFFOOBYAVCzvfQG1p-8kfQNIG9V_PfqSOMx3AMU-hrRbGeRC7iD0X2TVjEpu8xmBuEQRYtue0P8Zruz8R4qC-6SU4JWpD3b7jPuHihv4yysO16eq"/></button>
+<button class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-transparent hover:border-primary-container p-0.5 transition-all" type="button"><img class="w-full h-full rounded-full bg-surface-container-low" data-alt="Stylized panda animal avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3U-UKYih-8ll5N_DZrhTobyhiLJITf2frnDJZT1I2yztz4Sm-PdDQFtCqb91AGJkar8dUdgk9IE1kCygjQmeAD10NQlQjB_TJcMqCT5RfzXQr3gsUJB7kQ0i83pU0JQelJQBxkh6EvxU_1rJMBt6-MMk_Vl2xZC1dmQ_T30YFO3yfNmHBeF_WHRQBV26xxQBT9UYb6PRFL9rHKPnYzwipsIHAIAK7ho_ve1PDPf0WxzjAC8FksKZ9Q55PQ74J7s8HDM4r4A5kzA4c"/></button>
+<button class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-transparent hover:border-primary-container p-0.5 transition-all" type="button"><img class="w-full h-full rounded-full bg-surface-container-low" data-alt="Stylized elephant animal avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuDojYwvq6LiQLgCyEc87UF2qTd6hZ08s_RBpXjdPM-W-DuxCuhKKcjdEwKlxwD0qQWB1o57F019kmB4cFv-mLIzIlQKTEYO91FpK3pK49It5M7xL_YIIu3417taT-3_I-mYbl_Vbquc1bqHvh4lhmQEAK6L5vzzSsZboo-VYBP1U-Q4PRRu4GufaEGVSDdw8VqFIEk_ZXJcFw59hhaCBAWHkTVxRlPHh8EnlUG9L7mmQEWXmGZHEY54rp89hg2gLknB2m9SkwPIrE"/></button>
+</div>
+</div>
+</div>
+<!-- Basic Inputs Grid -->
+<div class="space-y-8">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant" for="child-name">Child's Name</label>
+<input class="w-full px-6 py-4 rounded-lg bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container text-on-surface font-body placeholder:text-outline-variant" id="child-name" placeholder="What should we call them?" type="text"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="text-sm font-semibold text-on-surface-variant">Age Range</label>
+<span class="text-primary font-bold bg-primary-container/20 px-3 py-1 rounded-full text-xs">4 Years Old</span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-primary" max="12" min="2" step="1" type="range"/>
+<div class="flex justify-between text-[10px] text-outline px-1 font-bold">
+<span>2 YEARS</span>
+<span>12 YEARS</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Primary Language</label>
+<div class="relative group">
+<select class="w-full px-6 py-4 rounded-lg bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container text-on-surface font-body appearance-none">
+<option>🇺🇸 English (USA)</option>
+<option>🇮🇳 Hindi (India)</option>
+<option>🇪🇸 Spanish (Spain)</option>
+<option>🇨🇳 Mandarin (China)</option>
+<option>🇸🇦 Arabic (Saudi Arabia)</option>
+<option>🇫🇷 French (France)</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gender Selection Toggle -->
+<div class="space-y-4">
+<label class="block text-sm font-semibold text-on-surface-variant">Gender Selection</label>
+<div class="flex flex-wrap gap-3">
+<button class="flex-1 min-w-[100px] py-3 px-4 rounded-lg bg-primary-container text-on-primary-container font-medium text-sm transition-all border-none" type="button">Boy</button>
+<button class="flex-1 min-w-[100px] py-3 px-4 rounded-lg bg-surface-container-low text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all border-none" type="button">Girl</button>
+<button class="flex-1 min-w-[140px] py-3 px-4 rounded-lg bg-surface-container-low text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all border-none" type="button">Prefer not to say</button>
+</div>
+</div>
+<!-- Speech Concerns Tags -->
+<div class="space-y-4">
+<label class="block text-sm font-semibold text-on-surface-variant">Speech Concerns</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-sm font-medium hover:bg-secondary-container/20 hover:border-secondary transition-all" type="button">Articulation</button>
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-sm font-medium border border-transparent" type="button">Stuttering</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-sm font-medium hover:bg-secondary-container/20 hover:border-secondary transition-all" type="button">Language Delay</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-sm font-medium hover:bg-secondary-container/20 hover:border-secondary transition-all" type="button">Social Communication</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-sm font-medium hover:bg-secondary-container/20 hover:border-secondary transition-all" type="button">Voice Clarity</button>
+</div>
+</div>
+<!-- Submit and Privacy -->
+<div class="pt-6 space-y-6">
+<button class="w-full py-5 rounded-lg bg-primary-container text-on-primary-container font-bold text-lg shadow-lg hover:shadow-xl hover:translate-y-[-2px] transition-all flex items-center justify-center gap-3 active:scale-95 duration-200" type="submit">
+                        Start Your Journey
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-outline text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+<p class="font-medium tracking-tight">All data stays on your device. No signup required.</p>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer Mapping -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-stone-100 border-t border-stone-200/15">
+<div class="text-lg font-serif italic text-stone-800">The Tactile Keepsake</div>
+<div class="flex gap-6">
+<a class="text-xs font-normal Inter tracking-wide text-stone-500 hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-xs font-normal Inter tracking-wide text-stone-500 hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="text-xs font-normal Inter tracking-wide text-stone-500 hover:text-primary transition-all" href="#">Help Center</a>
+</div>
+<div class="text-xs font-normal Inter tracking-wide text-stone-500 opacity-60">
+            © 2024 The Tactile Keepsake. Designed for growth.
+        </div>
+</footer>
+</body></html>
