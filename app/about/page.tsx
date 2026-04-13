@@ -471,7 +471,7 @@ export default function AboutPage() {
               <p className="text-lg text-muted dark:text-white/60 max-w-md font-heading italic leading-relaxed">
                 {t('about.researchDesc')}{' '}
                 <a
-                  href="https://github.com/Xernam6/bolobridge#references"
+                  href="https://github.com/Xernam6/BoloBridge#references"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-teal hover:underline transition-colors duration-300"
