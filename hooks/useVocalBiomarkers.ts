@@ -170,8 +170,23 @@ export function useVocalBiomarkers(): UseVocalBiomarkersReturn {
       // Kick off the analysis loop
       rafIdRef.current = requestAnimationFrame(analyse);
     } catch (err) {
-      const message =
-        err instanceof Error ? err.message : 'Failed to access microphone.';
+      const name = err instanceof Error ? err.name : '';
+      let message: string;
+      switch (name) {
+        case 'NotAllowedError':
+        case 'SecurityError':
+          message = 'Microphone access was denied. Please allow microphone permission in your browser and try again.';
+          break;
+        case 'NotFoundError':
+        case 'OverconstrainedError':
+          message = 'No microphone was detected. Please connect a microphone and try again.';
+          break;
+        case 'NotReadableError':
+          message = 'Your microphone is in use by another app. Please close it and try again.';
+          break;
+        default:
+          message = (err instanceof Error && err.message) || 'Failed to access microphone.';
+      }
       setError(message);
     }
   }, [analyse]);

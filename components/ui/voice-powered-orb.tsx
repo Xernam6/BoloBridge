@@ -204,6 +204,14 @@ export const VoicePoweredOrb: FC<VoicePoweredOrbProps> = ({
   };
 
   const initMicrophone = async () => {
+    if (
+      typeof navigator === 'undefined' ||
+      !navigator.mediaDevices ||
+      typeof navigator.mediaDevices.getUserMedia !== 'function'
+    ) {
+      console.warn('Microphone API unavailable — orb will run in ambient mode');
+      return false;
+    }
     try {
       stopMicrophone();
       const stream = await navigator.mediaDevices.getUserMedia({

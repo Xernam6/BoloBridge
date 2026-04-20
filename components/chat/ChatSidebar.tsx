@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Trash2, Loader2 } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import { ChatMessage } from '@/types';
+import { useTranslation } from '@/hooks/useTranslation';
+import type { TranslationKey } from '@/lib/i18n';
 
 export default function ChatSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +16,17 @@ export default function ChatSidebar() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const { t, lang } = useTranslation();
   const { chatHistory, addChatMessage, clearChatHistory } = useAppStore();
+
+  const starterQAs = useMemo(
+    () =>
+      ([1, 2, 3, 4, 5, 6] as const).map((n) => ({
+        question: t(`chat.q${n}` as TranslationKey),
+        answer: t(`chat.a${n}` as TranslationKey),
+      })),
+    [t, lang]
+  );
 
   // Auto-dismiss tooltip after 12 seconds
   useEffect(() => {
@@ -62,15 +74,22 @@ export default function ChatSidebar() {
           body: JSON.stringify({
             message: text.trim(),
             history: historyForAPI,
+            locale: lang,
           }),
         });
 
-        const data = await res.json();
+        let assistantContent: string;
+        if (!res.ok) {
+          assistantContent = '__unavailable__';
+        } else {
+          const data = await res.json();
+          assistantContent = data.unavailable || !data.response ? '__unavailable__' : data.response;
+        }
 
         const assistantMessage: ChatMessage = {
           id: (Date.now() + 1).toString(36),
           role: 'assistant',
-          content: data.response || "I'm having trouble responding right now. Please try again!",
+          content: assistantContent,
           timestamp: new Date().toISOString(),
         };
 
@@ -79,7 +98,7 @@ export default function ChatSidebar() {
         const errorMessage: ChatMessage = {
           id: (Date.now() + 1).toString(36),
           role: 'assistant',
-          content: "Oops! I'm having trouble connecting right now. Please try again in a moment! 🦜",
+          content: '__unavailable__',
           timestamp: new Date().toISOString(),
         };
         addChatMessage(errorMessage);
@@ -94,6 +113,26 @@ export default function ChatSidebar() {
     e.preventDefault();
     sendMessage(input);
   };
+
+  const handleStarterQA = useCallback(
+    (question: string, answer: string) => {
+      const userMsg: ChatMessage = {
+        id: Date.now().toString(36),
+        role: 'user',
+        content: question,
+        timestamp: new Date().toISOString(),
+      };
+      const assistantMsg: ChatMessage = {
+        id: (Date.now() + 1).toString(36),
+        role: 'assistant',
+        content: answer,
+        timestamp: new Date().toISOString(),
+      };
+      addChatMessage(userMsg);
+      addChatMessage(assistantMsg);
+    },
+    [addChatMessage]
+  );
 
   return (
     <>
@@ -110,15 +149,15 @@ export default function ChatSidebar() {
               setIsOpen(true);
               setShowTooltip(false);
             }}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-br from-teal to-violet rounded-2xl shadow-lg shadow-teal/30 flex items-center justify-center text-white cursor-pointer"
-            aria-label="Chat with Vivi"
+            className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-teal rounded-2xl shadow-lg shadow-teal/30 flex items-center justify-center text-white cursor-pointer"
+            aria-label={t('chat.ariaChat' as TranslationKey)}
           >
-            <span className="text-2xl">🦜</span>
+            <MessageCircle size={22} />
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* Chat unread indicator */}
+      {/* Tooltip */}
       <AnimatePresence>
         {!isOpen && chatHistory.length === 0 && showTooltip && (
           <motion.div
@@ -129,7 +168,7 @@ export default function ChatSidebar() {
             className="fixed bottom-22 right-6 z-50 bg-white rounded-xl shadow-lg px-4 py-2 max-w-xs"
           >
             <p className="text-sm text-body">
-              Hi! I&apos;m <strong>Vivi</strong> 🦜 Ask me anything about speech!
+              {t('chat.tooltip' as TranslationKey)}
             </p>
             <div className="absolute bottom-0 right-6 translate-y-full w-0 h-0 border-l-6 border-r-6 border-t-6 border-transparent border-t-white" />
           </motion.div>
@@ -147,29 +186,31 @@ export default function ChatSidebar() {
             className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-100"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-indigo-950 to-teal-700 px-5 py-4 flex items-center justify-between shrink-0">
+            <div className="bg-[#2D3142] px-5 py-4 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
-                <span className="text-2xl">🦜</span>
+                <div className="w-8 h-8 rounded-xl bg-teal/20 flex items-center justify-center shrink-0">
+                  <MessageCircle size={16} className="text-teal" />
+                </div>
                 <div>
                   <h3 className="font-heading font-bold text-white text-sm">
                     Vivi
                   </h3>
-                  <p className="text-white/60 text-xs">Speech Buddy</p>
+                  <p className="text-white/60 text-xs">{t('chat.subtitle' as TranslationKey)}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={clearChatHistory}
                   className="p-1.5 rounded-lg text-white/50 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
-                  aria-label="Clear chat"
-                  title="Clear chat"
+                  aria-label={t('chat.ariaClear' as TranslationKey)}
+                  title={t('chat.ariaClear' as TranslationKey)}
                 >
                   <Trash2 size={14} />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-1.5 rounded-lg text-white/50 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
-                  aria-label="Close chat"
+                  aria-label={t('chat.ariaClose' as TranslationKey)}
                 >
                   <X size={16} />
                 </button>
@@ -180,28 +221,25 @@ export default function ChatSidebar() {
             <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-ice/30">
               {/* Welcome message if empty */}
               {chatHistory.length === 0 && (
-                <div className="text-center py-8">
-                  <span className="text-4xl block mb-3">🦜</span>
-                  <h4 className="font-heading font-bold text-navy mb-2">
-                    Hi! I&apos;m Vivi!
+                <div className="text-center py-4">
+                  <div className="w-12 h-12 rounded-2xl bg-teal/10 flex items-center justify-center mx-auto mb-3">
+                    <MessageCircle size={20} className="text-teal" />
+                  </div>
+                  <h4 className="font-heading italic font-bold text-navy mb-2">
+                    {t('chat.welcomeTitle' as TranslationKey)}
                   </h4>
                   <p className="text-sm text-muted max-w-[240px] mx-auto mb-4">
-                    I can help with speech tips, answer questions, or just chat!
+                    {t('chat.welcomeBody' as TranslationKey)}
                   </p>
-                  {/* Quick actions */}
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {[
-                      'Speech tips',
-                      'Practice ideas',
-                      'About screening',
-                      'Game help',
-                    ].map((q) => (
+                  {/* Starter Q&As — injected locally, no API call */}
+                  <div className="flex flex-col gap-1.5 text-left">
+                    {starterQAs.map(({ question, answer }) => (
                       <button
-                        key={q}
-                        onClick={() => sendMessage(q)}
-                        className="text-xs px-3 py-1.5 bg-cyan/10 text-cyan rounded-full hover:bg-cyan/20 transition-colors cursor-pointer font-medium"
+                        key={question}
+                        onClick={() => handleStarterQA(question, answer)}
+                        className="text-xs px-3 py-2 bg-teal/8 text-teal rounded-xl hover:bg-teal/15 transition-colors cursor-pointer font-medium text-left"
                       >
-                        {q}
+                        {question}
                       </button>
                     ))}
                   </div>
@@ -219,14 +257,20 @@ export default function ChatSidebar() {
                   <div
                     className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                       msg.role === 'user'
-                        ? 'bg-cyan text-white rounded-tr-sm'
+                        ? 'bg-teal text-white rounded-tr-sm'
+                        : msg.content === '__unavailable__'
+                        ? 'bg-coral/10 border border-coral/20 text-coral rounded-tl-sm'
                         : 'bg-white shadow-sm border border-gray-100 text-body rounded-tl-sm'
                     }`}
                   >
-                    {msg.role === 'assistant' && (
-                      <span className="text-xs block mb-1 text-muted">🦜 Vivi</span>
+                    {msg.role === 'assistant' && msg.content !== '__unavailable__' && (
+                      <span className="text-xs block mb-1 text-muted font-medium">Vivi</span>
                     )}
-                    <p className="whitespace-pre-wrap">{msg.content}</p>
+                    {msg.content === '__unavailable__' ? (
+                      <p className="text-sm">{t('chat.unavailableBody' as TranslationKey)}</p>
+                    ) : (
+                      <p className="whitespace-pre-wrap">{msg.content}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -239,10 +283,10 @@ export default function ChatSidebar() {
                   className="flex justify-start"
                 >
                   <div className="bg-white shadow-sm border border-gray-100 rounded-2xl rounded-tl-sm px-4 py-3">
-                    <span className="text-xs block mb-1 text-muted">🦜 Vivi</span>
+                    <span className="text-xs block mb-1 text-muted font-medium">Vivi</span>
                     <div className="flex items-center gap-2 text-muted">
                       <Loader2 size={14} className="animate-spin" />
-                      <span className="text-xs">Thinking...</span>
+                      <span className="text-xs">{t('chat.thinking' as TranslationKey)}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -261,15 +305,15 @@ export default function ChatSidebar() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask Vivi anything..."
-                className="flex-1 px-4 py-2.5 bg-ice/50 rounded-xl text-sm text-body placeholder:text-muted/50 outline-none focus:ring-2 focus:ring-cyan/30 transition-all"
+                placeholder={t('chat.inputPlaceholder' as TranslationKey)}
+                className="flex-1 px-4 py-2.5 bg-ice/50 rounded-xl text-sm text-body placeholder:text-muted/50 outline-none focus:ring-2 focus:ring-teal/30 transition-all"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="w-10 h-10 bg-cyan text-white rounded-xl flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-cyan/90 transition-colors cursor-pointer shrink-0"
-                aria-label="Send message"
+                className="w-10 h-10 bg-teal text-white rounded-xl flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-teal/90 transition-colors cursor-pointer shrink-0"
+                aria-label={t('chat.ariaSend' as TranslationKey)}
               >
                 <Send size={16} />
               </button>

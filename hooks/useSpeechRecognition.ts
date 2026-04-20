@@ -27,14 +27,13 @@ export function useSpeechRecognition(lang = 'en'): UseSpeechRecognitionReturn {
   const serviceRef = useRef<SpeechService | null>(null);
   const startingRef = useRef(false); // Double-click guard
 
-  // Initialise on mount (client-side only)
+  // Effect 1: init only on mount — no lang dependency so language changes don't restart the service
   useEffect(() => {
     const supported = SpeechService.isSupported();
     setIsSupported(supported);
 
     if (supported) {
       serviceRef.current = new SpeechService();
-      serviceRef.current.setLanguage(lang);
     }
 
     // Proactively check mic permission state via Permissions API
@@ -66,6 +65,11 @@ export function useSpeechRecognition(lang = 'en'): UseSpeechRecognitionReturn {
         permissionStatus.removeEventListener('change', handlePermissionChange);
       }
     };
+  }, []);
+
+  // Effect 2: apply language changes in-place without tearing down the service
+  useEffect(() => {
+    serviceRef.current?.setLanguage(lang);
   }, [lang]);
 
   const startListening = useCallback(async () => {

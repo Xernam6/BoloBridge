@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Volume2, RotateCcw, Mic, MicOff } from 'lucide-react';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 import { useAppStore } from '@/lib/store';
+import { useTranslation } from '@/hooks/useTranslation';
 import { TiltCard } from '@/components/ui/TiltCard';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { MicPermissionModal } from '@/components/ui/MicPermissionModal';
@@ -282,6 +283,7 @@ interface Answer {
 
 export default function EmotionEchoPage() {
   const addXP = useAppStore((s) => s.addXP);
+  const { lang } = useTranslation();
 
   const [phase, setPhase] = useState<Phase>('select-level');
   const [level, setLevel] = useState<1 | 2 | 3>(1);
@@ -297,7 +299,7 @@ export default function EmotionEchoPage() {
   const [hasRecorded, setHasRecorded] = useState(false);
 
   const { isSupported, isListening, isProcessing, error: micError, startListening, stopListening, resetTranscript } =
-    useSpeechRecognition('en');
+    useSpeechRecognition(lang);
 
   const [showMicModal, setShowMicModal] = useState(false);
   useEffect(() => {

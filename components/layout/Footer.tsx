@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslation } from '@/hooks/useTranslation';
 
-const LANGUAGE_BADGES = ['EN', 'ES', 'HI', 'AF', 'BN', 'TL', 'PT', 'AR', 'RU', 'VI'];
+const LANGUAGE_BADGES = ['EN', 'ES', 'HI', 'AF', 'BN', 'TL'];
 
 export function Footer() {
   const { t } = useTranslation();

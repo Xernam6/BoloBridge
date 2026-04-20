@@ -368,7 +368,7 @@ function GlobalImpact() {
           </BlurFade>
           <BlurFade delay={0.6}>
             <div className="flex flex-wrap gap-3 justify-center">
-              {['English', 'Spanish', 'Hindi', 'Afrikaans', 'Bengali', 'Tagalog', 'Portuguese', 'Arabic', 'Russian', 'Vietnamese'].map((lang) => (
+              {['English', 'Spanish', 'Hindi', 'Afrikaans', 'Bengali', 'Tagalog'].map((lang) => (
                 <span
                   key={lang}
                   className="px-3 py-1 rounded-full bg-teal/8 text-teal dark:text-teal-light font-body text-sm font-medium border border-teal/10"

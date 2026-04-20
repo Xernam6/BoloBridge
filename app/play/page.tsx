@@ -13,6 +13,7 @@ import { Tooltip } from '@/components/ui/Tooltip';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { TextScramble } from '@/components/ui/TextScramble';
 import type { RiskLevel } from '@/types';
+import type { TranslationKey } from '@/lib/i18n';
 
 /* ------------------------------------------------------------------ */
 /*  AI / Voice badges                                                   */
@@ -45,6 +46,24 @@ const EDITORIAL_COPY: Record<string, string> = {
   'tongue-gym': 'Strengthen your speech muscles with playful morning stretches and wiggle workouts designed for tiny voices.',
   'reader': 'Upload any text or PDF and read aloud, one word at a time. Evidence-based oral reading fluency practice.',
 };
+
+/* ------------------------------------------------------------------ */
+/*  Game name i18n helper                                               */
+/* ------------------------------------------------------------------ */
+const GAME_NAME_KEYS: Record<string, TranslationKey> = {
+  'story-studio': 'game.storyStudio',
+  'sound-safari': 'game.soundSafari',
+  'word-garden': 'game.wordGarden',
+  'rhythm-river': 'game.rhythmRiver',
+  'emotion-echo': 'game.emotionEcho',
+  'tongue-gym': 'game.tongueGym',
+  'reader': 'game.reader',
+};
+
+function getGameName(slug: string, t: (key: TranslationKey) => string): string {
+  const key = GAME_NAME_KEYS[slug];
+  return key ? t(key) : slug;
+}
 
 /* ------------------------------------------------------------------ */
 /*  AI / Voice badge component                                          */
@@ -211,7 +230,7 @@ export default function PlayPage() {
                 <Link href={`/play/${featuredGame[0]}`} className="block h-full group">
                   <div className="bg-white dark:bg-[#2D3142] h-full flex flex-col">
                     <div className={`h-[300px] relative overflow-hidden bg-gradient-to-br ${getGradient(featuredGame[0])} flex-shrink-0`}>
-                      <img src={`/illustrations/shared/${featuredGame[0]}.png`} alt={featuredGame[1].name} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
+                      <img src={`/illustrations/shared/${featuredGame[0]}.png`} alt={getGameName(featuredGame[0], t)} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute top-4 left-4 flex gap-2">
                         <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase border border-white/10 shadow-sm">
                           Featured
@@ -234,7 +253,7 @@ export default function PlayPage() {
                           )}
                         </div>
                         <h2 className="font-heading italic text-3xl md:text-4xl text-navy dark:text-white leading-tight">
-                          {featuredGame[1].name}
+                          {getGameName(featuredGame[0], t)}
                         </h2>
                         <p className="font-body text-slate/70 dark:text-white/50 text-base leading-relaxed max-w-md">
                           {EDITORIAL_COPY[featuredGame[0]] || featuredGame[1].description}
@@ -263,7 +282,7 @@ export default function PlayPage() {
                 <Link href={`/play/${dailyGoalGame[0]}`} className="block h-full group">
                   <div className="bg-white dark:bg-[#2D3142] h-full flex flex-col">
                     <div className={`h-[300px] relative overflow-hidden bg-gradient-to-br ${getGradient(dailyGoalGame[0])} flex-shrink-0`}>
-                      <img src={`/illustrations/shared/${dailyGoalGame[0]}.png`} alt={dailyGoalGame[1].name} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                      <img src={`/illustrations/shared/${dailyGoalGame[0]}.png`} alt={getGameName(dailyGoalGame[0], t)} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute top-4 left-4 flex gap-2">
                         <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase shadow-sm border border-white/10">
                           Today's Goal
@@ -276,7 +295,7 @@ export default function PlayPage() {
                       <div className="space-y-3">
                         <div className="flex items-center gap-2 flex-wrap">
                           <h3 className="font-heading italic text-2xl text-navy dark:text-white">
-                            {dailyGoalGame[1].name}
+                            {getGameName(dailyGoalGame[0], t)}
                           </h3>
                           {recommendedGames.includes(dailyGoalGame[0]) && (
                             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#C2956B]/15 text-[#C2956B]">
@@ -316,7 +335,7 @@ export default function PlayPage() {
                   <Link href={`/play/${slug}`} className="block h-full group">
                     <div className="bg-white dark:bg-[#2D3142] min-h-[320px] flex flex-col h-full">
                       <div className={`h-56 relative overflow-hidden bg-gradient-to-br flex-shrink-0 ${getGradient(slug)}`}>
-                        <img src={`/illustrations/shared/${slug}.png`} alt={config.name} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
+                        <img src={`/illustrations/shared/${slug}.png`} alt={getGameName(slug, t)} className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
                         <div className="absolute top-4 left-4 flex gap-2">
                           {difficulty && (
                             <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white/90 text-[10px] font-bold tracking-widest uppercase shadow-sm border border-white/10">
@@ -331,7 +350,7 @@ export default function PlayPage() {
                         <div className="space-y-3">
                           <div className="flex items-center gap-2 flex-wrap">
                             <h4 className="font-heading italic text-2xl text-navy dark:text-white">
-                              <TextScramble text={config.name} duration={600} delay={i * 100} />
+                              <TextScramble text={getGameName(slug, t)} duration={600} delay={i * 100} />
                             </h4>
                             {isRecommended && (
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#C2956B]/15 text-[#C2956B]">
@@ -380,7 +399,7 @@ export default function PlayPage() {
                         <GameTechBadge slug={bannerGame[0]} overlay />
                       </div>
                       <h2 className="font-heading italic text-3xl md:text-5xl text-white">
-                        {bannerGame[1].name}
+                        {getGameName(bannerGame[0], t)}
                       </h2>
                       <p className="font-body text-white/80 text-lg max-w-xl">
                         {EDITORIAL_COPY[bannerGame[0]] || bannerGame[1].description}

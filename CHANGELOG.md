@@ -1,5 +1,106 @@
 # BoloBridge Changelog
 
+## [v5.6.0] - 2026-04-20
+
+---
+
+### FIX 1 — Play page: Game card titles now respect selected language
+**Timestamp:** 2026-04-20
+**Prompt:** "Game card titles still showing in English despite language switch"
+
+**Problem / Goal:** `GAME_CONFIGS[slug].name` is a hardcoded English object. Switching to Hindi/Spanish still showed English titles in game cards.
+**Root cause:** `.name` property pulled from a non-i18n object instead of the translation system.
+**Fix / Change:** Added `GAME_NAME_KEYS` mapping and `getGameName(slug, t)` helper. Replaced all `.name` usages in JSX (featured card h2, daily goal h3, row card `<img alt>` + `<TextScramble>`, banner h2) with `getGameName()`. Added `TranslationKey` import. Added `game.reader` key to all 6 language sections in `lib/i18n.ts`.
+
+**Files changed:**
+- `app/play/page.tsx` — Added `GAME_NAME_KEYS`, `getGameName`, `TranslationKey` import; replaced 7 `.name` usages
+- `lib/i18n.ts` — Added `'game.reader'` key to all 6 languages (en/es/hi/af/bn/tl)
+
+---
+
+### FIX 2 — Vivi chatbot: deterministic fallback responses replaced with randomized ring buffer
+**Timestamp:** 2026-04-20
+**Prompt:** "Vivi gives the same 1-2 responses repeatedly"
+
+**Problem / Goal:** `getFallbackResponse` used `(message.length + hours) % length` — any two messages of similar length in the same hour got the same response.
+**Root cause:** Deterministic modular arithmetic instead of randomization.
+**Fix / Change:** Replaced with `Math.random()` + repeat-avoidance ring buffer (last 3 indices excluded). Expanded pool to 12 varied responses. Removed all emojis from fallback responses (CLAUDE.md violation). Updated `getFallbackResponse` signature to accept `history` for context-aware keyword matching. Updated all 3 call sites to pass `history`.
+
+**Files changed:**
+- `app/api/chat/route.ts` — New `getFallbackResponse(message, history)`, ring buffer, emoji-free responses
+
+---
+
+### FIX 3a — Language list trimmed to 6 supported languages
+**Timestamp:** 2026-04-20
+**Prompt:** "Language list on homepage and footer shows unsupported languages"
+
+**Problem / Goal:** Homepage and footer showed PT, AR, RU, VI which are not supported.
+**Fix / Change:** Trimmed both arrays to the 6 supported languages only.
+
+**Files changed:**
+- `app/page.tsx` — Trimmed language pill array from 10 to 6 entries
+- `components/layout/Footer.tsx` — Trimmed `LANGUAGE_BADGES` from 10 to 6 entries
+
+---
+
+### FIX 3b — Vivi chatbot: all UI strings now i18n-compliant, emojis removed
+**Timestamp:** 2026-04-20
+**Prompt:** "Vivi chatbot gives UI strings hardcoded in English"
+
+**Problem / Goal:** All ChatSidebar strings were hardcoded English. FAB used a parrot emoji violating CLAUDE.md anti-slop rules.
+**Fix / Change:** Added `useTranslation` import and hook. Replaced all hardcoded strings with `t()` calls. Replaced emoji FAB with `MessageCircle` lucide icon. Replaced gradient header with flat `bg-[#2D3142]`. Added 6 starter Q&As via `useMemo` using `chat.q*`/`chat.a*` i18n keys — injected locally (no API call) when tapped. Added `chat.*` keys to all 6 language sections in `lib/i18n.ts`.
+
+**Files changed:**
+- `components/chat/ChatSidebar.tsx` — Full i18n update, emoji removal, starterQAs, flat header
+- `lib/i18n.ts` — Added all `chat.*` keys (26 per language × 6 languages)
+
+---
+
+### FIX 3c — Chat API: emoji mandate removed, locale-aware responses, better error paths
+**Timestamp:** 2026-04-20
+**Prompt:** "Chat API returns English-only responses and includes emoji mandate"
+
+**Problem / Goal:** System instruction told Gemini to "Include relevant emojis sparingly" (CLAUDE.md violation). API always replied in English regardless of user language. Rate-limit path returned bare 429 without JSON body.
+**Fix / Change:** Removed emoji mandate; added "Do not use emojis". Added `locale` field from request body and `LANGUAGE_NAMES` map; injected `ALWAYS respond in {languageName}` at top of system prompt. Rate-limit path now returns `{ unavailable: true }` JSON. All error/catch paths return `{ unavailable: true, reason }` instead of fallback strings.
+
+**Files changed:**
+- `app/api/chat/route.ts` — `LANGUAGE_NAMES` map, locale injection, system instruction fix, error path fix
+
+---
+
+### FIX 3d — Chat client: !res.ok check + stale history reset on rehydrate
+**Timestamp:** 2026-04-20
+**Prompt:** "Chat client does not check !res.ok before parsing JSON"
+
+**Problem / Goal:** `fetch` result was parsed with `.json()` before checking `res.ok`, causing silent wrong messages on 4xx/5xx. `chatHistory` was persisted across page reloads, surfacing stale unavailable notices.
+**Fix / Change:** Added `if (!res.ok)` guard; unavailable responses mapped to `'__unavailable__'` sentinel displayed as a styled error bubble. Added `merge` to Zustand persist config to reset `chatHistory` on rehydrate.
+
+**Files changed:**
+- `components/chat/ChatSidebar.tsx` — `!res.ok` check, `__unavailable__` sentinel, styled error bubble
+- `lib/store.ts` — Added `merge` option to `persist` to reset `chatHistory` on rehydrate
+
+---
+
+### FIX 3e — Mic permission bugs across 4 files
+**Timestamp:** 2026-04-20
+**Prompt:** "Mic permission bugs in useVocalBiomarkers, useSpeechRecognition, voice-powered-orb, emotion-echo"
+
+**Problem / Goal:** Multiple mic-handling bugs: empty error messages on DOMException, service rebuilt on language change, no guard for http/insecure context, hardcoded 'en' in emotion-echo.
+**Fix / Change:**
+1. `useVocalBiomarkers.ts`: Replaced `err.message` with `err.name`-based switch (NotAllowedError, NotFoundError, NotReadableError, default) for descriptive error messages.
+2. `useSpeechRecognition.ts`: Split single `useEffect([lang])` into two effects — mount-only init (no lang dep) + language-change effect calling `setLanguage(lang)`.
+3. `voice-powered-orb.tsx`: Added `navigator.mediaDevices` existence guard before `getUserMedia` call.
+4. `emotion-echo/page.tsx`: Added `useTranslation` import; replaced hardcoded `useSpeechRecognition('en')` with `useSpeechRecognition(lang)`.
+
+**Files changed:**
+- `hooks/useVocalBiomarkers.ts` — `err.name` switch for descriptive mic errors
+- `hooks/useSpeechRecognition.ts` — Split useEffect into mount + language effects
+- `components/ui/voice-powered-orb.tsx` — Added `navigator.mediaDevices` guard
+- `app/play/emotion-echo/page.tsx` — Use `lang` from `useTranslation` instead of hardcoded `'en'`
+
+---
+
 ## [v5.5.0] - 2026-04-13
 
 ---

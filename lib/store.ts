@@ -318,6 +318,11 @@ export const useAppStore = create<AppState>()(
     {
       name: 'bolobridge-storage',
       storage: encryptedStorage,
+      merge: (persistedState, currentState) => {
+        const merged = { ...currentState, ...(persistedState as Partial<AppState>) };
+        merged.chatHistory = [];
+        return merged;
+      },
     }
   )
 );

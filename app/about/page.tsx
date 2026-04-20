@@ -349,27 +349,6 @@ export default function AboutPage() {
                   <p>{t('about.developerP2')}</p>
                 </div>
 
-                {/* Expertise tags */}
-                <div className="flex flex-wrap justify-center gap-2 pt-2">
-                  {[
-                    'Neuroscience (B.A.)',
-                    'Bioengineering (M.S.)',
-                    'Speech-Motor Learning',
-                    'Infant Language Acquisition',
-                    'Clinical Diagnostics',
-                    'Health Care Mgmt (Wharton)',
-                    'Python / MATLAB',
-                    'Next.js / TypeScript',
-                  ].map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-body text-xs font-medium px-3 py-1.5 rounded-full bg-cream dark:bg-white/5 text-navy/70 dark:text-white/60 border border-navy/8 dark:border-white/8"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
                 {/* Contact */}
                 <div className="text-center pt-2">
                   <a
