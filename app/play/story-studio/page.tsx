@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Mic, MicOff, Volume2, Send, Award } from 'lucide-react';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 import { useAppStore } from '@/lib/store';
+import { useTranslation } from '@/hooks/useTranslation';
 import { TiltCard } from '@/components/ui/TiltCard';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { MicPermissionModal } from '@/components/ui/MicPermissionModal';
@@ -22,36 +23,6 @@ interface Scenario {
   accent: string;
 }
 
-const SCENARIOS: Scenario[] = [
-  {
-    id: 'restaurant',
-    title: 'Restaurant',
-    emoji: '🍕',
-    description: 'Order food at a fun restaurant!',
-    accent: 'bg-coral',
-  },
-  {
-    id: 'park',
-    title: 'Park',
-    emoji: '🌳',
-    description: 'Make a friend at the playground!',
-    accent: 'bg-success',
-  },
-  {
-    id: 'school',
-    title: 'School',
-    emoji: '🏫',
-    description: 'Be a student in a fun classroom!',
-    accent: 'bg-teal',
-  },
-  {
-    id: 'space-adventure',
-    title: 'Space Adventure',
-    emoji: '🚀',
-    description: 'Explore outer space as an astronaut!',
-    accent: 'bg-violet',
-  },
-];
 
 const XP_PER_EXCHANGE = 15;
 const MAX_EXCHANGES = 10;
@@ -75,6 +46,14 @@ export default function StoryStudioPage() {
   const addXP = useAppStore((s) => s.addXP);
   const profile = useAppStore((s) => s.profile);
   const appLanguage = useAppStore((s) => s.appLanguage);
+  const { t } = useTranslation();
+
+  const SCENARIOS: Scenario[] = [
+    { id: 'restaurant',     title: t('story.scenario.restaurant'),     emoji: '🍕', description: t('story.scenario.restaurantDesc'),     accent: 'bg-coral' },
+    { id: 'park',           title: t('story.scenario.park'),           emoji: '🌳', description: t('story.scenario.parkDesc'),           accent: 'bg-success' },
+    { id: 'school',         title: t('story.scenario.school'),         emoji: '🏫', description: t('story.scenario.schoolDesc'),         accent: 'bg-teal' },
+    { id: 'space-adventure', title: t('story.scenario.spaceAdventure'), emoji: '🚀', description: t('story.scenario.spaceAdventureDesc'), accent: 'bg-violet' },
+  ];
 
   const [phase, setPhase] = useState<Phase>('select-scenario');
   const [scenario, setScenario] = useState<Scenario | null>(null);
@@ -216,7 +195,7 @@ export default function StoryStudioPage() {
               href="/play"
               className="inline-flex items-center gap-2 text-muted hover:text-teal text-sm font-body font-medium mb-6 transition-colors duration-300"
             >
-              <ArrowLeft size={16} /> Back to Games
+              <ArrowLeft size={16} /> {t('story.backToGames')}
             </Link>
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -224,11 +203,10 @@ export default function StoryStudioPage() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
               <h1 className="font-heading italic text-3xl md:text-4xl text-navy mb-2">
-                Story Studio
+                {t('story.title')}
               </h1>
               <p className="font-body text-muted text-base max-w-lg">
-                Pick a scenario and chat with a fun character. The conversation
-                flows naturally, gently modeling correct speech along the way.
+                {t('story.description')}
               </p>
             </motion.div>
           </div>
@@ -237,7 +215,7 @@ export default function StoryStudioPage() {
         <section className="px-6 sm:px-10 py-12 sm:py-16">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-heading italic text-xl text-navy mb-8">
-              Choose your scene
+              {t('story.chooseScene')}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -270,14 +248,13 @@ export default function StoryStudioPage() {
 
             {!isSupported && (
               <div className="mt-8 px-5 py-4 bg-coral/10 text-coral rounded-xl text-sm font-body font-medium text-center">
-                Speech recognition requires Chrome or Edge browser
+                {t('story.browserNotSupported')}
               </div>
             )}
 
             <div className="mt-10 px-6 py-5 bg-ice rounded-2xl text-sm font-body text-muted text-center leading-relaxed">
-              <span className="font-heading italic text-navy text-base block mb-1">How it works</span>
-              A character will talk to you. Press the mic button and speak back.
-              The character will respond naturally, and gently model correct speech along the way.
+              <span className="font-heading italic text-navy text-base block mb-1">{t('story.howItWorks')}</span>
+              {t('story.howItWorksDesc')}
             </div>
           </div>
         </section>
@@ -298,10 +275,10 @@ export default function StoryStudioPage() {
               href="/play"
               className="inline-flex items-center gap-2 text-muted hover:text-teal text-sm font-body font-medium mb-6 transition-colors duration-300"
             >
-              <ArrowLeft size={16} /> Back to Games
+              <ArrowLeft size={16} /> {t('story.backToGames')}
             </Link>
             <h1 className="font-heading italic text-3xl text-navy flex items-center gap-3">
-              <Award size={28} className="text-coral" /> Story Complete
+              <Award size={28} className="text-coral" /> {t('story.storyComplete')}
             </h1>
           </div>
         </header>
@@ -323,11 +300,12 @@ export default function StoryStudioPage() {
               </motion.div>
 
               <h2 className="font-heading italic text-2xl text-navy mb-2">
-                Great conversation!
+                {t('story.greatConversation')}
               </h2>
               <p className="font-body text-muted mb-8">
-                You had {exchangeCount} exchanges in the{' '}
-                <strong className="text-navy">{scenario?.title}</strong> scenario.
+                {t('story.hadExchanges')
+                  .replace('{count}', String(exchangeCount))
+                  .replace('{scenario}', scenario?.title ?? '')}
               </p>
 
               {/* Stats */}
@@ -337,7 +315,7 @@ export default function StoryStudioPage() {
                     {exchangeCount}
                   </p>
                   <p className="text-xs font-body text-muted font-medium mt-1">
-                    Exchanges
+                    {t('story.exchanges')}
                   </p>
                 </div>
                 <div className="bg-ice rounded-2xl p-5">
@@ -345,7 +323,7 @@ export default function StoryStudioPage() {
                     +{totalXP}
                   </p>
                   <p className="text-xs font-body text-muted font-medium mt-1">
-                    XP Earned
+                    {t('story.xpEarned')}
                   </p>
                 </div>
               </div>
@@ -362,7 +340,7 @@ export default function StoryStudioPage() {
                     }`}
                   >
                     <span className="font-medium text-xs block mb-0.5 opacity-60">
-                      {msg.role === 'character' ? 'Character' : 'You'}
+                      {msg.role === 'character' ? t('story.character') : t('story.you')}
                     </span>
                     {msg.text}
                   </div>
@@ -378,13 +356,13 @@ export default function StoryStudioPage() {
                   }}
                   className="w-full py-4 bg-teal text-white font-body font-semibold rounded-xl hover:shadow-[0_8px_32px_rgba(92,77,154,0.2)] transition-shadow duration-500"
                 >
-                  Play Again
+                  {t('story.playAgain')}
                 </MagneticButton>
                 <Link
                   href="/play"
                   className="w-full py-4 bg-ice text-navy font-body font-semibold rounded-xl text-center hover:bg-mint transition-colors duration-300"
                 >
-                  Back to Games
+                  {t('story.backToGames')}
                 </Link>
               </div>
             </div>
@@ -412,7 +390,7 @@ export default function StoryStudioPage() {
                 {scenario?.title}
               </h1>
               <p className="text-xs font-body text-muted">
-                Exchange {exchangeCount} of {MAX_EXCHANGES}
+                {t('story.exchangeOf').replace('{current}', String(exchangeCount)).replace('{max}', String(MAX_EXCHANGES))}
               </p>
             </div>
           </div>
@@ -439,7 +417,7 @@ export default function StoryStudioPage() {
             onClick={endStory}
             className="px-5 py-2.5 bg-ice text-navy text-sm font-body font-medium rounded-xl hover:bg-mint transition-colors duration-300"
           >
-            End Story
+            {t('story.endStory')}
           </MagneticButton>
         </div>
       </header>
@@ -465,7 +443,7 @@ export default function StoryStudioPage() {
                 >
                   {msg.role === 'character' && (
                     <span className="text-xs font-medium text-teal block mb-1.5 opacity-70">
-                      Character
+                      {t('story.character')}
                     </span>
                   )}
                   {msg.text}
@@ -483,14 +461,14 @@ export default function StoryStudioPage() {
             >
               <div className="bg-white shadow-[0_4px_16px_rgba(0,0,0,0.04)] px-5 py-4 rounded-3xl rounded-bl-lg">
                 <span className="text-xs font-medium text-teal block mb-1.5 opacity-70">
-                  Character
+                  {t('story.character')}
                 </span>
                 <motion.span
                   className="text-sm font-body text-muted"
                   animate={{ opacity: [0.3, 0.7, 0.3] }}
                   transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 >
-                  Thinking...
+                  {t('story.thinking')}
                 </motion.span>
               </div>
             </motion.div>
@@ -554,11 +532,11 @@ export default function StoryStudioPage() {
             )}
             {isListening ? (
               <>
-                <MicOff size={20} /> Listening...
+                <MicOff size={20} /> {t('story.listening')}
               </>
             ) : (
               <>
-                <Mic size={20} /> Tap to Speak
+                <Mic size={20} /> {t('story.tapToSpeak')}
               </>
             )}
           </button>
@@ -588,7 +566,7 @@ export default function StoryStudioPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Speak now... tap again to stop
+            {t('story.speakNow')}
           </motion.p>
         )}
       </div>

@@ -6,7 +6,7 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
-      "cwd": "/Users/jyotitannan/Desktop/Voxbloom/voxbloom"
+      "cwd": "."
     }
   ]
 }

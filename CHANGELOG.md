@@ -4,6 +4,20 @@
 
 ---
 
+### Story Studio page fully translated for all 6 languages
+**Timestamp:** 2026-04-20
+**Prompt:** "when i change the language to hindi it still doesnt change stuff inside of the play pages"
+
+**Problem / Goal:** Story Studio page had 100% hardcoded English strings — titles, scenario names, mic buttons, chat labels, summary stats — none used the i18n system.
+**Root cause:** The page never imported `useTranslation`; all UI text was static module-level constants or inline strings.
+**Fix / Change:** Added 31 `story.*` translation keys to all 6 languages in `i18n.ts` (en, es, hi, af, bn, tl). Imported `useTranslation` in `story-studio/page.tsx` and replaced every hardcoded string — back link, title, description, scenario names/descriptions, mic button labels, chat role labels, summary stats, play-again button — with `t()` calls. SCENARIOS array moved inside the component so it rebuilds with the current language.
+
+**Files changed:**
+- `lib/i18n.ts` — added `story.*` keys for all 6 languages
+- `app/play/story-studio/page.tsx` — wired `useTranslation`; replaced all hardcoded English strings with `t()` calls
+
+---
+
 ### FIX 1 — Play page: Game card titles now respect selected language
 **Timestamp:** 2026-04-20
 **Prompt:** "Game card titles still showing in English despite language switch"
